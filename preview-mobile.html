@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>手机端预览 — CSP Exam Prep</title>
+<link rel="stylesheet" href="quiz-styles.css?v=11">
+<style>
+  body { background: #1e293b; }
+
+  .preview-header {
+    background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+    color: #fff;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  }
+  .preview-header h1 {
+    font-size: 1.1rem;
+    white-space: nowrap;
+  }
+  .preview-header a.back {
+    color: #fff;
+    text-decoration: none;
+    background: rgba(255,255,255,0.15);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+  .preview-header a.back:hover { background: rgba(255,255,255,0.3); }
+
+  .page-selector {
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    padding: 4px 0;
+    flex: 1;
+  }
+  .page-selector button {
+    background: rgba(255,255,255,0.12);
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 16px;
+    font-size: 0.78rem;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.15s;
+  }
+  .page-selector button:hover { background: rgba(255,255,255,0.25); }
+  .page-selector button.active {
+    background: #fff;
+    color: #1e3a5f;
+    font-weight: 700;
+  }
+
+  .device-selector {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    white-space: nowrap;
+  }
+  .device-selector select {
+    background: rgba(255,255,255,0.12);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    cursor: pointer;
+  }
+  .device-selector select option { color: #1a1a2e; background: #fff; }
+
+  /* Phone frame */
+  .preview-stage {
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+  }
+  .phone-frame {
+    background: #000;
+    border-radius: 44px;
+    padding: 14px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    transition: width 0.3s, height 0.3s;
+  }
+  .phone-frame .phone-notch {
+    width: 120px;
+    height: 26px;
+    background: #000;
+    border-radius: 0 0 20px 20px;
+    margin: 0 auto 8px;
+    z-index: 2;
+    position: relative;
+  }
+  .phone-frame .phone-screen {
+    background: #f4f6f9;
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+  }
+  .phone-frame iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: #fff;
+  }
+
+  .preview-tips {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 18px 22px;
+    margin: 0 24px 24px;
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    box-shadow: var(--shadow);
+  }
+  .preview-tips strong { color: #1e3a5f; }
+
+  .status-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 24px 0;
+    color: #fff;
+    font-size: 0.8rem;
+    background: transparent;
+  }
+  .status-bar .sb-time { font-weight: 700; }
+  .status-bar .sb-icons { letter-spacing: 4px; }
+
+  @media (max-width: 768px) {
+    .preview-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .page-selector { width: 100%; }
+    .device-selector { width: 100%; }
+    .phone-frame { border-radius: 24px; padding: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="preview-header">
+  <a href="index.html" class="back">← 仪表盘</a>
+  <h1>📱 手机端预览</h1>
+  <div class="page-selector" id="page-selector"></div>
+  <div class="device-selector">
+    <span style="font-size:0.8rem;opacity:0.8;">设备:</span>
+    <select id="device-select" onchange="updateDevice()">
+      <option value="3120x1440">你的手机 3120×1440</option>
+      <option value="393x852">iPhone 15</option>
+      <option value="360x800">Android 常见</option>
+      <option value="412x915">Android 大屏</option>
+      <option value="390x844">iPhone 14</option>
+    </select>
+  </div>
+</div>
+
+<div class="preview-tips">
+  <strong>💡 使用说明：</strong> 左侧选择要预览的页面，顶部选择设备尺寸。你手机是 3168×1440 分辨率（约 2K 屏），系统会自动用最接近的 3120×1440 逻辑尺寸渲染。预览用于确认<strong>内容正确性</strong>——最终界面适配（任务2）会在此确认后单独处理。
+</div>
+
+<div class="preview-stage">
+  <div class="phone-frame" id="phone-frame">
+    <div class="phone-notch"></div>
+    <div class="status-bar">
+      <span class="sb-time">9:41</span>
+      <span class="sb-icons">📶 🔋</span>
+    </div>
+    <div class="phone-screen" id="phone-screen">
+      <iframe id="preview-frame" src="index.html" loading="lazy"></iframe>
+    </div>
+  </div>
+</div>
+
+<script>
+const PAGES = [
+  { id: 'index', name: '仪表盘', file: 'index.html' },
+  { id: 'week-01', name: 'Week 1', file: 'week-01.html' },
+  { id: 'week-02', name: 'Week 2', file: 'week-02.html' },
+  { id: 'week-03', name: 'Week 3', file: 'week-03.html' },
+  { id: 'week-04', name: 'Week 4', file: 'week-04.html' },
+  { id: 'week-05', name: 'Week 5', file: 'week-05.html' },
+  { id: 'week-06', name: 'Week 6', file: 'week-06.html' },
+  { id: 'week-07', name: 'Week 7', file: 'week-07.html' },
+  { id: 'week-08', name: 'Week 8', file: 'week-08.html' },
+  { id: 'week-09', name: 'Week 9', file: 'week-09.html' },
+  { id: 'week-10', name: 'Week 10', file: 'week-10.html' },
+  { id: 'week-11', name: 'Week 11', file: 'week-11.html' },
+  { id: 'week-12', name: 'Week 12', file: 'week-12.html' },
+  { id: 'week-13', name: 'Week 13', file: 'week-13.html' },
+  { id: 'week-14', name: 'Week 14', file: 'week-14.html' },
+  { id: 'week-15', name: 'Week 15', file: 'week-15.html' },
+  { id: 'week-16', name: 'Week 16', file: 'week-16.html' },
+  { id: 'week-17', name: 'Week 17', file: 'week-17.html' },
+  { id: 'week-18', name: 'Week 18', file: 'week-18.html' },
+  { id: 'week-19', name: 'Week 19', file: 'week-19.html' },
+  { id: 'week-20', name: 'Week 20', file: 'week-20.html' },
+  { id: 'week-21', name: 'Week 21', file: 'week-21.html' },
+  { id: 'week-22', name: 'Week 22', file: 'week-22.html' },
+  { id: 'week-23', name: 'Week 23', file: 'week-23.html' },
+  { id: 'week-24', name: 'Week 24', file: 'week-24.html' },
+  { id: 'exam-1', name: '模拟考1', file: 'exam-month-01.html' },
+  { id: 'exam-2', name: '模拟考2', file: 'exam-month-02.html' },
+  { id: 'exam-3', name: '模拟考3', file: 'exam-month-03.html' },
+  { id: 'exam-4', name: '模拟考4', file: 'exam-month-04.html' },
+  { id: 'exam-5', name: '模拟考5', file: 'exam-month-05.html' },
+  { id: 'exam-6', name: '模拟考6', file: 'exam-month-06.html' },
+  { id: 'glossary', name: '词汇表', file: 'glossary.html' },
+  { id: 'flashcards', name: '闪卡', file: 'vocab-flashcards.html' },
+  { id: 'review', name: '错题本', file: 'review-wrong.html' }
+];
+
+const DEVICES = {
+  '3120x1440': { width: 412, height: 916 },  // 2K屏逻辑尺寸
+  '393x852': { width: 393, height: 852 },
+  '360x800': { width: 360, height: 800 },
+  '412x915': { width: 412, height: 915 },
+  '390x844': { width: 390, height: 844 }
+};
+
+let currentPage = 'index';
+
+function initSelector() {
+  const sel = document.getElementById('page-selector');
+  sel.innerHTML = '';
+  for (const p of PAGES) {
+    const btn = document.createElement('button');
+    btn.textContent = p.name;
+    btn.dataset.id = p.id;
+    btn.onclick = () => loadPage(p.id);
+    if (p.id === currentPage) btn.classList.add('active');
+    sel.appendChild(btn);
+  }
+}
+
+function loadPage(id) {
+  currentPage = id;
+  const page = PAGES.find(p => p.id === id);
+  if (!page) return;
+
+  const frame = document.getElementById('preview-frame');
+  frame.src = page.file;
+
+  document.querySelectorAll('#page-selector button').forEach(b => {
+    b.classList.toggle('active', b.dataset.id === id);
+  });
+
+  // Scroll selector button into view
+  const active = document.querySelector('#page-selector button.active');
+  if (active) active.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+}
+
+function updateDevice() {
+  const key = document.getElementById('device-select').value;
+  const dev = DEVICES[key];
+  if (!dev) return;
+
+  const frame = document.getElementById('phone-frame');
+  const screen = document.getElementById('phone-screen');
+  // 手机逻辑宽度 → 屏幕上像素
+  const scale = Math.min(1.0, (window.innerWidth - 120) / (dev.width + 40));
+  frame.style.width = ((dev.width + 28) * scale) + 'px';
+  screen.style.width = (dev.width * scale) + 'px';
+  screen.style.height = (dev.height * scale) + 'px';
+}
+
+// Init
+initSelector();
+updateDevice();
+window.addEventListener('resize', updateDevice);
+</script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('./sw.js').catch(function(err) {
+      console.warn('SW registration failed:', err);
+    });
+  });
+}
+</script>
+</body>
+</html>

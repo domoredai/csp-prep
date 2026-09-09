@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 7: Incident Investigation & Root Cause Analysis / 事故调查与根源分析 — CSP Exam Prep</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1e3a5f">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="stylesheet" href="quiz-styles.css?v=11">
+<style>
+  .breadcrumb { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 16px; }
+  .breadcrumb a { color: var(--accent); text-decoration: none; }
+  .breadcrumb a:hover { text-decoration: underline; }
+  .heinrich-triangle {
+    text-align: center;
+    padding: 20px;
+    margin: 16px 0;
+  }
+  .triangle-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+  .tri-level {
+    color: #fff;
+    font-weight: 700;
+    padding: 10px 16px;
+    text-align: center;
+    font-size: 0.88rem;
+  }
+  .tri-level.fatality { background: #dc2626; width: 140px; }
+  .tri-level.major { background: #f59e0b; width: 220px; }
+  .tri-level.minor { background: #2563eb; width: 340px; }
+  .tri-level.nearmiss { background: #6b7280; width: 460px; }
+  .fishbone-diagram {
+    text-align: center;
+    padding: 20px;
+    background: #f8fafc;
+    border-radius: var(--radius);
+    margin: 16px 0;
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    line-height: 2.2;
+  }
+  .invest-flow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    margin: 16px 0;
+    font-size: 0.85rem;
+  }
+  .invest-step {
+    background: var(--accent-light);
+    color: #1e40af;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .invest-arrow { color: #888; font-weight: 700; }
+  p.bi-p, li.bi-li { margin-bottom: 10px; }
+  p.bi-p .en-p, li.bi-li .en-li { display: block; }
+  p.bi-p .zh-p, li.bi-li .zh-li { display: block; color: #666; font-size: 0.92em; margin-top: 2px; }
+  table.bi-table th { white-space: nowrap; }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="breadcrumb">
+    <a href="index.html">← 返回仪表盘 / Dashboard</a> &nbsp;|&nbsp;
+    领域 / Domain 2: <span style="font-weight:600;">计划管理 / Program Management</span>
+  </div>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <h1>📖 第7周 / Week 7:<br><span class="bi-term"><span class="zh">事故调查与根源分析</span> · <span class="en">Incident Investigation & Root Cause Analysis</span><span class="vocab-star" data-term="Root Cause Analysis (RCA)">☆</span></span></h1>
+    <div class="subtitle">领域2：计划管理（占考试25%）· 建议学习时间：6–8小时<br>Domain 2: Program Management (25% of exam) · Est. study time: 6–8 hours</div>
+  </div>
+
+  <!-- KNOWLEDGE SECTION -->
+  <div class="knowledge-card">
+    <h2>7.1 事故调查的目的与基本概念 / Incident Investigation — Purpose & Basic Concepts</h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>Brauer Ch.37 · Yates Ch.20</span>
+    </div>
+
+    <p class="bi-p">
+      <span class="en-p">Incident investigation is a systematic process to identify the root causes of incidents so that effective corrective actions can prevent recurrence. The goal is NOT to assign blame, but to find and fix system weaknesses.</span>
+      <span class="zh-p" style="color:#666;">事故调查是一个系统化过程，旨在识别事故的根本原因，以便采取有效的纠正措施防止再发生。目标不是追究责任，而是发现并修复系统弱点。</span>
+    </p>
+
+    <h3>术语定义 / Key Terminology</h3>
+    <table class="bi-table">
+      <tr><th>术语 / Term</th><th>定义 / Definition</th></tr>
+      <tr>
+        <td><strong><span class="bi-term"><span class="zh">事故</span><span class="en">Incident</span><span class="vocab-star" data-term="Incident">☆</span></span></strong></td>
+        <td><span class="en-p">An unplanned, undesired event that results in (or has the potential to result in) injury, illness, or damage. "Incident" is the modern preferred term covering all severity levels.</span><span class="zh-p" style="color:#666;">一个计划外、非预期的事件，导致（或可能导致）伤害、疾病或损失。现代更倾向用"事件"一词涵盖所有严重程度。</span></td>
+      </tr>
+      <tr>
+        <td><strong><span class="bi-term"><span class="zh">事故（狭义）</span><span class="en">Accident</span></span></strong></td>
+        <td><span class="en-p">An incident that actually results in injury, illness, or damage. Some professionals avoid "accident" because it implies chance/unpreventable.</span><span class="zh-p" style="color:#666;">实际导致伤害、疾病或损失的事件。有些专业人士避免用"事故"，因为该词暗示偶然/不可预防。</span></td>
+      </tr>
+      <tr>
+        <td><strong><span class="bi-term"><span class="zh">未遂事件</span><span class="en">Near Miss</span><span class="vocab-star" data-term="Near Miss">☆</span></span></strong></td>
+        <td><span class="en-p">An incident that could have resulted in injury or damage but did not, by chance or timely intervention.</span><span class="zh-p" style="color:#666;">本可能导致伤害或损失但（因偶然或及时干预）并未发生的事件。</span></td>
+      </tr>
+      <tr>
+        <td><strong><span class="bi-term"><span class="zh">直接原因</span><span class="en">Immediate Cause</span></span></strong></td>
+        <td><span class="en-p">The most obvious cause directly associated with the event — typically an unsafe act or unsafe condition (e.g., "worker removed guard").</span><span class="zh-p" style="color:#666;">与事件最直接相关的明显原因——通常是不安全行为或不安全状况（如"工人取下防护罩"）。</span></td>
+      </tr>
+      <tr>
+        <td><strong><span class="bi-term"><span class="zh">基本原因</span><span class="en">Basic/Root Cause</span><span class="vocab-star" data-term="Root Cause">☆</span></span></strong></td>
+        <td><span class="en-p">The underlying system deficiency (management system, training, culture, design) that allowed the immediate cause to exist (e.g., "no LOTO procedure for this equipment").</span><span class="zh-p" style="color:#666;">使直接原因得以存在的潜在系统缺陷（管理体系、培训、文化、设计）（如"该设备没有LOTO程序"）。</span></td>
+      </tr>
+    </table>
+
+    <h3>为什么调查事故？/ Why Investigate?</h3>
+    <ul>
+      <li class="bi-li">
+        <span class="en-li">Identify root causes so corrective actions prevent recurrence (primary purpose).</span>
+        <span class="zh-li">识别根本原因，使纠正措施防止再发生（主要目的）。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">Comply with legal/regulatory obligations (OSHA, internal policy).</span>
+        <span class="zh-li">满足法律/法规义务（OSHA、内部政策）。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">Gather facts for workers' compensation, insurance, and liability defense.</span>
+        <span class="zh-li">为工伤保险、保险和责任辩护收集事实。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">Identify trends and systemic weaknesses across the organization.</span>
+        <span class="zh-li">识别整个组织的趋势和系统性弱点。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">Demonstrate management commitment and build a reporting (just) culture.</span>
+        <span class="zh-li">展示管理层承诺并建立报告（公正）文化。</span>
+      </li>
+    </ul>
+
+    <div class="important">
+      <strong>核心原则 / Core Principle:</strong><br>
+      <span class="en-p">Investigations focus on <strong>facts and system causes</strong>, not blame. A blame-oriented investigation suppresses reporting and hides root causes. The investigator asks "What failed in the system?" not "Who is guilty?"</span>
+      <span class="zh-p" style="color:#666;">调查聚焦于<strong>事实和系统原因</strong>，而非追究责任。以追责为导向的调查会抑制报告并掩盖根本原因。调查者问"系统哪里失效了？"而非"谁有罪？"</span>
+    </div>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-high">必考 HIGH</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "What is the primary purpose of an incident investigation?"<br>
+        <strong>答题要点 / Key point:</strong> 目的=识别<strong>系统/根本原因</strong>并防止复发（不是追究个人责任）。调查聚焦事实与系统原因、非追责（blame-free）。追责导向会抑制报告、掩盖根因。注意区分近因(immediate cause)与根本原因(root cause)。
+      </div>
+    </div>
+
+    <div class="exam-scenario">
+      <div class="es-label">📝 真题情景 / Exam Scenario:</div>
+      <div class="es-question">"After a serious injury, management demands to know which employee is at fault before the investigation begins. What is the BEST response?"</div>
+      <div><strong>最佳答案 / Best answer:</strong> Redirect to fact-finding and system analysis — determine immediate and root causes before considering any human factor. 解析：预判式追责会抑制证人提供信息并掩盖系统缺陷；调查先收集事实、找系统原因，之后才讨论纠正措施。追责文化是安全文化的最大威胁。</div>
+    </div>
+  </div>
+
+  <div id="quiz-group-1"></div>
+
+
+  <div class="knowledge-card">
+    <h2>7.2 事故调查七步流程 / The Seven-Step Investigation Process</h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>Yates Ch.20 · Brauer Ch.37</span>
+    </div>
+
+    <p class="bi-p">
+      <span class="en-p">The investigation must begin immediately after the incident. The first priority is always medical care and scene safety. Memorize the sequence:</span>
+      <span class="zh-p" style="color:#666;">调查必须在事故发生后立即开始。首要任务始终是医疗救助和现场安全。牢记顺序：</span>
+    </p>
+
+    <div class="invest-flow">
+      <span class="invest-step">1. 保护现场 / Secure Scene</span>
+      <span class="invest-arrow">→</span>
+      <span class="invest-step">2. 收集证据 / Collect Evidence</span>
+      <span class="invest-arrow">→</span>
+      <span class="invest-step">3. 访谈证人 / Interview Witnesses</span>
+      <span class="invest-arrow">→</span>
+      <span class="invest-step">4. 分析数据 / Analyze Data</span>
+      <span class="invest-arrow">→</span>
+      <span class="invest-step">5. 确定根本原因 / Determine Root Causes</span>
+      <span class="invest-arrow">→</span>
+      <span class="invest-step">6. 建议纠正措施 / Recommend Corrective Actions</span>
+      <span class="invest-arrow">→</span>
+      <span class="invest-step">7. 跟踪 / Follow-Up</span>
+    </div>
+
+    <table class="bi-table">
+      <tr><th>步骤 / Step</th><th>活动 / Activities</th><th>关键考虑 / Key Considerations</th></tr>
+      <tr>
+        <td><strong>1. 保护现场 / Secure the Scene</strong></td>
+        <td>
+          <span class="en-p">Provide medical care; eliminate immediate hazards; preserve evidence; control access; take photos/video</span>
+          <span class="zh-p" style="color:#666;">提供医疗救助；消除即时危害；保护证据；控制进入；拍照/录像</span>
+        </td>
+        <td>
+          <span class="en-p">Scene preservation is critical — do NOT disturb evidence except to prevent further injury or property damage. Use barricade tape, lock doors, station a guard.</span>
+          <span class="zh-p" style="color:#666;">现场保护至关重要——除非为防止进一步伤害或财产损失，否则不要扰动证据。使用警戒带、锁门、派驻守卫。</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>2. 收集证据 / Collect Evidence</strong></td>
+        <td>
+          <span class="en-p">Gather physical evidence (equipment, tools, PPE); take photographs, measurements, and sketches; collect documents (procedures, training records, maintenance logs, JSA)</span>
+          <span class="zh-p" style="color:#666;">收集实物证据（设备、工具、PPE）；拍照、测量和绘制草图；收集文件（程序、培训记录、维修日志、JSA）</span>
+        </td>
+        <td>
+          <span class="en-p">Evidence includes physical items, documents, and digital data (CCTV, access logs, SCADA data). Chain of custody matters for serious incidents.</span>
+          <span class="zh-p" style="color:#666;">证据包括实物、文件和数字数据（闭路电视、进出日志、SCADA数据）。对于严重事故，证据链很重要。</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>3. 访谈证人 / Interview Witnesses</strong></td>
+        <td>
+          <span class="en-p">Interview injured worker(s), eyewitnesses, and those with relevant knowledge; conduct interviews promptly (memory fades); interview separately to avoid groupthink</span>
+          <span class="zh-p" style="color:#666;">访谈受伤员工、目击者和有相关知识的人员；及时进行访谈（记忆会消退）；分开访谈以避免从众思维</span>
+        </td>
+        <td>
+          <span class="en-p">Use open-ended questions. Put the witness at ease. Avoid leading questions. Do NOT blame. Take notes or record (with consent). Re-interview if needed.</span>
+          <span class="zh-p" style="color:#666;">使用开放式问题。让证人感到放松。避免诱导性问题。不要责备。做笔记或录音（需征得同意）。必要时重新访谈。</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>4. 分析数据 / Analyze Data</strong></td>
+        <td>
+          <span class="en-p">Use root cause analysis techniques (5 Whys, Fishbone, Barrier Analysis, Change Analysis); create timeline/sequence of events; distinguish direct causes from root causes</span>
+          <span class="zh-p" style="color:#666;">使用根源分析技术（5Why法、鱼骨图、屏障分析、变更分析）；制作时间线/事件序列；区分直接原因与根本原因</span>
+        </td>
+        <td>
+          <span class="en-p">Multiple causes typically contribute. Look beyond the obvious direct cause. Ask "why" repeatedly until you reach system-level causes.</span>
+          <span class="zh-p" style="color:#666;">通常有多种原因共同作用。超越显而易见的直接原因。反复问"为什么"直到找到系统层面的原因。</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>5. 确定根本原因 / Determine Root Causes</strong></td>
+        <td>
+          <span class="en-p">Identify underlying system deficiencies: inadequate training, poor hazard identification, missing procedures, design flaws, lack of supervision, production pressure</span>
+          <span class="zh-p" style="color:#666;">识别潜在的系统缺陷：培训不足、危害识别不良、程序缺失、设计缺陷、监督缺失、生产压力</span>
+        </td>
+        <td>
+          <span class="en-p">Root causes are system-level, not person-level. "Worker error" is rarely the full answer — ask WHY the error was possible.</span>
+          <span class="zh-p" style="color:#666;">根本原因是系统层面的，而非个人层面的。"工人失误"很少是完整答案——要问为什么失误可能发生。</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>6. 建议纠正措施 / Recommend Corrective Actions</strong></td>
+        <td>
+          <span class="en-p">Develop specific, measurable corrective actions addressing each root cause; apply hierarchy of controls; assign responsibility and due dates</span>
+          <span class="zh-p" style="color:#666;">制定针对每个根本原因的具体、可衡量的纠正措施；应用控制层级；分配责任和截止日期</span>
+        </td>
+        <td>
+          <span class="en-p">Corrective actions should eliminate or reduce the hazard, not just retrain. Use SMART criteria: Specific, Measurable, Assignable, Realistic, Time-bound.</span>
+          <span class="zh-p" style="color:#666;">纠正措施应消除或减少危害，而不仅仅是重新培训。使用SMART标准：具体、可衡量、可分配、现实、有时限。</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>7. 跟踪 / Follow-Up</strong></td>
+        <td>
+          <span class="en-p">Verify corrective actions are implemented; evaluate effectiveness (did the hazard actually decrease?); share lessons learned across the organization</span>
+          <span class="zh-p" style="color:#666;">验证纠正措施已实施；评估有效性（危害是否实际减少了？）；在整个组织内分享经验教训</span>
+        </td>
+        <td>
+          <span class="en-p">Without follow-up, corrective actions often fade. Schedule verification at defined intervals. Close the loop.</span>
+          <span class="zh-p" style="color:#666;">没有跟踪，纠正措施往往会逐步消失。按规定的间隔安排验证。形成闭环。</span>
+        </td>
+      </tr>
+    </table>
+
+    <div class="important">
+      <strong>CSP 考试技巧 / Exam Tip:</strong><br>
+      <span class="en-p">The investigation must begin immediately after the incident. The first priority is always medical care and scene safety. Only after the scene is secured do you begin evidence collection. Memorize the sequence: Secure → Collect → Interview → Analyze → Root Causes → Corrective Actions → Follow-Up.</span>
+      <span class="zh-p" style="color:#666;">调查必须在事故发生后立即开始。首要任务始终是医疗救助和现场安全。只有在现场安全得到保障后，才能开始收集证据。牢记顺序：保护→收集→访谈→分析→根本原因→纠正措施→跟踪。</span>
+    </div>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-high">必考 HIGH</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "What is the FIRST step in an incident investigation?"<br>
+        <strong>答题要点 / Key point:</strong> 第一步永远是<strong>医疗救助与现场安全</strong>（现场隔离保护），然后才收集证据。七步顺序：Secure→Collect→Interview→Analyze→Root Cause→Corrective→Follow-Up。纠正措施用SMART（具体/可衡量/可分配/现实/有时限），且按控制层级选（不止重新培训）。
+      </div>
+    </div>
+
+    <div class="mnemonic">
+      <span class="mn-label">🧠 记忆口诀 / Mnemonic:</span>
+      <span class="mn-content"><strong>"S-C-I-A-R-C-F"</strong> — Secure, Collect, Interview, Analyze, Root cause, Corrective, Follow-up。中文"护-采-访-析-根-纠-跟"。纠正措施用<strong>SMART</strong>（S-M-A-R-T）。</span>
+    </div>
+  </div>
+
+  <div id="quiz-group-2"></div>
+
+
+  <div class="knowledge-card">
+    <h2>7.3 证据收集与证据链 / Evidence Collection & Chain of Custody</h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>Yates Ch.20</span>
+    </div>
+
+    <p class="bi-p">
+      <span class="en-p">Evidence is the foundation of an investigation. Collect it systematically and document everything.</span>
+      <span class="zh-p" style="color:#666;">证据是调查的基础。系统收集并记录一切。</span>
+    </p>
+
+    <h3>证据类型 / Types of Evidence</h3>
+    <table class="bi-table">
+      <tr><th>类型 / Type</th><th>示例 / Examples</th></tr>
+      <tr>
+        <td><strong>实物证据 / Physical Evidence</strong></td>
+        <td><span class="en-p">Damaged equipment, tools, PPE, machine parts, materials, product samples</span><span class="zh-p" style="color:#666;">受损设备、工具、PPE、机器零件、材料、产品样本</span></td>
+      </tr>
+      <tr>
+        <td><strong>文件证据 / Documentary Evidence</strong></td>
+        <td><span class="en-p">Procedures, work instructions, JSA/JHA, training records, maintenance logs, inspection reports, shift logs</span><span class="zh-p" style="color:#666;">程序、作业指导书、JSA/JHA、培训记录、维修日志、检查报告、交接班日志</span></td>
+      </tr>
+      <tr>
+        <td><strong>数字证据 / Digital Evidence</strong></td>
+        <td><span class="en-p">CCTV footage, access-control logs, SCADA/PCS data, machine data logs, emails, photos</span><span class="zh-p" style="color:#666">闭路电视录像、门禁日志、SCADA/PCS数据、机器数据日志、电子邮件、照片</span></td>
+      </tr>
+      <tr>
+        <td><strong>证人证词 / Testimonial Evidence</strong></td>
+        <td><span class="en-p">Witness statements, interviews, expert opinions</span><span class="zh-p" style="color:#666">证人陈述、访谈、专家意见</span></td>
+      </tr>
+      <tr>
+        <td><strong>测量数据 / Measurement Data</strong></td>
+        <td><span class="en-p">Noise, chemical exposure, illumination, distances, temperatures, video timelines</span><span class="zh-p" style="color:#666">噪声、化学暴露、照度、距离、温度、视频时间线</span></td>
+      </tr>
+    </table>
+
+    <h3>证据链 / Chain of Custody</h3>
+    <ul>
+      <li class="bi-li">
+        <span class="en-li"><strong>Definition:</strong> A documented, unbroken record of who collected, handled, transferred, and stored each piece of evidence, from collection to final disposition.</span>
+        <span class="zh-li"><strong>定义：</strong>一份文件化、不间断的记录，记载每项证据从收集到最终处置过程中由谁收集、处理、转移和保管。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Purpose:</strong> Ensures evidence is authentic and has not been altered, supporting legal and regulatory defensibility.</span>
+        <span class="zh-li"><strong>目的：</strong>确保证据真实且未被篡改，支持法律和法规层面的可辩护性。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Key elements:</strong> Unique identifier for each item, date/time of collection, collector's signature, every transfer documented, secure storage, original condition preservation.</span>
+        <span class="zh-li"><strong>关键要素：</strong>每件物品的唯一标识符、收集日期/时间、收集人签名、每次移交都记录、安全保管、保持原始状况。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">Photograph the scene before moving anything; mark evidence locations on a sketch.</span>
+        <span class="zh-li">在移动任何物品前拍照记录现场；在草图上标记证据位置。</span>
+      </li>
+    </ul>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-mid">常考 MEDIUM</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "What is the purpose of a chain of custody?"<br>
+        <strong>答题要点 / Key point:</strong> 证据链=不间断记录每件证据由谁收集/处理/转移/保管，确保真实未被篡改（法律可辩护性）。证据类型五类：实物/文件/数字/证词/测量。铁律：移动任何物品前先拍照，草图标记位置。
+      </div>
+    </div>
+  </div>
+
+  <div id="quiz-group-3"></div>
+
+
+  <div class="knowledge-card">
+    <h2>7.4 证人访谈技巧 / Witness Interviewing Techniques</h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>Yates Ch.20</span>
+    </div>
+
+    <p class="bi-p">
+      <span class="en-p">Witnesses are interviewed promptly, separately, and with open-ended questions. Interviews are conversations to gather facts, not interrogations.</span>
+      <span class="zh-p" style="color:#666">证人应被及时、单独地访谈，使用开放式问题。访谈是收集事实的对话，而非审讯。</span>
+    </p>
+
+    <h3>有效访谈原则 / Effective Interviewing Principles</h3>
+    <table class="bi-table">
+      <tr><th>原则 / Principle</th><th>说明 / Explanation</th></tr>
+      <tr>
+        <td><strong>及时 / Timeliness</strong></td>
+        <td><span class="en-p">Interview as soon as possible — memories fade rapidly, and witnesses talk to each other.</span><span class="zh-p" style="color:#666">尽快访谈——记忆会迅速消退，证人之间会相互交流。</span></td>
+      </tr>
+      <tr>
+        <td><strong>单独 / Separate</strong></td>
+        <td><span class="en-p">Interview witnesses one at a time to avoid groupthink and contamination of accounts.</span><span class="zh-p" style="color:#666">逐一访谈以避免从众思维和陈述相互污染。</span></td>
+      </tr>
+      <tr>
+        <td><strong>开放式问题 / Open-Ended Questions</strong></td>
+        <td><span class="en-p">Use "What happened then?" not "Did he remove the guard?" Open questions elicit full narratives.</span><span class="zh-p" style="color:#666">用"接下来发生了什么？"而非"他是否取下了防护罩？"开放式问题引出完整叙述。</span></td>
+      </tr>
+      <tr>
+        <td><strong>避免诱导 / Avoid Leading</strong></td>
+        <td><span class="en-p">Do not suggest answers; leading questions bias the account.</span><span class="zh-p" style="color:#666">不要暗示答案；诱导性问题会歪曲陈述。</span></td>
+      </tr>
+      <tr>
+        <td><strong>不责备 / No Blame</strong></td>
+        <td><span class="en-p">Assure the witness the purpose is prevention, not punishment. Fear suppresses facts.</span><span class="zh-p" style="color:#666">向证人保证目的是预防而非惩罚。恐惧会压制事实。</span></td>
+      </tr>
+      <tr>
+        <td><strong>记录 / Recording</strong></td>
+        <td><span class="en-p">Take notes; record audio/video only with consent; have the witness review their statement.</span><span class="zh-p" style="color:#666">做笔记；仅在征得同意后录音/录像；请证人复核其陈述。</span></td>
+      </tr>
+    </table>
+
+    <h3>访谈流程 / Interview Flow</h3>
+    <ol>
+      <li class="bi-li">
+        <span class="en-li"><strong>Put them at ease:</strong> Introduce yourself, explain the purpose, and set a non-threatening tone.</span>
+        <span class="zh-li"><strong>让对方放松：</strong>自我介绍、说明目的、营造非威胁性氛围。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Let them tell their story:</strong> Ask open-ended questions, listen actively, minimize interruptions.</span>
+        <span class="zh-li"><strong>让其讲述经过：</strong>提出开放式问题、积极倾听、尽量减少打断。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Clarify and probe:</strong> Ask follow-up questions to clarify details and fill gaps in the timeline.</span>
+        <span class="zh-li"><strong>澄清与追问：</strong>提出追问以澄清细节并填补时间线空白。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Close and document:</strong> Summarize key points, thank the witness, and document the account.</span>
+        <span class="zh-li"><strong>收尾与记录：</strong>总结要点、感谢证人、记录陈述。</span>
+      </li>
+    </ol>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-mid">常考 MEDIUM</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "Which question is most appropriate when interviewing a witness?"<br>
+        <strong>答题要点 / Key point:</strong> 六原则：及时（记忆快速消退）、单独（避免从众污染）、开放式问题（"发生了什么？"）、避免诱导、不责备（恐惧压制事实）、征得同意才录音+请证人复核。访谈四步：放松→讲述→澄清→收尾记录。
+      </div>
+    </div>
+
+    <div class="exam-scenario">
+      <div class="es-label">📝 真题情景 / Exam Scenario:</div>
+      <div class="es-question">"An investigator asks a witness: 'Did the operator remove the guard before the accident?' Is this appropriate?"</div>
+      <div><strong>最佳答案 / Best answer:</strong> No — it is a leading question that suggests an answer and biases the account. 解析：应改用开放式问题（"请描述事故前后你看到的操作过程"），避免诱导。访谈目的是收集事实而非确认预设结论。</div>
+    </div>
+  </div>
+
+  <div id="quiz-group-4"></div>
+
+
+  <div class="knowledge-card">
+    <h2>7.5 根源分析方法 / Root Cause Analysis Methods</h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>Brauer Ch.36 · Yates Ch.20</span>
+    </div>
+
+    <h3>5Why法 / 5 Whys</h3>
+    <p class="bi-p">
+      <span class="en-p"><span class="bi-term"><span class="zh">5Why法</span><span class="en">5 Whys</span><span class="vocab-star" data-term="5 Whys">☆</span></span> is a simple but powerful technique: ask "why?" repeatedly (typically five times) until you reach the root cause. Each answer becomes the basis for the next "why?"</span>
+      <span class="zh-p" style="color:#666;">5Why法是一种简单但强大的技术：反复问"为什么？"（通常五次），直到找到根本原因。每个答案都成为下一个"为什么"的基础。</span>
+    </p>
+    <p class="bi-p">
+      <span class="en-p"><strong>Example:</strong> Worker slipped and fell. <em>Why?</em> Floor was wet. <em>Why?</em> Pipe leaked. <em>Why?</em> Gasket failed. <em>Why?</em> No preventive maintenance schedule. <em>Why?</em> Maintenance budget was cut. → <strong>Root cause: inadequate resource allocation for maintenance.</strong></span>
+      <span class="zh-p" style="color:#666;"><strong>示例：</strong>工人滑倒摔伤。<em>为什么？</em>地面湿滑。<em>为什么？</em>管道泄漏。<em>为什么？</em>密封垫失效。<em>为什么？</em>没有预防性维护计划。<em>为什么？</em>维护预算被削减。→<strong>根本原因：维护资源分配不足。</strong></span>
+    </p>
+    <ul>
+      <li class="bi-li">
+        <span class="en-li">"Five" is a guideline, not a fixed number — keep asking until you reach a system-level cause where a corrective action can prevent recurrence.</span>
+        <span class="zh-li">"五"是指导数字而非固定数目——一直问到达到系统层面、可通过纠正措施防止再发生的原因为止。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">Limitation: single-chain analysis may miss multiple contributing causes; best combined with other methods (e.g., Fishbone).</span>
+        <span class="zh-li">局限：单链条分析可能遗漏多个促成因素；最好与其他方法结合（如鱼骨图）。</span>
+      </li>
+    </ul>
+
+    <h3>鱼骨图 / 石川图 / Fishbone / Ishikawa Diagram</h3>
+    <p class="bi-p">
+      <span class="en-p">The <span class="bi-term"><span class="zh">鱼骨图</span><span class="en">Fishbone Diagram</span><span class="vocab-star" data-term="Fishbone Diagram (Ishikawa)">☆</span></span> (also called Cause-and-Effect Diagram or Ishikawa Diagram) organizes potential causes into categories. The six classic categories (6Ms):</span>
+      <span class="zh-p" style="color:#666;">鱼骨图（也称因果图或石川图）将潜在原因组织为不同类别。六个经典类别（6M）包括：</span>
+    </p>
+
+    <svg class="diagram-svg" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+      <!-- Main spine (horizontal) -->
+      <line x1="30" y1="150" x2="570" y2="150" stroke="#1e3a5f" stroke-width="3"/>
+      <!-- Head: effect/incident box -->
+      <rect x="500" y="130" width="70" height="40" rx="4" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+      <text x="535" y="150" text-anchor="middle" font-size="10" fill="#991b1b" font-weight="bold">事故</text>
+      <text x="535" y="162" text-anchor="middle" font-size="8" fill="#991b1b">Incident</text>
+      <!-- Top ribs -->
+      <path d="M 120 150 L 70 70 L 170 70 Z" fill="none" stroke="#16a34a" stroke-width="2"/>
+      <path d="M 220 150 L 170 60 L 270 60 Z" fill="none" stroke="#2563eb" stroke-width="2"/>
+      <path d="M 320 150 L 270 70 L 370 70 Z" fill="none" stroke="#f59e0b" stroke-width="2"/>
+      <!-- Bottom ribs -->
+      <path d="M 160 150 L 110 230 L 210 230 Z" fill="none" stroke="#db2777" stroke-width="2"/>
+      <path d="M 260 150 L 210 240 L 310 240 Z" fill="none" stroke="#4f46e5" stroke-width="2"/>
+      <path d="M 360 150 L 310 230 L 410 230 Z" fill="none" stroke="#0891b2" stroke-width="2"/>
+      <!-- Category labels (top) -->
+      <text x="100" y="48" text-anchor="middle" font-size="10" fill="#166534" font-weight="bold">人员</text>
+      <text x="100" y="60" text-anchor="middle" font-size="8" fill="#166534">Man/People</text>
+      <text x="200" y="38" text-anchor="middle" font-size="10" fill="#1e40af" font-weight="bold">设备</text>
+      <text x="200" y="50" text-anchor="middle" font-size="8" fill="#1e40af">Machine</text>
+      <text x="300" y="48" text-anchor="middle" font-size="10" fill="#92400e" font-weight="bold">材料</text>
+      <text x="300" y="60" text-anchor="middle" font-size="8" fill="#92400e">Materials</text>
+      <!-- Category labels (bottom) -->
+      <text x="140" y="252" text-anchor="middle" font-size="10" fill="#9d174d" font-weight="bold">方法</text>
+      <text x="140" y="264" text-anchor="middle" font-size="8" fill="#9d174d">Methods</text>
+      <text x="240" y="262" text-anchor="middle" font-size="10" fill="#3730a3" font-weight="bold">环境</text>
+      <text x="240" y="274" text-anchor="middle" font-size="8" fill="#3730a3">Environment</text>
+      <text x="340" y="252" text-anchor="middle" font-size="10" fill="#155e75" font-weight="bold">测量</text>
+      <text x="340" y="264" text-anchor="middle" font-size="8" fill="#155e75">Measurement</text>
+      <text x="440" y="252" text-anchor="middle" font-size="9" fill="#64748b">(6M 六类)</text>
+    </svg>
+
+    <table class="bi-table">
+      <tr><th>类别 / Category</th><th>要问的问题 / Questions to Ask</th></tr>
+      <tr>
+        <td><strong>人员 / People</strong></td>
+        <td><span class="en-p">Was training adequate? Fatigue? Communication? Experience level?</span><span class="zh-p" style="color:#666;">培训是否充分？疲劳？沟通？经验水平？</span></td>
+      </tr>
+      <tr>
+        <td><strong>设备 / Equipment</strong></td>
+        <td><span class="en-p">Was equipment fit for purpose? Maintained? Guards functional? Design flaws?</span><span class="zh-p" style="color:#666;">设备是否适合用途？是否维护？防护装置功能是否正常？设计缺陷？</span></td>
+      </tr>
+      <tr>
+        <td><strong>材料 / Materials</strong></td>
+        <td><span class="en-p">Were materials as specified? Substitutions? Contaminants? Handling requirements?</span><span class="zh-p" style="color:#666;">材料是否符合规格？是否有替代品？污染物？处理要求？</span></td>
+      </tr>
+      <tr>
+        <td><strong>方法 / Methods</strong></td>
+        <td><span class="en-p">Were procedures clear, current, and followed? Was there a procedure? Workarounds?</span><span class="zh-p" style="color:#666;">程序是否清晰、最新且被遵守？是否有程序？是否有变通做法？</span></td>
+      </tr>
+      <tr>
+        <td><strong>环境 / Environment</strong></td>
+        <td><span class="en-p">Lighting? Temperature? Noise? Housekeeping? Weather? Layout?</span><span class="zh-p" style="color:#666;">照明？温度？噪声？整洁？天气？布局？</span></td>
+      </tr>
+      <tr>
+        <td><strong>测量 / Measurement</strong></td>
+        <td><span class="en-p">Were inspections adequate? Monitoring? Calibration? Performance metrics driving behavior?</span><span class="zh-p" style="color:#666;">检查是否充分？监测？校准？绩效指标是否驱动行为？</span></td>
+      </tr>
+    </table>
+
+    <h3>其他根源分析方法 / Other RCA Methods</h3>
+    <ul>
+      <li class="bi-li">
+        <span class="en-li"><strong><span class="bi-term"><span class="zh">屏障分析</span><span class="en">Barrier Analysis</span><span class="vocab-star" data-term="Barrier Analysis">☆</span></span>:</strong> Identifies the barriers (controls) that should have prevented the incident and analyzes why each barrier failed. Useful for process safety incidents.</span>
+        <span class="zh-li">识别本应防止事故发生的屏障（控制措施），并分析每个屏障为何失效。适用于工艺安全事故。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong><span class="bi-term"><span class="zh">变更分析</span><span class="en">Change Analysis</span><span class="vocab-star" data-term="Change Analysis">☆</span></span>:</strong> Compares the situation before and after a change (new equipment, procedure, personnel, material) to identify what changed and whether it contributed to the incident. Closely linked to Management of Change (MOC).</span>
+        <span class="zh-li">比较变更前后的情况（新设备、程序、人员、材料），以识别发生了什么变化以及它是否促成了事故。与变更管理(MOC)密切相关。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong><span class="bi-term"><span class="zh">故障树分析</span><span class="en">Fault Tree Analysis (FTA)</span><span class="vocab-star" data-term="Fault Tree Analysis (FTA)">☆</span></span>:</strong> Top-down, deductive analysis using Boolean logic (AND/OR gates) to identify combinations of failures that lead to a top event.</span>
+        <span class="zh-li">自上而下的演绎分析，使用布尔逻辑（与/或门）识别导致顶事件的故障组合。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong><span class="bi-term"><span class="zh">事件因果图表法</span><span class="en">Events & Causal Factors Charting (ECFA)</span></span>:</strong> Builds a timeline of the event sequence and causal factors, mapping conditions that contributed. Widely used in process safety (e.g., after the BP Texas City incident).</span>
+        <span class="zh-li">构建事件序列和因果因素的时间线，标绘促成条件。广泛用于工艺安全（如BP德州城事故后）。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong><span class="bi-term"><span class="zh">因果树 / 前因分析</span><span class="en">MORT (Management Oversight & Risk Tree)</span></span>:</strong> A comprehensive, structured analysis using a pre-defined tree of management system elements to identify why controls were absent or inadequate.</span>
+        <span class="zh-li">使用预定义的管理体系要素树进行全面的结构化分析，以识别控制措施为何缺失或不足。</span>
+      </li>
+    </ul>
+
+    <h3>根源分析技术选择 / Choosing an RCA Method</h3>
+    <table class="bi-table">
+      <tr><th>方法 / Method</th><th>最佳用途 / Best For</th><th>特点 / Features</th></tr>
+      <tr>
+        <td>5 Whys</td>
+        <td><span class="en-p">Simple incidents, single causal chain</span><span class="zh-p" style="color:#666;">简单事故、单一因果链</span></td>
+        <td><span class="en-p">Fast, easy, no tools</span><span class="zh-p" style="color:#666">快速、简便、无需工具</span></td>
+      </tr>
+      <tr>
+        <td>Fishbone</td>
+        <td><span class="en-p">Team brainstorming of all potential causes</span><span class="zh-p" style="color:#666">团队头脑风暴所有潜在原因</span></td>
+        <td><span class="en-p">Visual, comprehensive categories</span><span class="zh-p" style="color:#666">可视化、类别全面</span></td>
+      </tr>
+      <tr>
+        <td>Barrier Analysis</td>
+        <td><span class="en-p">Process safety, energy-based hazards</span><span class="zh-p" style="color:#666">工艺安全、能量型危害</span></td>
+        <td><span class="en-p">Focuses on layers of protection</span><span class="zh-p" style="color:#666">聚焦保护层</span></td>
+      </tr>
+      <tr>
+        <td>Change Analysis</td>
+        <td><span class="en-p">Incidents after a modification</span><span class="zh-p" style="color:#666">变更后的事故</span></td>
+        <td><span class="en-p">Before/after comparison; links to MOC</span><span class="zh-p" style="color:#666">前后对比；与MOC关联</span></td>
+      </tr>
+      <tr>
+        <td>FTA</td>
+        <td><span class="en-p">Complex systems, combinations of failures</span><span class="zh-p" style="color:#666">复杂系统、故障组合</span></td>
+        <td><span class="en-p">Quantitative, Boolean logic</span><span class="zh-p" style="color:#666">定量、布尔逻辑</span></td>
+      </tr>
+      <tr>
+        <td>ECFA / MORT</td>
+        <td><span class="en-p">Major process safety incidents</span><span class="zh-p" style="color:#666">重大工艺安全事故</span></td>
+        <td><span class="en-p">Structured, comprehensive</span><span class="zh-p" style="color:#666">结构化、全面</span></td>
+      </tr>
+    </table>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-mid">常考 MEDIUM</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "An incident occurred shortly after a process change. Which RCA method is MOST appropriate?"<br>
+        <strong>答题要点 / Key point:</strong> 方法选择：变更后事故→Change Analysis（与MOC关联）；能量型/工艺安全→Barrier Analysis（保护层）；简单单一因果链→5 Whys；团队头脑风暴→Fishbone；复杂系统故障组合→FTA（布尔逻辑）；重大工艺事故→ECFA/MORT。5W-M1E（人机料法环测）是Fishbone分类。
+      </div>
+    </div>
+  </div>
+
+  <div id="quiz-group-5"></div>
+
+
+  <div class="knowledge-card">
+    <h2>7.6 未遂事件报告与海因里希三角 / Near-Miss Reporting & Heinrich's Triangle</h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>Brauer Ch.3 · Yates Ch.20</span>
+    </div>
+
+    <p class="bi-p">
+      <span class="en-p"><span class="bi-term"><span class="zh">未遂事件报告</span><span class="en">Near-miss reporting</span><span class="vocab-star" data-term="Near-Miss Reporting">☆</span></span> is the reporting of incidents that could have resulted in injury or damage but did not (by chance). A strong near-miss reporting culture is a hallmark of a mature safety program.</span>
+      <span class="zh-p" style="color:#666;">未遂事件报告是对本可能导致伤害或损失但（因偶然）并未发生的事件的报告。强大的未遂事件报告文化是成熟安全项目的标志。</span>
+    </p>
+
+    <h3>海因里希三角 (1931) / Heinrich's Triangle (1931)</h3>
+    <div class="heinrich-triangle">
+      <div class="triangle-stack">
+        <div class="tri-level fatality">1 重大伤害/死亡 / 1 Major Injury / Fatality</div>
+        <div class="tri-level major">29 轻微伤害 / 29 Minor Injuries</div>
+        <div class="tri-level minor">300 无伤害事故/财产损失 / 300 No-Injury Incidents / Property Damage</div>
+        <div class="tri-level nearmiss">（底层：不安全行为与条件——数千）/ (Underlying: Unsafe Acts & Conditions — Thousands)</div>
+      </div>
+    </div>
+
+    <p class="bi-p">
+      <span class="en-p"><strong>Key insight:</strong> For every major injury, there are many more minor injuries and near-misses. By investigating and correcting the causes of near-misses and minor incidents, you can prevent the major ones. Near-misses are <strong>free learning opportunities</strong> — no one was hurt, but the same causes could lead to a serious incident next time.</span>
+      <span class="zh-p" style="color:#666;"><strong>核心见解：</strong>每一起重大伤害背后，有更多轻微伤害和未遂事件。通过调查和纠正未遂事件和轻微事故的原因，可以预防重大事故。未遂事件是<strong>免费的学习机会</strong>——没有人受伤，但同样的原因下次可能导致严重事故。</span>
+    </p>
+
+    <div class="important">
+      <strong>现代观点 / Modern perspective:</strong><br>
+      <span class="en-p">Heinrich's exact ratios (1:29:300) are debated, but the principle is sound. Frank Bird updated the ratio to 1:10:30:600 (serious : minor : property damage : near-miss). The takeaway: addressing near-misses and minor incidents prevents serious ones. Organizations with high near-miss reporting rates typically have lower serious incident rates. Note that near-misses are NOT OSHA-recordable (no injury/illness occurred).</span>
+      <span class="zh-p" style="color:#666;">海因里希的精确比例（1:29:300）存在争议，但原则是正确的。弗兰克·伯德将比例更新为1:10:30:600（严重:轻微:财产损失:未遂事件）。要点：处理未遂事件和轻微事故可预防严重事故。未遂事件报告率高的组织通常严重事故率较低。注意：未遂事件不属于OSHA可记录范围（未发生伤害/疾病）。</span>
+    </div>
+
+    <h3>未遂事件报告的好处 / Benefits of Near-Miss Reporting</h3>
+    <ul>
+      <li class="bi-li">
+        <span class="en-li">Identifies hazards before they cause harm — free lessons.</span>
+        <span class="zh-li">在危害造成伤害前识别——免费教训。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">High reporting volume provides statistically better data than rare serious incidents.</span>
+        <span class="zh-li">高报告量比罕见的严重事故提供统计上更好的数据。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">Signals a "just culture" — workers report without fear of blame.</span>
+        <span class="zh-li">表明存在"公正文化"——工人不惧追责地报告。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">Enables proactive corrective action before a serious event.</span>
+        <span class="zh-li">在严重事件发生前实现主动的纠正措施。</span>
+      </li>
+    </ul>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-mid">常考 MEDIUM</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "What does a high near-miss reporting rate most likely indicate?"<br>
+        <strong>答题要点 / Key point:</strong> 高未遂报告率=健康信号：表明<strong>公正文化（just culture）</strong>、工人无惧追责地报告；提供统计上更好的数据；实现事前主动纠正。海因里希三角（1:29:300）也需记忆。低报告率常是坏事（文化恐惧）而非"没事故"。
+      </div>
+    </div>
+  </div>
+
+  <div id="quiz-group-6"></div>
+
+
+  <div class="knowledge-card">
+    <h2>7.7 纠正措施与预防措施 / Corrective Actions vs. Preventive Actions</h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>ISO 45001:2018 Clause 10.2 · Brauer Ch.36</span>
+    </div>
+
+    <table class="bi-table">
+      <tr><th>特性 / Feature</th><th>纠正措施 / Corrective Action</th><th>预防措施 / Preventive Action</th></tr>
+      <tr>
+        <td><strong>定义 / Definition</strong></td>
+        <td>
+          <span class="en-p">Action to eliminate the cause of a detected nonconformity or incident and prevent its RECURRENCE</span>
+          <span class="zh-p" style="color:#666;">消除已发现的不符合或事故原因并防止其<strong>再发生</strong>的措施</span>
+        </td>
+        <td>
+          <span class="en-p">Action to eliminate the cause of a POTENTIAL nonconformity or incident and prevent its OCCURRENCE</span>
+          <span class="zh-p" style="color:#666;">消除<strong>潜在</strong>不符合或事故原因并防止其<strong>发生</strong>的措施</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>触发条件 / Trigger</strong></td>
+        <td>
+          <span class="en-p">An incident or nonconformity has already occurred</span>
+          <span class="zh-p" style="color:#666;">事故或不符合已经发生</span>
+        </td>
+        <td>
+          <span class="en-p">A potential problem is identified (risk assessment, near-miss trend, audit finding)</span>
+          <span class="zh-p" style="color:#666;">识别出潜在问题（风险评估、未遂事件趋势、审核发现）</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>关注点 / Focus</strong></td>
+        <td>
+          <span class="en-p">Reactive — fix what went wrong</span>
+          <span class="zh-p" style="color:#666;">反应性——修复出了什么问题</span>
+        </td>
+        <td>
+          <span class="en-p">Proactive — prevent what could go wrong</span>
+          <span class="zh-p" style="color:#666;">主动性——预防可能出问题的地方</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>示例 / Example</strong></td>
+        <td>
+          <span class="en-p">After a fall, install guardrails where the fall occurred</span>
+          <span class="zh-p" style="color:#666;">发生坠落后，在坠落处安装护栏</span>
+        </td>
+        <td>
+          <span class="en-p">During a risk assessment, identify unprotected edges and install guardrails before anyone falls</span>
+          <span class="zh-p" style="color:#666;">在风险评估中识别未防护边缘，在有人坠落前安装护栏</span>
+        </td>
+      </tr>
+    </table>
+
+    <div class="important">
+      <strong>ISO 45001注意 / ISO 45001 Note:</strong><br>
+      <span class="en-p">In ISO 45001 Clause 10.2, the standard requires corrective action for nonconformities (reactive). The concept of "preventive action" as a separate clause was absorbed into risk-based planning (Clause 6.1) — addressing risks and opportunities BEFORE they become problems. This is the ISO 9001:2015/45001:2018 evolution.</span>
+      <span class="zh-p" style="color:#666;">在ISO 45001条款10.2中，标准要求对不符合采取纠正措施（反应性）。"预防措施"作为单独条款的概念已被吸收进基于风险的策划（条款6.1）——在问题发生前处理风险和机遇。这是ISO 9001:2015/45001:2018的演变。</span>
+    </div>
+
+    <div class="confusion-box">
+      <div class="cb-label">⚖️ 易混淆对比 / Common Confusions:</div>
+      <table class="study-table">
+        <tr><th>Corrective Action 纠正措施</th><th>Preventive Action 预防措施</th><th>关键区别 / Key Difference</th></tr>
+        <tr><td>反应性：针对已发生的问题/不符合（事故后装护栏）</td><td>主动性：在问题发生前消除潜在风险（风险评估时装护栏）</td><td>纠正=修复已出问题的；预防=消除可能出问题的。ISO 45001中"预防措施"已并入基于风险的策划（条款6.1）</td></tr>
+      </table>
+    </div>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-mid">常考 MEDIUM</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "Which action is preventive rather than corrective?"<br>
+        <strong>答题要点 / Key point:</strong> 纠正=反应（针对已有问题）；预防=主动（针对潜在风险）。ISO 45001：纠正措施在10.2；"预防"并入6.1基于风险的策划。示例：坠落后才装护栏=纠正；风险评估时先装护栏=预防。
+      </div>
+    </div>
+  </div>
+
+  <div id="quiz-group-7"></div>
+
+
+  <div class="knowledge-card">
+    <h2>7.8 变更管理 (MOC) / Management of Change (MOC)</h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>29 CFR 1910.119(l) · Brauer Ch.24 · Brauer Ch.36</span>
+    </div>
+
+    <p class="bi-p">
+      <span class="en-p"><span class="bi-term"><span class="zh">变更管理</span><span class="en">Management of Change (MOC)</span><span class="vocab-star" data-term="Management of Change (MOC)">☆</span></span> is a systematic process to evaluate and control risks associated with changes to facilities, operations, equipment, personnel, or procedures. In the context of incident investigation, MOC is critical because many incidents occur during periods of change. The CSP11 blueprint (Domain 2, item 5) specifically tests MOC in three phases: before, during, and after the change.</span>
+      <span class="zh-p" style="color:#666;">变更管理(MOC)是一个系统化过程，用于评估和控制与设施、操作、设备、人员或程序变更相关的风险。在事故调查中，MOC至关重要，因为许多事故发生在变更期间。CSP11蓝图（领域2，第5项）专门考查MOC的三个阶段：变更前、变更中和变更后。</span>
+    </p>
+
+    <h3>MOC三阶段流程 / MOC Three-Phase Process</h3>
+    <table class="bi-table">
+      <tr><th>阶段 / Phase</th><th>关键活动 / Key Activities</th><th>常见失效 / Common Failures</th></tr>
+      <tr>
+        <td><strong>变更前 (PRIOR) / 变更前</strong></td>
+        <td>
+          <span class="en-p">Define the change scope clearly; identify hazards and assess risks; determine controls using hierarchy; obtain multi-discipline approval BEFORE implementation; update PSI and operating procedures provisionally; develop pre-startup safety review (PSSR) plan; communicate pending change to affected workers and train them.</span>
+          <span class="zh-p" style="color:#666;">明确定义变更范围；识别危害并评估风险；使用控制层级确定控制措施；在实施前获得多专业审批；临时更新PSI和操作规程；制定启动前安全审查(PSSR)计划；向受影响员工传达即将发生的变更并进行培训。</span>
+        </td>
+        <td>
+          <span class="en-p">Rushing approval under production pressure; underestimating scope ("just a small change"); skipping hazard review for "minor" changes; failure to involve all disciplines.</span>
+          <span class="zh-p" style="color:#666;">因生产压力仓促审批；低估范围（"只是小改动"）；对"微小"变更跳过危害审查；未能让所有专业参与。</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>变更中 (DURING) / 变更中</strong></td>
+        <td>
+          <span class="en-p">Execute the change according to approved plan and procedures; maintain continuous supervision; verify that actual installation matches design specifications; conduct ongoing monitoring for unexpected conditions; update affected personnel in real time; manage concurrent operations safely; document as-built conditions.</span>
+          <span class="zh-p" style="color:#666;">按照已批准的计划和程序执行变更；保持持续监督；验证实际安装符合设计规范；持续监控意外情况；实时更新受影响人员；安全管理同步操作；记录竣工状况。</span>
+        </td>
+        <td>
+          <span class="en-p">Deviation from approved plan without re-approval; field modifications ("we'll just do this differently"); loss of communication between shifts; unmanaged interactions with ongoing operations.</span>
+          <span class="zh-p" style="color:#666;">未经重新批准偏离已批准计划；现场修改（"我们就这么做不同的"）；班次间沟通丢失；与正在进行的操作的不受控交互。</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>变更后 (AFTER) / 变更后</strong></td>
+        <td>
+          <span class="en-p">Complete PSSR before introducing hazardous materials/energy; verify all training is complete; update all affected documents permanently (PSI, P&IDs, operating procedures, training materials, maintenance schedules); verify controls are effective under actual operating conditions; conduct post-implementation review after a defined period; close out MOC with formal sign-off; retain records.</span>
+          <span class="zh-p" style="color:#666;">在引入危险物料/能量之前完成PSSR；验证所有培训已完成；永久更新所有受影响的文件（PSI、P&ID、操作规程、培训材料、维护计划）；验证控制措施在实际操作条件下有效；在规定的期限后进行实施后审查；以正式签核关闭MOC；保留记录。</span>
+        </td>
+        <td>
+          <span class="en-p">Skipping PSSR because "it's already running"; failure to update documentation (creating future hazard from outdated info); declaring success before verifying sustained safe operation; loss of MOC records over time.</span>
+          <span class="zh-p" style="color:#666;">跳过PSSR因为"它已经在运行"；未能更新文件（因信息过时造成未来危害）；在验证持续安全运行之前宣布成功；MOC记录随时间长丢失。</span>
+        </td>
+      </tr>
+    </table>
+
+    <ul>
+      <li class="bi-li">
+        <span class="en-li"><strong>Changes requiring MOC / 需要MOC的变更:</strong> New equipment, modified processes, different materials/chemicals, revised procedures, organizational restructuring, new contractors, facility modifications</span>
+        <span class="zh-li">新设备、修改的工艺、不同的材料/化学品、修订的程序、组织重组、新承包商、设施改造</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>MOC process / MOC流程:</strong> (1) Define the change, (2) Assess hazards and risks, (3) Determine controls, (4) Obtain approvals before implementation, (5) Communicate and train affected workers, (6) Implement, (7) Verify controls are effective post-implementation, (8) Update documentation</span>
+        <span class="zh-li">(1) 定义变更，(2) 评估危害和风险，(3) 确定控制措施，(4) 实施前获得批准，(5) 沟通并培训受影响员工，(6) 实施，(7) 实施后验证控制措施有效，(8) 更新文件</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>OSHA PSM standard</strong> (29 CFR 1910.119(l)) requires MOC for covered processes</span>
+        <span class="zh-li">OSHA PSM标准（29 CFR 1910.119(l)）要求对适用工艺进行MOC</span>
+      </li>
+    </ul>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-mid">常考 MEDIUM</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "What must be completed before a change is implemented?"<br>
+        <strong>答题要点 / Key point:</strong> MOC八步：定义→评估危害→定控制→<strong>实施前批准</strong>→沟通培训→实施→验证有效→更新文件。变更后引入危险物料前须完成<strong>PSSR</strong>。PSM工艺强制（1910.119(l)）；同类替换可豁免。三阶段陷阱：实施前仓促审批/跳过危害审查、实施中偏离批准计划、实施后跳过PSSR/不更新文件。
+      </div>
+    </div>
+
+    <div class="exam-scenario">
+      <div class="es-label">📝 真题情景 / Exam Scenario:</div>
+      <div class="es-question">"A maintenance supervisor plans to swap a gasket material on a PSM-covered process 'just for cost.' Must MOC apply?"</div>
+      <div><strong>最佳答案 / Best answer:</strong> Yes — changing materials of construction is a change, not a replacement in kind, and PSM (1910.119(l)) requires MOC. 解析：材料变更（即使尺寸相同）触发MOC；必须评估危害、获批、更新PSI/文件，且变更后引入危险物料前需PSSR。材料不兼容是常见失效根因。</div>
+    </div>
+  </div>
+
+  <div id="quiz-group-8"></div>
+
+
+  <div class="knowledge-card">
+    <h2>7.9 事故成本：直接与间接 / Incident Costs: Direct & Indirect</h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>Brauer Ch.3 · Yates Ch.20</span>
+    </div>
+
+    <p class="bi-p">
+      <span class="en-p">Understanding incident costs is essential for justifying corrective actions and safety investments to management. The total cost of an incident far exceeds the visible costs.</span>
+      <span class="zh-p" style="color:#666;">理解事故成本对于向管理层论证纠正措施和安全投资的合理性至关重要。事故总成本远超可见成本。</span>
+    </p>
+
+    <table class="bi-table">
+      <tr><th>成本类型 / Cost Type</th><th>示例 / Examples</th><th>比例 / Ratio</th></tr>
+      <tr>
+        <td><strong>直接成本 / Direct Costs</strong></td>
+        <td><span class="en-p">Medical treatment, workers' compensation payments, disability payments, property damage repairs, insurance deductibles, OSHA fines, legal fees</span><span class="zh-p" style="color:#666;">医疗救治、工伤保险赔付、伤残赔付、财产损失修复、保险免赔额、OSHA罚款、法律费用</span></td>
+        <td><span class="en-p">Small portion of total — the "tip of the iceberg"</span><span class="zh-p" style="color:#666;">占总成本的小部分——"冰山一角"</span></td>
+      </tr>
+      <tr>
+        <td><strong>间接成本 / Indirect Costs</strong></td>
+        <td><span class="en-p">Lost productivity (injured worker and coworkers), investigation time, hiring and training replacement workers, overtime to cover absences, equipment downtime, reduced morale, reputation damage, increased insurance premiums, administrative burden, lost business opportunities</span><span class="zh-p" style="color:#666;">生产力损失（受伤工人和同事）、调查时间、替代工人的招聘与培训、弥补缺勤的加班、设备停机、士气下降、声誉受损、保险费上涨、行政管理负担、业务机会损失</span></td>
+        <td><span class="en-p">3–10 times the direct costs (studies range from 4x to 10x)</span><span class="zh-p" style="color:#666;">为直接成本的3–10倍（研究范围4x–10x）</span></td>
+      </tr>
+    </table>
+
+    <div class="formula-box">
+      <strong>总事故成本 / Total Incident Cost</strong> ≈ 直接成本 + 间接成本<br>
+      典型估算：间接成本 = 直接成本 × 3 至 10<br>
+      <small>示例：直接成本$10,000 → 总成本可能为$40,000–$110,000（以4–10倍估算）</small>
+    </div>
+
+    <div class="important">
+      <strong>CSP 考试技巧 / Exam Tip:</strong><br>
+      <span class="en-p">The classic CSP exam figure: indirect costs are 3 to 10 times direct costs. When justifying a corrective action to management, present the TOTAL cost (direct + indirect) — this is the strongest argument for investment in prevention.</span>
+      <span class="zh-p" style="color:#666;">CSP经典考点：间接成本为直接成本的3至10倍。向管理层论证纠正措施时，呈现总成本（直接+间接）——这是投资于预防的最有力论据。</span>
+    </div>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-high">必考 HIGH</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "Indirect costs of an incident are approximately how many times the direct costs?"<br>
+        <strong>答题要点 / Key point:</strong> 间接成本=直接成本的<strong>3–10倍</strong>（冰山一角：直接是看得见的、间接是水下的）。直接：医疗、工伤赔付、财产损失、罚款；间接：生产力损失、调查时间、士气、声誉。向管理层论证预防投资时用<strong>总成本</strong>（直接+间接）。
+      </div>
+    </div>
+
+    <div class="mnemonic">
+      <span class="mn-label">🧠 记忆口诀 / Mnemonic:</span>
+      <span class="mn-content"><strong>"冰山3-10倍"</strong> — 直接成本=冰山一角（看得见）；间接成本=冰山水下部分，是直接的<strong>3–10倍</strong>。中文"三到十倍、水下冰山"。向管理层算账：总成本=直接×(4~11)。</span>
+    </div>
+  </div>
+
+  <div id="quiz-group-9"></div>
+
+
+  <!-- QUIZ SECTION -->
+  <div id="quiz-root"></div>
+
+</div>
+
+<script src="quiz-engine.js?v=11"></script>
+<script src="vocab-engine.js?v=11"></script>
+<script>
+CSPQuiz.init({
+  quizId: 'week-07-quiz',
+  quizTitle: 'Week 7 Quiz: Incident Investigation & RCA / 第7周测验：事故调查与根源分析',
+  quizTopic: 'Domain 2 — Program Management',
+  containerId: 'quiz-root',
+  questions: [
+    {
+      text: 'What is the CORRECT first step in the incident investigation process after ensuring medical care has been provided?',
+      group: 1,
+      options: [
+        'Interview witnesses while their memory is fresh',
+        'Secure and preserve the incident scene',
+        'Begin root cause analysis using the 5 Whys method',
+        'Notify OSHA within the required reporting timeframe'
+      ],
+      correct: 1,
+      explanation: 'After providing medical care, the next step is to secure the scene to preserve evidence and prevent further injury. Interviews, analysis, and notifications come later. Scene preservation is critical — once the scene is disturbed, evidence may be lost permanently.\n\n在提供医疗救助后，下一步是保护现场，保存证据并防止进一步伤害。访谈、分析和通知在后。现场保护至关重要——一旦现场被扰动，证据可能永久丢失。'
+    },
+    {
+      text: 'When using the 5 Whys technique for root cause analysis, what is the primary goal?',
+      group: 1,
+      options: [
+        'To identify exactly five distinct causes for every incident',
+        'To determine which employee was at fault for the incident',
+        'To drill down through symptoms to reach underlying system-level causes',
+        'To classify the incident into one of five predetermined categories'
+      ],
+      correct: 2,
+      explanation: 'The 5 Whys technique is not about finding exactly five causes or assigning blame. It is about repeatedly asking "why" to move past immediate/superficial causes and reach deeper, system-level root causes. "Five" is a guideline — it may take fewer or more iterations.\n\n5Why法技术不是要找出恰好五个原因或追究责任。它是通过反复问"为什么"来超越即时/表面原因，达到更深层次的系统级根本原因。"五"是一个指导性数字——可能需要更少或更多的迭代。'
+    },
+    {
+      text: 'In Heinrich\'s Triangle, what is the approximate ratio of no-injury incidents to major injuries?',
+      group: 1,
+      options: [
+        '10:1',
+        '29:1',
+        '300:1',
+        '600:1'
+      ],
+      correct: 2,
+      explanation: 'Heinrich\'s original model proposed a ratio of 1 major injury : 29 minor injuries : 300 no-injury incidents. This means for every 300 near-misses/no-injury events, there were 29 minor injuries and 1 major injury. The key insight is that reducing the base of the triangle (near-misses) should reduce the tip (serious injuries).\n\n海因里希的原始模型提出1起重大伤害:29起轻微伤害:300起无伤害事故的比例。这意味着每300个未遂事件/无伤害事件对应29起轻微伤害和1起重大伤害。核心见解是减少三角底部（未遂事件）应能减少顶部（严重伤害）。'
+    },
+    {
+      text: 'Which of the following is the BEST description of the difference between a corrective action and a preventive action?',
+      group: 1,
+      options: [
+        'Corrective actions are expensive; preventive actions are cheap',
+        'Corrective actions address actual incidents to prevent recurrence; preventive actions address potential incidents to prevent occurrence',
+        'Corrective actions are assigned to supervisors; preventive actions are assigned to workers',
+        'Corrective actions require management approval; preventive actions do not'
+      ],
+      correct: 1,
+      explanation: 'Corrective action is reactive — it addresses a nonconformity or incident that has already occurred to prevent its recurrence. Preventive action is proactive — it addresses a potential nonconformity before it happens. This distinction is fundamental to management system standards like ISO 45001.\n\n纠正措施是反应性的——它处理已经发生的不符合或事故以防止其再发生。预防措施是主动性的——它在潜在不符合发生之前就加以处理。这一区别是ISO 45001等管理体系标准的基础。'
+    },
+    {
+      text: 'During a Fishbone (Ishikawa) diagram analysis, a safety professional categorizes potential causes into six groups. Which of the following is NOT one of the classic 6M categories?',
+      group: 2,
+      options: [
+        'Measurement',
+        'Management review',
+        'Materials',
+        'Mother Nature (Environment)'
+      ],
+      correct: 1,
+      explanation: 'The classic 6M categories are: Man (People), Machine (Equipment), Materials, Methods, Mother Nature (Environment), and Measurement. "Management review" is not one of the 6M categories — though management system weaknesses would be captured within Methods or People categories.\n\n经典的6M类别是：人员(Man)、设备(Machine)、材料(Materials)、方法(Methods)、环境(Mother Nature)和测量(Measurement)。"管理评审"不是6M类别之一——但管理体系弱点可在方法或人员类别中体现。'
+    },
+    {
+      text: 'Which of the following best describes Barrier Analysis as a root cause analysis technique?',
+      group: 2,
+      options: [
+        'Analyzing which physical barriers (guardrails, machine guards) failed during the incident',
+        'Identifying barriers/controls that should have prevented the incident and analyzing why each barrier failed',
+        'Creating a physical barrier around the incident scene to preserve evidence',
+        'Comparing the organization\'s safety barriers against industry benchmarks'
+      ],
+      correct: 1,
+      explanation: 'Barrier Analysis examines all barriers (controls, safeguards, procedures, training, PPE) that were intended to prevent the incident and analyzes why each one failed. Barriers can be physical (guards), procedural (permits), or human (training, supervision). The analysis identifies weaknesses in the layers of protection.\n\n屏障分析检查所有旨在预防事故的屏障（控制措施、安全装置、程序、培训、PPE），并分析每个屏障为何失效。屏障可以是物理的（防护罩）、程序的（许可证）或人为的（培训、监督）。该分析识别各保护层中的弱点。'
+    },
+    {
+      text: 'What is the primary reason near-miss reporting is considered a critical component of a mature safety program?',
+      group: 2,
+      options: [
+        'Near-miss reports satisfy OSHA recordkeeping requirements',
+        'Near-misses provide learning opportunities without the cost of an actual injury and indicate where serious incidents could occur',
+        'Near-miss reports reduce workers\' compensation insurance premiums directly',
+        'Near-miss reporting is required for ISO 45001 certification'
+      ],
+      correct: 1,
+      explanation: 'Near-misses are "free lessons" — they reveal hazards and system weaknesses without the human and financial cost of an actual injury. By investigating near-misses and correcting their causes, organizations can prevent future serious incidents. A high near-miss reporting rate typically correlates with a strong safety culture, not poor safety. Note near-misses are not OSHA-recordable.\n\n未遂事件是"免费的教训"——它们揭示了危害和系统弱点，而无需承受实际伤害带来的人员和财务成本。通过调查未遂事件并纠正其原因，组织可以预防未来的严重事故。高未遂事件报告率通常与强大的安全文化相关，而非安全状况差。注意未遂事件不属于OSHA可记录范围。'
+    },
+    {
+      text: 'Change Analysis as an incident investigation technique is most closely associated with which safety management process?',
+      group: 2,
+      options: [
+        'Job Safety Analysis (JSA)',
+        'Safety training needs assessment',
+        'Management of Change (MOC)',
+        'OSHA recordkeeping'
+      ],
+      correct: 2,
+      explanation: 'Change Analysis examines what changed before the incident — new equipment, modified procedures, different materials, new personnel, etc. This directly aligns with Management of Change (MOC), which is the systematic process to evaluate and control risks from changes. Incidents often occur during periods of change that were not properly assessed through MOC.\n\n变更分析检查事故发生前发生了什么变化——新设备、修改的程序、不同的材料、新人员等。这与变更管理(MOC)直接对应，后者是评估和控制变更风险的系统化过程。事故经常发生在未通过MOC正确评估的变更期间。'
+    },
+    {
+      text: 'According to the iceberg model of incident costs, indirect costs are typically what multiple of direct costs?',
+      group: 3,
+      options: [
+        'Equal to direct costs',
+        '1–2 times direct costs',
+        '3–10 times direct costs',
+        '20–50 times direct costs'
+      ],
+      correct: 2,
+      explanation: 'Indirect (hidden) costs are typically 3 to 10 times direct (visible) costs. Direct costs like medical bills and property damage are the "tip of the iceberg"; the larger hidden costs include lost productivity, investigation time, replacement labor, morale, and reputation damage.\n\n间接（隐藏）成本通常为直接（可见）成本的3至10倍。医疗费用和财产损失等直接成本是"冰山一角"；更大的隐藏成本包括生产力损失、调查时间、替代劳动力、士气和声誉损害。'
+    },
+    {
+      text: 'During an incident investigation, a worker states, "The guard was off because we were doing maintenance earlier." The investigation later finds no LOTO procedure exists for that equipment. Which statement best describes the analysis?',
+      group: 3,
+      options: [
+        'The worker\'s unsafe act is the root cause — they should have replaced the guard',
+        'The missing guard is an immediate cause; the absence of a LOTO procedure is the root cause',
+        'Both the missing guard and lack of procedure are immediate causes only',
+        'There is no root cause because no one was seriously injured'
+      ],
+      correct: 1,
+      explanation: 'The missing guard is the immediate cause (the unsafe condition directly associated with the event). The root cause is the system deficiency — no LOTO procedure exists, which made the unsafe condition possible. Root causes are system-level, not person-level.\n\n防护罩缺失是直接原因（与事件直接相关的不安全状况）。根本原因是系统缺陷——不存在LOTO程序，这使得不安全状况成为可能。根本原因是系统层面的，而非个人层面的。'
+    },
+    {
+      text: 'A chain of custody record is MOST important for which purpose?',
+      group: 3,
+      options: [
+        'To document that evidence was not tampered with, supporting legal defensibility',
+        'To speed up the investigation process',
+        'To reduce the cost of evidence collection',
+        'To assign blame to responsible parties'
+      ],
+      correct: 0,
+      explanation: 'A chain of custody is an unbroken, documented record of who collected, handled, and stored evidence. It ensures evidence authenticity and integrity, making it admissible and defensible in legal and regulatory proceedings.\n\n证据链是对谁收集、处理、保管证据的不间断文件化记录。它确保证据的真实性和完整性，使其在法律和监管程序中可采纳、可辩护。'
+    },
+    {
+      text: 'Which interviewing practice is MOST likely to bias a witness\'s account?',
+      group: 3,
+      options: [
+        'Interviewing witnesses separately',
+        'Using open-ended questions',
+        'Asking leading questions such as "So the guard was removed, right?"',
+        'Conducting the interview promptly'
+      ],
+      correct: 2,
+      explanation: 'Leading questions suggest an expected answer and bias the witness\'s account. Investigators should use open-ended questions ("What happened next?") and interview separately and promptly to obtain accurate, uncontaminated accounts.\n\n诱导性问题暗示预期答案，会歪曲证人的陈述。调查者应使用开放式问题（"接下来发生了什么？"），并单独、及时访谈以获得准确、未被污染的陈述。'
+    },
+    {
+      text: 'Which of the following best describes the purpose of an incident investigation?',
+      group: 4,
+      options: [
+        'To assign blame and discipline the responsible worker',
+        'To identify root causes and implement corrective actions that prevent recurrence',
+        'To fulfill insurance claim documentation only',
+        'To determine which employee should be retrained'
+      ],
+      correct: 1,
+      explanation: 'The primary purpose of investigation is prevention — identify root causes and implement corrective actions so the incident does not recur. Blame-oriented investigations suppress reporting and hide system causes.\n\n调查的主要目的是预防——识别根本原因并实施纠正措施，使事故不再发生。以追责为导向的调查会抑制报告并掩盖系统原因。'
+    },
+    {
+      text: 'In the 5 Whys example, a worker slipped on a wet floor caused by a leaking pipe. The chain leads to: floor wet → pipe leaked → gasket failed → no preventive maintenance schedule → maintenance budget cut. The ROOT CAUSE is best described as:',
+      group: 4,
+      options: [
+        'The wet floor',
+        'The leaking pipe',
+        'The failed gasket',
+        'Inadequate resource allocation for maintenance'
+      ],
+      correct: 3,
+      explanation: 'The root cause is the deepest system-level deficiency in the causal chain — inadequate resource allocation for maintenance (budget cut), which made the lack of preventive maintenance possible. The wet floor, pipe, and gasket are immediate causes along the chain.\n\n根本原因是因果链中最深的系统层面缺陷——维护资源分配不足（预算削减），这使得缺乏预防性维护成为可能。湿地板、管道和密封垫是链条上的直接原因。'
+    },
+    {
+      text: 'An investigation finds that a new chemical was introduced to a process without any hazard review, and this contributed to the incident. The most relevant RCA technique for identifying the "what changed" factor is:',
+      group: 4,
+      options: [
+        'Fault Tree Analysis',
+        'Change Analysis',
+        '5 Whys',
+        'Pareto Analysis'
+      ],
+      correct: 1,
+      explanation: 'Change Analysis compares the situation before and after a change (new material, equipment, procedure, personnel) to identify what changed and whether it contributed. Here, introducing a new chemical without review is exactly the change that Change Analysis would surface, linking to MOC failure.\n\n变更分析比较变更前后状况（新材料、设备、程序、人员），以识别变化了什么及其影响。此处，未经审查引入新化学品正是变更分析会揭示的变化，关联到MOC失效。'
+    },
+    {
+      text: 'Which of the following is an IMMEDIATE (direct) cause rather than a root cause?',
+      group: 4,
+      options: [
+        'Lack of a documented safe work procedure',
+        'Inadequate safety training program',
+        'Worker used a damaged ladder with a broken rung',
+        'Management did not provide adequate budget for PPE replacement'
+      ],
+      correct: 2,
+      explanation: 'The damaged ladder with a broken rung is an immediate (direct) cause — an unsafe condition directly associated with the event. The lack of procedure, inadequate training, and budget issues are root causes — system deficiencies that allowed the unsafe condition to exist.\n\n损坏的梯子断了一级是直接原因——与事件直接相关的不安全状况。缺乏程序、培训不足和预算问题是根本原因——使不安全状况得以存在的系统缺陷。'
+    },
+    {
+      text: 'In Frank Bird\'s updated accident ratio, the ratio of serious injuries to minor injuries to property damage to near-misses is approximately:',
+      group: 5,
+      options: [
+        '1:29:300:thousands',
+        '1:10:30:600',
+        '1:5:10:100',
+        '1:100:200:1000'
+      ],
+      correct: 1,
+      explanation: 'Frank Bird updated Heinrich\'s ratio to 1:10:30:600 (serious : minor : property damage : near-miss). Heinrich\'s original was 1:29:300 (no-injury incidents) plus thousands of unsafe acts/conditions. Both support the principle that addressing the base prevents the tip.\n\n弗兰克·伯德将海因里希的比例更新为1:10:30:600（严重:轻微:财产损失:未遂事件）。海因里希的原始比例是1:29:300（无伤害事件）加上数千不安全行为/条件。两者都支持处理底层可预防顶层的原则。'
+    },
+    {
+      text: 'Which of the following is the BEST corrective action for a hand injury caused by a machine with a removable guard?',
+      group: 5,
+      options: [
+        'Retrain the worker to keep the guard in place',
+        'Post a warning sign reminding workers about the hazard',
+        'Install an interlocked guard that stops the machine when opened',
+        'Discipline the worker for removing the guard'
+      ],
+      correct: 2,
+      explanation: 'An interlocked guard is an engineering control that physically prevents operation with the guard open — it addresses the root cause rather than relying on behavior. Retraining, warning signs, and discipline are administrative controls that rely on behavior and are less effective. The hierarchy of controls favors engineering solutions.\n\n联锁防护罩是一种工程控制，在防护罩打开时物理性地阻止机器运行——它解决根本原因而非依赖行为。再培训、警示标志和纪律处分都是依赖行为的行政控制，效果较差。控制层级偏向工程解决方案。'
+    },
+    {
+      text: 'A worker\'s hand was crushed because a machine started while being serviced. The investigation should FIRST focus on:',
+      group: 5,
+      options: [
+        'Whether the worker had received enough safety training',
+        'Why the machine\'s energy was not isolated (e.g., LOTO failure) before service',
+        'Which supervisor should be held responsible',
+        'How quickly the worker\'s medical claim should be filed'
+      ],
+      correct: 1,
+      explanation: 'The investigation should first focus on why energy was not isolated — the LOTO failure — which is the immediate cause pointing to root system causes (e.g., no LOTO program, no procedure, training gaps). Focusing on blame or training alone misses the system-level questions.\n\n调查首先应聚焦为何能量未被隔离——LOTO失效——这是指向根本系统原因（如无LOTO项目、无程序、培训缺口）的直接原因。仅关注追责或培训会错失系统层面的问题。'
+    },
+    {
+      text: 'Which of the following is NOT an element of the chain of custody?',
+      group: 5,
+      options: [
+        'Unique identifier for each evidence item',
+        'Documented transfers with signatures and dates',
+        'Secure storage of evidence',
+        'The value of the damaged equipment'
+      ],
+      correct: 3,
+      explanation: 'Chain of custody elements include unique identifiers, documented transfers, signatures, dates, and secure storage. The value of damaged equipment is relevant to cost estimation, not to evidence integrity.\n\n证据链要素包括唯一标识符、文件化移交、签名、日期和安全保管。受损设备的价值与成本估算相关，与证据完整性无关。'
+    },
+    {
+      text: 'In the context of incident investigation, a "near miss" that involved no injury or illness is:',
+      group: 6,
+      options: [
+        'Not OSHA-recordable, but valuable for proactive corrective action',
+        'OSHA-recordable only if reported by a supervisor',
+        'OSHA-recordable because it indicates a hazard',
+        'Always reported to OSHA within 24 hours'
+      ],
+      correct: 0,
+      explanation: 'Near-misses are not OSHA-recordable because no injury or illness occurred — recordability requires an injury/illness meeting the recording criteria. However, near-misses are valuable learning opportunities and should be investigated for proactive corrective action.\n\n未遂事件不属于OSHA可记录范围，因为未发生伤害或疾病——可记录性要求发生符合记录标准的伤害/疾病。然而，未遂事件是宝贵的学习机会，应进行调查以采取主动纠正措施。'
+    },
+    {
+      text: 'A fault tree analysis (FTA) is best described as:',
+      group: 6,
+      options: [
+        'A bottom-up inductive analysis of failure modes',
+        'A top-down deductive analysis using Boolean logic (AND/OR gates) to identify failure combinations leading to a top event',
+        'A brainstorming diagram of potential causes in categories',
+        'A before/after comparison of a change'
+      ],
+      correct: 1,
+      explanation: 'FTA is top-down and deductive — starting from a top event and working down through AND/OR gates to identify combinations of failures. FMEA is bottom-up and inductive. Fishbone is brainstorming; Change Analysis is before/after.\n\nFTA是自上而下的演绎分析——从顶事件出发，通过与/或门向下分析，识别导致顶事件的故障组合。FMEA是自下而上的归纳分析。鱼骨图是头脑风暴；变更分析是前后对比。'
+    },
+    {
+      text: 'According to the SMART criteria for corrective actions, a corrective action that states "Improve safety culture" is inadequate primarily because it is:',
+      group: 6,
+      options: [
+        'Too specific',
+        'Not measurable or time-bound',
+        'Too expensive',
+        'Not assignable to anyone'
+      ],
+      correct: 1,
+      explanation: 'SMART actions are Specific, Measurable, Assignable, Realistic, and Time-bound. "Improve safety culture" is vague — it lacks measurable criteria and a deadline. A better action: "Increase near-miss reports by 20% within 6 months, with monthly review by the safety committee."\n\nSMART行动需具体、可衡量、可分配、现实、有时限。"改善安全文化"过于模糊——缺乏可衡量标准和截止日期。更好的行动："6个月内将未遂事件报告提高20%，由安全委员会每月评审。"'
+    },
+    {
+      text: 'Which of the following best illustrates a PREVENTIVE action?',
+      group: 6,
+      options: [
+        'Installing guardrails on an edge after a fall occurred there',
+        'Identifying an unprotected edge during a risk assessment and installing guardrails before anyone falls',
+        'Investigating an incident and disciplining the worker',
+        'Paying higher insurance premiums after a claim'
+      ],
+      correct: 1,
+      explanation: 'A preventive action addresses a potential problem before it occurs — here, installing guardrails after identifying the hazard in a risk assessment. The first option is corrective (reacting to an actual fall); the others are not preventive actions.\n\n预防措施在问题发生前处理潜在问题——此处是在风险评估中识别危害后安装护栏。第一个选项是纠正性的（对实际坠落做出反应）；其他选项不是预防措施。'
+    },
+    {
+      text: 'Which phase of the MOC process includes the pre-startup safety review (PSSR)?',
+      group: 7,
+      options: [
+        'Before the change (PRIOR)',
+        'During the change (DURING)',
+        'After the change (AFTER)',
+        'PSSR is not part of MOC'
+      ],
+      correct: 2,
+      explanation: 'The PSSR is completed AFTER the change is installed but BEFORE hazardous materials/energy are introduced, to verify that the change is ready for safe startup. It is a key activity in the AFTER phase of the three-phase MOC process.\n\nPSSR在变更安装之后、引入危险物料/能量之前完成，以验证变更已准备好安全启动。它是MOC三阶段流程中变更后阶段的关键活动。'
+    },
+    {
+      text: 'During MOC implementation, a worker deviates from the approved plan "just to make it work better" without re-approval. This is an example of a failure in which phase?',
+      group: 7,
+      options: [
+        'Before the change (PRIOR)',
+        'During the change (DURING)',
+        'After the change (AFTER)',
+        'This is not an MOC failure'
+      ],
+      correct: 1,
+      explanation: 'Field modifications without re-approval are a common DURING-phase failure. Deviations from the approved plan must go back through MOC review. Unmanaged field changes have caused major incidents in process industries.\n\n未经重新批准的现场修改是常见的变更中阶段失效。偏离已批准的计划必须重新经过MOC审查。不受控的现场变更已在流程行业造成重大事故。'
+    },
+    {
+      text: 'The primary benefit of a high near-miss reporting rate is that it:',
+      group: 7,
+      options: [
+        'Increases the organization\'s TRIR',
+        'Allows proactive correction of hazards before they cause serious incidents',
+        'Satisfies OSHA mandatory reporting requirements',
+        'Eliminates the need for incident investigation'
+      ],
+      correct: 1,
+      explanation: 'High near-miss reporting allows the organization to identify and correct hazards before they produce serious incidents. Near-misses provide more, and earlier, data than rare serious incidents. They do not affect TRIR (not recordable) and do not replace investigation of actual incidents.\n\n高未遂事件报告率使组织能够在危害造成严重事故前识别并纠正。与罕见的严重事故相比，未遂事件提供更多、更早的数据。它们不影响TRIR（不可记录），也不取代对实际事故的调查。'
+    },
+    {
+      text: 'An investigation determines a worker was pressured to skip a lockout to meet a production deadline, and that no procedure existed to protect workers from this production pressure. The most appropriate corrective actions should focus on:',
+      group: 7,
+      options: [
+        'Disciplining the worker and the supervisor',
+        'System changes: establish the LOTO procedure, address production pressure in scheduling, and reinforce that safety overrides deadlines',
+        'Simply re-training the worker on LOTO',
+        'Documenting the incident in the OSHA 300 Log only'
+      ],
+      correct: 1,
+      explanation: 'Root causes are system-level — here, missing procedures and production pressure. Effective corrective actions address these system causes (procedure development, scheduling/expectation changes), not just blame individuals. Retraining alone rarely fixes system deficiencies.\n\n根本原因是系统层面的——此处是程序缺失和生产压力。有效的纠正措施针对这些系统原因（制定程序、调度/期望调整），而非仅仅惩罚个人。仅再培训很少能修复系统缺陷。'
+    },
+    {
+      text: 'Which of the following is TRUE regarding OSHA mandatory reporting versus recording?',
+      group: 8,
+      options: [
+        'Reporting and recording are the same process',
+        'A fatality must be reported to OSHA within 8 hours AND recorded on the 300 Log',
+        'Near-misses must be reported to OSHA within 24 hours',
+        'The OSHA 300A Summary is a reporting form'
+      ],
+      correct: 1,
+      explanation: 'Reporting (to OSHA, time-bound: fatality 8 hours, hospitalization/amputation/loss of eye 24 hours) and recording (on the 300 Log within 7 days) are distinct disciplines. A fatality is both reported immediately and recorded on the log. Near-misses are neither reported nor recorded. The 300A is a posted summary, not a reporting form.\n\n报告（向OSHA，有时限：死亡8小时，住院/截肢/眼球丧失24小时）和记录（300日志上7天内）是不同纪律。死亡既要立即报告也要在日志上记录。未遂事件既不报告也不记录。300A是张贴的摘要，不是报告表格。'
+    },
+    {
+      text: 'A safety professional finds that an incident was caused by a combination of a faulty sensor AND a maintenance worker bypassing the alarm. Which RCA method is BEST suited to analyze the combination of failures?',
+      group: 8,
+      options: [
+        '5 Whys',
+        'Fault Tree Analysis (FTA)',
+        'Pareto Analysis',
+        'Mean calculation'
+      ],
+      correct: 1,
+      explanation: 'FTA uses Boolean AND/OR gates to model combinations of failures leading to a top event. Here, the top event occurred when the sensor failed (AND) the alarm was bypassed — a combination that FTA captures explicitly. 5 Whys follows a single chain and may miss this interaction.\n\nFTA使用布尔与/或门对导致顶事件的故障组合建模。此处，顶事件在传感器失效（与）报警被旁路时发生——FTA能明确捕捉这一组合。5Why法跟踪单一条链，可能遗漏这种交互。'
+    },
+    {
+      text: 'Which of the following is the best definition of a "root cause"?',
+      group: 8,
+      options: [
+        'The first event in a chain of events',
+        'The most expensive cause to fix',
+        'The deepest underlying system deficiency that, if corrected, will prevent recurrence',
+        'The cause identified by the first witness'
+      ],
+      correct: 2,
+      explanation: 'A root cause is the deepest underlying system deficiency whose correction prevents recurrence. It is not necessarily the first event or the most expensive to fix — it is the fundamental system weakness (e.g., missing procedure, design flaw, management failure).\n\n根本原因是最深的潜在系统缺陷，纠正后能防止再发生。它不一定是第一个事件或最贵的修复项——它是根本的系统弱点（如程序缺失、设计缺陷、管理失效）。'
+    },
+    {
+      text: 'When conducting an incident investigation, which is the BEST approach to witness interviews?',
+      group: 8,
+      options: [
+        'Interview witnesses together to compare accounts',
+        'Interview witnesses separately, promptly, using open-ended questions',
+        'Interview only the injured worker',
+        'Delay interviews until the investigation is nearly complete'
+      ],
+      correct: 1,
+      explanation: 'Best practice: interview separately (avoid groupthink), promptly (memory fades and witnesses talk), and with open-ended questions (elicit full narratives). Group interviews and delays contaminate or lose evidence.\n\n最佳实践：单独访谈（避免从众）、及时访谈（记忆消退且证人会相互交流）、使用开放式问题（引出完整叙述）。集体访谈和延迟会污染或丢失证据。'
+    },
+    {
+      text: 'A documented, unbroken record of who handled each piece of evidence is called:',
+      group: 9,
+      options: [
+        'An audit trail',
+        'A chain of custody',
+        'A witness statement',
+        'A root cause log'
+      ],
+      correct: 1,
+      explanation: 'A chain of custody is the documented, unbroken record of collection, handling, transfer, and storage of evidence. It ensures evidence integrity and legal defensibility. An audit trail is related but refers to tracking changes/data; witness statements are testimonial.\n\n证据链是对证据收集、处理、移交和保管的不间断文件化记录。它确保证据完整性和法律可辩护性。审计线索相关但指追踪变更/数据；证人陈述是证言证据。'
+    },
+    {
+      text: 'In the context of incident costs, which of the following is a DIRECT cost?',
+      group: 9,
+      options: [
+        'Lost productivity of coworkers who stopped work to help',
+        'Workers\' compensation medical payments',
+        'Time spent on the incident investigation',
+        'Damage to the company\'s reputation'
+      ],
+      correct: 1,
+      explanation: 'Workers\' compensation medical payments are direct costs — visible, insured, and directly attributable. Lost coworker productivity, investigation time, and reputation damage are indirect (hidden) costs, which are typically 3-10 times the direct costs.\n\n工伤保险医疗赔付是直接成本——可见、有保险且直接可归因。同事生产力损失、调查时间和声誉损害是间接（隐藏）成本，通常为直接成本的3-10倍。'
+    },
+    {
+      text: 'OSHA PSM (29 CFR 1910.119) requires Management of Change for:',
+      group: 9,
+      options: [
+        'All changes in every workplace',
+        'Changes to covered processes involving highly hazardous chemicals',
+        'Only organizational restructuring',
+        'Changes that reduce production'
+      ],
+      correct: 1,
+      explanation: 'OSHA Process Safety Management (29 CFR 1910.119(l)) requires MOC for changes to processes covered by the standard — those involving specified highly hazardous chemicals. This is a regulatory driver of MOC in the process industries.\n\nOSHA工艺安全管理（29 CFR 1910.119(l)）要求对标准覆盖的工艺——涉及特定高度危险化学品的工艺——进行变更管理。这是流程行业MOC的法规驱动因素。'
+    }
+  ]
+});
+</script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js').catch(function() {});
+}
+</script>
+</body>
+</html>

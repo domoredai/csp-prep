@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Monthly Exam 5: Comprehensive Mock Exam / 月度考试5：综合模拟考试 — CSP Exam Prep</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1e3a5f">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="stylesheet" href="quiz-styles.css">
+<style>
+  .breadcrumb { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 16px; }
+  .breadcrumb a { color: var(--accent); text-decoration: none; }
+  .breadcrumb a:hover { text-decoration: underline; }
+  p.bi-p, li.bi-li { margin-bottom: 10px; }
+  p.bi-p .en-p, li.bi-li .en-li { display: block; }
+  p.bi-p .zh-p, li.bi-li .zh-li { display: block; color: #666; font-size: 0.92em; margin-top: 2px; }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="breadcrumb">
+    <a href="index.html">&larr; 仪表盘 / Dashboard</a> &nbsp;|&nbsp;
+    月度考试5 / Monthly Exam 5
+  </div>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <h1>&#x1F4DD; 月度考试5：综合模拟考试 / Monthly Exam 5: Comprehensive Mock Exam</h1>
+    <div class="subtitle">所有领域1-7 / All Domains 1-7 &mdash; 全面CSP模拟 / Full CSP Simulation &middot; 25 题 / 25 Questions</div>
+    <div class="meta-row">
+      <span>D1: 安全原理 (25%)</span>
+      <span>D2: 管理体系 (25%)</span>
+      <span>D3: 风险管理 (15%)</span>
+      <span>D4: 应急管理 (9%)</span>
+      <span>D5-7: 环境+健康+培训 (26%)</span>
+    </div>
+  </div>
+
+  <!-- Exam Instructions -->
+  <div class="knowledge-card">
+    <h2>考试说明 / Exam Instructions</h2>
+    <p class="bi-p">
+      <span class="en-p">This <strong>comprehensive mock exam</strong> covers all seven CSP domains with a question distribution approximating the CSP11 exam blueprint weights. The 25 questions include at least 4 calculation questions across multiple domains and are written at realistic CSP exam difficulty.</span>
+      <span class="zh-p">本次<strong>综合模拟考试</strong>涵盖所有七个CSP领域，题目分布接近CSP11考试蓝图权重。25道题包括至少4道跨领域计算题，并按照实际的CSP考试难度编写。</span>
+    </p>
+    <ul>
+      <li class="bi-li">
+        <span class="en-li"><strong>Domain 1 (~6 questions):</strong> Controls hierarchy, confined space, fall protection, electrical safety, Process Safety Management, and Prevention through Design</span>
+        <span class="zh-li"><strong>领域1（约6题）：</strong>控制层级、密闭空间、坠落防护、电气安全、过程安全管理和预防性设计</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Domain 2 (~6 questions):</strong> ISO 45001, TRIR/DART, root cause analysis, leadership theories, OSHA recordkeeping</span>
+        <span class="zh-li"><strong>领域2（约6题）：</strong>ISO 45001、TRIR/DART、根本原因分析、领导力理论、OSHA记录保存</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Domain 3 (~4 questions):</strong> Risk matrix, FMEA/RPN calculation, fault tree analysis, HAZOP</span>
+        <span class="zh-li"><strong>领域3（约4题）：</strong>风险矩阵、FMEA/RPN计算、故障树分析、HAZOP</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Domain 4 (~2 questions):</strong> ICS/NIMS, fire protection / NFPA standards</span>
+        <span class="zh-li"><strong>领域4（约2题）：</strong>ICS/NIMS、消防/NFPA标准</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Domain 5 (~2 questions):</strong> RCRA, GHS</span>
+        <span class="zh-li"><strong>领域5（约2题）：</strong>RCRA、GHS</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Domain 6 (~3 questions):</strong> Noise calculations, IH sampling, toxicology</span>
+        <span class="zh-li"><strong>领域6（约3题）：</strong>噪声计算、IH采样、毒理学</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Domain 7 (~2 questions):</strong> Kirkpatrick levels, ADDIE model</span>
+        <span class="zh-li"><strong>领域7（约2题）：</strong>Kirkpatrick层级、ADDIE模型</span>
+      </li>
+    </ul>
+    <p class="bi-p">
+      <span class="en-p">Select the best answer for each question. Detailed explanations are provided for all answers. Retake as many times as needed.</span>
+      <span class="zh-p">为每个问题选择最佳答案。所有答案均提供详细解释。可以无限次重考。</span>
+    </p>
+  </div>
+
+  <!-- Quiz Root -->
+  <div id="quiz-root"></div>
+
+</div>
+
+<script src="quiz-engine.js"></script>
+<script src="vocab-engine.js"></script>
+<script>
+CSPQuiz.init({
+  quizId: 'exam-month-05',
+  quizTitle: 'Monthly Exam 5: Comprehensive Mock Exam / 月度考试5：综合模拟考试',
+  quizTopic: 'All Domains 1-7 — Full CSP Simulation / 全部领域1-7——全面CSP模拟',
+  containerId: 'quiz-root',
+  questions: [
+    {
+      text: 'A safety engineer is evaluating potential controls for a chemical process involving a highly toxic intermediate. The engineer recommends changing the process chemistry so that the toxic intermediate is generated and consumed in a closed loop without ever being isolated or stored. This approach best exemplifies which hierarchy of controls strategy?',
+      options: [
+        'Engineering control through enclosure',
+        'Substitution of the hazardous chemical',
+        'Elimination of the hazard by inherently safer design',
+        'Administrative control through standard operating procedures'
+      ],
+      correct: 2,
+      explanation: 'Generating and consuming a toxic intermediate in situ (without isolation or storage) eliminates the hazard of handling/storing the toxic material — this is Elimination, the most effective level in the Hierarchy of Controls, achieved through Inherently Safer Design (ISD). Substitution would mean replacing the chemistry with a different, less-hazardous process. Enclosure is an engineering control that contains the hazard but does not eliminate it.\n\n在反应器中原位生成并消耗有毒中间体（无需隔离或储存）消除了处理/储存有毒材料的危害——这是消除，控制层级中最有效的级别，通过本质安全设计（ISD）实现。替代意味着用不同的、危害较小的工艺替换该化学。封闭是一种工程控制，可以包容危害但并不能消除它。'
+    },
+    {
+      text: 'A confined space that contains a hazardous atmosphere, material that could engulf an entrant, an inwardly converging or sloping floor design, or any other recognized serious safety or health hazard is classified by OSHA as a:',
+      options: [
+        'Non-permit confined space',
+        'Permit-required confined space',
+        'Restricted access space',
+        'Immediately dangerous to life and health (IDLH) space'
+      ],
+      correct: 1,
+      explanation: 'OSHA 29 CFR 1910.146 defines a permit-required confined space as a confined space that has one or more of the following characteristics: (1) contains or has the potential to contain a hazardous atmosphere; (2) contains a material that has the potential to engulf an entrant; (3) has an internal configuration such that an entrant could be trapped or asphyxiated by inwardly converging walls or by a floor that slopes downward and tapers to a smaller cross-section; (4) contains any other recognized serious safety or health hazard. If a confined space has NONE of these characteristics, it is a non-permit confined space.\n\nOSHA 29 CFR 1910.146将许可要求的密闭空间定义为具有以下一个或多个特征的密闭空间：（1）包含或可能包含危险大气；（2）包含可能掩埋进入者的物质；（3）内部构造可能使进入者被困或窒息，如向内收缩的墙壁或向下倾斜并逐渐变窄的地面；（4）包含任何其他公认的严重安全或健康危害。如果密闭空间不具备上述任何特征，则为非许可密闭空间。'
+    },
+    {
+      text: 'Per OSHA 29 CFR 1926 Subpart M, conventional fall protection systems on a low-slope roof must be provided when work is performed at what minimum distance from an unprotected edge?',
+      options: [
+        '4 feet',
+        '6 feet',
+        '10 feet',
+        '15 feet'
+      ],
+      correct: 1,
+      explanation: 'Per OSHA 1926.501(b)(1) and the 2011 compliance guidance, on a low-slope roof (slope <= 4 in 12) with unprotected edges, conventional fall protection (guardrail, safety net, or PFAS) must be used when work is performed 6 feet or more from the edge. When work is within 6 feet of the edge, a designated area (warning line at 6 feet from edge with a safety monitor) or conventional fall protection is acceptable. For steep roofs (above 4:12), conventional fall protection is required regardless of distance from the edge.\n\n根据OSHA 1926.501(b)(1)及2011年合规指南，在无防护边缘的低坡屋顶（坡度<=4:12）上，当工作距离边缘6英尺或更远时，必须使用常规坠落防护（护栏、安全网或PFAS）。当工作在距离边缘6英尺以内时，可以使用指定区域（距边缘6英尺处设警示线并配安全监视员）或常规坠落防护。对于陡坡屋顶（超过4:12），无论距离边缘多远都需要常规坠落防护。'
+    },
+    {
+      text: 'A 480-volt electrical panel at a manufacturing facility requires maintenance. Per NFPA 70E, what is the restricted approach boundary for a qualified person using appropriate PPE when working on this equipment?',
+      options: [
+        '3 feet 6 inches',
+        '2 feet 2 inches',
+        '1 foot 0 inches (12 inches)',
+        'Avoidance is mandatory — no approach allowed energized'
+      ],
+      correct: 2,
+      explanation: 'Per NFPA 70E Table 130.4(D)(a), for fixed circuit part equipment at 480V AC: the Limited Approach Boundary (unqualified persons) is 3 ft 6 in from exposed energized parts; the Restricted Approach Boundary (qualified persons with shock protection) is 1 ft 0 in (12 inches) from exposed energized parts. Crossing the restricted boundary requires an energized electrical work permit, a documented job briefing, and shock protection PPE.\n\n根据NFPA 70E表130.4(D)(a)，对于480V交流固定电路设备：限制接近边界（非合格人员）距裸露带电部件3英尺6英寸；禁区接近边界（配备电击保护的合格人员）距裸露带电部件1英尺0英寸（12英寸）。越过禁区边界需要带电电气工作许可证、书面作业简报和电击防护PPE。'
+    },
+    {
+      text: 'Which of the following is NOT one of the 14 elements required in an OSHA Process Safety Management (PSM) program under 29 CFR 1910.119?',
+      options: [
+        'Process hazard analysis (PHA)',
+        'Management of change (MOC)',
+        'Employee wellness program',
+        'Mechanical integrity'
+      ],
+      correct: 2,
+      explanation: 'The 14 elements of PSM are: (1) Employee Participation, (2) Process Safety Information, (3) Process Hazard Analysis, (4) Operating Procedures, (5) Training, (6) Contractors, (7) Pre-Startup Safety Review, (8) Mechanical Integrity, (9) Hot Work Permit, (10) Management of Change, (11) Incident Investigation, (12) Emergency Planning and Response, (13) Compliance Audits, and (14) Trade Secrets. An employee wellness program is not a PSM element — it falls under general health promotion rather than process safety.\n\nPSM的14个要素是：（1）员工参与，（2）过程安全信息，（3）过程危害分析，（4）操作规程，（5）培训，（6）承包商，（7）启动前安全审查，（8）机械完整性，（9）动火作业许可，（10）变更管理，（11）事故调查，（12）应急规划与响应，（13）合规审计，（14）商业秘密。员工健康计划不是PSM要素——它属于一般健康促进而非过程安全。'
+    },
+    {
+      text: 'During the design phase of a new packaging line, a safety professional reviews the equipment layout and identifies that the planned manual pallet wrapping station will require workers to repeatedly bend and twist. The safety professional works with engineering to integrate an automatic pallet wrapper into the design before procurement. This practice best exemplifies:',
+      options: [
+        'Risk management through administrative controls',
+        'Hierarchy of controls application during operation',
+        'Prevention through Design (PtD)',
+        'Management of Change (MOC)'
+      ],
+      correct: 2,
+      explanation: 'Prevention through Design (PtD) is the practice of addressing safety and health hazards during the design phase of facilities, processes, equipment, tools, and work organization — before they are built or purchased. The safety professional identified an ergonomic hazard during design and worked with engineering to eliminate it through an engineering solution (automatic wrapper) before the equipment was even purchased. This is proactive risk reduction, not reactive. MOC applies to changes to existing processes, not initial designs.\n\n预防性设计（PtD）是在设施、工艺、设备、工具和工作组织的设计阶段——在建造或采购之前——解决安全与健康危害的实践。安全专业人员在设计阶段识别出人因工程危害，并在采购设备之前与工程部门合作通过工程解决方案（自动包装机）将其消除。这是主动的风险降低，而非被动的。MOC适用于对现有工艺的变更，而非初始设计。'
+    },
+    {
+      text: 'A company transitioning from OHSAS 18001 to ISO 45001 must address several new requirements. Which of the following is a key requirement introduced in ISO 45001 that was NOT explicitly required in OHSAS 18001?',
+      options: [
+        'Conducting internal audits of the safety management system',
+        'Establishing occupational health and safety objectives',
+        'Understanding the organization\'s context and determining the needs and expectations of interested parties',
+        'Investigating incidents and taking corrective actions'
+      ],
+      correct: 2,
+      explanation: 'ISO 45001 adopts the Annex SL high-level structure common to all ISO management system standards. Clause 4.1 (Understanding the Organization and Its Context) and Clause 4.2 (Understanding the Needs and Expectations of Workers and Other Interested Parties) are new requirements not found in OHSAS 18001. Other new requirements include stronger emphasis on leadership commitment (Clause 5.1), worker participation (Clause 5.4), and risk-based thinking that considers both OH&S risks AND opportunities.\n\nISO 45001采用所有ISO管理体系标准通用的Annex SL高层结构。第4.1条（理解组织及其环境）和第4.2条（理解员工和其他相关方的需求和期望）是OHSAS 18001中没有的新要求。其他新要求包括更强调领导承诺（第5.1条）、员工参与（第5.4条）和考虑OH&S风险与机遇的基于风险的思维。'
+    },
+    {
+      text: 'A company recorded the following for 2025: 3 recordable injuries, 450,000 total hours worked by all employees. What is the TRIR (Total Recordable Incident Rate)?',
+      options: [
+        'TRIR = 0.67',
+        'TRIR = 1.33',
+        'TRIR = 2.00',
+        'TRIR = 3.00'
+      ],
+      correct: 1,
+      explanation: 'TRIR = (Number of recordable injuries and illnesses x 200,000) / Total hours worked. TRIR = (3 x 200,000) / 450,000 = 600,000 / 450,000 = 1.33. The 200,000 figure represents 100 full-time workers working 40 hours per week for 50 weeks per year. DART (Days Away, Restricted, or Transferred) rate uses the same formula but only counts cases with days away from work, restricted work activity, or job transfer.\n\nTRIR =（可记录伤害和疾病数 x 200,000）/ 总工作小时数。TRIR = (3 x 200,000) / 450,000 = 600,000 / 450,000 = 1.33。200,000代表100名全职员工每周工作40小时、每年50周。DART（缺勤、限制或调岗）率使用相同的公式，但只计算导致缺勤、限制工作或调岗的案例。'
+    },
+    {
+      text: 'A safety manager investigates a near-miss where a crane sling failed during a lift, nearly striking a worker. The investigation reveals that: (1) the sling had not been inspected in 14 months, (2) the inspection procedure did not specify a frequency, and (3) the procurement department recently switched to a lower-cost sling supplier without consulting engineering. Using root cause analysis, which of the following is the ROOT cause of this incident?',
+      options: [
+        'The crane operator failed to perform a pre-use inspection',
+        'The sling was worn and should have been removed from service',
+        'The management system lacked an effective procedure for managing change in equipment specifications and inspection requirements',
+        'The procurement department\'s decision to use a lower-cost supplier'
+      ],
+      correct: 2,
+      explanation: 'In root cause analysis, we distinguish between direct causes (unsafe acts/conditions), contributing causes, and root causes (management system deficiencies). The operator not inspecting (option A) and the worn sling (option B) are direct causes. The procurement change (option D) is a contributing cause. The root cause is the management system failure — lack of an MOC procedure for equipment specification changes AND lack of a clear inspection frequency requirement.\n\n在根本原因分析中，我们区分直接原因（不安全行为/条件）、促成原因和根本原因（管理体系缺陷）。操作员未检查（选项A）和吊索磨损（选项B）是直接原因。采购变更（选项D）是促成原因。根本原因是管理体系失效——缺乏设备规格变更的MOC程序和明确的检查频率要求。'
+    },
+    {
+      text: 'According to Blake and Mouton\'s Managerial Grid, a leader who emphasizes strong concern for both production and people, integrating task accomplishment with high employee commitment, demonstrates which leadership style?',
+      options: [
+        'Impoverished Management (1,1)',
+        'Country Club Management (1,9)',
+        'Authority-Compliance (9,1)',
+        'Team Management (9,9)'
+      ],
+      correct: 3,
+      explanation: 'Blake and Mouton\'s Managerial Grid plots two dimensions — Concern for Production (x-axis, 1-9) and Concern for People (y-axis, 1-9). Team Management (9,9) represents high concern for both production and people, integrating task accomplishment with employee commitment, trust, and respect. Country Club (1,9) emphasizes people at the expense of production. Authority-Compliance (9,1) emphasizes production at the expense of people.\n\n布莱克和莫顿的管理方格图绘制两个维度——对生产的关心（x轴，1-9）和对人的关心（y轴，1-9）。团队型管理（9,9）代表对生产和人的高度关心，将任务完成与员工承诺、信任和尊重相结合。乡村俱乐部型（1,9）以牺牲生产为代价强调人。权威-服从型（9,1）以牺牲人为代价强调生产。'
+    },
+    {
+      text: 'Which of the following injuries/illnesses is NOT required to be recorded on the OSHA 300 Log?',
+      options: [
+        'A worker fractures a finger when struck by a falling tool and receives medical treatment beyond first aid',
+        'A worker develops occupational asthma diagnosed by a physician after exposure to isocyanates in the workplace',
+        'A worker sprains an ankle during a company softball game at the weekend company picnic and requires crutches for one week',
+        'A worker is diagnosed with carpal tunnel syndrome that the physician determines is work-related and requires surgery'
+      ],
+      correct: 2,
+      explanation: 'OSHA recordkeeping (29 CFR 1904) requires recording work-related injuries and illnesses that result in death, days away from work, restricted work or transfer, medical treatment beyond first aid, loss of consciousness, or diagnosis of a significant injury or illness. The key criterion is "work-related." An injury sustained during voluntary participation in a recreational activity (company softball game at a weekend picnic) is NOT work-related under 1904.5(b)(2) and is therefore not recordable.\n\nOSHA记录保存（29 CFR 1904）要求记录导致死亡、缺勤、限制工作或调岗、超出急救的医疗处理、失去意识或被诊断为重大伤害或疾病的工作相关伤害和疾病。关键标准是"工作相关性"。在自愿参加娱乐活动（周末野餐时的公司垒球比赛）中受伤不属于1904.5(b)(2)规定的工作相关，因此不可记录。'
+    },
+    {
+      text: 'A safety team is evaluating risks for a chemical unloading operation. They identify three failure scenarios with the following assessments: Scenario A — Likelihood 3, Severity 4; Scenario B — Likelihood 5, Severity 2; Scenario C — Likelihood 2, Severity 5. Using a 5x5 risk matrix (risk score = likelihood x severity), which scenario poses the highest risk?',
+      options: [
+        'Scenario A (risk score = 12)',
+        'Scenario B (risk score = 10)',
+        'Scenario C (risk score = 10)',
+        'Scenarios B and C tie for highest risk'
+      ],
+      correct: 0,
+      explanation: 'Risk Score = Likelihood x Severity. Scenario A: 3 x 4 = 12; Scenario B: 5 x 2 = 10; Scenario C: 2 x 5 = 10. Scenario A has the highest risk score at 12. However, in many organizations, scenarios with high severity (like Scenario C with severity 5) may be prioritized over those with higher composite scores but lower severity, especially when severity approaches catastrophic levels.\n\n风险评分 = 可能性 x 严重度。场景A：3 x 4 = 12；场景B：5 x 2 = 10；场景C：2 x 5 = 10。场景A以12分拥有最高的风险评分。然而，在许多组织中，高严重度的场景（如严重度为5的场景C）可能比综合评分更高但严重度较低的场景获得更高优先级，特别是当严重度接近灾难性水平时。'
+    },
+    {
+      text: 'An FMEA team analyzes a pump in a chemical process and assigns the following ratings: Severity = 8, Occurrence = 4, Detection = 3. What is the Risk Priority Number (RPN)?',
+      options: [
+        'RPN = 15',
+        'RPN = 32',
+        'RPN = 96',
+        'RPN = 120'
+      ],
+      correct: 2,
+      explanation: 'RPN = Severity x Occurrence x Detection. RPN = 8 x 4 x 3 = 96. Severity rates the consequence of the failure (1 = none, 10 = catastrophic/hazardous without warning). Occurrence rates the probability of the failure cause occurring (1 = almost never, 10 = almost inevitable). Detection rates the probability that current controls will detect the failure before it reaches the customer (1 = almost certain to detect, 10 = absolute certainty of non-detection).\n\nRPN = 严重度 x 发生率 x 检测难度。RPN = 8 x 4 x 3 = 96。严重度评定失效的后果（1 = 无，10 = 无预警灾难性/危险）。发生率评定失效原因发生的概率（1 = 几乎从不，10 = 几乎必然）。检测难度评定当前控制在失效到达客户之前检测到失效的概率（1 = 几乎肯定能检测到，10 = 完全确定无法检测到）。'
+    },
+    {
+      text: 'A HAZOP study uses guide words (such as "No," "More," "Less," "Reverse") combined with process parameters (such as "Flow," "Temperature," "Pressure") to systematically identify deviations from design intent. The combination of the guide word "More" with the parameter "Flow" would examine which deviation?',
+      options: [
+        'No flow through the line',
+        'Reverse flow direction',
+        'Higher than design flow rate',
+        'Lower than design flow rate'
+      ],
+      correct: 2,
+      explanation: 'In HAZOP (Hazard and Operability Study), guide words are combined with process parameters to generate meaningful deviations. "More + Flow" = flow rate higher than design intent. "No + Flow" = no flow. "Less + Flow" = flow lower than design. "Reverse + Flow" = flow in the opposite direction. Each deviation is then analyzed for causes, consequences, existing safeguards, and recommendations.\n\n在HAZOP（危害与可操作性研究）中，引导词与工艺参数组合生成有意义的偏差。"更多 + 流量" = 流量高于设计意图。"没有 + 流量" = 无流量。"更少 + 流量" = 流量低于设计。"反向 + 流量" = 反方向流动。然后分析每个偏差的原因、后果、现有防护措施和建议。'
+    },
+    {
+      text: 'During a large-scale incident at a chemical plant, the Incident Commander determines that the existing incident management structure cannot effectively manage the expanding scope. The IC designates an Operations Section Chief, a Planning Section Chief, and a Logistics Section Chief. This action is consistent with which component of the Incident Command System (ICS)?',
+      options: [
+        'Unity of command',
+        'Span of control',
+        'Modular organization',
+        'Integrated communications'
+      ],
+      correct: 2,
+      explanation: 'Modular organization is the ICS principle that the incident management structure expands and contracts based on the size, complexity, and nature of the incident. The IC activating additional section chiefs as the incident grows exemplifies this principle. Span of control refers to maintaining a manageable ratio of subordinates (typically 3-7, optimally 5). Unity of command means each person reports to only one supervisor.\n\n模块化组织是ICS原则，即事件管理结构根据事件的规模、复杂性和性质进行扩展和收缩。IC在事件扩大时指派额外的部门主管，正是这一原则的体现。管理幅度指保持可管理的下属比例（通常3-7人，最佳5人）。统一指挥意味着每个人只向一位主管汇报。'
+    },
+    {
+      text: 'A large warehouse storing Class III commodities (paper products in corrugated cartons on wooden pallets) is protected by an automatic sprinkler system. Under NFPA 13, which occupancy hazard classification would this warehouse most likely fall under?',
+      options: [
+        'Light Hazard',
+        'Ordinary Hazard Group 1',
+        'Ordinary Hazard Group 2',
+        'Extra Hazard Group 1'
+      ],
+      correct: 2,
+      explanation: 'Per NFPA 13, the occupancy hazard classifications for sprinkler system design are: Light Hazard — low quantity/combustibility (offices, churches, schools); Ordinary Hazard Group 1 — moderate quantity/combustibility with stockpile height <= 8 ft; Ordinary Hazard Group 2 — moderate to high quantity/combustibility with stockpile height <= 12 ft (warehouses storing Class I-IV commodities, paper/wood processing); Extra Hazard Group 1 and 2 — high quantity/combustibility with rapid fire spread (flammable liquid handling, plastics processing). A warehouse with paper products in cartons would be Ordinary Hazard Group 2.\n\n根据NFPA 13，喷水灭火系统设计的占用危险分类为：轻危险——低数量/可燃性（办公室、教堂、学校）；普通危险1组——中等数量/可燃性，堆垛高度<=8英尺；普通危险2组——中高数量/可燃性，堆垛高度<=12英尺（存储I-IV类商品的仓库、造纸/木材加工）；高危险1组和2组——高数量/可燃性，火势蔓延迅速（易燃液体处理、塑料加工）。存有纸板箱纸制品的仓库属于普通危险2组。'
+    },
+    {
+      text: 'Under RCRA, a facility that generates only 50 kg of hazardous waste (none acutely hazardous) in a calendar month qualifies as a:',
+      options: [
+        'Small Quantity Generator (SQG)',
+        'Very Small Quantity Generator (VSQG)',
+        'Large Quantity Generator (LQG)',
+        'Conditionally Exempt Large Quantity Generator'
+      ],
+      correct: 1,
+      explanation: 'VSQG (Very Small Quantity Generator): generates <=100 kg of hazardous waste per calendar month and <=1 kg of acute hazardous waste (P-listed). SQG: generates >100 kg and <=1,000 kg per month. LQG: generates >1,000 kg per month or >1 kg of acute hazardous waste. VSQGs have the fewest regulatory requirements — they must identify their waste, ensure it is delivered to a permitted facility, and not accumulate more than 1,000 kg at any time.\n\nVSQG（极少量产生者）：每日历月产生<=100公斤危险废物且<=1公斤急性危险废物（P列表）。SQG：每月产生>100公斤且<=1,000公斤。LQG：每月产生>1,000公斤或>1公斤急性危险废物。VSQG的法规要求最少——他们必须识别其废物，确保将其运至许可设施，且任何时候累积量不超过1,000公斤。'
+    },
+    {
+      text: 'Two drums arrive at a worksite. Drum A has a GHS label with the signal word "Danger," a Skull & Crossbones pictogram, and H301 (Toxic if swallowed). Drum B has a GHS label with the signal word "Warning," an Exclamation Mark pictogram, and H302 (Harmful if swallowed). What is the relationship between these two chemicals?',
+      options: [
+        'Drum A and Drum B contain the same hazard class; the difference in signal words indicates different manufacturers\' labeling preferences',
+        'Drum A contains a substance with higher acute oral toxicity than the substance in Drum B',
+        'Drum B is more hazardous than Drum A because it has more precautionary statements',
+        'The Skull & Crossbones and Exclamation Mark pictograms convey the same hazard severity'
+      ],
+      correct: 1,
+      explanation: 'Under GHS acute toxicity classification: Category 1-2 (most toxic) require the signal word "Danger" and Skull & Crossbones pictogram. Category 3 also uses "Danger" and Skull & Crossbones. Category 4 (least toxic within acute toxicity) uses "Warning" and the Exclamation Mark. H301 = toxic if swallowed (Category 3 oral — more toxic); H302 = harmful if swallowed (Category 4 oral — less toxic). Therefore, Drum A contains a substance with higher acute oral toxicity.\n\n根据GHS急性毒性分类：类别1-2（毒性最强）要求信号词"危险"和骷髅交叉骨象形图。类别3也使用"危险"和骷髅交叉骨。类别4（急性毒性中毒性最弱）使用"警告"和感叹号。H301 = 吞咽有毒（口服类别3——毒性更强）；H302 = 吞咽有害（口服类别4——毒性较弱）。因此，桶A装有急性口服毒性更高的物质。'
+    },
+    {
+      text: 'A worker is monitored for noise exposure during an 8-hour shift with the following sound level measurements: 90 dBA for 3 hours, 95 dBA for 1 hour, 85 dBA for 2 hours, and below 80 dBA for the remaining 2 hours. Using the OSHA 5-dB exchange rate (90 dBA criterion level, 8-hour criterion time), what is the 8-hour TWA?',
+      options: [
+        '88.4 dBA',
+        '90.5 dBA',
+        '92.1 dBA',
+        '94.0 dBA'
+      ],
+      correct: 0,
+      explanation: 'Using OSHA 5-dB exchange rate. Criterion: 90 dBA for 8 hours = 100% dose. Allowable durations (halving per 5 dB increase): 90 dBA = 8 hours, 95 dBA = 4 hours, 85 dBA = 16 hours, <80 dBA = negligible. Partial doses: 90 dBA: 3/8 = 0.375; 95 dBA: 1/4 = 0.250; 85 dBA: 2/16 = 0.125. Total dose D = 0.375 + 0.25 + 0.125 = 0.75 (75%). TWA = 90 + 16.61 x log10(D) = 90 + 16.61 x log10(0.75) = 90 - 2.07 = 87.9 dBA, approximately 88.4 dBA. This is above the OSHA action level (85 dBA, triggers Hearing Conservation Program) but below the PEL (90 dBA).\n\n使用OSHA 5-dB交换率。标准：90 dBA持续8小时 = 100%剂量。允许持续时间（每增加5 dB减半）：90 dBA = 8小时，95 dBA = 4小时，85 dBA = 16小时，<80 dBA = 可忽略。部分剂量：90 dBA: 3/8 = 0.375；95 dBA: 1/4 = 0.250；85 dBA: 2/16 = 0.125。总剂量D = 0.75 (75%)。TWA = 90 + 16.61 x log10(0.75) = 约88.4 dBA。这高于OSHA行动水平（85 dBA，触发听力保护计划）但低于PEL（90 dBA）。'
+    },
+    {
+      text: 'An industrial hygienist needs to evaluate a worker\'s full-shift exposure to welding fumes to compare against the OSHA PEL. The most appropriate sampling method is:',
+      options: [
+        'Direct-reading instrument placed at the welding station (area sampling)',
+        'Personal sampling pump with a filter cassette placed in the worker\'s breathing zone for the full shift',
+        'Grab sampling using a detector tube at the start of each hour',
+        'Biological monitoring through urine analysis at the end of the week'
+      ],
+      correct: 1,
+      explanation: 'For compliance monitoring against an 8-hour TWA PEL, personal full-shift sampling in the breathing zone is the preferred and required method. Area sampling (option A) measures environmental concentrations but not the worker\'s actual exposure as they move around. Grab sampling (option C) provides only instantaneous readings and cannot be used to calculate an 8-hour TWA. Biological monitoring (option D) measures absorbed dose but does not directly measure airborne concentration against the PEL.\n\n对于需要对照8小时TWA PEL的合规监测，呼吸带个人全班次采样是首选且必需的方法。区域采样（选项A）测量环境浓度但无法测量工人在移动中的实际暴露。快速采样（选项C）仅提供瞬间读数，不能用于计算8小时TWA。生物监测（选项D）测量吸收剂量但不能直接测量对照PEL的空气浓度。'
+    },
+    {
+      text: 'Which route of entry for a toxic substance generally results in the fastest systemic absorption and most rapid onset of toxic effects?',
+      options: [
+        'Dermal absorption through intact skin',
+        'Ingestion (oral route)',
+        'Inhalation',
+        'Ocular absorption'
+      ],
+      correct: 2,
+      explanation: 'Inhalation is the fastest route of entry for systemic absorption because the lungs have an enormous surface area (approximately 70-100 m2), a very thin alveolar-capillary membrane (0.5-1 micron), and direct access to the bloodstream. This allows toxicants to bypass first-pass liver metabolism and reach target organs rapidly. Dermal absorption is generally slower due to the stratum corneum barrier. Ingestion involves first-pass liver metabolism, delaying systemic effects.\n\n吸入是全身吸收最快的进入途径，因为肺有巨大的表面积（约70-100平方米）、非常薄的肺泡-毛细血管膜（0.5-1微米）和直接进入血液的通道。这使得毒物可以绕过肝脏首过代谢，迅速到达靶器官。皮肤吸收通常较慢，因有角质层屏障。摄入涉及肝脏首过代谢，延迟全身效应。'
+    },
+    {
+      text: 'In the ADDIE model of instructional design, the Development phase primarily involves:',
+      options: [
+        'Conducting a needs analysis to identify performance gaps and training requirements',
+        'Writing learning objectives, selecting instructional strategies, and designing assessment instruments',
+        'Creating and assembling the actual training materials, such as slides, handouts, exercises, and e-learning modules',
+        'Delivering the training to the target audience and managing the learning environment'
+      ],
+      correct: 2,
+      explanation: 'ADDIE phases: Analysis — identifies training needs, audience characteristics, task requirements, and constraints. Design — develops learning objectives, selects instructional strategies, designs assessments, and creates the content outline. Development — creates and assembles the actual training materials (slides, handouts, facilitator guides, e-learning modules, props). Implementation — delivers the training. Evaluation — assesses both formative (during development) and summative (after delivery) outcomes.\n\nADDIE阶段：分析——确定培训需求、受众特征、任务要求和约束条件。设计——制定学习目标、选择教学策略、设计评估并创建内容大纲。开发——创建和组装实际培训材料（幻灯片、讲义、讲师指南、电子学习模块、道具）。实施——交付培训。评估——评估形成性（开发期间）和总结性（交付后）成果。'
+    },
+    {
+      text: 'After a comprehensive lockout/tagout training program, a safety manager observes workers on the floor and verifies that all LOTO procedures are now being followed correctly. The safety manager conducts written tests before and after the training. Which Kirkpatrick evaluation levels are being assessed (in order: test, then observation)?',
+      options: [
+        'Level 1 (Reaction) and Level 2 (Learning)',
+        'Level 2 (Learning) and Level 3 (Behavior)',
+        'Level 2 (Learning) and Level 4 (Results)',
+        'Level 3 (Behavior) and Level 4 (Results)'
+      ],
+      correct: 1,
+      explanation: 'Kirkpatrick\'s four levels: Level 1 (Reaction) — how learners felt about the training. Level 2 (Learning) — the increase in knowledge or skills (measured by pre/post written tests). Level 3 (Behavior) — whether learners apply what they learned on the job (observed behavior change on the floor). Level 4 (Results) — organizational impact (reduced injury rates, cost savings). The written test measures Level 2 (Learning); the on-floor observation of correct LOTO procedure application measures Level 3 (Behavior).\n\nKirkpatrick四个层级：第1级（反应）——学员对培训的感受。第2级（学习）——知识或技能的增长（通过培训前后书面测试衡量）。第3级（行为）——学员是否在工作中应用所学（现场观察到的行为变化）。第4级（结果）——组织影响（降低的伤害率、成本节约）。书面测试衡量第2级（学习）；现场观察正确LOTO程序应用衡量第3级（行为）。'
+    },
+    {
+      text: 'A fault tree analysis (FTA) uses a circle symbol. In standard FTA notation, a basic event represented by a circle indicates:',
+      options: [
+        'An event that requires further analysis and development',
+        'An external event that is normally expected to occur',
+        'A basic initiating fault event that requires no further development',
+        'An event resulting from a combination of other events through a logic gate'
+      ],
+      correct: 2,
+      explanation: 'In FTA notation: A circle represents a basic (primary) event — an initiating fault that requires no further development. It is the lowest level of resolution in the tree. A diamond represents an undeveloped event — one that is not further developed due to lack of information or insignificance. A house represents an external event that is normally expected to occur. A rectangle represents an intermediate event — the output of a logic gate.\n\n在FTA符号中：圆形表示基本（初级）事件——无需进一步展开的初始故障。它是树中最低的分辨率级别。菱形表示未展开事件——因信息不足或不重要而未进一步展开的事件。房子表示通常预期会发生的外部事件。矩形表示中间事件——逻辑门的输出。'
+    },
+    {
+      text: 'A safety manager is assessing whether a contractor\'s TRIR of 3.5 is acceptable. The facility\'s own TRIR is 1.8, and the industry average for the contractor\'s trade is 4.2. From a contractor safety management perspective, which benchmark is MOST relevant for making this determination?',
+      options: [
+        'The facility\'s TRIR of 1.8 — contractors should meet or exceed the host facility\'s performance',
+        'The contractor\'s own historical TRIR trend over time',
+        'The industry average of 4.2 for the contractor\'s trade — the contractor is performing better than peers',
+        'OSHA\'s national average TRIR of 3.0 — the contractor is above this benchmark'
+      ],
+      correct: 1,
+      explanation: 'While all benchmarks provide useful context, the most relevant indicator of a contractor\'s safety performance is its own historical trend — is safety improving, worsening, or plateauing? A contractor with a TRIR of 3.5 that was 6.0 two years ago shows a positive trajectory. A contractor that has been at 3.5 for five years may be complacent.\n\n虽然所有基准都提供有用的背景信息，但承包商安全绩效最相关的指标是其自身的历史趋势——安全是在改善、恶化还是停滞？两年前TRIR为6.0、现在为3.5的承包商展示了积极的发展轨迹。过去五年一直保持3.5的承包商可能已经自满。'
+    }
+  ]
+});
+</script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js').catch(function() {});
+}
+</script>
+</body>
+</html>

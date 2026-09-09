@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 3: Workplace Hazards — Electrical & Falls / 电气安全与坠落防护 — CSP Exam Prep</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1e3a5f">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="stylesheet" href="quiz-styles.css?v=11">
+<style>
+  .breadcrumb { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 16px; }
+  .breadcrumb a { color: var(--accent); text-decoration: none; }
+  .breadcrumb a:hover { text-decoration: underline; }
+  .highlight-box {
+    background: #fef3c7;
+    border-left: 4px solid #f59e0b;
+    padding: 14px 18px;
+    border-radius: 0 6px 6px 0;
+    margin: 16px 0;
+  }
+  .case-box {
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    border-left: 4px solid #10b981;
+    border-radius: 0 6px 6px 0;
+    padding: 14px 18px;
+    margin: 16px 0;
+  }
+  .arc-flash-diagram {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 16px 0;
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    line-height: 2;
+  }
+  .formula-box {
+    background: #f0f4ff;
+    border: 1px solid #c7d2fe;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 16px 0;
+    font-family: var(--mono);
+    font-size: 0.88rem;
+    line-height: 1.9;
+  }
+  .fall-calc {
+    background: #f0f4ff;
+    border: 1px solid #c7d2fe;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px 0;
+    font-family: var(--mono);
+    font-size: 0.88rem;
+  }
+  p.bi-p, li.bi-li { margin-bottom: 10px; }
+  p.bi-p .en-p, li.bi-li .en-li { display: block; }
+  p.bi-p .zh-p, li.bi-li .zh-li { display: block; color: #666; font-size: 0.92em; margin-top: 2px; }
+  table.bi-table th { white-space: nowrap; }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="breadcrumb">
+    <a href="index.html">← 返回仪表盘 / Dashboard</a> &nbsp;|&nbsp;
+    领域 / Domain 1: <span style="font-weight:600;">安全原理高级应用 / Advanced Application of Safety Principles</span>
+  </div>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <h1>📖 第3周 / Week 3:<br><span class="bi-term"><span class="zh">电气安全与坠落防护</span> · <span class="en">Electrical Safety & Fall Protection</span><span class="vocab-star" data-term="Electrical Safety">☆</span></span></h1>
+    <div class="subtitle">领域1：安全原理高级应用（占考试25%）· 建议学习时间：6–8小时<br>Domain 1: Advanced Application of Safety Principles (25% of exam) · Est. study time: 6–8 hours</div>
+  </div>
+
+  <!-- KNOWLEDGE SECTION -->
+
+  <div class="knowledge-card">
+    <h2>3.1 <span class="bi-term"><span class="zh">电气安全 — NFPA 70E概述</span> · <span class="en">Electrical Safety — NFPA 70E Overview</span><span class="vocab-star" data-term="NFPA 70E">☆</span></span></h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>NFPA 70E · Brauer Ch.12</span>
+    </div>
+
+    <p class="bi-p">
+      <span class="en-p"><span class="bi-term"><span class="zh">NFPA 70E：工作场所电气安全标准</span><span class="en">NFPA 70E: Standard for Electrical Safety in the Workplace</span><span class="vocab-star" data-term="NFPA 70E">☆</span></span> is the primary consensus standard for electrical safety, referenced by OSHA and widely tested on the CSP exam. It addresses electrical hazards including shock, arc flash, and arc blast.</span>
+      <span class="zh-p" style="color:#666;">NFPA 70E是电气安全的主要共识标准，被OSHA引用并在CSP考试中广泛考查。它涉及电击、弧闪和弧爆等电气危害。</span>
+    </p>
+
+    <h3>三种电气危害 / The Three Electrical Hazards</h3>
+    <table class="bi-table">
+      <tr><th>危害 / Hazard</th><th>机制 / Mechanism</th><th>主要后果 / Primary Consequence</th></tr>
+      <tr>
+        <td><span class="en-p"><strong>Shock / 电击</strong></span><span class="zh-p" style="color:#666;">电击</span></td>
+        <td><span class="en-p">Current passes through the body — severity depends on current magnitude, path, duration, and frequency</span><span class="zh-p" style="color:#666;">电流通过人体——严重性取决于电流大小、路径、时长和频率</span></td>
+        <td><span class="en-p">Ventricular fibrillation, burns, muscle contraction, death</span><span class="zh-p" style="color:#666;">心室颤动、烧伤、肌肉收缩、死亡</span></td>
+      </tr>
+      <tr>
+        <td><span class="en-p"><strong>Arc Flash / 弧闪</strong></span><span class="zh-p" style="color:#666;">弧闪</span></td>
+        <td><span class="en-p">Extreme heat and light from an electrical fault that ionizes the air into a conducting arc</span><span class="zh-p" style="color:#666;">电气故障产生的极热和强光使空气电离形成导电电弧</span></td>
+        <td><span class="en-p">Severe burns (incident energy), ignition of clothing, eye damage</span><span class="zh-p" style="color:#666;">严重烧伤（入射能量）、衣物点燃、眼睛损伤</span></td>
+      </tr>
+      <tr>
+        <td><span class="en-p"><strong>Arc Blast / 弧爆</strong></span><span class="zh-p" style="color:#666;">弧爆</span></td>
+        <td><span class="en-p">Rapid expansion of superheated gas creates a pressure wave</span><span class="zh-p" style="color:#666;">过热气体的快速膨胀产生压力波</span></td>
+        <td><span class="en-p">Blunt trauma, hearing damage, flying debris</span><span class="zh-p" style="color:#666;">钝性创伤、听力损伤、飞溅碎片</span></td>
+      </tr>
+    </table>
+
+    <h3>合格人员与不合格人员 / Qualified vs. Unqualified Persons</h3>
+    <table class="bi-table">
+      <tr><th>合格人员 / Qualified Person</th><th>不合格人员 / Unqualified Person</th></tr>
+      <tr>
+        <td>
+          <span class="en-p">A person who has skills and knowledge related to the construction and operation of electrical equipment and installations, and has received safety training to identify and avoid the hazards involved.</span>
+          <span class="zh-p" style="color:#666;">具备与电气设备和装置的构造及操作相关的技能和知识，并接受过安全培训能够识别和避免相关危害的人员。</span>
+        </td>
+        <td>
+          <span class="en-p">A person who is NOT a qualified person. Unqualified persons must not approach exposed energized conductors or circuit parts closer than the limited approach boundary unless accompanied by a qualified person.</span>
+          <span class="zh-p" style="color:#666;">不是合格人员的人。不合格人员不得接近裸露带电导体或电路部件超过限制接近边界，除非有合格人员陪同。</span>
+        </td>
+      </tr>
+    </table>
+
+    <h3>弧闪边界 (NFPA 70E) / Arc Flash Boundaries (NFPA 70E)</h3>
+    <p class="bi-p">
+      <span class="en-p">NFPA 70E establishes three approach boundaries for shock protection and one for arc flash protection. These boundaries determine who may approach, what PPE is required, and what precautions must be taken.</span>
+      <span class="zh-p" style="color:#666;">NFPA 70E为电击防护设立了三个接近边界，为弧闪防护设立了一个边界。这些边界决定了谁可以接近、需要什么PPE以及必须采取哪些预防措施。</span>
+    </p>
+
+    <svg class="diagram-svg" viewBox="0 0 460 320" xmlns="http://www.w3.org/2000/svg">
+      <!-- Concentric approach boundaries around energized part -->
+      <circle cx="230" cy="160" r="30" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+      <text x="230" y="156" text-anchor="middle" font-size="9" fill="#991b1b" font-weight="bold">带电部件</text>
+      <text x="230" y="168" text-anchor="middle" font-size="7" fill="#991b1b">Energized</text>
+
+      <!-- Prohibited (red) -->
+      <circle cx="230" cy="160" r="62" fill="none" stroke="#dc2626" stroke-width="3" stroke-dasharray="6,3"/>
+      <text x="230" y="84" text-anchor="middle" font-size="10" fill="#dc2626" font-weight="bold">禁止接近边界</text>
+      <text x="230" y="97" text-anchor="middle" font-size="8" fill="#dc2626">Prohibited</text>
+
+      <!-- Restricted (orange) -->
+      <circle cx="230" cy="160" r="105" fill="none" stroke="#f59e0b" stroke-width="3" stroke-dasharray="6,3"/>
+      <text x="230" y="274" text-anchor="middle" font-size="10" fill="#b45309" font-weight="bold">限制区域边界</text>
+      <text x="230" y="287" text-anchor="middle" font-size="8" fill="#b45309">Restricted</text>
+
+      <!-- Limited (yellow) -->
+      <circle cx="230" cy="160" r="148" fill="none" stroke="#eab308" stroke-width="3" stroke-dasharray="6,3"/>
+      <text x="72" y="160" text-anchor="middle" font-size="10" fill="#854d0e" font-weight="bold" transform="rotate(-90 72 160)">限制接近边界</text>
+      <text x="72" y="175" text-anchor="middle" font-size="8" fill="#854d0e" transform="rotate(-90 72 175)">Limited</text>
+
+      <!-- Labels -->
+      <text x="230" y="315" text-anchor="middle" font-size="10" fill="#64748b">NFPA 70E 电击防护接近边界（同心圆示意）</text>
+      <text x="230" y="58" text-anchor="middle" font-size="9" fill="#888">越靠近中心，PPE要求越高 / Closer to center = higher PPE</text>
+    </svg>
+
+    <table class="bi-table">
+      <tr><th>边界 / Boundary</th><th>定义 / Definition</th><th>谁可以进入？/ Who Can Cross?</th></tr>
+      <tr>
+        <td><strong><span class="bi-term"><span class="zh">限制接近边界</span><span class="en">Limited Approach Boundary</span><span class="vocab-star" data-term="Limited Approach Boundary">☆</span></span></strong></td>
+        <td>
+          <span class="en-p">The distance from an exposed energized conductor or circuit part within which a shock hazard exists. Typically the outermost boundary.</span>
+          <span class="zh-p" style="color:#666;">距裸露带电导体或电路部件的距离，在此范围内存在电击危害。通常是最外层边界。</span>
+        </td>
+        <td>
+          <span class="en-p">Qualified persons OR unqualified persons accompanied by a qualified person. Unqualified persons must be advised of the hazards.</span>
+          <span class="zh-p" style="color:#666;">合格人员或有合格人员陪同的不合格人员。不合格人员必须被告知相关危害。</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong><span class="bi-term"><span class="zh">限制区域边界</span><span class="en">Restricted Approach Boundary</span><span class="vocab-star" data-term="Restricted Approach Boundary">☆</span></span></strong></td>
+        <td>
+          <span class="en-p">The distance from an exposed energized conductor or circuit part within which there is an increased likelihood of electric shock due to arc-over combined with inadvertent movement.</span>
+          <span class="zh-p" style="color:#666;">距裸露带电导体或电路部件的距离，在此范围内由于电弧跨越加上无意移动，电击可能性增加。</span>
+        </td>
+        <td>
+          <span class="en-p">Only qualified persons with an approved, documented work plan and appropriate PPE. No unqualified persons.</span>
+          <span class="zh-p" style="color:#666;">仅限具有经批准的书面工作计划和适当PPE的合格人员。无不合格人员。</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong><span class="bi-term"><span class="zh">禁止接近边界</span><span class="en">Prohibited Approach Boundary</span><span class="vocab-star" data-term="Prohibited Approach Boundary">☆</span></span></strong></td>
+        <td>
+          <span class="en-p">The distance from an exposed energized conductor or circuit part within which work is considered the same as making direct contact with the live part.</span>
+          <span class="zh-p" style="color:#666;">距裸露带电导体或电路部件的距离，在此范围内的工作被视为与直接接触带电部件等同。</span>
+        </td>
+        <td>
+          <span class="en-p">Only qualified persons with the same protection as if they were making direct contact with the live part. Requires a documented energized electrical work permit in many cases.</span>
+          <span class="zh-p" style="color:#666;">仅限具有如同直接接触带电部件般的保护的合格人员。多数情况下需要书面的带电电气工作许可证。</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong><span class="bi-term"><span class="zh">弧闪边界</span><span class="en">Arc Flash Boundary</span><span class="vocab-star" data-term="Arc Flash Boundary">☆</span></span></strong></td>
+        <td>
+          <span class="en-p">The distance from a prospective arc source at which the incident energy equals 1.2 cal/cm² (the onset of a second-degree burn). This is a separate boundary from the shock boundaries.</span>
+          <span class="zh-p" style="color:#666;">距潜在电弧源的距离，在此处入射能量等于1.2 cal/cm²（二级烧伤的起始点）。这是独立于电击边界的单独边界。</span>
+        </td>
+        <td>
+          <span class="en-p">Anyone crossing this boundary must wear arc-rated PPE appropriate for the calculated incident energy level.</span>
+          <span class="zh-p" style="color:#666;">进入此边界的任何人必须穿戴与计算的入射能量水平相适应的防弧PPE。</span>
+        </td>
+      </tr>
+    </table>
+
+    <h3>弧闪PPE类别 / Arc Flash PPE Categories</h3>
+    <p class="bi-p">
+      <span class="en-p">NFPA 70E uses PPE categories based on incident energy levels. The CSP exam expects familiarity with the concept and what the categories represent.</span>
+      <span class="zh-p" style="color:#666;">NFPA 70E使用基于入射能量水平的PPE类别。CSP考试要求熟悉这一概念及其各类别代表的含义。</span>
+    </p>
+    <table class="bi-table">
+      <tr><th>类别 / Category</th><th>入射能量 / Incident Energy</th><th>典型PPE / Typical PPE</th></tr>
+      <tr>
+        <td>类别 1 / Category 1</td>
+        <td>&ge; 1.2 cal/cm&sup2; (最低4 cal/cm&sup2;评级)</td>
+        <td><span class="en-p">Arc-rated shirt and pants or coverall, hard hat, safety glasses, leather gloves</span><span class="zh-p" style="color:#666;">防弧衬衫和裤子或连体工作服、安全帽、护目镜、皮革手套</span></td>
+      </tr>
+      <tr>
+        <td>类别 2 / Category 2</td>
+        <td>&ge; 4 cal/cm&sup2; (最低8 cal/cm&sup2;评级)</td>
+        <td><span class="en-p">Category 1 + arc-rated face shield or arc flash hood, hearing protection</span><span class="zh-p" style="color:#666;">类别1 + 防弧面罩或弧闪头罩、听力防护</span></td>
+      </tr>
+      <tr>
+        <td>类别 3 / Category 3</td>
+        <td>&ge; 8 cal/cm&sup2; (最低25 cal/cm&sup2;评级)</td>
+        <td><span class="en-p">Arc flash suit jacket and pants, arc flash hood, Category 2 underlayers</span><span class="zh-p" style="color:#666;">弧闪防护服外套和裤子、弧闪头罩、类别2内层</span></td>
+      </tr>
+      <tr>
+        <td>类别 4 / Category 4</td>
+        <td>&ge; 25 cal/cm&sup2; (最低40 cal/cm&sup2;评级)</td>
+        <td><span class="en-p">Arc flash suit jacket and pants, arc flash hood, Category 2 underlayers — highest protection level</span><span class="zh-p" style="color:#666;">弧闪防护服外套和裤子、弧闪头罩、类别2内层——最高防护等级</span></td>
+      </tr>
+    </table>
+
+    <div class="important">
+      <strong>⚠ CSP 考试技巧 / Exam Tip:</strong><br>
+      <span class="en-p">The arc flash boundary is defined by the 1.2 cal/cm² threshold (second-degree burn onset). If the calculated incident energy exceeds 40 cal/cm², equipment must be de-energized — no PPE category exists for that level.</span>
+      <span class="zh-p" style="color:#666;">弧闪边界由1.2 cal/cm²阈限值（二级烧伤起始点）定义。如果计算的入射能量超过40 cal/cm²，设备必须断电——没有适用于该水平的PPE类别。</span>
+    </div>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-high">必考 HIGH</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "What defines the arc flash boundary?" / "What are the three electrical hazards?"<br>
+        <strong>答题要点 / Key point:</strong> 弧闪边界=1.2 cal/cm²（二级烧伤起点）；入射能量&gt;40 cal/cm²必须断电（无对应PPE等级）。三大电气危害：Shock电击 / Arc Flash弧闪 / Arc Blast弧爆。NFPA 70E要求带电作业先做工作前现场评估（shock &amp; arc flash risk assessment）。
+      </div>
+    </div>
+
+    <div class="mnemonic">
+      <span class="mn-label">🧠 记忆口诀 / Mnemonic:</span>
+      <span class="mn-content"><strong>"1.2 进边界，40 必须断电"</strong> — 1.2 cal/cm²定义弧闪边界（二级烧伤）；超过40 cal/cm²不可用PPE防护、必须de-energize。中文："一二边界、四十断电"。</span>
+    </div>
+  </div>
+
+  <div id="quiz-group-1"></div>
+
+
+  <div class="knowledge-card">
+    <h2>3.2 <span class="bi-term"><span class="zh">电气安全工作条件与许可证</span> · <span class="en">Electrically Safe Work Conditions & Permits</span></span></h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>NFPA 70E · 29 CFR 1910.147 · Brauer Ch.12</span>
+    </div>
+
+    <h3>建立电气安全工作条件 / Establishing an Electrically Safe Work Condition</h3>
+    <p class="bi-p">
+      <span class="en-p">NFPA 70E's preferred approach is to establish an <strong>electrically safe work condition</strong> (de-energize) before performing work. The process is:</span>
+      <span class="zh-p" style="color:#666;">NFPA 70E的首选方法是先建立<strong>电气安全工作条件</strong>（断电）再进行作业。流程是：</span>
+    </p>
+    <ol>
+      <li class="bi-li">
+        <span class="en-li"><strong>Identify</strong> all power sources.</span>
+        <span class="zh-li"><strong>识别</strong>所有电源。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Disconnect</strong> all power sources (open breakers, pull disconnect switches).</span>
+        <span class="zh-li"><strong>断开</strong>所有电源（断开断路器、拉开隔离开关）。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Apply LOTO</strong> — place locks and tags on the energy-isolating devices (per 1910.147).</span>
+        <span class="zh-li"><strong>施加LOTO</strong>——在能量隔离装置上施加锁具和标签（依据1910.147）。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Test</strong> for the absence of voltage with an adequately rated voltage tester, checking phase-to-phase and phase-to-ground.</span>
+        <span class="zh-li"><strong>测试</strong>无电压——使用额定电压足够的电压测试仪，检查相间和相对地。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Ground</strong> — install temporary protective grounds where required (e.g., overhead lines).</span>
+        <span class="zh-li"><strong>接地</strong>——在需要处安装临时保护接地（如架空线）。</span>
+      </li>
+    </ol>
+
+    <h3>带电电气工作许可证 / Energized Electrical Work Permit</h3>
+    <p class="bi-p">
+      <span class="en-p">Work performed on energized conductors within the <strong>limited approach boundary</strong>, or that requires <strong>crossing the restricted approach boundary</strong>, requires an energized electrical work permit (subject to listed exceptions such as testing/troubleshooting and thermographic inspection).</span>
+      <span class="zh-p" style="color:#666;">在<strong>限制接近边界</strong>内对带电导体进行作业，或需要<strong>跨越限制区域边界</strong>的作业，需要带电电气工作许可证（有例外情况，如测试/故障排除和热成像检查）。</span>
+    </p>
+    <p class="bi-p">
+      <span class="en-p">Justification for energized work must document that: (1) de-energizing introduces additional or increased hazards, or (2) the task is infeasible to perform in a de-energized state (e.g., voltage testing is inherently energized).</span>
+      <span class="zh-p" style="color:#666;">带电作业的正当理由必须记录：(1) 断电会引入额外或更大的危害，或(2) 任务在断电状态下不可行（如电压测试本质上就是带电的）。</span>
+    </p>
+
+    <h3>关键电气安全原则 / Key Electrical Safety Principles</h3>
+    <ul>
+      <li class="bi-li">
+        <span class="en-li"><strong>Establish an electrically safe work condition</strong> (de-energize) before work begins whenever possible. This is the preferred approach.</span>
+        <span class="zh-li"><strong>在工作开始前建立电气安全工作条件</strong>（断电），尽可能这样做。这是首选方法。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Energized electrical work permit</strong> required when: (a) energized work is justified (infeasible to de-energize, or de-energizing creates greater hazard), (b) work is within the restricted approach boundary.</span>
+        <span class="zh-li">需要<strong>带电电气工作许可证</strong>的情况：(a) 带电工作有充分理由（不可行断电，或断电造成更大危害），(b) 工作在限制区域边界内。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong><span class="bi-term"><span class="zh">接地故障断路器</span><span class="en">Ground-fault circuit interrupters (GFCI)</span><span class="vocab-star" data-term="Ground-Fault Circuit Interrupter (GFCI)">☆</span></span></strong> required on construction sites for all 120V, single-phase, 15A and 20A receptacle outlets not part of permanent wiring.</span>
+        <span class="zh-li">建筑工地上所有非永久布线的120V、单相、15A和20A插座都需配备GFCI。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong><span class="bi-term"><span class="zh">确保设备接地导体计划</span><span class="en">Assured equipment grounding conductor program (AEGCP)</span><span class="vocab-star" data-term="Assured Equipment Grounding Conductor Program (AEGCP)">☆</span></span></strong> — alternative to GFCI on construction sites; requires daily visual inspections of cord sets and equipment connected by cord and plug, plus quarterly continuity tests.</span>
+        <span class="zh-li">建筑工地上GFCI的替代方案；需要对电源线组及通过插头连接的设备进行每日目视检查，加上每季度一次连续性测试。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Current vs. voltage:</strong> Severity of shock is governed by CURRENT (amperage), not voltage alone. Even 120V can be lethal. Body resistance drops when wet (from ~100,000 Ω dry to ~1,000 Ω wet), greatly increasing current.</span>
+        <span class="zh-li"><strong>电流与电压：</strong>电击严重性由<strong>电流</strong>（安培）决定，而非仅电压。即使120V也可能致命。人体电阻在潮湿时大幅下降（从干燥约100,000Ω降至约1,000Ω），使电流大幅增加。</span>
+      </li>
+    </ul>
+
+    <div class="case-box">
+      <strong>📋 实际案例 / Case Study:</strong><br>
+      <span class="en-p">A maintenance electrician in a food plant de-energized a panel but did not test for absence of voltage before touching the conductors. A back-fed circuit kept one bus energized, resulting in a shock and arc flash that caused second-degree burns. Root causes: failure to apply LOTO, failure to test for absence of voltage, and no energized-work permit. The corrective program emphasized the electrically safe work condition sequence and verifying a "prove-test-prove" voltage tester procedure.</span>
+      <span class="zh-p" style="color:#666;">一家食品厂的电工给配电盘断电后，未测试无电压就触摸导体。一个反供电回路使某段母线仍带电，导致电击和弧闪，造成二度烧伤。根本原因：未施加LOTO、未测试无电压、无带电作业许可证。纠正计划强调电气安全工作条件的流程和"验证-测试-再验证"电压测试仪程序。</span>
+    </div>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-high">必考 HIGH</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "What steps are required to establish an electrically safe work condition?"<br>
+        <strong>答题要点 / Key point:</strong> 顺序：断电(把负荷切断) → 上锁挂牌(LOTO) → 用"验证-测试-再验证"(prove-test-prove)验证无电压 → 验电时若发现带电须使用PPE。带电作业许可证仅当"不可断电"或"断电更危险"时需要。工地120V插座需GFCI或AEGCP（AEGCP：每日目视+季度连续性测试）。
+      </div>
+    </div>
+
+    <div class="exam-scenario">
+      <div class="es-label">📝 真题情景 / Exam Scenario:</div>
+      <div class="es-question">"An electrician must work on an energized panel that cannot be de-energized without shutting down a life-support system. What is required?"</div>
+      <div><strong>最佳答案 / Best answer:</strong> An energized electrical work permit, a shock/arc-flash risk assessment, and appropriate PPE. 解析：NFPA 70E允许在"断电不可行或造成更大危害"时带电作业，但必须执行风险评估、签发许可证、在受限接近边界内佩戴相应等级PPE，并配备安全培训。</div>
+    </div>
+  </div>
+
+  <div id="quiz-group-2"></div>
+
+
+  <div class="knowledge-card">
+    <h2>3.3 <span class="bi-term"><span class="zh">坠落防护 — 29 CFR 1926 Subpart M</span> · <span class="en">Fall Protection — 29 CFR 1926 Subpart M</span><span class="vocab-star" data-term="Fall Protection">☆</span></span></h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>29 CFR 1926 Subpart M · 29 CFR 1926 Subpart R · 29 CFR 1910.28 · Brauer Ch.11 · Yates Ch.23</span>
+    </div>
+
+    <p class="bi-p">
+      <span class="en-p"><span class="bi-term"><span class="zh">坠落防护</span><span class="en">Fall protection</span></span> is consistently one of the most frequently cited OSHA standards. The CSP exam tests trigger heights, system requirements, and the hierarchy of fall protection. Falls are a leading cause of occupational fatalities — in construction, falls are the #1 "Fatal Four" cause of death.</span>
+      <span class="zh-p" style="color:#666;">坠落防护一直是OSHA最常引用的标准之一。CSP考试考查触发高度、系统要求和坠落防护的层级。坠落是职业致死的主要原因之一——在建筑行业，坠落是"致命四项"中排名第一的死因。</span>
+    </p>
+
+    <h3>触发高度 — 何时需要坠落防护 / Trigger Heights — When Fall Protection is Required</h3>
+    <table class="bi-table">
+      <tr><th>工作活动 / Work Activity</th><th>触发高度 / Trigger Height</th><th>OSHA 标准 / OSHA Standard</th></tr>
+      <tr>
+        <td><span class="en-p">General Industry (walking-working surfaces) / 一般工业（行走-工作表面）</span></td>
+        <td><strong>4 英尺 / 4 feet</strong></td>
+        <td>29 CFR 1910.28</td>
+      </tr>
+      <tr>
+        <td><span class="en-p">Construction — General / 建筑 — 一般</span></td>
+        <td><strong>6 英尺 / 6 feet</strong></td>
+        <td>29 CFR 1926.501(b)(1)</td>
+      </tr>
+      <tr>
+        <td><span class="en-p">Scaffolds / 脚手架</span></td>
+        <td><strong>10 英尺 / 10 feet</strong></td>
+        <td>29 CFR 1926.451(g)</td>
+      </tr>
+      <tr>
+        <td><span class="en-p">Steel Erection — General activities / 钢结构安装 — 一般活动</span></td>
+        <td><strong>15 英尺 / 15 feet</strong></td>
+        <td>29 CFR 1926.760(a)</td>
+      </tr>
+      <tr>
+        <td><span class="en-p">Steel Erection — Connectors and deckers / 钢结构安装 — 连接工</span></td>
+        <td><strong>15–30 英尺</strong> (CDZ中连接工为30英尺)</td>
+        <td>29 CFR 1926.760(b)–(c)</td>
+      </tr>
+    </table>
+
+    <div class="important">
+      <strong>⚠ CSP 考试技巧 / Exam Tip:</strong><br>
+      <span class="en-p">Memorize the general industry vs. construction trigger height distinction. General industry = 4 ft. Construction = 6 ft. This is a classic exam distinction. Also remember: scaffolds = 10 ft (construction), steel erection = 15 ft / 30 ft.</span>
+      <span class="zh-p" style="color:#666;">记住一般工业与建筑的触发高度区别。一般工业=4英尺。建筑=6英尺。这是经典的考试区分。还要记住：脚手架=10英尺（建筑），钢结构安装=15英尺/30英尺。</span>
+    </div>
+
+    <h3>坠落防护系统（按层级优先级排序）/ Fall Protection Systems (Hierarchy Preferred)</h3>
+    <table class="bi-table">
+      <tr><th>系统 / System</th><th>描述 / Description</th><th>关键规格 / Key Specs & Notes</th></tr>
+      <tr>
+        <td><strong><span class="bi-term"><span class="zh">护栏系统</span><span class="en">Guardrail Systems</span><span class="vocab-star" data-term="Guardrail System">☆</span></span></strong></td>
+        <td>
+          <span class="en-p">Passive fall protection — a barrier that prevents a worker from reaching a fall hazard.</span>
+          <span class="zh-p" style="color:#666;">被动坠落防护——防止工人接近坠落危害的屏障。</span>
+        </td>
+        <td>
+          <span class="en-p">Top rail: <strong>42 inches</strong> (±3 in) high. Must withstand <strong>200 lbs</strong> force applied within 2 inches of the top edge, in any outward or downward direction. Top rail must not deflect below <strong>39 inches</strong> under load. Midrails (required when no wall or parapet ≥ 21 inches high): installed at a height midway between top rail and walking surface. Intermediate vertical members (balusters): spacing ≤ <strong>19 inches</strong> apart. Toeboard: minimum 3.5 inches high, must withstand 50 lbs force. Guardrails are PREFERRED because they are passive (no worker action required).</span>
+          <span class="zh-p" style="color:#666;">顶部横杆：高<strong>42英寸</strong>（±3英寸）。必须能在顶部边缘2英寸内、在任意向外或向下方向承受<strong>200磅力</strong>。受力时顶部横杆不得偏斜至<strong>39英寸</strong>以下。中间横杆（当没有高度≥21英寸的墙体或护墙时需要）：安装高度位于顶部横杆与行走表面中间。中间垂直构件（栏杆柱）：间距≤<strong>19英寸</strong>。踢脚板：最低3.5英寸高，必须承受50磅力。护栏是首选，因为它们是被动的（无需工人采取行动）。</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong><span class="bi-term"><span class="zh">安全网系统</span><span class="en">Safety Net Systems</span><span class="vocab-star" data-term="Safety Net System">☆</span></span></strong></td>
+        <td>
+          <span class="en-p">Nets installed as close as practicable under the walking/working surface, but no more than <strong>30 feet</strong> below.</span>
+          <span class="zh-p" style="color:#666;">尽可能靠近行走/工作表面下方安装的网，但不超过下方<strong>30英尺</strong>。</span>
+        </td>
+        <td>
+          <span class="en-p">Must extend outward from the edge per OSHA tables. Must be drop-tested or certified. Maximum mesh size: 6 inches × 6 inches.</span>
+          <span class="zh-p" style="color:#666;">必须按OSHA表格从边缘向外延伸。必须进行跌落测试或获得认证。最大网孔尺寸：6英寸×6英寸。</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong><span class="bi-term"><span class="zh">个人防坠系统</span><span class="en">Personal Fall Arrest System (PFAS)</span><span class="vocab-star" data-term="Personal Fall Arrest System (PFAS)">☆</span></span></strong></td>
+        <td>
+          <span class="en-p">Active fall protection consisting of: anchorage, full-body harness, and connector (lanyard or SRL).</span>
+          <span class="zh-p" style="color:#666;">主动坠落防护，包括：锚固点、全身式安全带和连接器（系索或自缩式救生索SRL）。</span>
+        </td>
+        <td>
+          <span class="en-p">Anchorage must support <strong>5,000 lbs</strong> per employee attached (or 2× safety factor with certification). Maximum free fall distance: <strong>6 feet</strong>. Maximum deceleration distance: <strong>3.5 feet</strong>. Body belts are PROHIBITED for fall arrest (may only be used for positioning).</span>
+          <span class="zh-p" style="color:#666;">锚固点必须支撑每名连接的员工<strong>5,000磅</strong>（或经认证有2倍安全系数）。最大自由坠落距离：<strong>6英尺</strong>。最大减速距离：<strong>3.5英尺</strong>。防坠保护<strong>禁止</strong>使用身体腰带（仅可用于定位）。</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong><span class="bi-term"><span class="zh">定位装置系统</span><span class="en">Positioning Device Systems</span><span class="vocab-star" data-term="Positioning Device System">☆</span></span></strong></td>
+        <td>
+          <span class="en-p">Allows a worker to be supported on an elevated vertical surface with both hands free.</span>
+          <span class="zh-p" style="color:#666;">允许工人在高处垂直表面上得到支撑，双手自由作业。</span>
+        </td>
+        <td>
+          <span class="en-p">Maximum free fall: <strong>2 feet</strong>. Anchorage must support 3,000 lbs (or 2× safety factor).</span>
+          <span class="zh-p" style="color:#666;">最大自由坠落：<strong>2英尺</strong>。锚固点必须支撑3,000磅（或2倍安全系数）。</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong><span class="bi-term"><span class="zh">警示线系统</span><span class="en">Warning Line Systems</span><span class="vocab-star" data-term="Warning Line System">☆</span></span></strong></td>
+        <td>
+          <span class="en-p">Barriers erected on a roof to warn workers they are approaching an unprotected edge. Used only for roofing work on low-slope roofs.</span>
+          <span class="zh-p" style="color:#666;">在屋顶上设立的屏障，警告工人正在接近未防护边缘。仅用于低坡度屋顶的屋面作业。</span>
+        </td>
+        <td>
+          <span class="en-p">Must be erected at least <strong>6 feet</strong> from the roof edge (mechanical equipment on roof: 6 ft from edge; non-mechanical: 10 ft from edge). Must be flagged every 6 feet. Lines must withstand 16 lbs of force. Requires a safety monitor.</span>
+          <span class="zh-p" style="color:#666;">必须设立在距屋顶边缘至少<strong>6英尺</strong>处（屋顶有机械设备：距边缘6英尺；无机械：距边缘10英尺）。必须每6英尺挂旗标识。绳索必须承受16磅力。需要安全监视员。</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong><span class="bi-term"><span class="zh">安全监视系统</span><span class="en">Safety Monitoring System</span><span class="vocab-star" data-term="Safety Monitoring System">☆</span></span></strong></td>
+        <td>
+          <span class="en-p">A competent person monitors workers for fall hazards. Used in conjunction with warning line systems.</span>
+          <span class="zh-p" style="color:#666;">由合格人员监视工人的坠落危害。与警示线系统配合使用。</span>
+        </td>
+        <td>
+          <span class="en-p">Monitor must be on the same walking/working surface, in visual/verbal range, and have no other responsibilities. May only be used where no mechanical equipment is in use.</span>
+          <span class="zh-p" style="color:#666;">监视员必须在同一行走/工作表面上，在视觉/语言范围内，且不得有其它职责。仅可在无机械设备使用的情况下使用。</span>
+        </td>
+      </tr>
+    </table>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-high">必考 HIGH</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "At what height is fall protection required on a walking/working surface?" (通用工业6英尺 / 建筑业6英尺 / 屋面作业6英尺低坡)<br>
+        <strong>答题要点 / Key point:</strong> 关键数值：锚固点5,000磅/人（或2×安全系数）；PFAS最大自由坠落6英尺、减速距离3.5英尺；<strong>身体腰带禁止用于防坠</strong>（仅可定位）；定位装置自由坠落2英尺、锚固3,000磅；警示线距边缘6英尺（无机械10英尺）、每6英尺挂旗、承受16磅力；安全监视员须同一表面且无其他职责。控制优先：护栏 &gt; PFAS &gt; 安全网。
+      </div>
+    </div>
+
+    <div class="mnemonic">
+      <span class="mn-label">🧠 记忆口诀 / Mnemonic:</span>
+      <span class="mn-content"><strong>"5000-6-3.5"</strong> — 锚固<strong>5000</strong>磅、自由坠落≤<strong>6</strong>英尺、减速≤<strong>3.5</strong>英尺。中文"五仟、六、三五"。补充：定位=2英尺/3000磅；警示线=距边6英尺（无机械10）/每6英尺挂旗/16磅力。</span>
+    </div>
+  </div>
+
+  <div id="quiz-group-3"></div>
+
+
+  <div class="knowledge-card">
+    <h2>3.4 坠落间隙与PFAS计算 / Fall Clearance & PFAS Calculations</h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>29 CFR 1926.502(d) · Yates Ch.23</span>
+    </div>
+
+    <h3>坠落间隙计算 / Fall Clearance Calculation</h3>
+    <p class="bi-p">
+      <span class="en-p">When using a PFAS, sufficient clearance below the worker must exist to prevent striking the lower level or an obstruction. The total fall distance is calculated as:</span>
+      <span class="zh-p" style="color:#666;">使用PFAS时，工人下方必须有足够的间隙以防止撞击下层或障碍物。总坠落距离计算如下：</span>
+    </p>
+
+    <div class="fall-calc">
+      <strong>所需总坠落间隙 / Total Fall Clearance Required</strong> = 自由坠落距离(FFD) + 减速距离(DD) + 安全带拉伸(HS) + D型环滑动(DS) + 安全系数(SF)<br><br>
+      <strong>典型计算（6英尺系索带减速装置）/ Typical Calculation (6-ft lanyard with deceleration device):</strong><br>
+      = 6 英尺(FF) + 3.5 英尺(Decel) + 1 英尺(H.Stretch) + 1 英尺(D-Ring) + 2 英尺(Safety)<br>
+      = <strong>13.5 英尺最低间隙 / 13.5 feet minimum clearance</strong><br><br>
+      <strong>保守估算（CSP考试）/ Conservative Estimate (CSP Exam): 17.5–18.5 英尺 / 17.5–18.5 feet</strong> — 考试通常使用较保守的数字以考虑锚点高度、系索长度变化和最坏情况。
+    </div>
+
+    <h3>自缩式救生索 (SRL) / Self-Retracting Lifelines (SRLs)</h3>
+    <p class="bi-p">
+      <span class="en-p">An SRL is a connector that automatically limits free fall distance and reduces the required clearance. Key points for the exam:</span>
+      <span class="zh-p" style="color:#666;">自缩式救生索（SRL）是一种自动限制自由坠落距离并减少所需间隙的连接器。考试要点：</span>
+    </p>
+    <ul>
+      <li class="bi-li">
+        <span class="en-li">SRLs limit free fall to roughly <strong>2 feet</strong> (or less), versus 6 feet for a standard 6-ft lanyard.</span>
+        <span class="zh-li">SRL将自由坠落限制在约<strong>2英尺</strong>（或更少），而标准6英尺系索为6英尺。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">If the SRL is anchored at the feet (e.g., tied to the back D-ring while on a ladder), free fall increases; anchorage should be at or above the dorsal D-ring when possible.</span>
+        <span class="zh-li">如果SRL锚固在脚部（如在梯子上连接到背部D型环），自由坠落会增加；锚固应尽可能在背D型环处或以上。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">SRLs require a fall clearance typically of <strong>3 to 8.5 feet</strong> depending on model and anchorage position — much less than a lanyard.</span>
+        <span class="zh-li">SRL通常需要<strong>3至8.5英尺</strong>的坠落间隙，取决于型号和锚固位置——远少于系索。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">Sharp-edge testing: lanyards and SRLs used where sharp edges (e.g., steel beams) could cut the line must be certified for sharp-edge conditions or protected from abrasion.</span>
+        <span class="zh-li">锐边测试：在可能切割绳索的锐边（如钢梁）处使用的系索和SRL必须通过锐边认证或用防护套防磨损。</span>
+      </li>
+    </ul>
+
+    <div class="formula-box">
+      <strong>自由坠落距离判定 / Free Fall Distance Logic</strong><br><br>
+      自由坠落距离 = 锚固点到作业面的垂直距离 + 连接器长度<br>
+      Free fall distance = vertical distance from anchorage to work surface + connector length<br><br>
+      <strong>判定规则 / Rule:</strong> 若自由坠落距离 &gt; 6英尺，则PFAS不符合要求，必须降低锚固点或更换连接器。<br>
+      If free fall &gt; 6 ft, the PFAS does not comply — lower the anchorage or change the connector.<br><br>
+      <strong>示例 / Example:</strong> 锚固点位于作业面上方2英尺，使用6英尺系索。<br>
+      Anchorage is 2 ft above the work surface, using a 6-ft lanyard.<br>
+      &nbsp;&nbsp;自由坠落 = 2 + 6 = <strong>8 英尺 / 8 ft</strong> → 超过6英尺限制，需降低锚固点或改用更短系索。<br>
+      &nbsp;&nbsp;Free fall = 2 + 6 = 8 ft → exceeds the 6-ft limit; lower the anchorage or use a shorter lanyard.
+    </div>
+
+    <div class="case-box">
+      <strong>📋 实际案例 / Case Study (free-fall limit):</strong><br>
+      <span class="en-p">A worker tied off to an anchor 4 feet above his D-ring with a 6-ft lanyard. His free fall was 10 feet — well over the 6-ft limit. When he slipped, he fell 10 feet, the energy absorber deployed fully, and he struck the concrete below (no clearance). The incident highlighted the exam-critical relationship between anchorage height, connector length, and clearance. Corrective fix: anchor at shoulder height or above, and verify clearance ≥ 13.5 ft.</span>
+      <span class="zh-p" style="color:#666;">一名工人用6英尺系索连接到其D型环上方4英尺的锚点上。自由坠落达10英尺——远超6英尺限制。当他滑倒时坠落了10英尺，吸能器完全展开，但仍撞到下方混凝土（无净空）。该事件凸显了锚点高度、连接器长度和净空之间的关键关系。纠正措施：锚固在肩部或以上，并核实净空≥13.5英尺。</span>
+    </div>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-high">必考 HIGH</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "A worker anchors 2 ft above the work surface with a 6-ft lanyard. What is the free-fall distance?"<br>
+        <strong>答题要点 / Key point:</strong> 自由坠落 = 锚点至作业面垂直距离 + 连接器长度（≤6英尺）。示例：2+6=8英尺 → 超限。总净空 = 6(FF)+3.5(Decel)+1(H)+1(D-ring)+2(SF) = <strong>13.5英尺</strong>。最佳原则：锚固在D型环肩部或以上。系索比SRL更易超限，考题常问"是否符合6英尺自由坠落限制"。
+      </div>
+    </div>
+
+    <div class="exam-scenario">
+      <div class="es-label">📝 真题情景 / Exam Scenario:</div>
+      <div class="es-question">"A worker must tie off on a 12-ft-deep mezzanine. The only anchor is 4 ft below his D-ring. He has a 6-ft lanyard. Is this compliant?"</div>
+      <div><strong>最佳答案 / Best answer:</strong> No — free fall = 4 + 6 = 10 ft, exceeding the 6-ft limit. 解析：自由坠落超过6英尺即不符合1926.502(d)。应选用自缩式救生索(SRL)限制自由坠落、把锚固点抬高到肩部以上，并核实下方净空≥13.5英尺，否则需改用护栏/安全网。</div>
+    </div>
+  </div>
+
+  <div id="quiz-group-4"></div>
+
+
+  <div class="knowledge-card">
+    <h2>3.5 附加坠落防护要求 / Additional Fall Protection Requirements</h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>29 CFR 1926 Subpart M · Yates Ch.23</span>
+    </div>
+
+    <ul>
+      <li class="bi-li">
+        <span class="en-li"><strong>Hole covers:</strong> Must support 2× the expected load, must be secured, must be marked "HOLE" or "COVER."</span>
+        <span class="zh-li"><strong>孔洞盖板：</strong>必须支撑2倍预期负载，必须固定，必须标记"HOLE"或"COVER"。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Stairways with 4+ risers (construction):</strong> Must have a handrail and stair railing.</span>
+        <span class="zh-li"><strong>4级及以上台阶的楼梯（建筑）：</strong>必须设有扶手和楼梯栏杆。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>PFAS inspection:</strong> Harnesses and lanyards must be inspected before each use by the user. Annual competent person inspection is a best practice (not an OSHA requirement per se, but often tested).</span>
+        <span class="zh-li"><strong>PFAS检查：</strong>安全带和系索必须在每次使用前由使用者检查。年度合格人员检查是最佳实践（本身不是OSHA要求，但常被考查）。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Rescue plan:</strong> Employers must provide for prompt rescue of employees in the event of a fall (post-fall suspension trauma can occur in under 15 minutes).</span>
+        <span class="zh-li"><strong>救援计划：</strong>雇主必须为坠落事件中员工的及时救援做好准备（坠落后悬挂创伤可在15分钟内发生）。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Training:</strong> Every employee who might be exposed to fall hazards must be trained in the nature of the hazards, the correct procedures for erecting/maintaining/dismantling fall protection systems, and the proper use of PFAS.</span>
+        <span class="zh-li"><strong>培训：</strong>每个可能暴露于坠落危害的员工必须接受培训，了解危害性质、架设/维护/拆除坠落防护系统的正确程序以及PFAS的正确使用。</span>
+      </li>
+    </ul>
+
+    <h3>坠落危害区标记 / Leading Edge Work</h3>
+    <p class="bi-p">
+      <span class="en-p"><span class="bi-term"><span class="zh">前沿作业</span><span class="en">Leading edge work</span><span class="vocab-star" data-term="Leading Edge">☆</span></span> — work at the advancing edge of a surface — requires a controlled decking zone (CDZ) for steel deckers. In a CDZ, employees are allowed to work without a PFAS but must be protected by a safety monitor, and the CDZ must be at least 2 feet wide and no more than 90 feet wide, with a warning line at 90 ft.</span>
+      <span class="zh-p" style="color:#666;">前沿作业——在结构表面的推进边缘作业——对钢结构铺板工要求设置受控铺板区（CDZ）。在CDZ内，员工可不穿戴PFAS作业，但必须由安全监视员保护，CDZ宽度至少2英尺且不超过90英尺，在90英尺处设置警示线。</span>
+    </p>
+
+    <h3>屋顶作业常用组合 / Common Roofing Combinations</h3>
+    <p class="bi-p">
+      <span class="en-p">For low-slope roofing work, OSHA permits warning lines combined with a safety monitoring system as an alternative to guardrails, PFAS, or nets — but only where no mechanical equipment is in use. If mechanical equipment (e.g., a roof decking machine) is used, the roofers must also use a PFAS or a safety net/guardrail system.</span>
+      <span class="zh-p" style="color:#666;">对于低坡度屋面作业，OSHA允许使用警示线与安全监视系统组合，替代护栏、PFAS或安全网——但仅限不使用机械设备时。若使用机械设备（如铺板机），屋面工还必须使用PFAS或安全网/护栏系统。</span>
+    </p>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-high">必考 HIGH</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "What additional protection is required when mechanical equipment is used on a roof?"<br>
+        <strong>答题要点 / Key point:</strong> 低坡屋面可用"警示线+安全监视员"替代护栏/PFAS/安全网，但<strong>有机械设备时必须加PFAS或安全网</strong>。前沿作业受控铺板区(CDZ)：宽≥2英尺、≤90英尺，90英尺处设警示线。救援计划必考：坠落悬挂创伤15分钟内即可发生，雇主必须能及时救援。
+      </div>
+    </div>
+
+    <div class="exam-scenario">
+      <div class="es-label">📝 真题情景 / Exam Scenario:</div>
+      <div class="es-question">"Roofers are installing a membrane on a low-slope roof while a mechanical decking machine operates nearby. Can the employer rely on a warning-line system alone?"</div>
+      <div><strong>最佳答案 / Best answer:</strong> No — when mechanical equipment is in use, workers must also use a PFAS or be protected by a safety net/guardrail system. 解析：警示线+安全监视员仅在不使用机械设备时可用作替代方案；机械作业区附近必须提供主动防坠（PFAS或安全网/护栏）。</div>
+    </div>
+  </div>
+
+  <div id="quiz-group-5"></div>
+
+
+  <div class="knowledge-card">
+    <h2>3.6 <span class="bi-term"><span class="zh">脚手架与梯子安全</span> · <span class="en">Scaffold & Ladder Safety</span></span></h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>29 CFR 1926 Subpart L · 29 CFR 1926 Subpart X · 29 CFR 1910.23 · Yates Ch.23</span>
+    </div>
+
+    <h3>脚手架 — 29 CFR 1926 Subpart L / Scaffolds — 29 CFR 1926 Subpart L</h3>
+    <p class="bi-p">
+      <span class="en-p">Fall protection (guardrail or PFAS) is required when working on a scaffold <strong>10 feet or higher</strong> above the lower level.</span>
+      <span class="zh-p" style="color:#666;">在距下层<strong>10英尺或更高</strong>的脚手架上作业时，需要坠落防护（护栏或PFAS）。</span>
+    </p>
+    <ul>
+      <li class="bi-li">
+        <span class="en-li"><strong>Platform requirements / 平台要求:</strong> Platform must be at least 18 inches wide (unless using a narrower platform for a specific trade). Scaffold platforms must be fully planked or decked.</span>
+        <span class="zh-li">平台至少宽18英寸（除非特定工种使用更窄的平台）。脚手架平台必须满铺脚手板。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Maximum gap / 最大间隙:</strong> No more than 1 inch gap between scaffold planks.</span>
+        <span class="zh-li">脚手板之间间隙不超过1英寸。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Maximum platform deflection / 最大平台挠度:</strong> Planks may not deflect more than 1/60 of their span.</span>
+        <span class="zh-li">脚手板挠度不得超过跨度的1/60。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Erection/dismantling / 架设/拆除:</strong> Performed by a competent person; a competent person inspects the scaffold before each work shift and after any occurrence that could affect structural integrity.</span>
+        <span class="zh-li">架设/拆除由合格人员执行；合格人员在每个工作班次前以及任何可能影响结构完整性的情况发生后检查脚手架。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Distance from wall / 距墙距离:</strong> Scaffold platform must be within 14 inches horizontally of the work face (30 inches if outriggers are used).</span>
+        <span class="zh-li">脚手架平台距作业面水平距离必须在14英寸以内（使用悬挑架时为30英寸）。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Supported scaffold base / 支撑式脚手架底座:</strong> Must sit on base plates and mud sills (or other firm foundations), not on unstable objects like barrels or boxes.</span>
+        <span class="zh-li">支撑式脚手架底座必须放在底座板和垫木（或其他牢固基础上），不得放在油桶或箱子等不稳固物体上。</span>
+      </li>
+    </ul>
+
+    <h3>梯子 — 29 CFR 1926 Subpart X & 1910.23 / Ladders — 29 CFR 1926 Subpart X & 1910.23</h3>
+    <ul>
+      <li class="bi-li">
+        <span class="en-li"><strong>Three-point contact / 三点接触:</strong> Face the ladder and maintain three points of contact when climbing.</span>
+        <span class="zh-li">攀爬时面向梯子并保持三点接触。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Rung spacing / 梯级间距:</strong> Rungs must be spaced 10 to 14 inches apart.</span>
+        <span class="zh-li">梯级间距必须为10至14英寸。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Side rails / 侧轨:</strong> Must extend at least 3 feet (36 inches) above the landing surface when used for access to an elevated platform.</span>
+        <span class="zh-li">用于进入高处平台时，侧轨必须伸出着陆面至少3英尺（36英寸）。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Portable ladder angle / 便携梯角度:</strong> Set at approximately a 4:1 ratio (one foot of base distance out for every 4 feet of height).</span>
+        <span class="zh-li">便携梯角度约为4:1（每4英尺高度，底部外移1英尺）。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Ladder integrity / 梯子完整性:</strong> No broken rungs, cracked rails, or missing safety feet. Damaged ladders must be tagged and removed from service.</span>
+        <span class="zh-li">梯子完好性：不得有断裂梯级、开裂侧轨或缺失防滑脚。损坏的梯子必须挂牌并停用。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Overload / 超载:</strong> Never load a ladder beyond its maximum intended load.</span>
+        <span class="zh-li">绝不使梯子超过其最大预期载荷。</span>
+      </li>
+    </ul>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-high">必考 HIGH</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "What fall protection is needed when working on a scaffold?" / "A portable ladder must be set at what angle?"<br>
+        <strong>答题要点 / Key point:</strong> 脚手架：距下层≥<strong>10英尺</strong>需护栏或PFAS；平台宽≥18英寸、板隙≤1英寸、挠度≤1/60、距墙面≤14英寸（悬挑30英寸）；班前由合格人员检查。梯子：三点接触；梯级间距10–14英寸；侧轨超出着陆面≥3英尺(36英寸)；便携梯4:1角度；损坏梯挂牌停用。
+      </div>
+    </div>
+
+    <div class="confusion-box">
+      <div class="cb-label">⚖️ 易混淆对比 / Common Confusions:</div>
+      <table class="study-table">
+        <tr><th>Portable ladder 便携梯</th><th>Fixed ladder 固定梯</th><th>关键区别 / Key Difference</th></tr>
+        <tr><td>4:1角度（每4英尺高外移1英尺）、三点接触、侧轨超出台面36英寸</td><td>梯级间距10–14英寸、深度≥7英寸、需笼式或导轨防坠（超过24英尺）</td><td>固定梯超过24英尺需坠落防护装置；便携梯靠4:1角度+三点接触，不需永久防坠装置</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div id="quiz-group-6"></div>
+
+
+  <div class="knowledge-card">
+    <h2>3.7 <span class="bi-term"><span class="zh">坠落防护层级与选择</span> · <span class="en">Fall Protection Hierarchy & Selection</span></span></h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>29 CFR 1926 Subpart M · Brauer Ch.9 · Brauer Ch.11</span>
+    </div>
+
+    <h3>坠落防护层级 / The Fall Protection Hierarchy</h3>
+    <p class="bi-p">
+      <span class="en-p">When selecting fall protection, apply the hierarchy (mirroring the general Hierarchy of Controls):</span>
+      <span class="zh-p" style="color:#666;">选择坠落防护时，应用层级（与一般控制层级对应）：</span>
+    </p>
+    <ol>
+      <li class="bi-li">
+        <span class="en-li"><strong>Eliminate / 消除:</strong> Design the hazard away (work at ground level, remote inspection).</span>
+        <span class="zh-li">通过设计消除危害（在地面作业、远程检查）。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Passive systems / 被动系统:</strong> Guardrails, covers, nets — protect without worker action.</span>
+        <span class="zh-li">护栏、盖板、安全网——无需工人行动即保护。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Active systems / 主动系统:</strong> PFAS, positioning devices, travel restraints — require worker action and correct use.</span>
+        <span class="zh-li">PFAS、定位装置、行进限制系统——需要工人行动和正确使用。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Administrative systems / 行政系统:</strong> Warning lines, safety monitors, controlled access zones, training.</span>
+        <span class="zh-li">警示线、安全监视员、受控进入区、培训。</span>
+      </li>
+    </ol>
+
+    <div class="important">
+      <strong>📌 考试决策逻辑 / Exam Decision Logic:</strong><br>
+      <span class="en-p">OSHA's fall protection preference: guardrails &gt; safety nets &gt; personal fall arrest systems. For roofs: guardrails/parapets preferred; warning lines + monitor only for low-slope roofing without mechanical equipment; PFAS where no other option. For scaffolds &gt;10 ft: guardrail or PFAS. When asked the "best" fall protection, pick the passive/engineering option unless the scenario justifies a lower option.</span>
+      <span class="zh-p" style="color:#666;">OSHA的坠落防护优先级：护栏 &gt; 安全网 &gt; 个人防坠系统。对于屋顶：首选护栏/女儿墙；警示线+监视员仅用于无机械设备的低坡度屋面；无其他选择时用PFAS。对于脚手架&gt;10英尺：护栏或PFAS。当被问"最佳"坠落防护时，选择被动/工程选项，除非场景证明更低选项合理。</span>
+    </div>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-high">必考 HIGH</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "Which is the BEST fall protection for this task?"<br>
+        <strong>答题要点 / Key point:</strong> 优先级：护栏 &gt; 安全网 &gt; PFAS（被动优先）。屋顶：首选护栏/女儿墙。脚手架&gt;10英尺：护栏或PFAS。警示线+监视员仅限无机械的低坡屋面。题目问"最佳"选被动/工程选项，除非场景限定。
+      </div>
+    </div>
+
+    <div class="exam-scenario">
+      <div class="es-label">📝 真题情景 / Exam Scenario:</div>
+      <div class="es-question">"Workers regularly service equipment 12 ft from an unprotected roof edge several times a week. What is the BEST fall protection?"</div>
+      <div><strong>最佳答案 / Best answer:</strong> A fixed guardrail or parapet around the roof perimeter. 解析：这是高频维护作业，护栏是被动/工程控制、持续有效且无需工人操作，优于PFAS（依赖穿戴正确）、警示线或安全网。按"护栏 &gt; 安全网 &gt; PFAS"优先级选择。</div>
+    </div>
+  </div>
+
+  <div id="quiz-group-7"></div>
+
+
+  <div class="knowledge-card">
+    <h2>3.8 关键考试要点汇总 / Key Exam-Ready Facts Summary</h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>NFPA 70E · 29 CFR 1926 Subpart M · Yates Ch.23</span>
+    </div>
+
+    <table class="bi-table">
+      <tr><th>主题 / Topic</th><th>需记忆的关键数字 / Key Numbers to Memorize</th></tr>
+      <tr><td><span class="en-p">Arc flash boundary / 弧闪边界</span></td><td>1.2 cal/cm&sup2; (二级烧伤起始点 / second-degree burn onset)</td></tr>
+      <tr><td><span class="en-p">GI fall protection trigger / 一般工业坠落防护触发高度</span></td><td>4 英尺 / 4 feet</td></tr>
+      <tr><td><span class="en-p">Construction fall protection trigger / 建筑坠落防护触发高度</span></td><td>6 英尺 / 6 feet</td></tr>
+      <tr><td><span class="en-p">Scaffold fall protection trigger / 脚手架坠落防护触发高度</span></td><td>10 英尺 / 10 feet</td></tr>
+      <tr><td><span class="en-p">Steel erection fall protection trigger / 钢结构坠落防护触发高度</span></td><td>15 英尺(一般) / 30 英尺(CDZ中连接工)</td></tr>
+      <tr><td><span class="en-p">Guardrail top rail height / 护栏顶部横杆高度</span></td><td>42 英寸 (±3 in), 受力时不低于39英寸 / 42 inches (±3 in), must not deflect below 39" under load</td></tr>
+      <tr><td><span class="en-p">Guardrail top rail strength / 护栏顶部横杆强度</span></td><td>200 磅, 作用于顶部边缘2英寸内 / 200 lbs, within 2" of top edge, any direction</td></tr>
+      <tr><td><span class="en-p">Guardrail midrail/intermediate / 护栏中间横杆/中间构件</span></td><td>中间横杆位于中间高度; 中间构件间距≤19英寸 / Midrail at mid-height; intermediate members ≤ 19" apart</td></tr>
+      <tr><td><span class="en-p">Toeboard minimum height / 踢脚板最低高度</span></td><td>3.5 英寸 / 3.5 inches</td></tr>
+      <tr><td><span class="en-p">PFAS anchorage strength / PFAS锚固强度</span></td><td>每名员工 5,000 磅 / 5,000 lbs per employee</td></tr>
+      <tr><td><span class="en-p">PFAS max free fall / PFAS最大自由坠落</span></td><td>6 英尺 / 6 feet</td></tr>
+      <tr><td><span class="en-p">PFAS max deceleration distance / PFAS最大减速距离</span></td><td>3.5 英尺 / 3.5 feet</td></tr>
+      <tr><td><span class="en-p">Positioning device max free fall / 定位装置最大自由坠落</span></td><td>2 英尺 / 2 feet</td></tr>
+      <tr><td><span class="en-p">Safety net max below surface / 安全网距工作面最大距离</span></td><td>30 英尺 / 30 feet</td></tr>
+      <tr><td><span class="en-p">Ladder side rail extension / 梯子侧轨延伸</span></td><td>3 英尺 (36英寸) 以上 / 3 feet (36 inches) above landing</td></tr>
+    </table>
+
+    <div class="mnemonic">
+      <span class="mn-label">🧠 记忆口诀 / Mnemonic:</span>
+      <span class="mn-content"><strong>"4-6-10-15"</strong> 坠落防护触发高度阶梯：一般工业<strong>4</strong>英尺 / 建筑<strong>6</strong>英尺 / 脚手架<strong>10</strong>英尺 / 钢结构<strong>15</strong>英尺（CDZ连接工30英尺）。护栏42英寸顶部横杆、承受200磅、中间构件≤19英寸；踢脚板3.5英寸。PFAS 5000磅/6英尺/3.5英尺；定位2英尺；安全网≤30英尺。</span>
+    </div>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-high">必考 HIGH</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "At what height does fall protection become mandatory in general industry?"<br>
+        <strong>答题要点 / Key point:</strong> 最易混淆的四组触发高度：GI 4英尺、建筑6英尺、脚手架10英尺、钢结构15英尺（连接工CDZ 30英尺）。弧闪边界1.2 cal/cm²。护栏42英寸/200磅/中间构件≤19英寸。答案必须按具体作业类别选高度。
+      </div>
+    </div>
+
+    <div class="confusion-box">
+      <div class="cb-label">⚖️ 易混淆对比 / Common Confusions:</div>
+      <table class="study-table">
+        <tr><th>4 ft 一般工业</th><th>6 ft 建筑业</th><th>关键区别 / Key Difference</th></tr>
+        <tr><td>1910.28：距下层4英尺即需坠落防护</td><td>1926.501：6英尺</td><td>同一高度因标准不同而触发——先判断行业（general industry vs construction）再选高度。脚手架10英尺、钢结构15英尺是另两个独立数值</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div id="quiz-group-8"></div>
+
+
+  <div class="knowledge-card">
+    <h2>3.9 <span class="bi-term"><span class="zh">CSP11常见工作场所危害</span> · <span class="en">CSP11 Common Workplace Hazards</span><span class="vocab-star" data-term="Workplace Hazards">☆</span></span></h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>29 CFR 1910.212 · Yates Ch.2 · Yates Ch.23</span>
+    </div>
+
+    <p class="bi-p">
+      <span class="en-p">The CSP11 exam blueprint (Domain 1, item 3) lists these common workplace hazards: electrical, falls, confined spaces, LOTO, working around water, caught in/between, struck by, and excavation. Electrical and falls are covered above; confined spaces, LOTO, and excavation are covered in Week 4. This section covers working around water, caught-in, and struck-by hazards.</span>
+      <span class="zh-p" style="color:#666;">CSP11考试蓝图（领域1，第3项）列出了以下常见工作场所危害：电气、坠落、密闭空间、LOTO、水中作业、卷入/挤压、撞击和挖掘。电气和坠落已在上方覆盖；密闭空间、LOTO和挖掘在第4周覆盖。本节涵盖水中作业、卷入/挤压和撞击危害。</span>
+    </p>
+
+    <h3><span class="zh">水中作业安全</span> · <span class="en">Working Around Water</span></h3>
+    <p class="bi-p">
+      <span class="en-p">Working on, over, or adjacent to water presents drowning and hypothermia hazards. Key requirements:</span>
+      <span class="zh-p" style="color:#666;">在水上、水面上方或水体附近作业存在溺水和体温过低危害。关键要求：</span>
+    </p>
+    <ul>
+      <li class="bi-li">
+        <span class="en-li"><strong>Personal Flotation Devices (PFDs):</strong> US Coast Guard-approved Type I, II, III, or V PFDs must be provided and worn by employees working over or near water where drowning risk exists.</span>
+        <span class="zh-li"><strong>个人浮力装置(PFD)：</strong>必须为在水上或水体附近作业、有溺水风险的员工提供并穿戴美国海岸警卫队认证的I型、II型、III型或V型PFD。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Ring buoys (life rings):</strong> At least one Coast Guard-approved 30-inch ring buoy with 90 feet of line must be available at work sites over or adjacent to water.</span>
+        <span class="zh-li"><strong>救生圈：</strong>在水上或水体附近的工作场所，必须至少配备一个美国海岸警卫队认证的30英寸救生圈，附带90英尺绳索。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Rescue skiff/boat:</strong> Required in certain situations when employees are working over or adjacent to water; must be immediately available with a competent operator.</span>
+        <span class="zh-li"><strong>救援小船：</strong>在某些情况下，当员工在水上或水体附近作业时需要；必须配备合格操作员，随时可用。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Fall protection over water:</strong> When working over water, fall protection may still be required; nets or PFAS over water must consider that a fall into water itself is a hazard.</span>
+        <span class="zh-li"><strong>水上坠落防护：</strong>在水上作业时仍可能需要坠落防护；水上安全网或PFAS必须考虑落入水中本身即是危害。</span>
+      </li>
+    </ul>
+
+    <h3><span class="zh">卷入/挤压危害</span> · <span class="en">Caught-In / Between Hazards</span></h3>
+    <p class="bi-p">
+      <span class="en-p">Caught-in/between hazards are one of OSHA's "Fatal Four" construction hazards. A worker is caught, crushed, squeezed, or pinched between objects or parts of an object.</span>
+      <span class="zh-p" style="color:#666;">卷入/挤压危害是OSHA建筑施工"致命四项"之一。工人被夹在两个或多个物体之间或被物体的一部分挤压、压碎。</span>
+    </p>
+    <ul>
+      <li class="bi-li">
+        <span class="en-li">Trench/excavation cave-ins (most common caught-in fatality — covered in depth in Week 4).</span>
+        <span class="zh-li">沟槽/挖掘坍塌（最常见的卷入致死类型——第4周有详细覆盖）。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">Unguarded machinery: rotating shafts, belts, pulleys, gears, chain drives — all must be guarded per 1910.212.</span>
+        <span class="zh-li">无防护机器：旋转轴、皮带、滑轮、齿轮、链传动——均须依据1910.212进行防护。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">Pinned between equipment and fixed structures (e.g., heavy equipment operator pinned against a wall).</span>
+        <span class="zh-li">被夹在设备与固定结构之间（如重型设备操作员被挤在墙上）。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">Prevention: training, machine guarding, barricading, LOTO, trench protective systems, competent person inspections.</span>
+        <span class="zh-li">预防：培训、机器防护、路障、LOTO、沟槽防护系统和合格人员检查。</span>
+      </li>
+    </ul>
+
+    <h3><span class="zh">撞击危害</span> · <span class="en">Struck-By Hazards</span></h3>
+    <p class="bi-p">
+      <span class="en-p">Struck-by hazards are another of OSHA's "Fatal Four." A worker is hit by a flying, falling, swinging, or rolling object.</span>
+      <span class="zh-p" style="color:#666;">撞击危害是OSHA"致命四项"的另一项。工人被飞行、坠落、摆动或滚动的物体击中。</span>
+    </p>
+    <ul>
+      <li class="bi-li">
+        <span class="en-li"><strong>Flying objects:</strong> Grinding/cutting particles, ejected parts. Mitigation: machine guards, safety glasses, face shields.</span>
+        <span class="zh-li"><strong>飞行物体：</strong>打磨/切割颗粒、弹出零件。缓解措施：机器防护、安全眼镜、面罩。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Falling objects:</strong> Tools/materials from elevated work. Mitigation: toeboards, debris nets, hard hats, barricading below.</span>
+        <span class="zh-li"><strong>坠落物体：</strong>高处作业掉落的工具/物料。缓解措施：踢脚板、防坠网、安全帽、下方路障。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Swinging objects:</strong> Crane loads, excavator buckets. Mitigation: tag lines, exclusion zones, signal persons.</span>
+        <span class="zh-li"><strong>摆动物体：</strong>起重机负载、挖掘机铲斗。缓解措施：牵引绳、禁入区域、信号员。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Rolling objects:</strong> Vehicles, mobile equipment on incline. Mitigation: traffic control, spotters, backing alarms, chocks.</span>
+        <span class="zh-li"><strong>滚动物体：</strong>车辆、坡道上的移动设备。缓解措施：交通控制、观察员、倒车警报、轮挡。</span>
+      </li>
+    </ul>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-mid">常考 MEDIUM</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "Which is NOT one of OSHA's Fatal Four construction hazards?"<br>
+        <strong>答题要点 / Key point:</strong> Fatal Four（致命四项）：<strong>Falls坠落 / Struck-by物体撞击 / Electrocution触电 / Caught-in-between卷入挤压</strong>。Struck-by四类来源：flying飞物、falling下落、swinging摆动、rolling滚动。缓解：牵引绳、禁入区、倒车警报、轮挡、观察员。
+      </div>
+    </div>
+
+    <div class="mnemonic">
+      <span class="mn-label">🧠 记忆口诀 / Mnemonic:</span>
+      <span class="mn-content"><strong>"F-S-E-C"</strong> — Falls, Struck-by, Electrocution, Caught-in — 中文"坠、击、电、夹"。Struck-by来源四类：Flying/Falling/Swinging/Rolling（"飞落摆滚"）。</span>
+    </div>
+  </div>
+
+  <div id="quiz-group-9"></div>
+
+
+  <!-- QUIZ SECTION -->
+  <div id="quiz-root"></div>
+
+</div>
+
+<script src="quiz-engine.js?v=11"></script>
+<script src="vocab-engine.js?v=11"></script>
+<script>
+CSPQuiz.init({
+  quizId: 'week-03-quiz',
+  quizTitle: 'Week 3 Quiz: Electrical & Fall Hazards / 第3周测验：电气安全与坠落防护',
+  quizTopic: 'Domain 1 — Advanced Application of Safety Principles',
+  containerId: 'quiz-root',
+  questions: [
+    {
+      text: 'According to NFPA 70E, the arc flash boundary is defined as the distance at which the incident energy equals:',
+      group: 1,
+      options: [
+        '0.5 cal/cm²',
+        '1.2 cal/cm²',
+        '4.0 cal/cm²',
+        '8.0 cal/cm²'
+      ],
+      correct: 1,
+      explanation: 'The arc flash boundary is defined as the distance from a prospective arc source where the incident energy equals 1.2 cal/cm² — the threshold energy for the onset of a second-degree burn. Anyone crossing this boundary must wear arc-rated PPE appropriate for the calculated incident energy. The CSP exam tests this value frequently.\n\n弧闪边界定义为距潜在电弧源的距离，该处入射能量等于1.2 cal/cm²——二级烧伤起始点的阈限能量。进入此边界的任何人必须穿戴与计算的入射能量水平相适应的防弧PPE。CSP考试经常测试这个数值。'
+    },
+    {
+      text: 'At what height does OSHA require fall protection for employees on a walking-working surface in general industry?',
+      group: 1,
+      options: [
+        '3 feet',
+        '4 feet',
+        '6 feet',
+        '10 feet'
+      ],
+      correct: 1,
+      explanation: 'General industry (29 CFR 1910.28) triggers fall protection at 4 feet. Construction (29 CFR 1926.501) triggers at 6 feet. This distinction between general industry (4 ft) and construction (6 ft) is a classic CSP exam item. Scaffolds require fall protection at 10 feet.\n\n一般工业（29 CFR 1910.28）在4英尺触发坠落防护。建筑（29 CFR 1926.501）在6英尺触发。一般工业（4英尺）和建筑（6英尺）之间的区别是CSP考试经典题目。脚手架在10英尺要求坠落防护。'
+    },
+    {
+      text: 'What is the required height of a standard guardrail top rail under OSHA construction standards?',
+      group: 1,
+      options: [
+        '36 inches',
+        '39 inches',
+        '42 inches',
+        '48 inches'
+      ],
+      correct: 2,
+      explanation: 'The guardrail top rail must be 42 inches (plus or minus 3 inches) above the walking-working surface. The top rail must withstand a force of at least 200 pounds applied in any downward or outward direction. A midrail (or equivalent intermediate member) must be installed halfway between the top rail and the walking surface.\n\n护栏顶部横杆必须在行走-工作表面上方42英寸（正负3英寸）处。顶部横杆必须能承受在任何向下或向外方向施加的至少200磅力。中间横杆（或等效中间构件）必须安装在顶部横杆与行走表面中间位置。'
+    },
+    {
+      text: 'A personal fall arrest system (PFAS) anchorage point must be capable of supporting at least how many pounds per employee attached?',
+      group: 1,
+      options: [
+        '2,000 pounds',
+        '3,000 pounds',
+        '5,000 pounds',
+        '10,000 pounds'
+      ],
+      correct: 2,
+      explanation: 'PFAS anchorages must support at least 5,000 pounds per employee attached, or be designed, installed, and used under the supervision of a qualified person as part of a complete PFAS that maintains a safety factor of at least two (2× the maximum anticipated force). For positioning devices, the anchorage requirement is 3,000 pounds (or 2× safety factor).\n\nPFAS锚固点必须支撑每名连接的员工至少5,000磅，或在合格人员监督下作为完整PFAS的一部分设计、安装和使用，保持至少2倍安全系数（预期最大力的2倍）。对于定位装置，锚固要求为3,000磅（或2倍安全系数）。'
+    },
+    {
+      text: 'Under NFPA 70E, which of the following approach boundaries may ONLY be crossed by a qualified person with an approved, documented work plan and appropriate PPE?',
+      group: 1,
+      options: [
+        'Limited Approach Boundary',
+        'Arc Flash Boundary',
+        'Restricted Approach Boundary',
+        'Flash Protection Boundary'
+      ],
+      correct: 2,
+      explanation: 'The Restricted Approach Boundary may only be crossed by qualified persons with a documented work plan and appropriate PPE. The Limited Approach Boundary can be crossed by unqualified persons if accompanied by a qualified person. The Prohibited Approach Boundary requires the same protection as direct contact. "Flash Protection Boundary" was the old NFPA 70E term, replaced by "Arc Flash Boundary."\n\n限制区域边界仅可由具有书面工作计划和适当PPE的合格人员进入。限制接近边界可由有合格人员陪同的不合格人员进入。禁止接近边界需要与直接接触相同的防护。"闪络防护边界"是旧的NFPA 70E术语，已被"弧闪边界"取代。'
+    },
+    {
+      text: 'Which of the following is a required component of a Personal Fall Arrest System (PFAS)?',
+      group: 2,
+      options: [
+        'Body belt, lanyard, and guardrail',
+        'Full-body harness, connector, and anchorage',
+        'Safety net, harness, and warning line',
+        'Positioning belt, rope grab, and carabiner'
+      ],
+      correct: 1,
+      explanation: 'A PFAS consists of three key components: (A) anchorage — a secure point of attachment, (B) full-body harness — body belts are PROHIBITED for fall arrest (they may only be used for positioning), and (C) connector — typically a lanyard or self-retracting lifeline (SRL) connecting the harness to the anchorage. Safety nets and warning lines are separate fall protection systems, not part of a PFAS.\n\nPFAS由三个关键组件组成：(A) 锚固点——安全的附着点，(B) 全身式安全带——防坠保护禁止使用身体腰带（仅可用于定位），(C) 连接器——通常为将安全带连接到锚固点的系索或自缩式救生索(SRL)。安全网和警示线是独立的坠落防护系统，不是PFAS的一部分。'
+    },
+    {
+      text: 'Construction workers are on a low-slope roof doing roofing work. The employer uses a warning line system as fall protection. At what minimum distance from the roof edge must the warning line be erected?',
+      group: 2,
+      options: [
+        '4 feet',
+        '6 feet',
+        '10 feet',
+        '15 feet'
+      ],
+      correct: 1,
+      explanation: 'Warning lines for roofing work on low-slope roofs must be erected at least 6 feet from the roof edge. When mechanical equipment is in use, the warning line must be at least 6 feet from the roof edge in the direction the equipment is being operated, and 10 feet from the edge perpendicular to that direction. The warning line must be flagged every 6 feet and must withstand 16 pounds of force.\n\n低坡度屋顶屋面工作的警示线必须设立在距屋顶边缘至少6英尺处。使用机械设备时，在设备操作方向，警示线必须距屋顶边缘至少6英尺，垂直方向距边缘10英尺。警示线必须每6英尺挂旗标识，必须承受16磅力。'
+    },
+    {
+      text: 'A qualified worker needs to cross the "prohibited approach boundary" to perform a task on energized electrical equipment. According to NFPA 70E, what is required?',
+      group: 2,
+      options: [
+        'The worker must don arc-rated PPE rated at Category 2 or higher',
+        'The worker must be treated as if making direct contact with the energized part, requiring the same level of protection',
+        'The worker can proceed as long as an unqualified person observes from the limited approach boundary',
+        'The worker only needs an energized electrical work permit if the voltage exceeds 480V'
+      ],
+      correct: 1,
+      explanation: 'Crossing the prohibited approach boundary is considered the same as making direct contact with the live part. The qualified person must have the same protection as if they were actually touching the energized conductor. This typically requires a documented energized electrical work permit and the highest level of shock and arc flash PPE appropriate for the energy level of the equipment.\n\n进入禁止接近边界被视为与直接接触带电部件等同。合格人员必须具有与实际接触带电导体相同的防护。这通常需要书面的带电电气工作许可证，以及适合设备能量水平的最高级别电击和弧闪PPE。'
+    },
+    {
+      text: 'Under OSHA construction standards, fall protection is required for employees working on scaffolds at what height above the lower level?',
+      group: 2,
+      options: [
+        '4 feet',
+        '6 feet',
+        '10 feet',
+        '15 feet'
+      ],
+      correct: 2,
+      explanation: 'Scaffold work triggers fall protection at 10 feet (29 CFR 1926.451(g)). The distinction: general industry = 4 ft, construction general = 6 ft, scaffolds = 10 ft, steel erection general = 15 ft. Scaffolds may use either guardrails or PFAS.\n\n脚手架作业在10英尺触发坠落防护（29 CFR 1926.451(g)）。区分：一般工业=4英尺，建筑一般=6英尺，脚手架=10英尺，钢结构一般=15英尺。脚手架可使用护栏或PFAS。'
+    },
+    {
+      text: 'What is the maximum free fall distance permitted for a personal fall arrest system (PFAS)?',
+      group: 3,
+      options: ['2 feet', '3.5 feet', '6 feet', '10 feet'],
+      correct: 2,
+      explanation: 'The maximum free fall distance for a PFAS is 6 feet (1926.502(d)(16)(iii)). The maximum deceleration distance is 3.5 feet. Positioning devices limit free fall to 2 feet. A free fall greater than 6 feet means the system does not comply.\n\nPFAS的最大自由坠落距离为6英尺（1926.502(d)(16)(iii)）。最大减速距离为3.5英尺。定位装置将自由坠落限制在2英尺。自由坠落超过6英尺即不符合要求。'
+    },
+    {
+      text: 'The maximum deceleration distance for a personal fall arrest system (PFAS) is:',
+      group: 3,
+      options: ['1 foot', '2 feet', '3.5 feet', '6 feet'],
+      correct: 2,
+      explanation: 'The PFAS maximum deceleration distance is 3.5 feet — the distance over which the energy absorber extends during a fall arrest. Combined with 6-ft max free fall, this drives the required clearance calculation.\n\nPFAS最大减速距离为3.5英尺——坠落制动过程中吸能器伸长的距离。与6英尺最大自由坠落结合，决定了所需净空的计算。'
+    },
+    {
+      text: 'A worker ties off with a 6-foot lanyard attached to an anchorage located 2 feet ABOVE his dorsal D-ring. What is the approximate free fall distance?',
+      group: 3,
+      options: ['2 feet', '6 feet', '8 feet', '10 feet'],
+      correct: 2,
+      explanation: 'Free fall distance = anchorage-to-D-ring height + connector length = 2 ft + 6 ft = 8 feet. This exceeds the 6-foot maximum, so the system does not comply — the anchorage must be lowered (or a shorter connector/SRL used) to keep free fall at or below 6 feet.\n\n自由坠落距离 = 锚固点到D型环高度 + 连接器长度 = 2英尺 + 6英尺 = 8英尺。这超过了6英尺上限，系统不符合要求——必须降低锚固点（或使用更短的连接器/SRL），使自由坠落保持在6英尺或以下。'
+    },
+    {
+      text: 'Using a 6-ft lanyard with a deceleration device, what is the approximate MINIMUM fall clearance required below the worker?',
+      group: 3,
+      options: ['6.5 feet', '10 feet', '13.5 feet', '20 feet'],
+      correct: 2,
+      explanation: 'Total fall clearance = free fall (6 ft) + deceleration (3.5 ft) + harness stretch (1 ft) + D-ring slide (1 ft) + safety margin (2 ft) = 13.5 feet minimum. A conservative estimate for exam problems is 17.5–18.5 ft.\n\n总坠落净空 = 自由坠落（6英尺）+ 减速（3.5英尺）+ 安全带拉伸（1英尺）+ D型环滑动（1英尺）+ 安全系数（2英尺）= 最低13.5英尺。考试题的保守估算为17.5–18.5英尺。'
+    },
+    {
+      text: 'For electrical work, the maximum incident energy level above which NO arc flash PPE category exists and equipment must be de-energized is:',
+      group: 4,
+      options: ['8 cal/cm²', '25 cal/cm²', '40 cal/cm²', '100 cal/cm²'],
+      correct: 2,
+      explanation: 'Above 40 cal/cm², no PPE category exists — the equipment must be de-energized (or the work methods must change) because no arc-rated PPE is sufficient. Category 4 covers up to 40 cal/cm².\n\n超过40 cal/cm²时，不存在PPE类别——设备必须断电（或改变工作方法），因为没有足够的防弧PPE。类别4最高覆盖到40 cal/cm²。'
+    },
+    {
+      text: 'A guardrail top rail must withstand a force of at least 200 pounds applied:',
+      group: 4,
+      options: [
+        'Only at the mid-point of the rail',
+        'Within 2 inches of the top edge, in any outward or downward direction',
+        'At any point along the rail, in any direction including upward',
+        'Only at the posts where the rail is attached'
+      ],
+      correct: 1,
+      explanation: 'The top rail must withstand at least 200 pounds of force applied within 2 inches of the top edge, in any outward or downward direction, without deflecting below 39 inches. This ensures the rail functions as a barrier even under a fall load.\n\n顶部横杆必须能承受在顶部边缘2英寸内、沿任意向外或向下方向施加的至少200磅力，且不得偏斜至39英寸以下。这确保横杆在坠落载荷下仍能发挥屏障作用。'
+    },
+    {
+      text: 'What is the maximum spacing between intermediate vertical members (balusters) of a guardrail system?',
+      group: 4,
+      options: ['12 inches', '19 inches', '24 inches', '36 inches'],
+      correct: 1,
+      explanation: 'Intermediate vertical members (balusters) must be spaced no more than 19 inches apart. This prevents a worker from slipping through the opening between the top rail and the walking surface.\n\n中间垂直构件（栏杆柱）间距不得超过19英寸。这防止工人从顶部横杆与行走表面之间的开口滑出。'
+    },
+    {
+      text: 'Under NFPA 70E, before work on electrical equipment is performed, the PREFERRED approach is to:',
+      group: 4,
+      options: [
+        'Wear the highest category arc flash PPE',
+        'Establish an electrically safe work condition by de-energizing, applying LOTO, and testing for absence of voltage',
+        'Use a hot stick to verify the circuit is live',
+        'Post a second worker at the panel'
+      ],
+      correct: 1,
+      explanation: 'NFPA 70E\'s preferred approach is to establish an electrically safe work condition (de-energize, apply LOTO, test for absence of voltage, and where needed ground). Energized work requires justification and an energized electrical work permit.\n\nNFPA 70E的首选方法是建立电气安全工作条件（断电、施加LOTO、测试无电压，必要时接地）。带电作业需要正当理由和带电电气工作许可证。'
+    },
+    {
+      text: 'A safety net system used for fall protection may be installed no more than what maximum distance below the walking/working surface?',
+      group: 5,
+      options: ['15 feet', '25 feet', '30 feet', '50 feet'],
+      correct: 2,
+      explanation: 'Safety nets must be installed as close as practicable under the walking/working surface but no more than 30 feet below it. They must extend outward from the edge per OSHA tables, and the maximum mesh size is 6 in × 6 in.\n\n安全网必须尽可能靠近行走/工作表面下方安装，但不得超过表面下方30英尺。必须按OSHA表格从边缘向外延伸，最大网孔尺寸为6英寸×6英寸。'
+    },
+    {
+      text: 'Which of the following components is PROHIBITED for use in a personal fall arrest system?',
+      group: 5,
+      options: [
+        'Full-body harness',
+        'Self-retracting lifeline (SRL)',
+        'Body belt (waist belt)',
+        'Shock-absorbing lanyard'
+      ],
+      correct: 2,
+      explanation: 'Body belts (waist belts) are prohibited for fall arrest because they can cause internal injury during a fall (they concentrate forces on the waist/abdomen). They may only be used for positioning. Full-body harnesses are required for fall arrest.\n\n身体腰带（腰部安全带）被禁止用于防坠，因为坠落时可能造成内脏损伤（力集中在腰/腹部）。仅可用于定位。防坠必须使用全身式安全带。'
+    },
+    {
+      text: 'Which of the following is TRUE about an electrically safe work condition?',
+      group: 5,
+      options: [
+        'It is established by wearing arc-rated gloves',
+        'It requires de-energizing, applying LOTO, and testing for the absence of voltage before work begins',
+        'It is only required for work above 600 volts',
+        'It eliminates the need for any lockout/tagout'
+      ],
+      correct: 1,
+      explanation: 'An electrically safe work condition requires: identify all sources, disconnect all power, apply LOTO, test for absence of voltage (prove-test-prove), and ground where required. It applies at all voltage levels, and LOTO is an essential part of it.\n\n电气安全工作条件要求：识别所有电源、断开所有电源、施加LOTO、测试无电压（验证-测试-再验证），并在需要处接地。它适用于所有电压等级，LOTO是其必要组成部分。'
+    },
+    {
+      text: 'The 29 CFR 1926.760 requirement allows steel erection "connectors" to work without a personal fall arrest system up to what height when in a controlled decking zone (CDZ)?',
+      group: 5,
+      options: ['15 feet', '20 feet', '30 feet', '50 feet'],
+      correct: 2,
+      explanation: 'In a controlled decking zone (CDZ), connectors and decking workers may work without a PFAS up to 30 feet, provided the CDZ meets requirements (warning line at 90 ft, safety monitor). General steel erection fall protection is required at 15 feet.\n\n在受控铺板区（CDZ）内，连接工和铺板工在满足要求（90英尺处警示线、安全监视员）的前提下，可在30英尺以内不带PFAS作业。钢结构一般坠落防护在15英尺处要求。'
+    },
+    {
+      text: 'A positioning device system has which of the following limits compared to a PFAS?',
+      group: 6,
+      options: [
+        'Maximum free fall of 2 feet and anchorage of 3,000 lbs',
+        'Maximum free fall of 6 feet and anchorage of 5,000 lbs',
+        'No free fall is permitted at all',
+        'Anchorage of 10,000 lbs and no free-fall limit'
+      ],
+      correct: 0,
+      explanation: 'Positioning device systems limit free fall to 2 feet and require anchorage of 3,000 lbs (or 2× safety factor). PFAS allows 6 ft free fall and requires 5,000 lbs. Positioning systems support the worker with both hands free but do not arrest a large fall.\n\n定位装置系统将自由坠落限制在2英尺，要求锚固力3,000磅（或2倍安全系数）。PFAS允许6英尺自由坠落，要求5,000磅。定位系统支撑工人双手自由作业，但不承接大的坠落。'
+    },
+    {
+      text: 'The maximum gap permitted between scaffold planks under OSHA is:',
+      group: 6,
+      options: ['½ inch', '1 inch', '2 inches', 'No gap is permitted'],
+      correct: 1,
+      explanation: 'Scaffold platforms must be fully planked, and the maximum gap between adjacent planks is 1 inch. Planks may not deflect more than 1/60 of their span.\n\n脚手架平台必须满铺，相邻脚手板之间的最大间隙为1英寸。脚手板挠度不得超过其跨度的1/60。'
+    },
+    {
+      text: 'A ladder used to access an elevated platform must have side rails extending at least how far above the landing?',
+      group: 6,
+      options: ['18 inches', '24 inches', '3 feet (36 inches)', '4 feet (48 inches)'],
+      correct: 2,
+      explanation: 'Ladder side rails must extend at least 3 feet (36 inches) above the landing surface when used for access to an elevated platform. This provides a handhold for stepping off the ladder.\n\n用于进入高处平台时，梯子侧轨必须伸出着陆面至少3英尺（36英寸）。这为离开梯子提供扶手。'
+    },
+    {
+      text: 'Which of the following fall protection approaches is ranked HIGHEST in OSHA\'s preferred hierarchy?',
+      group: 6,
+      options: [
+        'Personal fall arrest system (PFAS)',
+        'Safety net system',
+        'Guardrail system',
+        'Warning line system'
+      ],
+      correct: 2,
+      explanation: 'OSHA\'s preferred order is: guardrails (passive barrier) > safety nets > personal fall arrest systems > administrative measures (warning lines, monitors). Guardrails are passive — they protect without requiring any worker action.\n\nOSHA的首选顺序是：护栏（被动屏障）> 安全网 > 个人防坠系统 > 行政措施（警示线、监视员）。护栏是被动的——无需工人任何行动即保护。'
+    },
+    {
+      text: 'An arc flash is best described as:',
+      group: 7,
+      options: [
+        'A direct electrical shock through the body',
+        'An extreme heat and light event from an electrical fault that ionizes the air into a conducting arc',
+        'A lightning strike on the facility',
+        'A short circuit that is always harmless below 120 volts'
+      ],
+      correct: 1,
+      explanation: 'An arc flash is the heat and light produced by an electrical fault that ionizes the air into a conducting arc. Incident energy (in cal/cm²) determines the burn severity and required PPE. Arc blast is the pressure wave that can follow.\n\n弧闪是电气故障电离空气形成导电电弧时产生的热和光。入射能量（cal/cm²）决定烧伤严重性和所需PPE。弧爆是可能随之而来的压力波。'
+    },
+    {
+      text: 'The "Fatal Four" causes of death in construction include all of the following EXCEPT:',
+      group: 7,
+      options: ['Falls', 'Electrocution', 'Chemical overexposure', 'Struck by object'],
+      correct: 2,
+      explanation: 'OSHA\'s "Fatal Four" in construction are: falls, struck by object, electrocution, and caught-in/between. These account for the majority of construction worker deaths each year. Chemical overexposure is not one of the Fatal Four.\n\nOSHA建筑施工"致命四项"是：坠落、物体撞击、触电和卷入/挤压。它们每年占建筑工人死亡的大多数。化学过度暴露不属于"致命四项"。'
+    },
+    {
+      text: 'At work sites over or adjacent to water, which of the following is required?',
+      group: 7,
+      options: [
+        'At least one Coast Guard-approved 30-inch ring buoy with 90 feet of line',
+        'A certified lifeguard on duty at all times',
+        'A SCBA for every worker',
+        'At least 4 feet of clearance between workers'
+      ],
+      correct: 0,
+      explanation: 'OSHA requires at least one U.S. Coast Guard-approved 30-inch ring buoy with 90 feet of line at work sites over or adjacent to water. USCG-approved PFDs must be provided and worn where a drowning hazard exists.\n\nOSHA要求在水上或水体附近的工作场所至少配备一个美国海岸警卫队认证的30英寸救生圈，附带90英尺绳索。存在溺水危害时必须提供并穿戴USCG认证的PFD。'
+    },
+    {
+      text: 'A worker performing maintenance on a roof edge will be attached to an anchor with a 6-ft lanyard. The anchor is at the worker\'s D-ring height (0 ft above D-ring). What is the free fall distance if the worker steps off the edge?',
+      group: 7,
+      options: ['0 feet', '6 feet', '3.5 feet', '12 feet'],
+      correct: 1,
+      explanation: 'Free fall = anchorage to D-ring distance (0 ft) + lanyard length (6 ft) = 6 feet. This is exactly at the 6-ft maximum, so the system complies but has no margin — any higher anchor or longer connector would exceed the limit.\n\n自由坠落 = 锚固点到D型环距离（0英尺）+ 系索长度（6英尺）= 6英尺。这恰好处于6英尺上限，系统合规但没有余量——锚点更高或连接器更长就会超限。'
+    },
+    {
+      text: 'Under NFPA 70E, which persons may cross the Limited Approach Boundary?',
+      group: 8,
+      options: [
+        'Only qualified persons',
+        'Qualified persons, and unqualified persons accompanied by a qualified person',
+        'Anyone wearing arc-rated PPE',
+        'Only the site electrical engineer'
+      ],
+      correct: 1,
+      explanation: 'The Limited Approach Boundary is the outermost shock boundary. Qualified persons may cross it, and unqualified persons may cross only when accompanied by a qualified person and advised of the hazards. Crossing the Restricted Boundary is limited to qualified persons with a documented plan.\n\n限制接近边界是最外层的电击边界。合格人员可进入，不合格人员仅在合格人员陪同并被告知危害时才能进入。进入限制区域边界仅限于具有书面计划的合格人员。'
+    },
+    {
+      text: 'What is the minimum height of a toeboard in a guardrail system under OSHA construction standards?',
+      group: 8,
+      options: ['2.5 inches', '3 inches', '3.5 inches', '4 inches'],
+      correct: 2,
+      explanation: 'A toeboard must be at least 3.5 inches high, sufficient to prevent tools and materials from falling to the level below. It must also withstand a force of at least 50 pounds applied in any direction.\n\n踢脚板必须至少3.5英寸高，足以防止工具和物料掉落到下层。还必须能承受任意方向施加的至少50磅力。'
+    },
+    {
+      text: 'Steel erection general activities require fall protection at what height under 29 CFR 1926.760?',
+      group: 8,
+      options: ['6 feet', '10 feet', '15 feet', '30 feet'],
+      correct: 2,
+      explanation: 'Steel erection general activities trigger fall protection at 15 feet (1926.760(a)). Connectors and deckers working in a controlled decking zone (CDZ) are allowed up to 30 feet without a PFAS.\n\n钢结构安装一般活动在15英尺触发坠落防护（1926.760(a)）。在受控铺板区（CDZ）内的连接工和铺板工在30英尺以内可不带PFAS作业。'
+    },
+    {
+      text: 'Which of the following correctly describes a caught-in/between hazard?',
+      group: 8,
+      options: [
+        'A worker is hit by a falling tool',
+        'A worker is crushed, squeezed, or pinched between objects or machine parts',
+        'A worker falls from an elevated surface',
+        'A worker receives an electrical shock'
+      ],
+      correct: 1,
+      explanation: 'Caught-in/between means a worker is caught, crushed, squeezed, or pinched between two objects or between parts of a machine (e.g., trench cave-in, unguarded nip point, pinned against a wall). Being hit by a falling tool is a struck-by hazard.\n\n卷入/挤压指工人被夹在两个物体之间或机器部件之间被压、挤、夹（如沟槽坍塌、无防护的卷入点、被挤在墙上）。被坠落工具击中属于撞击危害。'
+    },
+    {
+      text: 'Which of the following is an example of a STRUCK-BY hazard?',
+      group: 9,
+      options: [
+        'A worker is trapped in a trench cave-in',
+        'A worker is hit by a swinging crane load',
+        'A worker falls through an unprotected skylight',
+        'A worker contacts an energized conductor'
+      ],
+      correct: 1,
+      explanation: 'Struck-by means being hit by a flying, falling, swinging, or rolling object — a swinging crane load is a classic example. Trench cave-in is caught-in/between; a skylight fall is a fall hazard; contact with energized parts is electrocution.\n\n撞击指被飞行、坠落、摆动或滚动的物体击中——摆动的起重机负载是典型示例。沟槽坍塌是卷入/挤压；天窗坠落是坠落危害；接触带电部件是触电。'
+    },
+    {
+      text: 'Which of the following is TRUE about GFCI requirements on construction sites?',
+      group: 9,
+      options: [
+        'GFCIs are only required indoors',
+        'All 120V, single-phase, 15A and 20A receptacle outlets not part of permanent wiring must have GFCI protection',
+        'GFCIs are optional if AEGCP is not used',
+        'GFCIs are required only for 240V outlets'
+      ],
+      correct: 1,
+      explanation: 'On construction sites, GFCI protection is required for all 120V, single-phase, 15A and 20A receptacle outlets not part of permanent wiring. The Assured Equipment Grounding Conductor Program (AEGCP) is the alternative, requiring daily visual inspections and quarterly continuity tests.\n\n在建筑工地，所有非永久布线的120V、单相、15A和20A插座都需要GFCI保护。设备接地导体保证计划（AEGCP）是替代方案，要求每日目视检查和每季度连续性测试。'
+    },
+    {
+      text: 'A hole cover installed to protect workers must be capable of supporting:',
+      group: 9,
+      options: [
+        '1× the maximum expected load',
+        '2× the maximum expected load',
+        '5× the maximum expected load',
+        '100% of the weight of any single worker'
+      ],
+      correct: 1,
+      explanation: 'Hole covers must support twice the weight of the maximum expected load, must be secured against displacement, and must be marked "HOLE" or "COVER." This 2× requirement is frequently tested.\n\n孔洞盖板必须能支撑最大预期负载的2倍重量，必须固定防止移位，并标记"HOLE"或"COVER"。这一2倍要求是高频考点。'
+    },
+    {
+      text: 'Which of the following best describes a "controlled decking zone" (CDZ) in steel erection?',
+      group: 9,
+      options: [
+        'A zone where all workers must wear PFAS at all times',
+        'A zone at the leading edge of a deck where workers may work without a PFAS up to 30 feet, protected by a safety monitor and bounded by a warning line at 90 feet',
+        'A concrete area where decking materials are stored',
+        'A zone where only engineers may work'
+      ],
+      correct: 1,
+      explanation: 'A CDZ is established at the leading edge of a steel deck during decking operations. It must be at least 2 feet wide and no more than 90 feet wide (bounded by a warning line), and workers within it may work without a PFAS up to 30 feet if a safety monitor is present.\n\nCDZ在钢结构铺板作业时于板的前沿设立。其宽度至少2英尺且不超过90英尺（以警示线为界），在安全监视员在场时，其中的工人在30英尺以内可不带PFAS作业。'
+    }
+  ]
+});
+</script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js').catch(function() {});
+}
+</script>
+</body>
+</html>

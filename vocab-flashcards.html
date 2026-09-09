@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vocabulary Flashcards — CSP Exam Prep</title>
+<link rel="stylesheet" href="quiz-styles.css?v=11">
+<style>
+  .fc-controls {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    flex-wrap: wrap;
+  }
+  .fc-progress {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-top: 8px;
+  }
+  .fc-empty { text-align: center; padding: 60px 20px; color: var(--text-secondary); }
+  .fc-empty .big-icon { font-size: 4rem; margin-bottom: 16px; }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="breadcrumb">
+    <a href="index.html">← Dashboard</a> &nbsp;|&nbsp; <a href="glossary.html">Full Glossary</a> &nbsp;|&nbsp; Vocabulary Flashcards
+  </div>
+
+  <div class="page-header">
+    <h1>🎴 Vocabulary Flashcards</h1>
+    <div class="subtitle">Click to flip · English ↔ Chinese · Review your saved terms</div>
+  </div>
+
+  <div class="fc-controls">
+    <select id="domain-filter" onchange="loadFlashcards()" style="padding:6px 12px;border-radius:6px;border:1px solid var(--border);font-family:var(--font);">
+      <option value="all">All Domains</option>
+      <option value="1">Domain 1: Safety Principles</option>
+      <option value="2">Domain 2: Program Management</option>
+      <option value="3">Domain 3: Risk Management</option>
+      <option value="4">Domain 4: Emergency Management</option>
+      <option value="5">Domain 5: Environmental Management</option>
+      <option value="6">Domain 6: Occupational Health</option>
+      <option value="7">Domain 7: Training</option>
+      <option value="saved">★ My Saved Words Only</option>
+    </select>
+    <button class="btn btn-outline" onclick="shuffleFlashcards()">🔀 Shuffle</button>
+    <span id="fc-counter" style="font-size:0.85rem;color:var(--text-secondary);"></span>
+  </div>
+
+  <div id="flashcard-area"></div>
+
+</div>
+
+<script src="vocab-engine.js?v=11"></script>
+<script>
+let currentCards = [];
+let currentIndex = 0;
+
+function getCards() {
+  const filter = document.getElementById('domain-filter').value;
+  if (filter === 'saved') {
+    return CSPVocab.getSavedWords();
+  }
+  if (filter === 'all') {
+    return CSPVocab.getGlossary();
+  }
+  return CSPVocab.getGlossaryByDomain(filter);
+}
+
+function loadFlashcards() {
+  currentCards = getCards();
+  currentIndex = 0;
+  renderCard();
+}
+
+function shuffleFlashcards() {
+  // Fisher-Yates shuffle
+  for (let i = currentCards.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [currentCards[i], currentCards[j]] = [currentCards[j], currentCards[i]];
+  }
+  currentIndex = 0;
+  renderCard();
+}
+
+function renderCard() {
+  const area = document.getElementById('flashcard-area');
+  const counter = document.getElementById('fc-counter');
+
+  if (currentCards.length === 0) {
+    area.innerHTML = '<div class="fc-empty"><div class="big-icon">📭</div><h3>No cards to show</h3><p>Save words from study pages or switch to "All Domains" to see the full glossary.</p></div>';
+    counter.textContent = '';
+    return;
+  }
+
+  counter.textContent = (currentIndex + 1) + ' / ' + currentCards.length;
+
+  const card = currentCards[currentIndex];
+  const domainTag = card.domain ? '<span class="domain-tag d' + card.domain + '">D' + card.domain + '</span>' : '';
+
+  area.innerHTML = '' +
+    '<div class="flashcard" id="fc-card" onclick="flipCard()">' +
+    '<div class="fc-front" id="fc-front">' + escapeHtml(card.en) + '<div class="fc-hint">Click to reveal translation</div></div>' +
+    '<div class="fc-back" id="fc-back">' + escapeHtml(card.zh) + '<div style="font-size:0.82rem;color:var(--text-secondary);margin-top:12px;">' + escapeHtml(card.desc || '') + '</div>' + domainTag + '<div class="fc-hint">Click to flip back</div></div>' +
+    '</div>' +
+    '<div style="display:flex;gap:12px;justify-content:center;margin-top:16px;">' +
+    '<button class="btn btn-outline" onclick="prevCard()" ' + (currentIndex === 0 ? 'disabled' : '') + '>◀ Previous</button>' +
+    '<button class="btn btn-outline" onclick="nextCard()" ' + (currentIndex >= currentCards.length - 1 ? 'disabled' : '') + '>Next ▶</button>' +
+    '</div>';
+}
+
+function flipCard() {
+  document.getElementById('fc-card').classList.toggle('flipped');
+}
+
+function nextCard() {
+  if (currentIndex < currentCards.length - 1) {
+    currentIndex++;
+    renderCard();
+  }
+}
+
+function prevCard() {
+  if (currentIndex > 0) {
+    currentIndex--;
+    renderCard();
+  }
+}
+
+function escapeHtml(s) { const d = document.createElement('div'); d.textContent = s || ''; return d.innerHTML; }
+
+// Keyboard navigation
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'ArrowRight') nextCard();
+  if (e.key === 'ArrowLeft') prevCard();
+  if (e.key === ' ' || e.key === 'Enter') {
+    const fc = document.getElementById('fc-card');
+    if (fc) { e.preventDefault(); fc.classList.toggle('flipped'); }
+  }
+});
+
+loadFlashcards();
+
+// Highlight "saved" if coming from saved-only link
+if (window.location.hash === '#saved') {
+  document.getElementById('domain-filter').value = 'saved';
+  loadFlashcards();
+}
+</script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('./sw.js').catch(function(err) {
+      console.warn('SW registration failed:', err);
+    });
+  });
+}
+</script>
+</body>
+</html>

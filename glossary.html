@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Full Glossary — CSP Exam Prep</title>
+<link rel="stylesheet" href="quiz-styles.css?v=11">
+<style>
+  .glossary-stats { text-align: center; padding: 12px; color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 8px; }
+  .domain-section { margin-bottom: 28px; }
+  .domain-section h3 { font-size: 1.1rem; color: #1e3a5f; margin-bottom: 10px; border-bottom: 2px solid var(--border); padding-bottom: 6px; }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="breadcrumb">
+    <a href="index.html">← Dashboard</a> &nbsp;|&nbsp; <a href="vocab-flashcards.html">Flashcards</a> &nbsp;|&nbsp; Full Glossary
+  </div>
+
+  <div class="page-header">
+    <h1>📖 CSP Exam Glossary (English ↔ 中文)</h1>
+    <div class="subtitle">All key terms organized by domain · Click ★ to save to your vocabulary book</div>
+  </div>
+
+  <input type="text" class="glossary-search" id="glossary-search" placeholder="🔍 Search by English or Chinese term... (e.g., 'confined space' or '密闭空间')" oninput="renderGlossary()">
+
+  <div class="glossary-stats" id="glossary-stats"></div>
+
+  <div id="glossary-root"></div>
+
+</div>
+
+<script src="vocab-engine.js?v=11"></script>
+<script>
+function renderGlossary() {
+  const query = document.getElementById('glossary-search').value.trim();
+  let results;
+  if (query) {
+    results = CSPVocab.searchGlossary(query);
+  } else {
+    results = CSPVocab.getGlossary();
+  }
+
+  const savedWords = CSPVocab.getSavedWords();
+  const savedSet = new Set(savedWords.map(w => w.en));
+
+  // Group by domain
+  const groups = {};
+  for (const term of results) {
+    const d = 'Domain ' + (term.domain || '?');
+    if (!groups[d]) groups[d] = [];
+    groups[d].push(term);
+  }
+
+  const domainNames = {
+    'Domain 1': 'Advanced Application of Safety Principles (25%)',
+    'Domain 2': 'Program Management (25%)',
+    'Domain 3': 'Risk Management (15%)',
+    'Domain 4': 'Emergency Management (9%)',
+    'Domain 5': 'Environmental Management (6%)',
+    'Domain 6': 'Occupational Health & Applied Science (10%)',
+    'Domain 7': 'Training (10%)'
+  };
+
+  document.getElementById('glossary-stats').textContent = results.length + ' terms found';
+
+  let html = '';
+  const sortedDomains = Object.keys(groups).sort();
+  for (const domain of sortedDomains) {
+    html += '<div class="domain-section">';
+    html += '<h3>' + domain + ': ' + (domainNames[domain] || '') + '</h3>';
+    for (const term of groups[domain]) {
+      const isSaved = savedSet.has(term.en);
+      html += '<div class="glossary-card">';
+      html += '<div>';
+      html += '<div class="gloss-term-en">' + escapeHtml(term.en) + ' <span class="domain-tag d' + term.domain + '">D' + term.domain + '</span></div>';
+      html += '<div class="gloss-term-zh">' + escapeHtml(term.zh) + '</div>';
+      html += '<div style="font-size:0.8rem;color:var(--text-secondary);margin-top:4px;">' + escapeHtml(term.desc || '') + '</div>';
+      html += '</div>';
+      html += '<div class="gloss-actions">';
+      html += '<button class="' + (isSaved ? 'saved' : '') + '" onclick="toggleGlossSave(\'' + escapeAttr(term.en) + '\', this)">' + (isSaved ? '★ Saved' : '☆ Save') + '</button>';
+      html += '</div>';
+      html += '</div>';
+    }
+    html += '</div>';
+  }
+
+  if (results.length === 0) {
+    html = '<div style="text-align:center;padding:40px;color:var(--text-secondary);"><h3>No matching terms</h3><p>Try a different search query.</p></div>';
+  }
+
+  document.getElementById('glossary-root').innerHTML = html;
+}
+
+function toggleGlossSave(termEn, btn) {
+  if (CSPVocab.isSaved(termEn)) {
+    CSPVocab.removeTerm(termEn);
+    btn.textContent = '☆ Save';
+    btn.classList.remove('saved');
+  } else {
+    CSPVocab.saveTerm(termEn);
+    btn.textContent = '★ Saved';
+    btn.classList.add('saved');
+  }
+}
+
+function escapeHtml(s) { const d = document.createElement('div'); d.textContent = s || ''; return d.innerHTML; }
+function escapeAttr(s) { return s.replace(/'/g, "\\'").replace(/"/g, '&quot;'); }
+
+renderGlossary();
+</script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('./sw.js').catch(function(err) {
+      console.warn('SW registration failed:', err);
+    });
+  });
+}
+</script>
+</body>
+</html>

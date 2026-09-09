@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 19: Training Needs Analysis & Program Design / 培训需求分析与项目设计 — CSP Exam Prep</title>
+    <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1e3a5f">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="stylesheet" href="quiz-styles.css?v=11">
+<style>
+  .breadcrumb { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 16px; }
+  .breadcrumb a { color: var(--accent); text-decoration: none; }
+  .breadcrumb a:hover { text-decoration: underline; }
+  p.bi-p, li.bi-li { margin-bottom: 10px; }
+  p.bi-p .en-p, li.bi-li .en-li { display: block; }
+  p.bi-p .zh-p, li.bi-li .zh-li { display: block; color: #666; font-size: 0.92em; margin-top: 2px; }
+</style>
+</head>
+<body>
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="index.html">&larr; 返回仪表盘 / Back to Study Dashboard</a> &nbsp;|&nbsp;
+            领域 / Domain 7: <span style="font-weight:600;">培训 / Training</span>
+        </nav>
+
+        <div class="page-header">
+            <h1>第19周 / Week 19<br><span class="bi-term"><span class="zh">培训需求分析与项目设计</span> · <span class="en">Training Needs Analysis & Program Design</span></span></h1>
+            <p class="subtitle">领域7：培训（占考试10%）· 培训需求分析、ADDIE模型与教学设计<br>Domain 7: Training (10% of exam) · Training Needs Analysis, ADDIE Model & Instructional Design</p>
+        </div>
+
+        <div class="knowledge-card">
+            <h2>19.1 培训需求评估 / Training Needs Assessment</h2>
+            <div class="source-tag">
+              📖 <strong>来源 / Sources:</strong>
+              <span>Brauer Ch.32 (Procedures, Rules, and Training) · Yates Ch.17 (Training) · ANSI/ASSP Z490.1</span>
+            </div>
+            <p class="bi-p">
+              <span class="en-p">Before designing any training program, a thorough <span class="bi-term"><span class="zh">培训需求评估</span><span class="en">Training Needs Assessment (TNA)</span><span class="vocab-star" data-term="Training Needs Assessment (TNA)">☆</span></span> must be conducted at three levels to ensure training addresses real gaps rather than being a knee-jerk reaction to incidents.</span>
+              <span class="zh-p" style="color:#666;">在设计任何培训项目之前，必须进行全面的培训需求评估（TNA），从三个层面确保培训解决的是真正的差距，而非对事故的应激反应。</span>
+            </p>
+
+            <table class="bi-table">
+                <thead>
+                    <tr>
+                        <th>层面 / Level</th>
+                        <th>关注点 / Focus</th>
+                        <th>关键问题 / Key Questions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>组织分析 / Organizational Analysis</strong></td>
+                        <td>
+                          <span class="en-p">The big picture — where training fits into the organization's strategic direction</span>
+                          <span class="zh-p" style="color:#666;">宏观层面——培训如何契合组织的战略方向</span>
+                        </td>
+                        <td>
+                          <span class="en-p">Where is training needed across the organization? What are the strategic goals? What resources are available? What is the organizational climate for training?</span>
+                          <span class="zh-p" style="color:#666;">整个组织哪里需要培训？战略目标是什么？有哪些可用资源？组织的培训氛围如何？</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>任务/工作分析 / Task / Job Analysis</strong></td>
+                        <td>
+                          <span class="en-p">The work itself — identifying the specific competencies required for safe and effective performance</span>
+                          <span class="zh-p" style="color:#666;">工作本身——确定安全有效执行所需的具体能力</span>
+                        </td>
+                        <td>
+                          <span class="en-p">What tasks require training? What are the competency requirements? What are the performance standards? What hazards are associated with each task?</span>
+                          <span class="zh-p" style="color:#666;">哪些任务需要培训？能力要求是什么？绩效标准是什么？每项任务关联哪些危害？</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>人员/个人分析 / Person / Individual Analysis</strong></td>
+                        <td>
+                          <span class="en-p">The learner — identifying who specifically needs training and what gaps exist</span>
+                          <span class="zh-p" style="color:#666;">学习者——确定具体谁需要培训以及存在哪些差距</span>
+                        </td>
+                        <td>
+                          <span class="en-p">Who needs training? What are the current competency gaps? How do individual learning styles and backgrounds affect training needs? What is each person's current performance level?</span>
+                          <span class="zh-p" style="color:#666;">谁需要培训？当前的能力差距是什么？个人学习风格和背景如何影响培训需求？每个人目前的绩效水平如何？</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="important">
+                <strong>⚠ 关键要点 / Key Point:</strong><br>
+                <span class="en-p">Training is not always the answer. A performance gap may stem from unclear procedures, inadequate tools, poor supervision, or lack of motivation — not just lack of knowledge. Use the TNA to determine whether training is the appropriate intervention.</span>
+                <span class="zh-p" style="color:#666;">培训不总是答案。绩效差距可能源于程序不清晰、工具不足、监管不力或缺乏动力——而不仅仅是知识匮乏。使用TNA来确定培训是否是适当的干预措施。</span>
+            </div>
+            <div class="mnemonic">
+                <span class="mn-label">🧠 记忆口诀 / Mnemonic:</span>
+                <span class="mn-content"><strong>O-T-P</strong> = Organizational, Task, Person（组织、任务、人员）——TNA三层面。 / The three levels of Training Needs Assessment.</span>
+            </div>
+
+            <div class="exam-scenario">
+                <div class="es-label">📝 真题情景 / Exam Scenario:</div>
+                <div class="es-question">"An analysis reveals that workers perform a task incorrectly because the written procedure is ambiguous, not because they lack knowledge. What is the appropriate action?"</div>
+                <div><strong>最佳答案 / Best answer:</strong> Fix the procedure — training is not always the answer. The TNA distinguishes knowledge gaps (training) from other root causes (tools, procedures, supervision, motivation). 培训不总是答案，先解决根本原因。</div>
+            </div>
+        </div>
+
+  <div id="quiz-group-1"></div>
+
+
+        <div class="knowledge-card">
+            <h2>19.2 ANSI/ASSP Z490.1 标准</h2>
+            <div class="source-tag">
+              📖 <strong>来源 / Sources:</strong>
+              <span>ANSI/ASSP Z490.1 · Brauer Ch.32 (Procedures, Rules, and Training)</span>
+            </div>
+            <p class="bi-p">
+              <span class="en-p"><span class="bi-term"><span class="zh">ANSI/ASSP Z490.1</span><span class="en">ANSI/ASSP Z490.1</span><span class="vocab-star" data-term="ANSI/ASSP Z490.1">☆</span></span> establishes <strong>Criteria for Accepted Practices in Safety, Health, and Environmental Training</strong>. It is the national consensus standard for EHS training program quality and serves as a benchmark for acceptable training practices.</span>
+              <span class="zh-p" style="color:#666;">ANSI/ASSP Z490.1确立了<strong>安全、健康和环境培训公认实践准则</strong>。这是EHS培训项目质量的国家共识标准，作为可接受培训实践的基准。</span>
+            </p>
+
+            <table class="bi-table">
+                <thead>
+                    <tr>
+                        <th>章节 / Section</th>
+                        <th>涵盖内容 / Coverage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>范围与目的 / Scope & Purpose</td><td><span class="en-p">Defines criteria for developing, delivering, evaluating, and managing EHS training</span><span class="zh-p" style="color:#666;">定义EHS培训开发、交付、评估和管理的准则</span></td></tr>
+                    <tr><td>培训项目管理 / Training Program Administration</td><td><span class="en-p">Management support, written plan, documentation, recordkeeping</span><span class="zh-p" style="color:#666;">管理层支持、书面计划、文件记录、档案管理</span></td></tr>
+                    <tr><td>培训开发 / Training Development</td><td><span class="en-p">Needs assessment, learning objectives, content, delivery methods, evaluation</span><span class="zh-p" style="color:#666;">需求评估、学习目标、内容、交付方法、评估</span></td></tr>
+                    <tr><td>培训交付 / Training Delivery</td><td><span class="en-p">Trainer qualifications, facilities, equipment, class size</span><span class="zh-p" style="color:#666;">培训师资质、设施、设备、班级规模</span></td></tr>
+                    <tr><td>培训评估 / Training Evaluation</td><td><span class="en-p">Formative and summative evaluation, continuous improvement</span><span class="zh-p" style="color:#666;">形成性评估和总结性评估、持续改进</span></td></tr>
+                    <tr><td>文件记录 / Documentation</td><td><span class="en-p">Attendance, test results, instructor qualifications, course materials</span><span class="zh-p" style="color:#666;">出勤记录、考试成绩、讲师资质、课程材料</span></td></tr>
+                </tbody>
+            </table>
+            <div class="exam-hotspot">
+                <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+                <span class="eh-tag freq-high">必考 HIGH</span>
+                <div>
+                    <strong>典型问法 / Typical question:</strong> Which ANSI standard establishes criteria for accepted practices in safety, health, and environmental training? 哪个ANSI标准确立了EHS培训公认实践准则？<br>
+                    <strong>答题要点 / Key point:</strong> ANSI/ASSP Z490.1. Z10 = OHS management systems; Z359.1 = fall protection; Z244.1 = lockout/tagout. 记住Z490.1与Z10/Z359/Z244的区分。
+                </div>
+            </div>
+        </div>
+
+  <div id="quiz-group-2"></div>
+
+
+        <div class="knowledge-card">
+            <h2>19.3 ADDIE 模型 / The ADDIE Model</h2>
+            <div class="source-tag">
+              📖 <strong>来源 / Sources:</strong>
+              <span>ANSI/ASSP Z490.1 · Brauer Ch.32 (Procedures, Rules, and Training) · Yates Ch.17 (Training)</span>
+            </div>
+            <p class="bi-p">
+              <span class="en-p">The <span class="bi-term"><span class="zh">ADDIE模型</span><span class="en">ADDIE model</span><span class="vocab-star" data-term="ADDIE Model">☆</span></span> is the foundational instructional design framework used in EHS training development. Each phase builds on the previous one in a systematic, iterative process.</span>
+              <span class="zh-p" style="color:#666;">ADDIE模型是EHS培训开发中使用的基础教学设计框架。每个阶段在前一阶段的基础上系统化、迭代地进行。</span>
+            </p>
+
+            <table class="bi-table">
+                <thead>
+                    <tr>
+                        <th>阶段 / Phase</th>
+                        <th>关键活动 / Key Activities</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>A — 分析 / Analysis</strong></td>
+                        <td>
+                          <span class="en-p">Needs assessment (organizational, task, person); learner analysis (prior knowledge, demographics, motivation, learning preferences); context analysis (where will learning be applied? what constraints exist?)</span>
+                          <span class="zh-p" style="color:#666;">需求评估（组织、任务、个人）；学习者分析（先验知识、人口特征、动机、学习偏好）；情境分析（所学内容在何处应用？存在哪些限制？）</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>D — 设计 / Design</strong></td>
+                        <td>
+                          <span class="en-p">Write learning objectives using <span class="bi-term"><span class="zh">布鲁姆分类学</span><span class="en">Bloom's Taxonomy</span><span class="vocab-star" data-term="Bloom's Taxonomy">☆</span></span>; select instructional strategies; plan assessment methods; storyboard content; determine sequence and pacing</span>
+                          <span class="zh-p" style="color:#666;">使用布鲁姆分类学编写学习目标；选择教学策略；规划评估方法；故事板内容；确定顺序和节奏</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>D — 开发 / Development</strong></td>
+                        <td>
+                          <span class="en-p">Create course materials (slides, handouts, exercises, assessments); pilot test with a sample group; revise based on pilot feedback; finalize facilitator and participant guides</span>
+                          <span class="zh-p" style="color:#666;">创建课程材料（幻灯片、讲义、练习、评估）；对样本组进行试讲；根据试讲反馈修订；定稿讲师指南和学员指南</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>I — 实施 / Implementation</strong></td>
+                        <td>
+                          <span class="en-p">Schedule sessions; arrange logistics (venue, equipment, materials); deliver training; manage attendance and records; provide learner support</span>
+                          <span class="zh-p" style="color:#666;">安排课程时间；协调后勤（场地、设备、材料）；交付培训；管理出勤和记录；提供学员支持</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>E — 评估 / Evaluation</strong></td>
+                        <td>
+                          <span class="en-p">Assess effectiveness using <span class="bi-term"><span class="zh">柯氏四级评估</span><span class="en">Kirkpatrick's Four Levels</span><span class="vocab-star" data-term="Kirkpatrick's Four Levels">☆</span></span>; collect feedback for continuous improvement; measure against original objectives; determine ROI where applicable</span>
+                          <span class="zh-p" style="color:#666;">使用柯氏四级评估模型评估效果；收集反馈以持续改进；对照原始目标进行衡量；适当时确定ROI</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="mnemonic">
+                <span class="mn-label">🧠 记忆口诀 / Mnemonic:</span>
+                <span class="mn-content"><strong>ADDIE</strong> = Analysis, Design, Development, Implementation, Evaluation（分析、设计、开发、实施、评估）——教学设计五阶段。学习目标在<b>设计</b>阶段用布鲁姆分类学编写。 / ADDIE phases; objectives are written in the Design phase.</span>
+            </div>
+
+            <div class="exam-hotspot">
+                <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+                <span class="eh-tag freq-high">必考 HIGH</span>
+                <div>
+                    <strong>典型问法 / Typical question:</strong> During which ADDIE phase are learning objectives written using Bloom's Taxonomy? 学习目标在哪个ADDIE阶段编写？<br>
+                    <strong>答题要点 / Key point:</strong> Design phase. Pilot testing and revision belong to Development. The Design phase produces the instructional blueprint (objectives + assessment + sequencing). 记住目标在设计阶段编写。
+                </div>
+            </div>
+        </div>
+
+  <div id="quiz-group-3"></div>
+
+
+        <div class="knowledge-card">
+            <h2>19.4 持续改进模型 — 培训实施 / Continuous Improvement Model — Training Implementation</h2>
+            <div class="source-tag">
+              📖 <strong>来源 / Sources:</strong>
+              <span>ANSI/ASSP Z490.1 · Brauer Ch.32 (Procedures, Rules, and Training) · Yates Ch.17 (Training)</span>
+            </div>
+            <p class="bi-p">
+              <span class="en-p"><span class="bi-term"><span class="zh">CSP11 Domain 7.3</span><span class="en">CSP11 Domain 7.3</span><span class="vocab-star" data-term="Continuous Improvement Model (Training)">☆</span></span> explicitly requires implementing training using a <strong>Continuous Improvement model</strong>. While ADDIE is the design framework, the Continuous Improvement approach ensures training programs are NOT static — they evolve based on data.</span>
+              <span class="zh-p" style="color:#666;">CSP11领域7.3明确要求使用<strong>持续改进模型</strong>实施培训。ADDIE是设计框架，但持续改进方法确保培训项目不是静止的——它们基于数据不断演进。</span>
+            </p>
+
+            <h3>持续改进循环 / The Continuous Improvement Cycle (per Yates, adapted from Deming's PDCA)</h3>
+            <table class="bi-table">
+                <thead><tr><th>阶段 / Phase</th><th>培训应用 / Training Application</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>1. 绩效分析 / Performance Analysis</strong></td><td><span class="en-p">Identify performance gaps through data: incident rates, audit findings, observation data, employee feedback, regulatory changes, new equipment/processes. <em>Is training the solution?</em> If not, address the root cause (tools, procedures, supervision, motivation).</span><span class="zh-p" style="color:#666;">通过数据识别绩效差距：事故率、审核发现、观察数据、员工反馈、法规变更、新设备/工艺。<em>培训是解决方案吗？</em>如果否，则解决根本原因（工具、程序、监督、动机）。</span></td></tr>
+                    <tr><td><strong>2. 教学设计 / Instructional Design</strong></td><td><span class="en-p">Design training to address identified gaps. Apply ADDIE framework for the specific intervention. Set measurable objectives aligned with the performance gap.</span><span class="zh-p" style="color:#666;">设计培训以解决已识别的差距。对特定干预应用ADDIE框架。设定与绩效差距对齐的可衡量目标。</span></td></tr>
+                    <tr><td><strong>3. 材料获取/开发 / Materials Acquisition</strong></td><td><span class="en-p">Develop or procure training materials. Vendor selection for off-the-shelf programs. Custom content development. Technology platform selection (LMS, VR simulators, e-learning authoring tools).</span><span class="zh-p" style="color:#666;">开发或采购培训材料。现成课程的供应商选择。定制内容开发。技术平台选择（LMS、VR模拟器、在线学习创作工具）。</span></td></tr>
+                    <tr><td><strong>4. 交付 / Delivery</strong></td><td><span class="en-p">Execute the training. Ensure instructor qualification, facility adequacy, equipment functionality. Monitor delivery quality. Collect Level 1 (Reaction) data.</span><span class="zh-p" style="color:#666;">执行培训。确保讲师资质、设施充分、设备功能正常。监控交付质量。收集第1级（反应）数据。</span></td></tr>
+                    <tr><td><strong>5. 评估与反馈 / Evaluation &amp; Feedback</strong></td><td><span class="en-p">Measure against objectives using Kirkpatrick Levels 1-4. Analyze results: Did behavior change (Level 3)? Did outcomes improve (Level 4)? Feed findings back to Performance Analysis stage — close the loop. This is what makes it "continuous" — evaluation results drive the NEXT cycle of improvement.</span><span class="zh-p" style="color:#666;">使用柯氏1-4级对目标进行衡量。分析结果：行为是否改变（第3级）？结果是否改善（第4级）？将发现反馈到绩效分析阶段——闭环。正是这一点使其成为"持续"——评估结果驱动下一个改进循环。</span></td></tr>
+                </tbody>
+            </table>
+
+            <div class="important">
+                <strong>⚠ CSP考试关键区别 / CSP Exam Key Distinction:</strong><br>
+                <span class="en-p">ADDIE describes HOW to design individual training programs. The <strong>Continuous Improvement model</strong> (per Yates/CSP11) describes HOW to manage the overall training function — continuously scanning for gaps, implementing interventions, measuring results, and feeding data back into the cycle. The CSP exam may ask about the sequence: Performance Analysis → Instructional Design → Materials Acquisition → Delivery → Evaluation (the Yates 5-step process).</span>
+                <span class="zh-p" style="color:#666;">ADDIE描述了如何设计单个培训项目。<strong>持续改进模型</strong>（依据Yates/CSP11）描述了如何管理整体培训职能——持续扫描差距、实施干预、衡量结果并将数据反馈到循环中。CSP考试可能会问到以下顺序：绩效分析→教学设计→材料获取→交付→评估（Yates五步流程）。</span>
+            </div>
+            <div class="exam-scenario">
+                <div class="es-label">📝 真题情景 / Exam Scenario:</div>
+                <div class="es-question">"What is the correct order of the Yates 5-step continuous improvement process for training?"</div>
+                <div><strong>最佳答案 / Best answer:</strong> Performance Analysis → Instructional Design → Materials Acquisition → Delivery → Evaluation &amp; Feedback (loops back to Performance Analysis). 绩效分析→教学设计→材料获取→交付→评估反馈，闭环回到起点。</div>
+            </div>
+
+            <div class="confusion-box">
+                <div class="cb-label">⚖️ 易混淆对比 / Common Confusions:</div>
+                <table class="study-table">
+                    <tr><th>概念A</th><th>概念B</th><th>关键区别</th></tr>
+                    <tr><td>ADDIE（设计单个培训项目）</td><td>持续改进模型（管理整体培训职能）</td><td>ADDIE = how to design individual programs; CI model (Yates/CSP11) = how to manage the whole training function continuously.</td></tr>
+                </table>
+            </div>
+        </div>
+
+  <div id="quiz-group-4"></div>
+
+
+        <div class="knowledge-card">
+            <h2>19.5 布鲁姆分类学 — 认知领域 / Bloom's Taxonomy — Cognitive Domain</h2>
+            <div class="source-tag">
+              📖 <strong>来源 / Sources:</strong>
+              <span>Bloom's Taxonomy (Anderson &amp; Krathwohl, 2001) · Yates Ch.17 (Training) · Brauer Ch.32</span>
+            </div>
+            <p class="bi-p">
+              <span class="en-p">Learning objectives should be written as <strong>observable, measurable behaviors</strong> using action verbs aligned to the appropriate cognitive level.</span>
+              <span class="zh-p" style="color:#666;">学习目标应写为<strong>可观察、可衡量的行为</strong>，使用与相应认知层次匹配的动作动词。</span>
+            </p>
+
+            <table class="bi-table">
+                <thead>
+                    <tr>
+                        <th>层次 / Level</th>
+                        <th>描述 / Description</th>
+                        <th>示例动词 / Sample Verbs</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1. <strong>记忆 / Remember</strong></td><td><span class="en-p">Recall facts, terms, basic concepts</span><span class="zh-p" style="color:#666;">回忆事实、术语、基本概念</span></td><td>List/列出, define/定义, state/陈述, identify/识别, recall/回忆, label/标注</td></tr>
+                    <tr><td>2. <strong>理解 / Understand</strong></td><td><span class="en-p">Explain ideas, interpret, summarize</span><span class="zh-p" style="color:#666;">解释观点、解读、总结</span></td><td>Explain/解释, describe/描述, summarize/总结, paraphrase/转述, interpret/解读</td></tr>
+                    <tr><td>3. <strong>应用 / Apply</strong></td><td><span class="en-p">Use information in new situations</span><span class="zh-p" style="color:#666;">在新情境中使用信息</span></td><td>Demonstrate/演示, execute/执行, implement/实施, use/使用, compute/计算, solve/解决</td></tr>
+                    <tr><td>4. <strong>分析 / Analyze</strong></td><td><span class="en-p">Break down information, find relationships</span><span class="zh-p" style="color:#666;">分解信息、找出关系</span></td><td>Differentiate/区分, compare/比较, contrast/对比, examine/检查, categorize/分类</td></tr>
+                    <tr><td>5. <strong>评价 / Evaluate</strong></td><td><span class="en-p">Make judgments based on criteria</span><span class="zh-p" style="color:#666;">依据标准做出判断</span></td><td>Assess/评估, critique/评判, justify/论证, prioritize/排序, recommend/推荐, defend/辩护</td></tr>
+                    <tr><td>6. <strong>创造 / Create</strong></td><td><span class="en-p">Produce new work, design solutions</span><span class="zh-p" style="color:#666;">产生新成果、设计解决方案</span></td><td>Design/设计, develop/开发, construct/构建, formulate/制定, plan/规划, produce/产出</td></tr>
+                </tbody>
+            </table>
+
+            <div class="important">
+                <strong>编写目标 / Writing Objectives:</strong><br>
+                <span class="en-p">Each objective should specify the <strong>audience</strong> (who), the <strong>behavior</strong> (observable action using a Bloom's verb), the <strong>condition</strong> (under what circumstances), and the <strong>degree</strong> (how well / the standard). Example: "Given a hazard scenario (condition), the employee (audience) will identify all applicable controls (behavior) with 100% accuracy (degree)."</span>
+                <span class="zh-p" style="color:#666;">每个目标应指定<strong>受众</strong>（谁）、<strong>行为</strong>（使用布鲁姆动词的可观察动作）、<strong>条件</strong>（在什么情况下）和<strong>程度</strong>（多好/标准）。例如："给定一个危害场景（条件），员工（受众）将以100%准确率（程度）识别所有适用的控制措施（行为）。"</span>
+            </div>
+            <div class="mnemonic">
+                <span class="mn-label">🧠 记忆口诀 / Mnemonic:</span>
+                <span class="mn-content"><strong>RUAAE-C</strong>（修订版） = Remember, Understand, Apply, Analyze, Evaluate, Create（记忆、理解、应用、分析、评价、创造）——布鲁姆认知六层次。 / Bloom's revised cognitive domain.</span>
+            </div>
+
+            <div class="exam-scenario">
+                <div class="es-label">📝 真题情景 / Exam Scenario:</div>
+                <div class="es-question">"A trainer wants learners to compare and contrast fall protection systems and recommend the most appropriate one. At what Bloom's level is this objective?"</div>
+                <div><strong>最佳答案 / Best answer:</strong> Evaluate (Level 5) — making judgments based on criteria and recommending. "Design" = Create (Level 6, highest). 比较、推荐=评价层次；设计=创造层次。</div>
+            </div>
+        </div>
+
+  <div id="quiz-group-5"></div>
+
+
+        <div class="knowledge-card">
+            <h2>19.6 SMART 培训目标 / SMART Training Objectives</h2>
+            <div class="source-tag">
+              📖 <strong>来源 / Sources:</strong>
+              <span>Yates Ch.17 (Training) · Brauer Ch.32 (Procedures, Rules, and Training)</span>
+            </div>
+            <p class="bi-p">
+              <span class="en-p">All training objectives should be <span class="bi-term"><span class="zh">SMART</span><span class="en">SMART</span><span class="vocab-star" data-term="SMART Objectives">☆</span></span>:</span>
+              <span class="zh-p" style="color:#666;">所有培训目标都应满足SMART原则：</span>
+            </p>
+
+            <table class="bi-table">
+                <thead>
+                    <tr>
+                        <th>要素 / Element</th>
+                        <th>含义 / Meaning</th>
+                        <th>示例 / Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>S</strong></td><td>具体的 / Specific</td><td><span class="en-p">Clearly defined — "Identify all 9 GHS pictograms"</span><span class="zh-p" style="color:#666;">明确定义——"识别全部9个GHS象形图"</span></td></tr>
+                    <tr><td><strong>M</strong></td><td>可衡量的 / Measurable</td><td><span class="en-p">Quantifiable — "...with at least 90% accuracy"</span><span class="zh-p" style="color:#666;">可量化——"……至少90%的准确率"</span></td></tr>
+                    <tr><td><strong>A</strong></td><td>可实现的 / Achievable</td><td><span class="en-p">Realistic given time, resources, learner baseline</span><span class="zh-p" style="color:#666;">在给定时间、资源、学习者基础下切实可行</span></td></tr>
+                    <tr><td><strong>R</strong></td><td>相关的 / Relevant</td><td><span class="en-p">Aligned with job requirements and organizational goals</span><span class="zh-p" style="color:#666;">与岗位要求和组织目标一致</span></td></tr>
+                    <tr><td><strong>T</strong></td><td>有时限的 / Time-bound</td><td><span class="en-p">Specific timeframe — "...by end of Q2 onboarding"</span><span class="zh-p" style="color:#666;">明确的时间框架——"……在Q2入职培训结束前"</span></td></tr>
+                </tbody>
+            </table>
+            <div class="mnemonic">
+                <span class="mn-label">🧠 记忆口诀 / Mnemonic:</span>
+                <span class="mn-content"><strong>SMART</strong> = Specific, Measurable, Achievable, Relevant, Time-bound（具体、可衡量、可实现、相关、有时限）。 / SMART objectives.</span>
+            </div>
+
+            <div class="exam-hotspot">
+                <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+                <span class="eh-tag freq-high">必考 HIGH</span>
+                <div>
+                    <strong>典型问法 / Typical question:</strong> Which objective is SMART — "Understand the importance of PPE" or "The employee will demonstrate correct respirator donning within 2 minutes with no errors"? 哪个目标符合SMART？<br>
+                    <strong>答题要点 / Key point:</strong> The second — it has an observable, measurable behavior with condition and degree. Vague verbs like "understand," "know," "be aware" are not measurable. 目标必须用可观察动词。
+                </div>
+            </div>
+        </div>
+
+  <div id="quiz-group-6"></div>
+
+
+        <div class="knowledge-card">
+            <h2>19.7 培训计划组成要素 / Training Plan Components</h2>
+            <div class="source-tag">
+              📖 <strong>来源 / Sources:</strong>
+              <span>ANSI/ASSP Z490.1 · Brauer Ch.32 (Procedures, Rules, and Training) · Yates Ch.17 (Training)</span>
+            </div>
+            <p class="bi-p">
+              <span class="en-p">A comprehensive training plan must address each of these elements:</span>
+              <span class="zh-p" style="color:#666;">全面的培训计划必须涵盖以下每个要素：</span>
+            </p>
+
+            <table class="bi-table">
+                <thead>
+                    <tr>
+                        <th>要素 / Component</th>
+                        <th>描述 / Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>范围 / Scope</strong></td><td><span class="en-p">What topics are covered? What is the breadth and depth? What regulatory requirements must be met?</span><span class="zh-p" style="color:#666;">涵盖哪些主题？广度和深度如何？必须满足哪些法规要求？</span></td></tr>
+                    <tr><td><strong>受众 / Audience</strong></td><td><span class="en-p">Who is the target? (new hires, experienced workers, supervisors, contractors). What is the class size?</span><span class="zh-p" style="color:#666;">目标对象是谁？（新员工、经验丰富的工人、主管、承包商）。班级规模多大？</span></td></tr>
+                    <tr><td><strong>目标 / Objectives</strong></td><td><span class="en-p">SMART learning objectives using Bloom's Taxonomy verbs — what will learners be able to do?</span><span class="zh-p" style="color:#666;">使用布鲁姆分类学动词的SMART学习目标——学习者将能做到什么？</span></td></tr>
+                    <tr><td><strong>内容大纲 / Content Outline</strong></td><td><span class="en-p">Topics, sequence, time allocation per module, key points, exercises, assessments</span><span class="zh-p" style="color:#666;">主题、顺序、每个模块的时间分配、要点、练习、评估</span></td></tr>
+                    <tr><td><strong>交付方式 / Delivery Method</strong></td><td><span class="en-p">Classroom, e-learning, OJT, blended, simulation — selected based on content, audience, and resources</span><span class="zh-p" style="color:#666;">课堂、在线学习、在岗培训、混合式、模拟——根据内容、受众和资源选择</span></td></tr>
+                    <tr><td><strong>时间安排 / Schedule</strong></td><td><span class="en-p">Date(s), time(s), duration per session, frequency (one-time vs. recurring), deadlines</span><span class="zh-p" style="color:#666;">日期、时间、每节课时长、频率（一次性vs.周期性的）、截止日期</span></td></tr>
+                    <tr><td><strong>资源 / Resources</strong></td><td><span class="en-p">Instructor(s), facility, equipment, materials, budget, technology needs</span><span class="zh-p" style="color:#666;">讲师、设施、设备、材料、预算、技术需求</span></td></tr>
+                    <tr><td><strong>评估方法 / Evaluation Method</strong></td><td><span class="en-p">How will learning be measured? (written test, skills demo, observation). Kirkpatrick level targeted.</span><span class="zh-p" style="color:#666;">如何衡量学习效果？（笔试、技能演示、观察）。目标柯氏评估层次。</span></td></tr>
+                </tbody>
+            </table>
+            <div class="exam-scenario">
+                <div class="es-label">📝 真题情景 / Exam Scenario:</div>
+                <div class="es-question">"A training plan includes scope, audience, SMART objectives, delivery method, 3-day schedule, equipment, instructor, and a written test plus skills demo. Which component is MISSING?"</div>
+                <div><strong>最佳答案 / Best answer:</strong> Budget / financial resources. The eight components: scope, audience, objectives, content outline, delivery method, schedule, resources (incl. budget), evaluation method. 培训计划八大要素中预算常被遗漏。</div>
+            </div>
+        </div>
+
+  <div id="quiz-group-7"></div>
+
+
+        <div class="knowledge-card">
+            <h2>19.8 形成性评估与总结性评估 / Formative vs. Summative Evaluation</h2>
+            <div class="source-tag">
+              📖 <strong>来源 / Sources:</strong>
+              <span>ANSI/ASSP Z490.1 · Brauer Ch.32 (Procedures, Rules, and Training) · Yates Ch.17 (Training)</span>
+            </div>
+            <p class="bi-p">
+              <span class="en-p">Understanding the two types of evaluation is essential for designing effective assessment within the training program.</span>
+              <span class="zh-p" style="color:#666;">理解两种评估类型对在设计培训项目中进行有效评估至关重要。</span>
+            </p>
+
+            <table class="bi-table">
+                <thead>
+                    <tr>
+                        <th>特征 / Feature</th>
+                        <th>形成性评估 / Formative</th>
+                        <th>总结性评估 / Summative</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>时机 / Timing</strong></td><td><span class="en-p">During development and delivery</span><span class="zh-p" style="color:#666;">在开发和交付期间</span></td><td><span class="en-p">At the end of the program</span><span class="zh-p" style="color:#666;">在项目结束时</span></td></tr>
+                    <tr><td><strong>目的 / Purpose</strong></td><td><span class="en-p">Improve the training as it is developed — pilot tests, learner feedback, mid-course checks</span><span class="zh-p" style="color:#666;">改进正在开发的培训——试讲、学员反馈、课程中检查</span></td><td><span class="en-p">Judge whether learning goals were achieved — final exams, certification tests, skills demos</span><span class="zh-p" style="color:#666;">判断学习目标是否达成——期末考试、认证测试、技能演示</span></td></tr>
+                    <tr><td><strong>示例 / Examples</strong></td><td><span class="en-p">Pilot test, dry-run, learner reaction surveys, instructor self-assessment</span><span class="zh-p" style="color:#666;">试讲、预演、学员反应调查、讲师自评</span></td><td><span class="en-p">Post-test, certification exam, practical skills evaluation</span><span class="zh-p" style="color:#666;">后测、认证考试、实践技能评估</span></td></tr>
+                </tbody>
+            </table>
+
+            <div class="important">
+                <strong>关键区分 / Key Distinction:</strong><br>
+                <span class="en-p">Formative evaluation improves the training <em>while it is being built</em>. Summative evaluation judges the final result. Both are required by ANSI/ASSP Z490.1.</span>
+                <span class="zh-p" style="color:#666;">形成性评估在培训<em>构建过程中</em>改进培训。总结性评估判断最终结果。ANSI/ASSP Z490.1要求两者都进行。</span>
+            </div>
+            <div class="confusion-box">
+                <div class="cb-label">⚖️ 易混淆对比 / Common Confusions:</div>
+                <table class="study-table">
+                    <tr><th>概念A</th><th>概念B</th><th>关键区别</th></tr>
+                    <tr><td>形成性评估 / Formative</td><td>总结性评估 / Summative</td><td>Formative = DURING development to improve (pilot test, dry-run, learner feedback); Summative = AT END to judge (final exam, certification).</td></tr>
+                    <tr><td>试讲 / Pilot test</td><td>期末考试 / Final exam</td><td>Pilot test = formative; final exam = summative. Z490.1 requires BOTH.</td></tr>
+                </table>
+            </div>
+
+            <div class="exam-hotspot">
+                <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+                <span class="eh-tag freq-high">必考 HIGH</span>
+                <div>
+                    <strong>典型问法 / Typical question:</strong> Which is a CORRECT example of a formative evaluation activity? 哪项属于形成性评估？<br>
+                    <strong>答题要点 / Key point:</strong> Pilot testing new materials with a small group before full rollout — improves training during development. 试讲/预演是形成性评估，期末考试是总结性评估。
+                </div>
+            </div>
+        </div>
+
+  <div id="quiz-group-8"></div>
+
+
+        <div id="quiz-root"></div>
+    </div>
+
+    <script src="quiz-engine.js?v=11"></script>
+    <script src="vocab-engine.js?v=11"></script>
+    <script>
+    CSPQuiz.init({
+        containerId: 'quiz-root',
+        quizId: 'week-19-quiz',
+        quizTitle: 'Week 19 Quiz: Training Needs & Design / 第19周测验：培训需求与设计',
+        quizTopic: 'Domain 7 — Training',
+        questions: [
+            {
+                text: 'A safety manager conducts an analysis to determine whether the organization has the resources and strategic alignment to support a new safety training initiative. What level of training needs assessment is being performed?',
+                group: 1,
+      options: [
+                    'Person / Individual analysis',
+                    'Task / Job analysis',
+                    'Organizational analysis',
+                    'Gap analysis'
+                ],
+                correct: 2,
+                explanation: 'Organizational analysis examines the big picture — strategic goals, available resources, organizational climate, and where training fits into the overall direction. This is the first of the three TNA levels.\n\n组织分析考察宏观层面——战略目标、可用资源、组织氛围以及培训如何融入总体方向。这是TNA三个层面中的第一个层面。'
+            },
+            {
+                text: 'A learning objective states: "The employee will demonstrate proper donning of a full-face respirator within 2 minutes with no errors." This objective BEST exemplifies which type of objective?',
+                group: 1,
+      options: [
+                    'Affective objective',
+                    'SMART objective',
+                    'Subjective objective',
+                    'Open-ended objective'
+                ],
+                correct: 1,
+                explanation: 'This is a SMART objective: it is Specific (donning a full-face respirator), Measurable (within 2 minutes, no errors), Achievable (a realistic skill), Relevant (to safety), and Time-bound (within 2 minutes).\n\n这是一个SMART目标：具体（佩戴全面罩呼吸器）、可衡量（2分钟内、无错误）、可实现（现实可行的技能）、相关（与安全相关）、有时限（2分钟内）。'
+            },
+            {
+                text: 'Which ANSI standard establishes criteria for accepted practices in safety, health, and environmental training?',
+                group: 1,
+      options: [
+                    'ANSI/ASSP Z10',
+                    'ANSI/ASSP Z490.1',
+                    'ANSI/ASSP Z359.1',
+                    'ANSI/ASSP Z244.1'
+                ],
+                correct: 1,
+                explanation: 'ANSI/ASSP Z490.1 is the national consensus standard for Criteria for Accepted Practices in Safety, Health, and Environmental Training. ANSI Z10 covers OHS management systems, Z359.1 covers fall protection, and Z244.1 covers lockout/tagout.\n\nANSI/ASSP Z490.1是安全、健康和环境培训公认实践准则的国家共识标准。ANSI Z10涵盖OHS管理体系，Z359.1涵盖坠落防护，Z244.1涵盖上锁挂牌。'
+            },
+            {
+                text: 'During which phase of the ADDIE model are learning objectives written using Bloom\'s Taxonomy?',
+                group: 1,
+      options: [
+                    'Analysis',
+                    'Design',
+                    'Development',
+                    'Evaluation'
+                ],
+                correct: 1,
+                explanation: 'Learning objectives are written during the Design phase of ADDIE. This is when instructional strategies are selected, objectives are crafted using Bloom\'s taxonomy, and the overall blueprint for the training is created.\n\n学习目标在ADDIE的设计阶段编写。此时选择教学策略、使用布鲁姆分类学制定目标，并创建培训的总体蓝图。'
+            },
+            {
+                text: 'A trainer wants learners to be able to compare and contrast different types of fall protection systems and recommend the most appropriate one for a given scenario. At what level of Bloom\'s Taxonomy is this objective?',
+                group: 1,
+      options: [
+                    'Understand',
+                    'Apply',
+                    'Analyze',
+                    'Evaluate'
+                ],
+                correct: 3,
+                explanation: '"Compare, contrast, and recommend" are evaluation-level verbs. At the Evaluate level (level 5), learners make judgments based on criteria and defend their choices. Analyze (level 4) involves breaking down information; Evaluate (level 5) goes further by making a judgment and recommendation.\n\n"比较、对比和推荐"是评价层次的动词。在评价层次（第5层），学习者依据标准做出判断并为其选择辩护。分析（第4层）涉及分解信息；评价（第5层）更进一步，做出判断和推荐。'
+            },
+            {
+                text: 'A pilot test of new training materials reveals that participants consistently misunderstand a key exercise. In which ADDIE phase should this issue be addressed?',
+                group: 2,
+      options: [
+                    'Analysis',
+                    'Design',
+                    'Development',
+                    'Implementation'
+                ],
+                correct: 2,
+                explanation: 'Pilot testing and revision are part of the Development phase. During Development, materials are created, pilot tested with a sample group, and revised based on feedback before moving to full Implementation.\n\n试讲和修订属于开发阶段。在开发阶段，创建材料、对样本组进行试讲，并根据反馈进行修订，然后再进入全面实施。'
+            },
+            {
+                text: 'A training plan includes: topics to be covered, target audience of 20 new hires, SMART objectives, a combination of classroom and hands-on instruction, a 3-day schedule, required equipment and instructor, and a written test plus skills demonstration. Which training plan component is MISSING from this description?',
+                group: 2,
+      options: [
+                    'Scope',
+                    'Delivery method',
+                    'Budget',
+                    'Content outline'
+                ],
+                correct: 2,
+                explanation: 'Budget/financial resources are missing. While the plan covers scope (topics), audience (20 new hires), objectives (SMART), delivery method (classroom + hands-on), schedule (3-day), and evaluation (written test + skills demo), it does not address the budget or cost/resources component.\n\n预算/财务资源缺失了。虽然计划涵盖了范围（主题）、受众（20名新员工）、目标（SMART）、交付方式（课堂+实操）、时间安排（3天）和评估（笔试+技能演示），但没有涉及预算或成本/资源组成部分。'
+            },
+            {
+                text: 'Using Bloom\'s Taxonomy, which of the following objective verbs represents the HIGHEST cognitive level?',
+                group: 2,
+      options: [
+                    'Explain',
+                    'Demonstrate',
+                    'Differentiate',
+                    'Design'
+                ],
+                correct: 3,
+                explanation: '"Design" represents the Create level (level 6), the highest cognitive level in Bloom\'s revised taxonomy. "Explain" is Understand (level 2), "Demonstrate" is Apply (level 3), and "Differentiate" is Analyze (level 4).\n\n"设计"代表创造层次（第6层），即布鲁姆修订分类学中的最高认知层次。"解释"是理解（第2层），"演示"是应用（第3层），"区分"是分析（第4层）。'
+            },
+            {
+                text: 'In the Continuous Improvement model for training (per Yates/CSP11), which stage comes FIRST?',
+                group: 2,
+      options: [
+                    'Instructional design',
+                    'Materials acquisition',
+                    'Delivery',
+                    'Performance analysis'
+                ],
+                correct: 3,
+                explanation: 'The Yates 5-step continuous improvement process begins with Performance Analysis — identifying performance gaps through data (incident rates, audits, observations, regulatory changes) and determining whether training is the correct solution. Only then does instructional design begin.\n\nYates五步持续改进流程从绩效分析开始——通过数据（事故率、审核、观察、法规变更）识别绩效差距，并确定培训是否是正确的解决方案。只有在此之后才开始教学设计。'
+            },
+            {
+                text: 'An analysis reveals that workers perform a task incorrectly because the written procedure is ambiguous, not because they lack knowledge. According to the training needs assessment logic, the appropriate action is:',
+                group: 2,
+      options: [
+                    'Schedule more training on the task',
+                    'Rewrite the procedure (address the root cause, not training)',
+                    'Discipline the workers',
+                    'Ignore the issue until incidents occur'
+                ],
+                correct: 1,
+                explanation: 'Training is not always the answer. If the performance gap stems from unclear procedures (not knowledge deficiency), the correct intervention is to fix the procedure. The TNA distinguishes knowledge gaps (training) from other root causes (tools, procedures, supervision, motivation).\n\n培训不总是答案。如果绩效差距源于程序不清晰（而非知识缺乏），正确的干预是修正程序。TNA区分知识差距（需要培训）与其他根本原因（工具、程序、监督、动机）。'
+            },
+            {
+                text: 'What is the CORRECT order of the Continuous Improvement model stages (per Yates)?',
+                group: 3,
+      options: [
+                    'Materials → Design → Analysis → Delivery → Evaluation',
+                    'Performance Analysis → Instructional Design → Materials Acquisition → Delivery → Evaluation & Feedback',
+                    'Delivery → Evaluation → Analysis → Design → Materials',
+                    'Design → Analysis → Evaluation → Materials → Delivery'
+                ],
+                correct: 1,
+                explanation: 'The Yates 5-step continuous improvement process is: (1) Performance Analysis, (2) Instructional Design, (3) Materials Acquisition, (4) Delivery, (5) Evaluation & Feedback — which loops back to Performance Analysis. This is the CI framework applied to EHS training.\n\nYates五步持续改进流程是：(1) 绩效分析，(2) 教学设计，(3) 材料获取，(4) 交付，(5) 评估与反馈——反馈回到绩效分析。这是应用于EHS培训的CI框架。'
+            },
+            {
+                text: 'A training objective reads: "Given a fire extinguisher and a small Class B fire, the employee will correctly select and use the extinguisher." This objective is written at which Bloom\'s Taxonomy level?',
+                group: 3,
+      options: ['Remember', 'Understand', 'Apply', 'Create'],
+                correct: 2,
+                explanation: '"Select and use" in a practical scenario is an Apply-level (level 3) objective — using learned information/procedures in a new situation. It is observable and measurable, making it a valid behavioral objective.\n\n"选择和使用"实际场景属于应用层次（第3层）目标——在新情境中使用所学信息/程序。它是可观察、可衡量的，因此是有效的行为目标。'
+            },
+            {
+                text: 'Which element is the WEAKEST indicator of whether safety training was effective?',
+                group: 3,
+      options: [
+                    'Level 1 learner satisfaction scores',
+                    'Level 2 post-test scores',
+                    'Level 3 on-the-job behavior observations',
+                    'Level 4 injury rate reduction'
+                ],
+                correct: 0,
+                explanation: 'Level 1 (Reaction) — learner satisfaction — is the weakest indicator of effectiveness. Positive reactions do not guarantee learning occurred (Level 2), that behavior changed (Level 3), or that results improved (Level 4). Higher levels provide stronger evidence.\n\n第1级（反应）——学员满意度——是效果最弱的指标。积极的反应不能保证学习已发生（第2级）、行为已改变（第3级）或结果已改善（第4级）。更高层级提供更强的证据。'
+            },
+            {
+                text: 'The "M" in SMART objectives stands for:',
+                group: 3,
+      options: ['Motivating', 'Measurable', 'Mandatory', 'Multi-level'],
+                correct: 1,
+                explanation: 'SMART = Specific, Measurable, Achievable, Relevant, Time-bound. Measurable means the objective has quantifiable criteria for success (e.g., "with 100% accuracy," "within 2 minutes").\n\nSMART = 具体、可衡量、可实现、相关、有时限。可衡量意味着目标有可量化的成功标准（如"100%准确率"、"2分钟内"）。'
+            },
+            {
+                text: 'A company designs a training program but does NOT evaluate whether employees actually change their on-the-job behavior after the course. According to the continuous improvement model, this gap primarily affects which loop?',
+                group: 3,
+      options: [
+                    'The instructional design loop',
+                    'The evaluation → performance analysis feedback loop that drives continuous improvement',
+                    'The materials acquisition loop',
+                    'The delivery loop only'
+                ],
+                correct: 1,
+                explanation: 'The continuous improvement model requires evaluating results (including Level 3 behavior and Level 4 outcomes) and feeding findings back into Performance Analysis. Without evaluating behavior change, the organization cannot know if the training worked, and cannot drive the next improvement cycle.\n\n持续改进模型要求评估结果（包括第3级行为和第4级结果）并将发现反馈到绩效分析中。不评估行为改变，组织就无法知道培训是否有效，也无法驱动下一个改进循环。'
+            },
+            {
+                text: 'Which of the following is a CORRECT example of a formative evaluation activity?',
+                group: 4,
+      options: [
+                    'The final certification exam',
+                    'A pilot test of new training materials with a small group before full rollout',
+                    'A post-course knowledge test',
+                    'An annual compliance audit'
+                ],
+                correct: 1,
+                explanation: 'Formative evaluation occurs DURING development to improve the training — pilot testing, dry runs, and learner feedback loops. Final exams and certification tests are summative (judging the final result).\n\n形成性评估在开发过程中进行，以改进培训——试讲、预演和学员反馈循环。期末考试和认证测试是总结性的（判断最终结果）。'
+            },
+            {
+                text: 'What is the primary purpose of the organizational analysis in a TNA?',
+                group: 4,
+      options: [
+                    'To determine each employee\'s individual learning style',
+                    'To align training with strategic goals, resources, and organizational climate',
+                    'To identify the specific steps of each job task',
+                    'To calculate the ROI of training'
+                ],
+                correct: 1,
+                explanation: 'The organizational analysis looks at the big picture: where training is needed across the organization, strategic alignment, available resources, and whether the climate supports training. Task analysis identifies specific job competencies; person analysis identifies individual gaps.\n\n组织分析考察宏观层面：组织何处需要培训、战略对齐、可用资源以及氛围是否支持培训。任务分析识别具体工作能力；人员分析识别个体差距。'
+            },
+            {
+                text: 'A training program\'s objectives are all at the "Remember" level of Bloom\'s Taxonomy, but the job requires workers to make safety judgments in novel situations. The primary deficiency is:',
+                group: 4,
+      options: [
+                    'The objectives are too difficult',
+                    'The objectives are set at too low a cognitive level for the job requirements',
+                    'The delivery method is wrong',
+                    'The evaluation is too strict'
+                ],
+                correct: 1,
+                explanation: 'If the job requires judgment in novel situations (Evaluate/Create level), training objectives at the Remember level are insufficient — they will not develop the required decision-making skills. Objectives must match the actual cognitive demands of the job.\n\n如果工作需要在新情境中做判断（评价/创造层次），那么停留在记忆层次的培训目标是不够的——它们无法培养所需的决策能力。目标必须匹配工作的实际认知要求。'
+            },
+            {
+                text: 'According to the continuous improvement model, which data source is MOST useful for identifying whether a training performance gap truly requires training?',
+                group: 4,
+      options: [
+                    'Learner satisfaction surveys',
+                    'A combination of incident data, audit findings, observation data, and root cause analysis',
+                    'Instructor preferences',
+                    'Vendor marketing materials'
+                ],
+                correct: 1,
+                explanation: 'Performance analysis uses multiple data sources — incident rates, audit findings, behavioral observations, employee feedback, and root cause analysis — to identify gaps and determine whether the root cause is a knowledge/skill deficiency (training) or something else (procedures, tools, supervision).\n\n绩效分析使用多种数据源——事故率、审核发现、行为观察、员工反馈和根本原因分析——来识别差距，并确定根本原因是知识/技能缺乏（需要培训）还是其他（程序、工具、监督）。'
+            },
+            {
+                text: 'Which of the following best describes the relationship between ADDIE and the Continuous Improvement model?',
+                group: 4,
+      options: [
+                    'They are competing frameworks and only one should be used',
+                    'ADDIE describes how to design individual training programs; the Continuous Improvement model describes how to manage the overall training function',
+                    'The Continuous Improvement model replaces ADDIE entirely',
+                    'ADDIE is only used after training is delivered'
+                ],
+                correct: 1,
+                explanation: 'ADDIE is the instructional design framework for building individual training interventions (Analysis→Design→Development→Implementation→Evaluation). The Continuous Improvement model (Yates/CSP11) is the higher-level framework for managing the training function — scanning for gaps, implementing, measuring, and feeding results back into the cycle.\n\nADDIE是构建单个培训干预的教学设计框架（分析→设计→开发→实施→评估）。持续改进模型（Yates/CSP11）是管理培训职能的更高层级框架——扫描差距、实施、衡量并将结果反馈到循环中。'
+            },
+            {
+                text: 'A task analysis identifies the specific competencies needed for a job. This information is used to:',
+                group: 5,
+      options: [
+                    'Set the training budget',
+                    'Define the learning objectives and content for the task',
+                    'Select the instructor',
+                    'Choose the training venue'
+                ],
+                correct: 1,
+                explanation: 'Task/job analysis identifies the specific competencies and performance standards required — this directly informs the learning objectives (what learners must be able to do) and the training content for each task.\n\n任务/工作分析识别所需的具体能力和绩效标准——这直接决定学习目标（学习者必须能做什么）和每项任务的培训内容。'
+            },
+            {
+                text: 'Which of the following is NOT a component of a comprehensive training plan?',
+                group: 5,
+      options: ['Scope', 'Evaluation method', 'Brand color scheme', 'Delivery method'],
+                correct: 2,
+                explanation: 'The training plan components include: scope, audience, objectives, content outline, delivery method, schedule, resources (including budget), and evaluation method. Brand color schemes are a cosmetic consideration, not a required component.\n\n培训计划组成部分包括：范围、受众、目标、内容大纲、交付方式、时间安排、资源（含预算）和评估方法。品牌配色方案是外观考虑，不是必要组成部分。'
+            },
+            {
+                text: 'The Design phase of ADDIE produces which output?',
+                group: 5,
+      options: [
+                    'The needs assessment report',
+                    'The learning blueprint: objectives, assessment strategy, content sequence, and instructional strategies',
+                    'The final slide deck',
+                    'The attendance roster'
+                ],
+                correct: 1,
+                explanation: 'The Design phase produces the instructional blueprint — learning objectives (using Bloom\'s taxonomy), assessment strategy, content sequencing, and instructional strategies. The Development phase then creates the actual materials (slides, handouts, exercises).\n\n设计阶段产出教学蓝图——学习目标（使用布鲁姆分类学）、评估策略、内容排序和教学策略。开发阶段随后创建实际材料（幻灯片、讲义、练习）。'
+            },
+            {
+                text: 'A safety professional uses incident rates, near-miss reports, and observation data to decide that operators need more training on a new process. This activity belongs to which stage of the continuous improvement model?',
+                group: 5,
+      options: [
+                    'Instructional design',
+                    'Performance analysis',
+                    'Materials acquisition',
+                    'Evaluation'
+                ],
+                correct: 1,
+                explanation: 'Performance analysis is the first stage — using data (incidents, near-misses, observations, audits) to identify performance gaps and determine whether training is the right solution. Here the data supports a training need for the new process.\n\n绩效分析是第一阶段——使用数据（事故、未遂、观察、审核）识别绩效差距，并确定培训是否是正确解决方案。此处数据支持对新工艺进行培训的需求。'
+            },
+            {
+                text: 'Which of the following objectives is written using an APPROPRIATE Bloom\'s verb and structure?',
+                group: 6,
+      options: [
+                    '"Understand the importance of PPE"',
+                    '"Know about lockout/tagout procedures"',
+                    '"Given a simulation, the worker will correctly execute the 6-step LOTO procedure with no missed steps"',
+                    '"Be aware of chemical hazards"'
+                ],
+                correct: 2,
+                explanation: '"Execute" is a valid Apply-level verb, and the objective includes the condition (given a simulation), audience (the worker), behavior (execute the 6-step LOTO procedure), and degree (no missed steps). Vague verbs like "understand," "know," and "be aware" are not observable or measurable.\n\n"执行"是有效的应用层次动词，且目标包含条件（给定模拟）、受众（工人）、行为（执行六步LOTO程序）和程度（无遗漏步骤）。"理解"、"知道"和"意识到"等模糊动词不可观察也不可衡量。'
+            },
+            {
+                text: 'When selecting a training delivery method, which factor is MOST important for a high-hazard task like confined space entry rescue?',
+                group: 6,
+      options: [
+                    'Lowest cost per learner',
+                    'The ability to provide realistic, hands-on practice without real-world risk',
+                    'The shortest delivery time',
+                    'The largest class size possible'
+                ],
+                correct: 1,
+                explanation: 'For high-hazard tasks (confined space rescue, emergency response), realistic simulation and hands-on practice are essential — training must develop actual skills, not just knowledge. Cost, speed, and class size should not override the need for practical competence.\n\n对于高风险任务（密闭空间救援、应急响应），逼真的模拟和动手实践至关重要——培训必须培养实际技能，而非仅仅知识。成本、速度和大班规模不应凌驾于实际能力培养之上。'
+            },
+            {
+                text: 'The SMART principle "Relevant" requires that training objectives:',
+                group: 6,
+      options: [
+                    'Be achievable within budget',
+                    'Align with job requirements and organizational goals',
+                    'Be completed within one month',
+                    'Use only visual delivery methods'
+                ],
+                correct: 1,
+                explanation: '"Relevant" (R in SMART) means the objective aligns with the actual job requirements and organizational goals — training that is not relevant wastes resources and will not transfer to the job.\n\n"相关"（SMART中的R）意味着目标与实际岗位要求和组织目标一致——不相关的培训浪费资源，也无法转移到工作中。'
+            },
+            {
+                text: 'A post-training test shows 95% of participants passed, but observations 3 months later show workers are not following the trained procedures. The MOST likely explanation is:',
+                group: 6,
+      options: [
+                    'The test was too difficult',
+                    'Learning (Level 2) occurred but did not transfer to behavior (Level 3)',
+                    'The training was too long',
+                    'The instructor was unqualified'
+                ],
+                correct: 1,
+                explanation: 'This is the classic Level 2 → Level 3 gap: learning occurred (test passed) but behavior did not change on the job. Causes include lack of management reinforcement, no coaching, workplace culture, or inadequate tools/resources. The training evaluation must measure behavior, not just knowledge.\n\n这是典型的第2级→第3级差距：学习发生了（测试通过）但工作行为没有改变。原因包括缺乏管理强化、无辅导、工作场所文化或工具/资源不足。培训评估必须衡量行为，而不仅仅是知识。'
+            },
+            {
+                text: 'Which of the following is a correct statement about summative evaluation?',
+                group: 7,
+      options: [
+                    'It is used to improve training during development',
+                    'It judges whether learning goals were achieved at the end of the program',
+                    'It only measures learner reactions',
+                    'It is optional under ANSI/ASSP Z490.1'
+                ],
+                correct: 1,
+                explanation: 'Summative evaluation judges the final outcome — whether learning goals were achieved (final exams, certification tests, skills demonstrations). Formative evaluation improves training during development. Z490.1 requires both.\n\n总结性评估判断最终结果——学习目标是否达成（期末考试、认证测试、技能演示）。形成性评估在开发期间改进培训。Z490.1要求两者都进行。'
+            },
+            {
+                text: 'A training objective states: "The employee will be able to design a complete fall protection plan for a new construction project." This is written at which Bloom\'s level, and why?',
+                group: 7,
+      options: [
+                    'Apply, because it uses skills in a new situation',
+                    'Create, because "design" involves synthesizing elements into a new, coherent plan',
+                    'Evaluate, because it involves judging plans',
+                    'Analyze, because it breaks down components'
+                ],
+                correct: 1,
+                explanation: '"Design" is a Create-level verb (level 6, the highest). Creating involves putting elements together to form a new, coherent, functional whole — here, a complete fall protection plan for a new project.\n\n"设计"是创造层次动词（第6层，最高）。创造涉及将元素组合成新的、连贯的、功能性的整体——此处是为新项目制定完整的坠落防护计划。'
+            },
+            {
+                text: 'According to ANSI/ASSP Z490.1, which of the following is part of Training Program Administration?',
+                group: 7,
+      options: [
+                    'Writing SMART objectives',
+                    'Management support, a written plan, and documentation/recordkeeping',
+                    'Pilot testing materials',
+                    'Administering the final exam'
+                ],
+                correct: 1,
+                explanation: 'Training Program Administration under Z490.1 covers management support, the written training plan, and documentation/recordkeeping. Writing objectives belongs to development; pilot testing is part of development; the final exam is evaluation.\n\nZ490.1下的培训项目管理涵盖管理层支持、书面培训计划和文件/档案管理。编写目标属于开发；试讲是开发的一部分；期末考试属于评估。'
+            },
+            {
+                text: 'A trainer uses a real incident case study from the facility, then has learners practice the correct response in a simulated scenario. This approach aligns with which andragogical principle?',
+                group: 7,
+      options: [
+                    'Subject-centered learning',
+                    'Problem-centered orientation with immediate applicability',
+                    'Extrinsic motivation only',
+                    'Dependence on the instructor'
+                ],
+                correct: 1,
+                explanation: 'Using real scenarios and hands-on practice reflects the "Orientation to Learning" principle — adults are problem-centered and want immediate applicability. The case study makes learning relevant; the simulation provides immediate application.\n\n使用真实场景和动手实践反映了"学习取向"原则——成人以问题为中心，希望立即应用。案例研究使学习相关；模拟提供即时应用。'
+            },
+            {
+                text: 'What is the FIRST step in the Analysis phase of ADDIE?',
+                group: 8,
+      options: [
+                    'Writing the final exam',
+                    'Conducting the needs assessment (organizational, task, person)',
+                    'Selecting the delivery platform',
+                    'Scheduling the training date'
+                ],
+                correct: 1,
+                explanation: 'The Analysis phase begins with the needs assessment — the three levels (organizational, task, person) — plus learner analysis and context analysis. Only after understanding the need can design (objectives, strategies) begin.\n\n分析阶段从需求评估开始——三个层面（组织、任务、人员）——加上学习者分析和情境分析。只有在理解需求之后，才能开始设计（目标、策略）。'
+            },
+            {
+                text: 'A company purchases an off-the-shelf safety training program from a vendor. According to the continuous improvement model, this activity belongs to which stage?',
+                group: 8,
+      options: [
+                    'Performance analysis',
+                    'Materials acquisition',
+                    'Evaluation',
+                    'Instructional design'
+                ],
+                correct: 1,
+                explanation: 'Materials acquisition covers both developing custom materials AND procuring off-the-shelf programs from vendors. It is the third stage of the continuous improvement model, following performance analysis and instructional design.\n\n材料获取既涵盖开发定制材料，也涵盖从供应商采购现成课程。它是持续改进模型的第三阶段，在绩效分析和教学设计之后。'
+            },
+            {
+                text: 'Which statement BEST describes why training objectives should use observable verbs rather than "understand" or "know"?',
+                group: 8,
+      options: [
+                    'Observable verbs are easier for the instructor to write',
+                    'Only observable behaviors can be measured to verify learning occurred',
+                    'Observable verbs are required by the ADA',
+                    'Observable verbs make the training longer'
+                ],
+                correct: 1,
+                explanation: 'Objectives must be measurable — using observable action verbs (list, demonstrate, design, execute) allows the evaluator to verify whether learning actually occurred. Subjective verbs like "understand" cannot be observed or measured.\n\n目标必须是可衡量的——使用可观察的动作动词（列出、演示、设计、执行）使评估者能够验证学习是否真正发生。"理解"等主观动词无法观察或衡量。'
+            },
+            {
+                text: 'The final step in the continuous improvement model that closes the loop is:',
+                group: 8,
+      options: [
+                    'Delivery',
+                    'Evaluation & feedback that feeds results back into the next performance analysis cycle',
+                    'Materials acquisition',
+                    'Vendor selection'
+                ],
+                correct: 1,
+                explanation: 'The loop closes when Evaluation & Feedback results (Kirkpatrick Levels 1-4) are fed back into Performance Analysis — driving the next cycle of improvement. Without this feedback, the process is not "continuous."\n\n当评估与反馈结果（柯氏1-4级）反馈到绩效分析时，循环闭合——驱动下一个改进循环。没有这个反馈，过程就不是"持续"的。'
+            }
+        ]
+    });
+    </script>
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js').catch(function() {});
+}
+</script>
+</body>
+</html>

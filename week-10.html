@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 10: FMEA, FTA & ETA / 失效模式、故障树、事件树分析 — CSP Exam Prep</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1e3a5f">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="stylesheet" href="quiz-styles.css?v=11">
+<style>
+  .breadcrumb { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 16px; }
+  .breadcrumb a { color: var(--accent); text-decoration: none; }
+  .breadcrumb a:hover { text-decoration: underline; }
+  p.bi-p, li.bi-li { margin-bottom: 10px; }
+  p.bi-p .en-p, li.bi-li .en-li { display: block; }
+  p.bi-p .zh-p, li.bi-li .zh-li { display: block; color: #666; font-size: 0.92em; margin-top: 2px; }
+  table.bi-table th { white-space: nowrap; }
+  .study-table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  .study-table th { background: #1a3a5c; color: #fff; padding: 10px; text-align: left; }
+  .study-table td { padding: 10px; border-bottom: 1px solid #ddd; }
+  .study-table tr:nth-child(even) { background: #f8f9fb; }
+  .important { background: #fef9e7; border-left: 5px solid #f39c12; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="breadcrumb">
+    <a href="index.html">← 返回仪表盘 / Dashboard</a> &nbsp;|&nbsp;
+    领域 / Domain 3: <span style="font-weight:600;">风险管理 / Risk Management</span>
+  </div>
+
+  <div class="page-header">
+    <h1>📖 第10周 / Week 10:<br><span class="bi-term"><span class="zh">FMEA、FTA与ETA</span> · <span class="en">FMEA, FTA &amp; ETA</span><span class="vocab-star" data-term="FMEA, FTA, ETA">☆</span></span></h1>
+    <div class="subtitle">领域3：风险管理（占考试15%）· 建议学习时间：6–8小时<br>Domain 3: Risk Management (15% of exam) · Est. study time: 6–8 hours</div>
+  </div>
+
+  <!-- ===== Knowledge Point 1: FMEA Overview ===== -->
+  <div class="knowledge-card">
+    <h2>10.1 <span class="bi-term"><span class="zh">失效模式与影响分析</span> · <span class="en">FMEA — Failure Mode and Effects Analysis</span><span class="vocab-star" data-term="Failure Mode and Effects Analysis (FMEA)">☆</span></span></h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>Brauer Ch.36 (System Safety) · Yates Ch.20 (Accident Causation and Investigation)</span>
+    </div>
+
+    <p class="bi-p">
+      <span class="en-p">FMEA is a systematic, bottom-up (inductive) method for identifying potential failure modes within a system, product, or process, and assessing their effects. It answers: <em>What can fail? What is the effect? How serious is it?</em></span>
+      <span class="zh-p">FMEA是一种系统性、自下而上（归纳法）的方法，用于识别系统、产品或工艺中潜在的失效模式并评估其影响。它回答的问题是：<em>什么可能失效？影响是什么？有多严重？</em></span>
+    </p>
+
+    <h3><span class="en-p">Failure Mode vs. Failure Cause vs. Failure Effect / 失效模式 vs. 失效原因 vs. 失效影响</span></h3>
+    <table class="study-table">
+      <thead><tr><th><span class="en-p">Concept / 概念</span></th><th><span class="en-p">Definition / 定义</span></th><th><span class="en-p">Example / 示例</span></th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong><span class="bi-term"><span class="zh">失效模式</span><span class="en">Failure Mode</span><span class="vocab-star" data-term="Failure Mode">☆</span></span></strong></td>
+          <td><span class="en-p">The way in which something fails</span><span class="zh-p" style="color:#666;">某物失效的方式</span></td>
+          <td><span class="en-p">Bearing seizes; valve sticks open; weld cracks</span><span class="zh-p" style="color:#666;">轴承卡死；阀门卡在开启位置；焊缝开裂</span></td>
+        </tr>
+        <tr>
+          <td><strong><span class="bi-term"><span class="zh">失效原因</span><span class="en">Failure Cause</span><span class="vocab-star" data-term="Failure Cause">☆</span></span></strong></td>
+          <td><span class="en-p">Why the failure happens</span><span class="zh-p" style="color:#666;">失效发生的原因</span></td>
+          <td><span class="en-p">Lack of lubrication; excessive temperature; fatigue load</span><span class="zh-p" style="color:#666;">缺乏润滑；温度过高；疲劳载荷</span></td>
+        </tr>
+        <tr>
+          <td><strong><span class="bi-term"><span class="zh">失效影响</span><span class="en">Failure Effect</span><span class="vocab-star" data-term="Failure Effect">☆</span></span></strong></td>
+          <td><span class="en-p">The consequence of the failure on the system/user</span><span class="zh-p" style="color:#666;">失效对系统/用户造成的后果</span></td>
+          <td><span class="en-p">Machine stops; product defect; injury to operator</span><span class="zh-p" style="color:#666;">机器停机；产品缺陷；操作员受伤</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="bi-p">
+      <span class="en-p"><strong>DFMEA vs. PFMEA:</strong> <span class="bi-term"><span class="zh">设计FMEA</span><span class="en">Design FMEA (DFMEA)</span><span class="vocab-star" data-term="Design FMEA (DFMEA)">☆</span></span> analyzes product design failures; <span class="bi-term"><span class="zh">工艺FMEA</span><span class="en">Process FMEA (PFMEA)</span><span class="vocab-star" data-term="Process FMEA (PFMEA)">☆</span></span> analyzes manufacturing/assembly process failures. The methodology is identical; only the scope differs.</span>
+      <span class="zh-p">设计FMEA分析产品设计失效；工艺FMEA分析制造/装配工艺失效。方法相同；仅范围不同。</span>
+    </p>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-mid">常考 MEDIUM</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "FMEA is BEST described as which type of analysis?"<br>
+        <strong>答题要点 / Key point:</strong> FMEA=自下而上(bottom-up)、归纳(inductive)、<strong>单点失效</strong>(single-failure)分析——逐个失效模式评估影响。DFMEA=设计、PFMEA=工艺（方法相同、范围不同）。与FTA（自上而下、多点组合）区分。
+      </div>
+    </div>
+  </div>
+
+  <div id="quiz-group-1"></div>
+
+
+  <!-- ===== Knowledge Point 2: RPN ===== -->
+  <div class="knowledge-card">
+    <h2>10.2 <span class="bi-term"><span class="zh">风险优先数</span> · <span class="en">RPN — Risk Priority Number</span><span class="vocab-star" data-term="Risk Priority Number (RPN)">☆</span></span></h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>Brauer Ch.36 (System Safety) · Yates Ch.20 (Accident Causation and Investigation)</span>
+    </div>
+
+    <p class="bi-p">
+      <span class="en-p">The RPN is the product of three independently scored factors, each rated on a 1-10 scale. It is used to rank failure modes and prioritize corrective actions.</span>
+      <span class="zh-p">RPN是三个独立评分因子的乘积，每个因子按1-10分制评分。用于对失效模式排序并确定纠正措施优先级。</span>
+    </p>
+
+    <div class="formula-box">
+      RPN = Severity (S) × Occurrence (O) × Detection (D) &nbsp;&nbsp;—&nbsp;&nbsp; each 1–10, so RPN ranges 1–1000
+    </div>
+
+    <table class="study-table">
+      <thead>
+        <tr><th><span class="en-p">Factor / 因子</span></th><th><span class="en-p">Scale / 范围</span></th><th><span class="en-p">Meaning / 含义</span></th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong><span class="bi-term"><span class="zh">严重性</span><span class="en">Severity (S)</span><span class="vocab-star" data-term="Severity (FMEA)">☆</span></span></strong></td>
+          <td><span class="en-p">1 (none / 无) to 10 (hazardous without warning / 无预警危险)</span></td>
+          <td><span class="en-p">How serious is the effect of the failure on the customer/user/system?</span><span class="zh-p" style="color:#666;display:block;">失效对客户/用户/系统的影响有多严重？</span></td>
+        </tr>
+        <tr>
+          <td><strong><span class="bi-term"><span class="zh">发生频率</span><span class="en">Occurrence (O)</span><span class="vocab-star" data-term="Occurrence (FMEA)">☆</span></span></strong></td>
+          <td><span class="en-p">1 (almost never / 几乎从不) to 10 (almost inevitable / 几乎不可避免)</span></td>
+          <td><span class="en-p">What is the probability or frequency of the failure cause occurring?</span><span class="zh-p" style="color:#666;display:block;">失效原因发生的概率或频率是多少？</span></td>
+        </tr>
+        <tr>
+          <td><strong><span class="bi-term"><span class="zh">检测度</span><span class="en">Detection (D)</span><span class="vocab-star" data-term="Detection (FMEA)">☆</span></span></strong></td>
+          <td><span class="en-p">1 (certain to detect / 肯定能检测到) to 10 (cannot detect / 无法检测)</span></td>
+          <td><span class="en-p">How likely are current controls to detect the failure cause or failure mode before it reaches the customer? HIGH D = POOR detection.</span><span class="zh-p" style="color:#666;display:block;">当前控制措施在失效原因或模式到达客户之前将其检测到的可能性有多大？D高=检测差。</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3><span class="en-p">Worked Examples / 计算示例</span></h3>
+    <p class="bi-p">
+      <span class="en-p"><strong>Example 1:</strong> S=7, O=6, D=5. RPN = 7 × 6 × 5 = <strong>210</strong>. This exceeds the common action threshold of 100, so corrective action is recommended.</span>
+      <span class="zh-p"><strong>示例1：</strong>S=7, O=6, D=5。RPN = 7 × 6 × 5 = <strong>210</strong>。这超过常见的行动阈值100，因此建议采取纠正措施。</span>
+    </p>
+    <p class="bi-p">
+      <span class="en-p"><strong>Example 2:</strong> S=9, O=2, D=8. RPN = 9 × 2 × 8 = <strong>144</strong>. Despite the low occurrence, the high severity and poor detection still push it above the threshold. Note: high S alone often justifies action regardless of RPN.</span>
+      <span class="zh-p"><strong>示例2：</strong>S=9, O=2, D=8。RPN = 9 × 2 × 8 = <strong>144</strong>。尽管发生频率低，高严重性和差检测仍将其推高到阈值之上。注意：单是高的S往往就足以证明需要行动，不论RPN如何。</span>
+    </p>
+
+    <div class="important">
+      <strong>⚠ CSP 考试技巧 / Exam Tip:</strong><br>
+      <span class="en-p">RPN is a RELATIVE ranking tool — the absolute threshold (100, 125, etc.) matters less than the ranking of failure modes. Also remember the counter-intuitive point: a HIGH Detection rating means the failure is HARD to detect (poor detection), so high D raises the RPN.</span>
+      <span class="zh-p">RPN是<em>相对</em>排序工具——绝对阈值（100、125等）不如失效模式的排序重要。还要记住反直觉点：<em>高</em>检测度评分意味着失效<em>难以</em>检测（检测差），因此高D会提高RPN。</span>
+    </div>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-mid">常考 MEDIUM</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "What is the RPN for S=7, O=6, D=5?"<br>
+        <strong>答题要点 / Key point:</strong> <strong>RPN = S × O × D</strong>（各1-10，范围1-1000）。常见行动阈值100。陷阱：<strong>D高=检测差</strong>（反直觉）会抬高RPN；S高本身常足以触发行动（无论RPN）。RPN是相对排序工具，阈值绝对值次之。例：7×6×5=210；9×2×8=144。
+      </div>
+    </div>
+
+    <div class="mnemonic">
+      <span class="mn-label">🧠 记忆口诀 / Mnemonic:</span>
+      <span class="mn-content"><strong>"RPN=S×O×D"</strong> — 严重度(Severity)×发生度(Occurrence)×检测度(Detection)。中文"严-发-检"。检测度反直觉：<strong>D分越高=越难检测</strong>。行动阈值≈100。</span>
+    </div>
+  </div>
+
+  <div id="quiz-group-2"></div>
+
+
+  <!-- ===== Knowledge Point 3: FMEA Worksheet ===== -->
+  <div class="knowledge-card">
+    <h2>10.3 <span class="bi-term"><span class="zh">FMEA工作表</span> · <span class="en">FMEA Worksheet and Action Process</span><span class="vocab-star" data-term="FMEA Worksheet">☆</span></span></h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>Brauer Ch.36 (System Safety) · Yates Ch.20 (Accident Causation and Investigation)</span>
+    </div>
+
+    <h3><span class="en-p">Worksheet Components / 工作表组成部分</span></h3>
+    <ol>
+      <li class="bi-li"><span class="en-li">Process step / component / function</span><span class="zh-li">工艺步骤 / 组件 / 功能</span></li>
+      <li class="bi-li"><span class="en-li">Potential failure mode (how it could fail)</span><span class="zh-li">潜在失效模式（可能如何失效）</span></li>
+      <li class="bi-li"><span class="en-li">Potential effect(s) of failure (consequences)</span><span class="zh-li">失效的潜在影响（后果）</span></li>
+      <li class="bi-li"><span class="en-li">Severity rating (S)</span><span class="zh-li">严重性评分（S）</span></li>
+      <li class="bi-li"><span class="en-li">Potential cause(s) of failure</span><span class="zh-li">失效的潜在原因</span></li>
+      <li class="bi-li"><span class="en-li">Occurrence rating (O)</span><span class="zh-li">发生频率评分（O）</span></li>
+      <li class="bi-li"><span class="en-li">Current controls (prevention and detection)</span><span class="zh-li">当前控制措施（预防和检测）</span></li>
+      <li class="bi-li"><span class="en-li">Detection rating (D)</span><span class="zh-li">检测度评分（D）</span></li>
+      <li class="bi-li"><span class="en-li">RPN (S x O x D)</span><span class="zh-li">RPN（S x O x D）</span></li>
+      <li class="bi-li"><span class="en-li">Recommended action(s)</span><span class="zh-li">建议措施</span></li>
+      <li class="bi-li"><span class="en-li">Responsibility and target date</span><span class="zh-li">负责人和目标日期</span></li>
+      <li class="bi-li"><span class="en-li">Actions taken and revised RPN</span><span class="zh-li">已采取措施和修订后的RPN</span></li>
+    </ol>
+
+    <p class="bi-p">
+      <span class="en-p"><strong>Action priority guidance:</strong> (1) First address failure modes with the HIGHEST RPN. (2) Pay special attention to any mode with S = 9 or 10, regardless of RPN — a "hazardous" severity warrants action by itself. (3) Recommended actions typically aim to reduce O (prevent the cause) or reduce D (improve detection), since S is usually a design property that is hard to change.</span>
+      <span class="zh-p"><strong>行动优先级指导：</strong>(1) 首先处理RPN最高的失效模式。(2) 特别关注任何S=9或10的模式，不论RPN如何——"危险"严重性本身就需要行动。(3) 建议措施通常旨在降低O（预防原因）或降低D（改进检测），因为S通常是难以改变的设计属性。</span>
+    </p>
+
+    <div class="important">
+      <strong>⚠ CSP 考试技巧 / Exam Tip:</strong><br>
+      <span class="en-p">After a corrective action is implemented, the team must recalculate the RPN to verify the new (lower) value — the "revised RPN." A common exam scenario asks what should happen after action implementation: verify effectiveness by recomputing RPN.</span>
+      <span class="zh-p">纠正措施实施后，团队必须重新计算RPN以验证新的（更低的）值——"修订后的RPN"。常见考试情景询问措施实施后应做什么：通过重新计算RPN验证有效性。</span>
+    </div>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-mid">常考 MEDIUM</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "What must be done AFTER a corrective action is implemented in FMEA?"<br>
+        <strong>答题要点 / Key point:</strong> 实施后必须<strong>重新计算RPN</strong>（revised RPN）验证有效性。行动优先级：先处理RPN最高者；<strong>S=9/10本身即触发行动</strong>（不论RPN）。措施通常降O（预防原因）或降D（改进检测）；S难改变。
+      </div>
+    </div>
+
+    <div class="exam-scenario">
+      <div class="es-label">📝 真题情景 / Exam Scenario:</div>
+      <div class="es-question">"An FMEA team identifies a failure mode with S=10, O=2, D=9. RPN=180, below several others. What should the team do?"</div>
+      <div><strong>最佳答案 / Best answer:</strong> Act on it despite the modest RPN — severity of 10 (hazardous) warrants action on its own. 解析：S=9或10是"危险"级别，无论RPN高低都必须处理；行动还应改进检测（降D）。RPN是相对排序，不能覆盖高严重度。</div>
+    </div>
+  </div>
+
+  <div id="quiz-group-3"></div>
+
+
+  <!-- ===== Knowledge Point 4: FTA ===== -->
+  <div class="knowledge-card">
+    <h2>10.4 <span class="bi-term"><span class="zh">故障树分析</span> · <span class="en">FTA — Fault Tree Analysis</span><span class="vocab-star" data-term="Fault Tree Analysis (FTA)">☆</span></span></h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>Brauer Ch.36 (System Safety) · Yates Ch.20 (Accident Causation and Investigation)</span>
+    </div>
+
+    <p class="bi-p">
+      <span class="en-p">FTA is a <strong>top-down, deductive</strong> analysis technique. It starts with an undesired event (the "top event") and works backward to identify all possible causes. FTA answers: <em>What combinations of events could lead to this failure?</em> It uses Boolean logic (AND/OR gates) and basic events with probabilities.</span>
+      <span class="zh-p">FTA是一种<strong>自上而下、演绎法</strong>分析技术。它从不期望发生的事件（"顶事件"）开始，向后追溯识别所有可能的原因。FTA回答：<em>什么事件组合可能导致此失效？</em>它使用布尔逻辑（与/或门）和带概率的基本事件。</span>
+    </p>
+
+    <h3><span class="en-p">Boolean Logic Gates / 布尔逻辑门</span></h3>
+    <table class="study-table">
+      <thead>
+        <tr><th><span class="en-p">Gate / 门</span></th><th><span class="en-p">Symbol / 符号</span></th><th><span class="en-p">Logic / 逻辑</span></th><th><span class="en-p">Probability Calculation / 概率计算</span></th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong><span class="bi-term"><span class="zh">与门</span><span class="en">AND Gate</span><span class="vocab-star" data-term="AND Gate (FTA)">☆</span></span></strong></td>
+          <td>
+            <svg class="logic-symbol" viewBox="0 0 120 90" xmlns="http://www.w3.org/2000/svg">
+              <text x="60" y="14" text-anchor="middle" font-size="11" fill="#1e3a5f" font-weight="bold">AND / 与门</text>
+              <!-- AND gate: flat top, vertical sides down to output line -->
+              <path d="M 20 30 H 100 V 55 L 60 75 L 20 55 Z" fill="#dbeafe" stroke="#1e3a5f" stroke-width="2"/>
+              <circle cx="60" cy="52" r="4" fill="#1e3a5f"/>
+              <!-- input lines -->
+              <line x1="10" y1="30" x2="20" y2="30" stroke="#1e3a5f" stroke-width="2"/>
+              <line x1="10" y1="42" x2="20" y2="42" stroke="#1e3a5f" stroke-width="2"/>
+              <!-- output line -->
+              <line x1="60" y1="75" x2="60" y2="85" stroke="#1e3a5f" stroke-width="2"/>
+            </svg>
+          </td>
+          <td><span class="en-p">Output occurs only if ALL inputs occur</span><span class="zh-p" style="color:#666;display:block;">仅当所有输入都发生时输出才发生</span></td>
+          <td><span class="en-p">P(A and B) = P(A) × P(B) <em>(independent / 独立事件)</em></span></td>
+        </tr>
+        <tr>
+          <td><strong><span class="bi-term"><span class="zh">或门</span><span class="en">OR Gate</span><span class="vocab-star" data-term="OR Gate (FTA)">☆</span></span></strong></td>
+          <td>
+            <svg class="logic-symbol" viewBox="0 0 120 90" xmlns="http://www.w3.org/2000/svg">
+              <text x="60" y="14" text-anchor="middle" font-size="11" fill="#1e3a5f" font-weight="bold">OR / 或门</text>
+              <!-- OR gate: curved top, sides down to output -->
+              <path d="M 20 30 Q 60 20 100 30 L 100 55 L 60 75 L 20 55 Z" fill="#fef3c7" stroke="#1e3a5f" stroke-width="2"/>
+              <line x1="56" y1="52" x2="64" y2="52" stroke="#1e3a5f" stroke-width="2.5"/>
+              <line x1="60" y1="48" x2="60" y2="56" stroke="#1e3a5f" stroke-width="2.5"/>
+              <!-- input lines -->
+              <line x1="10" y1="30" x2="20" y2="30" stroke="#1e3a5f" stroke-width="2"/>
+              <line x1="10" y1="42" x2="20" y2="42" stroke="#1e3a5f" stroke-width="2"/>
+              <!-- output line -->
+              <line x1="60" y1="75" x2="60" y2="85" stroke="#1e3a5f" stroke-width="2"/>
+            </svg>
+          </td>
+          <td><span class="en-p">Output occurs if ANY input occurs</span><span class="zh-p" style="color:#666;display:block;">如果任一输入发生，输出就发生</span></td>
+          <td><span class="en-p">P(A or B) = P(A) + P(B) − P(A)×P(B) <em>(union / 并集公式)</em></span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3><span class="en-p">Worked Probability Examples / 概率计算示例</span></h3>
+    <p class="bi-p">
+      <span class="en-p"><strong>AND gate example:</strong> Two independent basic events with P=0.1 and P=0.2. Output = 0.1 × 0.2 = <strong>0.02</strong>. AND gates reduce probability because ALL inputs must occur. (Redundancy: parallel components give higher reliability.)</span>
+      <span class="zh-p"><strong>与门示例：</strong>两个独立基本事件P=0.1和P=0.2。输出 = 0.1 × 0.2 = <strong>0.02</strong>。与门降低概率，因为所有输入都必须发生。（冗余：并联组件可靠性更高。）</span>
+    </p>
+    <p class="bi-p">
+      <span class="en-p"><strong>OR gate example:</strong> P(A)=0.1, P(B)=0.2. Output = 0.1 + 0.2 − (0.1 × 0.2) = 0.3 − 0.02 = <strong>0.28</strong>. The intersection term is subtracted to avoid double-counting events where both occur.</span>
+      <span class="zh-p"><strong>或门示例：</strong>P(A)=0.1, P(B)=0.2。输出 = 0.1 + 0.2 − (0.1 × 0.2) = 0.3 − 0.02 = <strong>0.28</strong>。减去交集项以避免重复计算两者同时发生的情况。</span>
+    </p>
+    <p class="bi-p">
+      <span class="en-p"><strong>Small-probability approximation:</strong> When probabilities are small, P(A or B) ≈ P(A) + P(B), because the intersection term becomes negligible. This "rare event approximation" is commonly used in fault tree evaluation.</span>
+      <span class="zh-p"><strong>小概率近似：</strong>当概率很小时，P(A或B) ≈ P(A) + P(B)，因为交集项可忽略。这种"罕见事件近似"常用于故障树评估。</span>
+    </p>
+
+    <h3><span class="en-p">Cut Sets and Minimal Cut Sets / 割集与最小割集</span></h3>
+    <ul>
+      <li class="bi-li">
+        <span class="en-li"><strong>Cut Set / 割集:</strong> Any combination of basic events that, if they all occur, causes the top event.</span>
+        <span class="zh-li">任何基本事件的组合，如果它们全部发生，就会导致顶事件。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Minimal Cut Set / 最小割集:</strong> A cut set containing no subset that is also a cut set. Remove any event from a minimal cut set and the top event will NOT occur. Minimal cut sets are the "critical failure paths."</span>
+        <span class="zh-li">不包含任何也是割集的子集的割集。从最小割集移除任何事件，顶事件将不会发生。最小割集是"关键失效路径"。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Top Event Probability / 顶事件概率:</strong> For small probabilities, approximated as the sum of the probabilities of each minimal cut set (rare-event approximation). Precise calculation uses inclusion-exclusion.</span>
+        <span class="zh-li">对于小概率，近似为各最小割集概率之和（罕见事件近似）。精确计算使用容斥原理。</span>
+      </li>
+    </ul>
+
+    <h3><span class="en-p">FTA Symbols / FTA符号</span></h3>
+    <ul>
+      <li class="bi-li"><span class="en-li"><strong>Rectangle / 矩形:</strong> Intermediate event (output of a gate)</span><span class="zh-li">中间事件（逻辑门的输出）</span></li>
+      <li class="bi-li"><span class="en-li"><strong>Circle / 圆形:</strong> Basic event (root cause, not further developed)</span><span class="zh-li">基本事件（根本原因，不再展开）</span></li>
+      <li class="bi-li"><span class="en-li"><strong>Diamond / 菱形:</strong> Undeveloped event (not analyzed further)</span><span class="zh-li">未展开事件（不进一步分析）</span></li>
+      <li class="bi-li"><span class="en-li"><strong>House / 房形:</strong> Normal/expected event (always present)</span><span class="zh-li">正常/预期事件（始终存在）</span></li>
+      <li class="bi-li"><span class="en-li"><strong>Triangle / 三角形:</strong> Transfer in / out symbol</span><span class="zh-li">转移输入/输出符号</span></li>
+    </ul>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-mid">常考 MEDIUM</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "Two independent failures with P=0.1 and P=0.2 feed an OR gate. What is the output probability?"<br>
+        <strong>答题要点 / Key point:</strong> AND门=P(A)×P(B)（并联冗余、可靠性高）；OR门=P(A)+P(B)−P(A×B)（小概率可近似为相加）。割集=致顶事件的组合；<strong>最小割集</strong>=去除任一个就不再发生的"关键失效路径"。符号：矩形=中间事件、圆=基本事件、菱形=未展开、房形=正常事件、三角=转移。
+      </div>
+    </div>
+
+    <div class="confusion-box">
+      <div class="cb-label">⚖️ 易混淆对比 / Common Confusions:</div>
+      <table class="study-table">
+        <tr><th>AND gate 与门</th><th>OR gate 或门</th><th>关键区别 / Key Difference</th></tr>
+        <tr><td>所有输入须同时发生；概率相乘（0.1×0.2=0.02）</td><td>任一输入发生即触发；概率相加（0.1+0.2−0.02=0.28）</td><td>AND=冗余/并联、降低概率；OR=单点失效即触发。小概率下OR≈相加（罕见事件近似）</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div id="quiz-group-4"></div>
+
+
+  <!-- ===== Knowledge Point 5: FTA Two-Gate Example ===== -->
+  <div class="knowledge-card">
+    <h2>10.5 <span class="bi-term"><span class="zh">组合故障树计算</span> · <span class="en">Combined FTA Probability Calculation</span><span class="vocab-star" data-term="FTA Probability Calculation">☆</span></span></h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>Brauer Ch.36 (System Safety) · Yates Ch.20 (Accident Causation and Investigation)</span>
+    </div>
+
+    <p class="bi-p">
+      <span class="en-p"><strong>Scenario:</strong> A tank overpressure (TOP event) occurs if the relief valve fails (A) OR the control system fails (B) AND the high-pressure alarm fails (C). Gates: TOP = A OR (B AND C). Given P(A)=0.01, P(B)=0.05, P(C)=0.02.</span>
+      <span class="zh-p"><strong>情景：</strong>储罐超压（顶事件）发生在：泄压阀失效（A）或（控制系统失效（B）且高压报警失效（C））时。逻辑：顶事件 = A 或（B 与 C）。已知P(A)=0.01, P(B)=0.05, P(C)=0.02。</span>
+    </p>
+
+    <svg class="diagram-svg" viewBox="0 0 460 300" xmlns="http://www.w3.org/2000/svg">
+      <!-- Title -->
+      <text x="230" y="22" text-anchor="middle" font-size="13" fill="#1e3a5f" font-weight="bold">故障树 / Fault Tree: TOP = A OR (B AND C)</text>
+      <!-- TOP event (rectangle) -->
+      <rect x="175" y="40" width="110" height="34" rx="4" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+      <text x="230" y="61" text-anchor="middle" font-size="11" fill="#991b1b" font-weight="bold">TOP 顶事件</text>
+      <text x="230" y="74" text-anchor="middle" font-size="9" fill="#991b1b">Tank Overpressure</text>
+      <!-- line down to OR gate -->
+      <line x1="230" y1="74" x2="230" y2="92" stroke="#1e3a5f" stroke-width="2"/>
+      <!-- OR gate (curved) -->
+      <path d="M 190 92 Q 230 80 270 92 L 270 112 L 230 128 L 190 112 Z" fill="#fef3c7" stroke="#92400e" stroke-width="2"/>
+      <line x1="226" y1="106" x2="234" y2="106" stroke="#92400e" stroke-width="2.5"/>
+      <line x1="230" y1="102" x2="230" y2="110" stroke="#92400e" stroke-width="2.5"/>
+      <text x="230" y="105" text-anchor="middle" font-size="11" fill="#92400e" font-weight="bold">OR 或门</text>
+      <!-- OR inputs: left to A, right to AND gate -->
+      <line x1="195" y1="112" x2="140" y2="150" stroke="#1e3a5f" stroke-width="2"/>
+      <line x1="265" y1="112" x2="320" y2="150" stroke="#1e3a5f" stroke-width="2"/>
+      <!-- Left: basic event A (circle) -->
+      <circle cx="120" cy="175" r="22" fill="#fff" stroke="#1e3a5f" stroke-width="2"/>
+      <text x="120" y="180" text-anchor="middle" font-size="11" fill="#1e3a5f" font-weight="bold">A</text>
+      <line x1="120" y1="197" x2="120" y2="215" stroke="#1e3a5f" stroke-width="2"/>
+      <text x="120" y="232" text-anchor="middle" font-size="9" fill="#555">泄压阀失效</text>
+      <text x="120" y="243" text-anchor="middle" font-size="8" fill="#888">P(A)=0.01</text>
+      <!-- Right: AND gate -->
+      <path d="M 300 150 H 340 V 170 L 320 186 L 300 170 Z" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/>
+      <circle cx="320" cy="166" r="3.5" fill="#1e40af"/>
+      <text x="320" y="166" text-anchor="middle" font-size="10" fill="#1e40af" font-weight="bold">AND 与门</text>
+      <!-- AND inputs to B and C -->
+      <line x1="305" y1="170" x2="275" y2="205" stroke="#1e3a5f" stroke-width="2"/>
+      <line x1="335" y1="170" x2="365" y2="205" stroke="#1e3a5f" stroke-width="2"/>
+      <!-- B basic event -->
+      <circle cx="270" cy="232" r="22" fill="#fff" stroke="#1e3a5f" stroke-width="2"/>
+      <text x="270" y="237" text-anchor="middle" font-size="11" fill="#1e3a5f" font-weight="bold">B</text>
+      <line x1="270" y1="254" x2="270" y2="272" stroke="#1e3a5f" stroke-width="2"/>
+      <text x="270" y="287" text-anchor="middle" font-size="9" fill="#555">控制系统失效</text>
+      <text x="270" y="298" text-anchor="middle" font-size="8" fill="#888">P(B)=0.05</text>
+      <!-- C basic event -->
+      <circle cx="370" cy="232" r="22" fill="#fff" stroke="#1e3a5f" stroke-width="2"/>
+      <text x="370" y="237" text-anchor="middle" font-size="11" fill="#1e3a5f" font-weight="bold">C</text>
+      <line x1="370" y1="254" x2="370" y2="272" stroke="#1e3a5f" stroke-width="2"/>
+      <text x="370" y="287" text-anchor="middle" font-size="9" fill="#555">高压报警失效</text>
+      <text x="370" y="298" text-anchor="middle" font-size="8" fill="#888">P(C)=0.02</text>
+    </svg>
+
+    <div class="formula-box">
+      P(TOP) = P(A) + P(B)×P(C) − P(A)×P(B)×P(C)<br>
+      = 0.01 + (0.05 × 0.02) − (0.01 × 0.05 × 0.02)<br>
+      = 0.01 + 0.001 − 0.00001 = <strong>0.01099 ≈ 0.011</strong>
+    </div>
+
+    <p class="bi-p">
+      <span class="en-p"><strong>Step-by-step:</strong> (1) Compute the AND branch first: P(B AND C) = 0.05 × 0.02 = 0.001. (2) Compute the OR at the top: P(A OR 0.001) = 0.01 + 0.001 − (0.01 × 0.001) = 0.01099. The rare-event approximation would give 0.01 + 0.001 = 0.011 — a negligible difference because the intersection term is tiny.</span>
+      <span class="zh-p"><strong>分步计算：</strong>(1) 先计算与门分支：P(B与C) = 0.05 × 0.02 = 0.001。(2) 再计算顶部的或门：P(A或0.001) = 0.01 + 0.001 − (0.01 × 0.001) = 0.01099。罕见事件近似给出0.01 + 0.001 = 0.011——因交集项极小，差异可忽略。</span>
+    </p>
+
+    <p class="bi-p">
+      <span class="en-p"><strong>Minimal cut sets:</strong> {A} and {B, C}. The {A} cut set dominates because it is a single-event path — it contributes 0.01 of the 0.01099 total. This tells us the relief valve failure is the single most important weakness: adding redundancy to it (or improving its reliability) is the highest-value improvement.</span>
+      <span class="zh-p"><strong>最小割集：</strong>{A}和{B, C}。{A}割集占主导，因为它是单事件路径——贡献了0.01099总量中的0.01。这告诉我们泄压阀失效是最关键的弱点：为其增加冗余（或提高其可靠性）是价值最高的改进。</span>
+    </p>
+
+    <div class="important">
+      <strong>⚠ CSP 考试技巧 / Exam Tip:</strong><br>
+      <span class="en-p">When evaluating a fault tree: (1) always reduce AND branches first (multiply), then OR branches (add − subtract intersection). (2) Single-event (single-basic-event) minimal cut sets dominate the top event probability and are the first targets for improvement.</span>
+      <span class="zh-p">评估故障树时：(1) 总是先化简与门分支（相乘），再化简或门分支（相加−减交集）。(2) 单事件（单一基本事件）最小割集主导顶事件概率，是改进的首选目标。</span>
+    </div>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-mid">常考 MEDIUM</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "For TOP = A OR (B AND C) with P(A)=0.01, P(B)=0.05, P(C)=0.02, what is P(TOP)?"<br>
+        <strong>答题要点 / Key point:</strong> 计算顺序：先算与门(B×C=0.001)，再算或门(A+B·C−A·B·C=0.01099≈0.011)。最小割集{A}和{B,C}——<strong>单事件割集{A}主导</strong>（贡献0.01/0.01099），是最优先改进目标。先乘后加减。
+      </div>
+    </div>
+
+    <div class="exam-scenario">
+      <div class="es-label">📝 真题情景 / Exam Scenario:</div>
+      <div class="es-question">"A fault tree's top event probability is dominated by a single basic event with a probability of 0.01. What is the BEST improvement?"</div>
+      <div><strong>最佳答案 / Best answer:</strong> Add redundancy to or improve the reliability of that single-event component. 解析：单事件最小割集主导顶事件概率——改进它价值最高（如泄压阀加装冗余）。降低已有多事件组合（AND路径）的每个分支影响较小，因AND概率本已很小。</div>
+    </div>
+  </div>
+
+  <div id="quiz-group-5"></div>
+
+
+  <!-- ===== Knowledge Point 6: ETA ===== -->
+  <div class="knowledge-card">
+    <h2>10.6 <span class="bi-term"><span class="zh">事件树分析</span> · <span class="en">ETA — Event Tree Analysis</span><span class="vocab-star" data-term="Event Tree Analysis (ETA)">☆</span></span></h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>Brauer Ch.36 (System Safety)</span>
+    </div>
+
+    <p class="bi-p">
+      <span class="en-p">ETA is a <strong>bottom-up, inductive</strong> analysis technique. It starts with an initiating event and works forward through a series of safeguards/barriers to determine all possible outcomes. ETA answers: <em>Given this initiating event, what are all the possible outcomes?</em></span>
+      <span class="zh-p">ETA是一种<strong>自下而上、归纳法</strong>分析技术。它从初始事件开始，正向通过一系列安全屏障/防护层，以确定所有可能的结果。ETA回答：<em>给定此初始事件，所有可能的结果是什么？</em></span>
+    </p>
+
+    <h3><span class="en-p">Event Tree Construction / 事件树构建</span></h3>
+    <ol>
+      <li class="bi-li"><span class="en-li">Define the <strong>initiating event</strong> (e.g., pipe rupture, control system failure).</span><span class="zh-li">定义<strong>初始事件</strong>（如管道破裂、控制系统失效）。</span></li>
+      <li class="bi-li"><span class="en-li">List <strong>safeguards/barriers</strong> in chronological order (e.g., alarm, automatic shutdown, operator intervention, containment).</span><span class="zh-li">按时间顺序列出<strong>安全防护/屏障</strong>（如报警、自动停车、操作员干预、围堵）。</span></li>
+      <li class="bi-li"><span class="en-li">For each safeguard, draw an <strong>upward branch (success)</strong> and <strong>downward branch (failure)</strong>.</span><span class="zh-li">对每个防护，画出<strong>向上分支（成功）</strong>和<strong>向下分支（失败）</strong>。</span></li>
+      <li class="bi-li"><span class="en-li">At the end of each path, identify the <strong>outcome</strong> (safe state, minor release, major release, etc.).</span><span class="zh-li">在每条路径的末端，确定<strong>结果</strong>（安全状态、轻微泄漏、重大泄漏等）。</span></li>
+      <li class="bi-li"><span class="en-li">Calculate each outcome probability by multiplying probabilities along the path. The sum of all outcome probabilities equals the initiating event probability.</span><span class="zh-li">通过沿路径相乘概率计算每个结果的概率。所有结果概率之和等于初始事件概率。</span></li>
+    </ol>
+
+    <h3><span class="en-p">Worked Example / 计算示例</span></h3>
+
+    <svg class="diagram-svg" viewBox="0 0 520 260" xmlns="http://www.w3.org/2000/svg">
+      <text x="260" y="20" text-anchor="middle" font-size="13" fill="#1e3a5f" font-weight="bold">事件树 / Event Tree: Initiating Event → S1 → S2</text>
+      <!-- Initiating event -->
+      <rect x="10" y="108" width="70" height="34" rx="4" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/>
+      <text x="45" y="122" text-anchor="middle" font-size="9" fill="#1e40af" font-weight="bold">初始事件</text>
+      <text x="45" y="134" text-anchor="middle" font-size="8" fill="#1e40af">P=0.01</text>
+      <!-- Line to S1 -->
+      <line x1="80" y1="125" x2="140" y2="125" stroke="#1e3a5f" stroke-width="2"/>
+      <!-- S1 success (up) and failure (down) -->
+      <line x1="140" y1="125" x2="220" y2="70" stroke="#16a34a" stroke-width="2"/>
+      <line x1="140" y1="125" x2="220" y2="180" stroke="#dc2626" stroke-width="2"/>
+      <!-- S1 label -->
+      <rect x="155" y="113" width="60" height="24" rx="3" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+      <text x="185" y="129" text-anchor="middle" font-size="9" fill="#166534" font-weight="bold">S1 P=0.9</text>
+      <text x="178" y="56" text-anchor="middle" font-size="9" fill="#16a34a">成功 0.9</text>
+      <text x="178" y="196" text-anchor="middle" font-size="9" fill="#dc2626">失败 0.1</text>
+      <!-- S1 success path leads to outcome 1 -->
+      <line x1="220" y1="70" x2="330" y2="70" stroke="#16a34a" stroke-width="2"/>
+      <rect x="330" y="52" width="150" height="36" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+      <text x="405" y="67" text-anchor="middle" font-size="9" fill="#166534" font-weight="bold">结果1: 轻微 0.009</text>
+      <text x="405" y="80" text-anchor="middle" font-size="8" fill="#166534">S1成功 → 安全</text>
+      <!-- S1 failure path to S2 -->
+      <line x1="220" y1="180" x2="300" y2="180" stroke="#dc2626" stroke-width="2"/>
+      <!-- S2 success (up) and failure (down) -->
+      <line x1="300" y1="180" x2="360" y2="120" stroke="#f59e0b" stroke-width="2"/>
+      <line x1="300" y1="180" x2="360" y2="225" stroke="#dc2626" stroke-width="2"/>
+      <!-- S2 label -->
+      <rect x="268" y="190" width="60" height="22" rx="3" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.5"/>
+      <text x="298" y="205" text-anchor="middle" font-size="9" fill="#92400e" font-weight="bold">S2 P=0.8</text>
+      <text x="330" y="106" text-anchor="middle" font-size="9" fill="#f59e0b">成功 0.8</text>
+      <text x="330" y="240" text-anchor="middle" font-size="9" fill="#dc2626">失败 0.2</text>
+      <!-- S2 success → outcome 2 -->
+      <line x1="360" y1="120" x2="440" y2="120" stroke="#f59e0b" stroke-width="2"/>
+      <rect x="380" y="102" width="140" height="36" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+      <text x="450" y="117" text-anchor="middle" font-size="9" fill="#92400e" font-weight="bold">结果2: 中等 0.0008</text>
+      <text x="450" y="130" text-anchor="middle" font-size="8" fill="#92400e">S2成功 → 受限</text>
+      <!-- S2 failure → outcome 3 -->
+      <line x1="360" y1="225" x2="430" y2="225" stroke="#dc2626" stroke-width="2"/>
+      <rect x="370" y="207" width="150" height="36" rx="4" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+      <text x="445" y="222" text-anchor="middle" font-size="9" fill="#991b1b" font-weight="bold">结果3: 重大 0.0002</text>
+      <text x="445" y="235" text-anchor="middle" font-size="8" fill="#991b1b">S2失败 → 重大泄漏</text>
+    </svg>
+
+    <p class="bi-p">
+      <span class="en-p">Initiating event (P=0.01). Safeguard 1 (S1) succeeds with P=0.9. If S1 fails, Safeguard 2 (S2) succeeds with P=0.8. If both fail, a major release occurs.</span>
+      <span class="zh-p">初始事件（P=0.01）。防护1（S1）成功概率P=0.9。如果S1失败，防护2（S2）成功概率P=0.8。如果两者都失败，发生重大泄漏。</span>
+    </p>
+    <ul>
+      <li class="bi-li"><span class="en-li">Path 1 (S1 succeeds / S1成功): P = 0.01 × 0.9 = <strong>0.009</strong> → Minor outcome / 轻微结果</span></li>
+      <li class="bi-li"><span class="en-li">Path 2 (S1 fails, S2 succeeds / S1失败，S2成功): P = 0.01 × 0.1 × 0.8 = <strong>0.0008</strong> → Moderate outcome / 中等结果</span></li>
+      <li class="bi-li"><span class="en-li">Path 3 (S1 fails, S2 fails / S1失败，S2失败): P = 0.01 × 0.1 × 0.2 = <strong>0.0002</strong> → Major outcome / 重大结果</span></li>
+    </ul>
+    <p class="bi-p">
+      <span class="en-p">Sum check: 0.009 + 0.0008 + 0.0002 = <strong>0.01</strong> = initiating event probability. Note that a "safe" path still has a probability — the event tree must account for ALL outcomes.</span>
+      <span class="zh-p">求和校验：0.009 + 0.0008 + 0.0002 = <strong>0.01</strong> = 初始事件概率。注意"安全"路径仍有概率——事件树必须计入所有结果。</span>
+    </p>
+
+    <div class="important">
+      <strong>⚠ CSP 考试技巧 / Exam Tip:</strong><br>
+      <span class="en-p">The sum of all branch probabilities must equal the initiating event probability — this is an excellent check for your calculations. On a two-barrier tree there are 2² = 4 paths; with n barriers there are 2ⁿ paths.</span>
+      <span class="zh-p">所有分支概率之和必须等于初始事件概率——这是极好的计算校验。两屏障树有2² = 4条路径；n个屏障有2ⁿ条路径。</span>
+    </div>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-mid">常考 MEDIUM</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "In an event tree with initiating event P=0.01, S1 succeeds P=0.9, S2 succeeds P=0.8, what is P of major release?"<br>
+        <strong>答题要点 / Key point:</strong> ETA=自下而上、归纳，从初始事件正向经防护层。各路径概率=沿路径相乘；<strong>所有结果概率之和=初始事件概率</strong>（求和校验）。n个屏障=2ⁿ条路径。例：0.009+0.0008+0.0002=0.01；重大=0.01×0.1×0.2=0.0002。
+      </div>
+    </div>
+
+    <div class="confusion-box">
+      <div class="cb-label">⚖️ 易混淆对比 / Common Confusions:</div>
+      <table class="study-table">
+        <tr><th>FTA 故障树</th><th>ETA 事件树</th><th>关键区别 / Key Difference</th></tr>
+        <tr><td>自顶向下、演绎、AND/OR门、找故障组合</td><td>自底向上、归纳、从初始事件正向推结果</td><td>FTA"从后果找原因"；ETA"从原因推后果"。FTA用最小割集；ETA用路径概率求和校验</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div id="quiz-group-6"></div>
+
+
+  <!-- ===== Knowledge Point 7: FMEA vs FTA vs ETA ===== -->
+  <div class="knowledge-card">
+    <h2>10.7 <span class="en-p">FMEA vs. FTA vs. ETA — Comparison</span><span class="zh-p" style="color:#666;display:block;">FMEA vs. FTA vs. ETA — 对比</span></h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>Brauer Ch.36 (System Safety) · Yates Ch.20 (Accident Causation and Investigation)</span>
+    </div>
+    <table class="study-table">
+      <thead>
+        <tr><th><span class="en-p">Technique / 技术</span></th><th><span class="en-p">Direction / 方向</span></th><th><span class="en-p">Logic / 逻辑</span></th><th><span class="en-p">Key Question / 关键问题</span></th><th><span class="en-p">Best Used For / 最佳应用</span></th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong><span class="bi-term"><span class="en">FMEA</span><span class="vocab-star" data-term="Failure Mode and Effects Analysis (FMEA)">☆</span></span></strong></td>
+          <td><span class="en-p">Bottom-up / 自下而上</span></td>
+          <td><span class="en-p">Inductive / 归纳</span></td>
+          <td><span class="en-p">What can fail, and what are the effects?</span><span class="zh-p" style="color:#666;display:block;">什么可能失效，影响是什么？</span></td>
+          <td><span class="en-p">Component-level failure analysis; design and process reviews; identifying single-point failures</span><span class="zh-p" style="color:#666;display:block;">组件级失效分析；设计和工艺审查；识别单点故障</span></td>
+        </tr>
+        <tr>
+          <td><strong><span class="bi-term"><span class="en">FTA</span><span class="vocab-star" data-term="Fault Tree Analysis (FTA)">☆</span></span></strong></td>
+          <td><span class="en-p">Top-down / 自上而下</span></td>
+          <td><span class="en-p">Deductive / 演绎</span></td>
+          <td><span class="en-p">What can cause [specific top event]?</span><span class="zh-p" style="color:#666;display:block;">什么可能导致[特定的顶事件]？</span></td>
+          <td><span class="en-p">Accident investigation; analyzing known hazardous events; identifying combinations of failures</span><span class="zh-p" style="color:#666;display:block;">事故调查；分析已知危险事件；识别失效组合</span></td>
+        </tr>
+        <tr>
+          <td><strong><span class="bi-term"><span class="en">ETA</span><span class="vocab-star" data-term="Event Tree Analysis (ETA)">☆</span></span></strong></td>
+          <td><span class="en-p">Bottom-up / 自下而上</span></td>
+          <td><span class="en-p">Inductive / 归纳</span></td>
+          <td><span class="en-p">What happens if [initiating event] occurs?</span><span class="zh-p" style="color:#666;display:block;">如果[初始事件]发生会怎样？</span></td>
+          <td><span class="en-p">Evaluating safeguard effectiveness; consequence analysis; emergency planning</span><span class="zh-p" style="color:#666;display:block;">评估防护有效性；后果分析；应急规划</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="important">
+      <strong>💡 记忆口诀 / Memory aid:</strong><br>
+      <span class="en-p">FTA asks "What can cause X?" (deductive — narrowing down from event to causes). ETA asks "What happens if X?" (inductive — branching out from event to outcomes). FMEA asks "What can fail and what happens?" (inductive — component by component).</span>
+      <span class="zh-p">FTA问"什么会导致X？"（演绎法——从事件缩小到原因）。ETA问"如果X发生会怎样？"（归纳法——从事件展开到结果）。FMEA问"什么会失效以及会发生什么？"（归纳法——逐组件分析）。</span>
+    </div>
+
+    <div class="confusion-box">
+      <div class="cb-label">⚖️ 易混淆对比 / Common Confusions:</div>
+      <table class="study-table">
+        <tr><th>FMEA</th><th>FTA</th><th>ETA</th></tr>
+        <tr><td>自下而上/归纳，问"什么会失效"，单点失效、组件级</td><td>自上而下/演绎，问"什么导致X"，AND/OR找失效组合</td><td>自下而上/归纳，问"X发生后怎样"，评估防护层、后果分析</td></tr>
+        <tr><td colspan="3">核心：FTA演绎缩原因、ETA归纳展后果、FMEA逐组件找单点。事故调查常用FTA；应急/后果分析用ETA；设计审查用FMEA</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div id="quiz-group-7"></div>
+
+
+  <!-- ===== Knowledge Point 8: Safety Case & Risk Summation ===== -->
+  <div class="knowledge-card">
+    <h2>10.8 <span class="bi-term"><span class="zh">安全案例与风险汇总</span> · <span class="en">Safety Case Approach &amp; Risk Summation</span><span class="vocab-star" data-term="Safety Case Approach">☆</span></span></h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>Brauer Ch.34 (Risk, Risk Assessment) · Brauer Ch.36 (System Safety)</span>
+    </div>
+
+    <h3><span class="bi-term"><span class="zh">安全案例方法</span> · <span class="en">The Safety Case Approach</span><span class="vocab-star" data-term="Safety Case">☆</span></span></h3>
+    <p class="bi-p">
+      <span class="en-p">A Safety Case is a structured argument, supported by a body of evidence, that provides a compelling, comprehensible, and valid case that a system is safe for a given application in a given operating environment. Unlike single-technique analyses (FMEA, FTA), a Safety Case integrates multiple risk analysis methods into one coherent justification of safety.</span>
+      <span class="zh-p">安全案例是一种结构化论证，由一系列证据支撑，提供一个令人信服、可理解且有效的案例，证明系统在给定的运行环境中对特定的应用是安全的。与单一技术分析（FMEA、FTA）不同，安全案例将多种风险分析方法整合为一个连贯的安全论证。</span>
+    </p>
+    <ul>
+      <li class="bi-li">
+        <span class="en-li"><strong>Core components / 核心组成部分:</strong> (1) <em>Claims</em> — statements about safety; (2) <em>Evidence</em> — test results, analysis data, operational records; (3) <em>Arguments</em> — logical reasoning linking evidence to claims.</span>
+        <span class="zh-li">(1) <em>声明</em>——关于安全的陈述；(2) <em>证据</em>——测试结果、分析数据、运行记录；(3) <em>论证</em>——将证据与声明连接起来的逻辑推理。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Goal Structuring Notation (GSN) / 目标结构符号:</strong> A graphical notation representing Safety Cases, showing how goals break down into sub-goals supported by evidence (solutions).</span>
+        <span class="zh-li">一种用于表示安全案例的图形符号，展示目标如何分解为子目标并由证据（解决方案）支撑。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Application / 应用:</strong> Mandatory in high-hazard industries — nuclear, offshore oil &amp; gas (UK Safety Case Regulations), rail, aerospace, and increasingly in process safety.</span>
+        <span class="zh-li">在高风险行业是强制性的——核能、海上油气（英国安全案例法规）、铁路、航空航天，以及工艺安全领域。</span>
+      </li>
+    </ul>
+
+    <h3><span class="bi-term"><span class="zh">风险汇总</span> · <span class="en">Risk Summation</span><span class="vocab-star" data-term="Risk Summation">☆</span></span></h3>
+    <p class="bi-p">
+      <span class="en-p">Risk Summation aggregates individual risk analysis results (from FMEA, FTA, HAZOP, etc.) into a comprehensive risk profile. Methods include: (1) simple summation of risk scores (conservative, may overestimate); (2) risk matrix consolidation onto a common matrix; (3) probabilistic aggregation using Monte Carlo simulation.</span>
+      <span class="zh-p">风险汇总是将各单独风险分析结果（来自FMEA、FTA、HAZOP等）汇总为一个全面的风险概况。方法包括：(1) 简单汇总风险评分（保守，可能高估）；(2) 将风险映射到共通矩阵整合；(3) 使用蒙特卡洛模拟的概率汇总。</span>
+    </p>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-mid">常考 MEDIUM</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "What are the three components of a safety case?"<br>
+        <strong>答题要点 / Key point:</strong> 安全案例三要素：<strong>声明(Claims)+证据(Evidence)+论证(Arguments)</strong>。整合多方法而非单一技术；高风险行业（核、海上油气、铁路）强制。风险汇总三法：简单求和（保守高估）/共通矩阵/蒙特卡洛模拟。GSN=目标结构符号。
+      </div>
+    </div>
+  </div>
+
+  <div id="quiz-group-8"></div>
+
+
+  <!-- ===== Knowledge Point 9: When to Use Each Technique ===== -->
+  <div class="knowledge-card">
+    <h2>10.9 <span class="en-p">Selecting the Right Technique</span><span class="zh-p" style="color:#666;display:block;">如何选择正确的技术</span></h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>Brauer Ch.36 (System Safety) · Yates Ch.20 (Accident Causation and Investigation)</span>
+    </div>
+
+    <table class="study-table">
+      <thead><tr><th><span class="en-p">Situation / 情形</span></th><th><span class="en-p">Recommended Technique / 推荐技术</span></th><th><span class="en-p">Reason / 原因</span></th></tr></thead>
+      <tbody>
+        <tr><td><span class="en-p">A specific failure occurred; find all contributing causes / 特定失效已发生；找出所有致因</span></td><td><strong>FTA</strong></td><td><span class="en-p">Deductive — works backward from the event / 演绎法——从事件向后追溯</span></td></tr>
+        <tr><td><span class="en-p">Evaluate whether existing safeguards prevent escalation after a release / 评估现有防护是否防止泄漏后的升级</span></td><td><strong>ETA</strong></td><td><span class="en-p">Inductive — works forward through barriers / 归纳法——正向通过屏障</span></td></tr>
+        <tr><td><span class="en-p">Identify every component that could fail in a new design / 识别新设计中每个可能失效的组件</span></td><td><strong>FMEA</strong></td><td><span class="en-p">Exhaustive bottom-up component review with RPN ranking / 彻底的自下而上组件审查并RPN排序</span></td></tr>
+        <tr><td><span class="en-p">Communicate risk with barriers to a broad audience / 向广泛受众沟通屏障风险</span></td><td><strong>Bow-Tie</strong></td><td><span class="en-p">Visual, combines FTA and ETA elements / 直观，结合FTA和ETA元素</span></td></tr>
+        <tr><td><span class="en-p">Justify that an entire system is acceptably safe / 论证整个系统可接受地安全</span></td><td><strong>Safety Case</strong></td><td><span class="en-p">Integrates multiple analyses with evidence / 整合多种分析与证据</span></td></tr>
+      </tbody>
+    </table>
+
+    <div class="important">
+      <strong>⚠ CSP 考试技巧 / Exam Tip:</strong><br>
+      <span class="en-p">The exam loves scenario-based "which technique" questions. Anchor on the KEY QUESTION each method answers: FTA = cause investigation; ETA = consequence/safeguard evaluation; FMEA = component/process failure review. Direction matters: FTA is top-down, ETA and FMEA are bottom-up.</span>
+      <span class="zh-p">考试喜欢基于情景的"哪种技术"考题。锚定每种方法回答的<em>关键问题</em>：FTA = 原因调查；ETA = 后果/防护评估；FMEA = 组件/工艺失效审查。方向很重要：FTA是自上而下，ETA和FMEA是自下而上。</span>
+    </div>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-mid">常考 MEDIUM</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "A specific failure has occurred and you must identify all contributing causes. Which technique?"<br>
+        <strong>答题要点 / Key point:</strong> 场景选型：找失效原因→FTA（演绎、自上而下）；评估防护是否防升级→ETA（归纳）；新设计组件审查→FMEA（RPN排序）；向广泛受众展示屏障→Bow-Tie（结合FTA+ETA）；论证系统安全→Safety Case。关键=各方法回答的"关键问题"。
+      </div>
+    </div>
+  </div>
+
+  <div id="quiz-group-9"></div>
+
+
+  <!-- QUIZ SECTION -->
+  <div id="quiz-root"></div>
+
+</div>
+
+<script src="quiz-engine.js?v=11"></script>
+<script src="vocab-engine.js?v=11"></script>
+<script>
+CSPQuiz.init({
+  containerId: 'quiz-root',
+  quizId: 'week-10-quiz',
+  quizTitle: 'Week 10 Quiz: FMEA, FTA & ETA / 第10周测验：FMEA、FTA与ETA',
+  quizTopic: 'Domain 3 — Risk Management',
+  questions: [
+    {
+      text: 'In FMEA, the Risk Priority Number (RPN) is calculated as:',
+      group: 1,
+      options: [
+        'Severity + Occurrence + Detection',
+        'Severity x Occurrence x Detection',
+        '(Severity x Occurrence) / Detection',
+        'Severity x (Occurrence + Detection)'
+      ],
+      correct: 1,
+      explanation: 'RPN = Severity x Occurrence x Detection. Each factor is rated on a 1-10 scale, giving a maximum RPN of 1000 and a minimum of 1.\n\nRPN = 严重性 x 发生频率 x 检测度。每个因子按1-10分制评分，最大RPN为1000，最小为1。'
+    },
+    {
+      text: 'In FMEA, a failure mode has Severity = 7, Occurrence = 6, and Detection = 5. What is the RPN?',
+      group: 1,
+      options: ['18', '42', '210', '750'],
+      correct: 2,
+      explanation: 'RPN = 7 x 6 x 5 = 210. This is well above the common action threshold of 100, so corrective action would typically be recommended.\n\nRPN = 7 x 6 x 5 = 210。这远高于常见的行动阈值100，因此通常建议采取纠正措施。'
+    },
+    {
+      text: 'A failure mode has Severity = 9, Occurrence = 3, and Detection = 4. What is the RPN?',
+      group: 1,
+      options: ['16', '27', '108', '36'],
+      correct: 2,
+      explanation: 'RPN = 9 x 3 x 4 = 108. This exceeds the common threshold of 100. Additionally, any failure mode with Severity = 9 or 10 warrants action regardless of the RPN value.\n\nRPN = 9 x 3 x 4 = 108。这超过常见的阈值100。此外，任何严重性为9或10的失效模式，无论RPN值如何，都值得采取行动。'
+    },
+    {
+      text: 'A failure mode has Severity = 5, Occurrence = 10, and Detection = 2. What is the RPN?',
+      group: 1,
+      options: ['100', '50', '17', '500'],
+      correct: 0,
+      explanation: 'RPN = 5 x 10 x 2 = 100. Occurrence of 10 (almost inevitable) dominates this score. Note the trade-off: high occurrence with good detection (low D) still yields a high RPN.\n\nRPN = 5 x 10 x 2 = 100。发生频率10（几乎不可避免）主导了该得分。注意权衡：高发生频率配合良好检测（低D）仍产生高RPN。'
+    },
+    {
+      text: 'In FMEA, what does a Detection rating of 10 indicate?',
+      group: 2,
+      options: [
+        'Detection is virtually certain',
+        'There is no known detection method; the failure will likely reach the customer undetected',
+        'The failure is easy to see',
+        'Detection is required by regulation'
+      ],
+      correct: 1,
+      explanation: 'On the Detection scale, HIGH values mean POOR detection. A rating of 10 means no detection method exists, so the failure will probably reach the customer. A rating of 1 means detection is nearly certain.\n\n在检测度量表上，高值意味着检测差。10分表示没有检测方法，失效很可能到达客户。1分表示基本肯定能检测到。'
+    },
+    {
+      text: 'Why does a high Detection rating INCREASE the RPN?',
+      group: 2,
+      options: [
+        'Because better detection increases severity',
+        'Because a high Detection number means the failure is hard to detect, leaving more risk undetected',
+        'Because detection is the most important factor',
+        'It does not; high Detection lowers the RPN'
+      ],
+      correct: 1,
+      explanation: 'The Detection scale is inverted: a rating of 10 means poor detection. A high D means current controls are unlikely to catch the failure, so it propagates to the customer — raising risk and the RPN.\n\n检测度量表是反向的：10分表示检测差。高D意味着当前控制不太可能捕获失效，因此它传播到客户——提高风险和RPN。'
+    },
+    {
+      text: 'After implementing a corrective action in FMEA, what should the team do?',
+      group: 2,
+      options: [
+        'Close the FMEA immediately',
+        'Recompute the RPN to verify the risk is reduced',
+        'Only update the severity rating',
+        'Nothing further is required'
+      ],
+      correct: 1,
+      explanation: 'The team recalculates the RPN after the action ("revised RPN") to verify effectiveness. If the revised RPN is still above threshold, further action is needed. Verification is a required FMEA step.\n\n团队在措施后重新计算RPN（"修订后的RPN"）以验证有效性。如果修订后的RPN仍高于阈值，需要进一步行动。验证是FMEA的必要步骤。'
+    },
+    {
+      text: 'Which is NOT a typical column in an FMEA worksheet?',
+      group: 2,
+      options: [
+        'Failure mode and effect',
+        'Severity, Occurrence, Detection ratings',
+        'Recommended actions and revised RPN',
+        'Insurance premium calculations'
+      ],
+      correct: 3,
+      explanation: 'An FMEA worksheet tracks failure modes, effects, causes, S/O/D ratings, current controls, RPN, recommended actions, responsibility, and revised RPN. Insurance premium calculations belong to risk financing, not FMEA.\n\nFMEA工作表跟踪失效模式、影响、原因、S/O/D评分、当前控制、RPN、建议措施、责任和修订后的RPN。保险费计算属于风险财务，不属于FMEA。'
+    },
+    {
+      text: 'The primary difference between DFMEA and PFMEA is:',
+      group: 3,
+      options: [
+        'DFMEA uses different rating scales',
+        'DFMEA analyzes product design failures; PFMEA analyzes manufacturing process failures',
+        'PFMEA does not use RPN',
+        'There is no difference'
+      ],
+      correct: 1,
+      explanation: 'Design FMEA analyzes failures in product design; Process FMEA analyzes failures in manufacturing/assembly processes. The methodology, ratings, and RPN are identical — only the scope differs.\n\n设计FMEA分析产品设计中的失效；工艺FMEA分析制造/装配工艺中的失效。方法、评分和RPN完全相同——只是范围不同。'
+    },
+    {
+      text: 'In Fault Tree Analysis, an AND gate with two independent basic events having probabilities of 0.1 and 0.2 will have what output probability?',
+      group: 3,
+      options: ['0.3', '0.28', '0.02', '0.12'],
+      correct: 2,
+      explanation: 'For an AND gate with independent events: P = P1 x P2 = 0.1 x 0.2 = 0.02. AND gates reduce probability because ALL inputs must occur for the output to occur.\n\n对于独立事件的与门：P = P1 x P2 = 0.1 x 0.2 = 0.02。与门降低概率，因为所有输入都必须发生输出才会发生。'
+    },
+    {
+      text: 'What is the probability output of an OR gate with two independent basic events having probabilities of 0.1 and 0.2?',
+      group: 3,
+      options: ['0.02', '0.3', '0.28', '0.12'],
+      correct: 2,
+      explanation: 'For an OR gate: P = P(A) + P(B) - P(A)xP(B) = 0.1 + 0.2 - (0.1 x 0.2) = 0.3 - 0.02 = 0.28. The subtraction prevents double-counting the intersection.\n\n对于或门：P = P(A) + P(B) - P(A)xP(B) = 0.1 + 0.2 - (0.1 x 0.2) = 0.3 - 0.02 = 0.28。减去交集部分以避免重复计算。'
+    },
+    {
+      text: 'An AND gate combines basic events with probabilities 0.01 and 0.04. What is the output probability?',
+      group: 3,
+      options: ['0.05', '0.0004', '0.0404', '0.001'],
+      correct: 1,
+      explanation: 'P = 0.01 x 0.04 = 0.0004. AND gates multiply — both independent events must occur. The result is much smaller than either individual probability.\n\nP = 0.01 x 0.04 = 0.0004。与门相乘——两个独立事件都必须发生。结果远小于任一单个概率。'
+    },
+    {
+      text: 'In a fault tree, a top event is caused by an OR gate with inputs of 0.001 and 0.002. Using the rare-event approximation, the top event probability is approximately:',
+      group: 4,
+      options: ['0.003', '0.001', '0.000002', '0.002002'],
+      correct: 0,
+      explanation: 'Rare-event approximation: P ≈ P1 + P2 = 0.001 + 0.002 = 0.003. The exact value would be 0.003 - 0.000002 = 0.002998, so the approximation is very close.\n\n罕见事件近似：P ≈ P1 + P2 = 0.001 + 0.002 = 0.003。精确值为0.003 - 0.000002 = 0.002998，近似非常接近。'
+    },
+    {
+      text: 'In Fault Tree Analysis, what is a "minimal cut set"?',
+      group: 4,
+      options: [
+        'Any set of events that can cause the top event',
+        'The smallest possible subset of events that will cause the top event, with no redundant events',
+        'The complete list of all possible basic events in the system',
+        'A set of events that prevents the top event from occurring'
+      ],
+      correct: 1,
+      explanation: 'A minimal cut set is a cut set containing no subset that is also a cut set. Remove any single event from a minimal cut set and the top event will NOT occur. Minimal cut sets represent critical failure pathways.\n\n最小割集是不包含任何也是割集的子集的割集。从最小割集中移除任何一个事件，顶事件将不会发生。最小割集代表关键失效路径。'
+    },
+    {
+      text: 'A fault tree has minimal cut sets {A} and {B, C} with P(A)=0.01, P(B)=0.05, P(C)=0.02. Which is the critical path to improve first?',
+      group: 4,
+      options: [
+        '{B, C}, because it has two events',
+        '{A}, because single-event cut sets dominate the top event probability',
+        'Both equally',
+        'Neither can be improved'
+      ],
+      correct: 1,
+      explanation: 'The {A} single-event cut set contributes P(A) = 0.01 directly to the top event probability, far more than {B, C} which contributes 0.05 x 0.02 = 0.001. Single-event minimal cut sets are the highest-value improvement targets.\n\n{A}单事件割集直接贡献P(A) = 0.01到顶事件概率，远多于{B, C}贡献的0.05 x 0.02 = 0.001。单事件最小割集是价值最高的改进目标。'
+    },
+    {
+      text: 'In FTA, a rectangle symbol represents:',
+      group: 4,
+      options: [
+        'A basic event',
+        'An intermediate event (output of a gate)',
+        'An undeveloped event',
+        'A transfer symbol'
+      ],
+      correct: 1,
+      explanation: 'Rectangle = intermediate event (gate output). Circle = basic event (root cause). Diamond = undeveloped event. House = normal/expected event. Triangle = transfer.\n\n矩形 = 中间事件（门的输出）。圆形 = 基本事件（根本原因）。菱形 = 未展开事件。房形 = 正常/预期事件。三角形 = 转移。'
+    },
+    {
+      text: 'In Fault Tree Analysis, which event is the top event?',
+      group: 5,
+      options: [
+        'Any basic event',
+        'The undesired event being analyzed, from which the tree is developed downward',
+        'The event with the highest probability',
+        'The first safeguard to fail'
+      ],
+      correct: 1,
+      explanation: 'The top event is the undesired event of interest (e.g., loss of containment, explosion). FTA works downward from it, decomposing it into intermediate and basic events through AND/OR gates.\n\n顶事件是所关注的不期望事件（如围堵失效、爆炸）。FTA从它向下分解，通过与/或门将其分解为中间事件和基本事件。'
+    },
+    {
+      text: 'In Event Tree Analysis (ETA), the analysis:',
+      group: 5,
+      options: [
+        'Starts with the top event and works backward',
+        'Starts with an initiating event and works forward through safeguards to outcomes',
+        'Analyzes only component failures',
+        'Calculates insurance premiums'
+      ],
+      correct: 1,
+      explanation: 'ETA is inductive: it starts from an initiating event and branches forward through each safeguard (success/failure) to all possible outcomes. It evaluates safeguard effectiveness and consequences.\n\nETA是归纳法：从初始事件开始，向前通过每个防护（成功/失败）分支到所有可能结果。它评估防护有效性和后果。'
+    },
+    {
+      text: 'In Event Tree Analysis (ETA), after an initiating event with probability 0.05, two independent safeguards succeed with probabilities 0.9 and 0.8 respectively. What is the probability that BOTH safeguards fail?',
+      group: 5,
+      options: [
+        '0.05 x 0.9 x 0.8 = 0.036',
+        '0.05 x 0.1 x 0.2 = 0.001',
+        '0.9 x 0.8 = 0.72',
+        '0.05 x (0.1 + 0.2) = 0.015'
+      ],
+      correct: 1,
+      explanation: 'Both fail path: initiating event x P(S1 fails) x P(S2 fails) = 0.05 x 0.1 x 0.2 = 0.001. This is the worst-case scenario with the lowest probability.\n\n两者都失败路径：初始事件 x P(防护1失败) x P(防护2失败) = 0.05 x 0.1 x 0.2 = 0.001。这是概率最低的最坏情景。'
+    },
+    {
+      text: 'An initiating event has probability 0.01. A single safeguard succeeds with probability 0.95. What is the probability of the failure outcome (safeguard fails)?',
+      group: 5,
+      options: [
+        '0.0095',
+        '0.0005',
+        '0.95',
+        '0.05'
+      ],
+      correct: 1,
+      explanation: 'Failure path = P(initiating event) x P(safeguard fails) = 0.01 x 0.05 = 0.0005. The success path is 0.01 x 0.95 = 0.0095; together they sum to 0.01.\n\n失败路径 = P(初始事件) x P(防护失败) = 0.01 x 0.05 = 0.0005。成功路径为0.01 x 0.95 = 0.0095；两者之和为0.01。'
+    },
+    {
+      text: 'In an event tree, the sum of the probabilities of ALL outcomes should equal:',
+      group: 6,
+      options: [
+        '1.0',
+        'The initiating event probability',
+        'Zero',
+        'The probability of the safest outcome'
+      ],
+      correct: 1,
+      explanation: 'All outcome probabilities partition the initiating event: they multiply from the same starting point and the success/failure branches at each barrier partition the probability space. Summing all paths returns the initiating event probability.\n\n所有结果概率分割了初始事件：它们从同一出发点相乘，每个屏障的成功/失败分支分割概率空间。所有路径求和返回初始事件概率。'
+    },
+    {
+      text: 'Which analysis technique is deductive (top-down) rather than inductive (bottom-up)?',
+      group: 6,
+      options: [
+        'FMEA (Failure Mode and Effects Analysis)',
+        'ETA (Event Tree Analysis)',
+        'FTA (Fault Tree Analysis)',
+        'Both FMEA and ETA'
+      ],
+      correct: 2,
+      explanation: 'FTA is the only deductive (top-down) technique among these three. FTA starts with the undesired top event and works backward to find causes. FMEA and ETA are inductive (bottom-up).\n\nFTA是这三种技术中唯一的演绎法（自上而下）技术。FTA从不期望的顶事件开始，向后追溯原因。FMEA和ETA是归纳法（自下而上）。'
+    },
+    {
+      text: 'An incident investigator wants to find ALL possible combinations of equipment failures that could have led to a release. Which technique is most appropriate?',
+      group: 6,
+      options: [
+        'FMEA',
+        'FTA (Fault Tree Analysis)',
+        'ETA',
+        'Checklist analysis'
+      ],
+      correct: 1,
+      explanation: 'FTA is deductive — it starts from the release (top event) and identifies combinations of failures (cut sets) that cause it. This is exactly what accident investigation needs. ETA would analyze consequences, not causes.\n\nFTA是演绎法——从泄漏（顶事件）开始，识别导致它的失效组合（割集）。这正是事故调查需要的。ETA分析后果而非原因。'
+    },
+    {
+      text: 'A design team wants to evaluate whether fire detection, automatic suppression, and operator response can prevent a small leak from escalating into a major fire. Which technique fits?',
+      group: 6,
+      options: [
+        'FTA',
+        'FMEA',
+        'ETA (Event Tree Analysis)',
+        'Safety case only'
+      ],
+      correct: 2,
+      explanation: 'ETA evaluates safeguards in sequence after an initiating event — exactly this scenario. Each barrier (detection, suppression, operator response) forms a success/failure branch leading to outcomes.\n\nETA评估初始事件后的顺序防护——正是这个情景。每个屏障（探测、灭火、操作员响应）形成通向结果的成功/失败分支。'
+    },
+    {
+      text: 'In FMEA, the Detection rating measures:',
+      group: 7,
+      options: [
+        'How often the failure occurs',
+        'How serious the failure effect is',
+        'How likely current controls are to detect the failure before it reaches the customer',
+        'How many failures have been detected historically'
+      ],
+      correct: 2,
+      explanation: 'Detection rates how likely current process controls will detect the failure mode or its cause before the product reaches the customer. Rating 1 = detection nearly certain; 10 = no known detection method.\n\n检测度评估当前工艺控制在产品到达客户之前检测到失效模式或原因的可能性。1分 = 基本肯定能检测到；10分 = 没有已知检测方法。'
+    },
+    {
+      text: 'Which of the following ranking principles is correct for FMEA action priorities?',
+      group: 7,
+      options: [
+        'Only the RPN value matters',
+        'Address highest RPN first, and always treat Severity = 9 or 10 as requiring action regardless of RPN',
+        'Address lowest RPN first to prevent failures',
+        'Severity is never considered in action priority'
+      ],
+      correct: 1,
+      explanation: 'Prioritize by RPN, but give special attention to any failure mode with Severity 9 or 10 (hazardous severity), which warrants action on its own. RPN alone can mask high-severity modes with low occurrence.\n\n按RPN排序，但特别关注任何严重性9或10（危险严重性）的失效模式，其本身就需要行动。仅凭RPN可能掩盖低发生频率的高严重性模式。'
+    },
+    {
+      text: 'In FTA, what is the output probability of an AND gate with three independent inputs of 0.1 each?',
+      group: 7,
+      options: ['0.3', '0.001', '0.03', '0.0001'],
+      correct: 1,
+      explanation: 'P = 0.1 x 0.1 x 0.1 = 0.001. AND gates multiply — the more conditions required, the lower the probability. Three redundant barriers are highly reliable.\n\nP = 0.1 x 0.1 x 0.1 = 0.001。与门相乘——需要的条件越多，概率越低。三重冗余屏障可靠性很高。'
+    },
+    {
+      text: 'A safety case provides justification for system safety through:',
+      group: 7,
+      options: [
+        'A single FMEA analysis',
+        'A structured argument linking safety claims to evidence',
+        'Insurance documentation',
+        'Emergency evacuation drills'
+      ],
+      correct: 1,
+      explanation: 'A safety case is a structured argument: claims about safety supported by evidence, connected by logical reasoning. It integrates multiple analyses into a coherent justification — not a single technique.\n\n安全案例是结构化论证：关于安全的声明由证据支撑，通过逻辑推理连接。它整合多种分析为连贯论证——不是单一技术。'
+    },
+    {
+      text: 'Goal Structuring Notation (GSN) is primarily used to:',
+      group: 8,
+      options: [
+        'Draw event trees',
+        'Represent safety cases graphically, showing how goals are supported by evidence',
+        'Calculate RPN values',
+        'Classify fire hazards'
+      ],
+      correct: 1,
+      explanation: 'GSN is a graphical notation for safety cases: goals (claims) decompose into sub-goals, ultimately supported by evidence (solutions). It makes the safety argument auditable and reviewable.\n\nGSN是安全案例的图形符号：目标（声明）分解为子目标，最终由证据（解决方案）支撑。它使安全论证可审计、可审查。'
+    },
+    {
+      text: 'Risk summation from multiple analyses is BEST described as:',
+      group: 8,
+      options: [
+        'Ignoring all results except the highest one',
+        'Aggregating individual risk analysis results into a comprehensive risk profile',
+        'Summing all insurance claims',
+        'Adding RPN values to calculate FTA probabilities'
+      ],
+      correct: 1,
+      explanation: 'Risk summation aggregates results from FMEA, FTA, HAZOP, etc. into one risk picture for decision-makers — via simple summation, matrix consolidation, or probabilistic methods like Monte Carlo.\n\n风险汇总将FMEA、FTA、HAZOP等的结果聚合为一个供决策者使用的风险图景——通过简单汇总、矩阵整合或蒙特卡洛等概率方法。'
+    },
+    {
+      text: 'A failure mode has RPN above the threshold. Which factor is typically HARDEST to reduce through corrective action?',
+      group: 8,
+      options: [
+        'Occurrence (by preventing the cause)',
+        'Detection (by improving inspection)',
+        'Severity (it is usually a design property)',
+        'None — all are equally easy'
+      ],
+      correct: 2,
+      explanation: 'Severity is typically a property of the design or the failure itself, so it is hard to change. Actions usually target Occurrence (prevent the cause) or Detection (catch it earlier). This is why design changes matter for severity.\n\n严重性通常是设计或失效本身的属性，因此难以改变。行动通常针对发生频率（预防原因）或检测度（更早发现）。这就是设计变更对严重性重要的原因。'
+    },
+    {
+      text: 'In an event tree with 3 safeguards, how many total outcome paths exist?',
+      group: 8,
+      options: ['3', '6', '8', '9'],
+      correct: 2,
+      explanation: 'Each safeguard branches into 2 (success/failure). With n safeguards there are 2ⁿ paths. For 3 safeguards: 2³ = 8 paths.\n\n每个防护分支为2（成功/失败）。n个防护有2ⁿ条路径。3个防护：2³ = 8条路径。'
+    },
+    {
+      text: 'Which statement about FTA AND gates versus OR gates is correct?',
+      group: 9,
+      options: [
+        'AND gates increase probability because more events are involved',
+        'OR gates reduce probability because they exclude events',
+        'AND gates reduce probability (all events must occur) while OR gates increase it (any event suffices)',
+        'AND and OR gates produce the same result'
+      ],
+      correct: 2,
+      explanation: 'AND gates multiply probabilities, so the output is smaller (all inputs must occur). OR gates add (minus intersection), so the output is larger (any input suffices). This mirrors redundancy logic: parallel (AND) = reliable; series (OR) = fragile.\n\n与门相乘概率，输出更小（所有输入都必须发生）。或门相加（减交集），输出更大（任一输入即可）。这对应冗余逻辑：并联（与）=可靠；串联（或）=脆弱。'
+    },
+    {
+      text: 'What is the RPN of a failure mode with S=4, O=8, D=6?',
+      group: 9,
+      options: ['18', '192', '240', '96'],
+      correct: 1,
+      explanation: 'RPN = 4 x 8 x 6 = 192. Above the threshold of 100, corrective action is recommended, with the likely focus on reducing occurrence (O=8 is the dominant factor).\n\nRPN = 4 x 8 x 6 = 192。超过阈值100，建议采取纠正措施，重点很可能是降低发生频率（O=8是主导因素）。'
+    },
+    {
+      text: 'Which analysis produces a numerical probability for an undesired event from combinations of basic event failures?',
+      group: 9,
+      options: [
+        'FMEA',
+        'FTA (Fault Tree Analysis)',
+        'SWIFT',
+        'Checklist analysis'
+      ],
+      correct: 1,
+      explanation: 'FTA is uniquely quantitative among these: it combines basic event probabilities through AND/OR gates to compute the top event probability. FMEA uses RPN ranking; SWIFT and checklists are qualitative.\n\nFTA在其中是独特的定量方法：通过与/或门组合基本事件概率来计算顶事件概率。FMEA使用RPN排序；SWIFT和检查表是定性的。'
+    }
+  ]
+});
+</script>
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js').catch(function() {});
+}
+</script>
+</body>
+</html>

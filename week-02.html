@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 2: Process Safety Management / 工艺安全管理 — CSP Exam Prep</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1e3a5f">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="stylesheet" href="quiz-styles.css?v=11">
+<style>
+  .breadcrumb { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 16px; }
+  .breadcrumb a { color: var(--accent); text-decoration: none; }
+  .breadcrumb a:hover { text-decoration: underline; }
+  .psm-elements {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 8px;
+    margin: 16px 0;
+  }
+  .psm-element {
+    background: #f0f4ff;
+    border: 1px solid #c7d2fe;
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 0.88rem;
+  }
+  .psm-element strong { color: var(--accent); }
+  .highlight-box {
+    background: #fef3c7;
+    border-left: 4px solid #f59e0b;
+    padding: 14px 18px;
+    border-radius: 0 6px 6px 0;
+    margin: 16px 0;
+  }
+  .case-box {
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    border-left: 4px solid #10b981;
+    border-radius: 0 6px 6px 0;
+    padding: 14px 18px;
+    margin: 16px 0;
+  }
+  p.bi-p, li.bi-li { margin-bottom: 10px; }
+  p.bi-p .en-p, li.bi-li .en-li { display: block; }
+  p.bi-p .zh-p, li.bi-li .zh-li { display: block; color: #666; font-size: 0.92em; margin-top: 2px; }
+  table.bi-table th { white-space: nowrap; }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="breadcrumb">
+    <a href="index.html">← 返回仪表盘 / Dashboard</a> &nbsp;|&nbsp;
+    领域 / Domain 1: <span style="font-weight:600;">安全原理高级应用 / Advanced Application of Safety Principles</span>
+  </div>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <h1>📖 第2周 / Week 2:<br><span class="bi-term"><span class="zh">工艺安全管理</span> · <span class="en">Process Safety Management (PSM)</span><span class="vocab-star" data-term="Process Safety Management (PSM)">☆</span></span></h1>
+    <div class="subtitle">领域1：安全原理高级应用（占考试25%）· 建议学习时间：6–8小时<br>Domain 1: Advanced Application of Safety Principles (25% of exam) · Est. study time: 6–8 hours</div>
+  </div>
+
+  <!-- KNOWLEDGE SECTION -->
+
+  <div class="knowledge-card">
+    <h2>2.1 <span class="bi-term"><span class="zh">工艺安全管理概述</span> · <span class="en">Overview of Process Safety Management (29 CFR 1910.119)</span><span class="vocab-star" data-term="Process Safety Management (PSM)">☆</span></span></h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>29 CFR 1910.119 · Brauer Ch.24</span>
+    </div>
+
+    <p class="bi-p">
+      <span class="en-p"><span class="bi-term"><span class="zh">工艺安全管理</span><span class="en">Process Safety Management (PSM)</span><span class="vocab-star" data-term="Process Safety Management (PSM)">☆</span></span> is an OSHA standard designed to prevent or minimize the consequences of catastrophic releases of toxic, reactive, flammable, or explosive chemicals. Unlike most OSHA standards that focus on worker injuries, PSM focuses on <strong>process-related major incidents</strong> — events that can cause multiple fatalities, facility destruction, and community impact.</span>
+      <span class="zh-p" style="color:#666;">工艺安全管理（PSM）是OSHA的一项标准，旨在预防或最小化有毒、活性、易燃或易爆化学品灾难性泄漏的后果。与大多数关注工人伤害的OSHA标准不同，PSM关注的是<strong>与工艺相关的重大事故</strong>——可能导致多人死亡、设施损毁和社区影响的事件。</span>
+    </p>
+
+    <div class="highlight-box">
+      <strong>关键概念 / Key Concept:</strong><br>
+      <span class="en-p">PSM is a management system standard, not a specification standard. It tells employers <em>what</em> management systems to have in place, not exactly <em>how</em> to build them. This is analogous to ISO management system standards.</span>
+      <span class="zh-p" style="color:#666;">PSM是一项管理体系标准，而非规范标准。它告诉雇主需要建立<em>哪些</em>管理体系，而非具体<em>如何</em>建立。这与ISO管理体系标准类似。</span>
+    </div>
+
+    <p class="bi-p">
+      <span class="en-p"><strong>Origin and history / 起源与历史:</strong> PSM was issued in 1992 in response to catastrophic incidents including the Bhopal disaster (1984, methyl isocyanate release killed thousands), the Phillips 66 explosion (1989, Pasadena TX, 23 deaths), and the Union Carbide/Institute WV incident (1985). The standard codifies the lessons from these events into a comprehensive management system.</span>
+      <span class="zh-p" style="color:#666;"><strong>起源与历史：</strong>PSM于1992年颁布，是对一系列灾难性事故的回应，包括博帕尔惨案（1984年，异氰酸甲酯泄漏致数千人死亡）、Phillips 66爆炸（1989年，德克萨斯州帕萨迪纳，23人死亡）和Union Carbide/西弗吉尼亚州Institute事故（1985年）。该标准将这些事件的教训固化为综合的管理体系。</span>
+    </p>
+
+    <h3>PSM 适用范围 / PSM Applicability</h3>
+    <p class="bi-p">
+      <span class="en-p">A facility is covered by PSM if it has a <strong>process</strong> involving a <strong>highly hazardous chemical (HHC)</strong> at or above the threshold quantity. Specifically:</span>
+      <span class="zh-p" style="color:#666;">如果设施中包含涉及<strong>高度危险化学品（HHC）</strong>且达到或超过阈限量的<strong>工艺</strong>，则该设施适用PSM。具体如下：</span>
+    </p>
+    <ul>
+      <li class="bi-li">
+        <span class="en-li"><strong>Listed chemicals (Appendix A):</strong> Contains any of 137+ listed toxic or reactive chemicals at or above the threshold quantity (TQ) specified in the standard. Examples: ammonia (&ge; 10,000 lbs), chlorine (&ge; 1,500 lbs), formaldehyde (&ge; 1,000 lbs), methyl isocyanate (&ge; 250 lbs).</span>
+        <span class="zh-li"><strong>列名化学品（附录A）：</strong>含有标准中列出的137种以上有毒或活性化学品中的任何一种，且达到或超过规定的阈限量（TQ）。例如：氨（&ge;10,000磅）、氯气（&ge;1,500磅）、甲醛（&ge;1,000磅）、异氰酸甲酯（&ge;250磅）。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Flammable liquids and gases:</strong> Flammable liquids or gases in a quantity of <strong>10,000 pounds (4,535 kg)</strong> or more in a single location (with some exceptions for hydrocarbon fuels used solely as a fuel for workplace consumption, and retail facilities).</span>
+        <span class="zh-li"><strong>易燃液体和气体：</strong>在单一位置的易燃液体或气体数量达到<strong>10,000磅（4,535公斤）</strong>或以上（某些例外情况包括：仅作为工作场所燃料使用的碳氢燃料，以及零售设施）。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Explosives and blasting agents:</strong> Covered under separate OSHA standards (1910.109).</span>
+        <span class="zh-li"><strong>爆炸物和爆破剂：</strong>适用单独的OSHA标准（1910.109）。</span>
+      </li>
+    </ul>
+
+    <div class="important">
+      <strong>⚠ CSP 考试技巧 / Exam Tip:</strong><br>
+      <span class="en-p">Remember the 10,000 lb threshold. If a question mentions "a process involving flammable liquids &ge; 10,000 lbs," PSM applies. Also remember that PSM applies at the <em>process</em> level — a facility may have multiple covered processes. And learn the individual TQs for the most-tested chemicals (ammonia 10,000; chlorine 1,500; formaldehyde 1,000; MIC 250 lbs).</span>
+      <span class="zh-p" style="color:#666;">记住10,000磅的门槛。如果题目提到"涉及易燃液体&ge;10,000磅的工艺"，则PSM适用。还要记住PSM适用于<em>工艺</em>层面——一个设施可能有多个适用工艺。并记住最常考化学品的各自阈限量（氨10,000磅；氯气1,500磅；甲醛1,000磅；MIC 250磅）。</span>
+    </div>
+
+    <h3>PSM 覆盖范围的例外情况 / Exceptions to PSM Coverage</h3>
+    <ul>
+      <li class="bi-li">
+        <span class="en-li">Retail facilities</span>
+        <span class="zh-li">零售设施</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">Oil and gas well drilling or servicing operations</span>
+        <span class="zh-li">石油和天然气钻井或服务作业</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">Normally unoccupied remote facilities</span>
+        <span class="zh-li">通常无人值守的偏远设施</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">Hydrocarbon fuels used solely for workplace consumption as fuel (e.g., propane for forklifts), provided such fuels are not part of a process containing another HHC</span>
+        <span class="zh-li">仅作为工作场所燃料使用的碳氢燃料（如叉车用丙烷），前提是这些燃料不属于含有其他HHC的工艺</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">Flammable liquids stored in atmospheric tanks or transferred that are kept below their normal boiling point without benefit of chilling or refrigeration</span>
+        <span class="zh-li">在常压储罐中储存或输送的易燃液体，且保持在正常沸点以下，无需冷却或制冷</span>
+      </li>
+    </ul>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-high">必考 HIGH</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "Does the PSM rule apply to this process?" — 判断适用性。<br>
+        <strong>答题要点 / Key point:</strong> 两条触发线：①含附录A列名化学品≥TQ；②易燃液体/气体单一位置≥<strong>10,000磅</strong>。常考TQ：氨10,000 / 氯气1,500 / 甲醛1,000 / 异氰酸甲酯(MIC)250磅。例外（不适用）：零售设施、油气钻井/服务作业、通常无人值守的偏远设施、燃料用途碳氢、常压低温易燃液体。
+      </div>
+    </div>
+  </div>
+
+  <div id="quiz-group-1"></div>
+
+
+  <div class="knowledge-card">
+    <h2>2.2 <span class="bi-term"><span class="zh">PSM的14个要素</span> · <span class="en">The 14 Elements of PSM</span></span></h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>29 CFR 1910.119 · Brauer Ch.24</span>
+    </div>
+
+    <p class="bi-p">
+      <span class="en-p">OSHA 1910.119 organizes PSM into 14 interconnected elements. All 14 must work together — a weakness in any one element can compromise the entire system.</span>
+      <span class="zh-p" style="color:#666;">OSHA 1910.119将PSM组织为14个相互关联的要素。所有14个要素必须协同运作——任何一个要素的弱点都可能危及整个系统。</span>
+    </p>
+
+    <div class="psm-elements">
+      <div class="psm-element">
+        <span class="en-p"><strong>1. Employee Participation / 员工参与</strong> — Written plan for employee involvement in PSM; employees must be represented in PHA teams, incident investigations, and consulted on the development of process hazard analyses.</span>
+        <span class="zh-p" style="color:#666;font-size:0.82em;">制定员工参与PSM的书面计划；员工必须参与PHA团队、事故调查，并就工艺危害分析的制定进行咨询。</span>
+      </div>
+      <div class="psm-element">
+        <span class="en-p"><strong>2. Process Safety Information (PSI) / 工艺安全信息</strong> — Compile written information on: hazards of the highly hazardous chemicals used/produced; technology of the process (block flow diagrams, process chemistry, maximum intended inventory, safe upper/lower limits); equipment in the process (materials of construction, P&IDs, electrical classification, relief system design basis, ventilation system design, safety systems).</span>
+        <span class="zh-p" style="color:#666;font-size:0.82em;">编制关于以下内容的书面信息：使用/生产的高度危险化学品的危害；工艺技术（方框流程图、工艺化学、最大预期存量、安全上下限）；工艺中的设备（构造材料、P&ID、电气分类、泄压系统设计依据、通风系统设计、安全系统）。</span>
+      </div>
+      <div class="psm-element">
+        <span class="en-p"><strong>3. Process Hazard Analysis (PHA) / 工艺危害分析</strong> — Thorough, organized, systematic approach to identify, evaluate, and control hazards of the process. Must be updated/revalidated at least every <strong>5 years</strong>. Accepted methods: HAZOP, What-If, Checklist, What-If/Checklist, FMEA, Fault Tree Analysis.</span>
+        <span class="zh-p" style="color:#666;font-size:0.82em;">全面、有组织、系统化的方法来识别、评估和控制工艺危害。必须至少每<strong>5年</strong>更新/重新验证一次。可接受的方法包括：HAZOP、What-If、检查表、What-If/检查表、FMEA、故障树分析。</span>
+      </div>
+      <div class="psm-element">
+        <span class="en-p"><strong>4. Operating Procedures / 操作规程</strong> — Written instructions for each operating phase: initial startup, normal operations, temporary operations, emergency shutdown, emergency operations, normal shutdown, startup following a turnaround. Must include operating limits, consequences of deviation, and steps to correct deviations.</span>
+        <span class="zh-p" style="color:#666;font-size:0.82em;">各操作阶段的书面指导：初始启动、正常运行、临时操作、紧急停车、紧急操作、正常停车、检修后启动。必须包括操作限值、偏差的后果以及纠正偏差的步骤。</span>
+      </div>
+      <div class="psm-element">
+        <span class="en-p"><strong>5. Training / 培训</strong> — Initial training for all employees involved in a process; refresher training at least every <strong>3 years</strong> (or more frequently as determined by the employer); documentation of training required.</span>
+        <span class="zh-p" style="color:#666;font-size:0.82em;">所有参与工艺的员工的初始培训；至少每<strong>3年</strong>一次的复训（或由雇主确定更频繁的培训）；需要培训记录。</span>
+      </div>
+      <div class="psm-element">
+        <span class="en-p"><strong>6. Contractors / 承包商</strong> — Screen contractors for safety performance; inform contractors of known fire, explosion, or toxic release hazards; contractors must train their employees on the hazards; maintain contractor injury/illness log.</span>
+        <span class="zh-p" style="color:#666;font-size:0.82em;">筛选承包商的安全表现；告知承包商已知的火灾、爆炸或有毒泄漏危害；承包商必须对其员工进行危害培训；保存承包商的伤害/疾病记录。</span>
+      </div>
+      <div class="psm-element">
+        <span class="en-p"><strong>7. Pre-Startup Safety Review (PSSR) / 启动前安全审查</strong> — Required for new facilities AND for modified facilities when the modification is significant enough to require a change in process safety information. Must confirm: construction/equipment meets design specs; safety, operating, maintenance, and emergency procedures are in place; a PHA has been performed and recommendations resolved; training is complete.</span>
+        <span class="zh-p" style="color:#666;font-size:0.82em;">新设施以及需要更改工艺安全信息的重大改造设施均需进行。必须确认：施工/设备符合设计规范；安全、操作、维护和应急程序已到位；PHA已完成且建议已解决；培训已完成。</span>
+      </div>
+      <div class="psm-element">
+        <span class="en-p"><strong>8. Mechanical Integrity / 机械完整性</strong> — Written procedures to maintain ongoing integrity of process equipment including: pressure vessels/storage tanks, piping systems, relief and vent systems/devices, emergency shutdown systems, controls (monitoring devices, sensors, alarms), pumps. Inspections and tests must follow <strong>recognized and generally accepted good engineering practices (RAGAGEP)</strong>.</span>
+        <span class="zh-p" style="color:#666;font-size:0.82em;">维护工艺设备持续完整性的书面程序，包括：压力容器/储罐、管道系统、泄压和排放系统/装置、紧急停车系统、控制装置（监控设备、传感器、报警器）、泵。检验和测试必须遵循<strong>公认和普遍接受的优良工程实践（RAGAGEP）</strong>。</span>
+      </div>
+      <div class="psm-element">
+        <span class="en-p"><strong>9. Hot Work Permit / 动火作业许可证</strong> — Required for welding, cutting, brazing, grinding, or other spark-producing operations on or near a covered process. Must be issued before work begins and specify: the date, the object to be worked on, duration of permit validity.</span>
+        <span class="zh-p" style="color:#666;font-size:0.82em;">在适用工艺上或附近进行焊接、切割、钎焊、打磨或其他产生火花的作业时需要。必须在工作开始前签发，并注明：日期、作业对象、许可证有效期。</span>
+      </div>
+      <div class="psm-element">
+        <span class="en-p"><strong>10. Management of Change (MOC) / 变更管理</strong> — Written procedures to manage changes to process chemicals, technology, equipment, procedures, and facilities (except "replacements in kind"). Must address: technical basis for change, impact on safety and health, modifications to operating procedures, time period for the change, authorization requirements.</span>
+        <span class="zh-p" style="color:#666;font-size:0.82em;">管理工艺化学品、技术、设备、程序和设施变更的书面程序（"同类替换"除外）。必须涉及：变更的技术依据、对安全与健康的影响、对操作规程的修改、变更时间段、授权要求。</span>
+      </div>
+      <div class="psm-element">
+        <span class="en-p"><strong>11. Incident Investigation / 事故调查</strong> — Investigate each incident that resulted in or could reasonably have resulted in a catastrophic release. Investigation must begin within <strong>48 hours</strong> of the incident. Team must include at least one person knowledgeable in the process and a contract employee if a contractor was involved. Report must be retained for <strong>5 years</strong>.</span>
+        <span class="zh-p" style="color:#666;font-size:0.82em;">调查每起已导致或可能合理导致灾难性泄漏的事故。调查必须在事故发生后<strong>48小时</strong>内开始。调查团队必须包括至少一名了解该工艺的人员，若涉及承包商则包括合同员工。报告必须保存<strong>5年</strong>。</span>
+      </div>
+      <div class="psm-element">
+        <span class="en-p"><strong>12. Emergency Planning and Response / 应急计划与响应</strong> — Develop and implement an emergency action plan per 1910.38(a) for the entire plant; procedures for handling small releases. This element also requires coordination with local emergency responders.</span>
+        <span class="zh-p" style="color:#666;font-size:0.82em;">制定并实施全厂应急行动计划（依据1910.38(a)）；处理小型泄漏的程序。该要素还要求与当地应急响应机构协调。</span>
+      </div>
+      <div class="psm-element">
+        <span class="en-p"><strong>13. Compliance Audits / 合规审核</strong> — At least every <strong>3 years</strong>, certify that the employer has evaluated compliance with PSM. Audit team must include at least one person knowledgeable in the process. A report of findings must be developed, and the two most recent audit reports must be retained.</span>
+        <span class="zh-p" style="color:#666;font-size:0.82em;">至少每<strong>3年</strong>认证一次雇主已评估PSM合规性。审核团队必须包括至少一名了解该工艺的人员。必须编制发现报告，并保留最近两份审核报告。</span>
+      </div>
+      <div class="psm-element">
+        <span class="en-p"><strong>14. Trade Secrets / 商业秘密</strong> — Employers must make all information necessary to comply with PSM available to those responsible for compiling PSI, conducting PHAs, developing operating procedures, incident investigations, emergency planning, and compliance audits — regardless of trade secret status. Those receiving trade secret information may be required to sign confidentiality agreements.</span>
+        <span class="zh-p" style="color:#666;font-size:0.82em;">雇主必须将所有PSM合规所需信息提供给负责编制PSI、开展PHA、制定操作规程、事故调查、应急计划和合规审核的人员——无论是否涉及商业秘密。接受商业秘密信息的人员可能需要签署保密协议。</span>
+      </div>
+    </div>
+
+    <div class="mnemonic">
+      <span class="mn-label">🧠 记忆口诀 / Mnemonic:</span>
+      <span class="mn-content"><strong>"5-3-3-48-5-2"</strong> 核心周期数：PHA复验每<strong>5年</strong>；培训复训每<strong>3年</strong>；合规审核每<strong>3年</strong>（保留最近2份报告）；事故调查<strong>48小时</strong>内启动，报告保存<strong>5年</strong>。中文："PH五、培训三、审核三、事故四八、报告五年"。</span>
+    </div>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-high">必考 HIGH</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "How often must a PHA be revalidated?" / "Which element requires a permit for welding?"<br>
+        <strong>答题要点 / Key point:</strong> PHA每5年复验（方法：HAZOP、What-If、Checklist、FMEA、FTA）；培训3年复训；合规审核3年一次、保留最近2份报告；事故调查48小时内启动、报告留5年。动火=要素9(Hot Work Permit)；启动前审查=PSSR(要素7)。14要素按(a)-(o)子条款对应。
+      </div>
+    </div>
+  </div>
+
+  <div id="quiz-group-2"></div>
+
+
+  <div class="knowledge-card">
+    <h2>2.3 <span class="bi-term"><span class="zh">关键PSM概念详解</span> · <span class="en">Key PSM Concepts in Detail</span></span></h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>29 CFR 1910.119 · Brauer Ch.24</span>
+    </div>
+
+    <h3><span class="bi-term"><span class="zh">工艺危害分析</span> · <span class="en">Process Hazard Analysis (PHA)</span><span class="vocab-star" data-term="Process Hazard Analysis (PHA)">☆</span></span> — 要素 3 / Element 3</h3>
+    <p class="bi-p">
+      <span class="en-p">The PHA is the analytical core of PSM. It must be performed by a team with expertise in engineering and process operations, and must include at least one employee with experience and knowledge specific to the process being evaluated, and one member knowledgeable in the specific PHA methodology being used.</span>
+      <span class="zh-p" style="color:#666;">PHA是PSM的分析核心。必须由具有工程和工艺操作专业知识的团队执行，且必须包括至少一名具有被评估工艺特定经验和知识的员工，以及一名了解所使用特定PHA方法的成员。</span>
+    </p>
+    <p class="bi-p">
+      <span class="en-p">The PHA must address:</span>
+      <span class="zh-p" style="color:#666;">PHA必须涉及以下内容：</span>
+    </p>
+    <ul>
+      <li class="bi-li">
+        <span class="en-li">Hazards of the process</span>
+        <span class="zh-li">工艺的危害</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">Previous incidents with potential for catastrophic consequences</span>
+        <span class="zh-li">可能造成灾难性后果的以往事故</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">Engineering and administrative controls applicable to the hazards</span>
+        <span class="zh-li">适用于危害的工程和行政控制</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">Consequences of failure of engineering and administrative controls</span>
+        <span class="zh-li">工程和行政控制失效的后果</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">Facility siting</span>
+        <span class="zh-li">设施选址</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">Human factors</span>
+        <span class="zh-li">人因工程</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">Qualitative evaluation of possible safety and health effects of failure of controls on employees</span>
+        <span class="zh-li">控制失效对员工可能造成的安全与健康影响的定性评估</span>
+      </li>
+    </ul>
+
+    <h3>PHA 方法对比 / PHA Methods Compared</h3>
+    <table class="bi-table">
+      <tr><th>方法 / Method</th><th>性质 / Nature</th><th>适用场景 / Best Used For</th></tr>
+      <tr>
+        <td><span class="en-p"><strong>HAZOP</strong> (Hazard &amp; Operability)</span><span class="zh-p" style="color:#666;">危害与可操作性分析</span></td>
+        <td><span class="en-p">Systematic, guide-word based (NONE, MORE OF, LESS OF, REVERSE, etc.) on P&amp;IDs; team-based</span><span class="zh-p" style="color:#666;">基于引导词（无、过量、不足、反向等）对P&amp;ID进行系统性分析；团队式</span></td>
+        <td><span class="en-p">Complex continuous processes; most rigorous and most commonly used</span><span class="zh-p" style="color:#666;">复杂连续工艺；最严格、最常用</span></td>
+      </tr>
+      <tr>
+        <td><span class="en-p"><strong>What-If</strong></span><span class="zh-p" style="color:#666;">如果...会怎样</span></td>
+        <td><span class="en-p">Brainstorming questions ("What if a valve fails open?") by a team</span><span class="zh-p" style="color:#666;">团队头脑风暴式提问（"如果阀门失效开启会怎样？"）</span></td>
+        <td><span class="en-p">Less complex processes; quick screening</span><span class="zh-p" style="color:#666;">较不复杂的工艺；快速筛查</span></td>
+      </tr>
+      <tr>
+        <td><span class="en-p"><strong>Checklist</strong></span><span class="zh-p" style="color:#666;">检查表</span></td>
+        <td><span class="en-p">Pre-prepared list of questions applied by experienced personnel</span><span class="zh-p" style="color:#666;">由经验丰富人员应用的预置问题清单</span></td>
+        <td><span class="en-p">Standardized, well-understood processes</span><span class="zh-p" style="color:#666;">标准化、充分了解的工艺</span></td>
+      </tr>
+      <tr>
+        <td><span class="en-p"><strong>What-If/Checklist</strong></span><span class="zh-p" style="color:#666;">组合式</span></td>
+        <td><span class="en-p">Combines brainstorming with a checklist</span><span class="zh-p" style="color:#666;">头脑风暴与检查表结合</span></td>
+        <td><span class="en-p">When structure plus flexibility is desired</span><span class="zh-p" style="color:#666;">需要结构化又需要灵活性时</span></td>
+      </tr>
+      <tr>
+        <td><span class="en-p"><strong>FMEA</strong> (Failure Modes &amp; Effects Analysis)</span><span class="zh-p" style="color:#666;">失效模式与影响分析</span></td>
+        <td><span class="en-p">Considers each equipment failure mode and its effects</span><span class="zh-p" style="color:#666;">逐一考虑每个设备失效模式及其影响</span></td>
+        <td><span class="en-p">Mechanical/equipment reliability focus</span><span class="zh-p" style="color:#666;">机械/设备可靠性重点</span></td>
+      </tr>
+      <tr>
+        <td><span class="en-p"><strong>Fault Tree Analysis (FTA)</strong></span><span class="zh-p" style="color:#666;">故障树分析</span></td>
+        <td><span class="en-p">Deductive, top-event (accident) traced down through AND/OR logic gates to root causes</span><span class="zh-p" style="color:#666;">演绎式，从顶事件（事故）通过AND/OR逻辑门向下追溯至根因</span></td>
+        <td><span class="en-p">Quantitative/boolean analysis of complex systems</span><span class="zh-p" style="color:#666;">复杂系统的定量/布尔分析</span></td>
+      </tr>
+    </table>
+
+    <h3><span class="bi-term"><span class="zh">变更管理</span> · <span class="en">Management of Change (MOC)</span><span class="vocab-star" data-term="Management of Change (MOC)">☆</span></span> — 要素 10 / Element 10</h3>
+    <p class="bi-p">
+      <span class="en-p">MOC is widely considered one of the most critical PSM elements because <strong>uncontrolled change is a major cause of process incidents</strong>. Key points:</span>
+      <span class="zh-p" style="color:#666;">MOC被广泛认为是最关键的PSM要素之一，因为<strong>不受控制的变更是工艺事故的主要原因</strong>。关键要点：</span>
+    </p>
+    <ul>
+      <li class="bi-li">
+        <span class="en-li">Applies to changes in process chemicals, technology, equipment, procedures, and facilities</span>
+        <span class="zh-li">适用于工艺化学品、技术、设备、程序和设施的变更</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">Does NOT apply to "replacements in kind" (replacing something with an identical or functionally equivalent item)</span>
+        <span class="zh-li">不适用于"同类替换"（用相同或功能等同的物品替换）</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">Must review and authorize the change BEFORE it is implemented</span>
+        <span class="zh-li">必须在实施<strong>之前</strong>审查并批准变更</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">Employees affected by the change must be informed and trained before startup</span>
+        <span class="zh-li">受变更影响的员工必须在启动前得到通知和培训</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">PSI and operating procedures must be updated if the change makes them inaccurate</span>
+        <span class="zh-li">如果变更使PSI和操作规程不准确，必须予以更新</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Controlling the change:</strong> A change is considered "minor" if it does not affect process safety information or operating procedures; these may be handled by a simplified process. Any change that alters PSI or operating procedures is "major" and requires the full MOC procedure.</span>
+        <span class="zh-li"><strong>变更分级：</strong>如果变更不影响工艺安全信息或操作规程，则为"次要"变更，可采用简化流程处理。任何改变PSI或操作规程的变更为"重大"变更，需要完整的MOC程序。</span>
+      </li>
+    </ul>
+
+    <div class="important">
+      <strong>⚠ CSP 考试技巧 / Exam Tip:</strong><br>
+      <span class="en-p">A common exam scenario: "A maintenance supervisor replaces a valve with a different type because the original was not in stock. Does MOC apply?" Answer: YES — this is not a replacement in kind. MOC applies to any change not functionally identical to the original. Also note that changing a MATERIAL OF CONSTRUCTION (e.g., carbon steel gasket to a different material) triggers MOC even if dimensions are identical.</span>
+      <span class="zh-p" style="color:#666;">常见考题场景："维修主管因原件缺货，更换了一个不同类型的阀门。MOC是否适用？"答案：是——这不是同类替换。MOC适用于任何功能上与原件不完全相同的变更。还要注意：更换<strong>构造材料</strong>（如碳钢垫片改为其他材料）即使尺寸完全相同，也触发MOC。</span>
+    </div>
+
+    <div class="case-box">
+      <strong>📋 实际案例 / Case Study (MOC failure):</strong><br>
+      <span class="en-p">In the 2005 BP Texas City refinery explosion (15 deaths, 180+ injuries), the process startup sequence deviated from the written procedures during turnaround, and there was no effective MOC review for the changed startup procedure. The incident illustrates how failures in operating procedures and MOC — not just engineering — can cause catastrophic releases.</span>
+      <span class="zh-p" style="color:#666;">在2005年BP德克萨斯城炼油厂爆炸（15人死亡，180余人受伤）中，检修期间的工艺启动顺序偏离了书面程序，且对变更后的启动程序没有进行有效的MOC审查。该事件说明操作规程和MOC的失效——不仅是工程——也可能造成灾难性泄漏。</span>
+    </div>
+
+    <h3><span class="bi-term"><span class="zh">启动前安全审查</span> · <span class="en">Pre-Startup Safety Review (PSSR)</span><span class="vocab-star" data-term="Pre-Startup Safety Review (PSSR)">☆</span></span> — 要素 7 / Element 7</h3>
+    <p class="bi-p">
+      <span class="en-p">The PSSR applies to new facilities AND modified facilities when the modification requires a change in process safety information. It is the final check before introducing hazardous chemicals to a process. A PSSR is also required before restarting a process that has been shut down after a major incident.</span>
+      <span class="zh-p" style="color:#666;">PSSR适用于新设施以及需要更改工艺安全信息的改造设施。它是在向工艺引入危险化学品之前的最后检查。在重大事故停产后重新启动工艺前也需要PSSR。</span>
+    </p>
+
+    <h3>培训与审查频率汇总 / Training & Review Frequency Summary</h3>
+    <table class="bi-table">
+      <tr><th>要素 / Element</th><th>培训/审查频率 / Training/Review Frequency</th></tr>
+      <tr>
+        <td><span class="en-p">Initial Training / 初始培训</span></td>
+        <td><span class="en-p">Before working in a process</span><span class="zh-p" style="color:#666;">在工艺中工作之前</span></td>
+      </tr>
+      <tr>
+        <td><span class="en-p">Refresher Training / 复训</span></td>
+        <td><span class="en-p">At least every 3 years</span><span class="zh-p" style="color:#666;">至少每3年</span></td>
+      </tr>
+      <tr>
+        <td><span class="en-p">PHA Revalidation / PHA重新验证</span></td>
+        <td><span class="en-p">At least every 5 years</span><span class="zh-p" style="color:#666;">至少每5年</span></td>
+      </tr>
+      <tr>
+        <td><span class="en-p">Incident Investigation Initiation / 事故调查启动</span></td>
+        <td><span class="en-p">Within 48 hours</span><span class="zh-p" style="color:#666;">48小时内</span></td>
+      </tr>
+      <tr>
+        <td><span class="en-p">Incident Investigation Retention / 事故调查保留</span></td>
+        <td><span class="en-p">5 years</span><span class="zh-p" style="color:#666;">5年</span></td>
+      </tr>
+      <tr>
+        <td><span class="en-p">Compliance Audits / 合规审核</span></td>
+        <td><span class="en-p">At least every 3 years</span><span class="zh-p" style="color:#666;">至少每3年</span></td>
+      </tr>
+      <tr>
+        <td><span class="en-p">Audit Report Retention / 审核报告保留</span></td>
+        <td><span class="en-p">Two most recent reports</span><span class="zh-p" style="color:#666;">最近两份报告</span></td>
+      </tr>
+    </table>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-high">必考 HIGH</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "Is replacing a valve with a different type subject to MOC?" / "When is a PSSR required?"<br>
+        <strong>答题要点 / Key point:</strong> MOC适用于工艺化学品、技术、设备、程序、设施的<strong>任何变更</strong>（"同类替换 replacements in kind"除外）——换不同型号阀门、改构造材料都触发MOC。PSSR：新设施+需改变PSI的重大改造+重大事故后复产。BP Texas City案例=操作规程与MOC失效的典型。
+      </div>
+    </div>
+
+    <div class="confusion-box">
+      <div class="cb-label">⚖️ 易混淆对比 / Common Confusions:</div>
+      <table class="study-table">
+        <tr><th>MOC 变更管理</th><th>PSSR 启动前安全审查</th><th>关键区别 / Key Difference</th></tr>
+        <tr><td>管理"变更"本身的审批流程（变更前）</td><td>投料前的"最后检查"（变更后、开车前）</td><td>MOC管"能不能改"；PSSR管"改完之后能不能安全开车"。重大事故后停产重启也需要PSSR</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div id="quiz-group-3"></div>
+
+
+  <div class="knowledge-card">
+    <h2>2.4 <span class="bi-term"><span class="zh">PHA与HAZOP深入</span> · <span class="en">PHA & HAZOP in Depth</span></span></h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>29 CFR 1910.119(e) · Brauer Ch.24 · Brauer Ch.36</span>
+    </div>
+
+    <h3>HAZOP 原理 / HAZOP Methodology</h3>
+    <p class="bi-p">
+      <span class="en-p">HAZOP (Hazard and Operability Study) is the most rigorous and most frequently used PHA method. It uses <strong>guide words</strong> applied to <strong>process parameters</strong> (flow, pressure, temperature, level, composition, reaction) at each <strong>node</strong> (a section of the P&amp;ID) to identify possible deviations and their causes and consequences.</span>
+      <span class="zh-p" style="color:#666;">HAZOP（危害与可操作性研究）是最严格、最常用的PHA方法。它在每个<strong>节点</strong>（P&amp;ID的一段）上，将<strong>引导词</strong>应用于<strong>工艺参数</strong>（流量、压力、温度、液位、组成、反应），识别可能的偏差及其原因和后果。</span>
+    </p>
+
+    <table class="bi-table">
+      <tr><th>引导词 / Guide Word</th><th>含义 / Meaning</th><th>示例偏差 / Example Deviation</th></tr>
+      <tr><td>NONE / 无</td><td>No flow, no parameter</td><td>No flow in a line (blocked valve)</td></tr>
+      <tr><td>MORE OF / 过量</td><td>Higher than design</td><td>Higher flow, higher pressure, higher temperature</td></tr>
+      <tr><td>LESS OF / 不足</td><td>Lower than design</td><td>Lower level, lower pressure, low flow</td></tr>
+      <tr><td>REVERSE / 反向</td><td>Opposite direction</td><td>Backflow through a pump</td></tr>
+      <tr><td>PART OF / 部分</td><td>Wrong composition/phase</td><td>Two-phase flow instead of liquid</td></tr>
+      <tr><td>MORE THAN / 多于</td><td>Additional material</td><td>Extra reactant, contamination</td></tr>
+      <tr><td>LESS THAN / 少于</td><td>Missing component</td><td>Catalyst absent</td></tr>
+      <tr><td>OTHER THAN / 其他</td><td>Different condition</td><td>Wrong start-up sequence</td></tr>
+    </table>
+
+    <p class="bi-p">
+      <span class="en-p">For each deviation, the team evaluates <strong>causes, consequences, existing safeguards, and recommended actions</strong>, and assigns a risk rating. Actions must be tracked to closure and documented in the PHA report.</span>
+      <span class="zh-p" style="color:#666;">对每个偏差，团队评估<strong>原因、后果、现有防护措施和推荐行动</strong>，并赋予风险等级。行动项必须跟踪至关闭，并记录在PHA报告中。</span>
+    </p>
+
+    <h3>LOPA — 保护层分析 / Layer of Protection Analysis</h3>
+    <p class="bi-p">
+      <span class="en-p"><span class="bi-term"><span class="zh">保护层分析</span><span class="en">LOPA</span><span class="vocab-star" data-term="Layer of Protection Analysis (LOPA)">☆</span></span> is a semi-quantitative risk analysis that evaluates the <strong>independent protection layers (IPLs)</strong> between a cause and a consequence. Typical layers, from innermost to outermost:</span>
+      <span class="zh-p" style="color:#666;">保护层分析（LOPA）是一种半定量风险分析，评估原因与后果之间的<strong>独立保护层（IPL）</strong>。典型保护层由内到外：</span>
+    </p>
+    <ol>
+      <li class="bi-li">
+        <span class="en-li"><strong>Inherent safety design / 本质安全设计</strong> — design the hazard out (ISD strategies).</span>
+        <span class="zh-li">通过设计消除危害（ISD策略）。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Basic process control system (BPCS) / 基础工艺控制系统</strong> — normal control loops and interlocks.</span>
+        <span class="zh-li">正常控制回路和联锁。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Alarms and operator intervention / 报警与操作员干预</strong>.</span>
+        <span class="zh-li">报警与操作员干预。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Safety instrumented functions (SIF) / 安全仪表功能</strong> — SIS trips that shut down the process.</span>
+        <span class="zh-li">安全仪表系统（SIS）停车功能。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Physical protection / 物理保护</strong> — relief valves, rupture discs, dikes, blast walls.</span>
+        <span class="zh-li">泄压阀、爆破片、围堤、防爆墙。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Plant emergency response / 工厂应急响应</strong>, and finally <strong>community emergency response / 社区应急响应</strong>.</span>
+        <span class="zh-li">工厂应急响应，最后是社区应急响应。</span>
+      </li>
+    </ol>
+    <p class="bi-p">
+      <span class="en-p">A layer is "independent" only if it is not affected by the initiating event and is separate from other layers. LOPA is used to determine whether the number and reliability of IPLs is adequate — often to size Safety Instrumented Functions.</span>
+      <span class="zh-p" style="color:#666;">只有当保护层不受初始事件影响且与其他层相互独立时才是"独立的"。LOPA用于判断保护层的数量和可靠性是否充分——通常用于确定安全仪表功能的规模。</span>
+    </p>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-high">必考 HIGH</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "Which PHA method uses guide words on process parameters?" / "What does LOPA evaluate?"<br>
+        <strong>答题要点 / Key point:</strong> HAZOP=引导词×参数（flow/pressure/temperature/level）在节点上找偏差——最严格、最常用。LOPA=半定量，评估<strong>独立保护层(IPL)</strong>是否充分，常用以确定SIF规模。PHA复验每5年一次。方法适用性：What-If快、FMEA系统性、FTA自上而下、HAZOP最全。
+      </div>
+    </div>
+  </div>
+
+  <div id="quiz-group-4"></div>
+
+
+  <div class="knowledge-card">
+    <h2>2.5 <span class="bi-term"><span class="zh">机械完整性与泄压</span> · <span class="en">Mechanical Integrity & Pressure Relief</span></span></h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>29 CFR 1910.119(j) · Brauer Ch.24 · Brauer Ch.19</span>
+    </div>
+
+    <h3>机械完整性 — 要素 8 / Mechanical Integrity — Element 8</h3>
+    <p class="bi-p">
+      <span class="en-p">Mechanical integrity (MI) ensures that process equipment remains in a fit-for-service condition. It is a <strong>systematic preventive maintenance program</strong>, not a one-time inspection.</span>
+      <span class="zh-p" style="color:#666;">机械完整性（MI）确保工艺设备保持可服役状态。它是<strong>系统性的预防性维护计划</strong>，而非一次性检查。</span>
+    </p>
+    <ul>
+      <li class="bi-li">
+        <span class="en-li"><strong>Covered equipment:</strong> Pressure vessels, storage tanks, piping, relief and vent systems, emergency shutdown systems, controls (monitoring devices, sensors, alarms), pumps.</span>
+        <span class="zh-li"><strong>涵盖设备：</strong>压力容器、储罐、管道、泄压和排放系统、紧急停车系统、控制装置（监控设备、传感器、报警器）、泵。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Requirements:</strong> Written procedures, training of MI personnel, inspections and tests per <strong>RAGAGEP</strong>, documentation of defects and corrections, and quality assurance for new/repaired equipment.</span>
+        <span class="zh-li"><strong>要求：</strong>书面程序、MI人员培训、依据<strong>RAGAGEP</strong>进行的检查和测试、缺陷及纠正记录、新购/维修设备的质量保证。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>RAGAGEP / 公认优良工程实践:</strong> Recognized and Generally Accepted Good Engineering Practices — e.g., ASME Boiler and Pressure Vessel Code, API 510 (pressure vessel inspection), API 570 (piping inspection), API 653 (storage tanks), NBIC.</span>
+        <span class="zh-li"><strong>RAGAGEP：</strong>公认和普遍接受的优良工程实践——如ASME锅炉压力容器规范、API 510（压力容器检验）、API 570（管道检验）、API 653（储罐）、NBIC。</span>
+      </li>
+    </ul>
+
+    <div class="important">
+      <strong>⚠ CSP 考试技巧 / Exam Tip:</strong><br>
+      <span class="en-p">Mechanical integrity is the element that MOST directly prevents equipment failure. A classic question: "Which PSM element ensures process equipment is inspected and tested to prevent deterioration?" → Mechanical Integrity (Element 8). Distinguish it from MOC (managing changes) and PHA (identifying hazards).</span>
+      <span class="zh-p" style="color:#666;">机械完整性是<strong>最直接</strong>防止设备失效的要素。经典题目："哪个PSM要素确保工艺设备被检查和测试以防止劣化？"→机械完整性（要素8）。要将其与MOC（管理变更）和PHA（识别危害）区分开。</span>
+    </div>
+
+    <h3><span class="zh">泄压系统</span> · <span class="en">Pressure Relief Systems</span></h3>
+    <p class="bi-p">
+      <span class="en-p">Pressure relief is a critical layer of protection in process safety. Key exam points:</span>
+      <span class="zh-p" style="color:#666;">泄压是工艺安全中的关键保护层。考试要点：</span>
+    </p>
+    <ul>
+      <li class="bi-li">
+        <span class="en-li">Relief devices must be sized for worst-case credible scenarios (external fire, runaway reaction, blocked outlet, thermal expansion, utility failure).</span>
+        <span class="zh-li">泄压装置必须按照最坏可信情景（外部火灾、失控反应、出口堵塞、热膨胀、公用工程失效）确定尺寸。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">Relief system design basis is required PSI documentation (Element 2). Relief device mechanical integrity falls under Element 8 — must be inspected/tested per RAGAGEP.</span>
+        <span class="zh-li">泄压系统设计依据是要求的PSI文件（要素2）。泄压装置的机械完整性属于要素8——必须按照RAGAGEP进行检查/测试。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">Relief discharge must be routed to a safe location (flare, scrubber, safe atmosphere).</span>
+        <span class="zh-li">泄放物必须排放到安全位置（火炬、洗涤器、安全大气）。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Safety relief valve (SRV):</strong> A spring-loaded, automatic pressure-relieving device actuated by the static pressure in the vessel. Recloses when pressure returns below the set point.</span>
+        <span class="zh-li"><strong>安全泄压阀（SRV）：</strong>由容器内静压促动的弹簧式自动泄压装置。压力回落到设定点以下时重新关闭。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Rupture disc:</strong> A non-reclosing device that bursts at a set pressure. Faster response than an SRV but must be replaced after activation. Often installed upstream of an SRV to isolate it from process contaminants.</span>
+        <span class="zh-li"><strong>爆破片：</strong>在设定压力下爆破的不可复位装置。响应比SRV快，但启动后必须更换。常安装在SRV上游，使其与工艺污染物隔离。</span>
+      </li>
+    </ul>
+
+    <table class="bi-table">
+      <tr><th>特征 / Feature</th><th>安全泄压阀 SRV</th><th>爆破片 Rupture Disc</th></tr>
+      <tr>
+        <td><span class="en-p">Reclosing / 可复位</span></td>
+        <td><span class="en-p">Yes</span><span class="zh-p" style="color:#666;">是</span></td>
+        <td><span class="en-p">No — must be replaced</span><span class="zh-p" style="color:#666;">否——必须更换</span></td>
+      </tr>
+      <tr>
+        <td><span class="en-p">Response speed / 响应速度</span></td>
+        <td><span class="en-p">Slower</span><span class="zh-p" style="color:#666;">较慢</span></td>
+        <td><span class="en-p">Very fast</span><span class="zh-p" style="color:#666">非常快</span></td>
+      </tr>
+      <tr>
+        <td><span class="en-p">Leakage / 泄漏</span></td>
+        <td><span class="en-p">Can leak</span><span class="zh-p" style="color:#666;">可能泄漏</span></td>
+        <td><span class="en-p">Zero leakage seal</span><span class="zh-p" style="color:#666">零泄漏密封</span></td>
+      </tr>
+      <tr>
+        <td><span class="en-p">Typical use / 典型用途</span></td>
+        <td><span class="en-p">Vessels, systems</span><span class="zh-p" style="color:#666;">容器、系统</span></td>
+        <td><span class="en-p">Upstream of SRV, dust explosions, high-rate events</span><span class="zh-p" style="color:#666;">SRV上游、粉尘爆炸、高速事件</span></td>
+      </tr>
+    </table>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-high">必考 HIGH</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "Which device recloses after a relief event?" / "Which is installed upstream of a relief valve to isolate it from process fluids?"<br>
+        <strong>答题要点 / Key point:</strong> MI=系统性预防性维护（按RAGAGEP检验测试），覆盖压力容器/管道/泄压/ESD/控制/泵。常考对比：SRV可复位但慢、可能泄漏；爆破片不可复位（爆后更换）但快、零泄漏。检查与测试须遵循RAGAGEP。
+      </div>
+    </div>
+
+    <div class="confusion-box">
+      <div class="cb-label">⚖️ 易混淆对比 / Common Confusions:</div>
+      <table class="study-table">
+        <tr><th>Safety Relief Valve (SRV) 安全泄压阀</th><th>Rupture Disc 爆破片</th><th>关键区别 / Key Difference</th></tr>
+        <tr><td>可复位、响应较慢、可能泄漏、用于容器/系统</td><td>爆破后必须更换、响应极快、零泄漏密封</td><td>爆破片响应快且零泄漏，常用于SRV上游隔离工艺污染物；SRV在泄放后可复位继续使用</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div id="quiz-group-5"></div>
+
+
+  <div class="knowledge-card">
+    <h2>2.6 <span class="bi-term"><span class="zh">化学相容性与构造材料</span> · <span class="en">Chemical Compatibility & Materials of Construction</span></span></h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>29 CFR 1910.119(d) · Brauer Ch.24</span>
+    </div>
+
+    <h3><span class="zh">化学相容性</span> · <span class="en">Chemical Compatibility</span></h3>
+    <p class="bi-p">
+      <span class="en-p">Chemical compatibility is a fundamental process safety consideration — incompatible materials can cause violent reactions, accelerated corrosion, or catastrophic equipment failure.</span>
+      <span class="zh-p" style="color:#666;">化学相容性是工艺安全的基本考量——不相容物质可能导致剧烈反应、加速腐蚀或灾难性设备失效。</span>
+    </p>
+    <ul>
+      <li class="bi-li">
+        <span class="en-li">Materials of construction must be compatible with process chemicals throughout the full range of operating temperatures and pressures.</span>
+        <span class="zh-li">构造材料必须在整个操作温度和压力范围内与工艺化学品相容。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">Chemical compatibility data is part of the hazard information required in PSI (Element 2).</span>
+        <span class="zh-li">化学相容性数据是PSI（要素2）中要求的危害信息的一部分。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">Inadvertent mixing scenarios must be evaluated during the PHA. MOC review must re-assess compatibility whenever chemicals, materials, or operating conditions change.</span>
+        <span class="zh-li">意外混合情景必须在PHA期间评估。当化学品、材料或操作条件发生变更时，MOC审查必须重新评估相容性。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">Even a "replacement in kind" of a gasket, seal, or valve component must consider chemical compatibility — if the substitute material differs chemically, it triggers MOC.</span>
+        <span class="zh-li">即使是垫片、密封件或阀门组件的"同类替换"，也必须考虑化学相容性——如果替代材料的化学成分不同，则触发MOC。</span>
+      </li>
+    </ul>
+
+    <h3>危险反应性 / Hazardous Reactivity</h3>
+    <p class="bi-p">
+      <span class="en-p">Reactive chemicals can release energy violently when exposed to heat, shock, contamination, or mixing. The CSP exam tests common incompatibility pairs:</span>
+      <span class="zh-p" style="color:#666;">活性化学品在受热、冲击、污染或混合时可能剧烈释放能量。CSP考试考查常见的相容性禁忌配对：</span>
+    </p>
+    <table class="bi-table">
+      <tr><th>物质 / Substance</th><th>禁配物 / Incompatible With</th><th>后果 / Result</th></tr>
+      <tr>
+        <td><span class="en-p">Water-reactive metals (sodium, potassium)</span><span class="zh-p" style="color:#666;">遇水反应金属（钠、钾）</span></td>
+        <td><span class="en-p">Water</span><span class="zh-p" style="color:#666;">水</span></td>
+        <td><span class="en-p">Violent hydrogen generation, fire</span><span class="zh-p" style="color:#666;">剧烈产氢、火灾</span></td>
+      </tr>
+      <tr>
+        <td><span class="en-p">Acids (e.g., HCl)</span><span class="zh-p" style="color:#666;">酸（如HCl）</span></td>
+        <td><span class="en-p">Bases, cyanides, sulfides</span><span class="zh-p" style="color:#666;">碱、氰化物、硫化物</span></td>
+        <td><span class="en-p">Heat, toxic gas release</span><span class="zh-p" style="color:#666;">放热、有毒气体释放</span></td>
+      </tr>
+      <tr>
+        <td><span class="en-p">Oxidizers (peroxides, nitrates)</span><span class="zh-p" style="color:#666;">氧化剂（过氧化物、硝酸盐）</span></td>
+        <td><span class="en-p">Organic materials, reducing agents</span><span class="zh-p" style="color:#666;">有机物、还原剂</span></td>
+        <td><span class="en-p">Fire or explosion</span><span class="zh-p" style="color:#666;">火灾或爆炸</span></td>
+      </tr>
+      <tr>
+        <td><span class="en-p">Bleach (sodium hypochlorite)</span><span class="zh-p" style="color:#666;">漂白剂（次氯酸钠）</span></td>
+        <td><span class="en-p">Acids, ammonia</span><span class="zh-p" style="color:#666;">酸、氨</span></td>
+        <td><span class="en-p">Chlorine gas release</span><span class="zh-p" style="color:#666;">氯气释放</span></td>
+      </tr>
+      <tr>
+        <td><span class="en-p">Ammonia</span><span class="zh-p" style="color:#666;">氨</span></td>
+        <td><span class="en-p">Halogens, acids, bleach</span><span class="zh-p" style="color:#666;">卤素、酸、漂白剂</span></td>
+        <td><span class="en-p">Toxic gas, fire</span><span class="zh-p" style="color:#666;">有毒气体、火灾</span></td>
+      </tr>
+    </table>
+
+    <h3><span class="zh">构造材料</span> · <span class="en">Materials of Construction</span></h3>
+    <p class="bi-p">
+      <span class="en-p">Materials of construction data is explicitly required as PSI under Element 2. It is closely linked to both chemical compatibility (above) and mechanical integrity (Element 8).</span>
+      <span class="zh-p" style="color:#666;">构造材料数据是要素2明确要求的PSI。它与化学相容性（上述）和机械完整性（要素8）密切相关。</span>
+    </p>
+    <ul>
+      <li class="bi-li">
+        <span class="en-li">Materials must be specified considering: corrosion resistance, temperature limits, pressure ratings, and compatibility with all process fluids (including cleaning and utility fluids).</span>
+        <span class="zh-li">材料规格必须考虑：耐腐蚀性、温度限制、压力等级以及与所有工艺流体（包括清洗和公用工程流体）的相容性。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">When a material of construction is changed in kind (e.g., carbon steel to stainless steel, or a different gasket material), MOC is triggered — even if the physical dimensions are identical.</span>
+        <span class="zh-li">当构造材料发生同类变更时（如碳钢改为不锈钢，或不同的垫片材料），触发MOC——即使物理尺寸完全相同。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Common metals / 常见金属:</strong> Carbon steel (strong, cheap, corrodes), stainless steel (corrosion-resistant, costlier), aluminum, copper, titanium (exotic, high cost). Non-metallics: PTFE, PVC, fiberglass-reinforced plastic (FRP).</span>
+        <span class="zh-li"><strong>常见金属：</strong>碳钢（强度高、便宜、易腐蚀）、不锈钢（耐腐蚀、较贵）、铝、铜、钛（稀有、高成本）。非金属：PTFE、PVC、玻璃钢（FRP）。</span>
+      </li>
+    </ul>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-high">必考 HIGH</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "When does changing a gasket material trigger MOC?"<br>
+        <strong>答题要点 / Key point:</strong> 相容性数据属于PSI（要素2）的危害信息部分；意外混合情景须在PHA中评估。陷阱：改变构造材料（如碳钢→不锈钢、换垫片材料）<strong>即使尺寸相同</strong>也触发MOC。选材须考虑耐腐蚀、温度、压力、与全部工艺流体相容。
+      </div>
+    </div>
+
+    <div class="confusion-box">
+      <div class="cb-label">⚖️ 易混淆对比 / Common Confusions:</div>
+      <table class="study-table">
+        <tr><th>Replacements in kind 同类替换</th><th>Change in materials 构造材料变更</th><th>关键区别 / Key Difference</th></tr>
+        <tr><td>与原部件完全相同（功能+材料）→ 无需MOC</td><td>材料或型号不同（即使尺寸相同）→ 触发MOC</td><td>MOC豁免仅限"完全同类替换"；碳钢垫片换其他材料即触发MOC。BP Texas City即MOC失效典型案例</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div id="quiz-group-6"></div>
+
+
+  <div class="knowledge-card">
+    <h2>2.7 <span class="bi-term"><span class="zh">与EPA风险管理计划的关系</span> · <span class="en">Relationship to EPA Risk Management Program (RMP)</span><span class="vocab-star" data-term="Risk Management Program (RMP)">☆</span></span></h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>40 CFR Part 68 · CAA (1990) · Brauer Ch.24</span>
+    </div>
+
+    <p class="bi-p">
+      <span class="en-p"><span class="bi-term"><span class="zh">EPA风险管理计划</span><span class="en">EPA's Risk Management Program (RMP)</span></span>, under <strong>40 CFR Part 68</strong> of the Clean Air Act Amendments (1990), is the counterpart to OSHA PSM. While PSM focuses on <strong>worker safety</strong> (inside the fence line), RMP focuses on <strong>public and environmental protection</strong> (outside the fence line).</span>
+      <span class="zh-p" style="color:#666;">EPA的风险管理计划（RMP），依据《清洁空气法修正案》（1990年）<strong>40 CFR第68部分</strong>，是OSHA PSM的对应法规。PSM关注<strong>工人安全</strong>（厂区内部），而RMP关注<strong>公众和环境保护</strong>（厂区外部）。</span>
+    </p>
+
+    <table class="bi-table">
+      <tr><th>方面 / Aspect</th><th>OSHA PSM (29 CFR 1910.119)</th><th>EPA RMP (40 CFR 68)</th></tr>
+      <tr>
+        <td><span class="en-p">Focus / 关注点</span></td>
+        <td><span class="en-p">Worker safety and health</span><span class="zh-p" style="color:#666;">工人安全与健康</span></td>
+        <td><span class="en-p">Public health and environment</span><span class="zh-p" style="color:#666;">公众健康与环境</span></td>
+      </tr>
+      <tr>
+        <td><span class="en-p">Regulatory Authority / 监管机构</span></td>
+        <td><span class="en-p">OSHA</span><span class="zh-p" style="color:#666;">OSHA</span></td>
+        <td><span class="en-p">EPA</span><span class="zh-p" style="color:#666;">EPA</span></td>
+      </tr>
+      <tr>
+        <td><span class="en-p">Key Requirements / 主要要求</span></td>
+        <td><span class="en-p">14 elements of PSM management system</span><span class="zh-p" style="color:#666;">PSM管理体系的14个要素</span></td>
+        <td><span class="en-p">Hazard assessment (off-site consequence analysis), prevention program (elements overlap with PSM), emergency response program</span><span class="zh-p" style="color:#666;">危害评估（厂外后果分析）、预防计划（要素与PSM重叠）、应急响应计划</span></td>
+      </tr>
+      <tr>
+        <td><span class="en-p">Risk Communication / 风险沟通</span></td>
+        <td><span class="en-p">Internal to facility</span><span class="zh-p" style="color:#666;">设施内部</span></td>
+        <td><span class="en-p">Public disclosure (RMP must be submitted to EPA; worst-case and alternative release scenarios shared with community)</span><span class="zh-p" style="color:#666;">公开披露（RMP必须提交给EPA；最坏情况和替代泄漏情景与社区共享）</span></td>
+      </tr>
+      <tr>
+        <td><span class="en-p">Covered Substances / 适用物质</span></td>
+        <td><span class="en-p">HHCs per Appendix A + flammables &ge; 10,000 lbs</span><span class="zh-p" style="color:#666;">附录A中的HHC + 易燃物&ge;10,000磅</span></td>
+        <td><span class="en-p">List of 77 toxic substances + 63 flammable substances with thresholds</span><span class="zh-p" style="color:#666;">77种有毒物质 + 63种易燃物质列表，附有阈限值</span></td>
+      </tr>
+      <tr>
+        <td><span class="en-p">Program Levels / 计划层级</span></td>
+        <td><span class="en-p">Single comprehensive standard</span><span class="zh-p" style="color:#666;">单一综合标准</span></td>
+        <td><span class="en-p">Three tiers: Program 1 (worst-case no off-site impact), Program 2, Program 3 (most stringent, overlaps with PSM)</span><span class="zh-p" style="color:#666;">三个层级：计划1（最坏情况无厂外影响）、计划2、计划3（最严格，与PSM重叠）</span></td>
+      </tr>
+    </table>
+
+    <p class="bi-p">
+      <span class="en-p">A facility that complies with PSM has addressed most RMP prevention program requirements (there is significant overlap), but must still complete the hazard assessment, registration, and emergency response program elements unique to RMP.</span>
+      <span class="zh-p" style="color:#666;">符合PSM的设施已满足大部分RMP预防计划要求（存在显著重叠），但仍需完成RMP特有的危害评估、注册和应急响应计划要素。</span>
+    </p>
+
+    <div class="case-box">
+      <strong>📋 实际案例 / Case Study:</strong><br>
+      <span class="en-p">A chlorine repackaging plant holds 2,000 lbs of chlorine (above the 1,500-lb PSM and RMP threshold). It is covered by both PSM (worker protection) and RMP Program 3 (public protection). The plant must submit an RMP to EPA including a worst-case release scenario (WCS) showing the toxic vapor cloud extent, and coordinate emergency response with the local LEPC (Local Emergency Planning Committee).</span>
+      <span class="zh-p" style="color:#666;">一家氯气分装厂存有2,000磅氯气（超过1,500磅的PSM和RMP阈限量）。该厂同时适用PSM（工人保护）和RMP计划3（公众保护）。工厂必须向EPA提交RMP，包括显示有毒蒸气云范围的最坏泄漏情景（WCS），并与当地LEPC（地方应急计划委员会）协调应急响应。</span>
+    </div>
+
+    <div class="confusion-box">
+      <div class="cb-label">⚖️ 易混淆对比 / Common Confusions:</div>
+      <table class="study-table">
+        <tr><th>OSHA PSM (29 CFR 1910.119)</th><th>EPA RMP (40 CFR 68)</th><th>关键区别 / Key Difference</th></tr>
+        <tr><td>工人安全（厂区围栏内），OSHA执行</td><td>公众健康与环境（围栏外），EPA执行，需提交RMP并含最坏泄漏情景</td><td>围栏内外（fence line）是分水岭。同一工艺（如氯气≥1,500磅）可同时适用两者；RMP另有注册/危害评估/应急响应要求</td></tr>
+      </table>
+    </div>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-high">必考 HIGH</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "How does EPA RMP differ from OSHA PSM?"<br>
+        <strong>答题要点 / Key point:</strong> PSM=工人安全（围栏内）；RMP=公众与环境（围栏外），依据40 CFR 68/CAA修正案1990。RMP特有要求：向EPA注册登记、危害评估（含最坏泄漏情景WCS）、与LEPC协调应急。两者预防要素显著重叠。
+      </div>
+    </div>
+  </div>
+
+  <div id="quiz-group-7"></div>
+
+
+  <div class="knowledge-card">
+    <h2>2.8 <span class="bi-term"><span class="zh">工艺安全信息与流程图</span> · <span class="en">Process Safety Information & Diagrams</span><span class="vocab-star" data-term="Process Safety Information (PSI)">☆</span></span></h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>29 CFR 1910.119(d) · Brauer Ch.24</span>
+    </div>
+
+    <p class="bi-p">
+      <span class="en-p">The CSP11 exam blueprint (Domain 1, item 2) specifically names these process safety sub-topics: pressure relief, chemical compatibility, MOC, materials of construction, and process flow diagrams. While each is embedded in the 14 PSM elements above, they warrant focused review given their explicit mention in the exam blueprint.</span>
+      <span class="zh-p" style="color:#666;">CSP11考试蓝图（领域1，第2项）明确列出了以下工艺安全子主题：泄压、化学相容性、MOC、构造材料和工艺流程图。虽然它们都包含在上述14个PSM要素中，但鉴于考试蓝图的明确提及，值得重点复习。</span>
+    </p>
+
+    <h3><span class="zh">工艺流程图</span> · <span class="en">Process Flow Diagrams (PFDs)</span></h3>
+    <p class="bi-p">
+      <span class="en-p">PFDs, along with Piping and Instrumentation Diagrams (P&IDs), are essential PSI documents under Element 2. The three diagram types differ in detail:</span>
+      <span class="zh-p" style="color:#666;">PFD与管道仪表图(P&ID)是要素2下的重要PSI文件。三种图在详细程度上有所不同：</span>
+    </p>
+    <table class="bi-table">
+      <tr><th>图型 / Diagram</th><th>详细程度 / Detail Level</th><th>内容 / Contents</th><th>主要用途 / Primary Use</th></tr>
+      <tr>
+        <td><span class="en-p"><strong>Block Flow Diagram (BFD)</strong></span><span class="zh-p" style="color:#666;">方框流程图</span></td>
+        <td><span class="en-p">Simplest</span><span class="zh-p" style="color:#666;">最简单</span></td>
+        <td><span class="en-p">Unit operations as blocks, major flow paths</span><span class="zh-p" style="color:#666;">单元操作为方框、主要流路</span></td>
+        <td><span class="en-p">Conceptual overview</span><span class="zh-p" style="color:#666;">概念总览</span></td>
+      </tr>
+      <tr>
+        <td><span class="en-p"><strong>Process Flow Diagram (PFD)</strong></span><span class="zh-p" style="color:#666;">工艺流程图</span></td>
+        <td><span class="en-p">Medium</span><span class="zh-p" style="color:#666;">中等</span></td>
+        <td><span class="en-p">Major equipment, main piping, flow directions, T/P, mass &amp; energy balance</span><span class="zh-p" style="color:#666;">主要设备、主要管道、流向、温度/压力、物料与能量平衡</span></td>
+        <td><span class="en-p">Process design, PHA</span><span class="zh-p" style="color:#666;">工艺设计、PHA</span></td>
+      </tr>
+      <tr>
+        <td><span class="en-p"><strong>Piping &amp; Instrumentation Diagram (P&amp;ID)</strong></span><span class="zh-p" style="color:#666;">管道与仪表图</span></td>
+        <td><span class="en-p">Most detailed</span><span class="zh-p" style="color:#666;">最详细</span></td>
+        <td><span class="en-p">All piping, instruments, valves, control loops, safety devices</span><span class="zh-p" style="color:#666;">所有管道、仪表、阀门、控制回路、安全装置</span></td>
+        <td><span class="en-p">HAZOP, mechanical integrity, troubleshooting</span><span class="zh-p" style="color:#666;">HAZOP、机械完整性、故障排除</span></td>
+      </tr>
+    </table>
+
+    <h3>工艺安全信息的内容 / Contents of Process Safety Information</h3>
+    <p class="bi-p">
+      <span class="en-p">PSI (Element 2) is the foundation that all other PSM elements depend on. It has three major blocks:</span>
+      <span class="zh-p" style="color:#666;">PSI（要素2）是所有其他PSM要素依赖的基础。它包含三大块：</span>
+    </p>
+    <ol>
+      <li class="bi-li">
+        <span class="en-li"><strong>Information on the hazards of the chemicals:</strong> toxicity, permissible exposure limits, physical data (boiling point, flash point), reactivity data, corrosivity, thermal/chemical stability, hazardous effects of inadvertent mixing.</span>
+        <span class="zh-li"><strong>化学品危害信息：</strong>毒性、允许暴露限值、物理数据（沸点、闪点）、反应性数据、腐蚀性、热/化学稳定性、意外混合的危害影响。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Information on the technology of the process:</strong> block flow diagrams, process chemistry, maximum intended inventory, safe upper and lower limits for temperatures, pressures, flows, and compositions.</span>
+        <span class="zh-li"><strong>工艺技术信息：</strong>方框流程图、工艺化学、最大预期存量、温度、压力、流量和组成的安全上下限。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Information on the equipment in the process:</strong> materials of construction, P&amp;IDs, electrical classification, relief system design basis, ventilation system design, design codes and standards employed, safety systems (e.g., interlocks, detection or suppression systems).</span>
+        <span class="zh-li"><strong>工艺设备信息：</strong>构造材料、P&amp;ID、电气分类、泄压系统设计依据、通风系统设计、采用的设计规范和标准、安全系统（如联锁、检测或抑制系统）。</span>
+      </li>
+    </ol>
+
+    <h3>关键PSM考试数字速查 / Quick PSM Number Review</h3>
+    <table class="bi-table">
+      <tr><th>项 / Item</th><th>数值 / Value</th></tr>
+      <tr><td><span class="en-p">Flammable liquid/gas threshold</span><span class="zh-p" style="color:#666;">易燃液体/气体阈限量</span></td><td><span class="en-p">10,000 lbs in a single location</span><span class="zh-p" style="color:#666;">单一位置10,000磅</span></td></tr>
+      <tr><td><span class="en-p">Ammonia threshold</span><span class="zh-p" style="color:#666;">氨阈限量</span></td><td><span class="en-p">10,000 lbs</span><span class="zh-p" style="color:#666;">10,000磅</span></td></tr>
+      <tr><td><span class="en-p">Chlorine threshold</span><span class="zh-p" style="color:#666;">氯气阈限量</span></td><td><span class="en-p">1,500 lbs</span><span class="zh-p" style="color:#666;">1,500磅</span></td></tr>
+      <tr><td><span class="en-p">PHA revalidation</span><span class="zh-p" style="color:#666;">PHA重新验证</span></td><td><span class="en-p">Every 5 years</span><span class="zh-p" style="color:#666;">每5年</span></td></tr>
+      <tr><td><span class="en-p">Refresher training / Compliance audit</span><span class="zh-p" style="color:#666;">复训/合规审核</span></td><td><span class="en-p">Every 3 years</span><span class="zh-p" style="color:#666;">每3年</span></td></tr>
+      <tr><td><span class="en-p">Incident investigation start</span><span class="zh-p" style="color:#666;">事故调查启动</span></td><td><span class="en-p">Within 48 hours</span><span class="zh-p" style="color:#666;">48小时内</span></td></tr>
+      <tr><td><span class="en-p">Investigation report retention</span><span class="zh-p" style="color:#666;">调查报告保留</span></td><td><span class="en-p">5 years</span><span class="zh-p" style="color:#666;">5年</span></td></tr>
+      <tr><td><span class="en-p">Audit reports retained</span><span class="zh-p" style="color:#666;">审核报告保留</span></td><td><span class="en-p">Two most recent</span><span class="zh-p" style="color:#666;">最近两份</span></td></tr>
+    </table>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-high">必考 HIGH</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "Which of the following is part of Process Safety Information?"<br>
+        <strong>答题要点 / Key point:</strong> PSI三块：化学品危害信息（毒性/PEL/闪点/反应性/意外混合）、工艺技术信息（方框图/工艺化学/最大预期存量/安全上下限）、工艺设备信息（构造材料/P&ID/电气分类/泄压设计依据/安全系统）。所有其他PSM要素依赖PSI。
+      </div>
+    </div>
+
+    <div class="mnemonic">
+      <span class="mn-label">🧠 记忆口诀 / Mnemonic:</span>
+      <span class="mn-content"><strong>"Chem-Tech-Equip"</strong> — PSI三大块：<strong>Chem</strong>icals（化学品危害）、<strong>Tech</strong>nology（工艺技术）、<strong>Equip</strong>ment（设备信息）。中文"化-技-备"。考试问"PSI包含什么"就按这三大类排查。</span>
+    </div>
+  </div>
+
+  <div id="quiz-group-8"></div>
+
+
+  <!-- QUIZ SECTION -->
+  <div id="quiz-root"></div>
+
+</div>
+
+<script src="quiz-engine.js?v=11"></script>
+<script src="vocab-engine.js?v=11"></script>
+<script>
+CSPQuiz.init({
+  quizId: 'week-02-quiz',
+  quizTitle: 'Week 2 Quiz: Process Safety Management / 第2周测验：工艺安全管理',
+  quizTopic: 'Domain 1 — Advanced Application of Safety Principles',
+  containerId: 'quiz-root',
+  questions: [
+    {
+      text: 'Under OSHA PSM (29 CFR 1910.119), a process involving flammable liquids or gases is covered when the quantity in a single location is:',
+      group: 1,
+      options: [
+        '5,000 pounds or more',
+        '10,000 pounds or more',
+        '15,000 pounds or more',
+        '25,000 pounds or more'
+      ],
+      correct: 1,
+      explanation: 'PSM applies to processes involving flammable liquids or gases in quantities of 10,000 pounds (4,535 kg) or more in a single location. This is one of the most frequently tested PSM thresholds on the CSP exam. For listed toxic/reactive chemicals in Appendix A, each has its own threshold quantity (e.g., chlorine ≥ 1,500 lbs, ammonia ≥ 10,000 lbs).\n\nPSM适用于在单一位置数量达到10,000磅（4,535千克）或以上的易燃液体或气体工艺。这是CSP考试中最常考的PSM门槛之一。对于附录A中列出的有毒/活性化学品，每种都有各自的阈限量（如氯气≥1,500磅，氨≥10,000磅）。'
+    },
+    {
+      text: 'Which of the following is NOT one of the 14 elements of Process Safety Management under 29 CFR 1910.119?',
+      group: 1,
+      options: [
+        'Process Hazard Analysis (PHA)',
+        'Management of Change (MOC)',
+        'Job Safety Analysis (JSA)',
+        'Pre-Startup Safety Review (PSSR)'
+      ],
+      correct: 2,
+      explanation: 'Job Safety Analysis (JSA), also called Job Hazard Analysis (JHA), is a general safety tool for analyzing individual job tasks — it is NOT a PSM element. The 14 PSM elements are: Employee Participation, PSI, PHA, Operating Procedures, Training, Contractors, PSSR, Mechanical Integrity, Hot Work Permit, MOC, Incident Investigation, Emergency Planning & Response, Compliance Audits, and Trade Secrets.\n\n工作安全分析（JSA），也称工作危害分析（JHA），是分析单个作业任务的通用安全工具——它不属于PSM要素。14个PSM要素是：员工参与、PSI、PHA、操作规程、培训、承包商、PSSR、机械完整性、动火作业许可证、MOC、事故调查、应急计划与响应、合规审核和商业秘密。'
+    },
+    {
+      text: 'Management of Change (MOC) procedures under PSM must address all of the following EXCEPT:',
+      group: 1,
+      options: [
+        'The technical basis for the proposed change',
+        'Impact of the change on employee safety and health',
+        'Modifications to operating procedures resulting from the change',
+        'Quarterly budget review for capital expenditures related to the change'
+      ],
+      correct: 3,
+      explanation: 'MOC must address: technical basis for the change, impact on safety and health, modifications to operating procedures, time period for the change, and authorization requirements. Budget review is not an MOC requirement under PSM. The key is that MOC focuses on safety implications, not financial matters.\n\nMOC必须涉及：变更的技术依据、对安全与健康的影响、对操作规程的修改、变更时间段和授权要求。预算审查不是PSM对MOC的要求。关键在于MOC关注的是安全影响，而非财务事项。'
+    },
+    {
+      text: 'A maintenance technician replaces a valve on a PSM-covered process with an identical make and model valve from the same manufacturer. Under PSM requirements, this action:',
+      group: 1,
+      options: [
+        'Requires a full MOC review before proceeding',
+        'Requires only a PSSR after completion',
+        'Is considered a "replacement in kind" and does not trigger MOC',
+        'Requires notification to OSHA within 24 hours'
+      ],
+      correct: 2,
+      explanation: 'A "replacement in kind" — replacing equipment with an identical or functionally equivalent item — does not require MOC. However, if the replacement valve had different specifications (different material, size, pressure rating, or type), MOC would apply. This distinction between "replacement in kind" and "change" is a key PSM concept.\n\n"同类替换"——用相同或功能等同的物品替换设备——不需要MOC。但是，如果替换阀门的规格不同（不同材料、尺寸、压力等级或类型），则需要MOC。"同类替换"与"变更"之间的区别是PSM的一个关键概念。'
+    },
+    {
+      text: 'Under PSM, Process Hazard Analyses (PHAs) must be updated and revalidated at least every:',
+      group: 1,
+      options: [
+        '3 years',
+        '5 years',
+        '7 years',
+        '10 years'
+      ],
+      correct: 1,
+      explanation: 'PHAs must be updated and revalidated at least every 5 years (1910.119(e)(6)). Note the different frequencies: PHA revalidation = 5 years, refresher training = 3 years, compliance audits = 3 years. The CSP exam often tests these different time intervals, so it is important to keep them straight.\n\nPHA必须至少每5年更新和重新验证一次（1910.119(e)(6)）。注意不同的频率：PHA重新验证=5年，复训=3年，合规审核=3年。CSP考试经常考查这些不同的时间间隔，因此区分清楚非常重要。'
+    },
+    {
+      text: 'Under the PSM standard, an incident investigation must be initiated within what time frame after the incident?',
+      group: 2,
+      options: [
+        '24 hours',
+        '48 hours',
+        '72 hours',
+        'One week'
+      ],
+      correct: 1,
+      explanation: 'PSM requires that incident investigations begin no later than 48 hours after the incident (1910.119(m)(2)). The investigation team must include at least one person knowledgeable in the process involved and a contract employee if the incident involved contractor work. The investigation report must be retained for 5 years.\n\nPSM要求事故调查不得晚于事故发生后48小时启动（1910.119(m)(2)）。调查团队必须包括至少一名了解涉及工艺的人员，若事故涉及承包商工作，则包括合同员工。调查报告必须保留5年。'
+    },
+    {
+      text: 'Which of the following statements BEST describes the relationship between OSHA PSM (29 CFR 1910.119) and EPA RMP (40 CFR 68)?',
+      group: 2,
+      options: [
+        'They are identical standards enforced by different agencies',
+        'PSM focuses on worker safety inside the facility; RMP focuses on protecting the public and environment outside the facility',
+        'RMP replaced PSM when it was enacted in 1996',
+        'PSM only applies to chemical manufacturing while RMP applies to all industries'
+      ],
+      correct: 1,
+      explanation: 'PSM (OSHA) focuses on protecting workers from catastrophic releases — "inside the fence line." RMP (EPA) focuses on protecting the public, first responders, and the environment — "outside the fence line." Both were prompted by major incidents (Bhopal, Phillips 66, etc.) and have overlapping prevention requirements, but RMP adds hazard assessment, public disclosure, and emergency response coordination with community agencies.\n\nPSM（OSHA）关注保护工人免受灾难性泄漏——"厂区内"。RMP（EPA）关注保护公众、应急响应人员和环境——"厂区外"。两者均由重大事故（博帕尔、Phillips 66等）推动，并有重叠的预防要求，但RMP增加了危害评估、公开披露和与社区机构的应急响应协调。'
+    },
+    {
+      text: 'The Pre-Startup Safety Review (PSSR) under PSM must confirm all of the following EXCEPT:',
+      group: 2,
+      options: [
+        'Construction and equipment meet design specifications',
+        'Safety, operating, maintenance, and emergency procedures are in place',
+        'A competitive bidding process was used for all contractor work',
+        'Training of each employee involved in operating the process has been completed'
+      ],
+      correct: 2,
+      explanation: 'The PSSR must confirm that: (1) construction/equipment meets design specs, (2) safety/operating/maintenance/emergency procedures are in place, (3) a PHA has been performed and recommendations resolved or implemented, and (4) training is complete. There is no requirement related to competitive bidding — procurement methods are not a safety concern under PSM. The PSSR applies to both new and significantly modified facilities.\n\nPSSR必须确认：(1) 施工/设备符合设计规范，(2) 安全/操作/维护/应急程序已到位，(3) PHA已完成且建议已解决或实施，(4) 培训已完成。没有与竞争性招标相关的要求——采购方法不是PSM关注的安全问题。PSSR适用于新设施和重大改造的设施。'
+    },
+    {
+      text: 'Which PSM element is MOST directly responsible for preventing process equipment failure through inspections, testing, and preventive maintenance?',
+      group: 2,
+      options: [
+        'Management of Change',
+        'Mechanical Integrity',
+        'Process Hazard Analysis',
+        'Employee Participation'
+      ],
+      correct: 1,
+      explanation: 'Mechanical Integrity (Element 8) maintains the ongoing integrity of process equipment through written procedures, training, inspections and tests per RAGAGEP, and quality assurance. MOC manages changes, PHA identifies hazards, and Employee Participation involves workers in the program.\n\n机械完整性（要素8）通过书面程序、培训、按RAGAGEP进行的检查和测试以及质量保证，维护工艺设备的持续完整性。MOC管理变更，PHA识别危害，员工参与让工人参与计划。'
+    },
+    {
+      text: 'A facility replaces a carbon steel gasket with a gasket made of a different, more expensive material — the dimensions are identical. Under PSM, this action:',
+      group: 2,
+      options: [
+        'Is a "replacement in kind" and requires no further action',
+        'Triggers MOC because the material of construction changed, even though dimensions are identical',
+        'Requires only that the purchase be logged in maintenance records',
+        'Requires a new PHA to be conducted immediately'
+      ],
+      correct: 1,
+      explanation: 'A change in material of construction is NOT a replacement in kind — even if physical dimensions are identical, a chemically different material can alter corrosion behavior, pressure rating, and compatibility. MOC must be triggered. A new PHA is not required merely for a gasket change; MOC review suffices.\n\n构造材料的变化不是"同类替换"——即使物理尺寸完全相同，化学性质不同的材料也可能改变腐蚀行为、压力等级和相容性。必须触发MOC。仅更换垫片不需要重新进行PHA；MOC审查即可。'
+    },
+    {
+      text: 'Under PSM, refresher training for employees involved in a covered process must be provided at least:',
+      group: 3,
+      options: ['Annually', 'Every 2 years', 'Every 3 years', 'Every 5 years'],
+      correct: 2,
+      explanation: 'Refresher training is required at least every 3 years (1910.119(g)(2)) — or more frequently if the employer determines it necessary. Note the contrast: PHA revalidation is every 5 years; compliance audits are every 3 years.\n\n复训必须至少每3年进行一次（1910.119(g)(2)）——若雇主认为必要则更频繁。注意对比：PHA重新验证为每5年；合规审核为每3年。'
+    },
+    {
+      text: 'Which of the following is a required PSI (Element 2) document that shows all piping, instruments, valves, control loops, and safety devices in detail?',
+      group: 3,
+      options: [
+        'Block Flow Diagram (BFD)',
+        'Process Flow Diagram (PFD)',
+        'Piping and Instrumentation Diagram (P&ID)',
+        'Site general arrangement drawing'
+      ],
+      correct: 2,
+      explanation: 'The P&ID is the most detailed diagram — it shows all piping, instruments, valves, control loops, and safety devices, and is essential for HAZOP, mechanical integrity, and troubleshooting. The PFD shows major equipment and balances; the BFD is a simplified block overview.\n\nP&ID是最详细的图——显示所有管道、仪表、阀门、控制回路和安全装置，对HAZOP、机械完整性和故障排除至关重要。PFD显示主要设备和平衡；BFD是简化的方框总览。'
+    },
+    {
+      text: 'In a HAZOP study, the guide word "REVERSE" applied to a flow parameter identifies:',
+      group: 3,
+      options: [
+        'Lower flow than design',
+        'Backflow in a direction opposite to design intent',
+        'Higher flow than design',
+        'Contamination of the process stream'
+      ],
+      correct: 1,
+      explanation: '"REVERSE" identifies flow in the opposite direction to design intent, such as backflow through a pump that could drain a vessel or cause overpressure of upstream equipment. "LESS OF" covers lower flow; "MORE OF" covers higher flow.\n\n"反向"识别与设计意图方向相反的流动，如通过泵的回流，可能排空容器或导致上游设备超压。"不足"涵盖较低流量；"过量"涵盖较高流量。'
+    },
+    {
+      text: 'Under PSM, the incident investigation report must be retained for:',
+      group: 3,
+      options: ['2 years', '3 years', '5 years', '10 years'],
+      correct: 2,
+      explanation: 'PSM incident investigation reports must be retained for 5 years (1910.119(m)(7)). This is the same retention period as... note that compliance audit reports retain only the two most recent. The investigation must start within 48 hours.\n\nPSM事故调查报告必须保留5年（1910.119(m)(7)）。这与合规审核报告（仅保留最近两份）不同。调查必须在48小时内启动。'
+    },
+    {
+      text: 'A process uses chlorine at 2,000 lbs and ammonia at 8,000 lbs. Which statement is correct regarding PSM applicability?',
+      group: 3,
+      options: [
+        'PSM does not apply because neither chemical exceeds its threshold',
+        'PSM applies because chlorine (2,000 lbs) exceeds its 1,500-lb threshold quantity',
+        'PSM applies only if the combined weight exceeds 10,000 lbs',
+        'PSM applies only if both chemicals individually exceed their thresholds'
+      ],
+      correct: 1,
+      explanation: 'Chlorine has a TQ of 1,500 lbs, so 2,000 lbs triggers PSM. Ammonia (8,000 lbs) is below its 10,000-lb TQ. Thresholds are evaluated per chemical — they are not combined, and only ONE listed chemical at or above its TQ is needed.\n\n氯气的TQ为1,500磅，因此2,000磅触发PSM。氨（8,000磅）低于其10,000磅TQ。阈限量按每种化学品单独评估——不合并计算，且只需要一种列名化学品达到或超过其TQ即可。'
+    },
+    {
+      text: 'Which of the following is NOT an accepted PHA methodology under PSM?',
+      group: 4,
+      options: [
+        'HAZOP',
+        'What-If / Checklist',
+        'Failure Modes and Effects Analysis (FMEA)',
+        'Statistical Process Control (SPC) charting'
+      ],
+      correct: 3,
+      explanation: 'Accepted PHA methods are HAZOP, What-If, Checklist, What-If/Checklist, FMEA, and Fault Tree Analysis. SPC is a quality-control tool for monitoring process variation — it is not a hazard identification method.\n\n可接受的PHA方法有HAZOP、What-If、检查表、What-If/检查表、FMEA和故障树分析。SPC（统计过程控制）是监测工艺变异的质控工具——不是危害识别方法。'
+    },
+    {
+      text: 'The "Hot Work Permit" PSM element (Element 9) applies to which operations?',
+      group: 4,
+      options: [
+        'Any maintenance operation on a covered process',
+        'Welding, cutting, brazing, grinding, or other spark-producing operations on or near a covered process',
+        'Any work inside a confined space',
+        'Routine production operations in the control room'
+      ],
+      correct: 1,
+      explanation: 'The hot work permit is required before welding, cutting, brazing, grinding, or other spark/flame-producing operations on or near a covered process. It must be issued before work begins and specify the date, the object to be worked on, and the duration of validity.\n\n动火作业许可证必须在覆盖工艺上或附近的焊接、切割、钎焊、打磨或其他产生火花/火焰的作业前签发。必须在工作开始前签发，并注明日期、作业对象和有效期。'
+    },
+    {
+      text: 'A chemical plant conducts a PHA using HAZOP on a reactor system. For each deviation identified, the team must document all of the following EXCEPT:',
+      group: 4,
+      options: [
+        'Likely causes of the deviation',
+        'Consequences of the deviation',
+        'Existing safeguards that prevent or mitigate the deviation',
+        'The salary grades of the team members involved'
+      ],
+      correct: 3,
+      explanation: 'A HAZOP records causes, consequences, existing safeguards, risk ratings, and recommended actions for each deviation. Personnel salary is not relevant to hazard analysis documentation.\n\nHAZOP对每个偏差记录原因、后果、现有防护措施、风险等级和推荐行动。人员薪资与危害分析记录无关。'
+    },
+    {
+      text: 'Which of the following describes the difference between a safety relief valve (SRV) and a rupture disc?',
+      group: 4,
+      options: [
+        'An SRV is non-reclosing; a rupture disc recloses',
+        'An SRV is a reclosing device; a rupture disc is non-reclosing and must be replaced after activation',
+        'Both are reclosing devices used interchangeably',
+        'A rupture disc is always used alone, never with an SRV'
+      ],
+      correct: 1,
+      explanation: 'An SRV is a spring-loaded, reclosing device actuated by static pressure; a rupture disc bursts at set pressure and is non-reclosing (must be replaced). Rupture discs respond faster and provide a zero-leak seal; they are often installed upstream of an SRV.\n\nSRV是弹簧式可复位装置，由静压促动；爆破片在设定压力下爆破且不可复位（必须更换）。爆破片响应更快并提供零泄漏密封；常安装在SRV上游。'
+    },
+    {
+      text: 'Under the PSM Contractor element (Element 6), the employer must:',
+      group: 4,
+      options: [
+        'Provide all PPE to contract employees',
+        'Evaluate contractor safety performance, inform contractors of process hazards, and ensure contractor employees receive hazard training',
+        'Require contractors to hold PSM compliance audits',
+        'Take full legal liability for all contractor injuries'
+      ],
+      correct: 1,
+      explanation: 'Element 6 requires the employer to: evaluate contractor safety performance and programs; inform contractors of known fire, explosion, or toxic release hazards and of the employer\'s emergency action plan; and document that contractor employees have received hazard training. The contractor trains its own employees on the specific hazards.\n\n要素6要求雇主：评估承包商的安全表现和计划；告知承包商已知的火灾、爆炸或有毒泄漏危害以及雇主的应急行动计划；并记录承包商员工已接受危害培训。承包商负责培训其员工了解具体危害。'
+    },
+    {
+      text: 'A process safety information (PSI) file for a covered process is being compiled. Which item is part of "information on the technology of the process"?',
+      group: 5,
+      options: [
+        'The P&ID showing all instruments',
+        'The maximum intended inventory of the process',
+        'The materials of construction of the reactor',
+        'The electrical area classification drawing'
+      ],
+      correct: 1,
+      explanation: '"Technology of the process" includes block flow diagrams, process chemistry, maximum intended inventory, and safe upper/lower operating limits. Materials of construction, P&IDs, and electrical classification are "information on the equipment in the process."\n\n"工艺技术"包括方框流程图、工艺化学、最大预期存量以及安全上下限。构造材料、P&ID和电气分类属于"工艺设备信息"。'
+    },
+    {
+      text: 'Under the PSM Trade Secrets element (Element 14), an employer must:',
+      group: 5,
+      options: [
+        'Withhold trade secret information from all employees',
+        'Provide all information necessary for PSM compliance to those responsible for PSI, PHA, procedures, investigations, and audits, regardless of trade secret status',
+        'Share trade secrets only with OSHA inspectors',
+        'Redact all process chemistry from PSI documents'
+      ],
+      correct: 1,
+      explanation: 'Element 14 requires the employer to make all PSM-compliance information available to those compiling PSI, conducting PHAs, developing procedures, investigating incidents, planning emergency response, and performing audits — regardless of trade secret claims. Recipients may be required to sign confidentiality agreements.\n\n要素14要求雇主将所有PSM合规所需信息提供给编制PSI、开展PHA、制定程序、调查事故、规划应急响应和执行审核的人员——无论商业秘密主张如何。接受者可被要求签署保密协议。'
+    },
+    {
+      text: 'Under PSM, compliance audits must be conducted at least every:',
+      group: 5,
+      options: ['2 years', '3 years', '5 years', '10 years'],
+      correct: 1,
+      explanation: 'Compliance audits must be performed at least every 3 years (1910.119(o)). The audit team must include at least one person knowledgeable in the process. A report of findings must be developed, and the two most recent reports retained.\n\n合规审核必须至少每3年进行一次（1910.119(o)）。审核团队必须包括至少一名了解工艺的人员。必须编制发现报告，并保留最近两份报告。'
+    },
+    {
+      text: 'An EPA RMP Program 3 facility must submit which of the following to EPA that is NOT required under OSHA PSM?',
+      group: 5,
+      options: [
+        'Operating procedures',
+        'A Risk Management Plan including off-site consequence analysis (worst-case and alternative release scenarios)',
+        'Employee training records',
+        'A Process Hazard Analysis'
+      ],
+      correct: 1,
+      explanation: 'The unique RMP requirements are the off-site consequence analysis (worst-case release scenario and alternative release scenario), the registration submission to EPA, and the public/community disclosure of the RMP. Operating procedures, training, and PHA overlap with PSM.\n\nRMP独有的要求是厂外后果分析（最坏泄漏情景和替代泄漏情景）、向EPA的注册提交以及RMP的公众/社区披露。操作规程、培训和PHA与PSM重叠。'
+    },
+    {
+      text: 'Which of the following is NOT covered under PSM?',
+      group: 6,
+      options: [
+        'A process with 15,000 lbs of propane (flammable liquid) in storage',
+        'A retail propane filling station selling propane to the public',
+        'A process containing 2,000 lbs of chlorine',
+        'A process with 12,000 lbs of ammonia used as a refrigerant'
+      ],
+      correct: 1,
+      explanation: 'Retail facilities are specifically excluded from PSM coverage. Storage of 15,000 lbs of propane (≥10,000 lbs) is covered; chlorine at 2,000 lbs exceeds its 1,500-lb TQ and is covered; ammonia at 12,000 lbs exceeds its 10,000-lb TQ and is covered.\n\n零售设施被明确排除在PSM覆盖之外。储存15,000磅丙烷（≥10,000磅）适用；2,000磅氯气超过其1,500磅TQ，适用；12,000磅氨超过其10,000磅TQ，适用。'
+    },
+    {
+      text: 'In a LOPA study, which of the following is a true "independent protection layer"?',
+      group: 6,
+      options: [
+        'The basic process control system, if the initiating event is a BPCS control loop failure',
+        'A safety relief valve that is separate from and not affected by the initiating event',
+        'Operator training, since it is documented and repeated',
+        'The plant alarm, if the initiating event is the alarm being ignored'
+      ],
+      correct: 1,
+      explanation: 'An IPL must be independent of the initiating event and other layers. A relief valve separate from the initiating event qualifies. If the initiating event IS a BPCS failure, that BPCS loop cannot count as an IPL. Training is not a quantifiable IPL; an alarm that is the initiating event cannot be its own safeguard.\n\nIPL必须独立于初始事件和其他层。与初始事件无关的泄压阀符合条件。如果初始事件本身就是BPCS失效，则该BPCS回路不能算作IPL。培训不是可量化的IPL；作为初始事件的报警不能作为其自身的防护。'
+    },
+    {
+      text: 'Which PSM element requires the employer to ensure that a covered process is reviewed before startup to confirm that construction meets design specifications and training is complete?',
+      group: 6,
+      options: [
+        'Pre-Startup Safety Review (PSSR)',
+        'Process Hazard Analysis',
+        'Mechanical Integrity',
+        'Operating Procedures'
+      ],
+      correct: 0,
+      explanation: 'The Pre-Startup Safety Review (Element 7) is the final check before introducing hazardous chemicals to a new or significantly modified process. It confirms construction/equipment meets design specs, procedures are in place, PHA recommendations are resolved, and training is complete.\n\n启动前安全审查（要素7）是在向新工艺或重大改造工艺引入危险化学品之前的最后检查。它确认施工/设备符合设计规范、程序已到位、PHA建议已解决、培训已完成。'
+    },
+    {
+      text: 'Under PSM, which of the following changes would NOT trigger a Management of Change review?',
+      group: 6,
+      options: [
+        'Changing a process chemical from a 50% solution to a 90% solution',
+        'Replacing a failed pump with an identical make and model',
+        'Raising the maximum operating temperature of a reactor',
+        'Switching the control system from pneumatic to digital (DCS)'
+      ],
+      correct: 1,
+      explanation: 'A "replacement in kind" — an identical or functionally equivalent item — does not require MOC. Changing concentration, operating temperature limits, or the control system type all alter the process and require MOC.\n\n"同类替换"——相同或功能等同的物品——不需要MOC。改变浓度、操作温度上限或控制系统类型都会改变工艺，需要MOC。'
+    },
+    {
+      text: 'The PSM standard requires that operating procedures cover which operating phase?',
+      group: 7,
+      options: [
+        'Only normal operations',
+        'Only emergency operations',
+        'Initial startup, normal operations, temporary operations, emergency shutdown, emergency operations, normal shutdown, and startup after turnaround',
+        'Only initial startup and normal shutdown'
+      ],
+      correct: 2,
+      explanation: 'Operating procedures must cover all operating phases: initial startup, normal operations, temporary operations, emergency shutdown, emergency operations, normal shutdown, and startup following a turnaround. They must also state operating limits, consequences of deviation, and steps to correct deviations.\n\n操作规程必须涵盖所有操作阶段：初始启动、正常运行、临时操作、紧急停车、紧急操作、正常停车和检修后启动。还必须说明操作限值、偏差后果和纠正偏差的步骤。'
+    },
+    {
+      text: 'Which of the following best describes RAGAGEP as used in PSM Mechanical Integrity?',
+      group: 7,
+      options: [
+        'A government mandate to use only new equipment',
+        'Recognized and Generally Accepted Good Engineering Practices — the codes and standards used to guide inspection and testing (e.g., ASME BPV Code, API 510/570/653)',
+        'A random audit process for gas and pressure systems',
+        'A training requirement for all mechanical engineers'
+      ],
+      correct: 1,
+      explanation: 'RAGAGEP stands for Recognized and Generally Accepted Good Engineering Practices. It includes codes and standards such as the ASME Boiler and Pressure Vessel Code, API 510 (vessels), API 570 (piping), and API 653 (tanks) that guide how inspections and tests are performed under Element 8.\n\nRAGAGEP指公认和普遍接受的优良工程实践。它包含诸如ASME锅炉压力容器规范、API 510（容器）、API 570（管道）和API 653（储罐）等规范和标准，指导要素8下如何进行检查和测试。'
+    },
+    {
+      text: 'Which of the following hazard descriptions is NOT a required element of a PHA?',
+      group: 7,
+      options: [
+        'Hazards of the process',
+        'Facility siting considerations',
+        'Human factors',
+        'The market price of the process chemicals'
+      ],
+      correct: 3,
+      explanation: 'A PHA must address: hazards of the process, previous incidents, engineering and administrative controls, consequences of control failure, facility siting, human factors, and qualitative evaluation of safety/health effects on employees. Chemical market pricing is not a hazard analysis subject.\n\nPHA必须涉及：工艺危害、以往事故、工程和行政控制、控制失效的后果、设施选址、人因工程以及对员工安全/健康影响的定性评估。化学品市场价格不属于危害分析内容。'
+    },
+    {
+      text: 'A compliance audit under PSM must be performed by:',
+      group: 7,
+      options: [
+        'Only OSHA inspectors',
+        'A team that includes at least one person knowledgeable in the process being audited',
+        'External third-party consultants exclusively',
+        'The facility safety manager alone'
+      ],
+      correct: 1,
+      explanation: 'The audit team must include at least one person knowledgeable in the process being audited (1910.119(o)(2)). The audit may be internal or external, but the process-knowledge requirement is mandatory.\n\n审核团队必须包括至少一名了解被审核工艺的人员（1910.119(o)(2)）。审核可以是内部或外部的，但了解工艺的要求是强制性的。'
+    },
+    {
+      text: 'Which OSHA standard section requires the employer to provide an emergency action plan that PSM references for Element 12 (Emergency Planning and Response)?',
+      group: 8,
+      options: [
+        '29 CFR 1910.38(a)',
+        '29 CFR 1910.95',
+        '29 CFR 1910.120',
+        '29 CFR 1910.212'
+      ],
+      correct: 0,
+      explanation: 'PSM Element 12 requires developing and implementing an emergency action plan per 1910.38(a) for the entire plant, plus procedures for handling small releases. 1910.120 is HAZWOPER; 1910.95 is noise; 1910.212 is machine guarding.\n\nPSM要素12要求依据1910.38(a)为全厂制定并实施应急行动计划，并制定处理小型泄漏的程序。1910.120是HAZWOPER；1910.95是噪声；1910.212是机械防护。'
+    },
+    {
+      text: 'Which of the following is TRUE about the relationship between PSM and the Clean Air Act Amendments of 1990?',
+      group: 8,
+      options: [
+        'PSM was enacted to replace the Clean Air Act',
+        'The Clean Air Act Amendments of 1990 authorized EPA to develop RMP (40 CFR 68), the environmental counterpart to PSM',
+        'PSM and RMP are enforced by the same federal agency',
+        'The Clean Air Act applies only to mobile sources'
+      ],
+      correct: 1,
+      explanation: 'Section 112(r) of the Clean Air Act Amendments (1990) required EPA to issue RMP regulations (40 CFR 68). PSM (OSHA) and RMP (EPA) are companion programs addressing process safety from worker and public perspectives respectively — enforced by different agencies.\n\n《清洁空气法修正案》（1990年）第112(r)条要求EPA颁布RMP法规（40 CFR 68）。PSM（OSHA）和RMP（EPA）是姊妹计划，分别从工人和公众角度处理工艺安全——由不同机构执行。'
+    },
+    {
+      text: 'A process change is proposed that increases the maximum intended inventory of a flammable intermediate. Under PSM, this requires:',
+      group: 8,
+      options: [
+        'No action, since inventory is not a safety parameter',
+        'A MOC review, and if the change affects process safety information, a PSSR before startup',
+        'Only an update to the accounting department records',
+        'Immediate notification to EPA before implementation'
+      ],
+      correct: 1,
+      explanation: 'A change in maximum intended inventory is a process change affecting process safety information — MOC is required. If the change is significant enough to require changes to PSI, a PSSR is also required before startup.\n\n最大预期存量的变化是影响工艺安全信息的工艺变更——需要MOC。如果变更重大到需要更改PSI，启动前还需要PSSR。'
+    },
+    {
+      text: 'Which of the following statements about employee participation (Element 1) is correct?',
+      group: 8,
+      options: [
+        'Employees must be consulted on all purchase orders',
+        'The employer must develop a written plan of action regarding employee participation and consult employees on PHAs and incident investigations',
+        'Employee participation applies only to unionized facilities',
+        'Employees must conduct the compliance audits themselves'
+      ],
+      correct: 1,
+      explanation: 'Element 1 requires a written plan of action regarding employee participation, and mandates that employees be consulted on the development of PHAs and be represented on PHA teams and incident investigation teams. It applies to all covered facilities regardless of union status.\n\n要素1要求制定员工参与的书面行动计划，并要求在PHA制定时咨询员工，且员工必须参与PHA团队和事故调查团队。它适用于所有覆盖设施，无论是否成立工会。'
+    }
+  ]
+});
+</script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js').catch(function() {});
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 6: Performance Measurement / 绩效测量 — CSP Exam Prep</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1e3a5f">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="stylesheet" href="quiz-styles.css?v=11">
+<style>
+  .breadcrumb { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 16px; }
+  .breadcrumb a { color: var(--accent); text-decoration: none; }
+  .breadcrumb a:hover { text-decoration: underline; }
+  .bradley-curve {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin: 20px 0;
+    overflow-x: auto;
+  }
+  .bradley-stage {
+    flex: 1;
+    min-width: 140px;
+    padding: 16px 10px;
+    text-align: center;
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.85rem;
+    position: relative;
+  }
+  .bradley-stage:nth-child(1) { background: #dc2626; border-radius: 8px 0 0 8px; }
+  .bradley-stage:nth-child(2) { background: #f59e0b; }
+  .bradley-stage:nth-child(3) { background: #2563eb; }
+  .bradley-stage:nth-child(4) { background: #16a34a; border-radius: 0 8px 8px 0; }
+  .bradley-stage .stage-icon { font-size: 1.4rem; margin-bottom: 4px; }
+  .record-flow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    margin: 16px 0;
+    font-size: 0.85rem;
+  }
+  .record-step {
+    background: var(--accent-light);
+    color: #1e40af;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .record-arrow { color: #888; font-weight: 700; }
+  p.bi-p, li.bi-li { margin-bottom: 10px; }
+  p.bi-p .en-p, li.bi-li .en-li { display: block; }
+  p.bi-p .zh-p, li.bi-li .zh-li { display: block; color: #666; font-size: 0.92em; margin-top: 2px; }
+  table.bi-table th { white-space: nowrap; }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="breadcrumb">
+    <a href="index.html">← 返回仪表盘 / Dashboard</a> &nbsp;|&nbsp;
+    领域 / Domain 2: <span style="font-weight:600;">计划管理 / Program Management</span>
+  </div>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <h1>📖 第6周 / Week 6:<br><span class="bi-term"><span class="zh">绩效测量</span> · <span class="en">Performance Measurement</span><span class="vocab-star" data-term="Performance Measurement">☆</span></span></h1>
+    <div class="subtitle">领域2：计划管理（占考试25%）· 建议学习时间：6–8小时<br>Domain 2: Program Management (25% of exam) · Est. study time: 6–8 hours</div>
+  </div>
+
+  <!-- KNOWLEDGE SECTION -->
+  <div class="knowledge-card">
+    <h2>6.1 <span class="bi-term"><span class="zh">领先指标与滞后指标</span> · <span class="en">Leading vs. Lagging Indicators</span><span class="vocab-star" data-term="Leading Indicators">☆</span></span></h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>Brauer Ch.35 · Brauer Ch.37 · Yates Ch.2</span>
+    </div>
+
+    <p class="bi-p">
+      <span class="en-p">Safety performance measurement uses two complementary types of indicators. The CSP exam expects you to distinguish between them and know when to use each.</span>
+      <span class="zh-p" style="color:#666;">安全绩效测量使用两类互补的指标。CSP考试要求能够区分它们并知道何时使用每一种。</span>
+    </p>
+
+    <table class="bi-table">
+      <tr><th>特性 / Feature</th><th>领先指标 / Leading Indicators</th><th>滞后指标 / Lagging Indicators</th></tr>
+      <tr>
+        <td><strong>性质 / Nature</strong></td>
+        <td><span class="en-p">Preventive, proactive, predictive</span><span class="zh-p" style="color:#666;">预防性、主动性、预测性</span></td>
+        <td><span class="en-p">Reactive, after-the-fact, retrospective</span><span class="zh-p" style="color:#666;">反应性、事后、回顾性</span></td>
+      </tr>
+      <tr>
+        <td><strong>测量什么 / What It Measures</strong></td>
+        <td><span class="en-p">Inputs and activities that drive future safety performance</span><span class="zh-p" style="color:#666;">驱动未来安全绩效的输入和活动</span></td>
+        <td><span class="en-p">Outcomes — the results of past safety performance</span><span class="zh-p" style="color:#666;">结果——过去安全绩效的产出</span></td>
+      </tr>
+      <tr>
+        <td><strong>示例 / Examples</strong></td>
+        <td><span class="en-p">Number of safety inspections completed, training hours delivered, near-miss reports submitted, safety meeting attendance, hazard assessments conducted, corrective actions closed on time</span><span class="zh-p" style="color:#666;">已完成安全检查的数量、已交付培训时数、提交的未遂事件报告、安全会议出席率、已进行的危害评估、按时关闭的纠正行动</span></td>
+        <td><span class="en-p">TRIR, DART, LTIFR, fatality count, workers' compensation costs, lost workdays</span><span class="zh-p" style="color:#666;">TRIR、DART、LTIFR、死亡人数、工伤保险费用、损失工作日</span></td>
+      </tr>
+      <tr>
+        <td><strong>时间取向 / Time Orientation</strong></td>
+        <td><span class="en-p">Forward-looking</span><span class="zh-p" style="color:#666;">前瞻性</span></td>
+        <td><span class="en-p">Backward-looking</span><span class="zh-p" style="color:#666;">回顾性</span></td>
+      </tr>
+      <tr>
+        <td><strong>优点 / Strengths</strong></td>
+        <td><span class="en-p">Allows intervention before incidents occur; drives proactive behavior</span><span class="zh-p" style="color:#666;">允许在事故发生前进行干预；推动主动行为</span></td>
+        <td><span class="en-p">Objective, verifiable, allows trending and benchmarking</span><span class="zh-p" style="color:#666;">客观、可验证、允许趋势分析和基准比较</span></td>
+      </tr>
+      <tr>
+        <td><strong>局限 / Limitations</strong></td>
+        <td><span class="en-p">May not directly correlate with outcomes; can be "gamed"</span><span class="zh-p" style="color:#666;">可能与结果不直接相关；可能被"钻空子"</span></td>
+        <td><span class="en-p">Tells you what happened but not why; low-frequency events can create misleading trends</span><span class="zh-p" style="color:#666;">告诉你发生了什么，但不告诉你原因；低频事件可能产生误导性趋势</span></td>
+      </tr>
+    </table>
+
+    <h3>滞后指标的问题 / The Problem with Lagging Indicators</h3>
+    <ul>
+      <li class="bi-li">
+        <span class="en-li">They are <strong>counter-cyclical to effort</strong>: a strong safety program pushes incidents down, so the metric (e.g., TRIR) gets "worse" statistically as small samples fluctuate — managers may fear that being proactive makes numbers look bad.</span>
+        <span class="zh-li">它们与努力<strong>反周期</strong>：强大的安全项目会压低事故数，因此在小样本下指标（如TRIR）在统计上会"变差"——管理者可能担心主动作为反而让数字难看。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">Low frequency in a small site makes rates unstable: one single incident can swing a small company's TRIR dramatically.</span>
+        <span class="zh-li">小场所的低频率使比率不稳定：一起事故就能让小型公司的TRIR大幅波动。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">They measure failures, not the health of the program's inputs (training, inspections, hazard corrections).</span>
+        <span class="zh-li">它们衡量失败，而不衡量项目输入（培训、检查、危害纠正）的健康程度。</span>
+      </li>
+    </ul>
+
+    <div class="important">
+      <strong>CSP 考试技巧 / Exam Tip:</strong><br>
+      <span class="en-p">A balanced safety scorecard uses BOTH leading and lagging indicators. Leading indicators drive improvement; lagging indicators validate results. Neither alone provides a complete picture of safety performance. When asked "which metric is most useful for early warning," choose a leading indicator.</span>
+      <span class="zh-p" style="color:#666;">平衡的安全计分卡同时使用领先指标和滞后指标。领先指标推动改进；滞后指标验证结果。单独使用任何一种都无法完整反映安全绩效。当被问"哪个指标对早期预警最有用"时，选领先指标。</span>
+    </div>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-high">必考 HIGH</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "Which is a LEADING indicator of safety performance?"<br>
+        <strong>答题要点 / Key point:</strong> 领先=事前、过程、可预见风险（培训完成率、隐患关闭率、安全观察次数、JHA完成数）；滞后=事后、结果（TRIR、DART、LTIR、死亡数）。问"早期预警"选领先指标。TRIR/失时工伤率等滞后指标在小场所会因一次事故剧烈波动。
+      </div>
+    </div>
+
+    <div class="confusion-box">
+      <div class="cb-label">⚖️ 易混淆对比 / Common Confusions:</div>
+      <table class="study-table">
+        <tr><th>Leading Indicator 领先指标</th><th>Lagging Indicator 滞后指标</th><th>关键区别 / Key Difference</th></tr>
+        <tr><td>过程/输入：培训时数、隐患关闭、安全观察、JSA数量</td><td>结果/输出：TRIR、DART、LTIR、fatalities</td><td>领先推动改进（事前预测）；滞后验证结果（事后确认）。问"预警/预防"→领先；问"结果/绩效"→滞后</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div id="quiz-group-1"></div>
+
+
+  <div class="knowledge-card">
+    <h2>6.2 关键安全指标与公式 / Key Safety Metrics & Formulas</h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>Brauer Ch.8 · Brauer Ch.37 · Yates Ch.13</span>
+    </div>
+
+    <p class="bi-p">
+      <span class="en-p">These formulas are essential for the CSP exam. Know the numerator, denominator, and multiplier for each.</span>
+      <span class="zh-p" style="color:#666;">以下公式对CSP考试至关重要。要掌握每个公式的分子、分母和乘数。</span>
+    </p>
+
+    <div class="formula-box">
+      <strong>TRIR (Total Recordable Incident Rate / 总可记录事故率)</strong><br>
+      TRIR = (N × 200,000) / 总工时 / total hours worked<br>
+      <small>N = OSHA可记录伤害/疾病数量 / N = number of OSHA-recordable injuries/illnesses</small>
+    </div>
+
+    <div class="formula-box">
+      <strong>DART (Days Away, Restricted, or Transferred / 缺勤、受限或转岗天数率)</strong><br>
+      DART = (缺勤/受限/转岗案例数 × 200,000) / 总工时 / DART = (cases with days away/restricted/transfer × 200,000) / total hours worked<br>
+      <small>仅计算导致损失工时、限制性岗位或岗位调动的案例 / Only count cases that result in lost time, restricted duty, or job transfer</small>
+    </div>
+
+    <div class="formula-box">
+      <strong>LTIFR (Lost Time Injury Frequency Rate / 损失工时伤害频率率)</strong><br>
+      LTIFR = (损失工时伤害数 × 1,000,000) / 总工时 / LTIFR = (lost time injuries × 1,000,000) / total hours worked<br>
+      <small>美国以外常用；使用1,000,000工时基数，而TRIR/DART使用200,000 / Commonly used outside the U.S.; uses 1,000,000-hour base vs. 200,000 for TRIR/DART</small>
+    </div>
+
+    <div class="formula-box">
+      <strong>严重度 / Severity Rate</strong><br>
+      严重度 = (损失工作日 × 200,000) / 总工时 / Severity Rate = (lost workdays × 200,000) / total hours worked<br>
+      <small>衡量损失工时事件的严重程度（每损失的工作日数）</small>
+    </div>
+
+    <div class="formula-box">
+      <strong>平均严重度 / Average Severity</strong> = 总损失工作日 / 损失工时案例数 / Total lost workdays ÷ Number of lost-time cases<br>
+      <small>每个损失工时案例的平均损失工作日数</small>
+    </div>
+
+    <div class="important">
+      <strong>为什么是200,000？/ Why 200,000?</strong><br>
+      <span class="en-p">200,000 hours = 100 full-time workers × 50 weeks × 40 hours/week. This normalizes rates to a per-100-worker basis, making comparisons fair across organizations of different sizes. LTIFR uses 1,000,000 (= 500 workers), the international base.</span>
+      <span class="zh-p" style="color:#666;">200,000小时 = 100名全职工人 × 50周 × 40小时/周。这将比率标准化为每100名工人的基数，使不同规模的组织之间能够公平比较。LTIFR使用1,000,000（=500名工人），这是国际基数。</span>
+    </div>
+
+    <h3>计算示例 / Worked Example</h3>
+    <div class="formula-box">
+      <strong>示例 / Example:</strong> 一家公司有6起可记录伤害，其中2起为损失工时伤害，1起为受限工作伤害。总工时400,000。<br>
+      TRIR = (6 × 200,000) / 400,000 = 3.00<br>
+      DART = (3 × 200,000) / 400,000 = 1.50<br>
+      LTIFR = (2 × 1,000,000) / 400,000 = 5.00
+    </div>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-high">必考 HIGH</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "A company has 4 recordable injuries and 200,000 hours. What is the TRIR?"<br>
+        <strong>答题要点 / Key point:</strong> TRIR=(案例数×200,000)/总工时；DART用天数受限+损失工时案例（DART=(DART案例×200,000)/总工时）；LTIFR用1,000,000基数。200,000=100名工人×50周×40小时。示例：6起可记录/400,000h → TRIR 3.0；DART 1.5；LTIFR 5.0。
+      </div>
+    </div>
+
+    <div class="mnemonic">
+      <span class="mn-label">🧠 记忆口诀 / Mnemonic:</span>
+      <span class="mn-content"><strong>"200,000 = 100×50×40"</strong> — 每100名工人的基数（200,000小时）；LTIFR用1,000,000（国际/500工人）。TRIR的DART分子只看"损失工时+受限工作"案例。中文："TRIR二十万、DART算严重、LTIFR一百万"。</span>
+    </div>
+
+    <div class="confusion-box">
+      <div class="cb-label">⚖️ 易混淆对比 / Common Confusions:</div>
+      <table class="study-table">
+        <tr><th>TRIR</th><th>DART</th><th>关键区别 / Key Difference</th></tr>
+        <tr><td>所有可记录案例（含医疗处理、轻伤）</td><td>仅损失工时(LTI)+受限工作(RTW)案例</td><td>DART是TRIR的"更严重子集"——DART只统计需要离岗或改岗的案例。数值上DART ≤ TRIR</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div id="quiz-group-2"></div>
+
+
+  <div class="knowledge-card">
+    <h2>6.3 OSHA记录判定与记录保存 / OSHA Recordability Determination & Recordkeeping</h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>29 CFR 1904 · Brauer Ch.8 · Yates Ch.2</span>
+    </div>
+
+    <p class="bi-p">
+      <span class="en-p">Knowing whether a case is OSHA-recordable is a tested skill. An injury or illness is recordable if it is <strong>work-related</strong>, is a <strong>new case</strong>, and meets one of the <strong>general recording criteria</strong>.</span>
+      <span class="zh-p" style="color:#666;">判断一个案例是否可记录是考试技能。若伤害或疾病<strong>与工作相关</strong>、是<strong>新案例</strong>、且满足<strong>一般记录标准</strong>之一，则必须记录。</span>
+    </p>
+
+    <h3>记录判定流程 / Recordability Decision Flow</h3>
+    <div class="record-flow">
+      <span class="record-step">工作相关? / Work-related?</span>
+      <span class="record-arrow">→</span>
+      <span class="record-step">新案例? / New case?</span>
+      <span class="record-arrow">→</span>
+      <span class="record-step">满足记录标准? / Meets criteria?</span>
+      <span class="record-arrow">→</span>
+      <span class="record-step">记录 / Record on 300 Log</span>
+    </div>
+
+    <h3>一般记录标准 / General Recording Criteria</h3>
+    <table class="bi-table">
+      <tr><th>标准 / Criterion</th><th>说明 / Explanation</th></tr>
+      <tr>
+        <td><strong>死亡 / Death</strong></td>
+        <td><span class="en-p">Any work-related fatality must be recorded and reported to OSHA within 8 hours.</span><span class="zh-p" style="color:#666;">任何与工作相关的死亡必须记录，并在8小时内报告给OSHA。</span></td>
+      </tr>
+      <tr>
+        <td><strong>损失工时 / Days Away from Work</strong></td>
+        <td><span class="en-p">Days the employee could not work at all due to the injury/illness.</span><span class="zh-p" style="color:#666;">员工因伤害/疾病完全无法工作的天数。</span></td>
+      </tr>
+      <tr>
+        <td><strong>工作限制 / Restricted Work</strong></td>
+        <td><span class="en-p">Employee is assigned to a job they cannot perform fully or a less physically demanding task.</span><span class="zh-p" style="color:#666;">员工被分配到无法完全胜任的岗位或体力要求较低的任务。</span></td>
+      </tr>
+      <tr>
+        <td><strong>转岗 / Job Transfer</strong></td>
+        <td><span class="en-p">Employee is assigned to a completely different job on a temporary/permanent basis.</span><span class="zh-p" style="color:#666;">员工被临时/永久地分配到完全不同的岗位。</span></td>
+      </tr>
+      <tr>
+        <td><strong>医疗处理 / Medical Treatment</strong></td>
+        <td><span class="en-p">Treatment beyond first aid (prescription medication, sutures, surgery, hospitalization).</span><span class="zh-p" style="color:#666;">超出急救范围的治疗（处方药、缝合、手术、住院）。</span></td>
+      </tr>
+      <tr>
+        <td><strong>意识丧失 / Loss of Consciousness</strong></td>
+        <td><span class="en-p">Any work-related loss of consciousness is recordable.</span><span class="zh-p" style="color:#666;">任何与工作相关的意识丧失都是可记录的。</span></td>
+      </tr>
+      <tr>
+        <td><strong>确诊职业病 / Significant Diagnosed Injury/Illness</strong></td>
+        <td><span class="en-p">A significant injury/illness diagnosed by a physician or other licensed health care professional, even if not resulting in the above.</span><span class="zh-p" style="color:#666;">由医生或其他持照医疗保健专业人士诊断的重大伤害/疾病，即使未导致上述情况。</span></td>
+      </tr>
+    </table>
+
+    <h3>急救（不记录）vs 医疗处理（记录）/ First Aid (Not Recordable) vs. Medical Treatment (Recordable)</h3>
+    <table class="bi-table">
+      <tr><th>急救 — 不记录 / First Aid — Not Recordable</th><th>医疗处理 — 记录 / Medical Treatment — Recordable</th></tr>
+      <tr>
+        <td>
+          <ul>
+            <li class="bi-li"><span class="en-li">Non-prescription medication (OTC)</span><span class="zh-li">非处方药（OTC）</span></li>
+            <li class="bi-li"><span class="en-li">Bandages / cold compress / ice packs</span><span class="zh-li">绷带 / 冷敷 / 冰袋</span></li>
+            <li class="bi-li"><span class="en-li">Cleaning minor cuts with hydrogen peroxide</span><span class="zh-li">用过氧化氢清洗轻微伤口</span></li>
+            <li class="bi-li"><span class="en-li">Use of eye patches / irrigation for minor injuries</span><span class="zh-li">对轻微伤害使用眼罩 / 冲洗</span></li>
+            <li class="bi-li"><span class="en-li">Heat therapy / massage (no prescription)</span><span class="zh-li">热疗 / 按摩（无处方）</span></li>
+            <li class="bi-li"><span class="en-li">Drilling a fingernail / removing splinters</span><span class="zh-li">钻指甲 / 取出木刺</span></li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li class="bi-li"><span class="en-li">Prescription medication (Rx)</span><span class="zh-li">处方药（Rx）</span></li>
+            <li class="bi-li"><span class="en-li">Sutures / surgical closure</span><span class="zh-li">缝合 / 手术闭合</span></li>
+            <li class="bi-li"><span class="en-li">Hospitalization / surgery</span><span class="zh-li">住院 / 手术</span></li>
+            <li class="bi-li"><span class="en-li">Physical therapy / chiropractic (by licensed provider)</span><span class="zh-li">物理治疗 / 脊椎按摩（由持照专业人员）</span></li>
+            <li class="bi-li"><span class="en-li">X-rays / diagnostic tests</span><span class="zh-li">X光 / 诊断检查</span></li>
+            <li class="bi-li"><span class="en-li">Antibiotics / IV fluids</span><span class="zh-li">抗生素 / 静脉输液</span></li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+
+    <h3>OSHA记录表格 / OSHA Recording Forms</h3>
+    <table class="bi-table">
+      <tr><th>表格 / Form</th><th>目的 / Purpose</th><th>关键细节 / Key Details</th></tr>
+      <tr>
+        <td><strong>OSHA 300</strong></td>
+        <td>工作相关伤害与疾病日志 / Log of Work-Related Injuries and Illnesses</td>
+        <td>
+          <span class="en-p">Each recordable case gets one line. Includes: date, employee name, job title, description, classification (injury, skin disorder, respiratory, etc.), days away, days restricted. Must be kept for 5 years following the end of the calendar year. Cases must be logged within 7 calendar days of knowledge.</span>
+          <span class="zh-p" style="color:#666;">每项可记录案例占一行。包括：日期、员工姓名、职务、描述、分类（伤害、皮肤病、呼吸系统等）、缺勤天数、受限天数。必须在日历年结束后保留5年。案例须在知悉后7个日历日内登记。</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>OSHA 300A</strong></td>
+        <td>工作相关伤害与疾病摘要 / Summary of Work-Related Injuries and Illnesses</td>
+        <td>
+          <span class="en-p">Annual summary showing totals (not individual cases). Must be certified by a company executive. Posted from February 1 through April 30 each year, covering the previous calendar year.</span>
+          <span class="zh-p" style="color:#666;">年度摘要，显示总数（非个案）。必须由公司高管认证。每年2月1日至4月30日张贴，涵盖上一日历年。</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>OSHA 301</strong></td>
+        <td>伤害与疾病事件报告 / Injury and Illness Incident Report</td>
+        <td>
+          <span class="en-p">Detailed report for each individual recordable case. Equivalent to a Workers' Compensation "First Report of Injury." Must be completed within 7 calendar days.</span>
+          <span class="zh-p" style="color:#666;">每项可记录案例的详细报告。等同于工伤保险"伤害首次报告"。必须在7个日历日内完成。</span>
+        </td>
+      </tr>
+    </table>
+
+    <h3>强制上报（与记录不同）/ Mandatory Reporting (Distinct from Recording)</h3>
+    <ul>
+      <li class="bi-li">
+        <span class="en-li"><strong>Fatality:</strong> must report to OSHA within 8 hours.</span>
+        <span class="zh-li"><strong>死亡：</strong>必须在8小时内报告OSHA。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>In-patient hospitalization:</strong> must report within 24 hours.</span>
+        <span class="zh-li"><strong>住院治疗：</strong>必须在24小时内报告。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Amputation / loss of an eye:</strong> must report within 24 hours.</span>
+        <span class="zh-li"><strong>截肢 / 眼球丧失：</strong>必须在24小时内报告。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">Distinguish reporting (to OSHA) from recording (on the 300 Log): reporting is immediate and time-bound; recording is the annual log discipline.</span>
+        <span class="zh-li">区分报告（向OSHA，即时且有时限）与记录（在300日志上，年度日志纪律）。</span>
+      </li>
+    </ul>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-high">必考 HIGH</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "When must a fatality be reported to OSHA?"<br>
+        <strong>答题要点 / Key point:</strong> 强制报告（向OSHA）：死亡<strong>8小时</strong>内；住院、截肢、眼球丧失<strong>24小时</strong>内。表单：300日志(逐案)、300A摘要(2/1–4/30张贴、高管认证)、301个案报告(7天)。记录判定三要件：工作相关+新案例+符合一般标准（医疗处理/限制/损失工作日）。
+      </div>
+    </div>
+
+    <div class="mnemonic">
+      <span class="mn-label">🧠 记忆口诀 / Mnemonic:</span>
+      <span class="mn-content"><strong>"8死24住院"</strong> — 死亡8小时内报告；住院/截肢/失明24小时内报告。表单口诀："300记、300A贴、301填"。中文"八小时死亡、二十四住院"。</span>
+    </div>
+  </div>
+
+  <div id="quiz-group-3"></div>
+
+
+  <div class="knowledge-card">
+    <h2>6.4 基准比较 / Benchmarking</h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>Brauer Ch.35 · Brauer Ch.37 · BLS</span>
+    </div>
+
+    <p class="bi-p">
+      <span class="en-p"><span class="bi-term"><span class="zh">基准比较</span><span class="en">Benchmarking</span></span> is the process of comparing an organization's safety performance against a reference point to identify gaps and opportunities for improvement.</span>
+      <span class="zh-p" style="color:#666;">基准比较是将组织的安全绩效与参考标准进行比较，以识别差距和改进机会的过程。</span>
+    </p>
+
+    <table class="bi-table">
+      <tr><th>类型 / Type</th><th>描述 / Description</th><th>示例 / Example</th></tr>
+      <tr>
+        <td><strong>内部基准比较 / Internal Benchmarking</strong></td>
+        <td>
+          <span class="en-p">Comparing performance across different sites, departments, or time periods within the same organization</span>
+          <span class="zh-p" style="color:#666;">比较同一组织内不同地点、部门或时间段的绩效</span>
+        </td>
+        <td>
+          <span class="en-p">Comparing TRIR between Plant A and Plant B; tracking year-over-year improvement at one facility</span>
+          <span class="zh-p" style="color:#666;">比较A厂与B厂的TRIR；追踪一个设施的年同比改进</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>竞争基准比较 / Competitive Benchmarking</strong></td>
+        <td>
+          <span class="en-p">Comparing performance against direct competitors in the same industry</span>
+          <span class="zh-p" style="color:#666;">与同行业直接竞争对手比较绩效</span>
+        </td>
+        <td>
+          <span class="en-p">A chemical manufacturer comparing DART rate against other chemical companies in the same NAICS code</span>
+          <span class="zh-p" style="color:#666;">化工制造商与相同NAICS代码的其他化工公司比较DART率</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>功能基准比较 / Functional Benchmarking</strong></td>
+        <td>
+          <span class="en-p">Comparing a specific function or process against best-in-class organizations, even from different industries</span>
+          <span class="zh-p" style="color:#666;">将特定功能或流程与最佳组织进行比较，甚至跨行业</span>
+        </td>
+        <td>
+          <span class="en-p">Comparing your lockout/tagout program against that of an organization known for LOTO excellence, regardless of industry</span>
+          <span class="zh-p" style="color:#666;">将您的上锁挂牌项目与以LOTO卓越著称的组织比较，无论其行业</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>通用基准比较 / Generic Benchmarking</strong></td>
+        <td>
+          <span class="en-p">Comparing general processes against universal best practices applicable across all industries</span>
+          <span class="zh-p" style="color:#666;">将通用流程与适用于所有行业的通用最佳实践比较</span>
+        </td>
+        <td>
+          <span class="en-p">Comparing safety training program design against adult learning best practices used across all sectors</span>
+          <span class="zh-p" style="color:#666;">将安全培训项目设计与所有行业通用的成人学习最佳实践比较</span>
+        </td>
+      </tr>
+    </table>
+
+    <div class="important">
+      <strong>数据来源 / Data Sources:</strong><br>
+      <span class="en-p">BLS (Bureau of Labor Statistics) publishes industry incidence rates by NAICS code; OSHA uses these for targeting. Industry averages should be compared within the same NAICS code and employment size class to be meaningful.</span>
+      <span class="zh-p" style="color:#666;">劳工统计局（BLS）按NAICS代码发布行业事故率；OSHA用这些数据确定检查重点。行业平均值应在相同NAICS代码和就业规模等级内比较才有意义。</span>
+    </div>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-mid">常考 MEDIUM</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "A company compares its TRIR against other companies in the same NAICS code. This is what type of benchmarking?"<br>
+        <strong>答题要点 / Key point:</strong> 四类：内部(自己厂间)/竞争(同行)/功能(跨行业最佳实践)/通用(全行业通用最佳实践)。BLS按NAICS发布行业事故率；比较须同NAICS+同规模等级才有意义。
+      </div>
+    </div>
+  </div>
+
+  <div id="quiz-group-4"></div>
+
+
+  <div class="knowledge-card">
+    <h2>6.5 安全文化测量 / Safety Culture Measurement</h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>Brauer Ch.35 · Brauer Ch.31 · Yates Ch.19</span>
+    </div>
+
+    <h3>Bradley曲线 (杜邦Bradley曲线) / The Bradley Curve (DuPont Bradley Curve)</h3>
+    <p class="bi-p">
+      <span class="en-p">The <span class="bi-term"><span class="zh">Bradley曲线</span><span class="en">Bradley Curve</span><span class="vocab-star" data-term="Bradley Curve">☆</span></span> describes the journey of safety culture maturity through four stages:</span>
+      <span class="zh-p" style="color:#666;">Bradley曲线描述了安全文化成熟度的四个阶段旅程：</span>
+    </p>
+
+    <div class="bradley-curve">
+      <div class="bradley-stage">
+        <div class="stage-icon">⚠</div>
+        <strong>反应型 / Reactive</strong>
+        <div style="font-weight:400;font-size:0.78rem;margin-top:4px;">
+          <span class="en-p">Safety by natural instinct; "accidents happen"; blame culture; no ownership</span>
+          <span class="zh-p" style="color:#ddd;font-size:0.75em;">凭本能维护安全；"事故不可避免"；责备文化；无主人翁意识</span>
+        </div>
+      </div>
+      <div class="bradley-stage">
+        <div class="stage-icon">📋</div>
+        <strong>依赖型 / Dependent</strong>
+        <div style="font-weight:400;font-size:0.78rem;margin-top:4px;">
+          <span class="en-p">Safety by rules & supervision; management commitment; fear/discipline driven</span>
+          <span class="zh-p" style="color:#ddd;font-size:0.75em;">凭规章制度与监管维护安全；管理层承诺；恐惧/纪律驱动</span>
+        </div>
+      </div>
+      <div class="bradley-stage">
+        <div class="stage-icon">👤</div>
+        <strong>独立型 / Independent</strong>
+        <div style="font-weight:400;font-size:0.78rem;margin-top:4px;">
+          <span class="en-p">Safety by personal knowledge & commitment; self-regulation; personal standards</span>
+          <span class="zh-p" style="color:#ddd;font-size:0.75em;">凭个人知识和承诺维护安全；自我管理；个人标准</span>
+        </div>
+      </div>
+      <div class="bradley-stage">
+        <div class="stage-icon">🤝</div>
+        <strong>互助型 / Interdependent</strong>
+        <div style="font-weight:400;font-size:0.78rem;margin-top:4px;">
+          <span class="en-p">Safety as a team value; "I am my brother's keeper"; collective ownership; helping others</span>
+          <span class="zh-p" style="color:#ddd;font-size:0.75em;">安全是团队价值观；"我是兄弟的守护者"；集体主人翁意识；互相帮助</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="bi-p">
+      <span class="en-p">The curve plots injury rates against culture maturity: as the culture matures from Reactive to Interdependent, incident rates decline, with the steepest drop occurring as organizations move from Dependent to Independent. The goal is to help organizations shift the responsibility for safety from management enforcement (Dependent) to personal commitment (Independent) and ultimately collective care (Interdependent).</span>
+      <span class="zh-p" style="color:#666;">该曲线将伤害率与安全文化成熟度对应绘制：随着文化从反应型成熟到互助型，事故率下降，其中从依赖型向独立型转变时下降最陡。目标是帮助组织将安全责任从管理层强制执行（依赖型）转向个人承诺（独立型），最终达到集体关怀（互助型）。</span>
+    </p>
+
+    <h3>安全文化成熟度模型 / Safety Culture Maturity Model</h3>
+    <p class="bi-p">
+      <span class="en-p">Another framework describing five levels:</span>
+      <span class="zh-p" style="color:#666;">另一个描述五个层级的框架：</span>
+    </p>
+    <ol>
+      <li class="bi-li">
+        <span class="en-li"><strong>Pathological / 病态型:</strong> Safety is a problem caused by workers; hide incidents</span>
+        <span class="zh-li">安全是工人造成的问题；隐瞒事故</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Reactive / 反应型:</strong> Safety is important; act after incidents occur</span>
+        <span class="zh-li">安全很重要；事故发生后采取行动</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Calculative / 计算型:</strong> Safety is managed through systems and data collection</span>
+        <span class="zh-li">安全通过系统和数据收集进行管理</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Proactive / 主动型:</strong> Safety is a core value; anticipate problems before they occur</span>
+        <span class="zh-li">安全是核心价值观；在问题发生之前进行预判</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Generative / 生成型:</strong> Safety is fully integrated into everything the organization does; chronic unease about risk</span>
+        <span class="zh-li">安全完全融入组织的一切活动；对风险保持持续关注</span>
+      </li>
+    </ol>
+
+    <h3>测量安全文化的方法 / Methods to Measure Safety Culture</h3>
+    <ul>
+      <li class="bi-li">
+        <span class="en-li"><strong>Safety climate surveys:</strong> Anonymous questionnaires measuring workers' perceptions of management commitment, communication, and reporting climate.</span>
+        <span class="zh-li"><strong>安全氛围调查：</strong>匿名问卷，测量员工对管理层承诺、沟通和报告氛围的感知。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Behavioral observations:</strong> Structured observation of safe/unsafe behaviors and at-risk practices.</span>
+        <span class="zh-li"><strong>行为观察：</strong>对安全/不安全行为和冒险实践进行结构化观察。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Near-miss reporting rates:</strong> High rates typically indicate a "just culture" where workers report without fear — a strong signal of culture health.</span>
+        <span class="zh-li"><strong>未遂事件报告率：</strong>高报告率通常表明存在"公正文化"，工人无忧报告——这是文化健康的强信号。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Focus groups and interviews:</strong> Qualitative insight into barriers and drivers of safe behavior.</span>
+        <span class="zh-li"><strong>焦点小组与访谈：</strong>定性了解安全行为障碍和驱动因素。</span>
+      </li>
+    </ul>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-mid">常考 MEDIUM</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "In the Bradley Curve, which culture stage has the steepest drop in injury rates?"<br>
+        <strong>答题要点 / Key point:</strong> Bradley曲线四级：Reactive反应型→Dependent依赖型→Independent独立型→Interdependent互助型；从Dependent→Independent时事故率下降最陡。文化测量：安全氛围调查（匿名问卷）、行为观察、未遂报告率（公正文化信号）、焦点小组。
+      </div>
+    </div>
+
+    <div class="mnemonic">
+      <span class="mn-label">🧠 记忆口诀 / Mnemonic:</span>
+      <span class="mn-content"><strong>"R-D-I-I"</strong> — Reactive → Dependent → Independent → Interdependent（Bradley曲线）。中文"反-依-独-互"；最陡下降在"依赖→独立"。测量方法四字诀"问、观、报、谈"（问卷/观察/未遂报告/访谈）。</span>
+    </div>
+  </div>
+
+  <div id="quiz-group-5"></div>
+
+
+  <div class="knowledge-card">
+    <h2>6.6 安全分析的统计基础 / Statistical Basics for Safety Analysis</h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>Yates Ch.13 · Brauer Ch.37</span>
+    </div>
+
+    <table class="bi-table">
+      <tr><th>指标 / Measure</th><th>定义 / Definition</th><th>在安全中的应用 / Use in Safety</th></tr>
+      <tr>
+        <td><strong>均值 / Mean (μ or x̄)</strong></td>
+        <td><span class="en-p">Arithmetic average of all values</span><span class="zh-p" style="color:#666;">所有数值的算术平均数</span></td>
+        <td><span class="en-p">Average incident rate, average exposure level</span><span class="zh-p" style="color:#666;">平均事故率、平均暴露水平</span></td>
+      </tr>
+      <tr>
+        <td><strong>中位数 / Median</strong></td>
+        <td><span class="en-p">Middle value when data is ordered</span><span class="zh-p" style="color:#666;">数据排序后的中间值</span></td>
+        <td><span class="en-p">More robust than mean when data has outliers (e.g., one catastrophic loss skewing the mean)</span><span class="zh-p" style="color:#666;">数据有异常值时比均值更稳健（如一次灾难性损失使均值偏斜）</span></td>
+      </tr>
+      <tr>
+        <td><strong>众数 / Mode</strong></td>
+        <td><span class="en-p">Most frequently occurring value</span><span class="zh-p" style="color:#666;">出现频率最高的值</span></td>
+        <td><span class="en-p">Most common type of injury, most frequent root cause</span><span class="zh-p" style="color:#666;">最常见的伤害类型、最频繁的根本原因</span></td>
+      </tr>
+      <tr>
+        <td><strong>标准差 / Standard Deviation (σ or s)</strong></td>
+        <td><span class="en-p">Measure of dispersion/spread around the mean</span><span class="zh-p" style="color:#666;">测量均值周围的分散/扩散程度</span></td>
+        <td><span class="en-p">Variability in exposure measurements, consistency of safety performance</span><span class="zh-p" style="color:#666;">暴露测量的变异性、安全绩效的一致性</span></td>
+      </tr>
+      <tr>
+        <td><strong>方差 / Variance</strong></td>
+        <td><span class="en-p">Average squared deviation from the mean; σ² for population, s² for sample</span><span class="zh-p" style="color:#666;">与均值之差的平方的平均值；总体为σ²，样本为s²</span></td>
+        <td><span class="en-p">Foundation for standard deviation; used in ANOVA and regression</span><span class="zh-p" style="color:#666;">标准差的基础；用于方差分析和回归</span></td>
+      </tr>
+      <tr>
+        <td><strong>正态分布 / Normal Distribution</strong></td>
+        <td><span class="en-p">Bell-shaped symmetric distribution; 68-95-99.7 rule (68% within ±1σ, 95% within ±2σ, 99.7% within ±3σ)</span><span class="zh-p" style="color:#666;">钟形对称分布；68-95-99.7法则（68%在±1σ内，95%在±2σ内，99.7%在±3σ内）</span></td>
+        <td><span class="en-p">Modeling exposure data, setting exposure limits, control charts</span><span class="zh-p" style="color:#666;">暴露数据建模、设限、控制图</span></td>
+      </tr>
+    </table>
+
+    <h3>计算示例 / Worked Examples</h3>
+    <div class="formula-box">
+      <strong>均值 / Mean:</strong> 月度事故数 4, 5, 5, 6, 8, 10 → 均值 = 38/6 = 6.33<br>
+      <strong>中位数 / Median:</strong> 排序后 4,5,5,6,8,10 → 中间两值 (5+6)/2 = 5.5<br>
+      <strong>众数 / Mode:</strong> 出现最多的值是 5<br><br>
+      <strong>样本标准差 / Sample SD (n=5):</strong> 数据 4,6,8,10,12，均值=8<br>
+      s = √[ Σ(xᵢ−x̄)² / (n−1) ] = √[ (16+4+0+4+16)/4 ] = √(40/4) = √10 = 3.16<br>
+      <small>注意：样本标准差用 n−1（自由度）；总体标准差用 n。</small>
+    </div>
+
+    <div class="important">
+      <strong>异常值的影响 / Effect of Outliers:</strong><br>
+      <span class="en-p">Consider the data 4, 5, 5, 6, 8, 100 (one catastrophic claim). Mean = 21.3 but median = 5.5. The median is far more robust — it does not change with extreme outliers. In safety, when presenting cost or severity data with rare catastrophic events, the median is often a better central measure.</span>
+      <span class="zh-p" style="color:#666">考虑数据4、5、5、6、8、100（一次灾难性索赔）。均值为21.3，但中位数为5.5。中位数稳健得多——不受极端异常值影响。在安全领域，当呈现包含罕见灾难性事件的成本或严重度数据时，中位数通常是更好的中心度量。</span>
+    </div>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-mid">常考 MEDIUM</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "Which measure is most robust when data contains extreme outliers?"<br>
+        <strong>答题要点 / Key point:</strong> 中位数对异常值稳健（4,5,5,6,8,100→均值21.3 vs 中位数5.5）。样本标准差用<strong>n−1</strong>（自由度），总体用n。正态分布68-95-99.7法则（±1σ/±2σ/±3σ）。安全成本/严重度数据有罕见灾难事件时优先用中位数。
+      </div>
+    </div>
+
+    <div class="mnemonic">
+      <span class="mn-label">🧠 记忆口诀 / Mnemonic:</span>
+      <span class="mn-content"><strong>"68-95-99.7"</strong> — 正态分布±1σ=68%、±2σ=95%、±3σ=99.7%。样本标准差用<strong>n−1</strong>。中文"六八九五九九七"。异常值场景选"中位数"（稳健）。</span>
+    </div>
+  </div>
+
+  <div id="quiz-group-6"></div>
+
+
+  <div class="knowledge-card">
+    <h2>6.7 置信区间与t分布 / Confidence Intervals & the t-Distribution</h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>Yates Ch.13 · Brauer Ch.37</span>
+    </div>
+
+    <p class="bi-p">
+      <span class="en-p">A <span class="bi-term"><span class="zh">置信区间</span><span class="en">confidence interval (CI)</span><span class="vocab-star" data-term="Confidence Interval">☆</span></span> gives a range of plausible values for a population parameter (e.g., the true mean exposure) based on a sample. It expresses sampling uncertainty.</span>
+      <span class="zh-p" style="color:#666;">置信区间基于样本给出总体参数（如真实平均暴露）的合理取值范围。它表达抽样不确定性。</span>
+    </p>
+
+    <h3>置信区间公式 / Confidence Interval Formula</h3>
+    <div class="formula-box">
+      <strong>均值的95%置信区间 / 95% Confidence Interval for the Mean</strong><br>
+      CI = x̄ ± Z × (σ / √n)  &nbsp;&nbsp;(总体σ已知或n≥30)<br>
+      CI = x̄ ± t × (s / √n)  &nbsp;&nbsp;(总体σ未知且n&lt;30)<br>
+      <small>对于95% CI，Z = 1.96；对于90% CI，Z = 1.645；对于99% CI，Z = 2.576。<br>
+      当使用t分布时，自由度 df = n − 1。</small>
+    </div>
+
+    <h3>计算示例 / Worked Example</h3>
+    <div class="formula-box">
+      <strong>Z分布示例:</strong> 36个噪声测量值，样本均值x̄ = 85 dB，总体标准差σ = 3 dB（已知）。<br>
+      95% CI = 85 ± 1.96 × (3/√36) = 85 ± 1.96 × 0.5 = 85 ± 0.98 → [84.0, 86.0]<br><br>
+      <strong>t分布示例:</strong> 25个测量值，样本均值x̄ = 50，样本标准差s = 5（σ未知）。<br>
+      df = 24，t(0.025, 24) ≈ 2.064<br>
+      95% CI = 50 ± 2.064 × (5/√25) = 50 ± 2.06 → [47.9, 52.1]
+    </div>
+
+    <div class="important">
+      <strong>关键区分 / Key Distinction:</strong><br>
+      <span class="en-p">Use Z-score (normal distribution) when population standard deviation (σ) is known OR when sample size n ≥ 30. Use t-distribution when population σ is unknown AND sample size n &lt; 30. Degrees of freedom (df) = n − 1 for t-distribution. The t-distribution has wider tails, giving wider (more conservative) intervals for small samples.</span>
+      <span class="zh-p" style="color:#666;">当总体标准差(σ)已知或样本量n≥30时使用Z分数（正态分布）。当总体σ未知且样本量n&lt;30时使用t分布。t分布的自由度(df) = n − 1。t分布尾部更宽，为小样本给出更宽（更保守）的区间。</span>
+    </div>
+
+    <h3>常见Z值速查 / Common Z-Values Cheat Sheet</h3>
+    <table class="bi-table">
+      <tr><th>置信水平 / Confidence Level</th><th>Z值 / Z-Value</th><th>标准误差倍数 / Margin as σ/√n</th></tr>
+      <tr><td>90%</td><td>1.645</td><td>±1.645</td></tr>
+      <tr><td>95%</td><td>1.960</td><td>±1.96</td></tr>
+      <tr><td>99%</td><td>2.576</td><td>±2.58</td></tr>
+      <tr><td>99.7%</td><td>3.000</td><td>±3.00</td></tr>
+    </table>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-mid">常考 MEDIUM</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "Should you use Z or t distribution for this confidence interval?"<br>
+        <strong>答题要点 / Key point:</strong> 用Z：σ已知 或 n≥30；用t：σ未知 且 n&lt;30，df=n−1。常用Z值：90%→1.645、95%→1.96、99%→2.576。t分布尾部更宽→区间更保守。例题：36个样本σ已知→Z=85±0.98；25个样本σ未知→t=50±2.06。
+      </div>
+    </div>
+
+    <div class="mnemonic">
+      <span class="mn-label">🧠 记忆口诀 / Mnemonic:</span>
+      <span class="mn-content"><strong>"Z=σ知或n≥30；t=σ未知且n&lt;30"</strong> — Z分布在σ已知或大样本(n≥30)；t分布σ未知小样本。Z值口诀"90-1.645、95-1.96、99-2.576"。df=n−1。中文"知标或大样本用Z，不知标小样本用t"。</span>
+    </div>
+  </div>
+
+  <div id="quiz-group-7"></div>
+
+
+  <div class="knowledge-card">
+    <h2>6.8 帕累托分析与数据展示 / Pareto Analysis & Data Presentation</h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>Brauer Ch.3 · Yates Ch.13 · Yates Ch.2</span>
+    </div>
+
+    <h3>帕累托分析（80/20法则）/ Pareto Analysis (80/20 Rule)</h3>
+    <p class="bi-p">
+      <span class="en-p"><span class="bi-term"><span class="zh">帕累托分析</span><span class="en">Pareto Analysis</span></span> is based on the principle that roughly 80% of effects come from 20% of causes. In safety, this means:</span>
+      <span class="zh-p" style="color:#666;">帕累托分析基于约80%的结果来自20%的原因这一原则。在安全领域，这意味着：</span>
+    </p>
+    <ul>
+      <li class="bi-li">
+        <span class="en-li">80% of injuries come from 20% of hazards</span>
+        <span class="zh-li">80%的伤害来自20%的危害</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">80% of incidents stem from 20% of root causes</span>
+        <span class="zh-li">80%的事故源于20%的根本原因</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">A Pareto chart is a combined bar chart (descending frequency) and cumulative line graph</span>
+        <span class="zh-li">帕累托图是柱状图（按频率降序排列）与累积折线图的组合</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">Use it to prioritize which hazards or causes to address first for maximum impact</span>
+        <span class="zh-li">用于优先确定应首先处理哪些危害或原因以达到最大效果</span>
+      </li>
+    </ul>
+
+    <h3>常用数据展示工具 / Common Data Presentation Tools</h3>
+    <table class="bi-table">
+      <tr><th>工具 / Tool</th><th>用途 / Use</th></tr>
+      <tr>
+        <td><strong>帕累托图 / Pareto Chart</strong></td>
+        <td><span class="en-p">Rank-ordered bars with cumulative line; prioritize the "vital few" causes</span><span class="zh-p" style="color:#666;">降序柱状图加累积折线；确定"关键少数"原因优先级</span></td>
+      </tr>
+      <tr>
+        <td><strong>直方图 / Histogram</strong></td>
+        <td><span class="en-p">Distribution of a continuous variable (e.g., exposure levels)</span><span class="zh-p" style="color:#666;">连续变量的分布（如暴露水平）</span></td>
+      </tr>
+      <tr>
+        <td><strong>控制图 / Control Chart</strong></td>
+        <td><span class="en-p">Track a process over time against control limits (typically ±3σ); detect special-cause variation</span><span class="zh-p" style="color:#666;">随时间跟踪过程并与控制限（通常±3σ）比较；检测特殊原因变异</span></td>
+      </tr>
+      <tr>
+        <td><strong>散点图 / Scatter Plot</strong></td>
+        <td><span class="en-p">Relationship between two variables (e.g., training hours vs. incident rate)</span><span class="zh-p" style="color:#666;">两个变量之间的关系（如培训时数vs事故率）</span></td>
+      </tr>
+      <tr>
+        <td><strong>趋势图 / Run/Trend Chart</strong></td>
+        <td><span class="en-p">Incident rates over time; detect trends and seasonality</span><span class="zh-p" style="color:#666;">随时间的事故率；检测趋势和季节性</span></td>
+      </tr>
+      <tr>
+        <td><strong>因果图 / Cause-and-Effect (Fishbone)</strong></td>
+        <td><span class="en-p">Organize potential causes of a problem into categories</span><span class="zh-p" style="color:#666">将问题的潜在原因分类组织</span></td>
+      </tr>
+    </table>
+
+    <h3>选择中心趋势指标 / Choosing a Central Tendency Measure</h3>
+    <ul>
+      <li class="bi-li">
+        <span class="en-li"><strong>Use the mean</strong> when data is symmetric and you want the arithmetic average (e.g., average exposure).</span>
+        <span class="zh-li"><strong>使用均值</strong>：数据对称且需要算术平均时（如平均暴露）。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Use the median</strong> when data is skewed or contains outliers (e.g., cost data with rare catastrophic claims).</span>
+        <span class="zh-li"><strong>使用中位数</strong>：数据偏斜或含异常值时（如含罕见灾难性索赔的成本数据）。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Use the mode</strong> for categorical data — the most frequent category (e.g., most common injury type).</span>
+        <span class="zh-li"><strong>使用众数</strong>：用于分类数据——最常见的类别（如最常见的伤害类型）。</span>
+      </li>
+    </ul>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-mid">常考 MEDIUM</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "Which tool best shows which injury types account for most incidents?"<br>
+        <strong>答题要点 / Key point:</strong> 帕累托图=按频次降序的柱状图+累计曲线，基于80/20法则，用于优先级排序。图表选择：趋势/相关→散点图；随时间→趋势图；因果关系→鱼骨图。中心趋势：对称用均值、偏斜/异常值用中位数、分类用众数。
+      </div>
+    </div>
+  </div>
+
+  <div id="quiz-group-8"></div>
+
+
+  <!-- QUIZ SECTION -->
+  <div id="quiz-root"></div>
+
+</div>
+
+<script src="quiz-engine.js?v=11"></script>
+<script src="vocab-engine.js?v=11"></script>
+<script>
+CSPQuiz.init({
+  quizId: 'week-06-quiz',
+  quizTitle: 'Week 6 Quiz: Performance Measurement / 第6周测验：绩效测量',
+  quizTopic: 'Domain 2 — Program Management',
+  containerId: 'quiz-root',
+  questions: [
+    {
+      text: 'Which of the following is a LEADING indicator of safety performance?',
+      group: 1,
+      options: [
+        'Total Recordable Incident Rate (TRIR)',
+        'Number of near-miss reports submitted this month',
+        'Lost workday cases from the previous quarter',
+        'Workers\' compensation costs for the fiscal year'
+      ],
+      correct: 1,
+      explanation: 'The number of near-miss reports submitted is a leading indicator — it is proactive and predictive, measuring an activity that should improve future safety outcomes. TRIR, lost workday cases, and workers\' compensation costs are all lagging indicators, measuring past outcomes.\n\n提交的未遂事件报告数量是领先指标——它是主动性和预测性的，测量的是应能改善未来安全结果的活动。TRIR、损失工作日案例和工伤保险费用都是滞后指标，测量的是过去的结果。'
+    },
+    {
+      text: 'A company had 8 OSHA-recordable injuries with a total of 425,000 hours worked. What is the TRIR?',
+      group: 1,
+      options: [
+        '1.88',
+        '3.76',
+        '4.71',
+        '7.53'
+      ],
+      correct: 1,
+      explanation: 'TRIR = (N × 200,000) / total hours worked = (8 × 200,000) / 425,000 = 1,600,000 / 425,000 = 3.76. Remember to multiply by 200,000 (the base for 100 full-time workers), not 1,000,000 (which is used for LTIFR).\n\nTRIR = (N × 200,000) / 总工时 = (8 × 200,000) / 425,000 = 1,600,000 / 425,000 = 3.76。记住乘以200,000（100名全职工人的基数），而不是1,000,000（用于LTIFR）。'
+    },
+    {
+      text: 'When should the OSHA Form 300A Summary be posted in the workplace?',
+      group: 1,
+      options: [
+        'Within 7 calendar days of each recordable incident',
+        'From February 1 through April 30 each year',
+        'From January 1 through December 31 each year',
+        'Within 30 days of the end of each quarter'
+      ],
+      correct: 1,
+      explanation: 'OSHA requires the 300A Summary to be posted from February 1 through April 30 each year, covering the previous calendar year\'s data. It must be certified by a company executive and posted in a conspicuous location where notices to employees are customarily posted.\n\nOSHA要求300A摘要在每年2月1日至4月30日期间张贴，涵盖上一日历年数据。必须由公司高管认证，并张贴在通常向员工发布通知的显眼位置。'
+    },
+    {
+      text: 'In the Bradley Curve model of safety culture maturity, which stage is characterized by "safety by personal knowledge and commitment" where individuals take responsibility for their own safety?',
+      group: 1,
+      options: [
+        'Reactive stage',
+        'Dependent stage',
+        'Independent stage',
+        'Interdependent stage'
+      ],
+      correct: 2,
+      explanation: 'The Independent stage is where individuals internalize safety values and take personal responsibility. The Interdependent stage goes further — teams look out for each other. The Dependent stage relies on rules and supervision. The Reactive stage operates by instinct.\n\n独立型阶段是个人内化安全价值观并承担个人责任的阶段。互助型阶段更进一步——团队成员相互关照。依赖型阶段依赖规则和监督。反应型阶段凭本能行事。'
+    },
+    {
+      text: 'A safety professional wants to compare the lockout/tagout program against the best-in-class LOTO program in any industry. This is an example of:',
+      group: 1,
+      options: [
+        'Internal benchmarking',
+        'Competitive benchmarking',
+        'Functional benchmarking',
+        'Generic benchmarking'
+      ],
+      correct: 2,
+      explanation: 'Functional benchmarking compares a specific function or process (like LOTO) against best-in-class performers, even from different industries. Competitive benchmarking compares against direct competitors. Internal benchmarking compares within the same organization. Generic benchmarking compares general processes.\n\n功能基准比较将特定功能或流程（如LOTO）与最佳表现者比较，甚至跨行业。竞争基准比较是与直接竞争对手比较。内部基准比较是在同一组织内比较。通用基准比较是通用流程的比较。'
+    },
+    {
+      text: 'For a small sample of 15 noise exposure measurements where the population standard deviation is unknown, which distribution should be used to calculate the 95% confidence interval?',
+      group: 2,
+      options: [
+        'Z-distribution (normal distribution) with Z = 1.96',
+        'Chi-square distribution with 14 degrees of freedom',
+        't-distribution with 14 degrees of freedom',
+        'F-distribution with 1 and 14 degrees of freedom'
+      ],
+      correct: 2,
+      explanation: 'When n &lt; 30 and the population standard deviation (σ) is unknown, use the t-distribution. Degrees of freedom = n − 1 = 15 − 1 = 14. The t-distribution has wider tails than the normal distribution, providing more conservative confidence intervals for small samples.\n\n当n &lt; 30且总体标准差(σ)未知时，使用t分布。自由度 = n − 1 = 15 − 1 = 14。t分布的尾部比正态分布更宽，为小样本提供更保守的置信区间。'
+    },
+    {
+      text: 'A Pareto analysis of workplace injuries reveals that 75% of injuries come from three hazard categories out of fifteen total categories. What is the primary purpose of this analysis?',
+      group: 2,
+      options: [
+        'To calculate the statistical mean of injury types',
+        'To demonstrate compliance with OSHA recordkeeping requirements',
+        'To prioritize resources toward the few causes that produce the most effects',
+        'To benchmark the organization against industry averages'
+      ],
+      correct: 2,
+      explanation: 'Pareto analysis (based on the 80/20 rule) helps prioritize improvement efforts by identifying the "vital few" causes that account for the majority of effects. By focusing resources on those three hazard categories, the organization achieves maximum impact from its intervention efforts.\n\n帕累托分析（基于80/20法则）通过识别占大多数结果的"关键少数"原因，有助于确定改进工作的优先顺序。通过将资源集中在三个危害类别上，组织可使其干预措施达到最大效果。'
+    },
+    {
+      text: 'A company has 3 lost-time injuries and 850,000 hours worked. What is the LTIFR (Lost Time Injury Frequency Rate)?',
+      group: 2,
+      options: [
+        '0.71',
+        '3.53',
+        '1.41',
+        '7.06'
+      ],
+      correct: 1,
+      explanation: 'LTIFR = (lost time injuries × 1,000,000) / total hours worked = (3 × 1,000,000) / 850,000 = 3,000,000 / 850,000 = 3.53. Note that LTIFR uses a 1,000,000-hour base (unlike TRIR which uses 200,000). This is the international standard.\n\nLTIFR = (损失工时伤害数 × 1,000,000) / 总工时 = (3 × 1,000,000) / 850,000 = 3,000,000 / 850,000 = 3.53。注意LTIFR使用1,000,000工时的基数（不同于TRIR使用200,000）。这是国际标准。'
+    },
+    {
+      text: 'A worker is treated for a minor cut with a non-prescription bandage and antiseptic. According to OSHA recordkeeping, this case is:',
+      group: 2,
+      options: [
+        'Recordable as an injury',
+        'Not recordable because first aid treatment does not make a case recordable',
+        'Recordable because any treatment is medical treatment',
+        'Recordable only if the worker missed time'
+      ],
+      correct: 1,
+      explanation: 'First aid — including non-prescription medication and simple bandaging — does not make a case OSHA-recordable. Recordability requires medical treatment beyond first aid, days away, restricted work, transfer, loss of consciousness, or a significant diagnosed injury/illness.\n\n急救——包括非处方药和简单包扎——不使案例成为OSHA可记录。可记录性要求超出急救的医疗处理、缺勤、受限工作、转岗、意识丧失或重大确诊伤害/疾病。'
+    },
+    {
+      text: 'A worker receives prescription pain medication and sutures for a work-related laceration but returns to full duty the same day. This case is:',
+      group: 2,
+      options: [
+        'Not recordable because no time was lost',
+        'Recordable because prescription medication and sutures are medical treatment beyond first aid',
+        'Not recordable because it was treated on the same day',
+        'Recordable only if the employer reports it to OSHA immediately'
+      ],
+      correct: 1,
+      explanation: 'Medical treatment beyond first aid — such as prescription medication and sutures — makes a case recordable, even if no days are lost. Return to full duty the same day does not change recordability. Recordability does NOT require lost time.\n\n超出急救的医疗处理——如处方药和缝合——使案例可记录，即使没有损失任何天数。当天返回全职工作不改变可记录性。可记录性不需要损失工时。'
+    },
+    {
+      text: 'A worker dies from a work-related incident. According to OSHA, the employer must report this fatality to OSHA within:',
+      group: 3,
+      options: [
+        '8 hours',
+        '24 hours',
+        '7 calendar days',
+        '30 days'
+      ],
+      correct: 0,
+      explanation: 'OSHA requires reporting of any work-related fatality within 8 hours. In-patient hospitalizations, amputations, and loss of an eye must be reported within 24 hours. Recording on the 300 Log (within 7 days) is a separate, slower discipline.\n\nOSHA要求任何与工作相关的死亡必须在8小时内报告。住院治疗、截肢和眼球丧失必须在24小时内报告。在300日志上记录（7天内）是另一项更慢的纪律。'
+    },
+    {
+      text: 'A company had 4 DART cases (2 days away, 1 restricted work, 1 transfer) and 500,000 total hours worked. What is the DART rate?',
+      group: 3,
+      options: [
+        '0.8',
+        '1.6',
+        '2.4',
+        '4.0'
+      ],
+      correct: 1,
+      explanation: 'DART = (DART cases × 200,000) / total hours = (4 × 200,000) / 500,000 = 800,000 / 500,000 = 1.6. DART counts only cases involving days away, restricted work, or job transfer — not all recordable cases.\n\nDART = (DART案例数 × 200,000) / 总工时 = (4 × 200,000) / 500,000 = 800,000 / 500,000 = 1.6。DART只计算涉及缺勤、受限工作或转岗的案例——而非所有可记录案例。'
+    },
+    {
+      text: 'An employer has 120 total lost workdays from 5 lost-time cases across 400,000 hours worked. What is the severity rate?',
+      group: 3,
+      options: [
+        '24',
+        '30',
+        '60',
+        '120'
+      ],
+      correct: 2,
+      explanation: 'Severity Rate = (lost workdays × 200,000) / total hours = (120 × 200,000) / 400,000 = 24,000,000 / 400,000 = 60. Severity rate measures the severity (days lost per 100 workers), unlike frequency rates which count the number of cases.\n\n严重度 = (损失工作日 × 200,000) / 总工时 = (120 × 200,000) / 400,000 = 24,000,000 / 400,000 = 60。严重度衡量严重程度（每100名工人的损失天数），不同于计算案例数量的频率率。'
+    },
+    {
+      text: 'For the previous question\'s data (120 lost workdays, 5 lost-time cases), what is the AVERAGE severity per lost-time case?',
+      group: 3,
+      options: [
+        '12 days',
+        '24 days',
+        '60 days',
+        '100 days'
+      ],
+      correct: 1,
+      explanation: 'Average severity = total lost workdays / number of lost-time cases = 120 / 5 = 24 days per case. This metric tells you the average number of days lost per lost-time injury.\n\n平均严重度 = 总损失工作日 / 损失工时案例数 = 120 / 5 = 每案例24天。该指标告诉你每个损失工时伤害的平均损失天数。'
+    },
+    {
+      text: 'Monthly incident counts at a site are: 4, 5, 5, 6, 8, 100 (one catastrophic event). Which measure of central tendency is MOST appropriate to report?',
+      group: 3,
+      options: [
+        'Mean = 21.3, because it uses all the data',
+        'Median = 5.5, because it is robust to the extreme outlier',
+        'Mode = 5, because it occurs most often',
+        'Range, because it captures variability'
+      ],
+      correct: 1,
+      explanation: 'The median (5.5) is most appropriate because the value 100 is a rare catastrophic outlier that skews the mean (21.3). The median is unaffected by outliers and better represents the typical monthly incident count.\n\n中位数（5.5）最合适，因为值100是罕见的灾难性异常值，会使均值（21.3）偏斜。中位数不受异常值影响，更能代表典型的月度事故数。'
+    },
+    {
+      text: 'For the data set 4, 5, 5, 6, 8, 10, what is the mean?',
+      group: 4,
+      options: [
+        '5',
+        '5.5',
+        '6.33',
+        '8'
+      ],
+      correct: 2,
+      explanation: 'Mean = (4 + 5 + 5 + 6 + 8 + 10) / 6 = 38 / 6 = 6.33. The mode is 5 (appears twice) and the median is (5+6)/2 = 5.5.\n\n均值 = (4 + 5 + 5 + 6 + 8 + 10) / 6 = 38 / 6 = 6.33。众数是5（出现两次），中位数是(5+6)/2 = 5.5。'
+    },
+    {
+      text: 'A sample of 5 noise measurements has values 4, 6, 8, 10, 12. What is the SAMPLE standard deviation?',
+      group: 4,
+      options: [
+        '2.83',
+        '3.16',
+        '4.47',
+        '8.0'
+      ],
+      correct: 1,
+      explanation: 'Mean = 8. Sum of squared deviations = 16+4+0+4+16 = 40. Sample variance = 40/(n−1) = 40/4 = 10. Sample SD = √10 = 3.16. Note: 2.83 is the population SD (using n=5); the sample SD uses n−1 = 4.\n\n均值 = 8。离差平方和 = 16+4+0+4+16 = 40。样本方差 = 40/(n−1) = 40/4 = 10。样本标准差 = √10 = 3.16。注意：2.83是总体标准差（用n=5）；样本标准差用n−1 = 4。'
+    },
+    {
+      text: 'A safety professional takes 36 air sampling measurements with a mean of 85 ppm and a known population standard deviation of 3 ppm. What is the 95% confidence interval for the true mean exposure?',
+      group: 4,
+      options: [
+        '85 ± 0.50',
+        '85 ± 0.98',
+        '85 ± 3.00',
+        '85 ± 1.96'
+      ],
+      correct: 1,
+      explanation: 'CI = x̄ ± Z × (σ/√n) = 85 ± 1.96 × (3/√36) = 85 ± 1.96 × 0.5 = 85 ± 0.98. The margin of error is 0.98 ppm, giving an interval of [84.0, 86.0] ppm.\n\nCI = x̄ ± Z × (σ/√n) = 85 ± 1.96 × (3/√36) = 85 ± 1.96 × 0.5 = 85 ± 0.98。误差边际为0.98 ppm，区间为[84.0, 86.0] ppm。'
+    },
+    {
+      text: 'In the previous question (n = 36), which Z-value is used for a 95% confidence interval?',
+      group: 4,
+      options: [
+        '1.645',
+        '1.96',
+        '2.576',
+        '3.00'
+      ],
+      correct: 1,
+      explanation: 'For a 95% confidence interval, Z = 1.96. For 90% use 1.645, for 99% use 2.576. Since n = 36 ≥ 30 and σ is known, the Z (normal) distribution is used.\n\n对于95%置信区间，Z = 1.96。90%用1.645，99%用2.576。由于n = 36 ≥ 30且σ已知，使用Z（正态）分布。'
+    },
+    {
+      text: 'A control chart monitors a safety process over time. What is the typical control limit width used to distinguish common-cause from special-cause variation?',
+      group: 4,
+      options: [
+        '±1 standard deviation',
+        '±2 standard deviations',
+        '±3 standard deviations',
+        '±5 standard deviations'
+      ],
+      correct: 2,
+      explanation: 'Control charts typically use ±3σ control limits. Under the normal distribution, 99.7% of values fall within ±3σ, so points outside this range signal special-cause variation that requires investigation.\n\n控制图通常使用±3σ控制限。在正态分布下，99.7%的值落在±3σ内，因此超出此范围的点表明存在需要调查的特殊原因变异。'
+    },
+    {
+      text: 'According to the 68-95-99.7 rule for a normal distribution, what percentage of observations fall within ±2 standard deviations of the mean?',
+      group: 5,
+      options: [
+        '68%',
+        '95%',
+        '99.7%',
+        '50%'
+      ],
+      correct: 1,
+      explanation: 'The 68-95-99.7 rule states: 68% of data falls within ±1σ, 95% within ±2σ, and 99.7% within ±3σ. This is fundamental for understanding exposure data and control chart behavior.\n\n68-95-99.7法则：68%的数据落在±1σ内，95%在±2σ内，99.7%在±3σ内。这是理解暴露数据和控制图行为的基础。'
+    },
+    {
+      text: 'The 200,000-hour base used in TRIR and DART represents:',
+      group: 5,
+      options: [
+        'The average hours worked per employee per year',
+        '100 full-time workers × 50 weeks × 40 hours per week',
+        'A government-mandated standard hours figure',
+        'The minimum hours required for OSHA recordkeeping'
+      ],
+      correct: 1,
+      explanation: '200,000 hours = 100 full-time workers × 50 weeks × 40 hours/week. This normalizes incident rates to a per-100-worker basis, enabling fair comparison across organizations of different sizes. LTIFR uses 1,000,000 hours (500 workers).\n\n200,000小时 = 100名全职工人 × 50周 × 40小时/周。这使事故率标准化为每100名工人的基数，便于不同规模组织之间公平比较。LTIFR使用1,000,000小时（500名工人）。'
+    },
+    {
+      text: 'Which of the following is considered a lagging indicator of safety performance?',
+      group: 5,
+      options: [
+        'Percentage of work orders completed safely',
+        'Number of hazard assessments completed',
+        'Workers\' compensation claim rate',
+        'Number of employees attending safety training'
+      ],
+      correct: 2,
+      explanation: 'Workers\' compensation claim rate is a lagging indicator — it measures the outcome of past incidents. Completing work orders, hazard assessments, and safety training are all leading indicators that measure proactive activities.\n\n工伤保险索赔率是滞后指标——它衡量过去事故的结果。完成工作单、危害评估和安全培训都是衡量主动活动的领先指标。'
+    },
+    {
+      text: 'According to OSHA, the OSHA 300 Log of injuries and illnesses must be retained for:',
+      group: 5,
+      options: [
+        '1 year',
+        '5 years following the end of the calendar year',
+        '10 years',
+        '30 years'
+      ],
+      correct: 1,
+      explanation: 'The OSHA 300 Log must be retained for 5 years following the end of the calendar year that the log covers. This is distinct from exposure records (30 years) and medical records (employment + 30 years).\n\nOSHA 300日志必须在日志覆盖的日历年结束后保留5年。这不同于暴露记录（30年）和医疗记录（雇佣期+30年）。'
+    },
+    {
+      text: 'A company has a TRIR of 4.0 for the year. Their direct competitor has a TRIR of 2.0. What can be concluded?',
+      group: 5,
+      options: [
+        'The company has a worse safety record than the competitor',
+        'The company is 100% less safe than the competitor',
+        'The competitor has a more favorable incident rate, but other factors (leading indicators, hazard levels) must be considered for a full comparison',
+        'The competitor must be violating OSHA recordkeeping rules'
+      ],
+      correct: 2,
+      explanation: 'A higher TRIR indicates more recordable incidents per 100 workers, but comparisons must consider industry, NAICS code, employment size, and hazard exposure. One rate alone does not tell the full story — leading indicators and context are needed.\n\n较高的TRIR表明每100名工人的可记录事故更多，但比较必须考虑行业、NAICS代码、就业规模和危害暴露。单一比率不能说明全部——需要领先指标和背景信息。'
+    },
+    {
+      text: 'When analyzing the most common type of workplace injury from categorical injury data, which statistical measure is MOST appropriate?',
+      group: 6,
+      options: [
+        'Mean',
+        'Median',
+        'Mode',
+        'Standard deviation'
+      ],
+      correct: 2,
+      explanation: 'The mode is the most appropriate measure for categorical data — it identifies the most frequently occurring category (e.g., "strains" or "lacerations"). Mean and median require numeric data; standard deviation measures dispersion.\n\n众数最适合分类数据——它识别出现频率最高的类别（如"拉伤"或"割伤"）。均值和位数需要数值数据；标准差测量分散程度。'
+    },
+    {
+      text: 'Which safety culture maturity stage in the maturity model is characterized by "safety is managed through systems and data collection"?',
+      group: 6,
+      options: [
+        'Pathological',
+        'Reactive',
+        'Calculative',
+        'Generative'
+      ],
+      correct: 2,
+      explanation: 'In the Safety Culture Maturity Model, the Calculative stage manages safety through systems, procedures, and data collection. The Generative stage is the highest, where safety is fully integrated and there is chronic unease about risk.\n\n在安全文化成熟度模型中，计算型阶段通过系统、程序和数据分析管理安全。生成型阶段是最高的，安全完全融入且对风险保持持续关注。'
+    },
+    {
+      text: 'An OSHA recordable case that resulted in the employee being assigned to a completely different, less demanding job on a temporary basis should be recorded as:',
+      group: 6,
+      options: [
+        'Days away from work',
+        'Restricted work',
+        'Job transfer',
+        'No record required'
+      ],
+      correct: 2,
+      explanation: 'A job transfer occurs when the employee is assigned to a completely different job on a temporary or permanent basis. Restricted work means the employee stays in the same job but cannot perform all duties. Both are recordable under the DART classification.\n\n转岗发生在员工被临时或永久地分配到完全不同的岗位时。受限工作是指员工留在原岗位但无法履行全部职责。两者都属于DART分类下可记录。'
+    },
+    {
+      text: 'Which of the following is the correct formula for the 95% confidence interval when the population standard deviation is UNKNOWN and the sample size is 20?',
+      group: 6,
+      options: [
+        'CI = x̄ ± 1.96 × (s/√n)',
+        'CI = x̄ ± t × (s/√n) with df = 19',
+        'CI = x̄ ± 1.96 × (σ/√n)',
+        'CI = x̄ ± t × (σ/√n) with df = 20'
+      ],
+      correct: 1,
+      explanation: 'When σ is unknown and n &lt; 30, use the t-distribution: CI = x̄ ± t × (s/√n), with degrees of freedom = n − 1 = 19. The sample standard deviation (s) is used in place of the population σ.\n\n当σ未知且n &lt; 30时，使用t分布：CI = x̄ ± t × (s/√n)，自由度 = n − 1 = 19。用样本标准差(s)替代总体σ。'
+    },
+    {
+      text: 'A trend chart shows the TRIR declining steadily over five years. However, a leading-indicator review shows a sharp drop in safety inspections and near-miss reporting over the same period. The best interpretation is:',
+      group: 7,
+      options: [
+        'The improving TRIR proves the safety program is working well',
+        'The declining TRIR may be misleading — declining proactive activities suggest future risk is increasing despite past favorable outcomes',
+        'TRIR and inspections are unrelated, so no conclusion can be drawn',
+        'Near-miss reporting should be reduced further to improve the numbers'
+      ],
+      correct: 1,
+      explanation: 'This scenario illustrates the limitation of lagging indicators: past outcomes (declining TRIR) may be favorable while leading indicators signal that proactive controls (inspections, reporting) are eroding — a warning that future incidents may increase. A balanced scorecard would flag this risk.\n\n该场景说明了滞后指标的局限：过去的结果（TRIR下降）可能有利，而领先指标表明主动控制（检查、报告）正在减弱——预示未来事故可能增加。平衡计分卡会警示这一风险。'
+    },
+    {
+      text: 'Which chart type is BEST for showing the distribution of a continuous variable, such as personal noise exposure levels across a workgroup?',
+      group: 7,
+      options: [
+        'Pareto chart',
+        'Histogram',
+        'Scatter plot',
+        'Control chart'
+      ],
+      correct: 1,
+      explanation: 'A histogram displays the frequency distribution of a continuous variable (e.g., exposure levels), revealing shape, central tendency, and spread. A Pareto chart ranks categorical causes; a scatter plot shows two-variable relationships; a control chart tracks a process over time.\n\n直方图显示连续变量（如暴露水平）的频率分布，揭示形状、中心趋势和分散程度。帕累托图对分类原因排序；散点图显示两变量关系；控制图随时间跟踪过程。'
+    },
+    {
+      text: 'In the Bradley Curve, what is the key behavioral characteristic of the DEPENDENT stage?',
+      group: 7,
+      options: [
+        'People rely on their natural instincts to stay safe',
+        'People follow safety rules and are supervised; safety is driven by discipline and management enforcement',
+        'People take personal responsibility and self-regulate their own safety',
+        'Teams collectively look out for each other\'s safety'
+      ],
+      correct: 1,
+      explanation: 'The Dependent stage is characterized by rules, supervision, and management commitment — safety is enforced through discipline and compliance. The Independent stage adds personal commitment; the Interdependent stage adds collective care.\n\n依赖型阶段的特点是以规则、监督和管理层承诺为主——通过纪律和合规强制安全。独立型阶段增加个人承诺；互助型阶段增加集体关怀。'
+    },
+    {
+      text: 'The best strategy for measuring safety performance is to:',
+      group: 7,
+      options: [
+        'Use only lagging indicators because they are objective',
+        'Use only leading indicators because they are proactive',
+        'Use a balanced scorecard combining leading and lagging indicators',
+        'Track only OSHA recordkeeping metrics'
+      ],
+      correct: 2,
+      explanation: 'A balanced scorecard uses both leading indicators (to drive improvement) and lagging indicators (to validate results). Neither alone gives a complete picture — this is a core principle of safety performance measurement.\n\n平衡计分卡同时使用领先指标（推动改进）和滞后指标（验证结果）。单独任何一种都不能给出完整图景——这是安全绩效测量的核心原则。'
+    },
+    {
+      text: 'A recordable case log must be updated within what time frame of the employer becoming aware of the injury or illness?',
+      group: 8,
+      options: [
+        'Within 24 hours',
+        'Within 7 calendar days',
+        'Within 30 days',
+        'At the end of the calendar year'
+      ],
+      correct: 1,
+      explanation: 'The employer must enter a recordable case on the OSHA 300 Log within 7 calendar days of receiving information that the recordable injury or illness has occurred. The OSHA 301 form must also be completed within 7 calendar days.\n\n雇主必须在收到可记录伤害或疾病发生信息的7个日历日内，将该案例登记到OSHA 300日志上。OSHA 301表格也必须在7个日历日内完成。'
+    },
+    {
+      text: 'Which of the following is an example of a "vital few" finding from a Pareto analysis?',
+      group: 8,
+      options: [
+        'A safety program focusing equally on all 20 hazard categories',
+        'Identifying that 80% of injuries stem from 3 of 15 hazard categories and targeting those first',
+        'Reporting all hazards to the regulatory agency',
+        'Applying the same inspection frequency to every department'
+      ],
+      correct: 1,
+      explanation: 'Pareto analysis identifies the "vital few" causes (often 20% of causes producing 80% of effects). Targeting those few causes first maximizes the impact of limited safety resources — this is the purpose of the 80/20 principle.\n\n帕累托分析识别"关键少数"原因（通常是20%的原因产生80%的结果）。首先针对少数原因可在有限的安全资源下实现最大影响——这就是80/20原则的目的。'
+    },
+    {
+      text: 'A site experienced one serious incident in a small workforce. Its TRIR is well above the industry average for that NAICS code. What is the most important limitation to consider before concluding the site is unsafe?',
+      group: 8,
+      options: [
+        'The NAICS code may be incorrect',
+        'Small sample sizes make incident rates highly volatile; a single event can swing a small site\'s rate dramatically',
+        'TRIR cannot be compared across organizations',
+        'OSHA does not use TRIR for enforcement'
+      ],
+      correct: 1,
+      explanation: 'For small workforces, incident rates are statistically unstable — one incident can produce a very high rate. Rates should be interpreted with sample-size awareness, and leading indicators and multiple-year trends provide more stable signals.\n\n对于小规模劳动力，事故率在统计上不稳定——一起事故就能产生非常高的比率。解释比率时应考虑样本量，领先指标和多年趋势能提供更稳定的信号。'
+    },
+    {
+      text: 'Which OSHA form must be certified by a company executive and posted annually?',
+      group: 8,
+      options: [
+        'OSHA 300 Log',
+        'OSHA 300A Summary',
+        'OSHA 301 Incident Report',
+        'OSHA 1903 poster'
+      ],
+      correct: 1,
+      explanation: 'The OSHA 300A Summary must be certified by a company executive and posted from February 1 through April 30 each year. The 300 Log and 301 forms are retained but not posted; the 1903 poster is the "Job Safety and Health: It\'s the Law" poster.\n\nOSHA 300A摘要必须由公司高管认证，并在每年2月1日至4月30日张贴。300日志和301表格保留但不张贴；1903海报是"工作安全与健康：这是法律"海报。'
+    }
+  ]
+});
+</script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js').catch(function() {});
+}
+</script>
+</body>
+</html>

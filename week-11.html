@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 11: HAZOP, Bow-Tie & Risk Finance / HAZOP、蝴蝶结分析与风险财务 — CSP Exam Prep</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1e3a5f">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="stylesheet" href="quiz-styles.css?v=11">
+<style>
+  .breadcrumb { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 16px; }
+  .breadcrumb a { color: var(--accent); text-decoration: none; }
+  .breadcrumb a:hover { text-decoration: underline; }
+  p.bi-p, li.bi-li { margin-bottom: 10px; }
+  p.bi-p .en-p, li.bi-li .en-li { display: block; }
+  p.bi-p .zh-p, li.bi-li .zh-li { display: block; color: #666; font-size: 0.92em; margin-top: 2px; }
+  table.bi-table th { white-space: nowrap; }
+  .study-table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  .study-table th { background: #1a3a5c; color: #fff; padding: 10px; text-align: left; }
+  .study-table td { padding: 10px; border-bottom: 1px solid #ddd; }
+  .study-table tr:nth-child(even) { background: #f8f9fb; }
+  .important { background: #fef9e7; border-left: 5px solid #f39c12; padding: 15px 20px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+  .bowtie-diagram { text-align:center;padding:20px;background:#f5f5f5;border-radius:8px;margin:15px 0; }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="breadcrumb">
+    <a href="index.html">← 返回仪表盘 / Dashboard</a> &nbsp;|&nbsp;
+    领域 / Domain 3: <span style="font-weight:600;">风险管理 / Risk Management</span>
+  </div>
+
+  <div class="page-header">
+    <h1>📖 第11周 / Week 11:<br><span class="bi-term"><span class="zh">HAZOP、蝴蝶结分析与风险财务</span> · <span class="en">HAZOP, Bow-Tie &amp; Risk Finance</span><span class="vocab-star" data-term="HAZOP, Bow-Tie, Risk Finance">☆</span></span></h1>
+    <div class="subtitle">领域3：风险管理（占考试15%）· 建议学习时间：6–8小时<br>Domain 3: Risk Management (15% of exam) · Est. study time: 6–8 hours</div>
+  </div>
+
+  <!-- ===== Knowledge Point 1: HAZOP Overview ===== -->
+  <div class="knowledge-card">
+    <h2>11.1 <span class="bi-term"><span class="zh">危害与可操作性研究</span> · <span class="en">HAZOP — Hazard and Operability Study</span><span class="vocab-star" data-term="HAZOP (Hazard and Operability Study)">☆</span></span></h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>Brauer Ch.36 (System Safety) · 29 CFR 1910.119 (Process Safety Management)</span>
+    </div>
+
+    <p class="bi-p">
+      <span class="en-p">HAZOP is a structured, systematic team-based technique for identifying hazards and operability problems in process systems. It was developed by <span class="bi-term"><span class="zh">ICI（帝国化学工业公司）</span><span class="en">ICI</span></span> in the 1960s and is now the most widely used <span class="bi-term"><span class="zh">工艺危害分析</span><span class="en">process hazard analysis (PHA)</span><span class="vocab-star" data-term="Process Hazard Analysis (PHA)">☆</span></span> technique in the chemical and process industries.</span>
+      <span class="zh-p">HAZOP是一种结构化、系统化的团队技术，用于识别工艺系统中的危害和可操作性问题。它由ICI公司在20世纪60年代开发，现在是化工和过程工业中使用最广泛的工艺危害分析（PHA）技术。</span>
+    </p>
+
+    <p class="bi-p">
+      <span class="en-p">HAZOP examines <strong>deviations from design intent</strong>. It systematically divides the process into <strong>nodes</strong> (sections of equipment/piping), applies <strong>guidewords</strong> to <strong>process parameters</strong>, and for each resulting <strong>deviation</strong> identifies causes, consequences, safeguards, and recommendations.</span>
+      <span class="zh-p">HAZOP检查<strong>偏离设计意图的偏差</strong>。它系统地将工艺划分为<strong>节点</strong>（设备/管道区段），将<strong>引导词</strong>应用于<strong>工艺参数</strong>，并对每个产生的<strong>偏差</strong>识别原因、后果、防护措施和建议。</span>
+    </p>
+
+    <h3><span class="en-p">The HAZOP "Ask" Cycle / HAZOP提问循环</span></h3>
+    <div class="formula-box">
+      Node (节点) → Parameter (参数) + Guideword (引导词) → Deviation (偏差) → Causes (原因) → Consequences (后果) → Safeguards (防护) → Recommendations (建议)
+    </div>
+
+    <p class="bi-p">
+      <span class="en-p"><strong>Example:</strong> Node = transfer line, Parameter = Pressure, Guideword = More → Deviation = "More Pressure" (overpressure). Causes: blocked outlet, thermal expansion, regulator failure. Consequences: line rupture, release. Safeguards: PSV, pressure alarm. Recommendation: verify PSV sizing.</span>
+      <span class="zh-p"><strong>示例：</strong>节点 = 输送管线，参数 = 压力，引导词 = 更多 → 偏差 = "压力过高"（超压）。原因：出口堵塞、热膨胀、调节器失效。后果：管线破裂、泄漏。防护：安全阀、压力报警。建议：核实安全阀选型。</span>
+    </p>
+
+    <div class="important">
+      <strong>⚠ CSP 考试技巧 / Exam Tip:</strong><br>
+      <span class="en-p">HAZOP examines DEVIATIONS from design intent, not the design itself. Every deviation is a "guideword + parameter" pair. "More Flow," "No Level," "Reverse Temperature" (unusual but valid) are all HAZOP deviations.</span>
+      <span class="zh-p">HAZOP检查偏离设计意图的<em>偏差</em>，而非设计本身。每个偏差都是"引导词 + 参数"对。"流量过多"、"无液位"、"温度反向"（不常见但有效）都是HAZOP偏差。</span>
+    </div>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-high">必考 HIGH</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "What is the deviation when guideword 'More' is applied to parameter 'Pressure'?"<br>
+        <strong>答题要点 / Key point:</strong> HAZOP=引导词×参数=偏差，检查的是<strong>偏离设计意图</strong>而非设计本身。链路：节点→参数+引导词→偏差→原因→后果→防护→建议。偏差是"引导词+参数"对（如More+Pressure=超压）。是PSM PHA最常用/最严格的方法。
+      </div>
+    </div>
+
+    <div class="exam-scenario">
+      <div class="es-label">📝 真题情景 / Exam Scenario:</div>
+      <div class="es-question">"During a HAZOP, the team applies 'No' to the parameter 'Flow' on a feed line. What have they identified?"</div>
+      <div><strong>最佳答案 / Best answer:</strong> A deviation — "No Flow" (zero flow) — to be analyzed for causes (e.g., pump failure, blocked line, closed valve), consequences, and safeguards. 解析：HAZOP识别的是引导词+参数的偏差组合，再追溯原因与后果，评估现有防护是否充分。</div>
+    </div>
+  </div>
+
+  <div id="quiz-group-1"></div>
+
+
+  <!-- ===== Knowledge Point 2: HAZOP Guidewords ===== -->
+  <div class="knowledge-card">
+    <h2>11.2 <span class="en-p">HAZOP Guidewords and Parameters</span><span class="zh-p" style="color:#666;display:block;">HAZOP引导词与参数</span></h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>Brauer Ch.36 (System Safety) · 29 CFR 1910.119 (PHA element)</span>
+    </div>
+
+    <h3><span class="en-p">The Seven Standard Guidewords / 七个标准引导词</span></h3>
+    <table class="study-table">
+      <thead><tr><th><span class="en-p">Guideword / 引导词</span></th><th><span class="en-p">Meaning / 含义</span></th><th><span class="en-p">Example (applied to "Flow")</span><span class="zh-p" style="color:#ccc;display:block;">示例（应用于"流量"）</span></th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong><span class="bi-term"><span class="zh">无</span><span class="en">No / None</span><span class="vocab-star" data-term="No/None (HAZOP)">☆</span></span></strong></td>
+          <td><span class="en-p">Complete negation of the design intent / 设计意图的完全否定</span></td>
+          <td><span class="en-p">No flow (blockage, pump failure) / 无流量（堵塞、泵故障）</span></td>
+        </tr>
+        <tr>
+          <td><strong><span class="bi-term"><span class="zh">更多</span><span class="en">More</span><span class="vocab-star" data-term="More (HAZOP)">☆</span></span></strong></td>
+          <td><span class="en-p">Quantitative increase / 定量增加</span></td>
+          <td><span class="en-p">More flow than intended (surge, valve stuck open) / 流量超出预期（冲击、阀门卡在开启位置）</span></td>
+        </tr>
+        <tr>
+          <td><strong><span class="bi-term"><span class="zh">更少</span><span class="en">Less</span><span class="vocab-star" data-term="Less (HAZOP)">☆</span></span></strong></td>
+          <td><span class="en-p">Quantitative decrease / 定量减少</span></td>
+          <td><span class="en-p">Less flow than intended (partial blockage, leak) / 流量低于预期（部分堵塞、泄漏）</span></td>
+        </tr>
+        <tr>
+          <td><strong><span class="bi-term"><span class="zh">以及</span><span class="en">As Well As</span><span class="vocab-star" data-term="As Well As (HAZOP)">☆</span></span></strong></td>
+          <td><span class="en-p">Qualitative increase (additional component) / 定性增加（额外组分）</span></td>
+          <td><span class="en-p">Contaminant present in flow (impurity, corrosion product) / 流体中有污染物（杂质、腐蚀产物）</span></td>
+        </tr>
+        <tr>
+          <td><strong><span class="bi-term"><span class="zh">部分</span><span class="en">Part Of</span><span class="vocab-star" data-term="Part Of (HAZOP)">☆</span></span></strong></td>
+          <td><span class="en-p">Qualitative decrease (missing component) / 定性减少（缺少组分）</span></td>
+          <td><span class="en-p">Missing component in flow (incomplete reaction mixture) / 流体中缺少组分（反应混合物不完整）</span></td>
+        </tr>
+        <tr>
+          <td><strong><span class="bi-term"><span class="zh">反向</span><span class="en">Reverse</span><span class="vocab-star" data-term="Reverse (HAZOP)">☆</span></span></strong></td>
+          <td><span class="en-p">Opposite of design intent / 与设计意图相反</span></td>
+          <td><span class="en-p">Reverse flow (check valve failure, back-siphoning) / 反向流动（止回阀失效、倒吸）</span></td>
+        </tr>
+        <tr>
+          <td><strong><span class="bi-term"><span class="zh">其他</span><span class="en">Other Than</span><span class="vocab-star" data-term="Other Than (HAZOP)">☆</span></span></strong></td>
+          <td><span class="en-p">Complete substitution / 完全替代</span></td>
+          <td><span class="en-p">Wrong material flowing (incorrect feed, maintenance error) / 错误物料流动（进料错误、维修失误）</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3><span class="en-p">Process Parameters / 工艺参数</span></h3>
+    <p class="bi-p">
+      <span class="en-p">Guidewords are combined with parameters such as: <strong>Flow, Temperature, Pressure, Level, Composition, Viscosity, pH, Reaction, Phase, Speed, Voltage, Time.</strong></span>
+      <span class="zh-p">引导词与以下参数结合使用：<strong>流量、温度、压力、液位、组成、粘度、pH值、反应、相态、速度、电压、时间。</strong></span>
+    </p>
+
+    <div class="important">
+      <strong>⚠ CSP 考试技巧 / Exam Tip:</strong><br>
+      <span class="en-p">Know the two most commonly confused guideword pairs: <strong>More (quantitative increase)</strong> vs. <strong>As Well As (qualitative increase — an extra substance)</strong>, and <strong>Less (quantitative decrease)</strong> vs. <strong>Part Of (qualitative decrease — a missing substance)</strong>.</span>
+      <span class="zh-p">掌握最易混淆的两对引导词：<strong>更多（定量增加）</strong>vs.<strong>以及（定性增加——额外物质）</strong>，以及<strong>更少（定量减少）</strong>vs.<strong>部分（定性减少——缺少物质）</strong>。</span>
+    </div>
+
+    <div class="confusion-box">
+      <div class="cb-label">⚖️ 易混淆对比 / Common Confusions:</div>
+      <table class="study-table">
+        <tr><th>More 更多</th><th>As Well As 以及</th><th>关键区别 / Key Difference</th></tr>
+        <tr><td>定量增加（流量更大、温度更高）</td><td>定性增加——混入额外物质</td><td>More=数量更多；As Well As=多了一种东西（组分改变）</td></tr>
+        <tr><th>Less 更少</th><th>Part Of 部分</th><th>关键区别 / Key Difference</th></tr>
+        <tr><td>定量减少（流量更低）</td><td>定性减少——缺少某组分</td><td>Less=数量变少；Part Of=缺了某种物质（组成不完整）</td></tr>
+      </table>
+    </div>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-high">必考 HIGH</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "Which guideword means a qualitative increase (an extra substance in the flow)?"<br>
+        <strong>答题要点 / Key point:</strong> 两对易混：More(定量增)vs As Well As(定性增=额外物质)；Less(定量减)vs Part Of(定性减=缺组分)。Reverse=反向流、Other Than=完全替代(错料)。参数：流量/温度/压力/液位/组成/反应等。
+      </div>
+    </div>
+  </div>
+
+  <div id="quiz-group-2"></div>
+
+
+  <!-- ===== Knowledge Point 3: HAZOP Team & Worksheet ===== -->
+  <div class="knowledge-card">
+    <h2>11.3 <span class="en-p">HAZOP Team, Worksheet, and Timing</span><span class="zh-p" style="color:#666;display:block;">HAZOP团队、工作表与时机</span></h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>Brauer Ch.36 (System Safety) · 29 CFR 1910.119 (PHA element)</span>
+    </div>
+
+    <h3><span class="en-p">HAZOP Team Composition / HAZOP团队组成</span></h3>
+    <ul>
+      <li class="bi-li"><span class="en-li"><strong>Team Leader / 团队负责人:</strong> Facilitates the study, ensures methodology is followed (not necessarily the most senior technical person).</span><span class="zh-li">主持研究，确保方法得当（不一定是最高级的技术人员）。</span></li>
+      <li class="bi-li"><span class="en-li"><strong>Scribe (Recorder) / 记录员:</strong> Documents all discussions, findings, and recommendations in real time.</span><span class="zh-li">实时记录所有讨论、发现和建议。</span></li>
+      <li class="bi-li"><span class="en-li"><strong>Process Engineer / 工艺工程师:</strong> Understands the process design and operating conditions.</span><span class="zh-li">了解工艺设计和操作条件。</span></li>
+      <li class="bi-li"><span class="en-li"><strong>Operations Representative / 操作代表:</strong> Knows how the plant is actually operated (often differs from design).</span><span class="zh-li">了解工厂实际操作方式（通常与设计不同）。</span></li>
+      <li class="bi-li"><span class="en-li"><strong>Instrument/Control Engineer / 仪表/控制工程师:</strong> Understands control systems, alarms, and interlocks.</span><span class="zh-li">了解控制系统、报警和联锁装置。</span></li>
+      <li class="bi-li"><span class="en-li"><strong>Safety Specialist / 安全专家:</strong> Advises on safety standards, regulations, and risk assessment.</span><span class="zh-li">就安全标准、法规和风险评估提供建议。</span></li>
+      <li class="bi-li"><span class="en-li"><strong>Maintenance Representative (optional) / 维修代表（可选）:</strong> Provides insight into equipment reliability and maintenance.</span><span class="zh-li">提供设备可靠性和维修实践方面的见解。</span></li>
+    </ul>
+
+    <h3><span class="en-p">HAZOP Worksheet Columns / HAZOP工作表列</span></h3>
+    <p class="bi-p">
+      <span class="en-p">Node/Line Number | Guideword | Deviation | Possible Causes | Consequences | Safeguards | Risk Rating (L × S) | Recommendations | Responsibility | Status</span>
+      <span class="zh-p">节点/管线编号 | 引导词 | 偏差 | 可能原因 | 后果 | 安全措施 | 风险等级（L × S） | 建议 | 责任 | 状态</span>
+    </p>
+
+    <h3><span class="en-p">When to Conduct HAZOP / 何时进行HAZOP</span></h3>
+    <ul>
+      <li class="bi-li"><span class="en-li"><strong>Design stage / 设计阶段:</strong> Best time — problems found here are cheapest to fix.</span><span class="zh-li">最佳时机——此阶段发现问题修复成本最低。</span></li>
+      <li class="bi-li"><span class="en-li"><strong>Before startup / 投产前:</strong> Verify the built system matches safe design.</span><span class="zh-li">验证已建系统符合安全设计。</span></li>
+      <li class="bi-li"><span class="en-li"><strong>After significant modification / 重大改造后:</strong> Re-study changed sections.</span><span class="zh-li">重新研究变更部分。</span></li>
+      <li class="bi-li"><span class="en-li"><strong>Periodic revalidation / 定期再验证:</strong> Process Safety Management (PSM) requires revalidation of PHA every 5 years.</span><span class="zh-li">工艺安全管理（PSM）要求每5年再验证PHA。</span></li>
+    </ul>
+
+    <div class="important">
+      <strong>⚠ CSP 考试技巧 / Exam Tip:</strong><br>
+      <span class="en-p">Under OSHA Process Safety Management (29 CFR 1910.119), a Process Hazard Analysis (which may be HAZOP) is required for processes above threshold quantities, and must be <strong>updated and revalidated at least every 5 years</strong>.</span>
+      <span class="zh-p">根据OSHA工艺安全管理（29 CFR 1910.119），超过临界量的工艺必须进行工艺危害分析（可以是HAZOP），并且必须<strong>至少每5年更新和再验证一次</strong>。</span>
+    </div>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-high">必考 HIGH</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "How often must a PHA (e.g., HAZOP) be revalidated under PSM?"<br>
+        <strong>答题要点 / Key point:</strong> PHA每<strong>5年</strong>再验证（1910.119(e)）。团队：负责人(主持)、记录员、工艺工程师、操作代表、仪表控制工程师、安全专家。HAZOP最佳时机=设计阶段（修复成本最低）。工作表列：节点|引导词|偏差|原因|后果|防护|L×S|建议|责任|状态。
+      </div>
+    </div>
+
+    <div class="mnemonic">
+      <span class="mn-label">🧠 记忆口诀 / Mnemonic:</span>
+      <span class="mn-content"><strong>"PHA五年"</strong> — 工艺危害分析(HAZOP)每<strong>5年</strong>再验证。团队六角色"领-记-工-操-仪-安"（Leader, Scribe, Process, Operations, Instrument, Safety）。最佳时机=设计阶段。</span>
+    </div>
+  </div>
+
+  <div id="quiz-group-3"></div>
+
+
+  <!-- ===== Knowledge Point 4: Bow-Tie ===== -->
+  <div class="knowledge-card">
+    <h2>11.4 <span class="bi-term"><span class="zh">蝴蝶结分析</span> · <span class="en">Bow-Tie Analysis</span><span class="vocab-star" data-term="Bow-Tie Analysis">☆</span></span></h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>Brauer Ch.34 (Risk, Risk Assessment) · Brauer Ch.36 (System Safety)</span>
+    </div>
+
+    <p class="bi-p">
+      <span class="en-p">The Bow-Tie model visually combines elements of FTA (left side) and ETA (right side) into a single diagram shaped like a bow-tie. It provides a clear, communicable picture of risk management for a specific hazardous event, centered on a single "top event."</span>
+      <span class="zh-p">蝴蝶结模型将FTA（左侧）和ETA（右侧）的元素直观地组合成一张蝴蝶结形状的图表。它为特定危险事件提供清晰、易于沟通的风险管理图像，以单一"顶事件"为中心。</span>
+    </p>
+
+    <svg class="diagram-svg" viewBox="0 0 620 260" xmlns="http://www.w3.org/2000/svg">
+      <text x="310" y="20" text-anchor="middle" font-size="13" fill="#1e3a5f" font-weight="bold">蝴蝶结分析 / Bow-Tie Analysis</text>
+      <!-- Hazard on top -->
+      <rect x="245" y="32" width="130" height="28" rx="4" fill="#e0e7ff" stroke="#4f46e5" stroke-width="2"/>
+      <text x="310" y="50" text-anchor="middle" font-size="11" fill="#3730a3" font-weight="bold">危害 / Hazard</text>
+      <!-- line down to top event -->
+      <line x1="310" y1="60" x2="310" y2="82" stroke="#1e3a5f" stroke-width="2"/>
+      <!-- Threats (left) -->
+      <text x="50" y="105" text-anchor="middle" font-size="9" fill="#888">Threats / 威胁</text>
+      <rect x="10" y="130" width="80" height="30" rx="4" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+      <text x="50" y="149" text-anchor="middle" font-size="10" fill="#991b1b" font-weight="bold">威胁1</text>
+      <rect x="10" y="170" width="80" height="30" rx="4" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+      <text x="50" y="189" text-anchor="middle" font-size="10" fill="#991b1b">威胁2</text>
+      <!-- Preventive barriers -->
+      <rect x="120" y="120" width="90" height="50" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+      <text x="165" y="140" text-anchor="middle" font-size="9" fill="#166534" font-weight="bold">预防性屏障</text>
+      <text x="165" y="152" text-anchor="middle" font-size="8" fill="#166534">Preventive</text>
+      <text x="165" y="163" text-anchor="middle" font-size="8" fill="#166534">Barriers</text>
+      <!-- threat to barrier to top -->
+      <line x1="90" y1="145" x2="120" y2="145" stroke="#dc2626" stroke-width="2"/>
+      <line x1="90" y1="185" x2="120" y2="170" stroke="#dc2626" stroke-width="1.5"/>
+      <line x1="210" y1="145" x2="280" y2="130" stroke="#16a34a" stroke-width="2"/>
+      <!-- TOP EVENT center -->
+      <circle cx="310" cy="130" r="42" fill="#fef3c7" stroke="#f59e0b" stroke-width="3"/>
+      <text x="310" y="128" text-anchor="middle" font-size="11" fill="#92400e" font-weight="bold">顶事件</text>
+      <text x="310" y="141" text-anchor="middle" font-size="8" fill="#92400e">Top Event</text>
+      <text x="310" y="152" text-anchor="middle" font-size="8" fill="#92400e">失去控制</text>
+      <!-- Mitigative barriers -->
+      <rect x="410" y="120" width="90" height="50" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+      <text x="455" y="140" text-anchor="middle" font-size="9" fill="#1e40af" font-weight="bold">减缓性屏障</text>
+      <text x="455" y="152" text-anchor="middle" font-size="8" fill="#1e40af">Mitigative</text>
+      <text x="455" y="163" text-anchor="middle" font-size="8" fill="#1e40af">Barriers</text>
+      <!-- top to barrier to consequences -->
+      <line x1="352" y1="130" x2="410" y2="145" stroke="#2563eb" stroke-width="2"/>
+      <line x1="500" y1="145" x2="530" y2="145" stroke="#2563eb" stroke-width="2"/>
+      <!-- Consequences (right) -->
+      <text x="570" y="105" text-anchor="middle" font-size="9" fill="#888">火灾/爆炸/泄漏</text>
+      <rect x="530" y="125" width="80" height="40" rx="4" fill="#fde68a" stroke="#d97706" stroke-width="2"/>
+      <text x="570" y="144" text-anchor="middle" font-size="10" fill="#92400e" font-weight="bold">后果</text>
+      <text x="570" y="157" text-anchor="middle" font-size="8" fill="#92400e">Consequences</text>
+      <!-- Bottom labels -->
+      <text x="165" y="200" text-anchor="middle" font-size="9" fill="#16a34a">防止威胁发生</text>
+      <text x="455" y="200" text-anchor="middle" font-size="9" fill="#2563eb">减轻后果</text>
+    </svg>
+
+    <h3><span class="en-p">Key Components / 关键组成部分</span></h3>
+    <table class="study-table">
+      <thead><tr><th><span class="en-p">Component / 组成</span></th><th><span class="en-p">Position / 位置</span></th><th><span class="en-p">Role / 作用</span></th></tr></thead>
+      <tbody>
+        <tr><td><strong>Hazard / 危害</strong></td><td><span class="en-p">Top of diagram / 图顶</span></td><td><span class="en-p">The source of potential harm (e.g., hydrocarbon under pressure)</span><span class="zh-p" style="color:#666;display:block;">潜在伤害的来源（如：带压的碳氢化合物）</span></td></tr>
+        <tr><td><strong>Top Event / 顶事件</strong></td><td><span class="en-p">Center "knot" / 中心"结"</span></td><td><span class="en-p">The moment when control over the hazard is lost (e.g., loss of containment)</span><span class="zh-p" style="color:#666;display:block;">对危害失去控制的时刻（如：围堵失效）</span></td></tr>
+        <tr><td><strong>Threats / 威胁</strong></td><td><span class="en-p">Left / 左侧</span></td><td><span class="en-p">Potential causes that could release the hazard</span><span class="zh-p" style="color:#666;display:block;">可能释放危害的潜在原因</span></td></tr>
+        <tr><td><strong>Preventive Barriers / 预防性屏障</strong></td><td><span class="en-p">Left, between threats and top event / 左侧，威胁与顶事件之间</span></td><td><span class="en-p">Controls that PREVENT the threat from causing the top event</span><span class="zh-p" style="color:#666;display:block;">防止威胁导致顶事件的控制</span></td></tr>
+        <tr><td><strong>Consequences / 后果</strong></td><td><span class="en-p">Right / 右侧</span></td><td><span class="en-p">Potential outcomes if the top event occurs (fire, explosion, toxic release)</span><span class="zh-p" style="color:#666;display:block">顶事件发生后可能的后果（火灾、爆炸、有毒物质泄漏）</span></td></tr>
+        <tr><td><strong>Mitigative Barriers / 减缓性屏障</strong></td><td><span class="en-p">Right, between top event and consequences / 右侧，顶事件与后果之间</span></td><td><span class="en-p">Controls that REDUCE the severity of consequences after the top event</span><span class="zh-p" style="color:#666;display:block">在顶事件后减轻后果严重性的控制</span></td></tr>
+      </tbody>
+    </table>
+
+    <h3><span class="en-p">Barrier Effectiveness Criteria / 屏障有效性标准</span></h3>
+    <ul>
+      <li class="bi-li"><span class="en-li"><strong>Adequacy / 充分性:</strong> Does it address the specific threat or consequence?</span><span class="zh-li">是否针对特定的威胁或后果？</span></li>
+      <li class="bi-li"><span class="en-li"><strong>Reliability / 可靠性:</strong> How likely is it to work when needed?</span><span class="zh-li">需要时其工作可能性有多大？</span></li>
+      <li class="bi-li"><span class="en-li"><strong>Independence / 独立性:</strong> Is it independent of other barriers (no common-mode failure)?</span><span class="zh-li">是否独立于其他屏障（无共因失效）？</span></li>
+      <li class="bi-li"><span class="en-li"><strong>Auditability / 可审核性:</strong> Can its effectiveness be verified through testing?</span><span class="zh-li">其有效性是否可以通过测试来验证？</span></li>
+    </ul>
+
+    <div class="important">
+      <strong>⚠ CSP 考试技巧 / Exam Tip:</strong><br>
+      <span class="en-p">Barriers on the LEFT are PREVENTIVE (they stop the event from happening). Barriers on the RIGHT are MITIGATIVE/RECOVERY (they reduce consequences after it happens). The top event is the loss-of-control moment, NOT a consequence.</span>
+      <span class="zh-p">左侧屏障是<em>预防性</em>的（阻止事件发生）。右侧屏障是<em>减缓/恢复性</em>的（发生后减轻后果）。顶事件是失控时刻，<em>不是</em>后果。</span>
+    </div>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-mid">常考 MEDIUM</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "Which barrier is on the LEFT of a bow-tie diagram?"<br>
+        <strong>答题要点 / Key point:</strong> 蝴蝶结：中心顶事件=失控时刻（非后果）；左侧威胁+预防性屏障（防发生）；右侧后果+减缓性屏障（减后果）。屏障有效性四标准：充分性/可靠性/独立性（防共因失效）/可审核性。结合FTA（左）+ETA（右）。
+      </div>
+    </div>
+
+    <div class="mnemonic">
+      <span class="mn-label">🧠 记忆口诀 / Mnemonic:</span>
+      <span class="mn-content"><strong>"左防右缓"</strong> — 左侧Preventive预防（阻止发生）、右侧Mitigative减缓（减轻后果）；中心=顶事件（失控时刻）。屏障四性"充-靠-独-审"（Adequacy/Reliability/Independence/Auditability）。</span>
+    </div>
+  </div>
+
+  <div id="quiz-group-4"></div>
+
+
+  <!-- ===== Knowledge Point 5: SWIFT / What-If / Checklists ===== -->
+  <div class="knowledge-card">
+    <h2>11.5 <span class="en-p">SWIFT, What-If, and Checklists</span><span class="zh-p" style="color:#666;display:block;">SWIFT、What-If与检查表</span></h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>Brauer Ch.36 (System Safety) · 29 CFR 1910.119 (PHA element)</span>
+    </div>
+
+    <h3><span class="bi-term"><span class="zh">结构化What-If技术</span> · <span class="en">SWIFT — Structured What-If Technique</span><span class="vocab-star" data-term="SWIFT (Structured What-If Technique)">☆</span></span></h3>
+    <p class="bi-p">
+      <span class="en-p">SWIFT is a brainstorming-based hazard identification method that is faster and less resource-intensive than HAZOP. It uses structured "What if...?" questions applied to process steps, guided by checklists and prompt words. SWIFT is suitable for simpler processes, early design stages, or when HAZOP would be prohibitively time-consuming. However, SWIFT is less systematic than HAZOP and may miss some deviations that HAZOP's rigorous guideword approach would catch.</span>
+      <span class="zh-p">SWIFT是一种基于头脑风暴的危害识别方法，比HAZOP更快、所需资源更少。它使用结构化的"如果……会怎样？"问题，应用在工艺步骤上，由检查表和提示词引导。SWIFT适用于较简单的工艺、早期设计阶段，或当HAZOP耗时过长时。然而，SWIFT不如HAZOP系统化，可能会遗漏HAZOP严格的引导词方法能捕获的某些偏差。</span>
+    </p>
+
+    <h3><span class="en-p">What-If Analysis / What-If分析</span></h3>
+    <p class="bi-p">
+      <span class="en-p">The "What-If" method asks open-ended questions about the process ("What if the cooling water fails?", "What if a line is connected to the wrong tank?"). It is unstructured brainstorming — valuable for identifying novel scenarios but depends heavily on team experience and can be incomplete.</span>
+      <span class="zh-p">"What-If"方法就工艺提出开放式问题（"如果冷却水失效会怎样？"、"如果管线接错罐会怎样？"）。这是非结构化头脑风暴——对识别新颖情景有价值，但严重依赖团队经验，且可能不完整。</span>
+    </p>
+
+    <h3><span class="en-p">Checklist Analysis / 检查表分析</span></h3>
+    <p class="bi-p">
+      <span class="en-p">Checklists use pre-compiled lists of known hazards to verify compliance and completeness. They are fast, cheap, and repeatable, and excel at routine inspections and compliance audits. Their limitation: they only find hazards that are ON the list — novel or site-specific hazards may be missed.</span>
+      <span class="zh-p">检查表使用预先编制的已知危害清单来验证合规性和完整性。它们快速、廉价、可重复，擅长例行检查和合规审计。局限：只能找到清单<em>上</em>的危害——新颖或场地特有的危害可能被遗漏。</span>
+    </p>
+
+    <h3><span class="en-p">SWIFT vs. What-If vs. Checklist vs. HAZOP / 四者对比</span></h3>
+    <table class="study-table">
+      <thead><tr><th><span class="en-p">Technique / 技术</span></th><th><span class="en-p">Approach / 方法</span></th><th><span class="en-p">Best Application / 最佳应用</span></th><th><span class="en-p">Resource Level / 资源需求</span></th></tr></thead>
+      <tbody>
+        <tr><td><strong>Checklists</strong></td><td><span class="en-p">Pre-compiled list of known hazards / 预先编制清单</span></td><td><span class="en-p">Routine inspections, compliance audits / 例行检查、合规审计</span></td><td><span class="en-p">Low / 低</span></td></tr>
+        <tr><td><strong>What-If</strong></td><td><span class="en-p">Open-ended brainstorming / 开放式头脑风暴</span></td><td><span class="en-p">Simple processes, novel scenario identification / 简单工艺、新颖情景识别</span></td><td><span class="en-p">Low-Med / 低-中</span></td></tr>
+        <tr><td><strong>SWIFT</strong></td><td><span class="en-p">Structured "What if" with prompts / 带提示的结构化"What if"</span></td><td><span class="en-p">Moderately simple processes, early design / 中等简单工艺、早期设计</span></td><td><span class="en-p">Medium / 中</span></td></tr>
+        <tr><td><strong>HAZOP</strong></td><td><span class="en-p">Guideword + parameter, systematic / 引导词+参数，系统化</span></td><td><span class="en-p">Complex continuous processes / 复杂连续工艺</span></td><td><span class="en-p">High / 高</span></td></tr>
+      </tbody>
+    </table>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-mid">常考 MEDIUM</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "Which technique is BEST for a routine compliance inspection?"<br>
+        <strong>答题要点 / Key point:</strong> 选型阶梯：Checklist（例行检查/合规，快速廉价，局限=只找清单上的）→What-If（简单工艺/新颖情景，非结构化）→SWIFT（带提示的结构化What-If，中等简单工艺/早期设计）→HAZOP（复杂连续工艺，资源最高）。PHA方法由简到繁。
+      </div>
+    </div>
+  </div>
+
+  <div id="quiz-group-5"></div>
+
+
+  <!-- ===== Knowledge Point 6: Risk Financing 5 Strategies ===== -->
+  <div class="knowledge-card">
+    <h2>11.6 <span class="bi-term"><span class="zh">风险财务——五大策略</span> · <span class="en">Risk Financing — The Five Strategies</span><span class="vocab-star" data-term="Risk Financing Strategies">☆</span></span></h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>Brauer Ch.34 (Risk, Risk Assessment) · Yates Ch.24 (Risk Assessment and Management)</span>
+    </div>
+    <p class="bi-p">
+      <span class="en-p">CSP11 Domain 3 explicitly lists five distinct financial risk mitigation strategies. They must be understood as separate categories:</span>
+      <span class="zh-p">CSP11领域3明确列出五种不同的财务风险缓解策略。它们必须作为独立类别理解：</span>
+    </p>
+    <table class="study-table">
+      <thead><tr><th><span class="en-p">Strategy / 策略</span></th><th><span class="en-p">Description / 描述</span></th><th><span class="en-p">Examples / 示例</span></th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong><span class="bi-term"><span class="zh">1. 规避</span><span class="en">Avoidance</span><span class="vocab-star" data-term="Risk Avoidance">☆</span></span></strong></td>
+          <td><span class="en-p">Eliminate the risk entirely by stopping the activity that generates it. The most definitive strategy.</span><span class="zh-p" style="color:#666;display:block;">通过停止产生风险的活动来完全消除风险。最彻底的战略。</span></td>
+          <td><span class="en-p">Discontinuing a hazardous product line; not entering a high-risk market; choosing a non-toxic alternative.</span><span class="zh-p" style="color:#666;display:block;">停止危险产品线；不进入高风险市场；选择无毒替代品。</span></td>
+        </tr>
+        <tr>
+          <td><strong><span class="bi-term"><span class="zh">2. 保留</span><span class="en">Retention</span><span class="vocab-star" data-term="Risk Retention">☆</span></span></strong></td>
+          <td><span class="en-p">Accept the financial consequences of the risk internally. Appropriate for low-severity, high-frequency risks.</span><span class="zh-p" style="color:#666;display:block;">内部承担风险的财务后果。适用于低严重性、高频率的风险。</span></td>
+          <td><span class="en-p">Self-insurance; deductibles; captive insurance companies; unfunded retention (paying losses from operating budget).</span><span class="zh-p" style="color:#666;display:block;">自保；免赔额；专属保险公司；无资金支持的保留（从运营预算中支付损失）。</span></td>
+        </tr>
+        <tr>
+          <td><strong><span class="bi-term"><span class="zh">3. 分担</span><span class="en">Sharing</span><span class="vocab-star" data-term="Risk Sharing">☆</span></span></strong></td>
+          <td><span class="en-p">Distribute the financial burden of risk across multiple parties through contractual or organizational arrangements. Each party bears a portion of the loss.</span><span class="zh-p" style="color:#666;display:block;">通过合同或组织安排将风险的财务负担分配给多个当事方。各方承担一部分损失。</span></td>
+          <td><span class="en-p">Joint ventures; risk pools; mutual insurance companies; consortium arrangements; group self-insurance pools.</span><span class="zh-p" style="color:#666;display:block;">合资企业；风险池；相互保险公司；联合体安排；团体自保池。</span></td>
+        </tr>
+        <tr>
+          <td><strong><span class="bi-term"><span class="zh">4. 转移</span><span class="en">Transfer</span><span class="vocab-star" data-term="Risk Transfer">☆</span></span></strong></td>
+          <td><span class="en-p">Shift the financial burden to another party, typically an insurer. Does NOT eliminate the hazard — only transfers financial responsibility for losses.</span><span class="zh-p" style="color:#666;display:block;">将财务负担转移给另一方，通常是保险公司。不消除危害——只转移损失的财务责任。</span></td>
+          <td><span class="en-p">Insurance policies; hold-harmless agreements; contract indemnification clauses; surety bonds; hedging.</span><span class="zh-p" style="color:#666;display:block;">保险单；免责协议；合同赔偿条款；履约保证保险；对冲。</span></td>
+        </tr>
+        <tr>
+          <td><strong><span class="bi-term"><span class="zh">5. 损失预防与减少</span><span class="en">Loss Prevention &amp; Reduction</span><span class="vocab-star" data-term="Loss Prevention and Reduction">☆</span></span></strong></td>
+          <td><span class="en-p">Implement controls to reduce either the likelihood (loss prevention) or the severity (loss reduction) of losses — or both. Also called "loss control."</span><span class="zh-p" style="color:#666;display:block;">实施控制措施以降低损失的可能性（损失预防）或严重性（损失减少）——或两者兼顾。也称"损失控制"。</span></td>
+          <td><span class="en-p">Engineering controls; safety training; preventive maintenance; emergency response planning; fire protection systems.</span><span class="zh-p" style="color:#666;display:block;">工程控制；安全培训；预防性维护；应急响应规划；消防系统。</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="important">
+      <strong>⚠ 重要区别 / Important distinction:</strong><br>
+      <span class="en-p">Risk transfer (insurance) shifts financial responsibility but does NOT shift legal liability or moral responsibility for safety. The organization still bears reputational and regulatory consequences even if insured. Also distinguish RETENTION (keep the risk yourself) from TRANSFER (pay someone else to carry it).</span>
+      <span class="zh-p">风险转移（保险）转移了财务责任，但不转移安全方面的法律责任或道德责任。即使投保了，组织仍需承担声誉和监管后果。还要区分<em>保留</em>（自己承担风险）和<em>转移</em>（付钱让别人承担）。</span>
+    </div>
+
+    <div class="confusion-box">
+      <div class="cb-label">⚖️ 易混淆对比 / Common Confusions:</div>
+      <table class="study-table">
+        <tr><th>Retention 保留</th><th>Transfer 转移</th><th>关键区别 / Key Difference</th></tr>
+        <tr><td>自己承担损失（自保、免赔额、专属保险）</td><td>付钱让别人承担（保险、免责协议、赔偿条款）</td><td>保留=自己扛；转移=转给他人。转移只转财务责任，<strong>不转法律责任/道德责任</strong></td></tr>
+      </table>
+    </div>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-high">必考 HIGH</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "Purchasing insurance is an example of which risk financing strategy?"<br>
+        <strong>答题要点 / Key point:</strong> 五大策略：<strong>规避</strong>(停止活动)/<strong>保留</strong>(自担,低严重高频)/<strong>分担</strong>(多方共担,合资/风险池)/<strong>转移</strong>(保险/免责协议)/<strong>损失预防与减少</strong>(降可能性/严重性)。保险=转移；转移不除危害、不转法律责任。自保/免赔额=保留。
+      </div>
+    </div>
+  </div>
+
+  <div id="quiz-group-6"></div>
+
+
+  <!-- ===== Knowledge Point 7: Insurance Types ===== -->
+  <div class="knowledge-card">
+    <h2>11.7 <span class="en-p">Insurance Types for Safety Professionals</span><span class="zh-p" style="color:#666;display:block;">安全专业人员需了解的保险类型</span></h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>Brauer Ch.34 (Risk, Risk Assessment) · Yates Ch.24 (Risk Assessment and Management)</span>
+    </div>
+    <table class="study-table">
+      <thead><tr><th><span class="en-p">Insurance Type / 保险类型</span></th><th><span class="en-p">Covers / 承保范围</span></th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong><span class="bi-term"><span class="zh">工伤保险</span><span class="en">Workers' Compensation</span><span class="vocab-star" data-term="Workers' Compensation Insurance">☆</span></span></strong></td>
+          <td><span class="en-p">Employee injuries/illnesses arising from employment. Mandatory in most jurisdictions. No-fault system — employee does not need to prove employer negligence.</span><span class="zh-p" style="color:#666;display:block;">因雇佣关系产生的员工伤害/疾病。在大多数管辖区是强制性的。无过错制度——员工无需证明雇主疏忽。</span></td>
+        </tr>
+        <tr>
+          <td><strong><span class="bi-term"><span class="zh">一般责任险</span><span class="en">General Liability</span><span class="vocab-star" data-term="General Liability Insurance">☆</span></span></strong></td>
+          <td><span class="en-p">Third-party bodily injury, property damage, and personal injury claims arising from business operations.</span><span class="zh-p" style="color:#666;display:block;">因商业运营产生的第三方人身伤害、财产损失和个人伤害索赔。</span></td>
+        </tr>
+        <tr>
+          <td><strong><span class="bi-term"><span class="zh">职业责任险</span><span class="en">Professional Liability (E&O)</span><span class="vocab-star" data-term="Professional Liability Insurance">☆</span></span></strong></td>
+          <td><span class="en-p">Claims of negligence or failure to perform professional duties. Relevant for safety consultants, engineers, and design professionals.</span><span class="zh-p" style="color:#666;display:block;">关于疏忽或未能履行专业职责的索赔。与安全顾问、工程师和设计专业人员相关。</span></td>
+        </tr>
+        <tr>
+          <td><strong><span class="bi-term"><span class="zh">财产保险</span><span class="en">Property Insurance</span><span class="vocab-star" data-term="Property Insurance">☆</span></span></strong></td>
+          <td><span class="en-p">Damage to buildings, equipment, and inventory from fire, natural disasters, theft, etc. Often includes business interruption coverage.</span><span class="zh-p" style="color:#666;display:block;">因火灾、自然灾害、盗窃等造成的建筑物、设备和库存损坏。通常包括业务中断保险。</span></td>
+        </tr>
+        <tr>
+          <td><strong><span class="bi-term"><span class="zh">业务中断险</span><span class="en">Business Interruption</span><span class="vocab-star" data-term="Business Interruption Insurance">☆</span></span></strong></td>
+          <td><span class="en-p">Lost income and continuing expenses when operations are suspended due to a covered event. Critical for business continuity planning.</span><span class="zh-p" style="color:#666;display:block;">因承保事件导致运营中断时的收入损失和持续费用。对业务连续性规划至关重要。</span></td>
+        </tr>
+        <tr>
+          <td><strong><span class="bi-term"><span class="zh">汽车责任险</span><span class="en">Automobile Liability</span><span class="vocab-star" data-term="Automobile Liability Insurance">☆</span></span></strong></td>
+          <td><span class="en-p">Vehicle accidents involving company vehicles or employees driving on company business — third-party and often first-party (collision).</span><span class="zh-p" style="color:#666;display:block">涉及公司车辆或员工因公驾车的交通事故——第三方，通常含第一方（碰撞）。</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="important">
+      <strong>⚠ CSP 考试技巧 / Exam Tip:</strong><br>
+      <span class="en-p">Workers' Compensation covers EMPLOYEES (first party). General Liability covers THIRD PARTIES (customers, public). Professional Liability covers professional negligence (errors &amp; omissions). Do not confuse them.</span>
+      <span class="zh-p">工伤保险承保<em>员工</em>（第一方）。一般责任险承保<em>第三方</em>（客户、公众）。职业责任险承保专业疏忽（错误与遗漏）。不要混淆。</span>
+    </div>
+
+    <div class="confusion-box">
+      <div class="cb-label">⚖️ 易混淆对比 / Common Confusions:</div>
+      <table class="study-table">
+        <tr><th>Workers' Comp 工伤保险</th><th>General Liability 一般责任险</th><th>Professional Liability 职业责任险</th></tr>
+        <tr><td>承保员工（第一方）、无过错制度、大多数管辖区强制</td><td>承保第三方（客户/公众）人身伤害与财产损失</td><td>承保专业疏忽/错误遗漏（顾问、工程师）</td></tr>
+        <tr><td colspan="3">核心："工伤保员工、一般保第三方、职业保失误"。工伤无过错——员工无需证明雇主疏忽</td></tr>
+      </table>
+    </div>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-mid">常考 MEDIUM</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "Which insurance covers a customer injured at your facility?"<br>
+        <strong>答题要点 / Key point:</strong> 保险配对：员工伤害=工伤保险（第一方、无过错、多数强制）；第三方/公众=一般责任险；专业疏忽=职业责任险(E&O)；设备/库存损毁=财产险（含业务中断）；运营中断损失=业务中断险。业务中断险对BCP至关重要。
+      </div>
+    </div>
+  </div>
+
+  <div id="quiz-group-7"></div>
+
+
+  <!-- ===== Knowledge Point 8: Insurance Concepts ===== -->
+  <div class="knowledge-card">
+    <h2>11.8 <span class="en-p">Insurance Concepts — Deductible, Premium, Captive</span><span class="zh-p" style="color:#666;display:block;">保险概念——免赔额、保费、专属保险</span></h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>Brauer Ch.34 (Risk, Risk Assessment) · Yates Ch.24 (Risk Assessment and Management)</span>
+    </div>
+
+    <h3><span class="bi-term"><span class="zh">免赔额</span> · <span class="en">Deductible</span><span class="vocab-star" data-term="Deductible">☆</span></span></h3>
+    <p class="bi-p">
+      <span class="en-p">The amount the insured pays out of pocket before the insurer pays a claim. Higher deductibles = lower premiums, because the insured retains more risk. The deductible is a form of risk retention within an otherwise transferred (insured) risk.</span>
+      <span class="zh-p">被保险人自付后才由保险人赔付的金额。免赔额越高 = 保费越低，因为被保险人保留了更多风险。免赔额是在其他方面被转移（投保）的风险中的一种风险保留形式。</span>
+    </p>
+
+    <h3><span class="bi-term"><span class="zh">保费</span> · <span class="en">Premium</span><span class="vocab-star" data-term="Insurance Premium">☆</span></span></h3>
+    <p class="bi-p">
+      <span class="en-p">The amount paid for an insurance policy. Premiums are based on expected losses, loss history (experience rating / 经验费率), exposure, industry classification, and administrative costs. A poor loss history raises premiums — linking insurance cost to safety performance.</span>
+      <span class="zh-p">为保险单支付的金额。保费基于预期损失、损失历史（经验费率）、暴露程度、行业分类和行政成本。不良的损失历史会提高保费——将保险成本与安全绩效联系起来。</span>
+    </p>
+
+    <h3><span class="bi-term"><span class="zh">专属（自保）保险公司</span> · <span class="en">Captive Insurance Company</span><span class="vocab-star" data-term="Captive Insurance">☆</span></span></h3>
+    <p class="bi-p">
+      <span class="en-p">A wholly owned subsidiary insurance company formed by a parent organization to insure its own risks. A captive is a sophisticated form of risk retention (self-insurance) that allows the parent to keep premiums (and investment income) within the organization while gaining tax and coverage-flexibility benefits.</span>
+      <span class="zh-p">由母公司成立的全资子公司保险公司，用于承保自身风险。专属保险是风险保留（自保）的高级形式，允许母公司将保费（及投资收益）保留在组织内部，同时获得税收和承保灵活性优势。</span>
+    </p>
+
+    <div class="formula-box">
+      Annual Premium (年保费) ≈ Expected Losses (预期损失) + Risk Loading/Administration (风险附加/行政费用)
+    </div>
+
+    <div class="important">
+      <strong>⚠ CSP 考试技巧 / Exam Tip:</strong><br>
+      <span class="en-p">A captive insurance company = RETENTION (self-insurance), NOT transfer. It is the organization insuring itself through a subsidiary. High-frequency/low-severity risks are best retained; low-frequency/high-severity risks are best transferred.</span>
+      <span class="zh-p">专属保险公司 = <em>保留</em>（自保），<em>不是</em>转移。它是组织通过子公司为自己保险。高频率/低严重性风险最适合保留；低频率/高严重性风险最适合转移。</span>
+    </div>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-mid">常考 MEDIUM</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "A captive insurance company is BEST described as what form of risk financing?"<br>
+        <strong>答题要点 / Key point:</strong> 专属保险=组织通过全资子公司自保=<strong>保留(Retention)</strong>，不是转移。免赔额=保留形式（高免赔=低保费）；保费=预期损失+风险附加/行政。<strong>高频低严重→保留；低频高严重→转移</strong>。保费与损失历史（经验费率）挂钩。
+      </div>
+    </div>
+
+    <div class="confusion-box">
+      <div class="cb-label">⚖️ 易混淆对比 / Common Confusions:</div>
+      <table class="study-table">
+        <tr><th>Retain 保留</th><th>Transfer 转移</th><th>关键区别 / Key Difference</th></tr>
+        <tr><td>自保/专属保险/免赔额；适合高频低严重</td><td>商业保险/免责协议；适合低频高严重</td><td>专属保险公司是保留的高级形式（常被误认为转移）。免赔额=保留成分。转移只转财务、不转法律责任</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div id="quiz-group-8"></div>
+
+
+  <!-- ===== Knowledge Point 9: Technique Comparison ===== -->
+  <div class="knowledge-card">
+    <h2>11.9 <span class="en-p">Hazard Identification Techniques — When to Use Each</span><span class="zh-p" style="color:#666;display:block;">危害识别技术——何时使用</span></h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>Brauer Ch.36 (System Safety) · Yates Ch.24 (Risk Assessment and Management)</span>
+    </div>
+    <table class="study-table">
+      <thead><tr><th><span class="en-p">Technique / 技术</span></th><th><span class="en-p">Best Application / 最佳应用</span></th><th><span class="en-p">Resource Level / 资源需求</span></th></tr></thead>
+      <tbody>
+        <tr><td><strong><span class="bi-term"><span class="zh">检查表</span><span class="en">Checklists</span></span></strong></td><td><span class="en-p">Routine inspections, compliance audits, known hazards</span><span class="zh-p" style="color:#666;display:block;">例行检查、合规审计、已知危害</span></td><td><span class="en-p">Low / 低</span></td></tr>
+        <tr><td><strong><span class="bi-term"><span class="zh">JHA/JSA</span><span class="en">JHA/JSA</span></span></strong></td><td><span class="en-p">Individual job tasks, especially non-routine work</span><span class="zh-p" style="color:#666;display:block;">单个工作任务，特别是非常规工作</span></td><td><span class="en-p">Low-Med / 低-中</span></td></tr>
+        <tr><td><strong><span class="bi-term"><span class="zh">What-If / SWIFT</span><span class="en">What-If / SWIFT</span></span></strong></td><td><span class="en-p">Simple processes, early design, pre-screening</span><span class="zh-p" style="color:#666;display:block;">简单工艺、早期设计、预筛选</span></td><td><span class="en-p">Medium / 中</span></td></tr>
+        <tr><td><strong><span class="bi-term"><span class="zh">HAZOP</span><span class="en">HAZOP</span></span></strong></td><td><span class="en-p">Complex continuous processes (chemical, petrochemical)</span><span class="zh-p" style="color:#666;display:block;">复杂连续工艺（化工、石化）</span></td><td><span class="en-p">High / 高</span></td></tr>
+        <tr><td><strong><span class="bi-term"><span class="zh">FMEA</span><span class="en">FMEA</span></span></strong></td><td><span class="en-p">Equipment/components, design review, manufacturing</span><span class="zh-p" style="color:#666;display:block;">设备/组件、设计审查、制造</span></td><td><span class="en-p">Medium-High / 中-高</span></td></tr>
+        <tr><td><strong><span class="bi-term"><span class="zh">FTA</span><span class="en">FTA</span></span></strong></td><td><span class="en-p">Accident investigation, specific hazardous events</span><span class="zh-p" style="color:#666;display:block;">事故调查、特定危险事件</span></td><td><span class="en-p">High / 高</span></td></tr>
+        <tr><td><strong><span class="bi-term"><span class="zh">ETA</span><span class="en">ETA</span></span></strong></td><td><span class="en-p">Safeguard evaluation, emergency planning</span><span class="zh-p" style="color:#666;display:block;">安全防护评估、应急规划</span></td><td><span class="en-p">Medium / 中</span></td></tr>
+        <tr><td><strong><span class="bi-term"><span class="zh">Bow-Tie</span><span class="en">Bow-Tie</span></span></strong></td><td><span class="en-p">Risk communication, barrier management, training</span><span class="zh-p" style="color:#666;display:block;">风险沟通、屏障管理、培训</span></td><td><span class="en-p">Medium-High / 中-高</span></td></tr>
+      </tbody>
+    </table>
+
+    <div class="important">
+      <strong>⚠ CSP 考试技巧 / Exam Tip:</strong><br>
+      <span class="en-p">For complex, hazardous process systems → HAZOP. For simpler systems or early design → SWIFT/What-If. For compliance → checklists. For a specific component → FMEA. For investigating a specific failure → FTA. For evaluating safeguard layers → ETA. For communicating with barriers → Bow-Tie.</span>
+      <span class="zh-p">复杂危险工艺系统 → HAZOP。较简单系统或早期设计 → SWIFT/What-If。合规 → 检查表。特定组件 → FMEA。调查特定失效 → FTA。评估防护层 → ETA。屏障沟通 → 蝴蝶结。</span>
+    </div>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-mid">常考 MEDIUM</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "Which technique should be used to identify hazards in a complex continuous chemical process?"<br>
+        <strong>答题要点 / Key point:</strong> 场景选型速查：复杂连续工艺→HAZOP；简单/早期设计→SWIFT/What-If；例行合规→Checklist；单组件→FMEA；事故调查→FTA；防护层评估→ETA；风险沟通/屏障→Bow-Tie；单任务→JHA。资源需求从低到高随复杂性上升。
+      </div>
+    </div>
+
+    <div class="mnemonic">
+      <span class="mn-label">🧠 记忆口诀 / Mnemonic:</span>
+      <span class="mn-content"><strong>"复HAZOP、简SWIFT、合Checklist、件FMEA、查FTA、层ETA、通BowTie"</strong> — 按场景一句话选对方法。中文口诀"复杂工艺用HAZOP、调查事故用FTA、评估防护用ETA"。</span>
+    </div>
+  </div>
+
+  <div id="quiz-group-9"></div>
+
+
+  <!-- QUIZ SECTION -->
+  <div id="quiz-root"></div>
+
+</div>
+
+<script src="quiz-engine.js?v=11"></script>
+<script src="vocab-engine.js?v=11"></script>
+<script>
+CSPQuiz.init({
+  containerId: 'quiz-root',
+  quizId: 'week-11-quiz',
+  quizTitle: 'Week 11 Quiz: HAZOP, Bow-Tie & Risk Finance / 第11周测验：HAZOP、蝴蝶结分析与风险财务',
+  quizTopic: 'Domain 3 — Risk Management',
+  questions: [
+    {
+      text: 'In HAZOP, the guideword "As Well As" applied to a process parameter indicates:',
+      group: 1,
+      options: [
+        'A quantitative increase in the parameter',
+        'A complete absence of the design intent',
+        'A qualitative increase — an additional component or impurity present',
+        'The opposite of the design intent'
+      ],
+      correct: 2,
+      explanation: '"As Well As" indicates a qualitative increase — something extra is present in addition to what was intended (e.g., a contaminant in the flow, an impurity in the product). "More" indicates a quantitative increase.\n\n"As Well As"（以及）表示定性增加——除预期之外还有额外物质存在（如流体中的污染物、产品中的杂质）。"More"（更多）表示定量增加。'
+    },
+    {
+      text: 'The HAZOP guideword "Part Of" indicates:',
+      group: 1,
+      options: [
+        'A quantitative increase',
+        'A qualitative decrease — a missing component',
+        'The complete opposite of the design intent',
+        'A complete substitution of material'
+      ],
+      correct: 1,
+      explanation: '"Part Of" is a qualitative decrease — a component or constituent is missing from the intended mixture or process (e.g., incomplete reaction mixture). "Less" is the quantitative decrease; "Other Than" is complete substitution.\n\n"部分"是定性减少——预期混合物或工艺中缺少一个组分（如反应混合物不完整）。"更少"是定量减少；"其他"是完全替代。'
+    },
+    {
+      text: 'Which HAZOP guideword pair correctly distinguishes quantitative from qualitative increase?',
+      group: 1,
+      options: [
+        '"No" vs. "Reverse"',
+        '"More" (quantitative) vs. "As Well As" (qualitative)',
+        '"Less" (quantitative) vs. "Other Than" (qualitative)',
+        '"Part Of" (quantitative) vs. "No" (qualitative)'
+      ],
+      correct: 1,
+      explanation: '"More" is a quantitative increase (higher flow, pressure, temperature). "As Well As" is a qualitative increase — an additional substance present beyond what is intended. This is a classic distinction on the exam.\n\n"更多"是定量增加（更高流量、压力、温度）。"以及"是定性增加——除预期之外存在额外物质。这是考试中的经典辨析点。'
+    },
+    {
+      text: 'In HAZOP, what is a "node"?',
+      group: 1,
+      options: [
+        'A person on the study team',
+        'A section of the process (equipment/piping) selected for examination',
+        'A type of guideword',
+        'The final report'
+      ],
+      correct: 1,
+      explanation: 'A node is a defined section of the process — a piece of equipment, a line segment, or a unit operation — that the team examines. Guidewords are applied to parameters within each node to generate deviations.\n\n节点是工艺中定义的一个区段——一件设备、一段管线或一个单元操作——供团队检查。引导词应用于节点内的参数以产生偏差。'
+    },
+    {
+      text: 'The deviation "Reverse Flow" is created by combining which parameter and guideword?',
+      group: 2,
+      options: [
+        'Parameter = Flow, Guideword = Reverse',
+        'Parameter = Reverse, Guideword = Flow',
+        'Parameter = Flow, Guideword = Other Than',
+        'Parameter = Pressure, Guideword = Reverse'
+      ],
+      correct: 0,
+      explanation: 'Deviation = Parameter + Guideword. "Reverse Flow" = Flow (parameter) + Reverse (guideword). Common causes: check valve failure, back-siphoning. The parameter names the property; the guideword names how it deviates.\n\n偏差 = 参数 + 引导词。"反向流动" = 流量（参数）+ 反向（引导词）。常见原因：止回阀失效、倒吸。参数命名属性；引导词命名偏差方式。'
+    },
+    {
+      text: 'Which of the following is NOT one of the standard HAZOP guidewords?',
+      group: 2,
+      options: ['Reverse', 'Part Of', 'Frequently', 'Other Than'],
+      correct: 2,
+      explanation: 'The standard HAZOP guidewords are: No/None, More, Less, As Well As, Part Of, Reverse, and Other Than. "Frequently" is not a standard guideword — frequency is evaluated through likelihood assessments, not guideword deviation analysis.\n\n标准的HAZOP引导词是：无、更多、更少、以及、部分、反向和其他。"频繁"不是标准的引导词——频率通过可能性评估而非引导词偏差分析来评估。'
+    },
+    {
+      text: 'A HAZOP study is led by a team leader whose main role is to:',
+      group: 2,
+      options: [
+        'Be the most senior technical engineer',
+        'Facilitate the study and ensure the methodology is followed correctly',
+        'Make all final decisions on recommendations',
+        'Operate the plant during the study'
+      ],
+      correct: 1,
+      explanation: 'The HAZOP leader facilitates the study, keeps the team on method, and ensures guidewords are applied systematically. The leader need NOT be the most senior technical person — the team provides technical expertise.\n\nHAZOP负责人主持研究、让团队遵循方法、确保系统应用引导词。负责人不一定是最高级的技术人员——团队提供技术专长。'
+    },
+    {
+      text: 'Under OSHA PSM (29 CFR 1910.119), a process hazard analysis must be updated and revalidated at least every:',
+      group: 2,
+      options: ['1 year', '3 years', '5 years', '10 years'],
+      correct: 2,
+      explanation: 'PSM requires revalidation of the process hazard analysis at least every 5 years, and also after a major incident or significant process change. HAZOP is a common PHA technique used to meet this requirement.\n\nPSM要求至少每5年再验证工艺危害分析，并在重大事故或重大工艺变更后同样需要。HAZOP是满足此要求的常用PHA技术。'
+    },
+    {
+      text: 'In a Bow-Tie analysis, barriers on the LEFT side of the top event are called:',
+      group: 3,
+      options: [
+        'Mitigative barriers',
+        'Recovery barriers',
+        'Preventive barriers',
+        'Consequence barriers'
+      ],
+      correct: 2,
+      explanation: 'Preventive barriers are on the left side (between threats and the top event) — they prevent the threat from causing the top event. Mitigative/recovery barriers are on the right side — they reduce consequence severity.\n\n预防性屏障在左侧（威胁与顶事件之间）——防止威胁导致顶事件。减缓/恢复性屏障在右侧——减轻后果严重性。'
+    },
+    {
+      text: 'In a Bow-Tie diagram, the "top event" represents:',
+      group: 3,
+      options: [
+        'The initiating event',
+        'The root cause',
+        'The moment when control over the hazard is lost',
+        'The final consequence'
+      ],
+      correct: 2,
+      explanation: 'The top event is the central "knot" — the loss-of-control moment (e.g., loss of containment, structural collapse). Threats lead INTO it; consequences flow OUT of it. It is not a cause or a consequence.\n\n顶事件是中心"结"——失控时刻（如围堵失效、结构坍塌）。威胁导向它；后果从它流出。它不是原因或后果。'
+    },
+    {
+      text: 'Which of the following is a MITIGATIVE (recovery) barrier in a bow-tie?',
+      group: 3,
+      options: [
+        'Corrosion-resistant pipe material',
+        'Operator training on procedures',
+        'An emergency isolation/depressurization system activated after a leak',
+        'A preventive maintenance program'
+      ],
+      correct: 2,
+      explanation: 'Emergency isolation/depressurization acts AFTER the top event (loss of containment) to reduce consequences — a mitigative barrier. Corrosion-resistant material, training, and maintenance all act BEFORE the top event to prevent it.\n\n紧急隔离/泄压系统在顶事件（围堵失效）之后起作用以减轻后果——减缓性屏障。耐腐蚀材料、培训和维护都在顶事件之前起作用以预防它。'
+    },
+    {
+      text: 'Which criterion asks whether a bow-tie barrier is independent of other barriers?',
+      group: 3,
+      options: ['Adequacy', 'Reliability', 'Independence', 'Auditability'],
+      correct: 2,
+      explanation: 'Independence checks for common-mode failure — if two barriers share the same power supply or same valve, a single failure disables both. Barriers should be independent to provide genuine defense in depth.\n\n独立性检查共因失效——如果两个屏障共用同一电源或同一阀门，单一失效会同时使两者失效。屏障应相互独立以提供真正的纵深防御。'
+    },
+    {
+      text: 'A bow-tie diagram for "Loss of Containment" has a preventive barrier "corrosion monitoring" on the left and a mitigative barrier "firewater system" on the right. If corrosion monitoring fails but the firewater system works, the scenario is:',
+      group: 4,
+      options: [
+        'The top event occurs but consequences are mitigated',
+        'The top event is prevented entirely',
+        'Both top event and consequences are prevented',
+        'Consequences occur without a top event'
+      ],
+      correct: 0,
+      explanation: 'If the preventive barrier fails, the threat leads to the top event (loss of containment). The right-side mitigative barriers then reduce the consequences (the firewater system limits fire damage). The top event happened; consequences were mitigated.\n\n如果预防性屏障失效，威胁导致顶事件（围堵失效）。右侧减缓性屏障随后减轻后果（消防水系统限制火灾损害）。顶事件发生；后果被减轻。'
+    },
+    {
+      text: 'Which risk financing strategy involves accepting the financial consequences of a risk internally rather than transferring it?',
+      group: 4,
+      options: [
+        'Risk avoidance',
+        'Risk retention',
+        'Risk sharing',
+        'Risk reduction'
+      ],
+      correct: 1,
+      explanation: 'Risk retention (self-insurance) involves accepting losses internally — through deductibles, captive insurance, or paying losses from operating funds. It is typically used for low-severity, high-frequency risks.\n\n风险保留（自保）涉及内部承担损失——通过免赔额、专属保险或从运营资金中支付损失。通常适用于低严重性、高频率的风险。'
+    },
+    {
+      text: 'An organization forms a wholly owned subsidiary insurance company to insure its own risks. This is an example of:',
+      group: 4,
+      options: [
+        'Risk transfer',
+        'Risk avoidance',
+        'Risk retention (self-insurance)',
+        'Risk sharing'
+      ],
+      correct: 2,
+      explanation: 'A captive insurance company is a form of risk RETENTION — the organization insures itself through a subsidiary, keeping premiums and investment income internally. It is not transfer (no external insurer) or sharing.\n\n专属保险公司是风险<em>保留</em>的一种形式——组织通过子公司为自己投保，将保费和投资收益保留在内部。它不是转移（没有外部保险人）或分担。'
+    },
+    {
+      text: 'Which of the following is an example of risk SHARING?',
+      group: 4,
+      options: [
+        'Buying a general liability policy',
+        'A joint venture distributing risk among partners',
+        'Paying losses from the operating budget',
+        'Discontinuing a hazardous product line'
+      ],
+      correct: 1,
+      explanation: 'Risk sharing distributes the financial burden across multiple parties — joint ventures, risk pools, and consortiums. A liability policy is transfer; paying from budget is retention; stopping the product line is avoidance.\n\n风险分担将财务负担分配给多个当事方——合资企业、风险池和联合体。责任保险是转移；从预算支付是保留；停止产品线是规避。'
+    },
+    {
+      text: 'What is a key limitation of transferring risk through insurance?',
+      group: 5,
+      options: [
+        'Insurance completely eliminates the hazard from the workplace',
+        'Insurance transfers financial responsibility but not legal liability or reputational consequences',
+        'Insurance is only available for workers\' compensation claims',
+        'Insurance transfers the legal obligation to provide a safe workplace'
+      ],
+      correct: 1,
+      explanation: 'Risk transfer shifts the financial burden of losses but NOT the moral/legal responsibility for safety, regulatory consequences (OSHA citations), or reputational damage. The organization remains accountable for safety regardless of coverage.\n\n风险转移转移了损失的财务负担，但不转移安全方面的道德/法律责任、监管后果（OSHA处罚）或声誉损害。无论覆盖范围如何，组织仍对安全负责。'
+    },
+    {
+      text: 'Which of the following strategies MOST definitively eliminates a risk?',
+      group: 5,
+      options: [
+        'Buying insurance',
+        'Implementing engineering controls',
+        'Risk avoidance (stopping the activity)',
+        'Signing hold-harmless agreements'
+      ],
+      correct: 2,
+      explanation: 'Risk avoidance — stopping the activity that generates the risk — eliminates it entirely, like elimination in the hierarchy of controls. Insurance and hold-harmless agreements transfer financial burden; engineering controls reduce but do not remove the hazard.\n\n风险规避——停止产生风险的活动——完全消除它，如同控制层级中的消除。保险和免责协议转移财务负担；工程控制降低但不移除危害。'
+    },
+    {
+      text: 'Which risk financing strategy is MOST appropriate for low-severity, high-frequency risks?',
+      group: 5,
+      options: [
+        'Risk retention',
+        'Risk transfer (insurance)',
+        'Risk avoidance',
+        'Contractual indemnification'
+      ],
+      correct: 0,
+      explanation: 'Low-severity, high-frequency risks are best retained — insurance premiums would exceed expected losses (the claims would drive premiums up). High-severity, low-frequency risks are best transferred.\n\n低严重性、高频率风险最适合保留——保险费会超过预期损失（理赔会推高保费）。高严重性、低频率风险最适合转移。'
+    },
+    {
+      text: 'What type of insurance covers third-party bodily injury and property damage claims arising from business operations?',
+      group: 5,
+      options: [
+        'Workers\' compensation insurance',
+        'Professional liability insurance',
+        'General liability insurance',
+        'Business interruption insurance'
+      ],
+      correct: 2,
+      explanation: 'General liability insurance covers third-party claims for bodily injury, property damage, and personal injury. Workers\' compensation covers employees (first party). Professional liability (E&O) covers professional negligence claims.\n\n一般责任险承保第三方人身伤害、财产损失和人身伤害索赔。工伤保险承保员工（第一方）。职业责任险（E&O）承保专业疏忽索赔。'
+    },
+    {
+      text: 'Workers\' compensation insurance is BEST described as a:',
+      group: 6,
+      options: [
+        'Third-party liability policy',
+        'No-fault system covering employee injuries arising from employment',
+        'Property damage policy',
+        'Professional negligence policy'
+      ],
+      correct: 1,
+      explanation: 'Workers\' compensation is a no-fault system — injured employees receive benefits without proving employer negligence. In exchange, employees generally cannot sue the employer. It is mandatory in most jurisdictions.\n\n工伤保险是无过错制度——受伤员工无需证明雇主疏忽即可获得福利。作为交换，员工一般不能起诉雇主。在大多数管辖区是强制性的。'
+    },
+    {
+      text: 'An insurance policy with a HIGHER deductible will typically have:',
+      group: 6,
+      options: [
+        'A higher premium',
+        'A lower premium, because the insured retains more of the risk',
+        'No premium change',
+        'Broader coverage'
+      ],
+      correct: 1,
+      explanation: 'A higher deductible means the insured pays more out of pocket before the insurer pays, so the insurer\'s exposure is smaller — hence lower premiums. The deductible is a retention element within an insured risk.\n\n更高的免赔额意味着被保险人自付更多后保险人才赔付，因此保险人的风险敞口更小——故保费更低。免赔额是投保风险中的保留元素。'
+    },
+    {
+      text: 'The "experience rating" of an insurance premium means the premium is adjusted based on:',
+      group: 6,
+      options: [
+        'The age of the insurance company',
+        'The insured organization\'s loss history',
+        'The number of employees only',
+        'The weather in the region'
+      ],
+      correct: 1,
+      explanation: 'Experience rating adjusts premiums based on the organization\'s actual loss history — good safety performance lowers premiums; poor performance raises them. This links insurance cost to safety management effectiveness.\n\n经验费率根据组织的实际损失历史调整保费——良好的安全绩效降低保费；不良绩效提高保费。这将保险成本与安全管理有效性联系起来。'
+    },
+    {
+      text: 'SWIFT (Structured What-If Technique) is best described as:',
+      group: 6,
+      options: [
+        'A more rigorous and detailed alternative to HAZOP',
+        'A faster, brainstorming-based alternative to HAZOP using structured questions',
+        'A quantitative risk calculation method',
+        'A technique for calculating insurance premiums'
+      ],
+      correct: 1,
+      explanation: 'SWIFT is a structured brainstorming method using "What if...?" questions guided by checklists. It is faster and less resource-intensive than HAZOP, but less systematic and may miss some deviations.\n\nSWIFT是一种结构化的头脑风暴方法，使用由检查表引导的"What if...?"问题。它比HAZOP更快、所需资源更少，但不如HAZOP系统化，可能遗漏某些偏差。'
+    },
+    {
+      text: 'A major limitation of checklist-based hazard analysis is that:',
+      group: 7,
+      options: [
+        'It is too expensive',
+        'It only finds hazards that are already on the list; novel hazards may be missed',
+        'It requires a full HAZOP team',
+        'It is not recognized by any regulation'
+      ],
+      correct: 1,
+      explanation: 'Checklists find what they already know. Novel, unusual, or site-specific hazards absent from the list are missed. This is why checklists are best combined with other methods or used for routine/compliance checks.\n\n检查表只能找到已知的内容。清单中没有的新颖、异常或场地特有的危害会被遗漏。因此检查表最适合与其他方法结合，或用于例行/合规检查。'
+    },
+    {
+      text: 'For a complex continuous chemical process requiring systematic deviation analysis, the MOST appropriate technique is:',
+      group: 7,
+      options: [
+        'Checklist analysis',
+        'What-If analysis',
+        'HAZOP',
+        'Simple expert judgment'
+      ],
+      correct: 2,
+      explanation: 'HAZOP is designed for complex continuous processes — its guideword+parameter approach systematically generates all credible deviations, which checklists and unstructured What-If cannot guarantee.\n\nHAZOP专为复杂连续工艺设计——其引导词+参数方法系统性地生成所有可信偏差，这是检查表和开放式What-If无法保证的。'
+    },
+    {
+      text: 'For a SIMPLE process at an early design stage where a full HAZOP would be too resource-intensive, the best choice is:',
+      group: 7,
+      options: [
+        'HAZOP',
+        'SWIFT or What-If',
+        'FTA',
+        'Bow-Tie only'
+      ],
+      correct: 1,
+      explanation: 'SWIFT or What-If are faster, lower-cost methods suited to simple processes and early design. HAZOP is reserved for complex systems where its rigor justifies the resource cost.\n\nSWIFT或What-If是更快、成本更低的方法，适合简单工艺和早期设计。HAZOP保留给复杂系统，其严谨性足以证明资源成本合理。'
+    },
+    {
+      text: 'In the HAZOP study, the "Scribe" (recorder) is responsible for:',
+      group: 7,
+      options: [
+        'Making engineering decisions',
+        'Documenting all discussions, findings, and recommendations in real time',
+        'Operating the control room',
+        'Approving the budget'
+      ],
+      correct: 1,
+      explanation: 'The scribe records the study in real time onto the HAZOP worksheet — deviations, causes, consequences, safeguards, recommendations, and action items. Accurate recording is critical for follow-up and audit.\n\n记录员实时将研究记录到HAZOP工作表上——偏差、原因、后果、防护、建议和行动项。准确记录对后续跟进和审计至关重要。'
+    },
+    {
+      text: 'Which HAZOP worksheet column lists the safety systems that exist to address a deviation?',
+      group: 8,
+      options: [
+        'Guideword',
+        'Causes',
+        'Safeguards',
+        'Recommendations'
+      ],
+      correct: 2,
+      explanation: 'The Safeguards column records existing protection (alarms, relief valves, procedures, interlocks) that address the deviation. Recommendations record NEW actions; Causes records why the deviation happens.\n\n防护列记录现有保护（报警、泄压阀、程序、联锁）以应对偏差。建议记录新的行动；原因记录偏差为何发生。'
+    },
+    {
+      text: 'Which of the following is NOT one of the four barrier effectiveness criteria?',
+      group: 8,
+      options: ['Adequacy', 'Reliability', 'Independence', 'Cost'],
+      correct: 3,
+      explanation: 'The four criteria are Adequacy, Reliability, Independence, and Auditability. Cost is a design/feasibility consideration, not one of the standard barrier-effectiveness criteria.\n\n四个标准是充分性、可靠性、独立性和可审核性。成本是设计/可行性考虑，不属于标准的屏障有效性标准。'
+    },
+    {
+      text: 'Which type of insurance is most directly relevant to a safety consultant who may be sued for professional errors?',
+      group: 8,
+      options: [
+        'Workers\' compensation',
+        'General liability',
+        'Professional liability (E&O)',
+        'Property insurance'
+      ],
+      correct: 2,
+      explanation: 'Professional liability (Errors & Omissions) covers claims of negligence or failure to perform professional duties. Safety consultants, engineers, and design professionals carry this coverage.\n\n职业责任险（错误与遗漏）承保疏忽或未能履行专业职责的索赔。安全顾问、工程师和设计专业人员投保此类保险。'
+    },
+    {
+      text: 'A factory loses $30,000 per day in revenue when shut down after a fire. The policy covering this lost income is:',
+      group: 9,
+      options: [
+        'Property insurance',
+        'Business interruption insurance',
+        'General liability insurance',
+        'Workers\' compensation'
+      ],
+      correct: 1,
+      explanation: 'Business interruption insurance covers lost income and continuing expenses when operations are suspended due to a covered event (like a fire). It is critical for business continuity planning.\n\n业务中断险承保因承保事件（如火灾）导致运营中断时的收入损失和持续费用。它对业务连续性规划至关重要。'
+    },
+    {
+      text: 'The fire protection system of a plant is upgraded to reduce the severity of any fire that occurs. This is an example of:',
+      group: 9,
+      options: [
+        'Loss prevention',
+        'Loss reduction',
+        'Risk transfer',
+        'Risk avoidance'
+      ],
+      correct: 1,
+      explanation: 'Loss REDUCTION reduces the severity of losses when they occur (fire protection, emergency response). Loss PREVENTION reduces the likelihood of the loss occurring. This upgrade targets severity, so it is loss reduction.\n\n损失<em>减少</em>在损失发生时减轻其严重性（消防、应急响应）。损失<em>预防</em>降低损失发生的可能性。此升级针对严重性，因此是损失减少。'
+    },
+    {
+      text: 'A process is replaced with a non-toxic alternative so the hazardous chemical is no longer used. This is an example of:',
+      group: 9,
+      options: [
+        'Risk retention',
+        'Risk transfer',
+        'Risk avoidance',
+        'Risk sharing'
+      ],
+      correct: 2,
+      explanation: 'Eliminating the hazardous substance entirely is risk avoidance (the most definitive financial strategy, equivalent to elimination/substitution in the hierarchy of controls). The risk ceases to exist.\n\n完全消除危险物质是风险规避（最彻底的财务策略，相当于控制层级中的消除/替代）。风险不复存在。'
+    }
+  ]
+});
+</script>
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js').catch(function() {});
+}
+</script>
+</body>
+</html>

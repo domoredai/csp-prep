@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 5: Management Systems & Audit / 管理体系与审核 — CSP Exam Prep</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1e3a5f">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="stylesheet" href="quiz-styles.css?v=11">
+<style>
+  .breadcrumb { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 16px; }
+  .breadcrumb a { color: var(--accent); text-decoration: none; }
+  .breadcrumb a:hover { text-decoration: underline; }
+  .pdca-diagram {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin: 20px 0;
+  }
+  .pdca-box {
+    flex: 1 1 200px;
+    max-width: 240px;
+    padding: 16px;
+    border-radius: var(--radius-sm);
+    text-align: center;
+    color: #fff;
+    font-weight: 700;
+  }
+  .pdca-box.plan { background: #2563eb; }
+  .pdca-box.do { background: #16a34a; }
+  .pdca-box.check { background: #f59e0b; }
+  .pdca-box.act { background: #9333ea; }
+  .pdca-box .pdca-label { font-size: 1.1rem; margin-bottom: 6px; }
+  .pdca-box .pdca-desc { font-size: 0.8rem; font-weight: 400; opacity: 0.9; }
+  .audit-flow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    margin: 16px 0;
+    font-size: 0.85rem;
+  }
+  .audit-step {
+    background: var(--accent-light);
+    color: #1e40af;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .audit-arrow { color: #888; font-weight: 700; }
+  p.bi-p, li.bi-li { margin-bottom: 10px; }
+  p.bi-p .en-p, li.bi-li .en-li { display: block; }
+  p.bi-p .zh-p, li.bi-li .zh-li { display: block; color: #666; font-size: 0.92em; margin-top: 2px; }
+  table.bi-table th { white-space: nowrap; }
+  .evo-timeline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    margin: 16px 0;
+    font-size: 0.82rem;
+  }
+  .evo-item {
+    background: var(--accent-light);
+    color: #1e40af;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+  }
+  .evo-arrow { color: #888; font-weight: 700; }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="breadcrumb">
+    <a href="index.html">← 返回仪表盘 / Dashboard</a> &nbsp;|&nbsp;
+    领域 / Domain 2: <span style="font-weight:600;">计划管理 / Program Management</span>
+  </div>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <h1>📖 第5周 / Week 5:<br><span class="bi-term"><span class="zh">管理体系与审核</span> · <span class="en">Management Systems & Audit</span><span class="vocab-star" data-term="Management System">☆</span></span></h1>
+    <div class="subtitle">领域2：计划管理（占考试25%）· 建议学习时间：6–8小时<br>Domain 2: Program Management (25% of exam) · Est. study time: 6–8 hours</div>
+  </div>
+
+  <!-- KNOWLEDGE SECTION -->
+  <div class="knowledge-card">
+    <h2>5.1 <span class="bi-term"><span class="zh">ISO 45001:2018 — 职业健康安全管理体系</span> · <span class="en">ISO 45001:2018 — Occupational Health & Safety Management System</span><span class="vocab-star" data-term="ISO 45001">☆</span></span></h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>ISO 45001:2018 · Brauer Ch.35 · Yates Ch.2</span>
+    </div>
+
+    <p class="bi-p">
+      <span class="en-p"><span class="bi-term"><span class="zh">ISO 45001:2018</span><span class="en">ISO 45001:2018</span><span class="vocab-star" data-term="ISO 45001">☆</span></span> is the international standard for occupational health and safety (OH&S) management systems. It provides a framework for organizations to manage risks and improve OH&S performance. It replaced OHSAS 18001 and follows the Annex SL high-level structure common to all ISO management system standards (ISO 9001, ISO 14001, etc.). First published in March 2018, it is the world's first ISO standard for OH&S management systems.</span>
+      <span class="zh-p" style="color:#666;">ISO 45001:2018是职业健康安全（OH&S）管理体系的国际标准。它为组织提供了管理风险和改善OH&S绩效的框架。它取代了OHSAS 18001，并遵循所有ISO管理体系标准（ISO 9001、ISO 14001等）通用的Annex SL高层结构。2018年3月首次发布，是全球首个OH&S管理体系ISO标准。</span>
+    </p>
+
+    <h3>从OHSAS 18001到ISO 45001的演变 / Evolution from OHSAS 18001 to ISO 45001</h3>
+    <div class="evo-timeline">
+      <span class="evo-item">BS 8800 (1996)</span>
+      <span class="evo-arrow">→</span>
+      <span class="evo-item">OHSAS 18001 (1999/2007)</span>
+      <span class="evo-arrow">→</span>
+      <span class="evo-item">ISO 45001:2018</span>
+    </div>
+    <ul>
+      <li class="bi-li">
+        <span class="en-li"><strong>Key changes:</strong> ISO 45001 adds "Context of the Organization" (Clause 4) and strengthens leadership (Clause 5) with worker consultation and participation. It shifts from a procedure-based approach (OHSAS 18001) to a process-based, risk-based approach.</span>
+        <span class="zh-li"><strong>关键变化：</strong>ISO 45001增加了"组织环境"（条款4），并通过员工协商与参与强化了领导力（条款5）。它从以程序为基础的方法（OHSAS 18001）转向以过程为基础、以风险为导向的方法。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Terminology change:</strong> "Preventive and corrective action" (OHSAS) became "nonconformity and corrective action" (Clause 10.2); "document control" became "documented information" (Clause 7.5).</span>
+        <span class="zh-li"><strong>术语变化：</strong>"预防与纠正措施"（OHSAS）变为"不符合与纠正措施"（条款10.2）；"文件控制"变为"文件化信息"（条款7.5）。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Annex SL:</strong> A unified high-level structure, identical core text, and common terms shared by all ISO management system standards — enables easy integration of quality, environmental, and OH&S systems.</span>
+        <span class="zh-li"><strong>Annex SL：</strong>所有ISO管理体系标准共享的统一高层结构、相同核心文本和通用术语——便于质量、环境和OH&S体系的整合。</span>
+      </li>
+    </ul>
+
+    <h3>ISO 45001中的PDCA循环 / The PDCA Cycle in ISO 45001</h3>
+    <p class="bi-p">
+      <span class="en-p">ISO 45001 is built on the <span class="bi-term"><span class="zh">策划-实施-检查-改进</span><span class="en">Plan-Do-Check-Act (PDCA)</span><span class="vocab-star" data-term="Plan-Do-Check-Act (PDCA)">☆</span></span> cycle of continuous improvement. PDCA is the universal problem-solving and improvement loop; in ISO 45001 the entire clause structure maps onto it.</span>
+      <span class="zh-p" style="color:#666;">ISO 45001建立在持续改进的PDCA循环之上。PDCA是通用的解决问题与改进循环；在ISO 45001中，整个条款结构与之对应。</span>
+    </p>
+
+    <div class="pdca-diagram">
+      <div class="pdca-box plan">
+        <div class="pdca-label">策划 / PLAN</div>
+        <div class="pdca-desc"><span class="en-p">Clauses 4–6: context, leadership, planning; establish objectives, identify hazards, assess risks, determine controls</span><br><span class="zh-p" style="color:#ddd;font-size:0.78em;">条款4–6：组织环境、领导力、策划；建立目标，识别危害，评估风险，确定控制措施</span></div>
+      </div>
+      <div class="pdca-box do">
+        <div class="pdca-label">实施 / DO</div>
+        <div class="pdca-desc"><span class="en-p">Clauses 7–8: support and operation; implement processes, provide resources, ensure competence & awareness</span><br><span class="zh-p" style="color:#ddd;font-size:0.78em;">条款7–8：支持与运行；实施流程，提供资源，确保能力与意识</span></div>
+      </div>
+      <div class="pdca-box check">
+        <div class="pdca-label">检查 / CHECK</div>
+        <div class="pdca-desc"><span class="en-p">Clause 9: performance evaluation; monitor, measure, evaluate performance, conduct audits, management review</span><br><span class="zh-p" style="color:#ddd;font-size:0.78em;">条款9：绩效评价；监控、测量、评估绩效，开展审核，管理评审</span></div>
+      </div>
+      <div class="pdca-box act">
+        <div class="pdca-label">改进 / ACT</div>
+        <div class="pdca-desc"><span class="en-p">Clause 10: improvement; take corrective actions, investigate incidents, continually improve, update the system</span><br><span class="zh-p" style="color:#ddd;font-size:0.78em;">条款10：改进；采取纠正措施，调查事故，持续改进，更新体系</span></div>
+      </div>
+    </div>
+
+    <h3>ISO 45001:2018条款（Annex SL结构）/ ISO 45001:2018 Clauses (Annex SL Structure)</h3>
+    <table class="bi-table">
+      <tr><th>条款 / Clause</th><th>标题 / Title</th><th>关键要求 / Key Requirements</th></tr>
+      <tr>
+        <td><strong>Clause 4</strong></td>
+        <td>组织环境 / Context of the Organization</td>
+        <td>
+          <span class="en-p">Understand internal/external issues, needs of workers & interested parties, define scope of OH&S management system</span>
+          <span class="zh-p" style="color:#666;">理解内外部问题、员工与相关方需求，界定OH&S管理体系范围</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Clause 5</strong></td>
+        <td>领导力与员工参与 / Leadership & Worker Participation</td>
+        <td>
+          <span class="en-p">Top management accountability, OH&S policy, roles & responsibilities, consultation & participation of workers</span>
+          <span class="zh-p" style="color:#666;">最高管理层问责，OH&S方针，角色与职责，员工协商与参与</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Clause 6</strong></td>
+        <td>策划 / Planning</td>
+        <td>
+          <span class="en-p">Hazard identification, risk assessment, legal requirements, OH&S objectives & planning to achieve them</span>
+          <span class="zh-p" style="color:#666;">危害识别，风险评估，法律法规要求，OH&S目标与实现目标的策划</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Clause 7</strong></td>
+        <td>支持 / Support</td>
+        <td>
+          <span class="en-p">Resources, competence, awareness, communication, documented information</span>
+          <span class="zh-p" style="color:#666;">资源，能力，意识，沟通，文件化信息</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Clause 8</strong></td>
+        <td>运行 / Operation</td>
+        <td>
+          <span class="en-p">Operational planning & control, management of change, procurement, outsourcing, emergency preparedness & response</span>
+          <span class="zh-p" style="color:#666;">运行策划与控制，变更管理，采购，外包，应急准备与响应</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Clause 9</strong></td>
+        <td>绩效评价 / Performance Evaluation</td>
+        <td>
+          <span class="en-p">Monitoring & measurement, internal audit, management review</span>
+          <span class="zh-p" style="color:#666;">监控与测量，内部审核，管理评审</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Clause 10</strong></td>
+        <td>改进 / Improvement</td>
+        <td>
+          <span class="en-p">Incident investigation, nonconformity & corrective action, continual improvement</span>
+          <span class="zh-p" style="color:#666;">事故调查，不符合与纠正措施，持续改进</span>
+        </td>
+      </tr>
+    </table>
+
+    <div class="important">
+      <strong>CSP 考试技巧 / Exam Tip:</strong><br>
+      <span class="en-p">Remember the clause structure: C-L-P-S-O-P-I = "Context, Leadership, Planning, Support, Operation, Performance, Improvement." Clause 9 (Performance Evaluation) covers internal audits and management review — two heavily tested areas. Management of change sits in Clause 8 (Operation); incident investigation and corrective action sit in Clause 10 (Improvement).</span>
+      <span class="zh-p" style="color:#666;">记住条款结构：C-L-P-S-O-P-I = "组织环境、领导力、策划、支持、运行、绩效评价、改进"。条款9（绩效评价）涵盖内部审核和管理评审——两个高频考查领域。变更管理在条款8（运行）；事故调查和纠正措施在条款10（改进）。</span>
+    </div>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-high">必考 HIGH</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "In which ISO 45001 clause is Management of Change addressed?"<br>
+        <strong>答题要点 / Key point:</strong> 条款框架：8.1.2变更管理（Operation）；9.2内部审核、9.3管理评审（Performance）；10.2不符合与纠正措施、10.3持续改进（Improvement）。高管承诺与工人参与（5条）常考。PDCA隐含在条款结构里。核心：Clause 8=Do、Clause 9=Check、Clause 10=Act。
+      </div>
+    </div>
+
+    <div class="mnemonic">
+      <span class="mn-label">🧠 记忆口诀 / Mnemonic:</span>
+      <span class="mn-content"><strong>C-L-P-S-O-P-I</strong> = Context-Leadership-Planning-Support-Operation-Performance-Improvement。中文"环-领-划-支-运-评-改"。8=运(含变更管理)、9=评(审核+管理评审)、10=改(事故调查+纠正)。</span>
+    </div>
+  </div>
+
+  <div id="quiz-group-1"></div>
+
+
+  <div class="knowledge-card">
+    <h2>5.2 <span class="bi-term"><span class="zh">ANSI/ASSP Z10.0 — 美国OH&S管理体系标准</span> · <span class="en">ANSI/ASSP Z10.0 — OH&S Management System (U.S. Standard)</span><span class="vocab-star" data-term="ANSI/ASSP Z10.0">☆</span></span></h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>ANSI/ASSP Z10.0 · Brauer Ch.35 · Yates Ch.2</span>
+    </div>
+
+    <p class="bi-p">
+      <span class="en-p"><span class="bi-term"><span class="zh">ANSI/ASSP Z10.0</span><span class="en">ANSI/ASSP Z10.0</span></span> is the American national standard for occupational health and safety management systems, developed by the American National Standards Institute (ANSI) and the American Society of Safety Professionals (ASSP). While ISO 45001 is international, Z10.0 is the primary U.S. consensus standard. Both share the PDCA framework, but Z10.0 has a stronger, explicit emphasis on the hierarchy of controls as the primary risk-reduction method. Z10.0 is a voluntary consensus standard — it is NOT a federal regulation.</span>
+      <span class="zh-p" style="color:#666;">ANSI/ASSP Z10.0是美国职业健康安全管理体系的国家标准，由美国国家标准协会（ANSI）和美国安全专业人士协会（ASSP）制定。ISO 45001是国际标准，而Z10.0是美国主要的共识标准。两者都有PDCA框架，但Z10.0更明确地强调控制层级作为降低风险的主要方法。Z10.0是自愿性共识标准——不是联邦法规。</span>
+    </p>
+
+    <h3>Z10.0 vs ISO 45001 对比 / Z10.0 vs ISO 45001 Comparison</h3>
+    <table class="bi-table">
+      <tr><th>特性 / Feature</th><th>ISO 45001:2018</th><th>ANSI/ASSP Z10.0</th></tr>
+      <tr>
+        <td>适用范围 / Scope</td>
+        <td>国际 / International</td>
+        <td>美国 / United States</td>
+      </tr>
+      <tr>
+        <td>结构 / Structure</td>
+        <td>Annex SL (10个条款 / 10 clauses)</td>
+        <td>第1–7节（非Annex SL）/ Sections 1–7 (non-Annex SL)</td>
+      </tr>
+      <tr>
+        <td>控制层级 / Hierarchy of Controls</td>
+        <td>被引用 / Referenced</td>
+        <td>明确要求作为主要方法 / Explicitly required as primary approach</td>
+      </tr>
+      <tr>
+        <td>风险评估 / Risk Assessment</td>
+        <td>全过程基于风险的思维 / Risk-based thinking throughout</td>
+        <td>规定性风险评估过程 / Prescriptive risk assessment process</td>
+      </tr>
+      <tr>
+        <td>员工参与 / Worker Participation</td>
+        <td>协商与参与 / Consultation & participation</td>
+        <td>员工参与要求 / Employee involvement required</td>
+      </tr>
+      <tr>
+        <td>管理评审 / Management Review</td>
+        <td>按计划间隔进行 / Required at planned intervals</td>
+        <td>至少每年一次 / Required at least annually</td>
+      </tr>
+      <tr>
+        <td>性质 / Nature</td>
+        <td>可认证标准 / Certifiable (accreditation bodies)</td>
+        <td>自愿性共识标准 / Voluntary consensus standard</td>
+      </tr>
+    </table>
+
+    <p class="bi-p">
+      <span class="en-p">Both standards share the goal of <strong>continual improvement</strong> — not just compliance, but systematic reduction of workplace risks over time. The hierarchy of controls (elimination → substitution → engineering controls → administrative controls → PPE) is tested heavily; remember that elimination is the most effective and PPE is the least.</span>
+      <span class="zh-p" style="color:#666;">两项标准都有<strong>持续改进</strong>的共同目标——不仅是合规，而是系统性地减少工作场所风险。控制层级（消除→替代→工程控制→行政控制→PPE）是高频考点；记住消除最有效、PPE效果最差。</span>
+    </p>
+
+    <div class="important">
+      <strong>CSP 考试技巧 / Exam Tip:</strong><br>
+      <span class="en-p">Know which standard is international (ISO 45001) vs. U.S.-national (Z10.0). Z10.0's explicit, prescriptive use of the hierarchy of controls is its distinguishing feature. Expect questions pairing a control approach with its place in the hierarchy.</span>
+      <span class="zh-p" style="color:#666;">区分国际标准（ISO 45001）与美国国家标准（Z10.0）。Z10.0明确、规定性地使用控制层级是其标志性特征。预期会有将控制方法与层级位置配对考查的题目。</span>
+    </div>
+
+    <div class="confusion-box">
+      <div class="cb-label">⚖️ 易混淆对比 / Common Confusions:</div>
+      <table class="study-table">
+        <tr><th>ISO 45001</th><th>ANSI/ASSP Z10.0</th><th>关键区别 / Key Difference</th></tr>
+        <tr><td>国际标准，可认证（第三方认证机构）</td><td>美国自愿性共识标准，不可认证</td><td>ISO 45001=国际/可认证；Z10.0=美国国家/自愿。Z10.0以明确规定性使用控制层级为标志</td></tr>
+      </table>
+    </div>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-high">必考 HIGH</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "Which OH&S management system standard is certifiable?"<br>
+        <strong>答题要点 / Key point:</strong> ISO 45001可认证；Z10.0为美国自愿性标准（不可认证）。两者都要求管理评审、员工参与、持续改进；都内嵌控制层级（Z10.0尤为明确）。Z10.0区分"政策/P"与"计划/计划性改进"结构。高管的组织领导力是两大标准的共同核心。
+      </div>
+    </div>
+  </div>
+
+  <div id="quiz-group-2"></div>
+
+
+  <div class="knowledge-card">
+    <h2>5.3 <span class="bi-term"><span class="zh">ISO 19011 — 管理体系审核指南</span> · <span class="en">ISO 19011 — Guidelines for Auditing Management Systems</span><span class="vocab-star" data-term="ISO 19011">☆</span></span></h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>ISO 19011:2018 · Yates Ch.2</span>
+    </div>
+
+    <p class="bi-p">
+      <span class="en-p"><span class="bi-term"><span class="zh">ISO 19011</span><span class="en">ISO 19011</span></span> provides guidance on auditing management systems, including OH&S. It covers audit principles, auditor competence, and the audit process. It is NOT a requirements standard — it provides <em>guidance</em> on how to conduct audits. The current edition (ISO 19011:2018) applies to the entire ISO management system family (9001, 14001, 45001, etc.).</span>
+      <span class="zh-p" style="color:#666;">ISO 19011为管理体系审核提供指导，包括OH&S。它涵盖审核原则、审核员能力和审核过程。它不是要求标准——它为如何进行审核提供<em>指导</em>。现行版本（ISO 19011:2018）适用于整个ISO管理体系家族（9001、14001、45001等）。</span>
+    </p>
+
+    <h3>七项审核原则 / Seven Audit Principles</h3>
+    <ol>
+      <li class="bi-li">
+        <span class="en-li"><strong>Integrity / 诚信:</strong> Auditors must be honest, ethical, and fair.</span>
+        <span class="zh-li">审核员必须诚实、道德和公平。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Fair Presentation / 公正表达:</strong> Audit findings and conclusions must be truthful and accurate, reporting significant obstacles encountered.</span>
+        <span class="zh-li">审核发现和结论必须真实准确，并报告遇到的重大障碍。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Due Professional Care / 应有的职业素养:</strong> Auditors must exercise sound judgment and diligence.</span>
+        <span class="zh-li">审核员必须运用合理的判断和勤勉。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Confidentiality / 保密:</strong> Audit information must be protected and not misused.</span>
+        <span class="zh-li">审核信息必须受到保护，不得被滥用。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Independence / 独立性:</strong> Auditors must be impartial and free from bias/conflict of interest. Auditors should not audit their own work.</span>
+        <span class="zh-li">审核员必须公正，不受偏见/利益冲突影响。审核员不应审核自己的工作。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Evidence-Based Approach / 基于证据的方法:</strong> Audit conclusions must be based on verifiable objective evidence (interviews, documents, observations).</span>
+        <span class="zh-li">审核结论必须基于可验证的客观证据（访谈、文件、观察）。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Risk-Based Approach / 基于风险的方法:</strong> Audit planning and execution should consider risks and opportunities, focusing resources on higher-risk areas.</span>
+        <span class="zh-li">审核策划和执行应考虑风险和机遇，将资源集中在高风险领域。</span>
+      </li>
+    </ol>
+
+    <h3>审核过程（依据ISO 19011）/ Audit Process (Per ISO 19011)</h3>
+    <div class="audit-flow">
+      <span class="audit-step">1. 启动 / Initiation</span>
+      <span class="audit-arrow">→</span>
+      <span class="audit-step">2. 准备 / Preparation</span>
+      <span class="audit-arrow">→</span>
+      <span class="audit-step">3. 实施 / Conducting</span>
+      <span class="audit-arrow">→</span>
+      <span class="audit-step">4. 报告 / Reporting</span>
+      <span class="audit-arrow">→</span>
+      <span class="audit-step">5. 跟踪 / Follow-up</span>
+    </div>
+
+    <table class="bi-table">
+      <tr><th>阶段 / Stage</th><th>活动 / Activities</th></tr>
+      <tr>
+        <td><strong>启动 / Initiation</strong></td>
+        <td>
+          <span class="en-p">Establish audit objectives, scope, criteria; select audit team; confirm feasibility of audit; make initial contact with auditee</span>
+          <span class="zh-p" style="color:#666;">确定审核目标、范围、准则；选择审核团队；确认审核可行性；与受审核方初步联系</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>准备 / Preparation</strong></td>
+        <td>
+          <span class="en-p">Review documents; develop audit plan; prepare checklists and working documents; assign auditor roles</span>
+          <span class="zh-p" style="color:#666;">审查文件；制定审核计划；准备检查表和工作文件；分配审核员角色</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>实施 / Conducting</strong></td>
+        <td>
+          <span class="en-p">Opening meeting; collect evidence through interviews, observation, document review; document findings (conformities & nonconformities); closing meeting</span>
+          <span class="zh-p" style="color:#666;">首次会议；通过访谈、观察、文件审查收集证据；记录发现（符合与不符合）；末次会议</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>报告 / Reporting</strong></td>
+        <td>
+          <span class="en-p">Prepare written audit report with findings, conclusions, and recommendations; distribute to management</span>
+          <span class="zh-p" style="color:#666;">编制书面审核报告，包含发现、结论和建议；分发至管理层</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>跟踪 / Follow-up</strong></td>
+        <td>
+          <span class="en-p">Verify corrective actions are implemented and effective; close out audit findings; learn from the audit</span>
+          <span class="zh-p" style="color:#666;">验证纠正措施已实施且有效；关闭审核发现；从审核中学习</span>
+        </td>
+      </tr>
+    </table>
+
+    <h3>审核发现分类 / Audit Finding Classification</h3>
+    <table class="bi-table">
+      <tr><th>类型 / Type</th><th>定义 / Definition</th></tr>
+      <tr>
+        <td><strong>符合 / Conformity</strong></td>
+        <td><span class="en-p">Objective evidence shows the audited requirement is met.</span><span class="zh-p" style="color:#666;">客观证据表明受审要求已得到满足。</span></td>
+      </tr>
+      <tr>
+        <td><strong>不符合 / Nonconformity</strong></td>
+        <td><span class="en-p">Objective evidence shows a requirement is NOT met. May be classified as major (systemic, affects effectiveness) or minor (isolated, low impact).</span><span class="zh-p" style="color:#666;">客观证据表明要求未得到满足。可分为严重不符合（系统性、影响有效性）或轻微不符合（孤立、影响小）。</span></td>
+      </tr>
+      <tr>
+        <td><strong>改进机会 / Opportunity for Improvement (OFI)</strong></td>
+        <td><span class="en-p">A potential improvement observed; NOT a nonconformity and requires no mandatory corrective action.</span><span class="zh-p" style="color:#666;">观察到的潜在改进；不是不符合，无需强制纠正措施。</span></td>
+      </tr>
+    </table>
+
+    <h3>审核员能力 / Auditor Competence</h3>
+    <p class="bi-p">
+      <span class="en-p">Auditors must possess:</span>
+      <span class="zh-p" style="color:#666;">审核员必须具备：</span>
+    </p>
+    <ul>
+      <li class="bi-li">
+        <span class="en-li"><strong>Knowledge / 知识:</strong> Audit principles and techniques, management system standards, organizational context, applicable legal requirements</span>
+        <span class="zh-li">审核原则与技术、管理体系标准、组织环境、适用法律法规要求</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Skills / 技能:</strong> Communication, interviewing, observation, analytical thinking, report writing</span>
+        <span class="zh-li">沟通、访谈、观察、分析思维、报告撰写</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Personal Attributes / 个人素质:</strong> Ethical, open-minded, diplomatic, observant, perceptive, tenacious, decisive, self-reliant</span>
+        <span class="zh-li">道德、开放思维、有外交手腕、观察力强、敏锐、坚韧、果断、自主</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Independence requirement:</strong> Auditors must NOT audit their own work — auditing your own department's programs creates a conflict of interest and violates the independence principle.</span>
+        <span class="zh-li"><strong>独立性要求：</strong>审核员不得审核自己的工作——审核自己部门的项目会产生利益冲突并违反独立性原则。</span>
+      </li>
+    </ul>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-mid">常考 MEDIUM</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "What distinguishes a nonconformity from an opportunity for improvement?"<br>
+        <strong>答题要点 / Key point:</strong> 不符合=客观证据表明要求未满足（重大=系统性/影响有效性；轻微=孤立/影响小）；OFI=潜在改进、不强制纠正。审核员能力三块：知识+技能+个人素质。独立性铁律：<strong>审核员不得审核自己的工作</strong>（利益冲突）。
+      </div>
+    </div>
+  </div>
+
+  <div id="quiz-group-3"></div>
+
+
+  <div class="knowledge-card">
+    <h2>5.4 审核类型 / Types of Audits</h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>ISO 19011:2018 · Yates Ch.2</span>
+    </div>
+
+    <table class="bi-table">
+      <tr><th>类型 / Type</th><th>别称 / Also Called</th><th>描述 / Description</th><th>目的 / Purpose</th></tr>
+      <tr>
+        <td><strong>一方审核 / First-Party Audit</strong></td>
+        <td>内部审核 / Internal audit</td>
+        <td>
+          <span class="en-p">Conducted by the organization on itself; auditors are employees or hired on their behalf</span>
+          <span class="zh-p" style="color:#666;">由组织自行实施；审核员为员工或代表组织聘请</span>
+        </td>
+        <td>
+          <span class="en-p">Self-assessment, identify gaps, prepare for external audits, drive improvement</span>
+          <span class="zh-p" style="color:#666;">自我评估、识别差距、为外部审核做准备、推动改进</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>二方审核 / Second-Party Audit</strong></td>
+        <td>外部/供应商审核 / External / Supplier audit</td>
+        <td>
+          <span class="en-p">Conducted by an organization on its suppliers, contractors, or other external parties</span>
+          <span class="zh-p" style="color:#666;">由组织对其供应商、承包商或其他外部方实施</span>
+        </td>
+        <td>
+          <span class="en-p">Evaluate supplier capability/performance, ensure supply chain compliance</span>
+          <span class="zh-p" style="color:#666;">评估供应商能力/绩效、确保供应链合规</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>三方审核 / Third-Party Audit</strong></td>
+        <td>认证/监管审核 / Certification / Regulatory audit</td>
+        <td>
+          <span class="en-p">Conducted by an independent, accredited certification body (e.g., BSI, DNV) or regulatory agency (e.g., OSHA, EPA)</span>
+          <span class="zh-p" style="color:#666;">由独立的认可认证机构（如BSI、DNV）或监管机构（如OSHA、EPA）实施</span>
+        </td>
+        <td>
+          <span class="en-p">Certification (ISO 45001), regulatory compliance verification, legal enforcement</span>
+          <span class="zh-p" style="color:#666;">认证（ISO 45001）、法规合规验证、法律执法</span>
+        </td>
+      </tr>
+    </table>
+
+    <h3>审核类型选择指南 / Choosing an Audit Type</h3>
+    <ul>
+      <li class="bi-li">
+        <span class="en-li"><strong>Internal (first-party):</strong> Routine self-check before external audits; cost-effective; may lack objectivity if done by people with vested interest in results.</span>
+        <span class="zh-li"><strong>内部（一方）：</strong>外部审核前的例行自查；经济高效；若由与结果有利害关系的人员执行可能缺乏客观性。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Second-party:</strong> Evaluate vendors/contractors before awarding or renewing contracts; ensures the supply chain meets safety expectations.</span>
+        <span class="zh-li"><strong>二方：</strong>在授予或续签合同前评估供应商/承包商；确保供应链符合安全期望。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Third-party:</strong> Certification audits by accredited bodies (surveillance and recertification cycles); OSHA and EPA regulatory inspections.</span>
+        <span class="zh-li"><strong>三方：</strong>由认可机构进行的认证审核（监督和再认证周期）；OSHA和EPA监管检查。</span>
+      </li>
+    </ul>
+
+    <div class="important">
+      <strong>关键区别 / Key Distinction:</strong><br>
+      <span class="en-p">An <strong>audit</strong> is a systematic, independent, documented process for obtaining objective evidence. It is NOT the same as an <strong>inspection</strong> (physical walkthrough checking conditions) or an <strong>assessment</strong> (broader evaluation that may include judgment and qualitative analysis). Audits evaluate the <em>management system</em>; inspections evaluate <em>physical conditions</em>.</span>
+      <span class="zh-p" style="color:#666;"><strong>审核</strong>是一个系统化、独立、文件化的获取客观证据的过程。它与<strong>检查</strong>（现场巡视检查状况）或<strong>评估</strong>（可能包括判断和定性分析的更广泛评价）不同。审核评估<em>管理体系</em>；检查评估<em>物理状况</em>。</span>
+    </div>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-mid">常考 MEDIUM</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "An audit of a supplier's facility before contract award is what type?"<br>
+        <strong>答题要点 / Key point:</strong> 一方=组织审自己（内部）；二方=审供应商/承包商；三方=独立认证机构或监管（OSHA/EPA）。二方典型场景：合同授予/续签前评估供应商。审核vs检查：审核评估管理体系、检查评估物理状况。
+      </div>
+    </div>
+
+    <div class="confusion-box">
+      <div class="cb-label">⚖️ 易混淆对比 / Common Confusions:</div>
+      <table class="study-table">
+        <tr><th>First-party 一方</th><th>Second-party 二方</th><th>Third-party 三方</th></tr>
+        <tr><td>组织审自己（内部审核）</td><td>组织审供应商/承包商</td><td>独立认证机构/监管机构</td></tr>
+        <tr><td colspan="3">区分看"谁来审谁"：自己审自己=一方；审供应链=二方；独立机构/政府=三方。认证(ISO 45001)和OSHA检查都是三方</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div id="quiz-group-4"></div>
+
+
+  <div class="knowledge-card">
+    <h2>5.5 管理评审 / Management Review</h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>ISO 45001:2018 Clause 9.3 · ANSI/ASSP Z10.0 · Brauer Ch.35</span>
+    </div>
+
+    <p class="bi-p">
+      <span class="en-p"><span class="bi-term"><span class="zh">管理评审</span><span class="en">Management Review</span></span> is a formal, planned evaluation by top management of the OH&S management system's continuing suitability, adequacy, and effectiveness. It is required by both ISO 45001 (Clause 9.3) and Z10.0. Note the three criteria: <strong>suitability</strong> (still appropriate for the context), <strong>adequacy</strong> (sufficient in scope), <strong>effectiveness</strong> (achieving intended results).</span>
+      <span class="zh-p" style="color:#666;">管理评审是最高管理层对OH&S管理体系持续适宜性、充分性和有效性的正式、有计划的评价。ISO 45001（条款9.3）和Z10.0都要求进行管理评审。注意三个标准：<strong>适宜性</strong>（是否仍适用于环境）、<strong>充分性</strong>（范围是否足够）、<strong>有效性</strong>（是否达到预期结果）。</span>
+    </p>
+
+    <h3>管理评审输入 / Management Review Inputs</h3>
+    <ul>
+      <li class="bi-li">
+        <span class="en-li">Status of actions from previous management reviews</span>
+        <span class="zh-li">以往管理评审措施的落实状况</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">Changes in internal/external issues (context, interested parties, legal requirements)</span>
+        <span class="zh-li">内外部问题的变化（环境、相关方、法律法规要求）</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">OH&S performance data: incident statistics, near misses, audit results, monitoring results</span>
+        <span class="zh-li">OH&S绩效数据：事故统计、未遂事件、审核结果、监测结果</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">Adequacy of resources (staffing, budget, equipment)</span>
+        <span class="zh-li">资源的充分性（人员配置、预算、设备）</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">Results of worker consultation and participation</span>
+        <span class="zh-li">员工协商与参与的结果</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">Risk and opportunity assessments</span>
+        <span class="zh-li">风险与机遇评估</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">Recommendations for improvement</span>
+        <span class="zh-li">改进建议</span>
+      </li>
+    </ul>
+
+    <h3>管理评审输出（决策与行动）/ Management Review Outputs (Decisions & Actions)</h3>
+    <ul>
+      <li class="bi-li">
+        <span class="en-li">Conclusions on continuing suitability, adequacy, and effectiveness of the OH&S system</span>
+        <span class="zh-li">关于OH&S体系持续适宜性、充分性和有效性的结论</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">Decisions on improvement opportunities</span>
+        <span class="zh-li">关于改进机遇的决策</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">Decisions on any need for changes to the OH&S system</span>
+        <span class="zh-li">关于OH&S体系变更需求的决策</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">Resource needs (budget, personnel, technology)</span>
+        <span class="zh-li">资源需求（预算、人员、技术）</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">Actions when OH&S objectives have not been met</span>
+        <span class="zh-li">OH&S目标未达成时的措施</span>
+      </li>
+    </ul>
+
+    <h3>管理评审 vs 审核 / Management Review vs. Audit</h3>
+    <table class="bi-table">
+      <tr><th>维度 / Dimension</th><th>管理评审 / Management Review</th><th>内部审核 / Internal Audit</th></tr>
+      <tr>
+        <td><strong>执行者 / Who</strong></td>
+        <td><span class="en-p">Top management</span><span class="zh-p" style="color:#666;">最高管理层</span></td>
+        <td><span class="en-p">Independent/trained auditors</span><span class="zh-p" style="color:#666;">独立/经过培训的审核员</span></td>
+      </tr>
+      <tr>
+        <td><strong>关注点 / Focus</strong></td>
+        <td><span class="en-p">Strategic direction, suitability, resource allocation</span><span class="zh-p" style="color:#666;">战略方向、适宜性、资源分配</span></td>
+        <td><span class="en-p">Conformity to requirements, system effectiveness</span><span class="zh-p" style="color:#666;">对要求的符合性、体系有效性</span></td>
+      </tr>
+      <tr>
+        <td><strong>频率 / Frequency</strong></td>
+        <td><span class="en-p">Planned intervals (Z10: at least annually)</span><span class="zh-p" style="color:#666;">按计划间隔（Z10：至少每年）</span></td>
+        <td><span class="en-p">Planned intervals; more frequent for higher risk</span><span class="zh-p" style="color:#666;">按计划间隔；高风险更频繁</span></td>
+      </tr>
+      <tr>
+        <td><strong>输出 / Output</strong></td>
+        <td><span class="en-p">Decisions and resource commitments</span><span class="zh-p" style="color:#666;">决策和资源承诺</span></td>
+        <td><span class="en-p">Findings, nonconformities, opportunities for improvement</span><span class="zh-p" style="color:#666;">发现、不符合、改进机会</span></td>
+      </tr>
+    </table>
+
+    <div class="important">
+      <strong>CSP 考试技巧 / Exam Tip:</strong><br>
+      <span class="en-p">Management review is NOT the same as an audit. An audit checks conformity; management review evaluates strategic direction and resource allocation. Management review is top management's job — not the safety manager's job alone. The safety professional provides inputs; top management makes decisions.</span>
+      <span class="zh-p" style="color:#666;">管理评审与审核不同。审核检查符合性；管理评审评估战略方向和资源分配。管理评审是最高管理层的工作——不仅仅是安全管理者的工作。安全专业人员提供输入；最高管理层做出决策。</span>
+    </div>
+
+    <div class="confusion-box">
+      <div class="cb-label">⚖️ 易混淆对比 / Common Confusions:</div>
+      <table class="study-table">
+        <tr><th>Management Review 管理评审</th><th>Internal Audit 内部审核</th><th>关键区别 / Key Difference</th></tr>
+        <tr><td>最高管理层执行，评估战略方向/适宜性/资源，输出决策</td><td>独立培训审核员执行，检查符合性/有效性，输出发现/不符合</td><td>管理评审=领导层做战略决策；审核=核对是否符合要求。管理评审由最高管理层主导，安全专业人员只提供输入</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div id="quiz-group-5"></div>
+
+
+  <div class="knowledge-card">
+    <h2>5.6 审核、检查与评估 — 关键区别 / Audit, Inspection, and Assessment — Key Differences</h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>ISO 19011:2018 · Brauer Ch.35</span>
+    </div>
+
+    <table class="bi-table">
+      <tr><th>活动 / Activity</th><th>关注点 / Focus</th><th>方法 / Method</th><th>结果 / Outcome</th></tr>
+      <tr>
+        <td><strong>审核 / Audit</strong></td>
+        <td>
+          <span class="en-p">Management system — policies, procedures, records</span>
+          <span class="zh-p" style="color:#666;">管理体系——方针、程序、记录</span>
+        </td>
+        <td>
+          <span class="en-p">Systematic review of documents, interviews, verification of conformity to standards</span>
+          <span class="zh-p" style="color:#666;">系统化审查文件、访谈、验证标准符合性</span>
+        </td>
+        <td>
+          <span class="en-p">Findings of conformity/nonconformity; opportunities for improvement</span>
+          <span class="zh-p" style="color:#666;">符合/不符合发现；改进机会</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>检查 / Inspection</strong></td>
+        <td>
+          <span class="en-p">Physical conditions — equipment, workplace, practices</span>
+          <span class="zh-p" style="color:#666;">物理状况——设备、工作场所、实践</span>
+        </td>
+        <td>
+          <span class="en-p">Walkthrough observation, checklists, measurements</span>
+          <span class="zh-p" style="color:#666;">巡视观察、检查表、测量</span>
+        </td>
+        <td>
+          <span class="en-p">Identification of hazards, unsafe conditions, or regulatory violations</span>
+          <span class="zh-p" style="color:#666;">识别危害、不安全状况或违规</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>评估 / Assessment</strong></td>
+        <td>
+          <span class="en-p">Broader evaluation — may combine audit + inspection + analysis</span>
+          <span class="zh-p" style="color:#666;">更广泛的评价——可结合审核+检查+分析</span>
+        </td>
+        <td>
+          <span class="en-p">Comprehensive review including risk analysis, performance evaluation</span>
+          <span class="zh-p" style="color:#666;">综合审查，包括风险分析、绩效评价</span>
+        </td>
+        <td>
+          <span class="en-p">Overall evaluation/judgment; may include prioritization and recommendations</span>
+          <span class="zh-p" style="color:#666;">总体评价/判断；可包括优先级排序和建议</span>
+        </td>
+      </tr>
+    </table>
+
+    <p class="bi-p">
+      <span class="en-p">A simple way to remember: <strong>Audit = checks the system</strong> (are we following our procedures?). <strong>Inspection = checks the conditions</strong> (is the workplace safe?). <strong>Assessment = evaluates overall status</strong> (how effective is our program?).</span>
+      <span class="zh-p" style="color:#666;">简单记忆法：<strong>审核=检查体系</strong>（我们是否在遵守程序？）。<strong>检查=检查状况</strong>（工作场所安全吗？）。<strong>评估=评价总体状态</strong>（我们的计划效果如何？）。</span>
+    </p>
+
+    <div class="important">
+      <strong>场景识别 / Scenario Recognition:</strong><br>
+      <span class="en-p">A worker observes a missing machine guard during a weekly walkthrough → this is an <strong>inspection</strong> finding. An auditor finds the organization lacks a documented LOTO procedure → this is an <strong>audit</strong> nonconformity. A consultant completes a full review of the program's strengths and gaps with recommendations → this is an <strong>assessment</strong>.</span>
+      <span class="zh-p" style="color:#666;">工人每周巡视时发现机器防护罩缺失 → 这是<strong>检查</strong>发现。审核员发现组织缺少文件化的LOTO程序 → 这是<strong>审核</strong>不符合项。顾问完成对项目优缺点和建议的全面审查 → 这是<strong>评估</strong>。</span>
+    </div>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-mid">常考 MEDIUM</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "An auditor finds no documented hazard communication program. This is what?"<br>
+        <strong>答题要点 / Key point:</strong> 审核=查体系/程序是否符合要求（缺文件化程序→不符合）；检查=查物理状况（缺防护罩→检查发现）；评估=综合判断有效性。区分信号词：documented procedure→audit；physical condition→inspection；overall effectiveness→assessment。
+      </div>
+    </div>
+  </div>
+
+  <div id="quiz-group-6"></div>
+
+
+  <div class="knowledge-card">
+    <h2>5.7 <span class="bi-term"><span class="zh">ISO 14000系列 — 环境管理体系与整合管理体系</span> · <span class="en">ISO 14000 Series — Environmental Management Systems (EMS) & Integrated Management Systems</span><span class="vocab-star" data-term="ISO 14000 Series">☆</span></span></h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>ISO 14001:2015 · Yates Ch.2</span>
+    </div>
+
+    <p class="bi-p">
+      <span class="en-p">The CSP11 blueprint (Domain 2, item 8) specifically references the <span class="bi-term"><span class="zh">ISO 14000系列</span><span class="en">ISO 14000 series</span><span class="vocab-star" data-term="ISO 14000 Series">☆</span></span> alongside ISO 45001 and ISO 19011 as SH&E management and audit systems. The ISO 14000 family is the international standard for environmental management, following the same Annex SL structure as ISO 45001.</span>
+      <span class="zh-p" style="color:#666;">CSP11蓝图（领域2，第8项）特别将ISO 14000系列与ISO 45001和ISO 19011并列为SH&E管理和审核体系。ISO 14000系列是环境管理的国际标准，遵循与ISO 45001相同的Annex SL结构。</span>
+    </p>
+
+    <table class="bi-table">
+      <tr><th>标准 / Standard</th><th>内容 / Content</th><th>CSP相关性 / CSP Relevance</th></tr>
+      <tr>
+        <td><strong>ISO 14001:2015</strong></td>
+        <td>
+          <span class="en-p">Environmental Management Systems — Requirements with guidance for use. The certifiable standard for EMS. Follows Annex SL PDCA structure (Clauses 4–10). Focuses on environmental aspects/impacts, compliance obligations, and lifecycle perspective.</span>
+          <span class="zh-p" style="color:#666;">环境管理体系——要求及使用指南。EMS的可认证标准。遵循Annex SL的PDCA结构（条款4-10）。关注环境因素/影响、合规义务和生命周期视角。</span>
+        </td>
+        <td>
+          <span class="en-p"><strong>High.</strong> Core EMS standard; many organizations integrate it with ISO 45001. The CSP must understand its structure and relationship to OH&S management.</span>
+          <span class="zh-p" style="color:#666;"><strong>高。</strong>核心EMS标准；许多组织将其与ISO 45001整合。CSP必须理解其结构以及与OH&S管理的关系。</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>ISO 14004:2016</strong></td>
+        <td>
+          <span class="en-p">General guidelines on implementation — practical guidance for establishing, implementing, maintaining, and improving an EMS.</span>
+          <span class="zh-p" style="color:#666;">实施通用指南——为建立、实施、维护和改进EMS提供实用指导。</span>
+        </td>
+        <td><span class="en-p"><strong>Low–Medium.</strong> Supplementary guidance; 14001 is the standard tested.</span><span class="zh-p" style="color:#666;"><strong>低-中。</strong>补充性指南；考试考查的是14001。</span></td>
+      </tr>
+    </table>
+
+    <h3>整合管理体系 (IMS) / Integrated Management System (IMS)</h3>
+    <p class="bi-p">
+      <span class="en-p">Because ISO 9001 (quality), ISO 14001 (environment), and ISO 45001 (OH&S) all follow the Annex SL high-level structure with identical clause numbering and core text, organizations increasingly combine them into a single <span class="bi-term"><span class="zh">整合管理体系</span><span class="en">Integrated Management System (IMS)</span><span class="vocab-star" data-term="Integrated Management System (IMS)">☆</span></span> with one set of policies, procedures, audits, and management reviews.</span>
+      <span class="zh-p" style="color:#666;">由于ISO 9001（质量）、ISO 14001（环境）和ISO 45001（OH&S）都遵循Annex SL高层结构，条款编号和核心文本相同，组织越来越多地将它们整合为一个<strong>整合管理体系（IMS）</strong>，共用一套方针、程序、审核和管理评审。</span>
+    </p>
+    <ul>
+      <li class="bi-li">
+        <span class="en-li"><strong>Benefits:</strong> Reduced duplication, unified audit program, single management review, consistent risk approach, cost savings.</span>
+        <span class="zh-li"><strong>好处：</strong>减少重复、统一审核项目、单一管理评审、一致的风险方法、节约成本。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Shared elements:</strong> Documented information control, internal audit (Clause 9.2), management review (Clause 9.3), corrective action (Clause 10.2), competence and awareness (Clause 7.2–7.3).</span>
+        <span class="zh-li"><strong>共享要素：</strong>文件化信息控制、内部审核（条款9.2）、管理评审（条款9.3）、纠正措施（条款10.2）、能力与意识（条款7.2-7.3）。</span>
+      </li>
+    </ul>
+
+    <div class="important">
+      <strong>CSP 考试技巧 / Exam Tip:</strong><br>
+      <span class="en-p">The CSP11 blueprint mentions "ISO 14000 series" broadly alongside ISO 19011 and ISO 45001 — expect questions that distinguish between the environment-focused 14001 and the OH&S-focused 45001. Both share the Annex SL (PDCA) structure, Clause 4–10, and use ISO 19011 for audit guidance.</span>
+      <span class="zh-p" style="color:#666;">CSP11蓝图将"ISO 14000系列"与ISO 19011和ISO 45001一并广泛提及——预期会有区分关注环境的14001与关注OH&S的45001的题目。两者共享Annex SL (PDCA)结构、条款4-10，并使用ISO 19011进行审核指导。</span>
+    </div>
+
+    <div class="confusion-box">
+      <div class="cb-label">⚖️ 易混淆对比 / Common Confusions:</div>
+      <table class="study-table">
+        <tr><th>ISO 14001 (EMS) 环境</th><th>ISO 45001 (OH&S) 职业健康安全</th><th>关键区别 / Key Difference</th></tr>
+        <tr><td>关注环境绩效：污染、合规义务、环境影响</td><td>关注职业健康安全：伤害、职业病、工作场所风险</td><td>14001管"环境"、45001管"人员安全"；两者共享Annex SL结构（条款4-10）和ISO 19011审核指南</td></tr>
+      </table>
+    </div>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-mid">常考 MEDIUM</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "Which standard addresses environmental management systems?"<br>
+        <strong>答题要点 / Key point:</strong> ISO 14001=环境；ISO 45001=OH&S；两者同用Annex SL结构+ISO 19011审核指南，可整合为IMS。整合好处：减少重复、统一审核与管理评审。
+      </div>
+    </div>
+  </div>
+
+  <div id="quiz-group-7"></div>
+
+
+  <div class="knowledge-card">
+    <h2>5.8 <span class="bi-term"><span class="zh">系统安全分析技术</span> · <span class="en">System Safety Analysis Techniques</span><span class="vocab-star" data-term="System Safety Analysis">☆</span></span></h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>Brauer Ch.36 · Brauer Ch.34 · Yates Ch.24</span>
+    </div>
+
+    <p class="bi-p">
+      <span class="en-p">The CSP11 blueprint (Domain 2, item 6) explicitly names system safety analysis techniques: <strong>FTA, FMEA, Safety Case approach, and risk summation</strong>. FTA and FMEA are covered in other sections (incident investigation and PHA). This section focuses on the Safety Case approach and risk summation per the exam blueprint.</span>
+      <span class="zh-p" style="color:#666;">CSP11蓝图（领域2，第6项）明确列出系统安全分析技术：<strong>FTA、FMEA、安全案例方法和风险汇总</strong>。FTA和FMEA在其他部分（事故调查和PHA）有覆盖。本节根据考试蓝图重点介绍安全案例方法和风险汇总。</span>
+    </p>
+
+    <h3><span class="zh">安全案例方法</span> · <span class="en">Safety Case Approach</span></h3>
+    <p class="bi-p">
+      <span class="en-p">A <span class="bi-term"><span class="zh">安全案例</span><span class="en">Safety Case</span><span class="vocab-star" data-term="Safety Case">☆</span></span> is a structured, documented argument that a system is acceptably safe for a given application in a given operating environment. Unlike a prescriptive checklist, it requires the operator to demonstrate — through evidence — that risks have been reduced to ALARP (As Low As Reasonably Practicable).</span>
+      <span class="zh-p" style="color:#666;">安全案例是一个结构化的文件化论证，证明系统在特定运行环境中对特定应用是可接受安全的。与规定性检查表不同，它要求操作者通过证据证明风险已降低至ALARP（最低合理可行水平）。</span>
+    </p>
+    <ul>
+      <li class="bi-li">
+        <span class="en-li"><strong>Origin:</strong> UK HSE — became mandatory for offshore installations after the Piper Alpha disaster (1988). Now common in nuclear, rail, and major hazard industries worldwide.</span>
+        <span class="zh-li"><strong>起源：</strong>英国HSE——Piper Alpha灾难（1988年）后成为海上装置的强制性要求。现已在全球核能、铁路和重大危害工业中普及。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Three pillars:</strong> (1) Hazard identification — what can go wrong? (2) Risk assessment — how likely and severe? (3) Risk management — risks reduced to ALARP? Each pillar needs objective evidence.</span>
+        <span class="zh-li"><strong>三大支柱：</strong>(1) 危害识别——什么可能出错？(2) 风险评估——概率和严重度？(3) 风险管理——风险降低至ALARP？每个支柱需要客观证据。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>ALARP principle:</strong> Risk is reduced until the cost of further reduction is grossly disproportionate to the benefit gained. The cost/benefit test distinguishes ALARP from absolute "zero risk."</span>
+        <span class="zh-li"><strong>ALARP原则：</strong>将风险降低到进一步降低的成本与所得收益严重不成比例为止。成本/收益检验将ALARP与绝对"零风险"区分开来。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Living document:</strong> Must be updated after major modifications, new knowledge, or incidents.</span>
+        <span class="zh-li"><strong>活性文件：</strong>重大改造、新知识或事故后必须更新。</span>
+      </li>
+    </ul>
+
+    <h3><span class="zh">风险汇总</span> · <span class="en">Risk Summation</span></h3>
+    <p class="bi-p">
+      <span class="en-p"><span class="bi-term"><span class="zh">风险汇总</span><span class="en">Risk summation</span></span> is the aggregation of multiple individual hazards and their risks into a total risk profile. Individual hazards may each appear acceptable, but their combined risk may exceed acceptability thresholds.</span>
+      <span class="zh-p" style="color:#666;">风险汇总是将多个单独危害及其风险汇总为总风险轮廓。单独评估时每个危害可能都可接受，但其组合风险可能超过可接受性门槛。</span>
+    </p>
+    <ul>
+      <li class="bi-li">
+        <span class="en-li">Used in quantitative risk assessment (QRA), facility siting studies, and portfolio risk management. Supports decisions on whether cumulative risk is tolerable.</span>
+        <span class="zh-li">用于定量风险评估(QRA)、设施选址研究和组合风险管理。支持关于累积风险是否可容忍的决策。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">Care must be taken to avoid double-counting shared consequences or correlated failure modes.</span>
+        <span class="zh-li">必须注意避免重复计算共享的后果或关联的失效模式。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Related techniques:</strong> FTA (fault tree, top-down Boolean logic) and FMEA (failure modes and effects, bottom-up inductive) complement the Safety Case and risk summation approaches.</span>
+        <span class="zh-li"><strong>相关技术：</strong>FTA（故障树，自顶向下布尔逻辑）和FMEA（失效模式与影响，自底向上归纳）对安全案例和风险汇总方法起补充作用。</span>
+      </li>
+    </ul>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-mid">常考 MEDIUM</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "What are the three pillars of a safety case?"<br>
+        <strong>答题要点 / Key point:</strong> 安全案例三大支柱：危害识别→风险评估→风险管理（降至ALARP）。ALARP=成本与收益"严重不成比例"时的成本收益检验。起源：Piper Alpha(1988)后英国海上强制。风险汇总：单个可接受≠合计可接受，防重复计数。FTA自上而下、FMEA自下而上。
+      </div>
+    </div>
+  </div>
+
+  <div id="quiz-group-8"></div>
+
+
+  <!-- QUIZ SECTION -->
+  <div id="quiz-root"></div>
+
+</div>
+
+<script src="quiz-engine.js?v=11"></script>
+<script src="vocab-engine.js?v=11"></script>
+<script>
+CSPQuiz.init({
+  quizId: 'week-05-quiz',
+  quizTitle: 'Week 5 Quiz: Management Systems & Audit / 第5周测验：管理体系与审核',
+  quizTopic: 'Domain 2 — Program Management',
+  containerId: 'quiz-root',
+  questions: [
+    {
+      text: 'Which ISO 45001:2018 clause addresses internal audits and management review?',
+      group: 1,
+      options: [
+        'Clause 8 — Operation',
+        'Clause 9 — Performance Evaluation',
+        'Clause 10 — Improvement',
+        'Clause 6 — Planning'
+      ],
+      correct: 1,
+      explanation: 'Clause 9 (Performance Evaluation) covers monitoring, measurement, internal audits, and management review. Clause 8 (Operation) covers operational controls; Clause 10 (Improvement) covers incident investigation, nonconformity, corrective action, and continual improvement.\n\n条款9（绩效评价）涵盖监控、测量、内部审核和管理评审。条款8（运行）涵盖运行控制；条款10（改进）涵盖事故调查、不符合、纠正措施和持续改进。'
+    },
+    {
+      text: 'According to ISO 19011, which of the following is NOT one of the seven audit principles?',
+      group: 1,
+      options: [
+        'Integrity and fair presentation',
+        'Independence and evidence-based approach',
+        'Maximum efficiency and cost minimization',
+        'Confidentiality and due professional care'
+      ],
+      correct: 2,
+      explanation: 'The seven ISO 19011 audit principles are: Integrity, Fair Presentation, Due Professional Care, Confidentiality, Independence, Evidence-Based Approach, and Risk-Based Approach. Cost minimization is not an audit principle — audits must be thorough and evidence-driven, not performed at minimum cost.\n\n七项ISO 19011审核原则是：诚信、公正表达、应有的职业素养、保密、独立性、基于证据的方法和基于风险的方法。成本最小化不是审核原则——审核必须彻底并以证据为驱动，而非以最低成本进行。'
+    },
+    {
+      text: 'An organization hires an accredited certification body to evaluate its OH&S management system against ISO 45001 requirements. This is an example of what type of audit?',
+      group: 1,
+      options: [
+        'First-party (internal) audit',
+        'Second-party (supplier) audit',
+        'Third-party (certification) audit',
+        'Regulatory compliance inspection'
+      ],
+      correct: 2,
+      explanation: 'A third-party audit is conducted by an independent, accredited certification body. It is independent of both the organization (unlike a first-party audit) and customers/suppliers (unlike a second-party audit). The purpose is typically certification or regulatory verification.\n\n三方审核由独立的认可认证机构实施。它既独立于组织（不同于一方审核），也独立于客户/供应商（不同于二方审核）。目的通常为认证或法规验证。'
+    },
+    {
+      text: 'In the PDCA cycle of ISO 45001, which phase includes implementing the OH&S processes, providing resources, and ensuring worker competence?',
+      group: 1,
+      options: [
+        'Plan',
+        'Do',
+        'Check',
+        'Act'
+      ],
+      correct: 1,
+      explanation: 'The "Do" phase is about implementation — putting the plans into action. This includes providing resources, ensuring competence and awareness, establishing communication processes, and operating the controls identified during the Plan phase.\n\n"实施(Do)"阶段是关于执行——将计划付诸行动。这包括提供资源、确保能力和意识、建立沟通过程以及运行在策划阶段确定的控制措施。'
+    },
+    {
+      text: 'Which of the following is a management review OUTPUT rather than an input?',
+      group: 1,
+      options: [
+        'Results of internal audits from the past year',
+        'OH&S performance data including incident statistics',
+        'Decisions on resource needs and budget allocation for safety',
+        'Status of corrective actions from the previous management review'
+      ],
+      correct: 2,
+      explanation: 'Management review outputs are the decisions and actions that result from the review. Decisions on resource needs and budget allocation are outputs. Audit results, performance data, and status of previous actions are all inputs that inform the review.\n\n管理评审输出是由评审产生的决策和行动。关于资源需求和预算分配的决策是输出。审核结果、绩效数据和以往措施的落实情况都是为评审提供信息的输入。'
+    },
+    {
+      text: 'What is the primary difference between an audit and an inspection?',
+      group: 2,
+      options: [
+        'An audit is external and an inspection is always internal',
+        'An audit evaluates the management system while an inspection evaluates physical conditions',
+        'An audit requires a written report while an inspection does not',
+        'There is no meaningful difference — the terms are interchangeable'
+      ],
+      correct: 1,
+      explanation: 'Audits evaluate management systems (policies, procedures, records, conformity to standards), while inspections evaluate physical workplace conditions (equipment, hazards, unsafe practices). This is a fundamental distinction frequently tested on the CSP exam.\n\n审核评估管理体系（方针、程序、记录、标准符合性），而检查评估物理工作场所状况（设备、危害、不安全实践）。这是CSP考试中经常考查的基本区别。'
+    },
+    {
+      text: 'Per ANSI/ASSP Z10.0, management review of the OH&S management system must be conducted at a minimum of:',
+      group: 2,
+      options: [
+        'Every six months',
+        'Annually',
+        'Every two years',
+        'Only when a serious incident occurs'
+      ],
+      correct: 1,
+      explanation: 'ANSI/ASSP Z10.0 requires management review at least annually. While ISO 45001 requires review "at planned intervals" (not specifying a frequency), Z10.0 is more prescriptive with its annual requirement. More frequent reviews may be appropriate based on risk and organizational needs.\n\nANSI/ASSP Z10.0要求至少每年进行一次管理评审。ISO 45001要求"按计划间隔"评审（未规定频率），而Z10.0的年度要求更具规定性。根据风险和组织需要，更频繁的评审可能是适当的。'
+    },
+    {
+      text: 'According to ISO 45001 Clause 5 (Leadership), who bears ultimate accountability for the OH&S management system?',
+      group: 2,
+      options: [
+        'The safety manager or EHS director',
+        'The OH&S committee',
+        'Top management of the organization',
+        'All employees share equal accountability'
+      ],
+      correct: 2,
+      explanation: 'Clause 5 places ultimate accountability on top management. While the safety manager manages day-to-day operations and all employees have responsibilities, top management cannot delegate ultimate accountability. This is a key shift from OHSAS 18001 to ISO 45001 — leadership must be actively involved, not just supportive.\n\n条款5将最终问责归于最高管理层。虽然安全管理者管理日常运作且所有员工都有职责，但最高管理层不能将最终问责委托他人。这是从OHSAS 18001到ISO 45001的一个关键转变——领导层必须积极参与，而不仅仅是支持。'
+    },
+    {
+      text: 'ISO 45001:2018 replaced which earlier standard as the international framework for OH&S management systems?',
+      group: 2,
+      options: [
+        'ANSI Z10.0',
+        'OHSAS 18001',
+        'ISO 9001',
+        'ISO 14001'
+      ],
+      correct: 1,
+      explanation: 'ISO 45001:2018 replaced OHSAS 18001. It was the first ISO standard specifically for occupational health and safety management systems, published in March 2018. ANSI Z10.0 is the U.S. national standard; ISO 9001 and ISO 14001 cover quality and environment respectively.\n\nISO 45001:2018取代了OHSAS 18001。它是首个专门针对职业健康安全管理体系的ISO标准，于2018年3月发布。ANSI Z10.0是美国国家标准；ISO 9001和ISO 14001分别覆盖质量和环境。'
+    },
+    {
+      text: 'What is the primary purpose of the Annex SL high-level structure shared by ISO management system standards?',
+      group: 2,
+      options: [
+        'To ensure all ISO management system standards share a common core structure, terms, and concepts',
+        'To increase the cost of certification for organizations',
+        'To replace the need for ISO 19011 audit guidance',
+        'To eliminate the requirement for internal audits'
+      ],
+      correct: 0,
+      explanation: 'Annex SL provides a unified high-level structure with identical clause numbering, core text, and common terms across all ISO management system standards. This enables easier integration of quality (9001), environmental (14001), and OH&S (45001) management systems.\n\nAnnex SL为所有ISO管理体系标准提供统一的高层结构，具有相同的条款编号、核心文本和通用术语。这使得质量（9001）、环境（14001）和OH&S（45001）管理体系更易于整合。'
+    },
+    {
+      text: 'According to the hierarchy of controls, which approach is the MOST effective for controlling a hazard?',
+      group: 3,
+      options: [
+        'Administrative controls',
+        'PPE',
+        'Elimination',
+        'Engineering controls'
+      ],
+      correct: 2,
+      explanation: 'Elimination is the most effective control — it physically removes the hazard. The order from most to least effective is: Elimination, Substitution, Engineering Controls, Administrative Controls, PPE. PPE is the least effective because it relies on correct use and does not remove the hazard.\n\n消除是最有效的控制——它物理性地移除危害。从最有效到最无效的顺序是：消除、替代、工程控制、行政控制、PPE。PPE效果最差，因为它依赖正确使用且不能移除危害。'
+    },
+    {
+      text: 'ISO 45001 Clause 6 (Planning) primarily addresses:',
+      group: 3,
+      options: [
+        'Hazard identification, risk assessment, and planning to achieve OH&S objectives',
+        'Emergency response drills',
+        'Monitoring and measurement',
+        'Internal audit scheduling'
+      ],
+      correct: 0,
+      explanation: 'Clause 6 (Planning) covers actions to address risks and opportunities, hazard identification, risk assessment, determination of legal requirements, and establishing OH&S objectives with plans to achieve them. Emergency response is in Clause 8; monitoring and audits are in Clause 9.\n\n条款6（策划）涵盖应对风险和机遇的措施、危害识别、风险评估、法律法规要求的确定，以及建立OH&S目标及实现目标的计划。应急响应在条款8；监测和审核在条款9。'
+    },
+    {
+      text: 'In the Safety Case approach, risks must be demonstrated to have been reduced to what level?',
+      group: 3,
+      options: [
+        'Zero',
+        'ALARP (As Low As Reasonably Practicable)',
+        'The insurance industry threshold',
+        'The industry average'
+      ],
+      correct: 1,
+      explanation: 'The Safety Case requires demonstration that risks are reduced to ALARP — As Low As Reasonably Practicable. ALARP does not mean zero risk; it means further risk reduction would be grossly disproportionate in cost to the benefit gained. The three pillars are hazard identification, risk assessment, and risk management.\n\n安全案例要求证明风险已降低至ALARP——最低合理可行水平。ALARP不代表零风险；它意味着进一步降低风险的成本将与所得收益严重不成比例。三大支柱是危害识别、风险评估和风险管理。'
+    },
+    {
+      text: 'The Safety Case approach became mandatory for offshore installations in the UK following which disaster?',
+      group: 3,
+      options: [
+        'Deepwater Horizon',
+        'Piper Alpha',
+        'Chernobyl',
+        'Bhopal'
+      ],
+      correct: 1,
+      explanation: 'After the Piper Alpha disaster (1988), the UK Health and Safety Executive made Safety Cases mandatory for offshore oil and gas installations. Deepwater Horizon (2010) was a later offshore disaster in the Gulf of Mexico; Chernobyl and Bhopal were industrial disasters in different sectors.\n\n在Piper Alpha灾难（1988年）之后，英国健康与安全执行局要求海上油气装置必须编制安全案例。Deepwater Horizon（2010年）是后来墨西哥湾的海上灾难；切尔诺贝利和博帕尔是其他行业的事故。'
+    },
+    {
+      text: 'Risk summation in quantitative risk assessment is used to:',
+      group: 3,
+      options: [
+        'Average out multiple risk assessments into a single number',
+        'Aggregate individual hazard risks into a total risk profile to evaluate cumulative risk',
+        'Eliminate the need for hazard identification',
+        'Replace the hierarchy of controls'
+      ],
+      correct: 1,
+      explanation: 'Risk summation aggregates the risks of multiple individual hazards into a total risk profile. Individual hazards may each appear acceptable, but the combined (cumulative) risk can exceed acceptability thresholds. Care is needed to avoid double-counting shared consequences.\n\n风险汇总将多个单独危害的风险聚合为总风险轮廓。每个危害单独看可能都可接受，但组合（累积）风险可能超过可接受性门槛。需要注意避免重复计算共享后果。'
+    },
+    {
+      text: 'An organization uses its own trained employees to audit its own safety management system. This is an example of a:',
+      group: 4,
+      options: [
+        'First-party audit',
+        'Second-party audit',
+        'Third-party audit',
+        'Regulatory inspection'
+      ],
+      correct: 0,
+      explanation: 'A first-party (internal) audit is conducted by the organization on itself, using its own employees or hired representatives. Its purpose is self-assessment, gap identification, and preparation for external audits. A key limitation is potential lack of objectivity.\n\n一方（内部）审核由组织对自身实施，使用自己的员工或聘请的代表。其目的是自我评估、识别差距和为外部审核做准备。一个关键局限是可能缺乏客观性。'
+    },
+    {
+      text: 'A manufacturer audits a key supplier\'s safety program before awarding a contract. This is an example of a:',
+      group: 4,
+      options: [
+        'First-party audit',
+        'Second-party audit',
+        'Third-party audit',
+        'Management review'
+      ],
+      correct: 1,
+      explanation: 'A second-party audit is conducted by an organization on its suppliers, contractors, or other external parties. Its purpose is to evaluate supplier capability and ensure the supply chain meets safety expectations before contracts are awarded or renewed.\n\n二方审核由组织对其供应商、承包商或其他外部方实施。其目的是在授予或续签合同前评估供应商能力并确保供应链符合安全期望。'
+    },
+    {
+      text: 'During an audit, collected evidence is evaluated against the audit criteria to determine:',
+      group: 4,
+      options: [
+        'Conformity or nonconformity',
+        'Profitability of the organization',
+        'Employee satisfaction levels',
+        'Market share changes'
+      ],
+      correct: 0,
+      explanation: 'Audit criteria are the reference against which evidence is evaluated. Comparing objective evidence to the criteria produces audit findings of conformity (requirement met) or nonconformity (requirement not met). Findings are then used to form audit conclusions.\n\n审核准则是评价证据的参考基准。将客观证据与准则比较，产生符合（要求满足）或不符合（要求未满足）的审核发现。发现随后用于形成审核结论。'
+    },
+    {
+      text: 'According to ISO 45001, management review must be conducted by:',
+      group: 4,
+      options: [
+        'The safety manager',
+        'The audit team',
+        'Top management',
+        'External consultants acting alone'
+      ],
+      correct: 2,
+      explanation: 'Management review is the responsibility of top management. While the safety professional provides inputs (performance data, audit results, risk assessments), it is top management that reviews the system\'s suitability, adequacy, and effectiveness and makes decisions. This is a distinguishing feature vs. an audit.\n\n管理评审是最高管理层的职责。虽然安全专业人员提供输入（绩效数据、审核结果、风险评估），但由最高管理层评审体系的适宜性、充分性和有效性并做出决策。这是与审核相区别的特征。'
+    },
+    {
+      text: 'Which of the following is a typical INPUT to a management review?',
+      group: 5,
+      options: [
+        'Decisions on resource allocation',
+        'OH&S performance data, audit results, and legal requirements',
+        'Policy approvals',
+        'Budget sign-offs'
+      ],
+      correct: 1,
+      explanation: 'Inputs to management review include status of previous actions, changes in context, OH&S performance data, audit results, adequacy of resources, and worker participation results. Decisions on resource allocation and policy approvals are OUTPUTS that result from the review.\n\n管理评审的输入包括以往措施的状况、环境变化、OH&S绩效数据、审核结果、资源充分性和员工参与结果。关于资源分配和政策审批的决策是评审产生的输出。'
+    },
+    {
+      text: 'An auditor finds that a written LOTO procedure exists, but records do not demonstrate it was followed on a specific piece of equipment. This is an example of a:',
+      group: 5,
+      options: [
+        'Conformity',
+        'An opportunity for improvement',
+        'Nonconformity',
+        'Audit criterion'
+      ],
+      correct: 2,
+      explanation: 'A nonconformity is a requirement not being met, evidenced by objective evidence. The requirement is that the LOTO procedure is implemented and followed; the lack of records demonstrating compliance means the requirement is not satisfied. This is a finding requiring corrective action.\n\n不符合是要求未得到满足，需有客观证据支撑。要求是LOTO程序被实施和遵守；缺少显示符合性的记录意味着要求未得到满足。这是需要纠正措施的发现。'
+    },
+    {
+      text: 'The primary purpose of an audit opening meeting is to:',
+      group: 5,
+      options: [
+        'Collect physical evidence',
+        'Confirm the audit scope, criteria, schedule, and communication methods',
+        'Issue the final audit report',
+        'Interview all witnesses'
+      ],
+      correct: 1,
+      explanation: 'The opening meeting confirms the audit scope, objectives, criteria, schedule, team roles, and communication methods, and addresses any questions from the auditee. Evidence collection and interviews happen during the conducting phase; the final report is presented after.\n\n首次会议确认审核范围、目标、准则、日程、团队角色和沟通方式，并解答受审核方的问题。证据收集和访谈在实施阶段进行；最终报告在之后提交。'
+    },
+    {
+      text: 'In an audit, an "opportunity for improvement" (OFI) is best described as:',
+      group: 5,
+      options: [
+        'A potential improvement that is not a nonconformity and requires no mandatory action',
+        'The same as a major nonconformity',
+        'A mandatory corrective action',
+        'An audit criterion'
+      ],
+      correct: 0,
+      explanation: 'An opportunity for improvement is a finding that suggests a possible enhancement but does not indicate failure to meet a requirement. Unlike a nonconformity, it requires no mandatory corrective action, though the organization may choose to act on it.\n\n改进机会是建议可能的改进但未表明未满足要求的发现。与不符合不同，它不需要强制纠正措施，但组织可以选择采取行动。'
+    },
+    {
+      text: 'ISO 14001:2015 is primarily concerned with:',
+      group: 6,
+      options: [
+        'Quality management',
+        'Environmental management',
+        'Occupational health and safety',
+        'Financial auditing'
+      ],
+      correct: 1,
+      explanation: 'ISO 14001 is the international standard for Environmental Management Systems (EMS). It focuses on environmental aspects, impacts, compliance obligations, and lifecycle perspective. Occupational health and safety is covered by ISO 45001; quality by ISO 9001.\n\nISO 14001是环境管理体系（EMS）的国际标准。它关注环境因素、影响、合规义务和生命周期视角。职业健康安全由ISO 45001覆盖；质量由ISO 9001覆盖。'
+    },
+    {
+      text: 'An integrated management system (IMS) typically combines which set of standards under one framework?',
+      group: 6,
+      options: [
+        'ISO 9001 + ISO 14001 + ISO 45001',
+        'ISO 19011 + ISO 14001',
+        'ANSI Z10.0 + ISO 19011',
+        'ISO 45001 + ISO 14004 only'
+      ],
+      correct: 0,
+      explanation: 'An IMS integrates quality (ISO 9001), environment (ISO 14001), and OH&S (ISO 45001) under a single framework. This is possible because all three follow the Annex SL high-level structure with identical clause numbering and core text, enabling shared audits and management reviews.\n\n整合管理体系（IMS）将质量（ISO 9001）、环境（ISO 14001）和OH&S（ISO 45001）整合在一个框架下。这之所以可能，是因为三者都遵循Annex SL高层结构，条款编号和核心文本相同，从而支持共享审核和管理评审。'
+    },
+    {
+      text: 'In the PDCA cycle, which phase involves monitoring, measuring, and evaluating OH&S performance?',
+      group: 6,
+      options: [
+        'Plan',
+        'Do',
+        'Check',
+        'Act'
+      ],
+      correct: 2,
+      explanation: 'The Check phase corresponds to Clause 9 (Performance Evaluation) — monitoring, measurement, analysis, evaluation, internal audits, and management review. Plan sets objectives (Clauses 4-6), Do implements (Clauses 7-8), and Act improves (Clause 10).\n\n检查阶段对应条款9（绩效评价）——监测、测量、分析、评价、内部审核和管理评审。策划设定目标（条款4-6），实施执行（条款7-8），改进提升（条款10）。'
+    },
+    {
+      text: 'Which of the following is NOT included in ISO 45001 Clause 7 (Support)?',
+      group: 6,
+      options: [
+        'Resources',
+        'Competence and awareness',
+        'Emergency preparedness and response',
+        'Communication'
+      ],
+      correct: 2,
+      explanation: 'Clause 7 (Support) covers resources, competence, awareness, communication, and documented information. Emergency preparedness and response is part of Clause 8 (Operation). This clause-to-content mapping is frequently tested.\n\n条款7（支持）涵盖资源、能力、意识、沟通和文件化信息。应急准备与响应属于条款8（运行）。条款与内容的对应关系是高频考点。'
+    },
+    {
+      text: 'Under ISO 45001 Clause 5 (Leadership), workers are expected to:',
+      group: 7,
+      options: [
+        'Participate in and be consulted on OH&S decisions that affect them',
+        'Have no formal role in the OH&S management system',
+        'Be represented solely by a safety committee with no worker input',
+        'Take sole responsibility for regulatory compliance'
+      ],
+      correct: 0,
+      explanation: 'Clause 5 requires consultation and participation of workers and worker representatives. Workers participate in hazard identification, risk assessment, incident investigation, and decisions affecting their safety. This is a defining feature of ISO 45001\'s leadership clause.\n\n条款5要求与员工及员工代表协商并让其参与。员工参与危害识别、风险评估、事故调查以及影响其安全的决策。这是ISO 45001领导力条款的标志性特征。'
+    },
+    {
+      text: 'An auditor interviews workers, reviews training records, and observes work practices to verify compliance. This is an example of collecting:',
+      group: 7,
+      options: [
+        'Objective evidence',
+        'Assumptions',
+        'Hearsay',
+        'Personal opinions'
+      ],
+      correct: 0,
+      explanation: 'Objective evidence is verifiable data obtained through interviews, document review, and observation. It forms the basis of audit findings under the evidence-based approach principle. Assumptions, hearsay, and opinions are not verifiable and cannot support audit conclusions.\n\n客观证据是通过访谈、文件审查和观察获得的可验证数据。它构成了基于证据方法原则下审核发现的基础。假设、传闻和意见不可验证，不能支持审核结论。'
+    },
+    {
+      text: 'During an audit, a safety professional observes a single near-miss on a walkthrough and documents it. This is best classified as an:',
+      group: 7,
+      options: [
+        'Major nonconformity',
+        'Minor nonconformity',
+        'Opportunity for improvement',
+        'Audit criterion'
+      ],
+      correct: 2,
+      explanation: 'A single near-miss observation does not demonstrate failure to meet a documented requirement — it suggests a potential improvement in hazard controls. It is therefore an opportunity for improvement (OFI) rather than a nonconformity. A nonconformity requires evidence that a stated requirement was not met.\n\n单个未遂事件观察不表明未满足文件化要求——它提示危害控制存在改进空间。因此它属于改进机会（OFI）而非不符合。不符合需要证据表明某一要求未得到满足。'
+    },
+    {
+      text: 'Which statement about third-party audits is correct?',
+      group: 7,
+      options: [
+        'They are conducted by accredited, independent bodies, often to award certification',
+        'They are always conducted by OSHA',
+        'They are conducted by an organization on itself',
+        'They are conducted by customers on their suppliers'
+      ],
+      correct: 0,
+      explanation: 'Third-party audits are conducted by independent, accredited certification bodies (such as BSI or DNV) and are often used to award ISO 45001 certification. Regulatory inspections by OSHA are a form of third-party audit. First-party is self-audit; second-party is supplier audit.\n\n三方审核由独立的认可认证机构（如BSI或DNV）实施，常用于颁发ISO 45001认证。OSHA监管检查是三方审核的一种形式。一方是自我审核；二方是供应商审核。'
+    },
+    {
+      text: 'Which of the following lists the hierarchy of controls in the correct order from most to least effective?',
+      group: 8,
+      options: [
+        'Elimination → Substitution → Engineering controls → Administrative controls → PPE',
+        'PPE → Administrative controls → Engineering controls → Substitution → Elimination',
+        'Substitution → Elimination → PPE → Administrative controls → Engineering controls',
+        'Engineering controls → Elimination → Administrative controls → PPE → Substitution'
+      ],
+      correct: 0,
+      explanation: 'The correct order is Elimination, Substitution, Engineering controls, Administrative controls, PPE. This ordering is explicitly emphasized by ANSI/ASSP Z10.0 and is heavily tested. Eliminating the hazard is always preferred over relying on administrative controls or PPE.\n\n正确顺序是消除、替代、工程控制、行政控制、PPE。这一顺序被ANSI/ASSP Z10.0明确强调并高频考查。消除危害始终优于依赖行政控制或PPE。'
+    },
+    {
+      text: 'ANSI/ASSP Z10.0 explicitly requires which approach as the primary method for reducing risks?',
+      group: 8,
+      options: [
+        'The hierarchy of controls',
+        'Employee disciplinary action',
+        'Zero-harm pledges',
+        'Higher insurance coverage'
+      ],
+      correct: 0,
+      explanation: 'A distinguishing feature of Z10.0 is its explicit, prescriptive requirement to use the hierarchy of controls as the primary risk-reduction approach — starting with elimination and substitution before administrative controls and PPE. ISO 45001 references the hierarchy but Z10.0 mandates it as primary.\n\nZ10.0的标志性特征是其明确、规定性地要求将控制层级作为降低风险的主要方法——在行政控制和PPE之前先考虑消除和替代。ISO 45001引用控制层级，而Z10.0将其规定为主要方法。'
+    },
+    {
+      text: 'In ISO 45001, requirements for Management of Change (MOC) are found in which clause?',
+      group: 8,
+      options: [
+        'Clause 8 — Operation',
+        'Clause 5 — Leadership',
+        'Clause 10 — Improvement',
+        'Clause 4 — Context'
+      ],
+      correct: 0,
+      explanation: 'Management of change is part of Clause 8 (Operation), specifically 8.1.3 — ensuring planned changes are controlled, new hazards assessed, and risk controls determined before the change is implemented. MOC is a key operational control for preventing incidents during periods of change.\n\n变更管理属于条款8（运行），具体是8.1.3——确保计划中的变更受控、评估新危害并在实施前确定风险控制。MOC是防止变更期间发生事故的关键运行控制。'
+    },
+    {
+      text: 'According to ISO 19011, audit conclusions must be based on:',
+      group: 8,
+      options: [
+        'Verifiable objective evidence',
+        'The auditor\'s personal experience alone',
+        'Management opinions',
+        'Unverified hearsay'
+      ],
+      correct: 0,
+      explanation: 'Under the evidence-based approach principle, audit conclusions must be based on verifiable objective evidence collected during the audit. Personal experience, management opinions, and hearsay are not verifiable evidence and cannot support conclusions.\n\n根据基于证据的方法原则，审核结论必须基于审核期间收集的可验证客观证据。个人经验、管理层意见和传闻不是可验证的证据，不能支持结论。'
+    }
+  ]
+});
+</script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js').catch(function() {});
+}
+</script>
+</body>
+</html>

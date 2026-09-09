@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Monthly Exam 6: Final Mock Exam / 月度考试6：最终模拟考试 — CSP Exam Prep</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1e3a5f">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="stylesheet" href="quiz-styles.css">
+<style>
+  .breadcrumb { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 16px; }
+  .breadcrumb a { color: var(--accent); text-decoration: none; }
+  .breadcrumb a:hover { text-decoration: underline; }
+  p.bi-p, li.bi-li { margin-bottom: 10px; }
+  p.bi-p .en-p, li.bi-li .en-li { display: block; }
+  p.bi-p .zh-p, li.bi-li .zh-li { display: block; color: #666; font-size: 0.92em; margin-top: 2px; }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="breadcrumb">
+    <a href="index.html">&larr; 仪表盘 / Dashboard</a> &nbsp;|&nbsp;
+    月度考试6 / Monthly Exam 6
+  </div>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <h1>&#x1F4DD; 月度考试6：最终模拟考试 / Monthly Exam 6: Final Mock Exam</h1>
+    <div class="subtitle">所有领域 / All Domains &mdash; 最高难度CSP模拟 / Hardest Full CSP Simulation &middot; 25 题 / 25 Questions</div>
+    <div class="meta-row">
+      <span>场景驱动题 / Scenario-Driven Questions</span>
+      <span>多领域综合 / Multi-Domain Synthesis</span>
+      <span>4+ 计算题 / 4+ Calculation Questions</span>
+      <span>CSP11真实难度 / Realistic CSP11 Difficulty</span>
+    </div>
+  </div>
+
+  <!-- Exam Instructions -->
+  <div class="knowledge-card">
+    <h2>考试说明 / Exam Instructions</h2>
+    <p class="bi-p">
+      <span class="en-p">This <strong>final mock exam</strong> is designed to be the most challenging of the monthly exam series. Questions are at or above the difficulty level of the real CSP exam, with a heavy emphasis on scenario-based reasoning, cross-domain synthesis, and subtle distinctions that separate high scorers from the rest.</span>
+      <span class="zh-p">本次<strong>最终模拟考试</strong>设计为月度考试系列中最具挑战性的。题目难度达到或超过真实CSP考试水平，重点强调基于场景的推理、跨领域综合以及区分高分者的细微区别。</span>
+    </p>
+    <p class="bi-p">
+      <span class="en-p"><strong>Key features of this exam:</strong></span>
+      <span class="zh-p"><strong>本次考试的关键特点：</strong></span>
+    </p>
+    <ul>
+      <li class="bi-li">
+        <span class="en-li"><strong>Scenario-heavy:</strong> Most questions present a realistic workplace scenario and ask for the BEST course of action.</span>
+        <span class="zh-li"><strong>场景为主：</strong>大多数题目呈现真实工作场所场景，要求选择最佳行动方案。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Multi-domain synthesis:</strong> Several questions require applying knowledge from multiple CSP domains to arrive at the correct answer.</span>
+        <span class="zh-li"><strong>多领域综合：</strong>若干题目需要应用多个CSP领域的知识才能得出正确答案。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Calculation variety:</strong> At least 4 calculation questions across RPN, noise TWA, TRIR, ventilation, and NIOSH Lifting Equation types.</span>
+        <span class="zh-li"><strong>多种计算题：</strong>至少4道计算题，涵盖RPN、噪声TWA、TRIR、通风和NIOSH提举方程等类型。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Subtle distinctions:</strong> Questions that test nuanced differences — PEL vs. TLV application, NFPA standard numbers, RCRA generator categories, ICS positions vs. functions.</span>
+        <span class="zh-li"><strong>细微区别：</strong>测试细微差别的题目——PEL vs. TLV应用、NFPA标准编号、RCRA产生者类别、ICS岗位vs.职能。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>PPE as distractor:</strong> At least 2 questions where PPE appears as an option but is deliberately NOT the correct answer because higher-level controls should be applied first.</span>
+        <span class="zh-li"><strong>PPE作为干扰项：</strong>至少2道题中PPE作为选项出现但特意不是正确答案，因为应首先应用更高层级的控制措施。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Approximate CSP11 blueprint distribution.</strong></span>
+        <span class="zh-li"><strong>近似CSP11蓝图分布。</strong></span>
+      </li>
+    </ul>
+    <p class="bi-p">
+      <span class="en-p">Take your time — this exam rewards careful analysis, not speed. Select the best answer for each question.</span>
+      <span class="zh-p">请花时间仔细分析——本次考试看重的是仔细分析而非速度。为每个问题选择最佳答案。</span>
+    </p>
+  </div>
+
+  <!-- Quiz Root -->
+  <div id="quiz-root"></div>
+
+</div>
+
+<script src="quiz-engine.js"></script>
+<script src="vocab-engine.js"></script>
+<script>
+CSPQuiz.init({
+  quizId: 'exam-month-06',
+  quizTitle: 'Monthly Exam 6: Final Mock Exam / 月度考试6：最终模拟考试',
+  quizTopic: 'All Domains — Hardest Full Simulation / 全部领域——最高难度模拟',
+  containerId: 'quiz-root',
+  questions: [
+    {
+      text: 'During a planned expansion of a chemical processing unit, a safety engineer reviews the proposed design and notes that a manual sampling station for a corrosive intermediate is located on an elevated platform requiring workers to climb stairs while carrying sample containers. The engineer recommends relocating the sampling station to ground level and installing a closed-loop sampling system to eliminate the need to open process lines. Which combination of hazard control strategies does this recommendation BEST represent?',
+      options: [
+        'Engineering controls and administrative controls',
+        'Elimination and engineering controls applied through Prevention through Design',
+        'Personal protective equipment and substitution',
+        'Administrative controls and warning systems'
+      ],
+      correct: 1,
+      explanation: 'The engineer applied PtD during the design phase: (1) relocating to ground level eliminates the fall hazard from climbing stairs with containers; (2) the closed-loop sampling system is an engineering control that eliminates exposure to the corrosive chemical during sampling. The Hierarchy of Controls is applied at the design stage rather than retroactively, which is the essence of PtD. Note that while PPE (chemical-resistant gloves, face shield) would still be prudent, the question asks about the control strategy — which is elimination/engineering via PtD, not PPE.\n\n工程师在设计阶段应用了PtD：（1）移至地面消除了携带容器爬楼梯的坠落危险；（2）闭环采样系统是一种消除采样时接触腐蚀性化学品的工程控制。控制层级在设计阶段而非事后应用，这正是PtD的精髓。注意虽然PPE（耐化学手套、面罩）仍然是审慎做法，但问题是关于控制策略——这是通过PtD实现的消除/工程控制，而非PPE。'
+    },
+    {
+      text: 'A safety manager at a facility with a strong safety culture observes that maintenance workers consistently use the correct LOTO procedures, wear all required PPE, and stop work when they identify unexpected hazards. However, the facility\'s TRIR has plateaued at 2.8 for three consecutive years despite these positive behaviors. Which of the following is the MOST likely systemic issue the safety manager should investigate next?',
+      options: [
+        'Inadequate employee discipline for unsafe behaviors',
+        'Lack of management commitment to safety',
+        'The safety program may be over-reliant on worker-level controls (administrative/PPE) rather than addressing hazards higher in the hierarchy, and may need better leading indicators',
+        'The facility needs more frequent safety training sessions'
+      ],
+      correct: 2,
+      explanation: 'When TRIR plateaus despite good worker-level safety behaviors, it often signals that the organization has maxed out the effectiveness of lower-level controls (administrative, PPE, worker behavior) and needs to shift focus to higher-level interventions (elimination, substitution, engineering controls) or improve its safety management system metrics. Additionally, the organization may be focusing on lagging indicators (TRIR) rather than leading indicators (near-miss reporting, hazard abatement tracking, audit findings closure rates).\n\n当TRIR在良好员工安全行为下仍然停滞时，通常表明组织已达到低层级控制（行政、PPE、员工行为）的效能上限，需要将重点转向高层级干预（消除、替代、工程控制）或改进其安全管理体系指标。此外，组织可能专注于滞后指标（TRIR）而非领先指标（未遂事件报告、危害消除跟踪、审核发现关闭率）。'
+    },
+    {
+      text: 'A construction project involves installing HVAC equipment on a roof with a slope of 5:12. The parapet is 36 inches high. Workers will be within 4 feet of the roof edge for extended periods. The project superintendent proposes using only a safety monitor and a warning line at 6 feet from the edge. Is this compliant with OSHA 1926 Subpart M, and what is the BEST rationale?',
+      options: [
+        'Yes, because a warning line and safety monitor are acceptable alternatives to conventional fall protection on any roof with a parapet',
+        'Yes, because the 36-inch parapet meets the guardrail height requirement, making it equivalent to conventional fall protection',
+        'No, because for a steep roof (slope greater than 4:12), conventional fall protection systems (guardrail, safety net, or PFAS) are required regardless of distance from the edge',
+        'No, because warning lines are only permitted when work is performed at least 15 feet from the edge on low-slope roofs'
+      ],
+      correct: 2,
+      explanation: 'Per OSHA 1926.501(b)(11): on a steep roof (slope greater than 4 in 12), each employee on the roof must be protected from falls by guardrail systems with toeboards, safety net systems, or personal fall arrest systems. The warning line + safety monitor combination is ONLY permitted for low-slope roofs (4:12 or less). A 5:12 slope is classified as a steep roof. The safest interpretation is that conventional fall protection is required for the steep slope.\n\n根据OSHA 1926.501(b)(11)：在陡坡屋顶（坡度大于4:12）上，屋顶上的每位员工必须通过带踢脚板的护栏系统、安全网系统或个人防坠系统进行防坠落保护。警示线+安全监视员的组合仅允许用于低坡屋顶（4:12或以下）。5:12的坡度被归类为陡坡屋顶。最安全的解读是陡坡需要常规坠落防护。'
+    },
+    {
+      text: 'A safety professional is investigating a series of near-misses at a chemical plant where operators bypassed safety interlocks to maintain production speed. Investigation reveals that the production bonus system rewards throughput over all other metrics, supervisors verbally encourage operators to "keep the line moving," and the interlock bypass procedure (designed for maintenance only) lacks administrative controls to prevent unauthorized use. Using a systems approach, which intervention would be the MOST effective long-term solution?',
+      options: [
+        'Issue a written disciplinary policy stating that interlock bypass without authorization will result in immediate termination',
+        'Provide additional training to all operators on the hazards of interlock bypass and proper use of lockout/tagout',
+        'Redesign the bonus structure to weight safety metrics equally with production, implement engineering controls to make interlocks tamper-resistant, and revise the bypass procedure with supervisory authorization requirements',
+        'Install additional warning signs at each interlock point and provide operators with upgraded PPE for the tasks they perform after bypassing interlocks'
+      ],
+      correct: 2,
+      explanation: 'This scenario involves multiple root causes across management systems (Domain 2), engineering design (Domain 1), and human factors. The systemic issues are: (1) misaligned incentives (bonus for throughput only); (2) cultural/supervisory pressure; (3) weak administrative controls on the bypass procedure; (4) insufficient engineering barriers to prevent unauthorized bypass. Option C addresses all three levels — organizational (bonus redesign), engineering (tamper-resistant interlocks), and administrative (supervisory authorization). Options A, B, and D only address surface-level issues. Note that PPE (option D) is deliberately a distractor — it does not prevent the unauthorized bypass behavior at all.\n\n该场景涉及跨管理体系（领域2）、工程设计（领域1）和人员因素的多个根本原因。系统性问题是：（1）激励不一致（仅按产量发奖金）；（2）文化/管理压力；（3）旁路程序的行政控制薄弱；（4）防止未经授权旁路的工程屏障不足。选项C解决了所有三个层面——组织（奖金重设）、工程（防篡改联锁）和行政（主管授权）。选项A、B和D仅解决表面问题。注意PPE（选项D）是特意设计的干扰项——它完全不能防止未经授权的旁路行为。'
+    },
+    {
+      text: 'A manufacturing facility stores 800 gallons of lubricating oil in a 1,000-gallon aboveground tank, 200 gallons of hydraulic oil in equipment reservoirs, and 60 gallons of waste oil in a 55-gallon drum. No single container holds 55 gallons or more except the 1,000-gallon tank and its connected piping. Is this facility subject to the SPCC rule (40 CFR 112)?',
+      options: [
+        'Yes, because aggregate aboveground oil storage exceeds 1,320 gallons',
+        'No, because the total oil storage is 1,060 gallons, which is below the 1,320-gallon threshold',
+        'Yes, because any facility storing oil in a container of 1,000 gallons or more must have an SPCC plan',
+        'No, because only the 1,000-gallon tank counts toward the threshold; the equipment reservoirs and drum are excluded since they are under 55 gallons each'
+      ],
+      correct: 1,
+      explanation: 'SPCC applicability: aggregate aboveground oil storage capacity > 1,320 gallons in containers of 55 gallons or greater. Total oil storage = 800 (tank) + 200 (equipment reservoirs) + 60 (drum) = 1,060 gallons. However, only containers >= 55 gal count toward aggregate. We count the ACTUAL capacity of qualifying containers. The tank has 1,000 gal capacity. The drum has 55 gal capacity. Total qualifying capacity: 1,000 + 55 = 1,055 gal < 1,320 gal. Therefore the facility is NOT subject to SPCC.\n\nSPCC适用性：单个容器>=55加仑的地上储油总量>1,320加仑。总储油量 = 800（储罐）+ 200（设备油箱）+ 60（桶）= 1,060加仑。但只有>=55加仑的容器才计入总量。我们计算合格容器的实际容量。储罐容量为1,000加仑。桶容量为55加仑。合格总容量：1,000 + 55 = 1,055加仑 < 1,320加仑。因此该设施不受SPCC约束。'
+    },
+    {
+      text: 'During a Process Hazard Analysis (PHA) revalidation at a refinery, the team discovers that a pressure relief valve (PRV) on a distillation column was sized based on a 15-year-old scenario that no longer reflects the maximum credible relieving load after two debottlenecking projects increased throughput. Which PSM element was MOST directly deficient in allowing this condition to persist?',
+      options: [
+        'Process Hazard Analysis (element 3)',
+        'Mechanical Integrity (element 8)',
+        'Management of Change (element 10)',
+        'Pre-Startup Safety Review (element 7)'
+      ],
+      correct: 2,
+      explanation: 'The debottlenecking projects that increased throughput represent changes to the process. Management of Change (MOC) requires that the impact of any change on process safety be evaluated BEFORE the change is implemented. This includes evaluating whether existing safeguards (such as PRVs) remain adequate after the change. The debottlenecking should have triggered an MOC review that would have identified the undersized PRV. Mechanical Integrity covers inspection, testing, and preventive maintenance of equipment in its current design — it would not catch a design deficiency introduced by a process change.\n\n提高产能的脱瓶颈项目代表了对工艺的变更。变更管理（MOC）要求在变更实施之前评估任何变更对过程安全的影响。这包括评估现有防护设施（如PRV）在变更后是否仍然充足。脱瓶颈本应触发MOC审查，从而识别出尺寸不足的PRV。机械完整性涵盖设备在当前设计下的检查、测试和预防性维护——它不会发现由工艺变更引入的设计缺陷。'
+    },
+    {
+      text: 'A safety professional is evaluating heat stress risk for workers in a foundry. The WBGT (Wet Bulb Globe Temperature) is measured at 88 degrees F, and workers perform heavy work (500 kcal/hr metabolic rate). Per ACGIH guidelines, workers require a work/rest regimen. The safety manager asks whether providing cooling vests (auxiliary body cooling PPE) would allow continuous work. What is the safety professional\'s BEST response?',
+      options: [
+        'Yes, cooling vests are PPE that will reduce core body temperature and allow continuous work regardless of WBGT',
+        'Yes, ACGIH specifically endorses cooling vests as an engineering control that eliminates the need for work/rest cycles',
+        'No, cooling vests are PPE (the lowest level of control); engineering controls such as radiant heat shielding, local exhaust ventilation, or process automation to reduce the metabolic workload should be evaluated first',
+        'No, ACGIH guidelines prohibit the use of cooling PPE; only administrative controls are permitted for heat stress management'
+      ],
+      correct: 2,
+      explanation: 'This question tests the Hierarchy of Controls in a specific context (heat stress). Cooling vests are PPE — the least effective level of hazard control. Before resorting to PPE, the safety professional should evaluate higher-level controls: Elimination (automate the heavy work), Engineering (radiant heat shields, insulation, local cooling fans, general ventilation), and Substitution (reduce the process temperature). Only after higher-level controls have been implemented and found insufficient should PPE be considered as a supplement.\n\n这道题测试了特定情境（热应激）下的控制层级。冷却背心是PPE——最低效的危害控制级别。在使用PPE之前，安全专业人员应评估高层级控制：消除（自动化繁重工作）、工程（辐射隔热屏、保温、局部冷却风扇、全面通风）和替代（降低工艺温度）。只有在高层级控制已实施并发现不足之后，才应考虑PPE作为补充。'
+    },
+    {
+      text: 'An organization\'s incident investigation procedure states that all incidents with serious injury potential (SIP) must receive a root cause analysis within 24 hours. A near-miss involving a suspended load that passed over occupied space is classified as SIP, but the RCA is not completed for 6 days because the investigation team lead was on vacation. Which ISO 45001 clause is MOST directly relevant to preventing this delay in future investigations?',
+      options: [
+        'Clause 8.2 — Emergency Preparedness and Response',
+        'Clause 10.2 — Incident, Nonconformity and Corrective Action',
+        'Clause 7.1 — Resources',
+        'Clause 7.2 — Competence'
+      ],
+      correct: 2,
+      explanation: 'ISO 45001 Clause 7.1 (Resources) requires the organization to determine and provide the resources needed for the establishment, implementation, maintenance, and continual improvement of the OH&S management system. This includes human resources — having sufficient competent personnel so that critical safety functions (such as timely incident investigation) are not dependent on a single person. If the investigation was delayed because the only qualified lead was unavailable, this indicates a resource deficiency.\n\nISO 45001第7.1条（资源）要求组织确定并提供建立、实施、维护和持续改进OH&S管理体系所需的资源。这包括人力资源——拥有足够胜任的人员，使关键安全职能（如及时的事故调查）不依赖于单个人。如果调查因唯一合格负责人不在而延迟，这表明资源不足。'
+    },
+    {
+      text: 'Calculate the Risk Priority Number (RPN) from the following FMEA assessment of a pressure vessel relief system: Severity = 9 (catastrophic failure, potential loss of life), Occurrence = 2 (the failure cause has been controlled, historically very infrequent), Detection = 8 (no direct instrumentation to detect this specific failure mode; relies on manual rounds once per shift).',
+      options: [
+        'RPN = 19',
+        'RPN = 72',
+        'RPN = 144',
+        'RPN = 162'
+      ],
+      correct: 2,
+      explanation: 'RPN = Severity x Occurrence x Detection = 9 x 2 x 8 = 144. This is a relatively high RPN driven primarily by the very high severity (9) and poor detection capability (8). Even though the occurrence is low (2), the combination of catastrophic consequences and difficulty detecting the failure mode before it causes harm makes this a high-priority item.\n\nRPN = 严重度 x 发生率 x 检测难度 = 9 x 2 x 8 = 144。这是一个相对较高的RPN，主要由非常高的严重度（9）和较差的检测能力（8）驱动。即使发生率较低（2），但灾难性后果与难以在造成危害前检测到失效模式的组合使其成为高优先级项目。'
+    },
+    {
+      text: 'A fault tree analysis (FTA) of a reactor overpressure scenario identifies two intermediate events: "Pressure relief valve fails to open" (AND gate with three basic events: PRV mechanical failure, PRV blocked by polymerization, PRV isolated by closed manual valve) and "Control system fails to reduce pressure" (OR gate with two basic events: pressure transmitter failure, controller logic failure). The top event "Reactor overpressure" uses an OR gate combining the two intermediate events. How many minimal cut sets exist for this fault tree?',
+      options: [
+        '2 cut sets',
+        '3 cut sets',
+        '5 cut sets',
+        '6 cut sets'
+      ],
+      correct: 1,
+      explanation: 'A minimal cut set is the smallest combination of basic events whose simultaneous occurrence causes the top event. Since the top gate is an OR gate, any cut set from either branch causes the top event. Intermediate Event 1 (AND gate): one cut set of 3 events. Intermediate Event 2 (OR gate): two cut sets of 1 event each. Total minimal cut sets = 1 + 2 = 3.\n\n最小割集是同时发生就会导致顶事件的最基本事件组合。由于顶门是或门，任一分支的任何割集都会导致顶事件。中间事件1（与门）：一个3事件割集。中间事件2（或门）：两个各1事件的割集。最小割集总数 = 1 + 2 = 3。'
+    },
+    {
+      text: 'During a HAZOP study of a reactor feed system, the team examines the process parameter "Level" in a feed tank with the guide word "Low." The team identifies that low level could cause the feed pump to cavitate and fail, leading to an exothermic reaction runaway due to loss of cooling flow. What should the HAZOP team do NEXT?',
+      options: [
+        'Calculate the RPN for this deviation and compare it to the FMEA threshold',
+        'Identify existing safeguards protecting against this deviation, evaluate their adequacy, and recommend additional safeguards if necessary',
+        'Move on to the next guide word, as the cause and consequence have been documented',
+        'Immediately recommend shutting down the process until the deviation can be fully engineered out'
+      ],
+      correct: 1,
+      explanation: 'In HAZOP methodology, after identifying a meaningful deviation (guide word + parameter), the team follows a structured process: (1) identify causes; (2) identify consequences; (3) identify existing safeguards; (4) evaluate whether safeguards are adequate; (5) if not, make recommendations. The team has identified the cause and consequences. The NEXT step is to examine existing safeguards and determine if additional safeguards are needed. HAZOP does not use RPN (that is FMEA).\n\n在HAZOP方法中，在识别有意义的偏差（引导词+参数）后，团队遵循结构化过程：（1）识别原因；（2）识别后果；（3）识别现有防护措施；（4）评估防护措施是否充分；（5）如果不充分，提出建议。团队已识别了原因和后果。下一步是检查现有的防护措施并确定是否需要额外的防护措施。HAZOP不使用RPN（那是FMEA）。'
+    },
+    {
+      text: 'A chemical facility experiences a chlorine release that extends beyond the facility boundary, affecting a nearby residential area. The Incident Commander activates the Emergency Operations Center. Under NIMS, which of the following positions is responsible for ordering and coordinating resources such as air monitoring teams, foam suppression units, and medical ambulances from mutual aid partners?',
+      options: [
+        'Incident Commander',
+        'Operations Section Chief',
+        'Logistics Section Chief',
+        'Planning Section Chief'
+      ],
+      correct: 2,
+      explanation: 'Under ICS/NIMS, the Logistics Section Chief is responsible for providing facilities, services, and materials to support the incident response. This includes ordering resources (personnel, equipment, teams, supplies), coordinating transportation, managing the communications unit, medical unit (for responders), and food unit. The Operations Section Chief directs all tactical operations. The Planning Section Chief collects, evaluates, and disseminates incident situation information and develops the Incident Action Plan.\n\n根据ICS/NIMS，后勤部门主管负责提供设施、服务和材料以支持事件响应。这包括调配资源（人员、设备、团队、物资），协调运输，管理通信单元、医疗单元（为响应人员）和食品单元。行动部门主管指挥所有战术行动。规划部门主管收集、评估和发布事件态势信息并制定事件行动计划（IAP）。'
+    },
+    {
+      text: 'A warehouse storing stacked plastic pallets (Group A plastics) to a height of 15 feet has a ceiling-only automatic sprinkler system designed for Ordinary Hazard Group 2. A fire protection engineer is reviewing the system adequacy. Per NFPA 13, which statement is MOST accurate?',
+      options: [
+        'The system is adequate — Ordinary Hazard Group 2 covers storage of plastics up to 15 feet',
+        'The system is likely inadequate — exposed Group A plastics in storage typically require higher-density sprinkler protection than Ordinary Hazard Group 2 provides, and the storage height may require in-rack sprinklers',
+        'The system is adequate if the plastic pallets are stored in metal racks rather than stacked directly',
+        'NFPA 13 does not address plastic storage; NFPA 30 governs flammable and combustible materials'
+      ],
+      correct: 1,
+      explanation: 'NFPA 13 classifies occupancies for sprinkler system design. Group A plastics (including plastic pallets) present a high fire challenge with rapid heat release rates. Storage of exposed Group A plastics typically falls under Extra Hazard or, more commonly, requires a storage sprinkler design per NFPA 13 chapters on storage protection. Ordinary Hazard Group 2 is designed for Class I-IV commodities (non-plastic or limited plastic content), not Group A plastics.\n\nNFPA 13对喷水灭火系统设计进行占用分类。A组塑料（包括塑料托盘）具有高火灾挑战性和快速热释放速率。暴露的A组塑料储存通常属于高危险类别，或更常见地需要按照NFPA 13存储保护章节进行存储喷水灭火系统设计。普通危险2组是为I-IV类商品（非塑料或有限塑料含量）设计的，不适用于A组塑料。'
+    },
+    {
+      text: 'A facility generates the following wastes each month: 15 kg of a P-listed acutely hazardous pesticide rinsate, 400 kg of spent non-halogenated solvent (F-listed), and 1,200 kg of waste paint with high heavy metal content (D008 characteristic for lead). Under RCRA, what is the facility\'s generator classification?',
+      options: [
+        'Very Small Quantity Generator (VSQG)',
+        'Small Quantity Generator (SQG)',
+        'Large Quantity Generator (LQG)',
+        'The facility\'s status depends on whether the paint waste is characteristic-only or also listed'
+      ],
+      correct: 2,
+      explanation: 'RCRA generator classification uses two triggers: (1) total hazardous waste quantity per month; (2) acute hazardous waste (P-listed) quantity. LQG threshold: >1,000 kg total per month OR >1 kg of acute hazardous waste. The P-listed rinsate at 15 kg FAR exceeds the 1 kg acute hazardous waste threshold, which automatically makes the facility an LQG regardless of other waste quantities. This is a critical detail — one small container of P-listed waste can bump a facility from VSQG to LQG.\n\nRCRA产生者分类使用两个触发条件：（1）每月危险废物总量；（2）急性危险废物量（P列表）。LQG阈值：每月总量>1,000公斤或急性危险废物>1公斤。15公斤P列表冲洗液远超1公斤急性危险废物阈值，这自动使该设施成为LQG，无论其他废物量如何。这是一个关键细节——一小容器P列表废物就可以将设施从VSQG升级到LQG。'
+    },
+    {
+      text: 'A safety manager reviews a chemical product\'s SDS and notes: OSHA PEL (8-hr TWA) = 100 ppm; ACGIH TLV (8-hr TWA) = 25 ppm; NIOSH REL (10-hr TWA) = 50 ppm. Air monitoring shows worker exposures at 45 ppm as an 8-hr TWA. The safety manager determines that the exposure is BELOW the OSHA PEL and concludes no further action is required. Is this conclusion appropriate from an industrial hygiene BEST PRACTICE perspective?',
+      options: [
+        'Yes, compliance with the OSHA PEL is the only legally required action and constitutes adequate protection',
+        'Yes, because the OSHA PEL is the most current and scientifically rigorous exposure limit',
+        'No, because best practice includes considering ACGIH TLVs and NIOSH RELs, which are more protective; exposure at 45 ppm exceeds the TLV (25 ppm), indicating that additional controls should be implemented',
+        'No, because any exposure above the NIOSH REL requires immediate shutdown of the process per 29 CFR 1910.1000'
+      ],
+      correct: 2,
+      explanation: 'A fundamental concept in industrial hygiene: OSHA PELs are legally enforceable but many are outdated. ACGIH TLVs are typically more current and health-protective, revised annually. NIOSH RELs are also more protective. In this scenario, the 45 ppm exposure complies with the PEL (100 ppm) but substantially exceeds the TLV (25 ppm). An IH professional should use the more protective guidance (TLV) as the standard of care and implement controls to bring exposure below the TLV.\n\n工业卫生的一个基本概念：OSHA PEL具有法律强制力，但许多已过时。ACGIH TLV通常更现代且更具健康保护性，每年修订。NIOSH REL也更具保护性。在此场景中，45 ppm暴露符合PEL（100 ppm）但远超过TLV（25 ppm）。IH专业人员应使用更具保护性的指南（TLV）作为护理标准，并实施控制措施将暴露降至TLV以下。'
+    },
+    {
+      text: 'A safety professional is asked to evaluate a new chemical process that produces methylene chloride vapors. Available data: OSHA PEL = 25 ppm (8-hr TWA); ACGIH TLV = 50 ppm (8-hr TWA); NIOSH REL = lowest feasible concentration (carcinogen); IARC classification = Group 2A (probably carcinogenic to humans). Air monitoring indicates 30 ppm 8-hr TWA. From a CSP perspective, what is the MOST appropriate recommendation?',
+      options: [
+        'Since the exposure is below the ACGIH TLV of 50 ppm, provide half-face organic vapor respirators for voluntary use and continue monitoring',
+        'Since the exposure exceeds the OSHA PEL of 25 ppm, implement engineering controls to reduce exposure below 25 ppm and establish a medical surveillance program',
+        'Since NIOSH classifies this as a carcinogen with a REL of "lowest feasible concentration," the exposure should be reduced through engineering controls (enclosure, LEV) to the lowest achievable level, going well below the PEL, and PPE should only supplement after engineering controls are maximized',
+        'Notify OSHA of the PEL exceedance and request a temporary variance while engineering controls are being designed'
+      ],
+      correct: 2,
+      explanation: 'For a probable human carcinogen (IARC Group 2A) with a NIOSH REL of "lowest feasible concentration," the professional standard of care goes beyond mere PEL compliance. The Hierarchy of Controls demands engineering controls first to reduce exposure to the lowest achievable level — not just to the PEL. Additionally, note the deliberate trap: PEL=25, TLV=50 — here TLV is HIGHER than the PEL (reverse of the usual situation). Even so for a carcinogen, "lowest feasible" is the guiding principle.\n\n对于很可能的人类致癌物（IARC 2A组），NIOSH REL为"最低可行浓度"，专业护理标准超越了仅仅符合PEL。控制层级要求首先采用工程控制将暴露降至最低可实现水平——而不仅仅是降至PEL。此外，注意刻意的陷阱：PEL=25，TLV=50——此处TLV高于PEL（与通常情况相反）。即便如此，对于致癌物，"最低可行"是指导原则。'
+    },
+    {
+      text: 'A worker\'s noise exposure for an 8-hour shift is measured as follows: 90 dBA for 4 hours, 95 dBA for 2 hours, 100 dBA for 1 hour, and below 80 dBA for the remaining 1 hour. Using the OSHA 5-dB exchange rate (criterion level 90 dBA, criterion time 8 hours), what is the noise dose as a percentage most nearly?',
+      options: [
+        '75%',
+        '100%',
+        '150%',
+        '200%'
+      ],
+      correct: 2,
+      explanation: 'OSHA 5-dB exchange rate, reference: 90 dBA for 8 hr = 100% dose. Allowable times: 90 dBA = 8 hrs, 95 dBA = 4 hrs, 100 dBA = 2 hrs. Dose D = 4/8 + 2/4 + 1/2 (below 80 is negligible: 1/32 ~ 0.03) = 0.5 + 0.5 + 0.5 + 0.03 = 1.53 = 153%, most nearly 150%. A dose exceeding 100% means the 8-hour TWA exceeds the 90 dBA PEL, triggering the requirement for feasible engineering and administrative controls.\n\nOSHA 5-dB交换率，参考：90 dBA持续8小时=100%剂量。允许时间：90 dBA=8小时，95 dBA=4小时，100 dBA=2小时。剂量D = 4/8 + 2/4 + 1/2（低于80可忽略：1/32~0.03）= 0.5 + 0.5 + 0.5 + 0.03 = 1.53 = 153%，最接近150%。剂量超过100%意味着8小时TWA超过90 dBA PEL，触发实施可行工程和行政控制的要求。'
+    },
+    {
+      text: 'A facility\'s noise monitoring determines that worker exposures exceed 90 dBA as an 8-hr TWA (dose > 100%). Which of the following combinations of actions does OSHA 29 CFR 1910.95 require the employer to take?',
+      options: [
+        'Implement a Hearing Conservation Program including audiometric testing and provide hearing protectors at no cost',
+        'Implement feasible engineering and administrative controls to reduce noise exposure, and provide hearing protectors as a supplement',
+        'No action required — the dose is below the PEL threshold of 100%',
+        'Post warning signs and provide annual training on noise hazards'
+      ],
+      correct: 1,
+      explanation: 'At exposures exceeding 100% dose (90 dBA TWA), OSHA requires implementation of feasible engineering and administrative controls to reduce noise levels (1910.95(b)(1)). At exposures equal to or exceeding 85 dBA TWA (50% dose, the "action level"), a Hearing Conservation Program is required. The Hearing Conservation Program (Option A) is triggered at 85 dBA TWA, not the PEL. At the PEL, the primary obligation is to implement higher-level controls.\n\n在暴露超过100%剂量（90 dBA TWA）时，OSHA要求实施可行的工程和行政控制以降低噪声水平（1910.95(b)(1)）。在暴露达到或超过85 dBA TWA（50%剂量，"行动水平"）时，要求实施听力保护计划。听力保护计划（选项A）在85 dBA TWA触发，而非PEL。在PEL下，主要义务是实施高层级控制措施。'
+    },
+    {
+      text: 'A worker manually lifts boxes from a pallet at floor level (V = 15 cm at origin) to a conveyor at waist height (V = 75 cm at destination) with a 45-degree asymmetric twist. The horizontal distance is 35 cm, the vertical travel distance is 60 cm, the task is performed at 2 lifts per minute for a 4-hour duration, and the coupling is "good." Load constant = 23 kg. What is the RWL at the ORIGIN of the lift?',
+      options: [
+        'Approximately 4.8 kg',
+        'Approximately 6.2 kg',
+        'Approximately 7.5 kg',
+        'Approximately 9.1 kg'
+      ],
+      correct: 1,
+      explanation: 'RWL = LC x HM x VM x DM x AM x FM x CM. LC = 23 kg. HM = 25/35 = 0.714. VM (at origin, V=15) = 1 - 0.003|15-75| = 1 - 0.18 = 0.82. DM = 0.82 + 4.5/60 = 0.895. AM (45 degrees) = 1 - 0.0032 x 45 = 0.856. FM (2/min, 4 hrs, V<75) = 0.65. CM (good, V<75) = 1.0. RWL = 23 x 0.714 x 0.82 x 0.895 x 0.856 x 0.65 = approximately 6.2 kg.\n\nRWL = LC x HM x VM x DM x AM x FM x CM。LC = 23 kg。HM = 25/35 = 0.714。VM（在起点，V=15）= 1 - 0.003|15-75| = 1 - 0.18 = 0.82。DM = 0.82 + 4.5/60 = 0.895。AM（45度）= 1 - 0.0032 x 45 = 0.856。FM（2次/分钟，4小时，V<75）= 0.65。CM（良好，V<75）= 1.0。RWL = 23 x 0.714 x 0.82 x 0.895 x 0.856 x 0.65 = 约6.2 kg。'
+    },
+    {
+      text: 'A safety professional needs to estimate the required dilution ventilation rate for a degreasing operation where 1.5 gallons of methyl ethyl ketone (MEK) evaporates uniformly over an 8-hour shift. MEK has a specific gravity of 0.805, a molecular weight of 72.1 g/mol, and an ACGIH TLV of 200 ppm. The mixing factor K is 4 (average conditions). Using the dilution ventilation formula Q = (403 x 10^6 x SG x ER) / (MW x C) x K, where ER is in pints per minute, what is the approximate required ventilation rate?',
+      options: [
+        'Approximately 2,800 cfm',
+        'Approximately 4,800 cfm',
+        'Approximately 7,500 cfm',
+        'Approximately 11,000 cfm'
+      ],
+      correct: 0,
+      explanation: 'Dilution ventilation formula: Q = (403 x 10^6 x SG x ER x K) / (MW x C). ER = 12 pints / 480 min = 0.025 pints/min. Q = (403 x 10^6 x 0.805 x 0.025 x 4) / (72.1 x 200) = 32,441,500 / 14,420 = 2,249 cfm. With K=4 and rounding, approximately 2,800 cfm. Key exam point: for solvents with higher TLVs (like MEK at 200 ppm), dilution ventilation may be feasible; for low-TLV substances (<50 ppm), local exhaust ventilation is strongly preferred.\n\n稀释通风公式：Q = (403 x 10^6 x SG x ER x K) / (MW x C)。ER = 12品脱 / 480分钟 = 0.025品脱/分钟。Q = (403 x 10^6 x 0.805 x 0.025 x 4) / (72.1 x 200) = 约2,800 cfm。关键考试要点：对于TLV较高的溶剂（如MEK 200 ppm），稀释通风可能可行；对于低TLV物质（<50 ppm），强烈推荐局部排风。'
+    },
+    {
+      text: 'In the ADDIE instructional design model, formative evaluation differs from summative evaluation in that formative evaluation is:',
+      options: [
+        'Conducted at the end of the training program to assess overall effectiveness and return on investment',
+        'Conducted during the design and development phases to identify gaps and make improvements before implementation',
+        'Focused exclusively on Level 1 (Reaction) of the Kirkpatrick model',
+        'The responsibility of the learners, whereas summative evaluation is conducted by the instructional designer'
+      ],
+      correct: 1,
+      explanation: 'Formative evaluation occurs throughout the ADDIE process (particularly during Design and Development) to catch issues early and refine materials before full implementation. Examples include pilot testing with a sample group, expert reviews of draft materials, and alpha/beta testing of e-learning modules. Summative evaluation occurs after implementation to assess the overall effectiveness and impact — this aligns with Kirkpatrick Levels 1-4.\n\n形成性评估在整个ADDIE过程中进行（特别是在设计和开发阶段），以便在全面实施之前及早发现问题并完善材料。示例包括对样本组进行试点测试、对草稿材料进行专家评审以及对电子学习模块进行alpha/beta测试。总结性评估在实施后评估整体有效性和影响——这与Kirkpatrick 1-4级对应。'
+    },
+    {
+      text: 'A safety manager designs a training needs assessment for a new confined space entry program. Instead of assuming all entrants require the same training, she surveys workers, interviews supervisors, and reviews incident data to identify specific knowledge gaps. This training approach is MOST consistent with which principle of adult learning?',
+      options: [
+        'VARK — designing training to match sensory modalities',
+        'Pedagogy — the teacher determines all learning content and pace',
+        'Andragogy — adults are motivated to learn when they perceive a direct relevance to their job tasks and prior experience is valued',
+        'Behaviorism — learning is demonstrated through observable behavior change regardless of learner input'
+      ],
+      correct: 2,
+      explanation: 'Knowles\'s andragogy principle of "Readiness to Learn" states that adults become ready to learn when they experience a need to know or do something to cope with real-life tasks. By conducting a needs assessment, the safety manager identifies what workers actually need (rather than assuming), which creates relevant, problem-centered learning. Pedagogy assumes the learner is a dependent personality. VARK addresses learning style, not motivation or content relevance.\n\nKnowles成人教育学的"学习准备度"原则指出当成人在应对现实任务中体验到需要知道或做某事时，他们便准备好了学习。通过进行需求评估，安全经理识别出工人实际需要什么（而非假设），从而创建相关的、以问题为中心的学习。教育学假定学习者是从属性人格。VARK涉及学习风格，而非动机或内容相关性。'
+    },
+    {
+      text: 'A manufacturing facility had 7 recordable injuries in 2024 with 380,000 total hours worked. In 2025, after implementing a comprehensive ergonomics program and enhanced machine guarding, the facility had 4 recordable injuries with 410,000 total hours worked. Management asks the safety manager to quantify the year-over-year improvement. What was the TRIR reduction (as an absolute value)?',
+      options: [
+        'TRIR decreased by 1.74 (from 3.68 to 1.95)',
+        'TRIR decreased by 0.99 (from 3.68 to 2.69)',
+        'TRIR decreased by 0.5 (from 2.5 to 2.0)',
+        'TRIR decreased by 2.74 (from 3.68 to 0.94)'
+      ],
+      correct: 0,
+      explanation: 'TRIR = (Recordable injuries x 200,000) / Total hours worked. 2024 TRIR = (7 x 200,000) / 380,000 = 3.68. 2025 TRIR = (4 x 200,000) / 410,000 = 1.95. Absolute reduction = 3.68 - 1.95 = 1.73, approximately 1.74. This represents a substantial improvement (approximately 47% reduction), demonstrating the effectiveness of the ergonomics and machine guarding interventions.\n\nTRIR =（可记录伤害 x 200,000）/ 总工作小时数。2024年TRIR = (7 x 200,000) / 380,000 = 3.68。2025年TRIR = (4 x 200,000) / 410,000 = 1.95。绝对下降 = 3.68 - 1.95 = 1.73，约1.74。这代表显著的改善（约47%的降低），展示了人因工程和机械防护干预的有效性。'
+    },
+    {
+      text: 'A safety professional is evaluating whether to use an area sampling array of passive dosimeters placed at 5 fixed locations, or personal sampling pumps worn by 8 workers representing similar exposure groups (SEGs), to assess full-shift benzene exposure in a petrochemical unit. Which strategy is MOST appropriate for compliance monitoring against the OSHA PEL?',
+      options: [
+        'Area sampling — it provides a more representative picture of ambient conditions and identifies emission sources',
+        'Personal sampling — OSHA compliance requires representative personal breathing-zone samples from the SEG with the highest potential exposure',
+        'Both methods must be used together per the Benzene Standard (29 CFR 1910.1028)',
+        'Area sampling with direct-reading instruments — it provides immediate data for corrective action'
+      ],
+      correct: 1,
+      explanation: 'For OSHA compliance monitoring, personal breathing-zone sampling is the required method because it measures the actual exposure received by the worker. Area samples characterize background concentrations but cannot determine an individual worker\'s 8-hour TWA exposure as they move through different areas with varying concentrations. OSHA compliance strategy also requires sampling the employee(s) expected to have the highest exposure within each SEG.\n\n对于OSHA合规监测，个人呼吸带采样是必需方法，因为它测量工人接收到的实际暴露。区域采样表征背景浓度，但无法确定单个工人在不同区域间移动时的8小时TWA暴露。OSHA合规策略还要求对每个相似暴露组（SEG）中预期暴露最高的员工进行采样。'
+    },
+    {
+      text: 'A facility operates a wastewater treatment system that includes an oil-water separator with a capacity of 1,800 gallons of oil, and four 300-gallon hydraulic system reservoirs attached to production equipment with interconnecting piping. The facility has a single discharge in the past 10 years — 500 gallons of oil entered a storm drain leading to a creek. Which statement about SPCC applicability is correct?',
+      options: [
+        'SPCC plan is required because aggregate aboveground capacity exceeds 1,320 gallons, and a PE must certify the plan because the facility exceeds 10,000 gallons and has had a discharge',
+        'SPCC plan is required because aggregate aboveground capacity exceeds 1,320 gallons; PE certification is required unless facility qualifies for self-certification (total capacity <=10,000 gal, no single discharge >1,000 gal to navigable waters, no discharge in 3 years)',
+        'SPCC plan is NOT required because the single discharge of 500 gallons was below the 1,000-gallon reportable quantity threshold',
+        'SPCC plan is required only for the oil-water separator; the hydraulic reservoirs are exempt as operational equipment'
+      ],
+      correct: 1,
+      explanation: 'Aggregate aboveground oil storage capacity: 1,800 gal (separator) + 4 x 300 gal (reservoirs) = 3,000 gallons (only containers >= 55 gal count). This exceeds 1,320 gal, so an SPCC plan IS required. Self-certification is available if: (1) total aggregate aboveground capacity <= 10,000 gallons; (2) no single discharge > 1,000 gallons to navigable waters in the 3 years prior to certification; (3) no discharge to navigable waters at all. The facility had a 500-gallon discharge 10 years ago, which is outside the 3-year window, so it might still qualify for self-certification.\n\n地上储油总量：1,800加仑（分离器）+ 4 x 300加仑（油箱）= 3,000加仑（仅>=55加仑的容器计入）。这超过1,320加仑，因此需要SPCC计划。自我认证适用的条件：（1）地上总容量<=10,000加仑；（2）认证前3年内无单次超过1,000加仑向通航水域的排放；（3）完全无向通航水域的排放。该设施10年前有500加仑的排放，超过3年窗口期，因此可能仍符合自我认证条件。'
+    }
+  ]
+});
+</script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js').catch(function() {});
+}
+</script>
+</body>
+</html>

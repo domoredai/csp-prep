@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wrong Answer Review — CSP Exam Prep</title>
+<link rel="stylesheet" href="quiz-styles.css?v=11">
+<style>
+  .breadcrumb { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 16px; }
+  .breadcrumb a { color: var(--accent); text-decoration: none; }
+  .wrong-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin-top: 16px; }
+  .wrong-table th { background: #f0f4ff; text-align: left; padding: 10px 12px; border-bottom: 2px solid var(--accent); }
+  .wrong-table td { padding: 9px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .wrong-table tr:hover { background: #f8fafc; }
+  .empty-state { text-align: center; padding: 40px 20px; color: var(--text-secondary); }
+  .empty-state .big-icon { font-size: 3rem; margin-bottom: 12px; }
+  .group-header { background: #eef2ff; font-weight: 700; color: #1e3a5f; }
+  .filter-btns { display: flex; gap: 8px; flex-wrap: wrap; margin: 14px 0; }
+  .filter-btn { padding: 6px 14px; border-radius: 20px; border: 1px solid var(--border); background: #fff; cursor: pointer; font-size: 0.82rem; font-weight: 600; }
+  .filter-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="breadcrumb">
+    <a href="index.html">← Dashboard</a> &nbsp;|&nbsp; Wrong Answer Review
+  </div>
+
+  <div class="page-header">
+    <h1>🔁 Wrong Answer Review</h1>
+    <div class="subtitle">Review all questions you answered incorrectly and retry them</div>
+  </div>
+
+  <div class="filter-btns" id="filter-btns"></div>
+
+  <div id="review-root"></div>
+
+  <div id="retry-quiz-root" style="display:none;">
+    <h2 style="margin-top:28px;">🔁 Retry Mode</h2>
+    <p style="color:var(--text-secondary);margin-bottom:16px;">Selecting a topic above will generate a retry quiz with only your wrong answers.</p>
+    <div id="retry-quiz-container"></div>
+  </div>
+
+</div>
+
+<script src="quiz-engine.js?v=11"></script>
+<script>
+(function() {
+  const wrongs = CSPQuiz.getWrongQuestions();
+  const reviewRoot = document.getElementById('review-root');
+  const filterContainer = document.getElementById('filter-btns');
+  const retryContainer = document.getElementById('retry-quiz-container');
+  const retrySection = document.getElementById('retry-quiz-root');
+
+  // Group by quizTopic
+  const groups = {};
+  for (const w of wrongs) {
+    const key = w.quizTopic || w.quizTitle || 'Unknown';
+    if (!groups[key]) groups[key] = [];
+    groups[key].push(w);
+  }
+
+  // Build filter buttons
+  let filterHtml = '<span style="font-weight:700;margin-right:6px;font-size:0.85rem;">Filter by topic:</span>';
+  filterHtml += '<button class="filter-btn active" onclick="filterWrong(\'all\')">All (' + wrongs.length + ')</button>';
+  for (const [topic, items] of Object.entries(groups)) {
+    filterHtml += '<button class="filter-btn" onclick="filterWrong(\'' + escapeAttr(topic) + '\')">' + escapeHtml(topic) + ' (' + items.length + ')</button>';
+  }
+  filterContainer.innerHTML = filterHtml;
+
+  function renderWrongs(filterKey) {
+    if (wrongs.length === 0) {
+      reviewRoot.innerHTML = '<div class="empty-state"><div class="big-icon">🎉</div><h3>No wrong answers!</h3><p>Great job! All your quizzes are currently at 100%.</p></div>';
+      retrySection.style.display = 'none';
+      return;
+    }
+
+    let filtered = filterKey === 'all' ? wrongs : wrongs.filter(w => (w.quizTopic || w.quizTitle) === filterKey);
+
+    if (filtered.length === 0) {
+      reviewRoot.innerHTML = '<div class="empty-state"><div class="big-icon">✅</div><h3>No wrong answers in this topic!</h3></div>';
+      retrySection.style.display = 'none';
+      return;
+    }
+
+    let html = '<table class="wrong-table"><thead><tr><th>#</th><th>Topic</th><th>Question</th><th>Your Answer</th><th>Correct Answer</th><th>Attempts</th><th>Last Try</th></tr></thead><tbody>';
+
+    let lastTopic = '';
+    for (let i = 0; i < filtered.length; i++) {
+      const w = filtered[i];
+      const displayTopic = w.quizTopic || w.quizTitle;
+      let groupRow = '';
+      if (displayTopic !== lastTopic) {
+        groupRow = '<tr class="group-header"><td colspan="7">' + escapeHtml(displayTopic) + '</td></tr>';
+        lastTopic = displayTopic;
+      }
+      const attempts = w.attempts || 1;
+      const mastered = w.lastAttemptCorrect ? '✓' : '✗';
+      const masteredColor = w.lastAttemptCorrect ? 'var(--correct)' : 'var(--incorrect)';
+      html += groupRow;
+      html += '<tr>';
+      html += '<td>' + (i + 1) + '</td>';
+      html += '<td>' + escapeHtml(w.quizTopic || w.quizTitle) + '</td>';
+      html += '<td>' + escapeHtml(w.question) + '</td>';
+      html += '<td style="color:var(--incorrect);">' + escapeHtml(w.yourAnswer) + '</td>';
+      html += '<td style="color:var(--correct);">' + escapeHtml(w.correctAnswer) + '</td>';
+      html += '<td>' + attempts + '次</td>';
+      html += '<td style="color:' + masteredColor + ';text-align:center;">' + mastered + '</td>';
+      html += '</tr>';
+    }
+    html += '</tbody></table>';
+    reviewRoot.innerHTML = html;
+
+    // Build retry quiz
+    retrySection.style.display = 'block';
+    buildRetryQuiz(filtered, filterKey);
+  }
+
+  function buildRetryQuiz(filteredWrongs, filterKey) {
+    retryContainer.innerHTML = '<div id="retry-quiz-instance"></div>';
+
+    // We need to build questions from the wrongs — but we don't have the full question objects here.
+    // Instead, we provide a "Go to original quiz" approach.
+    let html = '<div class="quiz-section">';
+    html += '<h3>How to Retry Wrong Answers</h3>';
+    html += '<p style="color:var(--text-secondary);margin-bottom:12px;">To retry your wrong answers, go back to the original quiz page for each topic. Your previously wrong answers are highlighted below for reference.</p>';
+
+    // Group by quizId
+    const byQuiz = {};
+    for (const w of filteredWrongs) {
+      if (!byQuiz[w.quizId]) byQuiz[w.quizId] = { title: w.quizTitle || w.quizId, count: 0, weekNum: null };
+      byQuiz[w.quizId].count++;
+      // Extract week number
+      const match = w.quizId.match(/week-(\d+)/);
+      if (match) byQuiz[w.quizId].weekNum = parseInt(match[1]);
+    }
+
+    html += '<ul style="list-style:none;padding:0;">';
+    for (const [quizId, info] of Object.entries(byQuiz)) {
+      let linkFile = '#';
+      if (info.weekNum) linkFile = 'week-' + String(info.weekNum).padStart(2, '0') + '.html';
+      else if (quizId.startsWith('exam-month-')) {
+        const examNum = quizId.replace('exam-month-', '');
+        linkFile = 'exam-month-' + examNum + '.html';
+      }
+      html += '<li style="margin-bottom:8px;">';
+      html += '<a href="' + linkFile + '" class="btn btn-outline" style="text-decoration:none;">📋 ' + escapeHtml(info.title) + ' — ' + info.count + ' wrong answer(s)</a>';
+      html += '</li>';
+    }
+    html += '</ul>';
+    html += '</div>';
+    retryContainer.innerHTML = html;
+  }
+
+  window.filterWrong = function(key) {
+    // Update active button
+    const btns = filterContainer.querySelectorAll('.filter-btn');
+    btns.forEach(b => b.classList.remove('active'));
+    // Find by text content
+    btns.forEach(b => { if (b.textContent.trim().startsWith(key === 'all' ? 'All' : key)) b.classList.add('active'); });
+    renderWrongs(key);
+  };
+
+  function escapeHtml(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+  function escapeAttr(s) { return s.replace(/'/g, "\\'").replace(/"/g, '&quot;'); }
+
+  renderWrongs('all');
+})();
+</script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('./sw.js').catch(function(err) {
+      console.warn('SW registration failed:', err);
+    });
+  });
+}
+</script>
+</body>
+</html>

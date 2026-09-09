@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSP Exam Prep — Study Dashboard</title>
+<link rel="stylesheet" href="quiz-styles.css?v=11">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1e3a5f">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="CSP Prep">
+<link rel="apple-touch-icon" href="icon-192.png">
+<style>
+  .dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .stat-card {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 20px 22px;
+    box-shadow: var(--shadow);
+    text-align: center;
+  }
+  .stat-card .stat-value {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #1e3a5f;
+  }
+  .stat-card .stat-label {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-top: 2px;
+  }
+  .stat-card .stat-icon { font-size: 1.8rem; margin-bottom: 6px; }
+  .stat-card.empty .stat-value { color: #c0c8d4; }
+
+  /* Quick-start guide */
+  .quick-start {
+    background: linear-gradient(135deg, #eff6ff 0%, #f0f9ff 100%);
+    border: 2px dashed var(--accent);
+    border-radius: var(--radius);
+    padding: 28px 32px;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+  .quick-start h2 { color: #1e3a5f; margin-bottom: 6px; }
+  .quick-start p { color: var(--text-secondary); margin-bottom: 18px; }
+  .quick-start .steps {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .quick-start .step {
+    background: #fff;
+    border-radius: var(--radius-sm);
+    padding: 18px 20px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    min-width: 130px;
+    flex: 1;
+    max-width: 180px;
+  }
+  .quick-start .step .step-num {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+  }
+  .quick-start .step .step-label {
+    font-weight: 700;
+    font-size: 0.88rem;
+    color: #1e3a5f;
+  }
+  .quick-start .step .step-desc {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-top: 4px;
+  }
+
+  .domain-bar {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    margin-bottom: 10px;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s;
+    text-decoration: none;
+    color: inherit;
+  }
+  .domain-bar:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+  .domain-bar .domain-num {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--accent);
+    min-width: 48px;
+    text-align: center;
+  }
+  .domain-bar .domain-info { flex: 1; }
+  .domain-bar .domain-name {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #1e3a5f;
+  }
+  .domain-bar .domain-weight {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+  }
+  .domain-bar .domain-progress-bar {
+    width: 120px;
+    height: 8px;
+    background: var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .domain-bar .domain-progress-fill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 4px;
+    transition: width 0.4s ease;
+  }
+  .domain-bar .domain-pct {
+    font-size: 0.85rem;
+    font-weight: 700;
+    min-width: 38px;
+    text-align: right;
+    color: var(--text-secondary);
+  }
+
+  .section-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #1e3a5f;
+    margin: 24px 0 10px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--border);
+  }
+
+  .week-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .week-card {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+    box-shadow: var(--shadow);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.15s, box-shadow 0.15s;
+    border-left: 4px solid var(--border);
+  }
+  .week-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+  .week-card.completed { border-left-color: var(--correct); }
+  .week-card.in-progress { border-left-color: var(--accent); }
+  .week-card .week-label { font-weight: 700; font-size: 0.9rem; color: #1e3a5f; }
+  .week-card .week-topic { font-size: 0.78rem; color: var(--text-secondary); margin-top: 2px; }
+  .week-card .week-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    margin-top: 5px;
+  }
+  .week-card.completed .week-badge { background: var(--correct-bg); color: var(--correct); }
+  .week-card.in-progress .week-badge { background: var(--accent-light); color: var(--accent); }
+
+  .exam-card {
+    background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 18px 22px;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    transition: transform 0.15s;
+  }
+  .exam-card:hover { transform: translateY(-2px); }
+  .exam-card .exam-icon { font-size: 1.6rem; }
+  .exam-card .exam-info { flex: 1; }
+  .exam-card .exam-name { font-weight: 700; font-size: 1rem; }
+  .exam-card .exam-detail { font-size: 0.78rem; opacity: 0.85; }
+  .exam-card .exam-score {
+    font-size: 1.3rem;
+    font-weight: 800;
+    min-width: 52px;
+    text-align: right;
+  }
+
+  .resource-card {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 18px 22px;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.15s;
+  }
+  .resource-card:hover { transform: translateY(-2px); }
+  .resource-card .res-icon { font-size: 1.5rem; }
+  .resource-card .res-info { flex: 1; }
+  .resource-card .res-name { font-weight: 700; font-size: 0.95rem; color: #1e3a5f; }
+  .resource-card .res-desc { font-size: 0.78rem; color: var(--text-secondary); }
+
+  .domain-tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 0.68rem;
+    font-weight: 700;
+  }
+  .domain-tag.d1 { background: #dbeafe; color: #1e40af; }
+  .domain-tag.d2 { background: #dcfce7; color: #166534; }
+  .domain-tag.d3 { background: #fffbeb; color: #92400e; }
+  .domain-tag.d4 { background: #fef2f2; color: #991b1b; }
+  .domain-tag.d5 { background: #f3e8ff; color: #6b21a8; }
+  .domain-tag.d6 { background: #fce7f3; color: #9d174d; }
+  .domain-tag.d7 { background: #e0f2fe; color: #075985; }
+
+  .footer-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 640px) {
+    .container { padding: 12px 14px 40px; }
+    .quick-start .steps { flex-direction: column; }
+    .quick-start .step { max-width: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Header -->
+  <div class="page-header">
+    <h1>📚 CSP Exam Prep — Study Dashboard</h1>
+    <div class="subtitle">CSP11 Blueprint · 7 Domains · 24-Week Plan · 6–8 Hours/Week · <span id="today-date"></span></div>
+  </div>
+
+  <!-- Quick Start Guide -->
+  <div class="quick-start" id="quick-start-guide">
+    <h2>🚀 Getting Started</h2>
+    <p>New to this system? Follow these 3 steps to begin your CSP journey:</p>
+    <div class="steps">
+      <a href="week-01.html" class="step" style="text-decoration:none;color:inherit;">
+        <div class="step-num">1</div>
+        <div class="step-label">Start Week 1</div>
+        <div class="step-desc">Read the bilingual knowledge content & take the quiz</div>
+      </a>
+      <a href="glossary.html" class="step" style="text-decoration:none;color:inherit;">
+        <div class="step-num">2</div>
+        <div class="step-label">Build Vocabulary</div>
+        <div class="step-desc">Browse 75+ EN↔中文 terms, save ★ words you need to review</div>
+      </a>
+      <a href="#weekly-plan" class="step" style="text-decoration:none;color:inherit;">
+        <div class="step-num">3</div>
+        <div class="step-label">Follow the Plan</div>
+        <div class="step-desc">Progress through 24 weeks, take monthly exams, review mistakes</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Stats Row -->
+  <div class="dashboard-grid" id="stats-grid">
+    <div class="stat-card" id="stat-overall-card">
+      <div class="stat-icon">📊</div>
+      <div class="stat-value" id="stat-overall">0%</div>
+      <div class="stat-label">Overall Score</div>
+    </div>
+    <div class="stat-card" id="stat-answered-card">
+      <div class="stat-icon">✏️</div>
+      <div class="stat-value" id="stat-answered">0</div>
+      <div class="stat-label">Questions Answered</div>
+    </div>
+    <div class="stat-card wrongs" id="stat-wrong-card">
+      <div class="stat-icon">🔴</div>
+      <div class="stat-value" id="stat-wrong">0</div>
+      <div class="stat-label">Wrong Answers</div>
+    </div>
+    <div class="stat-card" id="stat-vocab-card">
+      <div class="stat-icon">📖</div>
+      <div class="stat-value" id="stat-vocab">0</div>
+      <div class="stat-label">Words Saved</div>
+    </div>
+  </div>
+
+  <!-- Domain Progress -->
+  <div class="section-title">🏗️ Domain Progress</div>
+  <div id="domain-list">
+    <p style="color:var(--text-secondary);font-size:0.85rem;text-align:center;">Complete quizzes to see your domain progress fill up here.</p>
+  </div>
+
+  <!-- Weekly Plan -->
+  <div class="section-title" id="weekly-plan">📅 Weekly Study Plan</div>
+  <div id="week-list" class="week-grid">
+    <p style="color:var(--text-secondary);font-size:0.85rem;grid-column:1/-1;text-align:center;">Loading week plan...</p>
+  </div>
+
+  <!-- Monthly Exams -->
+  <div class="section-title">📝 Monthly Mock Exams</div>
+  <div id="exam-list">
+    <p style="color:var(--text-secondary);font-size:0.85rem;text-align:center;">Loading exam schedule...</p>
+  </div>
+
+  <!-- Quick Resources -->
+  <div class="section-title">🔗 Quick Resources</div>
+  <a href="review-wrong.html" class="resource-card">
+    <div class="res-icon">🔄</div>
+    <div class="res-info">
+      <div class="res-name">Wrong Answer Review</div>
+      <div class="res-desc">Review all questions you answered incorrectly and learn from your mistakes</div>
+    </div>
+    <span class="domain-tag" style="background:var(--incorrect-bg);color:var(--incorrect);" id="wrong-count-badge">0 items</span>
+  </a>
+  <a href="glossary.html" class="resource-card">
+    <div class="res-icon">📖</div>
+    <div class="res-info">
+      <div class="res-name">Full Glossary (EN ↔ 中文)</div>
+      <div class="res-desc">75+ key terms with bilingual definitions across all 7 domains</div>
+    </div>
+    <span class="domain-tag d1">Browse</span>
+  </a>
+  <a href="vocab-flashcards.html" class="resource-card">
+    <div class="res-icon">🎴</div>
+    <div class="res-info">
+      <div class="res-name">Vocabulary Flashcards</div>
+      <div class="res-desc">Click to flip English ↔ Chinese · Keyboard navigation · Filter by domain</div>
+    </div>
+    <span class="domain-tag d2">Study</span>
+  </a>
+  <a href="preview-mobile.html" class="resource-card">
+    <div class="res-icon">📱</div>
+    <div class="res-info">
+      <div class="res-name">手机端预览</div>
+      <div class="res-desc">在电脑上模拟手机屏幕预览所有页面（2K 屏适配）</div>
+    </div>
+    <span class="domain-tag d4">Preview</span>
+  </a>
+
+  <!-- CSP Exam Info -->
+  <div class="section-title">ℹ️ About the CSP Exam</div>
+  <div class="knowledge-card" style="border-left-color: #f59e0b; margin-bottom: 20px;">
+    <table style="font-size:0.88rem;">
+      <tr><td style="padding:4px 12px;font-weight:700;white-space:nowrap;">Exam Blueprint</td><td style="padding:4px 8px;">CSP11 (effective August 1, 2025)</td></tr>
+      <tr><td style="padding:4px 12px;font-weight:700;white-space:nowrap;">Format</td><td style="padding:4px 8px;">200 multiple-choice questions (176 scored + 24 pretest)</td></tr>
+      <tr><td style="padding:4px 12px;font-weight:700;white-space:nowrap;">Duration</td><td style="padding:4px 8px;">5.5 hours · Computer-based at Pearson VUE centers</td></tr>
+      <tr><td style="padding:4px 12px;font-weight:700;white-space:nowrap;">Domains</td><td style="padding:4px 8px;">7 domains — D1+D2 = 50% of the exam</td></tr>
+      <tr><td style="padding:4px 12px;font-weight:700;white-space:nowrap;">Pass Rate</td><td style="padding:4px 8px;">~68% (2024 data) · Scaled pass score (BCSP uses modified Angoff method)</td></tr>
+      <tr><td style="padding:4px 12px;font-weight:700;white-space:nowrap;">Fee</td><td style="padding:4px 8px;">$160 application + $350 exam ($494 total)</td></tr>
+    </table>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer-actions">
+    <button class="btn btn-primary" onclick="CSPQuiz.downloadExport()" style="font-size:0.82rem;">⬇ 导出进度 / Export</button>
+    <button class="btn btn-outline" onclick="document.getElementById('import-file').click()" style="font-size:0.82rem;">⬆ 导入进度 / Import</button>
+    <input type="file" id="import-file" accept=".json,application/json" style="display:none;" onchange="handleImport(this)">
+    <button class="btn btn-outline" onclick="CSPQuiz.clearAllProgress(); location.reload();" style="font-size:0.82rem;">⚠ Reset All Progress</button>
+  </div>
+
+</div>
+
+<script src="quiz-engine.js?v=11"></script>
+<script src="vocab-engine.js?v=11"></script>
+<script>
+/* ============================================
+   DASHBOARD ENGINE
+   ============================================ */
+
+const DOMAINS = [
+  { id: '1', name: 'Advanced Application of Safety Principles', zh: '安全原理高级应用', weight: '25%', weeks: [1,2,3,4] },
+  { id: '2', name: 'Program Management', zh: '项目管理', weight: '25%', weeks: [5,6,7,8] },
+  { id: '3', name: 'Risk Management', zh: '风险管理', weight: '15%', weeks: [9,10,11] },
+  { id: '4', name: 'Emergency Management', zh: '应急管理', weight: '9%', weeks: [12,13] },
+  { id: '5', name: 'Environmental Management', zh: '环境管理', weight: '6%', weeks: [14,15] },
+  { id: '6', name: 'Occupational Health & Applied Science', zh: '职业健康与应用科学', weight: '10%', weeks: [16,17,18] },
+  { id: '7', name: 'Training', zh: '培训', weight: '10%', weeks: [19,20] }
+];
+
+const WEEKS = [
+  { num: 1, domain: '1', topic: 'Hierarchy of Controls & PtD', file: 'week-01.html' },
+  { num: 2, domain: '1', topic: 'Process Safety Management', file: 'week-02.html' },
+  { num: 3, domain: '1', topic: 'Workplace Hazards (Electrical, Falls)', file: 'week-03.html' },
+  { num: 4, domain: '1', topic: 'Confined Space, LOTO, Excavation', file: 'week-04.html' },
+  { num: 5, domain: '2', topic: 'Management Systems & Audit (ISO 45001)', file: 'week-05.html' },
+  { num: 6, domain: '2', topic: 'Performance Measurement', file: 'week-06.html' },
+  { num: 7, domain: '2', topic: 'Incident Investigation & RCA', file: 'week-07.html' },
+  { num: 8, domain: '2', topic: 'Finance, Leadership & Compliance', file: 'week-08.html' },
+  { num: 9, domain: '3', topic: 'Risk Assessment Process', file: 'week-09.html' },
+  { num: 10, domain: '3', topic: 'FMEA, FTA, ETA', file: 'week-10.html' },
+  { num: 11, domain: '3', topic: 'HAZOP, Bow-Tie, Risk Finance', file: 'week-11.html' },
+  { num: 12, domain: '4', topic: 'Emergency Response Plans', file: 'week-12.html' },
+  { num: 13, domain: '4', topic: 'Fire Protection & Hazmat Transport', file: 'week-13.html' },
+  { num: 14, domain: '5', topic: 'Pollution Prevention & Hazmat Mgmt', file: 'week-14.html' },
+  { num: 15, domain: '5', topic: 'Waste Mgmt & Sustainability', file: 'week-15.html' },
+  { num: 16, domain: '6', topic: 'Exposure Assessment & IH Sampling', file: 'week-16.html' },
+  { num: 17, domain: '6', topic: 'Noise, Radiation, Toxicology', file: 'week-17.html' },
+  { num: 18, domain: '6', topic: 'Ergonomics & Ventilation', file: 'week-18.html' },
+  { num: 19, domain: '7', topic: 'Training Needs & Design (ADDIE)', file: 'week-19.html' },
+  { num: 20, domain: '7', topic: 'Adult Learning & Evaluation', file: 'week-20.html' },
+  { num: 21, domain: 'review', topic: 'Comprehensive Review (D1-D4)', file: 'week-21.html' },
+  { num: 22, domain: 'review', topic: 'Comprehensive Review (D5-D7)', file: 'week-22.html' },
+  { num: 23, domain: 'review', topic: 'Mini Mock Exam', file: 'week-23.html' },
+  { num: 24, domain: 'review', topic: 'Final Sprint & Readiness', file: 'week-24.html' }
+];
+
+const EXAMS = [
+  { num: 1, file: 'exam-month-01.html', name: 'Monthly Exam 1', topic: 'Domain 1: Safety Principles (25%)', coverage: 'Week 1–4', domainColor: 'd1' },
+  { num: 2, file: 'exam-month-02.html', name: 'Monthly Exam 2', topic: 'Domain 2: Program Management (25%)', coverage: 'Week 5–8', domainColor: 'd2' },
+  { num: 3, file: 'exam-month-03.html', name: 'Monthly Exam 3', topic: 'Domains 3–4: Risk & Emergency (24%)', coverage: 'Week 9–13', domainColor: 'd3' },
+  { num: 4, file: 'exam-month-04.html', name: 'Monthly Exam 4', topic: 'Domains 5–7: Env, Health, Training (26%)', coverage: 'Week 14–20', domainColor: 'd5' },
+  { num: 5, file: 'exam-month-05.html', name: 'Monthly Exam 5', topic: 'Comprehensive Mock (Domains 1–7)', coverage: 'Week 21–22', domainColor: 'd4' },
+  { num: 6, file: 'exam-month-06.html', name: 'Monthly Exam 6', topic: 'Final Mock Exam (Full CSP Simulation)', coverage: 'Week 23–24', domainColor: 'd7' }
+];
+
+/* Compute and render all stats */
+function renderDashboard() {
+  const progress = CSPQuiz.getProgress();
+  const wrongs = CSPQuiz.getWrongQuestions();
+  const savedVocab = CSPVocab.getSavedWords();
+
+  /* --- Aggregate stats --- */
+  let totalAnswered = 0, totalCorrect = 0, totalQuestions = 0;
+  for (const p of Object.values(progress)) {
+    if (p.answers) {
+      totalAnswered += p.answers.filter(a => a !== null).length;
+      totalCorrect += (p.correctCount || 0);
+      totalQuestions += (p.totalQuestions || 0);
+    }
+  }
+
+  document.getElementById('stat-overall').textContent =
+    totalQuestions > 0 ? Math.round((totalCorrect / totalQuestions) * 100) + '%' : '0%';
+  document.getElementById('stat-answered').textContent = totalAnswered;
+  document.getElementById('stat-wrong').textContent = wrongs.length;
+  document.getElementById('stat-vocab').textContent = savedVocab.length;
+
+  /* --- Domain progress bars --- */
+  const domainStats = {};
+  for (const d of DOMAINS) domainStats[d.id] = { answered: 0, correct: 0, total: 0 };
+
+  for (const [id, p] of Object.entries(progress)) {
+    let domainId = null;
+    for (const w of WEEKS) {
+      if (id.startsWith('week-' + String(w.num).padStart(2, '0') + '-quiz')) {
+        domainId = w.domain; break;
+      }
+    }
+    if (!domainId) {
+      for (const e of EXAMS) {
+        if (id === 'exam-month-' + String(e.num).padStart(2, '0')) {
+          if (e.num <= 2) domainId = String(e.num);
+          else if (e.num === 3) domainId = '3,4';
+          else if (e.num === 4) domainId = '5,6,7';
+          else domainId = 'review'; break;
+        }
+      }
+    }
+    if (domainId && domainStats[domainId]) {
+      domainStats[domainId].answered += p.answers ? p.answers.filter(a => a !== null).length : 0;
+      domainStats[domainId].correct += (p.correctCount || 0);
+      domainStats[domainId].total += (p.totalQuestions || 0);
+    }
+  }
+
+  let domainHtml = '';
+  const hasDomainData = Object.values(domainStats).some(ds => ds.total > 0);
+  for (const d of DOMAINS) {
+    const ds = domainStats[d.id];
+    const pct = ds.total > 0 ? Math.round((ds.correct / ds.total) * 100) : 0;
+    const linkFile = 'week-' + String(d.weeks[0]).padStart(2, '0') + '.html';
+    domainHtml += '<a href="' + linkFile + '" class="domain-bar">';
+    domainHtml += '<div class="domain-num">D' + d.id + '</div>';
+    domainHtml += '<div class="domain-info">';
+    domainHtml += '<div class="domain-name">' + d.name + ' <span style="font-size:0.85rem;color:#888;">(' + d.zh + ')</span></div>';
+    domainHtml += '<div class="domain-weight">Weight: ' + d.weight + ' · Weeks ' + d.weeks.join(', ') + ' · ' + ds.total + ' questions</div>';
+    domainHtml += '</div>';
+    domainHtml += '<div class="domain-progress-bar"><div class="domain-progress-fill" style="width:' + pct + '%"></div></div>';
+    domainHtml += '<div class="domain-pct">' + pct + '%</div>';
+    domainHtml += '</a>';
+  }
+  if (!hasDomainData) {
+    domainHtml += '<p style="color:var(--text-secondary);font-size:0.82rem;text-align:center;margin-top:6px;">↑ Click any domain bar to start studying. Bars fill up as you complete quizzes.</p>';
+  }
+  document.getElementById('domain-list').innerHTML = domainHtml;
+
+  /* --- Week cards --- */
+  let weekHtml = '';
+  for (const w of WEEKS) {
+    const quizId = 'week-' + String(w.num).padStart(2, '0') + '-quiz';
+    const p = progress[quizId];
+    let cls = '', badge = '';
+    if (p && p.completed) { cls = ' completed'; badge = '<span class="week-badge">✓ Done</span>'; }
+    else if (p && p.answers && p.answers.some(a => a !== null)) { cls = ' in-progress'; badge = '<span class="week-badge">In Progress</span>'; }
+    weekHtml += '<a href="' + w.file + '" class="week-card' + cls + '">';
+    weekHtml += '<div class="week-label">Week ' + w.num + '</div>';
+    weekHtml += '<div class="week-topic">' + w.topic + '</div>';
+    weekHtml += badge;
+    weekHtml += '</a>';
+  }
+  document.getElementById('week-list').innerHTML = weekHtml;
+
+  /* --- Exam cards --- */
+  let examHtml = '';
+  for (const e of EXAMS) {
+    const quizId = 'exam-month-' + String(e.num).padStart(2, '0');
+    const p = progress[quizId];
+    const score = (p && p.totalQuestions > 0) ? Math.round((p.correctCount / p.totalQuestions) * 100) + '%' : '--';
+    examHtml += '<a href="' + e.file + '" class="exam-card">';
+    examHtml += '<div class="exam-icon">📋</div>';
+    examHtml += '<div class="exam-info"><div class="exam-name">' + e.name + '</div>';
+    examHtml += '<div class="exam-detail">' + e.topic + ' · ' + e.coverage + '</div></div>';
+    examHtml += '<div class="exam-score">' + score + '</div>';
+    examHtml += '</a>';
+  }
+  document.getElementById('exam-list').innerHTML = examHtml;
+
+  /* --- Wrong/vocab count badges --- */
+  document.getElementById('wrong-count-badge').textContent = wrongs.length + ' items';
+}
+
+/* Init */
+document.getElementById('today-date').textContent =
+  new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+renderDashboard();
+
+/* Import progress from JSON file */
+function handleImport(input) {
+  const file = input.files && input.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    try {
+      const result = CSPQuiz.importData(e.target.result);
+      if (result.ok) {
+        alert('导入成功 / Imported!\n' +
+          '进度: ' + result.counts.progress + ' quiz(es)\n' +
+          '错题: ' + result.counts.wrong + ' item(s)\n' +
+          '词汇: ' + result.counts.vocab + ' word(s)');
+        location.reload();
+      } else {
+        alert('导入失败 / Import failed: ' + result.error);
+      }
+    } catch(err) {
+      alert('无法读取文件 / Cannot read file: ' + err.message);
+    }
+    input.value = '';
+  };
+  reader.readAsText(file);
+}
+</script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('./sw.js').catch(function(err) {
+      console.warn('SW registration failed:', err);
+    });
+  });
+}
+</script>
+</body>
+</html>

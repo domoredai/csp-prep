@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Monthly Exam 4: Environment, Health &amp; Training / 月度考试4：环境、健康与培训 — CSP Exam Prep</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1e3a5f">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="stylesheet" href="quiz-styles.css">
+<style>
+  .breadcrumb { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 16px; }
+  .breadcrumb a { color: var(--accent); text-decoration: none; }
+  .breadcrumb a:hover { text-decoration: underline; }
+  p.bi-p, li.bi-li { margin-bottom: 10px; }
+  p.bi-p .en-p, li.bi-li .en-li { display: block; }
+  p.bi-p .zh-p, li.bi-li .zh-li { display: block; color: #666; font-size: 0.92em; margin-top: 2px; }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="breadcrumb">
+    <a href="index.html">&larr; 仪表盘 / Dashboard</a> &nbsp;|&nbsp;
+    月度考试4 / Monthly Exam 4
+  </div>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <h1>&#x1F4DD; 月度考试4：环境、健康与培训 / Monthly Exam 4: Environment, Health &amp; Training</h1>
+    <div class="subtitle">领域5、6和7 / Domains 5, 6 &amp; 7 &mdash; 综合评估 / Comprehensive Assessment (占考试26%) &middot; 24 题 / 24 Questions</div>
+    <div class="meta-row">
+      <span>领域5：环境管理 (6%) / Domain 5: Environmental Management</span>
+      <span>领域6：职业健康 (10%) / Domain 6: Occupational Health</span>
+      <span>领域7：培训/教育 (10%) / Domain 7: Training / Education</span>
+    </div>
+  </div>
+
+  <!-- Exam Instructions -->
+  <div class="knowledge-card">
+    <h2>考试说明 / Exam Instructions</h2>
+    <p class="bi-p">
+      <span class="en-p">This monthly exam covers <strong>Domains 5 through 7</strong>, which together comprise approximately 26% of the CSP11 exam blueprint. The 24 questions are distributed as follows:</span>
+      <span class="zh-p">本月度考试涵盖<strong>领域5至7</strong>，共占CSP11考试蓝图约26%。24道题分布如下：</span>
+    </p>
+    <ul>
+      <li class="bi-li">
+        <span class="en-li"><strong>Domain 5 — Environmental Management (~7 questions):</strong> GHS pictograms, SDS 16-section knowledge, RCRA generator categories (VSQG/SQG/LQG), CERCLA RQ and NPL, Clean Air Act / Clean Water Act, EPCRA Tier II / TRI reporting, and SPCC requirements.</span>
+        <span class="zh-li"><strong>领域5——环境管理（约7题）：</strong>GHS象形图、SDS 16节知识、RCRA产生者类别（VSQG/SQG/LQG）、CERCLA RQ和NPL、《清洁空气法》/《清洁水法》、EPCRA Tier II / TRI报告以及SPCC要求。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Domain 6 — Occupational Health (~10 questions):</strong> AREC framework, TWA calculations, personal vs. area sampling, noise (OSHA vs. NIOSH, dose/TWA/combining noise calculations), PEL vs. TLV vs. REL, toxicology (LD50, routes of entry, carcinogens/mutagens/teratogens), NIOSH Lifting Equation (RWL/LI), ventilation (Q = VA), and epidemiology basics (cohort vs. case-control, RR vs. OR).</span>
+        <span class="zh-li"><strong>领域6——职业健康（约10题）：</strong>AREC框架、TWA计算、个人采样vs.区域采样、噪声（OSHA vs. NIOSH、剂量/TWA/组合噪声计算）、PEL vs. TLV vs. REL、毒理学（LD50、进入途径、致癌物/致突变物/致畸物）、NIOSH提举方程（RWL/LI）、通风（Q = VA）和流行病学基础（队列研究vs.病例对照、RR vs. OR）。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Domain 7 — Training (~5 questions):</strong> ADDIE model phases, Kirkpatrick evaluation levels, Knowles's andragogy principles, OSHA training hour requirements (HAZWOPER 40-hr), and VARK learning styles.</span>
+        <span class="zh-li"><strong>领域7——培训（约5题）：</strong>ADDIE模型阶段、Kirkpatrick评估层级、Knowles成人教育原则、OSHA培训小时要求（HAZWOPER 40小时）和VARK学习风格。</span>
+      </li>
+    </ul>
+    <p class="bi-p">
+      <span class="en-p">Select the best answer for each question. Your score and detailed feedback will be shown upon completion. Retake the exam as many times as needed.</span>
+      <span class="zh-p">为每个问题选择最佳答案。完成后将显示你的分数和详细反馈。可以无限次重考。</span>
+    </p>
+  </div>
+
+  <!-- Quiz Root -->
+  <div id="quiz-root"></div>
+
+</div>
+
+<script src="quiz-engine.js"></script>
+<script src="vocab-engine.js"></script>
+<script>
+CSPQuiz.init({
+  quizId: 'exam-month-04',
+  quizTitle: 'Monthly Exam 4: Environment, Health & Training / 月度考试4：环境、健康与培训',
+  quizTopic: 'Domains 5, 6 & 7 — Comprehensive Assessment / 领域5、6、7——综合评估',
+  containerId: 'quiz-root',
+  questions: [
+    {
+      text: 'A chemical label displays a red-diamond pictogram of a flame over a circle. What hazard does this pictogram communicate under the GHS?',
+      options: [
+        'Flammable liquid or gas',
+        'Oxidizer — may cause or intensify fire',
+        'Gas under pressure',
+        'Self-reactive substance'
+      ],
+      correct: 1,
+      explanation: 'The "Flame Over Circle" pictogram identifies oxidizing solids, liquids, and gases. Oxidizers can cause or intensify a fire and may explode in contact with combustible materials. The plain "Flame" pictogram (without a circle) indicates flammables, pyrophorics, and self-reactives. The "Gas Cylinder" pictogram indicates gases under pressure.\n\n"圆圈上的火焰"象形图标识氧化性固体、液体和气体。氧化剂可能引起或加剧火灾，并可能在接触可燃材料时爆炸。普通的"火焰"象形图（无圆圈）表示易燃物、自燃物和自反应物。"气瓶"象形图表示高压气体。'
+    },
+    {
+      text: 'Section 2 of a GHS-aligned 16-section Safety Data Sheet (SDS) contains which information?',
+      options: [
+        'First-aid measures by route of exposure',
+        'Physical and chemical properties such as flash point and boiling point',
+        'Hazard identification including GHS classification, signal word, hazard statements, and pictograms',
+        'Toxicological information including LD50 and carcinogenicity'
+      ],
+      correct: 2,
+      explanation: 'Section 2 — Hazard(s) Identification contains the GHS hazard classification, signal word (Danger or Warning), hazard statements (H-codes), precautionary statements (P-codes), pictograms, and a description of any hazards not otherwise classified. Section 4 covers first-aid measures; Section 9 covers physical/chemical properties; Section 11 covers toxicological information.\n\n第2节——危害标识包含GHS危害分类、信号词（危险或警告）、危害说明（H代码）、防范说明（P代码）、象形图以及任何未另行分类的危害说明。第4节涵盖急救措施；第9节涵盖理化特性；第11节涵盖毒理学信息。'
+    },
+    {
+      text: 'Under RCRA, a facility that generates between 100 kg and 1,000 kg of hazardous waste per calendar month is classified as a:',
+      options: [
+        'Very Small Quantity Generator (VSQG)',
+        'Small Quantity Generator (SQG)',
+        'Large Quantity Generator (LQG)',
+        'Conditionally Exempt Small Quantity Generator (CESQG)'
+      ],
+      correct: 1,
+      explanation: 'RCRA generator categories: VSQG (formerly CESQG) generates <100 kg/month and <1 kg acute hazardous waste; SQG generates 100-1,000 kg/month; LQG generates >1,000 kg/month or >1 kg of acute hazardous waste (P-listed). SQG waste may be accumulated on site for up to 180 days (or 270 days if transported >200 miles).\n\nRCRA产生者类别：VSQG（前称CESQG）每月产生<100公斤且<1公斤急性危险废物；SQG每月产生100-1,000公斤；LQG每月产生>1,000公斤或>1公斤急性危险废物（P列表）。SQG废物可在现场累积最多180天（如果运输距离超过200英里则为270天）。'
+    },
+    {
+      text: 'Under CERCLA, the Reportable Quantity (RQ) for most listed hazardous substances is:',
+      options: [
+        '1 pound',
+        '10 pounds',
+        '100 pounds',
+        '1,000 pounds'
+      ],
+      correct: 0,
+      explanation: 'Under CERCLA (Comprehensive Environmental Response, Compensation, and Liability Act, also known as Superfund), the default Reportable Quantity is 1 pound for most listed hazardous substances, though specific RQs vary by substance. Releases of hazardous substances above their RQ within a 24-hour period must be reported to the National Response Center. The NPL (National Priorities List) identifies the most serious uncontrolled or abandoned hazardous waste sites for long-term remedial action.\n\n根据CERCLA（《综合环境响应、赔偿和责任法》，也称超级基金），大多数列名危险物质的默认报告量为1磅，但具体RQ因物质而异。在24小时内释放超过其RQ的危险物质必须向国家响应中心报告。NPL（国家优先清单）确定最严重的失控或废弃危险废物场地以进行长期修复行动。'
+    },
+    {
+      text: 'Which of the following is primarily regulated under the Clean Water Act (CWA)?',
+      options: [
+        'National Ambient Air Quality Standards (NAAQS) for criteria pollutants',
+        'National Pollutant Discharge Elimination System (NPDES) permits for point source discharges into waters of the United States',
+        'Prevention of accidental chemical releases through Risk Management Plans (RMP)',
+        'Management of hazardous waste from cradle to grave'
+      ],
+      correct: 1,
+      explanation: 'The Clean Water Act establishes the NPDES permit program to control water pollution by regulating point sources that discharge pollutants into waters of the United States. NAAQS are established under the Clean Air Act. RMPs are required under Clean Air Act Section 112(r). Hazardous waste cradle-to-grave management falls under RCRA.\n\n《清洁水法》建立NPDES许可项目，通过监管向美国水域排放污染物的点源来控制水污染。NAAQS是根据《清洁空气法》建立的。RMP是根据《清洁空气法》第112(r)条要求的。危险废物的全生命周期管理属于RCRA。'
+    },
+    {
+      text: 'Under EPCRA Section 313 (Toxics Release Inventory), a covered facility must submit a TRI report (Form R) annually if it:',
+      options: [
+        'Stores any hazardous chemical on site regardless of quantity',
+        'Manufactures, processes, or otherwise uses listed toxic chemicals above threshold quantities and meets employee/sector criteria',
+        'Has an SPCC plan in place for oil storage',
+        'Generates any quantity of RCRA hazardous waste'
+      ],
+      correct: 1,
+      explanation: 'EPCRA Section 313 (TRI) requires facilities in covered NAICS codes with 10+ full-time employees to file an annual Form R for each listed toxic chemical that is manufactured (>25,000 lbs), processed (>25,000 lbs), or otherwise used (>10,000 lbs) above thresholds. EPCRA Section 312 (Tier II) covers storage of hazardous chemicals (thresholds: 10,000 lbs for most, 500 lbs or the TPQ for extremely hazardous substances).\n\nEPCRA第313条（TRI）要求符合涵盖NAICS代码且拥有10名以上全职员工的设施，每年为每种制造（>25,000磅）、加工（>25,000磅）或以其他方式使用（>10,000磅）超过阈值的列名有毒化学品提交Form R。EPCRA第312条（Tier II）涵盖危险化学品的存储（阈值：大多数为10,000磅，极度危险物质为500磅或TPQ）。'
+    },
+    {
+      text: 'An SPCC plan is required for a facility when its aggregate aboveground oil storage capacity exceeds:',
+      options: [
+        '660 gallons in containers of 55 gallons or more',
+        '1,320 gallons in containers of 55 gallons or more',
+        '10,000 gallons in any containers',
+        '42,000 gallons total storage'
+      ],
+      correct: 1,
+      explanation: 'An SPCC plan is triggered when aggregate aboveground oil storage exceeds 1,320 gallons (in containers of 55 gallons or larger) OR underground oil storage exceeds 42,000 gallons. The plan must be certified by a Professional Engineer unless the facility qualifies for self-certification. SPCC applies to oil only — not hazardous chemicals.\n\n当地上储油总量超过1,320加仑（单个容器55加仑或以上）或地下储油超过42,000加仑时，需要SPCC计划。该计划必须由专业工程师认证，除非设施符合自我认证条件。SPCC仅适用于油类——不适用于危险化学品。'
+    },
+    {
+      text: 'The AREC framework used in occupational exposure assessment stands for:',
+      options: [
+        'Assess, Respond, Evaluate, Control',
+        'Anticipate, Recognize, Evaluate, Control',
+        'Analyze, Record, Examine, Communicate',
+        'Assess, Recognize, Eliminate, Confirm'
+      ],
+      correct: 1,
+      explanation: 'AREC stands for Anticipate, Recognize, Evaluate, Control — the foundational framework for occupational exposure assessment used by industrial hygienists. Anticipate involves predicting potential hazards before they are introduced. Recognize involves identifying existing hazards. Evaluate involves measuring and assessing the magnitude of exposures. Control involves implementing measures to reduce or eliminate exposures.\n\nAREC代表预期、识别、评估、控制——工业卫生学家使用的职业暴露评估基本框架。预期涉及在危害引入之前预测潜在危害。识别涉及确定现有危害。评估涉及测量和评估暴露量级。控制涉及实施减少或消除暴露的措施。'
+    },
+    {
+      text: 'A worker is exposed to 85 dBA for 4 hours, 90 dBA for 2 hours, and 95 dBA for 1 hour during an 8-hour shift (the remaining 1 hour is below 80 dBA). Using the OSHA 5-dB exchange rate, what is the 8-hour TWA noise exposure?',
+      options: [
+        '87.5 dBA',
+        '89.0 dBA',
+        '90.0 dBA',
+        '91.5 dBA'
+      ],
+      correct: 1,
+      explanation: 'OSHA uses a 5-dB exchange rate. For each 5 dB increase, the allowed duration is halved (starting from 90 dBA for 8 hours). Calculate partial doses: 85 dBA (16-hr allowable) -> 4/16 = 0.25; 90 dBA (8-hr allowable) -> 2/8 = 0.25; 95 dBA (4-hr allowable) -> 1/4 = 0.25. Total dose = 0.75 = 75%. TWA = 90 + 5*(log10(0.75)/log10(2)) = 90 + 5*(-0.415/0.301) = 90 - 6.9 = approximately 89.0 dBA. This is above the OSHA action level (85 dBA) but below the PEL (90 dBA). Using the NIOSH 3-dB exchange rate would yield a higher TWA.\n\nOSHA使用5-dB交换率。每增加5 dB，允许持续时间减半（从90 dBA持续8小时开始）。计算部分剂量：85 dBA（允许16小时）-> 4/16 = 0.25；90 dBA（允许8小时）-> 2/8 = 0.25；95 dBA（允许4小时）-> 1/4 = 0.25。总剂量 = 0.75 = 75%。TWA = 90 + 5*(log10(0.75)/log10(2)) = 90 + 5*(-0.415/0.301) = 90 - 6.9 = 约89.0 dBA。这高于OSHA行动水平（85 dBA）但低于PEL（90 dBA）。使用NIOSH 3-dB交换率会得到更高的TWA。'
+    },
+    {
+      text: 'A worker is exposed to noise levels of 88 dBA for 3 hours, 92 dBA for 2 hours, and 85 dBA for 3 hours during an 8-hour shift. Using the OSHA 5-dB exchange rate, what is the noise dose? (Reference: 90 dBA PEL for 8 hours = 100% dose, 5-dB exchange rate)',
+      options: [
+        '75%',
+        '100%',
+        '125%',
+        '150%'
+      ],
+      correct: 2,
+      explanation: 'Using the OSHA 5-dB exchange rate (halving time every 5 dB increase from 90 dBA/8hrs): 80 dBA = 32 hrs allowed, 85 dBA = 16 hrs, 90 dBA = 8 hrs, 95 dBA = 4 hrs, 100 dBA = 2 hrs. Linear interpolation between 5-dB steps: 88 dBA is 3/5 of the way from 85 to 90. Allowable time at 88 dBA ~ 16 x 0.8706^3 ~ 10.4 hrs. Allowable at 92 dBA ~ 8 x 0.8706^2 ~ 6.06 hrs. Allowable at 85 dBA = 16 hrs. Dose = 3/10.4 + 2/6.06 + 3/16 = 0.288 + 0.330 + 0.188 = ~125%. The measured levels exceed 90 dBA for part of the shift, pushing the dose above 100%.\n\n使用OSHA 5-dB交换率（从90 dBA/8小时起每增加5 dB时间减半）：80 dBA = 允许32小时，85 dBA = 16小时，90 dBA = 8小时，95 dBA = 4小时，100 dBA = 2小时。各5dB步骤间的线性插值：88 dBA处允许时间约10.4小时，92 dBA处约6.06小时。剂量 = 3/10.4 + 2/6.06 + 3/16 = 约125%。部分班次的测量水平超过90 dBA，将剂量推高至超过100%。'
+    },
+    {
+      text: 'Which of the following correctly distinguishes a personal sampling strategy from an area sampling strategy in industrial hygiene?',
+      options: [
+        'Area sampling measures exposure at fixed locations; personal sampling measures exposure in the worker\'s breathing zone',
+        'Area sampling is always more accurate than personal sampling',
+        'Personal sampling is only used for gases; area sampling is only used for particulates',
+        'Personal sampling measures contaminant concentrations at fixed locations; area sampling uses a pump worn by the worker'
+      ],
+      correct: 0,
+      explanation: 'Personal sampling uses a sampling device placed in the worker\'s breathing zone (within a 30-cm radius of the nose and mouth) to measure the actual exposure the worker receives as they move through the workplace. Area sampling places samplers at fixed locations to characterize background concentrations or identify contaminant sources. Personal sampling is preferred for compliance monitoring because it best represents the worker\'s actual exposure.\n\n个人采样使用放置在工人呼吸带（距口鼻30厘米半径内）的采样装置，以测量工人在工作场所移动时接收到的实际暴露。区域采样在固定位置放置采样器，以表征背景浓度或识别污染源。个人采样是合规监测的首选方法，因为它最能代表工人的实际暴露。'
+    },
+    {
+      text: 'ACGIH TLVs are best described as:',
+      options: [
+        'Legally enforceable exposure limits established by OSHA',
+        'Recommended exposure limits based on feasibility and technical achievability',
+        'Health-based recommended exposure limits developed by a professional organization, not legally enforceable',
+        'Emergency exposure limits for use in spill response situations'
+      ],
+      correct: 2,
+      explanation: 'ACGIH TLVs (Threshold Limit Values) are health-based recommended exposure limits developed by the American Conference of Governmental Industrial Hygienists. They are NOT legally enforceable — OSHA PELs (Permissible Exposure Limits) are the legally enforceable limits. NIOSH RELs (Recommended Exposure Limits) are also recommendations but from a government agency (NIOSH). TLVs are based solely on health factors, not economic or technical feasibility, and are typically more protective (lower) than PELs.\n\nACGIH TLV（阈限值）是由美国政府工业卫生学家会议制定的基于健康的推荐暴露限值。它们不具有法律强制力——OSHA PEL（允许暴露限值）是具有法律强制力的限值。NIOSH REL（推荐暴露限值）也是建议，但来自政府机构（NIOSH）。TLV仅基于健康因素，而非经济或技术可行性，通常比PEL更具保护性（更低）。'
+    },
+    {
+      text: 'Which of the following terms refers to an agent that causes damage to a developing fetus, resulting in birth defects?',
+      options: [
+        'Carcinogen',
+        'Mutagen',
+        'Teratogen',
+        'Sensitizer'
+      ],
+      correct: 2,
+      explanation: 'A teratogen is an agent that can cause malformations or defects in a developing embryo or fetus when the mother is exposed during pregnancy. Examples include thalidomide, alcohol, and ionizing radiation. A carcinogen causes cancer, a mutagen changes genetic material (DNA), and a sensitizer causes allergic reactions after repeated exposures. The distinction between these terms is critical for interpreting SDS Section 11 (Toxicological Information).\n\n致畸物是指当母亲在怀孕期间暴露时，可导致发育中胚胎或胎儿畸形或缺陷的物质。例子包括沙利度胺、酒精和电离辐射。致癌物引发癌症，致突变物改变遗传物质（DNA），致敏物在反复暴露后引起过敏反应。这些术语之间的区别对于解读SDS第11节（毒理学信息）至关重要。'
+    },
+    {
+      text: 'LD50 is defined as:',
+      options: [
+        'The concentration of a substance in air that is lethal to 50% of test animals within a specified exposure duration',
+        'The single dose of a substance that, when administered by a specific route, is expected to cause death in 50% of a test animal population',
+        'The lowest dose at which any toxic effect is observed in 50% of a test population',
+        'The dose required to cause a 50% reduction in a specific biological response'
+      ],
+      correct: 1,
+      explanation: 'LD50 (Lethal Dose, 50%) is the single dose of a substance, expressed as mg of substance per kg of body weight (mg/kg), that is expected to cause death in 50% of a defined test animal population when administered by a specific route (usually oral or dermal). In contrast, LC50 (Lethal Concentration, 50%) refers to the concentration in air (ppm or mg/m3) that is lethal to 50% of test animals over a specified exposure duration (typically 4 hours for inhalation).\n\nLD50（半数致死剂量）是指通过特定途径（通常口服或皮肤）给予时，预期导致50%规定试验动物群体死亡的单一剂量，以每公斤体重毫克物质（mg/kg）表示。相比之下，LC50（半数致死浓度）是指在特定暴露持续时间（吸入通常为4小时）内对50%试验动物致死的空气中浓度（ppm或mg/m3）。'
+    },
+    {
+      text: 'A worker is tasked with lifting boxes from a conveyor at a rate of 3 lifts per minute for a 2-hour period. The horizontal distance from the spine to the load center is 40 cm, the vertical location at the origin is 75 cm, the vertical travel distance is 40 cm, and there is no asymmetry. The coupling is classified as "fair." The load constant is 23 kg. What is the Recommended Weight Limit (RWL)?',
+      options: [
+        'Approximately 5.2 kg',
+        'Approximately 7.8 kg',
+        'Approximately 9.5 kg',
+        'Approximately 11.3 kg'
+      ],
+      correct: 1,
+      explanation: 'NIOSH Lifting Equation: RWL = LC x HM x VM x DM x AM x FM x CM. LC = 23 kg. HM = 25/H = 25/40 = 0.625. VM = 1 - 0.003|V-75| = 1 - 0.003|75-75| = 1.0. DM = 0.82 + 4.5/D = 0.82 + 4.5/40 = 0.9325. AM = 1.0 (no asymmetry). FM (3 lifts/min x 120 min = 0.55 from NIOSH table for 2 hrs). CM (fair coupling, V>75 cm) = 1.0. RWL = 23 x 0.625 x 1.0 x 0.9325 x 1.0 x 0.55 x 1.0 = approximately 7.8 kg.\n\nNIOSH提举方程：RWL = LC x HM x VM x DM x AM x FM x CM。LC = 23 kg。HM = 25/H = 25/40 = 0.625。VM = 1 - 0.003|V-75| = 1 - 0.003|75-75| = 1.0。DM = 0.82 + 4.5/D = 0.82 + 4.5/40 = 0.9325。AM = 1.0（无不对称）。FM（3次/分钟 x 120分钟，根据NIOSH表2小时 = 0.55）。CM（一般耦合，V>75 cm）= 1.0。RWL = 23 x 0.625 x 1.0 x 0.9325 x 1.0 x 0.55 x 1.0 = 约7.8 kg。'
+    },
+    {
+      text: 'If the actual load being lifted in the scenario above is 18 kg, what is the Lifting Index (LI) and what does it indicate?',
+      options: [
+        'LI = 1.0; the task is at the maximum acceptable limit',
+        'LI = 1.8; the task may pose an increased risk for some workers',
+        'LI = 2.3; the task likely poses a significant risk for most workers and should be redesigned',
+        'LI = 3.5; the task is clearly hazardous and requires immediate engineering controls'
+      ],
+      correct: 2,
+      explanation: 'LI = Load Weight / RWL = 18 kg / 7.8 kg ~ 2.3. Per NIOSH, LI > 1.0 indicates an increased risk of work-related low back pain, with risk increasing as LI rises above 1.0. LI > 2.0 indicates that engineering or administrative controls should be implemented to reduce the LI. LI > 3.0 indicates many or most workers are at elevated risk and the task should be redesigned.\n\nLI = 负荷重量 / RWL = 18 kg / 7.8 kg ~ 2.3。根据NIOSH，LI > 1.0表示工作相关腰痛风险增加，且随着LI升至1.0以上，风险增加。LI > 2.0表示应实施工程或行政控制以降低LI。LI > 3.0表示许多或大多数工人处于较高风险中，应重新设计任务。'
+    },
+    {
+      text: 'A laboratory hood has a face opening of 0.8 meters wide by 0.6 meters high. The average face velocity is measured at 0.5 m/s. What is the volumetric flow rate (Q) in cubic meters per second? Use Q = V x A.',
+      options: [
+        '0.12 m3/s',
+        '0.24 m3/s',
+        '0.48 m3/s',
+        '0.96 m3/s'
+      ],
+      correct: 1,
+      explanation: 'Q = V x A. Face area A = width x height = 0.8 m x 0.6 m = 0.48 m2. Volumetric flow rate Q = 0.5 m/s x 0.48 m2 = 0.24 m3/s. Standard laboratory fume hood face velocities are typically maintained between 0.4-0.6 m/s (80-120 fpm). The ventilation equation Q = VA is a fundamental relationship in industrial hygiene, used for general dilution ventilation and local exhaust ventilation.\n\nQ = V x A。面面积A = 宽 x 高 = 0.8 m x 0.6 m = 0.48 m2。体积流量Q = 0.5 m/s x 0.48 m2 = 0.24 m3/s。标准实验室通风柜面风速通常保持在0.4-0.6 m/s（80-120 fpm）之间。通风方程Q = VA是工业卫生中的基本关系，用于一般稀释通风和局部排风。'
+    },
+    {
+      text: 'An epidemiologic study begins by identifying a group of workers who were exposed to benzene and a comparable group who were not exposed, then follows them forward in time to compare the incidence of leukemia. This study design is best classified as a:',
+      options: [
+        'Cross-sectional study',
+        'Case-control study',
+        'Cohort study',
+        'Randomized controlled trial'
+      ],
+      correct: 2,
+      explanation: 'A cohort study starts with exposure status (exposed vs. unexposed) and follows both groups forward in time to compare disease incidence. The measure of association is Relative Risk (RR). In contrast, a case-control study starts with disease status (cases with disease vs. controls without) and looks backward to compare past exposures, using the Odds Ratio (OR) as the measure of association. A cross-sectional study examines exposure and disease status simultaneously at a single point in time.\n\n队列研究从暴露状态（暴露vs.未暴露）开始，向前追踪两组以比较疾病发病率。关联指标是相对风险（RR）。相比之下，病例对照研究从疾病状态（患病病例vs.未患病对照）开始向后回顾比较过去的暴露，使用比值比（OR）作为关联指标。横断面研究在单一时间点同时检查暴露和疾病状态。'
+    },
+    {
+      text: 'In a cohort study, 12 of 200 exposed workers developed a respiratory condition, while 4 of 300 unexposed workers developed the same condition. What is the Relative Risk (RR)?',
+      options: [
+        'RR = 2.0',
+        'RR = 3.0',
+        'RR = 4.5',
+        'RR = 6.0'
+      ],
+      correct: 2,
+      explanation: 'RR = (Incidence in exposed) / (Incidence in unexposed). Incidence in exposed = 12/200 = 0.06 = 6%. Incidence in unexposed = 4/300 = 0.0133 = 1.33%. RR = 0.06 / 0.0133 = 4.5. This means exposed workers are 4.5 times more likely to develop the condition compared to unexposed workers. RR > 1 indicates positive association; RR = 1 indicates no association; RR < 1 indicates protective effect.\n\nRR =（暴露组发病率）/（非暴露组发病率）。暴露组发病率 = 12/200 = 0.06 = 6%。非暴露组发病率 = 4/300 = 0.0133 = 1.33%。RR = 0.06 / 0.0133 = 4.5。这意味着暴露工人患该病症的可能性是非暴露工人的4.5倍。RR > 1表示正相关；RR = 1表示无关联；RR < 1表示保护效应。'
+    },
+    {
+      text: 'During ADDIE, the phase in which a safety trainer defines learning objectives, identifies the target audience, and determines resource constraints is:',
+      options: [
+        'Design phase',
+        'Development phase',
+        'Analysis phase',
+        'Implementation phase'
+      ],
+      correct: 2,
+      explanation: 'The ADDIE model has five sequential phases: Analysis, Design, Development, Implementation, and Evaluation. The Analysis phase involves defining the training need, audience analysis, task analysis, resource assessment, and establishing learning objectives and constraints. The Design phase then creates the instructional strategy, detailed learning objectives, assessment instruments, and content outline based on the analysis outputs.\n\nADDIE模型有五个连续阶段：分析、设计、开发、实施和评估。分析阶段涉及定义培训需求、受众分析、任务分析、资源评估以及确定学习目标和约束条件。设计阶段然后基于分析输出创建教学策略、详细学习目标、评估工具和内容大纲。'
+    },
+    {
+      text: 'Six months after completing a safety training program for warehouse employees, the safety manager reviews injury statistics and finds that forklift-related incidents have dropped by 40%. According to Kirkpatrick\'s four levels of training evaluation, this finding represents which level?',
+      options: [
+        'Level 1 — Reaction',
+        'Level 2 — Learning',
+        'Level 3 — Behavior',
+        'Level 4 — Results'
+      ],
+      correct: 3,
+      explanation: 'Kirkpatrick\'s Level 4 — Results measures the organizational impact of training, such as reduced injury rates, decreased costs, improved productivity, or lower incident rates. Level 1 (Reaction) measures learner satisfaction. Level 2 (Learning) measures knowledge/skills gained via tests. Level 3 (Behavior) measures whether learners apply what they learned on the job (observed behavior change). Level 4 (Results) measures business/organizational outcomes like injury rate reduction — which is exactly what the 40% drop in forklift incidents represents.\n\nKirkpatrick第4级——结果衡量培训的组织影响，如降低伤害率、减少成本、提高生产力或降低事故率。第1级（反应）衡量学员满意度。第2级（学习）通过测试衡量获得的知识/技能。第3级（行为）衡量学员是否在工作中应用所学（观察到的行为变化）。第4级（结果）衡量业务/组织成果，如伤害率降低——这正是叉车事故下降40%所代表的。'
+    },
+    {
+      text: 'According to Knowles\'s principles of andragogy (adult learning theory), which of the following is true about adult learners?',
+      options: [
+        'Adults are primarily motivated by external rewards and grades',
+        'Adults prefer learning that is subject-centered rather than problem-centered',
+        'Adults bring life experience that serves as a foundation for new learning and prefer self-directed learning',
+        'Adults have limited readiness to learn until they are developmentally prepared by an instructor'
+      ],
+      correct: 2,
+      explanation: 'Knowles\'s andragogy principles for adult learners include: (1) Self-concept — adults are self-directed; (2) Experience — adults bring a wealth of experience as a learning resource; (3) Readiness to learn — adults seek learning relevant to their social roles; (4) Orientation — adults prefer problem-centered (not subject-centered) learning; (5) Motivation — adults are internally motivated (not by grades or external rewards). These contrast with pedagogy (child learning), where the learner depends on the teacher to direct learning.\n\nKnowles成人教育原则包括：（1）自我概念——成人是自我导向的；（2）经验——成人带来丰富的经验作为学习资源；（3）学习准备度——成人寻求与其社会角色相关的学习；（4）学习导向——成人偏好以问题为中心（而非以学科为中心）的学习；（5）动机——成人是内在驱动的（而非成绩或外部奖励）。这些与儿童教育学形成对比，在学习中学习者依赖教师指导学习。'
+    },
+    {
+      text: 'Under OSHA\'s HAZWOPER standard (29 CFR 1910.120), what is the minimum initial training required for general site workers involved in hazardous substance removal at an uncontrolled hazardous waste site?',
+      options: [
+        '8 hours of off-site instruction',
+        '24 hours of off-site instruction plus 1 day of supervised field experience',
+        '40 hours of off-site instruction plus 3 days of supervised field experience',
+        '80 hours of off-site instruction plus 5 days of supervised field experience'
+      ],
+      correct: 2,
+      explanation: 'Under HAZWOPER, general site workers (those engaged in hazardous substance removal or activities that expose or potentially expose them to hazardous substances and health hazards) must complete 40 hours of off-site instruction and at least 3 days of actual field experience under the direct supervision of a trained, experienced supervisor. Occasional site workers (limited tasks, unlikely to exceed PELs) require 24 hours + 1 day. Supervisors/Managers require the 40-hour general + 3 days field + an additional 8 hours of specialized supervisor training. All HAZWOPER trained workers must also complete 8 hours of annual refresher training.\n\n根据HAZWOPER，一般现场工人（从事危险物质清除或暴露或潜在暴露于危险物质和健康危害的活动）必须完成40小时场外培训，并在经过培训、有经验的主管直接监督下完成至少3天实际现场经验。临时现场工人（有限任务，不太可能超过PEL）需要24小时+1天。主管/经理需要40小时一般培训+3天现场+额外8小时专业主管培训。所有HAZWOPER培训工人还必须完成8小时年度复训。'
+    },
+    {
+      text: 'The VARK model of learning styles identifies four modalities. A worker who learns best by reading manuals, written procedures, and safety data sheets would most likely have which primary learning preference?',
+      options: [
+        'Visual (V) — learns through diagrams, charts, and spatial organization',
+        'Aural/Auditory (A) — learns through listening to lectures and discussions',
+        'Read/Write (R) — learns through text-based input and output',
+        'Kinesthetic (K) — learns through hands-on practice and physical experience'
+      ],
+      correct: 2,
+      explanation: 'The VARK model (Fleming) identifies four learning modalities: Visual (prefers graphical/symbolic representations like diagrams and flowcharts), Aural/Auditory (prefers hearing information through lectures and discussions), Read/Write (prefers text-based information — reading procedures manuals, taking notes, working with written documents), and Kinesthetic (prefers hands-on experience, simulations, and physical practice). A worker who learns best from manuals, written procedures, and SDS documents has a Read/Write preference. Effective safety training should incorporate methods that address multiple learning styles.\n\nVARK模型（Fleming）识别四种学习模式：视觉型（偏好图形/符号表示，如图表和流程图）、听觉型（偏好通过讲座和讨论听取信息）、读写型（偏好文本信息——阅读程序手册、做笔记、处理书面文件）和动觉型（偏好动手经验、模拟和身体实践）。从手册、书面程序和SDS文件中学习效果最好的工人具有读写型偏好。有效的安全培训应融合满足多种学习风格的方法。'
+    }
+  ]
+});
+</script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js').catch(function() {});
+}
+</script>
+</body>
+</html>

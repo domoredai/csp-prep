@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Monthly Exam 2: Program Management / 月度考试2：项目管理 — CSP Exam Prep</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1e3a5f">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="stylesheet" href="quiz-styles.css">
+<style>
+  .breadcrumb { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 16px; }
+  .breadcrumb a { color: var(--accent); text-decoration: none; }
+  .breadcrumb a:hover { text-decoration: underline; }
+  p.bi-p, li.bi-li { margin-bottom: 10px; }
+  p.bi-p .en-p, li.bi-li .en-li { display: block; }
+  p.bi-p .zh-p, li.bi-li .zh-li { display: block; color: #666; font-size: 0.92em; margin-top: 2px; }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="breadcrumb">
+    <a href="index.html">&larr; 仪表盘 / Dashboard</a> &nbsp;|&nbsp;
+    领域2：项目管理（占考试25%）/ Domain 2: Program Management (25%)
+  </div>
+
+  <div class="page-header">
+    <h1>&#x1F4CB; 月度考试2：项目管理 / Monthly Exam 2: Program Management</h1>
+    <div class="subtitle">领域2 / Domain 2 &mdash; 综合评估 / Comprehensive Assessment &middot; 18 题 / 18 Questions &middot; 涵盖第5-8周 / Covers Weeks 5&ndash;8</div>
+  </div>
+
+  <div class="knowledge-card">
+    <h2>考试说明 / Exam Instructions</h2>
+    <p class="bi-p">
+      <span class="en-p">This is a <strong>timed mock exam</strong> covering Domain 2: Program Management (25% of the CSP exam). The 18 questions cover management systems (ISO 45001), auditing, performance measurement, incident investigation, statistics, budgeting, management theories, OSHA recordkeeping, ethics, and the legal environment.</span>
+      <span class="zh-p">这是一次<strong>计时模拟考试</strong>，涵盖领域2：项目管理（占CSP考试的25%）。18道题涵盖管理体系（ISO 45001）、审计、绩效测量、事故调查、统计学、预算、管理理论、OSHA记录保存、职业道德和法律环境。</span>
+    </p>
+    <ul>
+      <li class="bi-li">
+        <span class="en-li"><strong>Answer all questions</strong> &mdash; select the best answer for each. Feedback appears immediately after each choice.</span>
+        <span class="zh-li"><strong>回答所有问题</strong>——为每个问题选择最佳答案。选择后立即显示反馈。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Review your score</strong> at the end. Aim for 75% or higher.</span>
+        <span class="zh-li"><strong>查看你的分数</strong>。目标75%以上。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Calculation questions included:</strong> TRIR, DART, LTIFR, ROI, and confidence intervals.</span>
+        <span class="zh-li"><strong>包含计算题：</strong>TRIR、DART、LTIFR、ROI和置信区间。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Retake anytime</strong> &mdash; your best score is tracked on the dashboard.</span>
+        <span class="zh-li"><strong>随时重考</strong>——你的最佳分数会在仪表盘上追踪。</span>
+      </li>
+    </ul>
+  </div>
+
+  <div id="quiz-root"></div>
+
+</div>
+
+<script src="quiz-engine.js"></script>
+<script src="vocab-engine.js"></script>
+<script>
+CSPQuiz.init({
+  quizId: 'exam-month-02',
+  quizTitle: 'Monthly Exam 2: Program Management / 月度考试2：项目管理',
+  quizTopic: 'Domain 2 — Comprehensive Assessment / 领域2——综合评估',
+  containerId: 'quiz-root',
+  questions: [
+    {
+      text: 'ISO 45001:2018 follows the Annex SL high-level structure common to all ISO management system standards. Which sequence correctly represents the Plan-Do-Check-Act (PDCA) cycle as it maps to ISO 45001 clauses?',
+      options: [
+        'Plan (Clause 6), Do (Clause 7 & 8), Check (Clause 9), Act (Clause 10)',
+        'Plan (Clause 4), Do (Clause 5), Check (Clause 6), Act (Clause 7)',
+        'Plan (Clause 8), Do (Clause 9), Check (Clause 6), Act (Clause 4)',
+        'Plan (Clause 5), Do (Clause 7 & 8), Check (Clause 9), Act (Clause 10)'
+      ],
+      correct: 0,
+      explanation: 'ISO 45001 PDCA mapping: Plan = Clause 6 (Planning — hazard identification, legal requirements, objectives); Do = Clauses 7 (Support — resources, competence, awareness, communication) and 8 (Operation — operational planning and control, emergency preparedness); Check = Clause 9 (Performance evaluation — monitoring, internal audit, management review); Act = Clause 10 (Improvement — incident, nonconformity, corrective action). Clauses 4 (Context) and 5 (Leadership) provide the foundation.\n\nISO 45001 PDCA映射：策划 = 第6条（规划——危害识别、法律要求、目标）；实施 = 第7条（支持——资源、能力、意识、沟通）和第8条（运行——运行策划和控制、应急准备）；检查 = 第9条（绩效评价——监测、内部审核、管理评审）；改进 = 第10条（改进——事件、不符合项、纠正措施）。第4条（组织环境）和第5条（领导作用）提供基础。'
+    },
+    {
+      text: 'Clause 5 of ISO 45001 addresses Leadership and Worker Participation. Which of the following is an explicit requirement of this clause?',
+      options: [
+        'Top management must personally conduct all internal audits',
+        'Top management must demonstrate leadership and commitment by taking overall responsibility and accountability for the OH&S management system',
+        'All workers must have a bachelor\'s degree in occupational safety',
+        'The safety manager must report directly to the board of directors'
+      ],
+      correct: 1,
+      explanation: 'ISO 45001 Clause 5.1 requires top management to demonstrate leadership and commitment by: (a) taking overall responsibility and accountability for the prevention of work-related injury and ill health and for the provision of safe and healthy workplaces and activities; (b) ensuring the OH&S policy and objectives are established; (c) ensuring resources are available; (d) ensuring worker participation and consultation. This clause makes top management personally accountable — it cannot be delegated to a safety manager.\n\nISO 45001第5.1条要求最高管理者通过以下方式展示领导作用和承诺：（a）对预防工作相关的伤害和健康损害以及提供安全健康的工作场所和活动承担全面责任；（b）确保建立OH&S政策和目标；（c）确保资源可用；（d）确保员工参与和协商。该条款使最高管理者亲自负责——不能委托给安全经理。'
+    },
+    {
+      text: 'A company is conducting an audit of its safety management system. The audit team includes a lead auditor, an internal auditor from the quality department, and a subject-matter expert from operations. According to ISO 19011 (Guidelines for Auditing Management Systems), which quality is MOST essential for the lead auditor?',
+      options: [
+        'Deep technical expertise in the specific industrial processes being audited',
+        'Managerial authority to discipline employees found in noncompliance',
+        'Impartiality and objectivity, maintaining independence from the function being audited',
+        'Previous employment with the regulatory agency overseeing the industry'
+      ],
+      correct: 2,
+      explanation: 'ISO 19011 emphasizes that auditors must be impartial and objective — they should not audit their own work or have undue influence over the audit outcome. The lead auditor is responsible for the audit team and must ensure the audit is conducted ethically, with due professional care, and that findings are evidence-based. Technical expertise is valuable but is secondary to impartiality; subject-matter experts can provide technical depth on the team.\n\nISO 19011强调审核员必须公正客观——他们不应审核自己的工作或对审核结果施加不当影响。主审核员负责审核团队，必须确保审核以合乎道德的方式进行，保持应有的专业谨慎，且审核发现基于证据。技术专长很有价值，但次于公正性；主题专家可以在团队中提供技术深度。'
+    },
+    {
+      text: 'A safety manager wants to measure PROACTIVE indicators of safety performance. Which of the following metrics is a LEADING indicator?',
+      options: [
+        'Total Recordable Incident Rate (TRIR) for the current quarter',
+        'Number of safety observations and near-miss reports submitted per month',
+        'Lost-time injury frequency rate for the past 12 months',
+        'Workers\' compensation claims costs for the fiscal year'
+      ],
+      correct: 1,
+      explanation: 'Leading indicators are proactive, preventive, and predictive — they measure inputs and activities that drive future safety performance. Safety observations, near-miss reports, training completion rates, and inspection closure rates are all leading indicators. TRIR, lost-time rates, and claims costs are LAGGING indicators — they measure outcomes after incidents occur. The CSP exam emphasizes that world-class safety programs track both types.\n\n领先指标是主动的、预防性的和预测性的——它们衡量驱动未来安全绩效的输入和活动。安全观察、未遂事件报告、培训完成率和检查关闭率都是领先指标。TRIR、损失工时率和索赔成本是滞后指标——它们衡量事故发生后的结果。CSP考试强调世界级安全项目需要追踪两种类型的指标。'
+    },
+    {
+      text: 'A company had 170 employees working 40 hours per week, 50 weeks per year. During the year, there were 17 OSHA-recordable injuries, 5 of which resulted in days away from work, restricted work, or job transfer. What is the company\'s TRIR (Total Recordable Incident Rate)?',
+      options: [
+        '2.0',
+        '5.0',
+        '10.0',
+        '20.0'
+      ],
+      correct: 2,
+      explanation: 'TRIR = (Number of OSHA-recordable injuries x 200,000) / Total employee hours worked. Total hours = 170 employees x 2,000 hours/year = 340,000 hours. TRIR = (17 x 200,000) / 340,000 = 3,400,000 / 340,000 = 10.0. The 200,000-hour denominator represents 100 full-time workers working 40 hrs/week for 50 weeks per year — this is the standard base for OSHA incidence rates. Note: DART uses the same formula but counts only cases with Days Away, Restricted work, or Transfer.\n\nTRIR =（OSHA可记录伤害数 x 200,000）/ 总员工工作小时数。总小时数 = 170名员工 x 2,000小时/年 = 340,000小时。TRIR = (17 x 200,000) / 340,000 = 3,400,000 / 340,000 = 10.0。200,000小时分母代表100名全职员工每周工作40小时、每年50周——这是OSHA事故率的标准基准。注意：DART使用相同的公式，但只计算导致缺勤、限制工作或调岗的案例。'
+    },
+    {
+      text: 'A construction company recorded 850,000 hours worked in a year. There were 12 OSHA-recordable injuries, and 3 of these involved days away from work with a total of 45 lost workdays. What is the company\'s DART rate?',
+      options: [
+        '2.82',
+        '0.71',
+        '7.06',
+        '10.59'
+      ],
+      correct: 1,
+      explanation: 'DART rate = (Number of DART cases x 200,000) / Total hours worked. DART cases are those involving Days Away from work, Restricted work, or Transfer. Here, 3 DART cases. DART = (3 x 200,000) / 850,000 = 600,000 / 850,000 = 0.71 (rounded). The Severity Rate (lost workdays per 200,000 hours) would be (45 x 200,000) / 850,000 = 10.59 — but DART counts cases, not days. The CSP exam often tests this distinction between incidence rates (count of cases) and severity rates (count of days).\n\nDART率 =（DART案例数 x 200,000）/ 总工作小时数。DART案例是涉及缺勤、限制工作或调岗的案例。此处3个DART案例。DART = (3 x 200,000) / 850,000 = 600,000 / 850,000 = 0.71（四舍五入）。严重率（每200,000小时的损失工作日数）为(45 x 200,000) / 850,000 = 10.59——但DART统计的是案例数而非天数。CSP考试经常测试事故率（案例计数）和严重率（天数计数）之间的这一区别。'
+    },
+    {
+      text: 'A company in the EU operates across 4 sites with a combined 1,200 employees. In one year, there were 8 lost-time injuries and a total of 2,400,000 hours worked. What is the LTIFR (Lost-Time Injury Frequency Rate) per 1,000,000 hours worked?',
+      options: [
+        '6.67',
+        '3.33',
+        '1.33',
+        '0.80'
+      ],
+      correct: 1,
+      explanation: 'LTIFR (commonly used outside the US) = (Number of lost-time injuries x 1,000,000) / Total hours worked. LTIFR = (8 x 1,000,000) / 2,400,000 = 8,000,000 / 2,400,000 = 3.33 per 1,000,000 hours. Compare to the US TRIR formula which uses 200,000 hours as the base. Key exam distinction: TRIR and DART use 200,000 hours (US OSHA convention); LTIFR typically uses 1,000,000 hours (international convention, also used by ILO).\n\nLTIFR（在美国以外常用）=（损失工时伤害数 x 1,000,000）/ 总工作小时数。LTIFR = (8 x 1,000,000) / 2,400,000 = 8,000,000 / 2,400,000 = 每1,000,000小时3.33。相比之下，美国TRIR公式使用200,000小时作为基准。关键考试区别：TRIR和DART使用200,000小时（美国OSHA惯例）；LTIFR通常使用1,000,000小时（国际惯例，ILO也使用）。'
+    },
+    {
+      text: 'During a root cause analysis of a serious near-miss, the investigation team uses the "5 Whys" technique. The incident involved a chemical spill due to a valve left partially open. The first "why" reveals the operator forgot to close it. The second "why" reveals the procedure was not followed. The third "why" identifies that the written procedure was confusing and ambiguous. Which level of cause does the "confusing and ambiguous procedure" represent?',
+      options: [
+        'Direct cause',
+        'Contributing cause',
+        'Root cause (system-level deficiency)',
+        'Immediate cause'
+      ],
+      correct: 2,
+      explanation: 'In the 5 Whys RCA method: the first "why" identifies the direct/immediate cause (operator forgot); digging deeper (second/third "why") uncovers contributing factors (procedure not followed); further "whys" (third, fourth, fifth) reveal root causes — the underlying system-level deficiencies that, if corrected, would prevent recurrence. The confusing, ambiguous procedure is a system deficiency (a latent condition), making it a root cause. The 5 Whys technique is designed to push past human error to find system failures.\n\n在5 Whys RCA方法中：第一个"为什么"识别直接/即时原因（操作员忘记）；深入挖掘（第二/第三个"为什么"）发现促成因素（未遵守程序）；进一步的"为什么"（第三、第四、第五个）揭示根本原因——如果得到纠正将防止再次发生的底层系统性缺陷。令人困惑、含糊不清的程序是一种系统缺陷（潜在条件），使其成为根本原因。5 Whys技术旨在超越人为错误找到系统故障。'
+    },
+    {
+      text: 'A safety professional conducts 20 noise exposure measurements (8-hour TWA) for a group of workers. The results (in dBA) are: 82, 84, 85, 86, 86, 87, 87, 88, 88, 88, 89, 89, 90, 91, 92, 93, 94, 95, 96, 98. What is the median exposure level?',
+      options: [
+        '88.5 dBA',
+        '89.0 dBA',
+        '88.0 dBA',
+        '89.5 dBA'
+      ],
+      correct: 0,
+      explanation: 'Median is the middle value or average of the two middle values in an ordered dataset. With 20 measurements (even number), the median = average of the 10th and 11th values. The ordered list: positions 1-20 as given. 10th value = 88, 11th value = 89. Median = (88 + 89) / 2 = 88.5 dBA. The arithmetic mean would be (sum of all values) / 20 = approximately 89.3 dBA. The mode (most frequent) is 88 dBA (appears 3 times). Know the difference: mean (average), median (middle), mode (most frequent).\n\n中位数是有序数据集中间的值或两个中间值的平均值。有20个测量值（偶数），中位数 = 第10和第11个值的平均值。第10个值 = 88，第11个值 = 89。中位数 = (88 + 89) / 2 = 88.5 dBA。算术平均值为（所有值的和）/ 20 = 约89.3 dBA。众数（最频繁出现）是88 dBA（出现3次）。了解区别：均值（平均）、中位数（中间）、众数（最常见）。'
+    },
+    {
+      text: 'A safety department tracks corrective action closure rates over 20 weeks. The mean weekly closure rate is 12.4 actions with a standard deviation of 3.2. Assuming the data is normally distributed, within what range would approximately 95% of weekly closure counts fall?',
+      options: [
+        '9.2 to 15.6 actions',
+        '6.0 to 18.8 actions',
+        '3.2 to 21.6 actions',
+        '12.4 to 15.6 actions'
+      ],
+      correct: 1,
+      explanation: 'For a normal distribution, approximately 95% of values fall within +/- 2 standard deviations of the mean (more precisely, +/- 1.96 SD). Lower bound = 12.4 - (2 x 3.2) = 12.4 - 6.4 = 6.0. Upper bound = 12.4 + (2 x 3.2) = 12.4 + 6.4 = 18.8. So 95% of weekly closure rates would fall between 6.0 and 18.8 actions. The 68-95-99.7 rule: +/-1 SD = 68%; +/-2 SD = 95%; +/-3 SD = 99.7%.\n\n对于正态分布，约95%的值落在均值±2个标准差的范围内（更精确地，±1.96个SD）。下限 = 12.4 - (2 x 3.2) = 12.4 - 6.4 = 6.0。上限 = 12.4 + (2 x 3.2) = 12.4 + 6.4 = 18.8。因此95%的周关闭率将在6.0到18.8个行动之间。68-95-99.7规则：±1 SD = 68%；±2 SD = 95%；±3 SD = 99.7%。'
+    },
+    {
+      text: 'A Pareto analysis is conducted on 100 workplace incidents. The causes and frequencies are: slips/trips (32), struck-by (22), manual handling (18), chemical exposure (12), caught-in (8), electrical (5), and other (3). According to the Pareto principle, which causes should the safety team prioritize to address approximately 80% of all incidents?',
+      options: [
+        'Slips/trips, struck-by, manual handling, and chemical exposure (top 4 categories)',
+        'Slips/trips only (the single largest category)',
+        'All categories equally, since every incident is important',
+        'Electrical and caught-in only, since these are the most serious'
+      ],
+      correct: 0,
+      explanation: 'Pareto principle (80/20 rule): roughly 80% of effects come from 20% of causes. Cumulative percentages: slips/trips = 32%, + struck-by = 54%, + manual handling = 72%, + chemical exposure = 84%. The first four categories account for 84% of all incidents — approximately 80%. Focusing resources on these four categories gives the greatest impact. The Pareto chart (bar chart in descending order with a cumulative line) helps safety professionals prioritize where intervention will have the largest effect.\n\n帕累托原则（80/20法则）：大约80%的效果来自20%的原因。累计百分比：滑倒/绊倒 = 32%，+ 物体打击 = 54%，+ 人工搬运 = 72%，+ 化学品暴露 = 84%。前四类占所有事件的84%——约80%。将资源集中在这些类别上会产生最大的影响。帕累托图（按降序排列的条形图附累计折线）帮助安全专业人员优先考虑干预将产生最大效果的地方。'
+    },
+    {
+      text: 'A safety manager proposes a machine guarding retrofit program costing $75,000. The projected annual savings are: reduced injury costs ($22,000/year), reduced downtime ($15,000/year), and lower insurance premiums ($8,000/year). What is the simple Return on Investment (ROI) and the payback period?',
+      options: [
+        'ROI = 60%, Payback = 1.67 years',
+        'ROI = 40%, Payback = 2.5 years',
+        'ROI = -40%, Payback = N/A (negative return)',
+        'ROI = 160%, Payback = 0.63 years'
+      ],
+      correct: 0,
+      explanation: 'Total annual savings = $22,000 + $15,000 + $8,000 = $45,000/year. Simple ROI = (Annual savings / Investment cost) x 100 = ($45,000 / $75,000) x 100 = 60%. Payback period = Investment cost / Annual savings = $75,000 / $45,000 = 1.67 years (approximately 1 year 8 months). The CSP exam may ask for ROI justification of safety investments — understand that some benefits (improved morale, regulatory compliance certainty) are harder to monetize but are still valid.\n\n年度总节省 = $22,000 + $15,000 + $8,000 = $45,000/年。简单ROI =（年度节省 / 投资成本）x 100 = ($45,000 / $75,000) x 100 = 60%。回收期 = 投资成本 / 年度节省 = $75,000 / $45,000 = 1.67年（约1年8个月）。CSP考试可能要求ROI来证明安全投资的合理性——要理解某些收益（改善士气、合规确定性）更难货币化但仍然有效。'
+    },
+    {
+      text: 'Maslow\'s Hierarchy of Needs is often applied to workplace safety motivation. According to Maslow, which level of needs is MOST directly associated with workplace safety and security?',
+      options: [
+        'Physiological needs (base of the pyramid)',
+        'Safety needs (second level from the base)',
+        'Esteem needs (fourth level)',
+        'Self-actualization (top of the pyramid)'
+      ],
+      correct: 1,
+      explanation: 'Maslow\'s Hierarchy (bottom to top): (1) Physiological — food, water, shelter, sleep; (2) Safety — personal security, employment, health, property; (3) Love/Belonging — friendship, family, community; (4) Esteem — respect, recognition, status; (5) Self-actualization — reaching full potential. Workplace safety directly addresses the second level. Maslow\'s theory posits that lower-level needs must be substantially met before higher-level needs become motivating. If workers feel unsafe (level 2 threatened), they cannot focus on belonging or esteem.\n\n马斯洛需求层次（从低到高）：（1）生理需求——食物、水、住所、睡眠；（2）安全需求——人身安全、就业、健康、财产；（3）归属/爱——友谊、家庭、社区；（4）尊重——尊重、认可、地位；（5）自我实现——发挥全部潜能。工作场所安全直接对应第二层。马斯洛理论认为在高层级需求成为激励因素之前，低层级需求必须基本得到满足。如果工人感到不安全（第2级受到威胁），他们无法专注于归属或尊重。'
+    },
+    {
+      text: 'Herzberg\'s Two-Factor Theory distinguishes between "hygiene factors" and "motivators." In a workplace safety context, which of the following is a HYGIENE FACTOR?',
+      options: [
+        'Recognition for achieving safety milestones',
+        'Safe working conditions and adequate PPE',
+        'Opportunities for professional growth in safety leadership',
+        'Meaningful work that aligns with personal values'
+      ],
+      correct: 1,
+      explanation: 'Herzberg\'s Two-Factor Theory: Hygiene factors (also called "dissatisfiers") are extrinsic conditions — safe working conditions, adequate salary, job security, company policies, supervision quality. Their absence causes dissatisfaction, but their presence alone does NOT motivate — it only prevents dissatisfaction. Motivators (intrinsic factors) — recognition, achievement, growth, meaningful work — drive satisfaction and motivation. Safe working conditions are a hygiene factor: workers expect a safe workplace; providing safety prevents dissatisfaction but does not inherently motivate.\n\n赫兹伯格双因素理论：保健因素（也称"不满意因素"）是外在条件——安全的工作条件、足够的工资、工作保障、公司政策、管理质量。它们的缺失会导致不满意，但仅凭它们的存在并不会激励——只会防止不满意。激励因素（内在因素）——认可、成就、成长、有意义的工作——驱动满意度和激励。安全的工作条件是保健因素：工人期望安全的工作场所；提供安全可以防止不满意，但并不能本质上激励人。'
+    },
+    {
+      text: 'Under OSHA recordkeeping rules (29 CFR 1904), how long must an employer retain the OSHA 300 Log, the 300A Summary, and the 301 Incident Report forms?',
+      options: [
+        '300 Log: 5 years; 300A: 5 years; 301: 5 years',
+        '300 Log: 5 years; 300A: 1 year (posted); 301: duration of employment plus 30 years',
+        '300 Log: 30 years; 300A: 30 years; 301: 30 years',
+        '300 Log: 3 years; 300A: 3 years; 301: 3 years'
+      ],
+      correct: 0,
+      explanation: 'Under 29 CFR 1904.33, employers must retain the OSHA 300 Log, the 300A Annual Summary, and the 301 Incident Report forms for 5 years following the end of the calendar year that these records cover. During this retention period, the employer must update the 300 Log to include newly discovered recordable injuries and to reflect changes in the outcome or classification of previously recorded cases. The 300A must be posted in the workplace from February 1 through April 30 of the following year.\n\n根据29 CFR 1904.33，雇主必须保留OSHA 300日志、300A年度摘要和301事故报告表5年，自这些记录所涵盖的日历年度结束后算起。在此保留期间，雇主必须更新300日志以包括新发现的可记录伤害，并反映先前记录案例的结果或分类变化。300A必须在次年的2月1日至4月30日期间在工作场所张贴。'
+    },
+    {
+      text: 'The OSHA Voluntary Protection Programs (VPP) recognize employers with exemplary safety and health management systems. What distinguishes VPP Star status from VPP Merit status?',
+      options: [
+        'Star status requires zero recordable injuries for 3 consecutive years; Merit requires below-industry-average rates for 1 year',
+        'Star status is for employers whose rates are below the national average for their industry and who have comprehensive safety programs fully integrated into business operations; Merit is for employers with strong programs that have not yet achieved Star-level performance',
+        'Star status is only available to federal agencies; Merit status is available to private-sector employers',
+        'There is no distinction — VPP uses "Star" and "Merit" interchangeably depending on the OSHA region'
+      ],
+      correct: 1,
+      explanation: 'VPP Star: The highest level — recognizes employers whose injury/illness rates are below the national industry average and who have demonstrated that their comprehensive safety and health management systems (management leadership, employee participation, hazard identification, hazard prevention, training, and program evaluation) are fully integrated into business operations. VPP Merit: For employers who have strong programs and the commitment/potential to achieve Star quality but have not yet met all Star requirements. There is also a "VPP Demonstration" status for experimental programs.\n\nVPP星级：最高级别——认可那些伤害/疾病率低于全国行业平均水平，并已证明其全面的安全健康管理体系（管理领导力、员工参与、危害识别、危害预防、培训和项目评估）已完全融入业务运营的雇主。VPP优异：适用于那些有强大项目和承诺/潜力达到星级质量但尚未满足所有星级要求的雇主。还有一个"VPP示范"地位用于实验性项目。'
+    },
+    {
+      text: 'A CSP is providing expert testimony in a lawsuit against a construction company. The plaintiff\'s attorney asks the CSP to state an opinion on whether the company met the standard of care. The CSP did not personally inspect the site but reviewed photographs, training records, and deposition transcripts. Under the BCSP Code of Ethics, which principle is MOST applicable?',
+      options: [
+        'The CSP may only testify if they were the actual safety manager at the site during the incident',
+        'The CSP must ensure their opinion is based on adequate knowledge and expertise, and must not make claims outside their area of competence',
+        'The CSP should decline to testify because expert witnesses are prohibited under the BCSP code',
+        'The CSP may offer any opinion as long as it helps the party who hired them'
+      ],
+      correct: 1,
+      explanation: 'The BCSP Code of Ethics requires certificants to: (1) hold paramount the safety and health of people and protection of the environment; (2) be honest, fair, and impartial in all professional activities; (3) perform services only in areas of their competence; (4) issue public statements in an objective and truthful manner; and (5) avoid conduct that deceives the public. An expert witness must base opinions on adequate evidence and must not exceed their expertise — even when hired by one side.\n\nBCSP职业道德准则要求持证者：（1）将人员的安全健康和环境保护置于首位；（2）在所有专业活动中保持诚实、公正和公平；（3）仅在自己胜任的领域提供服务；（4）以客观真实的方式发表公开声明；（5）避免欺骗公众的行为。专家证人必须基于充分的证据提出意见，不得超出自己的专长——即使是被一方雇佣也是如此。'
+    },
+    {
+      text: 'A company\'s safety manager knowingly falsifies OSHA 300 Log entries, underreporting recordable injuries by reclassifying them as first aid only. An employee is later injured due to an uncorrected hazard that would have triggered corrective action if the prior injuries had been properly recorded. Under tort law, the company could be liable for which type of negligence?',
+      options: [
+        'Contributory negligence',
+        'Comparative negligence',
+        'Gross negligence',
+        'Criminal negligence only — OSHA violations are not tort claims'
+      ],
+      correct: 2,
+      explanation: 'Gross negligence is a conscious and voluntary disregard for the need to use reasonable care, which is likely to cause foreseeable grave injury or harm. Deliberately falsifying injury records to conceal hazards demonstrates a reckless disregard for employee safety — far beyond ordinary negligence (mere failure to exercise reasonable care). This exceeds simple negligence and rises to gross negligence, which can support punitive damages in a civil tort claim. Criminal penalties under the OSH Act would also apply (knowing violations causing death carry up to $250,000 and/or imprisonment).\n\n重大过失是对需要合理谨慎的有意识和自愿的漠视，这种漠视很可能导致可预见的严重伤害或损害。故意伪造伤害记录以隐瞒危害，表明了对员工安全的鲁莽漠视——远超普通过失（仅是未能尽到合理谨慎）。这超过了简单过失，上升到重大过失，可以在民事侵权索赔中支持惩罚性赔偿。OSH法案下的刑事处罚也将适用（明知违规导致死亡的，最高可处25万美元罚款和/或监禁）。'
+    }
+  ]
+});
+</script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js').catch(function() {});
+}
+</script>
+</body>
+</html>

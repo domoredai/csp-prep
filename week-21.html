@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 21: Comprehensive Review Domains 1-4 / 领域1-4综合复习 — CSP Exam Prep</title>
+    <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1e3a5f">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="stylesheet" href="quiz-styles.css?v=11">
+<style>
+  .breadcrumb { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 16px; }
+  .breadcrumb a { color: var(--accent); text-decoration: none; }
+  .breadcrumb a:hover { text-decoration: underline; }
+  p.bi-p, li.bi-li { margin-bottom: 10px; }
+  p.bi-p .en-p, li.bi-li .en-li { display: block; }
+  p.bi-p .zh-p, li.bi-li .zh-li { display: block; color: #666; font-size: 0.92em; margin-top: 2px; }
+</style>
+</head>
+<body>
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="index.html">&larr; 返回仪表盘 / Back to Study Dashboard</a> &nbsp;|&nbsp;
+            <span style="font-weight:600;">综合复习 / Comprehensive Review: 领域1-4 / Domains 1-4</span>
+        </nav>
+
+        <div class="page-header">
+            <h1>第21周 / Week 21<br><span class="bi-term"><span class="zh">领域1-4综合复习</span> · <span class="en">Comprehensive Review Domains 1-4</span></span></h1>
+            <p class="subtitle">复习周：安全教育原理、风险管理、IH、应急管理<br>Review Week: Safety Principles, Risk Management, IH, Emergency Management</p>
+        </div>
+
+        <div class="knowledge-card">
+            <h2>21.1 关键公式 — 领域1-4 / Key Formulas — Domains 1-4</h2>
+
+            <div class="source-tag">
+              📖 <strong>来源 / Sources:</strong>
+              <span>综合 / Consolidated: Brauer Ch.36 (System Safety) · Yates Ch.3 (Math Review) · Yates Ch.13 (Statistics) · Yates Ch.14 (Electrical)</span>
+            </div>
+
+            <table class="bi-table">
+                <thead>
+                    <tr>
+                        <th>公式 / Formula</th>
+                        <th>领域 / Domain</th>
+                        <th>用途 / Use</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>坠落间隙 = 系索长度 + 减速距离 + 工人身高 + 安全系数 (通常合计3英尺: 1.5英尺减速 + 1.5英尺安全)<br>Fall Clearance = Lanyard Length + Deceleration Distance + Worker Height + Safety Factor (typically 3 ft total: 1.5 ft decel + 1.5 ft safety)</strong></td>
+                        <td>D1</td>
+                        <td><span class="en-p">Calculate required clearance below working surface. Standard lanyard = 6 ft + 3.5 ft decel + 6 ft worker + 1 ft safety = ~17.5 ft</span><span class="zh-p" style="color:#666;">计算工作表面下方所需间隙。标准系索 = 6英尺 + 3.5英尺减速 + 6英尺工人身高 + 1英尺安全 = 约17.5英尺</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>噪声剂量 (%) = 100 x (C1/T1 + C2/T2 + ... + Cn/Tn)<br>Noise Dose (%) = 100 x (C1/T1 + C2/T2 + ... + Cn/Tn)</strong></td>
+                        <td>D2</td>
+                        <td><span class="en-p">Determine compliance with 29 CFR 1910.95. C = actual exposure time at noise level; T = reference duration at that level. Dose > 100% = overexposure.</span><span class="zh-p" style="color:#666;">确定是否符合29 CFR 1910.95。C = 该噪声水平的实际暴露时间；T = 该水平的参考持续时间。剂量 > 100% = 过度暴露。</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>TWA (噪声) = 16.61 x log10(D/100) + 90<br>TWA (noise) = 16.61 x log10(D/100) + 90</strong></td>
+                        <td>D2</td>
+                        <td><span class="en-p">Convert noise dose percentage to 8-hour TWA in dBA (5 dB exchange rate). D = dose in percent.</span><span class="zh-p" style="color:#666;">将噪声剂量百分比转换为8小时TWA dBA值（5 dB交换率）。D = 剂量百分比。</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>TRIR = (可记录伤害总数 x 200,000) / 总工时<br>TRIR = (Total Recordable Injuries x 200,000) / Total Hours Worked</strong></td>
+                        <td>D2</td>
+                        <td><span class="en-p">OSHA recordable injury rate per 100 full-time workers. 200,000 = 100 workers x 2,000 hrs/yr.</span><span class="zh-p" style="color:#666;">每100名全职工人的OSHA可记录伤害率。200,000 = 100名工人 x 2000小时/年。</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>DART = (缺勤、受限或转岗案例 x 200,000) / 总工时<br>DART = (Cases with Days Away, Restricted, or Transfer x 200,000) / Total Hours Worked</strong></td>
+                        <td>D2</td>
+                        <td><span class="en-p">Severity-based rate; subset of TRIR. Measures more serious injuries.</span><span class="zh-p" style="color:#666;">基于严重程度的比率；TRIR的子集。衡量更严重的伤害。</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>LTIFR = (损失工时伤害数 x 1,000,000) / 总工时<br>LTIFR = (Lost Time Injuries x 1,000,000) / Total Hours Worked</strong></td>
+                        <td>D2</td>
+                        <td><span class="en-p">Lost time injury frequency rate (international/ANSI Z16). Uses 1,000,000 not 200,000.</span><span class="zh-p" style="color:#666;">损失工时伤害频率（国际/ANSI Z16）。使用1,000,000而非200,000。</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>RPN = 严重度 x 发生度 x 检测度<br>RPN = Severity x Occurrence x Detection</strong></td>
+                        <td>D3</td>
+                        <td><span class="en-p">Risk Priority Number in FMEA. Each rated 1-10; higher RPN = higher priority for corrective action.</span><span class="zh-p" style="color:#666;">FMEA中的风险优先数。各项评分1-10；RPN越高 = 纠正措施优先级越高。</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>风险 = 可能性 x 严重度<br>Risk = Likelihood x Severity</strong></td>
+                        <td>D3</td>
+                        <td><span class="en-p">Fundamental risk equation. Used in risk matrices and qualitative assessment.</span><span class="zh-p" style="color:#666;">基本风险方程。用于风险矩阵和定性评估。</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>严重度率 = (损失工作日数 x 200,000) / 总工时<br>Severity Rate = (Days Lost x 200,000) / Total Hours Worked</strong></td>
+                        <td>D2</td>
+                        <td><span class="en-p">Measures the severity of lost-time injuries by counting days lost.</span><span class="zh-p" style="color:#666;">通过计算损失工作日数来衡量损失工时伤害的严重程度。</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="formula-box">
+                <strong>坠落间隙快速计算 / Fall Clearance Quick Calc:</strong> 6英尺系索 + 3.5英尺减速 + 6英尺工人身高 + 1英尺安全 = 约16.5-17.5英尺最低要求。对于SRL，请参考制造商规格——通常所需间隙更少。<br>
+                <span class="en-p">6' lanyard + 3.5' deceleration + 6' worker height + 1' safety = ~16.5-17.5 ft minimum. For SRLs, refer to manufacturer specs — generally less clearance needed.</span>
+            </div>
+            <div class="exam-hotspot">
+                <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+                <span class="eh-tag freq-high">必考 HIGH</span>
+                <div>
+                    <strong>典型问法 / Typical question:</strong> A facility with 350 employees working 2,000 hours each reports 7 recordable injuries. What is the TRIR? TRIR计算？<br>
+                    <strong>答题要点 / Key point:</strong> Hours = 700,000. TRIR = (7 × 200,000)/700,000 = <strong>2.0</strong>. Remember: TRIR/DART use 200,000; LTIFR uses 1,000,000. Fall clearance = lanyard + decel + worker + safety (~17.5 ft for 6-ft lanyard). 记住200,000与1,000,000的区别。
+                </div>
+            </div>
+        </div>
+
+  <div id="quiz-group-1"></div>
+
+
+        <div class="knowledge-card">
+            <h2>21.2 关键OSHA标准快速参考 — D1-D4 / Key OSHA Standards Quick Reference — D1-D4</h2>
+
+            <div class="source-tag">
+              📖 <strong>来源 / Sources:</strong>
+              <span>29 CFR 1910 (OSHA) · Yates Ch.2 (Regulations) · Brauer Ch.4 (Federal Laws, Regulations, Standards)</span>
+            </div>
+
+            <table class="bi-table">
+                <thead>
+                    <tr>
+                        <th>标准 / Standard</th>
+                        <th>主题 / Topic</th>
+                        <th>领域 / Domain</th>
+                        <th>关键要点 / Key Point</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>1910.95</strong></td><td>职业噪声暴露 / Occupational Noise Exposure</td><td>D2</td><td><span class="en-p">PEL 90 dBA TWA (5 dB exchange); Action Level 85 dBA (hearing conservation program); engineering controls first</span><span class="zh-p" style="color:#666;">PEL 90 dBA TWA（5 dB交换率）；行动水平85 dBA（听力保护计划）；工程控制优先</span></td></tr>
+                    <tr><td><strong>1910.119</strong></td><td>过程安全管理 (PSM) / Process Safety Management</td><td>D3</td><td><span class="en-p">14 elements; applies to threshold quantities of highly hazardous chemicals; PHA required every 5 years</span><span class="zh-p" style="color:#666;">14个要素；适用于达到阈限量的高危化学品；每5年需进行PHA</span></td></tr>
+                    <tr><td><strong>1910.146</strong></td><td>需要许可证的密闭空间 / Permit-Required Confined Spaces</td><td>D4</td><td><span class="en-p">PRCS definition: limited entry/exit, not designed for continuous occupancy, contains hazards. Permit system, attendant, rescue requirements.</span><span class="zh-p" style="color:#666;">PRCS定义：进出受限、非为持续占用设计、存在危害。许可证制度、监护者、救援要求。</span></td></tr>
+                    <tr><td><strong>1910.147</strong></td><td>上锁挂牌 / Lockout/Tagout</td><td>D1</td><td><span class="en-p">Control of hazardous energy. Authorized vs. affected employees. Written procedures, training, periodic inspection (annual minimum).</span><span class="zh-p" style="color:#666;">控制危险能量。授权员工vs受影响员工。书面程序、培训、定期检查（至少每年一次）。</span></td></tr>
+                    <tr><td><strong>1910.134</strong></td><td>呼吸防护 / Respiratory Protection</td><td>D2</td><td><span class="en-p">Written program, medical evaluation, fit testing (annual), training (annual). APF table for respirator selection.</span><span class="zh-p" style="color:#666;">书面计划、医学评估、适合性检验（每年）、培训（每年）。APF表用于呼吸器选择。</span></td></tr>
+                    <tr><td><strong>1910.212</strong></td><td>机械防护（一般）/ Machine Guarding (General)</td><td>D1</td><td><span class="en-p">Point of operation guarding; methods: barrier, two-hand tripping, electronic safety devices. ANSI B11 series.</span><span class="zh-p" style="color:#666;">操作点防护；方法：屏障、双手启动、电子安全装置。ANSI B11系列。</span></td></tr>
+                    <tr><td><strong>1910.38</strong></td><td>应急行动方案 / Emergency Action Plans</td><td>D4</td><td><span class="en-p">Required when another OSHA standard requires it. Elements: reporting, evacuation, accountability, rescue/medical.</span><span class="zh-p" style="color:#666;">当另一OSHA标准要求时执行。要素：报告、疏散、人员清点、救援/医疗。</span></td></tr>
+                    <tr><td><strong>1910.39</strong></td><td>防火方案 / Fire Prevention Plans</td><td>D4</td><td><span class="en-p">Required when another standard requires it. Elements: hazards, handling/storage procedures, equipment maintenance, responsible persons.</span><span class="zh-p" style="color:#666;">当另一标准要求时执行。要素：危害、处理/储存程序、设备维护、负责人。</span></td></tr>
+                    <tr><td><strong>1926 Subpart M</strong></td><td>坠落防护（建筑）/ Fall Protection (Construction)</td><td>D1</td><td><span class="en-p">6-ft trigger height general construction; 4-ft for general industry (1910 Subpart D). Guardrail specs, PFAS requirements.</span><span class="zh-p" style="color:#666;">一般建筑6英尺触发高度；一般行业4英尺（1910 Subpart D）。护栏规格、PFAS要求。</span></td></tr>
+                    <tr><td><strong>1926 Subpart P</strong></td><td>挖掘（建筑）/ Excavations (Construction)</td><td>D1</td><td><span class="en-p">5-ft+ depth requires protective system unless in stable rock. Competent person daily inspection. Soil classification.</span><span class="zh-p" style="color:#666;">5英尺以上深度需要防护系统，除非在稳定岩石中。合格人员每日检查。土壤分类。</span></td></tr>
+                    <tr><td><strong>1926 Subpart CC</strong></td><td>起重机与吊杆 / Cranes & Derricks</td><td>D1</td><td><span class="en-p">Operator certification required. Power line clearance (20 ft up to 350 kV). Assembly/disassembly director.</span><span class="zh-p" style="color:#666;">操作员需持证。电力线间隙（350 kV以下20英尺）。安装/拆卸负责人。</span></td></tr>
+                </tbody>
+            </table>
+            <div class="exam-hotspot">
+                <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+                <span class="eh-tag freq-high">必考 HIGH</span>
+                <div>
+                    <strong>典型问法 / Typical question:</strong> Fall protection is required at what height in general industry vs construction? 坠落防护触发高度：一般工业 vs 建筑？<br>
+                    <strong>答题要点 / Key point:</strong> General Industry = 4 ft (1910 Subpart D); Construction = 6 ft (1926 Subpart M). Excavations ≥5 ft need a protective system. PSM requires PHA every 5 years. 记住4/6英尺与5英尺挖掘阈值。
+                </div>
+            </div>
+        </div>
+
+  <div id="quiz-group-2"></div>
+
+
+        <div class="knowledge-card">
+            <h2>21.3 风险评估技术对比 / Risk Assessment Techniques Comparison</h2>
+
+            <div class="source-tag">
+              📖 <strong>来源 / Sources:</strong>
+              <span>Brauer Ch.36 (System Safety) · Brauer Ch.34 (Risk, Risk Assessment) · Yates Ch.24</span>
+            </div>
+
+            <table class="bi-table">
+                <thead>
+                    <tr>
+                        <th>技术 / Technique</th>
+                        <th>类型 / Type</th>
+                        <th>方向 / Direction</th>
+                        <th>最适合 / Best Use</th>
+                        <th>关键输出 / Key Output</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>FMEA</strong><br>失效模式与影响分析 / Failure Mode & Effects Analysis</td>
+                        <td>归纳法（自下而上） / Inductive (bottom-up)</td>
+                        <td>组件 -> 系统 / Component -> System</td>
+                        <td><span class="en-p">Detailed analysis of equipment/process components; identifying single-point failures</span><span class="zh-p" style="color:#666;">设备/过程组件的详细分析；识别单点故障</span></td>
+                        <td>RPN (SxOxD); 优先行动清单 / RPN (SxOxD); prioritized action list</td>
+                    </tr>
+                    <tr>
+                        <td><strong>FTA</strong><br>故障树分析 / Fault Tree Analysis</td>
+                        <td>演绎法（自上而下） / Deductive (top-down)</td>
+                        <td>顶事件 -> 原因 / Top Event -> Causes</td>
+                        <td><span class="en-p">Investigating specific undesired events; quantifying probability with Boolean logic</span><span class="zh-p" style="color:#666;">调查特定不期望事件；用布尔逻辑量化概率</span></td>
+                        <td>最小割集；顶事件概率 / Minimal cut sets; probability of top event</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ETA</strong><br>事件树分析 / Event Tree Analysis</td>
+                        <td>归纳法（前向） / Inductive (forward)</td>
+                        <td>初始事件 -> 结果 / Initiating Event -> Outcomes</td>
+                        <td><span class="en-p">Analyzing event sequences after an initiating event; safety system effectiveness</span><span class="zh-p" style="color:#666;">分析初始事件后的事件序列；安全系统有效性</span></td>
+                        <td>结果概率；成功/失败路径 / Outcome probabilities; success/failure paths</td>
+                    </tr>
+                    <tr>
+                        <td><strong>HAZOP</strong><br>危害与可操作性研究 / Hazard & Operability Study</td>
+                        <td>定性/团队 / Qualitative / Team-based</td>
+                        <td>引导词驱动 / Guideword-driven</td>
+                        <td><span class="en-p">Process industry; systematic review using guidewords (No, More, Less, Reverse, etc.) + parameters</span><span class="zh-p" style="color:#666;">过程工业；使用引导词（无、多、少、反向等）+ 参数的系统化审查</span></td>
+                        <td>设计意图偏差；防护建议 / Deviations from design intent; safeguard recommendations</td>
+                    </tr>
+                    <tr>
+                        <td><strong>蝴蝶结分析 / Bow-Tie</strong></td>
+                        <td>基于屏障（混合） / Barrier-based (hybrid)</td>
+                        <td>原因 <- 事件 -> 后果 / Cause <- Event -> Consequences</td>
+                        <td><span class="en-p">Visualizing preventive and mitigative barriers around a top event; risk communication</span><span class="zh-p" style="color:#666;">可视化围绕顶事件的预防和减缓屏障；风险沟通</span></td>
+                        <td>屏障图；安全关键要素识别 / Barrier diagram; safety-critical element identification</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="confusion-box">
+                <div class="cb-label">⚖️ 易混淆对比 / Common Confusions:</div>
+                <table class="study-table">
+                    <tr><th>概念A</th><th>概念B</th><th>关键区别</th></tr>
+                    <tr><td>FMEA 归纳（自下而上）</td><td>FTA 演绎（自上而下）</td><td>FMEA: component → system, outputs RPN; FTA: top event → causes, outputs minimal cut sets / probability.</td></tr>
+                    <tr><td>ETA 前向</td><td>HAZOP 引导词驱动</td><td>ETA: initiating event → outcomes; HAZOP: guidewords (No/More/Less/Reverse) + parameters for process industry.</td></tr>
+                </table>
+            </div>
+
+            <div class="exam-hotspot">
+                <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+                <span class="eh-tag freq-high">必考 HIGH</span>
+                <div>
+                    <strong>典型问法 / Typical question:</strong> Which risk assessment technique is deductive (top-down)? 哪项技术是演绎法？<br>
+                    <strong>答题要点 / Key point:</strong> FTA is deductive (top-down). FMEA and ETA are inductive. HAZOP is guideword-driven and qualitative. Bow-Tie combines FTA (left) + ETA (right). 记住各技术方向。
+                </div>
+            </div>
+        </div>
+
+  <div id="quiz-group-3"></div>
+
+
+        <div class="knowledge-card">
+            <h2>21.4 NFPA标准摘要 / NFPA Standards Summary</h2>
+
+            <div class="source-tag">
+              📖 <strong>来源 / Sources:</strong>
+              <span>NFPA 101 · NFPA 72 · NFPA 10 · NFPA 13 · NFPA 70E · Brauer Ch.16 (Fire) · Yates Ch.10</span>
+            </div>
+
+            <table class="bi-table">
+                <thead>
+                    <tr>
+                        <th>标准 / Standard</th>
+                        <th>主题 / Topic</th>
+                        <th>关键内容 / Key Content</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>NFPA 101</strong></td><td>生命安全规范 / Life Safety Code</td><td><span class="en-p">Egress requirements: number of exits (minimum 2), exit travel distance, exit capacity, panic hardware, illumination, stairwell requirements. Core concept: protect occupants not in the immediate vicinity of the fire origin. Occupancy classifications.</span><span class="zh-p" style="color:#666;">疏散要求：出口数量（最少2个）、出口行走距离、出口容量、紧急推杆锁、照明、楼梯间要求。核心理念：保护不在火源附近的居住者。使用分类。</span></td></tr>
+                    <tr><td><strong>NFPA 72</strong></td><td>国家火灾报警与信号规范 / National Fire Alarm and Signaling Code</td><td><span class="en-p">Detection, notification, and signaling system requirements. Initiating devices (smoke, heat, manual pull stations), notification appliances (strobes, horns), monitoring, testing frequencies.</span><span class="zh-p" style="color:#666;">探测、通知和信号系统要求。触发装置（烟雾、热量、手动报警按钮）、通知装置（频闪灯、警报器）、监控、测试频率。</span></td></tr>
+                    <tr><td><strong>NFPA 10</strong></td><td>便携式灭火器 / Portable Fire Extinguishers</td><td><span class="en-p">Selection, placement (travel distance: Class A 75 ft, Class B 50 ft, Class C based on A/B pattern), inspection (monthly visual, annual maintenance), hydrostatic testing (every 5 or 12 years depending on type).</span><span class="zh-p" style="color:#666;">选择、放置（行走距离：A类75英尺、B类50英尺、C类基于A/B模式）、检查（每月目视、每年维护）、水压试验（根据类型每5或12年一次）。</span></td></tr>
+                    <tr><td><strong>NFPA 70E</strong></td><td>工作场所电气安全 / Electrical Safety in the Workplace</td><td><span class="en-p">Arc flash hazard analysis, PPE categories (1-4 based on incident energy), approach boundaries (limited, restricted, arc flash boundary), energized work permit. Shock protection boundaries.</span><span class="zh-p" style="color:#666;">电弧闪光危害分析、PPE类别（1-4级基于入射能量）、接近边界（限制、受限、电弧闪光边界）、带电作业许可证。电击防护边界。</span></td></tr>
+                </tbody>
+            </table>
+            <div class="exam-hotspot">
+                <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+                <span class="eh-tag freq-high">必考 HIGH</span>
+                <div>
+                    <strong>典型问法 / Typical question:</strong> Which NFPA standard governs the Life Safety Code? 哪项NFPA标准是生命安全规范？<br>
+                    <strong>答题要点 / Key point:</strong> NFPA 101 = Life Safety Code (egress, minimum 2 exits); NFPA 72 = fire alarm; NFPA 10 = extinguishers; NFPA 13 = sprinklers; NFPA 70E = electrical safety (arc flash PPE categories by incident energy). 记住各NFPA标准主题。
+                </div>
+            </div>
+        </div>
+
+  <div id="quiz-group-4"></div>
+
+
+        <div class="knowledge-card">
+            <h2>21.5 风险矩阵与ALARP / Risk Matrix & ALARP</h2>
+
+            <div class="source-tag">
+              📖 <strong>来源 / Sources:</strong>
+              <span>Brauer Ch.34 (Risk, Risk Assessment) · Yates Ch.24 (Risk Assessment and Management)</span>
+            </div>
+
+            <table class="bi-table">
+                <thead>
+                    <tr>
+                        <th>风险等级 / Risk Level</th>
+                        <th>所需行动 / Action Required</th>
+                        <th>ALARP概念 / ALARP Concept</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>高（红色） / High (Red)</strong></td>
+                        <td><span class="en-p">Unacceptable — immediate action required; work should not proceed. Risk reduction is mandatory.</span><span class="zh-p" style="color:#666;">不可接受——需立即行动；工作不得继续。降低风险是强制性的。</span></td>
+                        <td rowspan="3">
+                            <strong>ALARP = 尽可能降低至合理可行 / As Low As Reasonably Practicable.</strong><br><br>
+                            <span class="en-p">The region between unacceptable and broadly acceptable where risk must be reduced to the lowest level that is reasonably practicable. "Reasonably practicable" means the cost of further reduction is not grossly disproportionate to the benefit gained.</span><br>
+                            <span class="zh-p" style="color:#666;">在不可接受和广泛可接受之间的区域，风险必须降至合理可行的最低水平。"合理可行"意味着进一步降低的成本不会与所获收益严重不成比例。</span><br><br>
+                            <strong>关键原则 / Key principle:</strong> <span class="en-p">Risk reduction is not required at all costs — there is a point of diminishing returns where further reduction becomes disproportionately expensive relative to the safety benefit.</span><span class="zh-p" style="color:#666;">并非不惜一切代价降低风险——存在一个收益递减点，进一步降低相对于安全收益而言变得不成比例地昂贵。</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>中（黄色） / Medium (Yellow)</strong></td>
+                        <td><span class="en-p">Tolerable if ALARP — risk reduction measures should be implemented where reasonably practicable; ongoing monitoring required.</span><span class="zh-p" style="color:#666;">如达到ALARP则可容忍——应在合理可行的情况下实施降低风险措施；需要持续监测。</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>低（绿色） / Low (Green)</strong></td>
+                        <td><span class="en-p">Broadly acceptable — no further action required beyond maintaining existing controls and monitoring for change.</span><span class="zh-p" style="color:#666;">广泛可接受——除维护现有控制措施和监测变化外，无需进一步行动。</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="formula-box">
+                <strong>风险 = 可能性（概率）x 严重度（后果） / Risk = Likelihood (Probability) x Severity (Consequence)</strong><br>
+                <span class="en-p">Typically scored on 4x4, 5x5, or 5x6 matrix. Always define your scale before using.</span><span class="zh-p" style="color:#666;">通常按4x4、5x5或5x6矩阵评分。使用前务必定义评分标准。</span>
+            </div>
+            <div class="exam-hotspot">
+                <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+                <span class="eh-tag freq-high">必考 HIGH</span>
+                <div>
+                    <strong>典型问法 / Typical question:</strong> A hazard is rated Likelihood = 4, Severity = 5 on a 5x5 matrix (High = 13-25). What is the classification? 风险矩阵评级？<br>
+                    <strong>答题要点 / Key point:</strong> R = L × S = 4 × 5 = 20 → High risk, immediate action. ALARP = reduce risk until cost is grossly disproportionate to benefit — not at all costs. 记住R=L×S与ALARP概念。
+                </div>
+            </div>
+        </div>
+
+  <div id="quiz-group-5"></div>
+
+
+        <div class="knowledge-card">
+            <h2>21.6 管理理论摘要 / Management Theories Summary</h2>
+
+            <div class="source-tag">
+              📖 <strong>来源 / Sources:</strong>
+              <span>Yates Ch.19 (Management Theories) · Brauer Ch.35 (Safety Management) · Brauer Ch.31 (Human Behavior)</span>
+            </div>
+
+            <table class="bi-table">
+                <thead>
+                    <tr>
+                        <th>理论 / Theory</th>
+                        <th>关键人物 / Key Figure(s)</th>
+                        <th>核心理念 / Core Concept</th>
+                        <th>安全应用 / Safety Application</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>科学管理 / Scientific Management</strong></td>
+                        <td>弗雷德里克·泰勒 / Frederick Taylor</td>
+                        <td><span class="en-p">Efficiency through standardization; time and motion studies; one best way to do every job</span><span class="zh-p" style="color:#666;">通过标准化提高效率；时间与动作研究；每项工作都有最佳方法</span></td>
+                        <td><span class="en-p">Standard operating procedures; job safety analysis (JSA); standardized work</span><span class="zh-p" style="color:#666;">标准操作程序；工作安全分析（JSA）；标准化工作</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>霍桑效应 / Hawthorne Effect</strong></td>
+                        <td>埃尔顿·梅奥 / Elton Mayo</td>
+                        <td><span class="en-p">Workers' performance improves when they know they are being observed/studied</span><span class="zh-p" style="color:#666;">当工人知道正在被观察/研究时，其绩效会提高</span></td>
+                        <td><span class="en-p">Behavior-based safety observations; awareness that observation itself changes behavior</span><span class="zh-p" style="color:#666;">基于行为的安全观察；认识到观察本身会改变行为</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>马斯洛需求层次 / Maslow's Hierarchy</strong></td>
+                        <td>亚伯拉罕·马斯洛 / Abraham Maslow</td>
+                        <td><span class="en-p">5-level needs pyramid: Physiological -> Safety -> Love/Belonging -> Esteem -> Self-Actualization</span><span class="zh-p" style="color:#666;">5级需求金字塔：生理 -> 安全 -> 爱/归属 -> 尊重 -> 自我实现</span></td>
+                        <td><span class="en-p">Workers cannot focus on safety (Level 2) if basic needs (Level 1) are unmet; safety culture must address all levels</span><span class="zh-p" style="color:#666;">如果基本需求（第1级）未满足，工人无法专注于安全（第2级）；安全文化必须满足所有层级</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>X理论/Y理论 / Theory X / Theory Y</strong></td>
+                        <td>道格拉斯·麦格雷戈 / Douglas McGregor</td>
+                        <td><span class="en-p">X: people dislike work, need coercion. Y: people are self-motivated, seek responsibility</span><span class="zh-p" style="color:#666;">X：人不喜欢工作，需要强制。Y：人自我激励，追求责任</span></td>
+                        <td><span class="en-p">Theory Y approach fosters better safety culture; engaged workers take ownership of safety</span><span class="zh-p" style="color:#666;">Y理论方法培养更好的安全文化；投入的员工自主承担安全责任</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>海因里希多米诺理论 / Heinrich's Domino Theory</strong></td>
+                        <td>H.W. 海因里希 / H.W. Heinrich</td>
+                        <td><span class="en-p">Accidents result from a chain of factors (like dominoes); remove one domino and the accident is prevented</span><span class="zh-p" style="color:#666;">事故由一系列因素（如多米诺骨牌）导致；移除一块骨牌就可预防事故</span></td>
+                        <td><span class="en-p">Focus on removing unsafe acts/conditions (middle domino); 88-10-2 ratio: 88% unsafe acts, 10% unsafe conditions, 2% unpreventable</span><span class="zh-p" style="color:#666;">重点消除不安全行为/条件（中间骨牌）；88-10-2比例：88%不安全行为、10%不安全条件、2%不可预防</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>戴明PDCA / Deming's PDCA</strong></td>
+                        <td>W.爱德华兹·戴明 / W. Edwards Deming</td>
+                        <td><span class="en-p">Plan-Do-Check-Act cycle for continuous improvement</span><span class="zh-p" style="color:#666;">计划-执行-检查-行动持续改进循环</span></td>
+                        <td><span class="en-p">Foundation of OHS management systems (ISO 45001, ANSI Z10); safety program continuous improvement</span><span class="zh-p" style="color:#666;">OHS管理体系（ISO 45001、ANSI Z10）的基础；安全项目持续改进</span></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="exam-hotspot">
+                <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+                <span class="eh-tag freq-mid">常考 MID</span>
+                <div>
+                    <strong>典型问法 / Typical question:</strong> According to Heinrich's research, what proportion of accidents are caused by unsafe acts? 海因里希研究：不安全行为占比？<br>
+                    <strong>答题要点 / Key point:</strong> 88-10-2 ratio: 88% unsafe acts, 10% unsafe conditions, 2% unpreventable. Hawthorne Effect = behavior changes when observed. Maslow: physiological → safety → belonging → esteem → self-actualization. 记住88-10-2与霍桑效应。
+                </div>
+            </div>
+        </div>
+
+  <div id="quiz-group-6"></div>
+
+
+        <div class="knowledge-card">
+            <h2>21.7 应急计划要求 / Emergency Planning Requirements</h2>
+
+            <div class="source-tag">
+              📖 <strong>来源 / Sources:</strong>
+              <span>29 CFR 1910.38/39 · 29 CFR 1910.120 (HAZWOPER) · Brauer Ch.29 (Emergencies and Security)</span>
+            </div>
+
+            <table class="bi-table">
+                <thead>
+                    <tr>
+                        <th>要素 / Element</th>
+                        <th>1910.38 EAP / 应急行动方案</th>
+                        <th>1910.39 FPP / 防火方案</th>
+                        <th>1910.120(q) 应急响应 / Emergency Response</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>报告 / Reporting</strong></td><td><span class="en-p">Procedures for reporting fires & emergencies</span><span class="zh-p" style="color:#666;">报告火灾和紧急情况的程序</span></td><td>—</td><td><span class="en-p">Emergency recognition and prevention</span><span class="zh-p" style="color:#666;">紧急情况识别和预防</span></td></tr>
+                    <tr><td><strong>疏散 / Evacuation</strong></td><td><span class="en-p">Type of evacuation + exit route assignments</span><span class="zh-p" style="color:#666;">疏散类型 + 出口路线分配</span></td><td>—</td><td><span class="en-p">Evacuation procedures; safe distances; places of refuge</span><span class="zh-p" style="color:#666;">疏散程序；安全距离；避难场所</span></td></tr>
+                    <tr><td><strong>人员清点 / Accountability</strong></td><td><span class="en-p">Procedures to account for all employees after evacuation</span><span class="zh-p" style="color:#666;">疏散后清点所有员工的程序</span></td><td>—</td><td><span class="en-p">Site security and control</span><span class="zh-p" style="color:#666;">现场安全和管控</span></td></tr>
+                    <tr><td><strong>救援/医疗 / Rescue/Medical</strong></td><td><span class="en-p">Procedures for employees who remain to perform critical operations before evacuating; rescue & medical duties</span><span class="zh-p" style="color:#666;">疏散前留守执行关键操作的员工程序；救援和医疗职责</span></td><td>—</td><td><span class="en-p">Rescue equipment; medical treatment; decontamination</span><span class="zh-p" style="color:#666;">救援设备；医疗处理；去污</span></td></tr>
+                    <tr><td><strong>联系方式 / Contacts</strong></td><td><span class="en-p">Persons to contact for further info</span><span class="zh-p" style="color:#666;">可联系获取更多信息的人员</span></td><td>—</td><td><span class="en-p">Coordination with off-site responders</span><span class="zh-p" style="color:#666;">与场外应急响应人员协调</span></td></tr>
+                    <tr><td><strong>危害清单 / Hazard List</strong></td><td>—</td><td><span class="en-p">List of major workplace fire hazards + handling/storage procedures</span><span class="zh-p" style="color:#666;">主要工作场所火灾危害清单 + 处理/储存程序</span></td><td><span class="en-p">HAZMAT hazard assessment; PPE selection</span><span class="zh-p" style="color:#666;">危险物质危害评估；PPE选择</span></td></tr>
+                    <tr><td><strong>设备 / Equipment</strong></td><td>—</td><td><span class="en-p">Fire protection equipment maintenance procedures</span><span class="zh-p" style="color:#666;">消防设备维护程序</span></td><td><span class="en-p">Response equipment; PPE (Levels A, B, C, D)</span><span class="zh-p" style="color:#666;">响应设备；PPE（A、B、C、D级）</span></td></tr>
+                    <tr><td><strong>负责人 / Responsible Persons</strong></td><td>—</td><td><span class="en-p">Names/job titles of those responsible for equipment + fuel source hazards</span><span class="zh-p" style="color:#666;">负责设备 + 燃料源危害的人员姓名/职务</span></td><td><span class="en-p">Incident commander roles (ICS structure)</span><span class="zh-p" style="color:#666;">事故指挥官角色（ICS结构）</span></td></tr>
+                    <tr><td><strong>培训 / Training</strong></td><td><span class="en-p">Designated employees must be trained</span><span class="zh-p" style="color:#666;">指定员工必须接受培训</span></td><td><span class="en-p">Employees must be informed of fire hazards upon initial assignment</span><span class="zh-p" style="color:#666;">员工入职时必须被告知火灾危害</span></td><td><span class="en-p">HAZWOPER training levels; annual refresher; drills</span><span class="zh-p" style="color:#666;">HAZWOPER培训级别；年度复训；演习</span></td></tr>
+                </tbody>
+            </table>
+            <div class="exam-hotspot">
+                <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+                <span class="eh-tag freq-high">必考 HIGH</span>
+                <div>
+                    <strong>典型问法 / Typical question:</strong> Which element is required by 1910.38 (EAP) but NOT 1910.39 (FPP)? 哪个要素属1910.38而非1910.39？<br>
+                    <strong>答题要点 / Key point:</strong> EAP (1910.38) = reporting, evacuation, accountability, rescue/medical; FPP (1910.39) = hazard list, handling/storage procedures, equipment maintenance, responsible persons. 记住EAP与FPP要素差异。
+                </div>
+            </div>
+        </div>
+
+  <div id="quiz-group-7"></div>
+
+
+        <div class="knowledge-card">
+            <h2>21.8 火灾分类与灭火器选择 / Fire Classifications & Extinguisher Selection</h2>
+
+            <div class="source-tag">
+              📖 <strong>来源 / Sources:</strong>
+              <span>NFPA 10 · Brauer Ch.16 (Fire Protection and Prevention) · Yates Ch.10</span>
+            </div>
+
+            <table class="bi-table">
+                <thead>
+                    <tr>
+                        <th>火灾类别 / Class</th>
+                        <th>燃料 / Fuel</th>
+                        <th>灭火介质 / Extinguishing Agent</th>
+                        <th>最大放置距离 / Max Placement Distance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>A</strong></td><td>普通可燃物 / Ordinary combustibles (wood, paper, cloth)</td><td><span class="en-p">Water, foam, multipurpose dry chemical</span><span class="zh-p" style="color:#666;">水、泡沫、多用途干粉</span></td><td>75 ft / 75英尺</td></tr>
+                    <tr><td><strong>B</strong></td><td>易燃液体/气体 / Flammable liquids & gases</td><td><span class="en-p">CO2, dry chemical, foam, halon replacement</span><span class="zh-p" style="color:#666;">CO2、干粉、泡沫、哈龙替代品</span></td><td>50 ft / 50英尺</td></tr>
+                    <tr><td><strong>C</strong></td><td>带电电气设备 / Energized electrical equipment</td><td><span class="en-p">Non-conductive: CO2, dry chemical</span><span class="zh-p" style="color:#666;">不导电：CO2、干粉</span></td><td>Based on A/B pattern</td></tr>
+                    <tr><td><strong>D</strong></td><td>可燃金属 / Combustible metals (Mg, Ti, Na)</td><td><span class="en-p">Dry powder only</span><span class="zh-p" style="color:#666;">仅干粉</span></td><td>75 ft / 75英尺</td></tr>
+                    <tr><td><strong>K</strong></td><td>食用油/油脂 / Cooking oils & fats</td><td><span class="en-p">Wet chemical (potassium-based)</span><span class="zh-p" style="color:#666;">湿式化学（钾基）</span></td><td>30 ft / 30英尺</td></tr>
+                </tbody>
+            </table>
+
+            <div class="important">
+                <strong>⚠ CSP考试笔记 / CSP Exam Note:</strong><br>
+                <span class="en-p">Water (Class A extinguishers) must NEVER be used on Class B, C, or D fires. Class C fires require non-conductive agents. Class K (commercial kitchens) requires wet chemical systems.</span>
+                <span class="zh-p" style="color:#666;">水（A类灭火器）绝不能用于B、C或D类火灾。C类火灾需要不导电的介质。K类（商业厨房）需要湿式化学系统。</span>
+            </div>
+            <div class="mnemonic">
+                <span class="mn-label">🧠 记忆口诀 / Mnemonic:</span>
+                <span class="mn-content"><strong>75-50-75-30</strong>：灭火器行走距离——A=75 ft、B=50 ft、D=75 ft、K=30 ft。 / Extinguisher travel distances.</span>
+            </div>
+
+            <div class="exam-hotspot">
+                <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+                <span class="eh-tag freq-high">必考 HIGH</span>
+                <div>
+                    <strong>典型问法 / Typical question:</strong> A fire in a commercial kitchen deep fryer requires which class of extinguisher? 商用厨房油炸锅火灾用哪类灭火器？<br>
+                    <strong>答题要点 / Key point:</strong> Class K — wet chemical (potassium-based, saponification). Class C = energized electrical (CO2/dry chemical, never water); Class D = combustible metals (dry powder). 记住A/B/C/D/K对应灭火剂与危险介质。
+                </div>
+            </div>
+        </div>
+
+  <div id="quiz-group-8"></div>
+
+
+        <div id="quiz-root"></div>
+    </div>
+
+    <script src="quiz-engine.js?v=11"></script>
+    <script src="vocab-engine.js?v=11"></script>
+    <script>
+    CSPQuiz.init({
+        containerId: 'quiz-root',
+        quizId: 'week-21-quiz',
+        quizTitle: 'Week 21 Quiz: Comprehensive Review (Domains 1-4) / 第21周测验：综合复习（领域1-4）',
+        quizTopic: 'Review — Domains 1-4',
+        questions: [
+            {
+                text: 'A worker is using a 6-foot shock-absorbing lanyard anchored at foot level. If the deceleration distance is 3.5 feet and the worker is 6 feet tall, what is the minimum required fall clearance?',
+                group: 1,
+      options: [
+                    '12.5 feet',
+                    '15.5 feet',
+                    '17.5 feet',
+                    '20 feet'
+                ],
+                correct: 2,
+                explanation: 'Fall clearance = lanyard length (6 ft) + deceleration distance (3.5 ft) + worker height (6 ft) + safety factor (~1-2 ft) = approximately 17.5 feet total. Anchoring at foot level means the full 6-foot lanyard length must be counted (unlike overhead anchoring).\n\n坠落间隙 = 系索长度（6英尺）+ 减速距离（3.5英尺）+ 工人身高（6英尺）+ 安全系数（约1-2英尺）= 总计约17.5英尺。脚部高度锚定意味着必须计算完整的6英尺系索长度（与头顶锚定不同）。'
+            },
+            {
+                text: 'A facility has 350 employees working 40 hours per week for 50 weeks. In one year, there were 7 recordable injuries, including 2 with days away from work. What is the TRIR?',
+                group: 1,
+      options: [
+                    '2.0',
+                    '4.0',
+                    '7.0',
+                    '8.0'
+                ],
+                correct: 0,
+                explanation: 'Total hours = 350 x 40 x 50 = 700,000. TRIR = (7 x 200,000) / 700,000 = 1,400,000 / 700,000 = 2.0. Note: DART would be (2 x 200,000) / 700,000 = 0.57. TRIR counts all recordables, not just those with days away.\n\n总工时 = 350 x 40 x 50 = 700,000。TRIR = (7 x 200,000) / 700,000 = 1,400,000 / 700,000 = 2.0。注意：DART = (2 x 200,000) / 700,000 = 0.57。TRIR计算所有可记录案例，而不仅仅是缺勤案例。'
+            },
+            {
+                text: 'Which of the following risk assessment techniques is deductive (top-down) in approach?',
+                group: 1,
+      options: [
+                    'Failure Mode and Effects Analysis (FMEA)',
+                    'Event Tree Analysis (ETA)',
+                    'Fault Tree Analysis (FTA)',
+                    'HAZOP'
+                ],
+                correct: 2,
+                explanation: 'FTA is deductive — it starts with a defined top event (undesired outcome) and works downward to identify all possible causes. FMEA is inductive (bottom-up, component -> system). ETA is inductive/forward (initiating event -> outcomes). HAZOP is guideword-driven and qualitative.\n\nFTA是演绎法——它从定义的顶事件（不期望的结果）开始，向下找出所有可能的原因。FMEA是归纳法（自下而上，组件 -> 系统）。ETA是归纳/前向的（初始事件 -> 结果）。HAZOP是引导词驱动的定性方法。'
+            },
+            {
+                text: 'The concept that risk should be reduced to a level where the cost of further reduction is grossly disproportionate to the benefit gained is known as:',
+                group: 1,
+      options: [
+                    'Zero-risk principle',
+                    'ALARP (As Low As Reasonably Practicable)',
+                    'Hierarchy of Controls',
+                    'Precautionary principle'
+                ],
+                correct: 1,
+                explanation: 'ALARP (As Low As Reasonably Practicable) is the principle that risk reduction measures are required until the cost (in money, time, or effort) becomes grossly disproportionate to the safety benefit. It acknowledges that zero risk is not achievable and resources should be allocated proportionally.\n\nALARP（尽可能降低至合理可行）是指需要采取风险降低措施，直到成本（金钱、时间或精力）与安全收益严重不成比例为止。它承认零风险不可实现，资源应按比例分配。'
+            },
+            {
+                text: 'Which NFPA standard governs the Life Safety Code, including egress requirements such as minimum number of exits and travel distances?',
+                group: 1,
+      options: [
+                    'NFPA 72',
+                    'NFPA 10',
+                    'NFPA 70E',
+                    'NFPA 101'
+                ],
+                correct: 3,
+                explanation: 'NFPA 101 is the Life Safety Code — it governs egress, occupancy, and building safety features. NFPA 72 is Fire Alarm and Signaling, NFPA 10 is Portable Fire Extinguishers, and NFPA 70E is Electrical Safety in the Workplace.\n\nNFPA 101是生命安全规范——它管辖疏散、使用和建筑安全特性。NFPA 72是火灾报警与信号，NFPA 10是便携式灭火器，NFPA 70E是工作场所电气安全。'
+            },
+            {
+                text: 'According to Heinrich\'s Domino Theory, the ratio of accidents caused by unsafe acts versus unsafe conditions versus unpreventable causes is approximately:',
+                group: 1,
+      options: [
+                    '50-40-10',
+                    '75-20-5',
+                    '88-10-2',
+                    '95-5-0'
+                ],
+                correct: 2,
+                explanation: 'Heinrich proposed the 88-10-2 ratio: 88% of accidents are caused by unsafe acts of persons, 10% by unsafe physical/mechanical conditions, and only 2% are truly unpreventable. This underpins the focus on behavior and human factors in safety.\n\n海因里希提出88-10-2比例：88%的事故由人的不安全行为引起，10%由不安全的物理/机械条件引起，只有2%是真正不可预防的。这支撑了安全领域对行为和人为因素的关注。'
+            },
+            {
+                text: 'A safety professional performs an analysis of a chemical process using guidewords like "No," "More," "Less," and "Reverse" applied to parameters such as flow, pressure, and temperature. This technique is:',
+                group: 2,
+      options: [
+                    'FMEA',
+                    'Fault Tree Analysis',
+                    'HAZOP',
+                    'Bow-Tie Analysis'
+                ],
+                correct: 2,
+                explanation: 'HAZOP (Hazard and Operability Study) systematically applies guidewords (No, More, Less, Reverse, As Well As, Part Of, Other Than) to process parameters to identify deviations from design intent. It is most commonly used in the chemical process industry.\n\nHAZOP（危害与可操作性研究）系统地将引导词（无、多、少、反向、以及、部分、其他）应用于过程参数，以识别与设计意图的偏差。它最常用于化学过程工业。'
+            },
+            {
+                text: 'The fundamental difference between 1910.38 (Emergency Action Plan) and 1910.39 (Fire Prevention Plan) is that 1910.39 specifically requires:',
+                group: 2,
+      options: [
+                    'Evacuation procedures',
+                    'A list of major workplace fire hazards and their handling/storage procedures',
+                    'Procedures for accounting for employees after evacuation',
+                    'Contact information for emergency responders'
+                ],
+                correct: 1,
+                explanation: '1910.39 (Fire Prevention Plan) requires: (1) a list of major workplace fire hazards, (2) procedures for handling/storage of hazardous materials, (3) maintenance of fire protection equipment, and (4) names/titles of responsible persons. Evacuation, accounting, and contact info are EAP (1910.38) requirements.\n\n1910.39（防火方案）要求：(1) 主要工作场所火灾危害清单，(2) 危险材料处理/储存程序，(3) 消防设备维护，以及(4) 负责人姓名/职务。疏散、人员清点和联系信息是EAP（1910.38）的要求。'
+            },
+            {
+                text: 'A risk matrix rates a hazard as Likelihood = 4 and Severity = 5. Using the standard risk equation (R = L x S), and considering that the company defines Medium risk as 5-12 and High risk as 13-25, what is the risk classification?',
+                group: 2,
+      options: [
+                    'Low risk',
+                    'Medium risk',
+                    'High risk',
+                    'Cannot be determined without Detection score'
+                ],
+                correct: 2,
+                explanation: 'R = L x S = 4 x 5 = 20. Since 20 falls in the 13-25 range, this is classified as High risk. The standard risk matrix uses only Likelihood and Severity (not Detection, which is specific to FMEA\'s RPN). High risk demands immediate action.\n\nR = L x S = 4 x 5 = 20。由于20在13-25范围内，这被归类为高风险。标准风险矩阵仅使用可能性和严重度（不包括检测度，检测度是FMEA的RPN特有的）。高风险需要立即行动。'
+            },
+            {
+                text: 'Which factor most distinguishes 1910.119 (Process Safety Management) from other OSHA standards?',
+                group: 2,
+      options: [
+                    'It only applies to construction sites',
+                    'It is triggered by threshold quantities of highly hazardous chemicals',
+                    'It applies to all workplaces regardless of chemical usage',
+                    'It is enforced by the EPA, not OSHA'
+                ],
+                correct: 1,
+                explanation: 'PSM applies when processes involve chemicals at or above threshold quantities listed in Appendix A (e.g., 10,000 lb of ammonia, 1,500 lb of chlorine). Not all workplaces are covered — only those with listed chemicals above threshold quantities. It requires 14 specific elements including PHAs every 5 years.\n\nPSM适用于涉及附录A所列阈限量及以上化学品的过程（如10,000磅氨、1,500磅氯）。并非所有工作场所都适用——只有列出化学品超过阈限量的场所才适用。它要求14个特定要素，包括每5年进行一次PHA。'
+            },
+            {
+                text: 'Under 29 CFR 1926 Subpart M (Fall Protection — Construction), fall protection is required when working at what height above a lower level?',
+                group: 2,
+      options: ['4 feet', '6 feet', '8 feet', '10 feet'],
+                correct: 1,
+                explanation: 'Construction fall protection (1926 Subpart M) triggers at 6 feet. General industry (1910 Subpart D) triggers at 4 feet. This is a commonly tested distinction — 6 ft for construction, 4 ft for general industry.\n\n建筑坠落防护（1926 Subpart M）在6英尺触发。一般工业（1910 Subpart D）在4英尺触发。这是常考的区别——建筑6英尺、一般工业4英尺。'
+            },
+            {
+                text: 'What is the minimum anchorage strength required for a Personal Fall Arrest System (PFAS) connection?',
+                group: 2,
+      options: ['3,000 lbs', '5,000 lbs', '7,500 lbs', '10,000 lbs'],
+                correct: 1,
+                explanation: 'PFAS anchorage points must support at least 5,000 lbs (or twice the maximum arrest force if engineered with a safety factor of 2, provided the system is certified by a qualified person). The maximum arrest force on the body must not exceed 1,800 lbs.\n\nPFAS锚点必须能承受至少5,000磅（或如果按安全系数2设计则为最大制动力矩的两倍，前提是系统由合格人员认证）。作用在身体上的最大制动力矩不得超过1,800磅。'
+            },
+            {
+                text: 'Under 29 CFR 1926 Subpart P (Excavations), a protective system is required for trench excavations at what depth or greater?',
+                group: 3,
+      options: ['3 feet', '4 feet', '5 feet', '6 feet'],
+                correct: 2,
+                explanation: 'Excavations 5 feet deep or greater require a protective system (shoring, sloping, benching, shielding) unless the excavation is entirely in stable rock. Trenches less than 5 feet deep may still require protection if the competent person finds a potential cave-in hazard.\n\n深度5英尺及以上的挖掘需要防护系统（支护、放坡、阶梯、护盾），除非挖掘完全在稳定岩石中进行。如果合格人员发现潜在的坍塌危险，即使是5英尺以下的沟槽也可能需要防护。'
+            },
+            {
+                text: 'A facility has 200,000 total hours worked and 10 recordable injuries, 4 of which involved days away, restricted work, or transfer. What is the DART rate?',
+                group: 3,
+      options: ['2.0', '4.0', '5.0', '10.0'],
+                correct: 1,
+                explanation: 'DART = (DART cases x 200,000) / Total hours = (4 x 200,000) / 200,000 = 4.0. DART counts only the more serious cases (days away, restricted, or transfer), while TRIR = (10 x 200,000) / 200,000 = 10.0 counts all recordables.\n\nDART = (DART案例 x 200,000) / 总工时 = (4 x 200,000) / 200,000 = 4.0。DART只计算较严重的案例（缺勤、受限或转岗），而TRIR = (10 x 200,000) / 200,000 = 10.0计算所有可记录案例。'
+            },
+            {
+                text: 'The difference between leading and lagging indicators is that:',
+                group: 3,
+      options: [
+                    'Lagging indicators predict future performance; leading indicators measure past outcomes',
+                    'Leading indicators are proactive and predict future safety performance; lagging indicators measure past outcomes',
+                    'Both measure past performance',
+                    'Leading indicators are always financial metrics'
+                ],
+                correct: 1,
+                explanation: 'Leading indicators are proactive, preventive metrics (near-miss reporting rates, training completion, hazard identification counts) that predict future safety performance. Lagging indicators (TRIR, DART, fatalities) measure past outcomes — they are reactive.\n\n领先指标是主动、预防性的指标（未遂事件报告率、培训完成率、危害识别数量），可预测未来的安全绩效。滞后指标（TRIR、DART、死亡事故）衡量过去的结果——它们是反应性的。'
+            },
+            {
+                text: 'A company has 500 employees working 2,000 hours each per year. There were 5 lost-time injuries involving a total of 60 lost workdays. What is the lost-time injury severity rate?',
+                group: 3,
+      options: ['6.0', '12.0', '15.0', '25.0'],
+                correct: 1,
+                explanation: 'Total hours = 500 x 2,000 = 1,000,000. Severity Rate = (Days Lost x 200,000) / Total Hours = (60 x 200,000) / 1,000,000 = 12,000,000 / 1,000,000 = 12.0. The severity rate measures days lost, not case count.\n\n总工时 = 500 x 2,000 = 1,000,000。严重度率 = (损失工作日 x 200,000) / 总工时 = (60 x 200,000) / 1,000,000 = 12,000,000 / 1,000,000 = 12.0。严重度率衡量损失的工作日数，而非案例数量。'
+            },
+            {
+                text: 'In an FMEA, a failure mode has Severity = 9, Occurrence = 4, and Detection = 7. What is the RPN, and how should it be prioritized?',
+                group: 3,
+      options: [
+                    'RPN = 252; high priority for corrective action',
+                    'RPN = 20; low priority',
+                    'RPN = 252; within acceptable limits',
+                    'RPN = 91; medium priority'
+                ],
+                correct: 0,
+                explanation: 'RPN = S x O x D = 9 x 4 x 7 = 252. With maximum RPN = 1,000, a score of 252 is high — especially with high Severity (9) and high Detection difficulty (7). High RPN failure modes should receive corrective action first.\n\nRPN = S x O x D = 9 x 4 x 7 = 252。最大RPN = 1,000，252属于高分——尤其严重度（9）和检测难度（7）都很高。高RPN的失效模式应优先采取纠正措施。'
+            },
+            {
+                text: 'Which risk assessment technique combines Fault Tree Analysis (left side — threats and preventive barriers) with Event Tree Analysis (right side — consequences and mitigative barriers)?',
+                group: 4,
+      options: ['FMEA', 'HAZOP', 'Bow-Tie Analysis', 'Risk Matrix'],
+                correct: 2,
+                explanation: 'Bow-Tie Analysis visually combines FTA-style analysis of threats/preventive barriers on the left with ETA-style analysis of consequences/mitigative barriers on the right, centered on a top event. It is excellent for risk communication.\n\n蝴蝶结分析在左侧结合FTA式威胁/预防屏障分析，右侧结合ETA式后果/减缓屏障分析，以顶事件为中心。它非常适合风险沟通。'
+            },
+            {
+                text: 'Which of the following is an example of RISK TRANSFER?',
+                group: 4,
+      options: [
+                    'Installing machine guards',
+                    'Purchasing workers\' compensation insurance to cover a known hazard',
+                    'Eliminating a hazardous process',
+                    'Training employees on proper lifting'
+                ],
+                correct: 1,
+                explanation: 'Risk transfer shifts the financial burden of a risk to another party — typically through insurance or contractual indemnification. Elimination, guarding, and training reduce or control the risk; insurance transfers the financial consequences.\n\n风险转移将风险的财务负担转移给另一方——通常通过保险或合同赔偿。消除、防护和培训是降低或控制风险；保险转移财务后果。'
+            },
+            {
+                text: 'Under NFPA 10, what is the maximum travel distance to a Class A fire extinguisher?',
+                group: 4,
+      options: ['50 feet', '75 feet', '100 feet', '150 feet'],
+                correct: 1,
+                explanation: 'NFPA 10 requires Class A extinguishers within 75 feet of travel distance. Class B extinguishers must be within 50 feet. Class D within 75 feet. Class K within 30 feet. These placement distances are frequently tested.\n\nNFPA 10要求A类灭火器在75英尺行走距离内。B类灭火器必须在50英尺内。D类在75英尺内。K类在30英尺内。这些放置距离经常被考。'
+            },
+            {
+                text: 'An arc flash hazard analysis is required under which standard, and what does it determine?',
+                group: 4,
+      options: [
+                    'NFPA 70 — National Electrical Code; determines wiring requirements',
+                    'NFPA 70E — Electrical Safety in the Workplace; determines the arc flash boundary and PPE category based on incident energy',
+                    'NFPA 101 — Life Safety Code; determines exit requirements',
+                    'NFPA 72 — Fire Alarm Code; determines alarm placement'
+                ],
+                correct: 1,
+                explanation: 'NFPA 70E requires an arc flash hazard analysis to determine the arc flash boundary and required PPE category based on incident energy (cal/cm²). It also defines shock protection boundaries (limited, restricted) and requires energized work permits.\n\nNFPA 70E要求进行电弧闪光危害分析，根据入射能量（cal/cm²）确定电弧闪光边界和所需PPE类别。它还定义了电击防护边界（限制、受限）并要求带电作业许可证。'
+            },
+            {
+                text: 'According to ICS principles, what is the optimal span of control for an Incident Commander?',
+                group: 4,
+      options: [
+                    'No more than 3 direct reports',
+                    '3 to 7 direct reports, with 5 being ideal',
+                    'Up to 10 direct reports in emergencies',
+                    'Unlimited — the IC delegates as needed'
+                ],
+                correct: 1,
+                explanation: 'ICS recommends a span of control of 3 to 7 subordinates reporting to any one supervisor, with 5 being optimal. If the IC has too many direct reports, additional organizational structure (sections, branches, divisions) should be established.\n\nICS建议任何一位主管的管理幅度为3到7名下属，其中5人为最佳。如果IC有太多直接报告，应建立额外的组织结构（部门、分支机构、分区）。'
+            },
+            {
+                text: 'A fire involving energized electrical equipment (e.g., a live motor) requires which class of extinguisher?',
+                group: 5,
+      options: ['Class A', 'Class B', 'Class C', 'Class D'],
+                correct: 2,
+                explanation: 'Class C fires involve energized electrical equipment and require non-conductive extinguishing agents (CO2, dry chemical). Water must never be used. Class A = ordinary combustibles, B = flammable liquids, D = combustible metals, K = cooking oils.\n\nC类火灾涉及带电电气设备，需要不导电的灭火介质（CO2、干粉）。绝不能用水。A类=普通可燃物，B类=易燃液体，D类=可燃金属，K类=食用油。'
+            },
+            {
+                text: 'Which theory suggests that workers\' performance improves simply because they know they are being observed?',
+                group: 5,
+      options: [
+                    'Maslow\'s Hierarchy',
+                    'Hawthorne Effect',
+                    'Theory X',
+                    'Heinrich\'s Domino Theory'
+                ],
+                correct: 1,
+                explanation: 'The Hawthorne Effect (Elton Mayo) describes how workers change their behavior when they know they are being studied/observed. In safety, this is why behavior-based safety observations can themselves improve behavior — but it also warns that observed performance may not reflect normal performance.\n\n霍桑效应（埃尔顿·梅奥）描述了当工人知道自己在被研究/观察时如何改变行为。在安全领域，这正是为什么基于行为的安全观察本身可以改善行为——但也提醒观察下的表现可能不代表正常表现。'
+            },
+            {
+                text: 'What is the maximum free fall distance permitted by OSHA for a personal fall arrest system?',
+                group: 5,
+      options: ['4 feet', '6 feet', '8 feet', '12 feet'],
+                correct: 1,
+                explanation: 'OSHA (1910.140 and 1926.502) limits free fall to a maximum of 6 feet (and 2 feet for deceleration device activation). The maximum arrest force must not exceed 1,800 lbs, and the system must limit the worker to within 3.5 feet of the platform.\n\nOSHA（1910.140和1926.502）将自由坠落限制为最大6英尺（减速装置启动2英尺）。最大制动力矩不得超过1,800磅，系统必须将工人限制在平台3.5英尺内。'
+            },
+            {
+                text: 'The PDCA (Plan-Do-Check-Act) cycle is the core framework of which safety management system standards?',
+                group: 5,
+      options: [
+                    'ISO 45001 and ANSI/ASSP Z10',
+                    'NFPA 101 and NFPA 72',
+                    '29 CFR 1910.119 only',
+                    'ANSI Z490.1'
+                ],
+                correct: 0,
+                explanation: 'Both ISO 45001 (international OHS management system standard) and ANSI/ASSP Z10 (US OHS management system standard) are built on the PDCA continuous improvement cycle. This is also the foundation of Deming\'s quality philosophy.\n\nISO 45001（国际职业健康安全管理体系标准）和ANSI/ASSP Z10（美国职业健康安全管理体系标准）都建立在PDCA持续改进循环之上。这也是戴明质量哲学的基础。'
+            },
+            {
+                text: 'A hazard is rated Likelihood = 2 and Severity = 5 on a 5x5 matrix where the company classifies Low = 1-6, Medium = 8-12, High = 15-25. What is the risk level and required action?',
+                group: 5,
+      options: [
+                    'High (10) — immediate action',
+                    'Medium (10) — controls within 6 months',
+                    'Low (10) — no action',
+                    'Cannot determine without Detection'
+                ],
+                correct: 1,
+                explanation: 'Risk = L x S = 2 x 5 = 10. This falls in the Medium range (8-12), requiring controls to be implemented within 6 months per the acceptance criteria. Note the matrix ranges skip 7, 13, and 14 — the classification is defined by the company\'s scale.\n\n风险 = L x S = 2 x 5 = 10。这落在中等范围（8-12），根据接受标准需要在6个月内实施控制。注意矩阵范围跳过了7、13和14——分类由公司的量表定义。'
+            },
+            {
+                text: 'Which of the following is a required element of an Emergency Action Plan (1910.38)?',
+                group: 6,
+      options: [
+                    'A list of major workplace fire hazards',
+                    'Procedures for reporting fires and other emergencies',
+                    'Names of fire protection equipment maintenance personnel',
+                    'Hazardous material handling procedures'
+                ],
+                correct: 1,
+                explanation: 'The EAP (1910.38) requires: reporting procedures, evacuation procedures, procedures for employees who remain to operate critical operations, accounting for employees after evacuation, rescue/medical duties, and contact information. Fire hazard lists and equipment maintenance are FPP (1910.39) elements.\n\nEAP（1910.38）要求：报告程序、疏散程序、留守执行关键操作的员工程序、疏散后人员清点、救援/医疗职责和联系信息。火灾危害清单和设备维护是FPP（1910.39）的要素。'
+            },
+            {
+                text: 'What does the "span of control" principle in ICS aim to prevent?',
+                group: 6,
+      options: [
+                    'Too many employees on a worksite',
+                    'A single supervisor being overwhelmed by too many direct reports',
+                    'Too many emergency responders',
+                    'Unnecessary equipment purchases'
+                ],
+                correct: 1,
+                explanation: 'The span of control (3-7, ideal 5) prevents any single supervisor from being overwhelmed by too many direct reports, which would degrade coordination and control during an incident. When spans exceed 5-7, new organizational units are created.\n\n管理幅度（3-7，理想5）防止任何单一主管被过多直接报告压垮，这会在事故期间降低协调和控制能力。当幅度超过5-7时，应建立新的组织单元。'
+            },
+            {
+                text: 'The maximum number of exits required to be maintained for most occupied buildings per the Life Safety Code is:',
+                group: 6,
+      options: ['One', 'Two', 'Three', 'Four'],
+                correct: 1,
+                explanation: 'NFPA 101 (Life Safety Code) requires a minimum of two means of egress from most occupied spaces — the "second way out" provides a redundant escape path if one exit is blocked by fire. Additional exits are required based on occupancy load and travel distance.\n\nNFPA 101（生命安全规范）要求大多数占用空间至少有两条疏散通道——"第二个出口"提供冗余逃生路径，以防一个出口被火灾阻断。根据占用人数和行走距离，可能需要更多出口。'
+            },
+            {
+                text: 'Under the Hierarchy of Controls, which control is at the TOP (most effective)?',
+                group: 6,
+      options: ['PPE', 'Administrative controls', 'Elimination', 'Engineering controls'],
+                correct: 2,
+                explanation: 'The hierarchy from most to least effective: Elimination → Substitution → Engineering controls → Administrative controls → PPE. Elimination (physically removing the hazard) is the most effective; PPE is the least effective last resort.\n\n控制层级从最有效到最差：消除→替代→工程控制→行政控制→PPE。消除（物理移除危害）最有效；PPE是最差的最后手段。'
+            },
+            {
+                text: 'A machine guard physically prevents the operator\'s hands from reaching a pinch point. This is which type of control?',
+                group: 6,
+      options: ['Elimination', 'Substitution', 'Engineering control', 'Administrative control'],
+                correct: 2,
+                explanation: 'Machine guarding is an engineering control — a physical change that isolates workers from the hazard. Elimination removes the hazard entirely; substitution replaces it with something safer; administrative controls change procedures.\n\n机械防护是工程控制——将工人与危害隔离的物理改变。消除是彻底移除危害；替代是用更安全的东西替换；行政控制是改变程序。'
+            },
+            {
+                text: 'Which factor determines the PPE category required for arc flash protection under NFPA 70E?',
+                group: 7,
+      options: [
+                    'Voltage only',
+                    'Incident energy level (cal/cm²) from the arc flash hazard analysis',
+                    'The number of electrical panels',
+                    'Employee seniority'
+                ],
+                correct: 1,
+                explanation: 'The arc flash PPE category (1-4) is determined by the incident energy level (cal/cm²) at the working distance, obtained from the arc flash hazard analysis. Higher incident energy requires higher PPE category (up to 40 cal/cm² for Category 4).\n\n电弧闪光PPE类别（1-4）由工作距离处的入射能量水平（cal/cm²）决定，来自电弧闪光危害分析。入射能量越高，所需PPE类别越高（4类最高40 cal/cm²）。'
+            },
+            {
+                text: 'A construction trench is 7 feet deep in Type C soil (most unstable). What protective system is required?',
+                group: 7,
+      options: [
+                    'None — Type C soil is self-supporting',
+                    'A protective system such as sloping (1.5:1 for Type C), shoring, or shielding',
+                    'Only a warning barrier',
+                    'Signage only'
+                ],
+                correct: 1,
+                explanation: 'Trenches 5 feet or deeper require a protective system. Type C soil (the least stable) requires the flattest slope ratio (1.5 horizontal:1 vertical) if sloping is used, or shoring/shielding. Type A soil allows steeper slopes (0.75:1).\n\n5英尺及以上的沟槽需要防护系统。C类土壤（最不稳定）如果采用放坡，需要最平坦的坡度比（1.5水平:1垂直），或使用支护/护盾。A类土壤允许更陡的坡度（0.75:1）。'
+            },
+            {
+                text: 'The "88-10-2" ratio from Heinrich\'s research is used to support which safety strategy?',
+                group: 7,
+      options: [
+                    'Focusing primarily on engineering controls',
+                    'Focusing on eliminating unsafe acts and behaviors since they cause the majority of accidents',
+                    'Relying on insurance for all risks',
+                    'Ignoring environmental conditions'
+                ],
+                correct: 1,
+                explanation: 'Heinrich\'s 88-10-2 ratio (88% unsafe acts, 10% unsafe conditions, 2% unpreventable) supports behavior-focused safety programs — since unsafe acts cause the vast majority of accidents, modifying behavior is critical. Modern safety recognizes this is an oversimplification but the concept remains tested.\n\n海因里希的88-10-2比例（88%不安全行为、10%不安全条件、2%不可预防）支持以行为为中心的安全计划——既然不安全行为导致绝大多数事故，改变行为至关重要。现代安全认识到这是一种简化，但该概念仍然被考。'
+            },
+            {
+                text: 'An organization with 120 employees working 2,080 hours each reports 6 recordable injuries and 3 DART cases in a year. What is the TRIR?',
+                group: 7,
+      options: ['4.8', '3.6', '2.4', '6.0'],
+                correct: 0,
+                explanation: 'Total hours = 120 x 2,080 = 249,600. TRIR = (6 x 200,000) / 249,600 = 1,200,000 / 249,600 = 4.8. The DART rate would be (3 x 200,000) / 249,600 = 2.4.\n\n总工时 = 120 x 2,080 = 249,600。TRIR = (6 x 200,000) / 249,600 = 1,200,000 / 249,600 = 4.8。DART率 = (3 x 200,000) / 249,600 = 2.4。'
+            },
+            {
+                text: 'The Maslow hierarchy suggests that before workers can fully engage in safety (Level 2 needs), they require:',
+                group: 7,
+      options: [
+                    'Self-actualization',
+                    'Basic physiological needs to be met (Level 1)',
+                    'Esteem from supervisors',
+                    'None of the above'
+                ],
+                correct: 1,
+                explanation: 'Maslow\'s hierarchy: physiological (1) → safety (2) → belonging (3) → esteem (4) → self-actualization (5). Workers whose basic needs (food, shelter, rest) are unmet cannot fully focus on safety. Safety programs must also address lower-level needs like adequate breaks and fair pay.\n\n马斯洛层次：生理（1）→安全（2）→归属（3）→尊重（4）→自我实现（5）。基本需求（食物、住所、休息）未得到满足的工人无法充分关注安全。安全计划还必须解决充分休息和公平薪酬等较低层次的需求。'
+            },
+            {
+                text: 'Under 29 CFR 1926 Subpart CC (Cranes), what is the minimum clearance required from energized power lines up to 350 kV?',
+                group: 8,
+      options: ['10 feet', '20 feet', '30 feet', '50 feet'],
+                correct: 1,
+                explanation: 'Cranes must maintain at least 20 feet of clearance from power lines rated up to 350 kV, with additional clearance for higher voltages. Work within this distance requires the power lines to be de-energized or other precautions (e.g., insulated barriers, dedicated spotter).\n\n起重机必须与额定电压350 kV以下的电力线保持至少20英尺的间隙，更高电压需要额外间隙。在此距离内作业需要电力线断电或采取其他预防措施（如绝缘屏障、专职观察员）。'
+            },
+            {
+                text: 'Which of the following BEST describes the difference between FMEA and FTA?',
+                group: 8,
+      options: [
+                    'FMEA is deductive; FTA is inductive',
+                    'FMEA analyzes failure modes bottom-up (component to system); FTA analyzes top events down to causes',
+                    'FTA is qualitative; FMEA is quantitative',
+                    'They are identical techniques'
+                ],
+                correct: 1,
+                explanation: 'FMEA is inductive (bottom-up): it starts with component failure modes and traces their effects up to the system. FTA is deductive (top-down): it starts with a defined top event and works down to identify all possible causes. This is a classic exam distinction.\n\nFMEA是归纳法（自下而上）：从组件失效模式开始，向上追踪到系统的影响。FTA是演绎法（自上而下）：从定义的顶事件开始，向下识别所有可能的原因。这是经典考试区别。'
+            },
+            {
+                text: 'A worker falls from a height of 8 feet in a general industry facility where no fall protection was installed. The facility should have had fall protection at what height?',
+                group: 8,
+      options: ['4 feet', '6 feet', '8 feet', '10 feet'],
+                correct: 0,
+                explanation: 'General industry (1910 Subpart D) requires fall protection at 4 feet above a lower level (construction requires 6 feet per 1926 Subpart M). Since the worker fell from 8 feet in general industry, fall protection was required at the 4-foot threshold.\n\n一般工业（1910 Subpart D）要求在高出下水平面4英尺处提供坠落防护（建筑按1926 Subpart M要求6英尺）。由于工人从一般工业的8英尺高处坠落，在4英尺阈值处就应该有坠落防护。'
+            },
+            {
+                text: 'Which fire extinguisher agent is appropriate for a Class D fire (combustible metals like magnesium)?',
+                group: 8,
+      options: ['Water', 'CO2', 'Dry powder', 'Foam'],
+                correct: 2,
+                explanation: 'Class D fires (combustible metals) require dry powder agents specifically designed for the metal involved. Water, CO2, and foam can react violently with burning metals. Class D extinguishers are placed within 75 feet of the hazard.\n\nD类火灾（可燃金属）需要专为涉及金属设计的干粉介质。水、CO2和泡沫可能与燃烧的金属剧烈反应。D类灭火器放置在危害75英尺范围内。'
+            },
+            {
+                text: 'The core concept of the Life Safety Code (NFPA 101) is to:',
+                group: 8,
+      options: [
+                    'Extinguish fires as quickly as possible',
+                    'Protect occupants not in the immediate vicinity of the fire origin through egress design and compartmentation',
+                    'Ensure all buildings have sprinklers',
+                    'Minimize fire insurance costs'
+                ],
+                correct: 1,
+                explanation: 'NFPA 101\'s core principle is protecting occupants from fire and its products through means of egress, compartmentation, and occupancy-specific requirements — recognizing that most occupants are not in the immediate vicinity of the fire origin and must escape safely.\n\nNFPA 101的核心原则是通过疏散通道、防火分区和使用特定要求保护居住者免受火灾及其产物的伤害——认识到大多数居住者不在火源附近，必须安全逃生。'
+            }
+        ]
+    });
+    </script>
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js').catch(function() {});
+}
+</script>
+</body>
+</html>

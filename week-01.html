@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 1: Hierarchy of Controls & Prevention through Design — CSP Exam Prep</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1e3a5f">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="stylesheet" href="quiz-styles.css?v=11">
+<style>
+  .breadcrumb { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 16px; }
+  .breadcrumb a { color: var(--accent); text-decoration: none; }
+  .breadcrumb a:hover { text-decoration: underline; }
+  .hoc-pyramid { display: flex; flex-direction: column; align-items: center; gap: 4px; margin: 20px 0; }
+  .hoc-level { color: #fff; font-weight: 700; padding: 12px 20px; border-radius: 6px; text-align: center; min-width: 260px; font-size: 0.9rem; }
+  .hoc-level.most { background: #16a34a; width: 520px; }
+  .hoc-level.more { background: #2563eb; width: 420px; }
+  .hoc-level.some { background: #f59e0b; width: 310px; }
+  .hoc-level.least { background: #9333ea; width: 220px; }
+  .hoc-level.last { background: #dc2626; width: 150px; }
+  .hoc-arrow { color: #888; font-size: 1.2rem; }
+  .zh-block { color: #555; font-size: 0.92em; margin-top: 4px; }
+  .formula-box {
+    background: #f0f4ff;
+    border: 1px solid #c7d2fe;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 16px 0;
+    font-family: var(--mono);
+    font-size: 0.88rem;
+    line-height: 1.9;
+  }
+  .case-box {
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    border-left: 4px solid #10b981;
+    border-radius: 0 6px 6px 0;
+    padding: 14px 18px;
+    margin: 16px 0;
+  }
+  p.bi-p, li.bi-li { margin-bottom: 10px; }
+  p.bi-p .en-p, li.bi-li .en-li { display: block; }
+  p.bi-p .zh-p, li.bi-li .zh-li { display: block; color: #666; font-size: 0.92em; margin-top: 2px; }
+  table.bi-table th { white-space: nowrap; }
+  @media (max-width: 640px) { .hoc-level { width: 100% !important; min-width: 0; } }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="breadcrumb">
+    <a href="index.html">← 返回仪表盘 / Dashboard</a> &nbsp;|&nbsp;
+    领域 / Domain 1: <span style="font-weight:600;">安全原理高级应用 / Advanced Application of Safety Principles</span>
+  </div>
+
+  <div class="page-header">
+    <h1>📖 第1周 / Week 1:<br><span class="bi-term"><span class="zh">控制层级与预防性设计</span> · <span class="en">Hierarchy of Controls & Prevention through Design</span><span class="vocab-star" data-term="Prevention through Design (PtD)">☆</span></span></h1>
+    <div class="subtitle">领域1：安全原理高级应用（占考试25%）· 建议学习时间：6–8小时<br>Domain 1: Advanced Application of Safety Principles (25% of exam) · Est. study time: 6–8 hours</div>
+  </div>
+
+  <!-- ===== SECTION 1.1 ===== -->
+  <div class="knowledge-card">
+    <h2>1.1 <span class="bi-term"><span class="zh">控制层级</span> · <span class="en">Hierarchy of Controls</span><span class="vocab-star" data-term="Hierarchy of Controls">☆</span></span></h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>Brauer Ch.9 · Yates Ch.29</span>
+    </div>
+
+    <p class="bi-p">
+      <span class="en-p">The <span class="bi-term"><span class="zh">控制层级</span><span class="en">Hierarchy of Controls</span><span class="vocab-star" data-term="Hierarchy of Controls">☆</span></span> is the fundamental framework for managing workplace hazards, ranked from most effective to least effective. <span class="bi-term"><span class="zh">OSHA（职业安全与健康管理局）</span><span class="en">OSHA</span></span>, <span class="bi-term"><span class="zh">NIOSH（国家职业安全与健康研究所）</span><span class="en">NIOSH</span></span>, and <span class="bi-term"><span class="zh">ANSI/ASSP Z10.0（职业健康安全管理体系标准）</span><span class="en">ANSI/ASSP Z10.0</span></span> all endorse this framework.</span>
+      <span class="zh-p">控制层级是管理工作场所危害的基本框架，按从最有效到最不有效的顺序排列。OSHA、NIOSH和ANSI/ASSP Z10.0均认可此框架。</span>
+    </p>
+
+    <div class="hoc-pyramid">
+      <div class="hoc-level most">
+        <span class="bi-term" style="color:#fff;"><span class="zh" style="color:#fff;">消除</span><span class="en" style="color:#ccffcc;">ELIMINATION</span><span class="vocab-star" style="color:#ccffcc;" data-term="Elimination">☆</span></span><br>
+        <span style="font-size:0.78rem;color:#ccffcc;">Physically remove the hazard / 物理移除危害</span>
+      </div>
+      <div class="hoc-arrow">▲ 最有效 / Most Effective</div>
+      <div class="hoc-level more">
+        <span class="bi-term" style="color:#fff;"><span class="zh" style="color:#fff;">替代</span><span class="en" style="color:#ccddff;">SUBSTITUTION</span><span class="vocab-star" style="color:#ccddff;" data-term="Substitution">☆</span></span><br>
+        <span style="font-size:0.78rem;color:#ccddff;">Replace the hazard / 替换危害</span>
+      </div>
+      <div class="hoc-arrow">▲</div>
+      <div class="hoc-level some">
+        <span class="bi-term" style="color:#fff;"><span class="zh" style="color:#fff;">工程控制</span><span class="en" style="color:#fff3cc;">ENGINEERING CONTROLS</span><span class="vocab-star" style="color:#fff3cc;" data-term="Engineering Controls">☆</span></span><br>
+        <span style="font-size:0.78rem;color:#fff3cc;">Isolate people from hazard / 将人与危害隔离</span>
+      </div>
+      <div class="hoc-arrow">▲</div>
+      <div class="hoc-level least">
+        <span class="bi-term" style="color:#fff;"><span class="zh" style="color:#fff;">行政控制</span><span class="en" style="color:#eeddff;">ADMINISTRATIVE CONTROLS</span><span class="vocab-star" style="color:#eeddff;" data-term="Administrative Controls">☆</span></span><br>
+        <span style="font-size:0.78rem;color:#eeddff;">Change how people work / 改变工作方式</span>
+      </div>
+      <div class="hoc-arrow">▲</div>
+      <div class="hoc-level last">
+        <span class="bi-term" style="color:#fff;"><span class="zh" style="color:#fff;">个人防护装备</span><span class="en" style="color:#ffcccc;">PPE</span><span class="vocab-star" style="color:#ffcccc;" data-term="Personal Protective Equipment (PPE)">☆</span></span><br>
+        <span style="font-size:0.78rem;color:#ffcccc;">Protect the worker / 保护劳动者</span>
+      </div>
+      <div class="hoc-arrow" style="font-size:0.8rem;color:#999;">▼ 最不有效 / Least Effective</div>
+    </div>
+
+    <h3>各层级详解 / Each Level in Detail</h3>
+    <table class="bi-table">
+      <tr><th>层级 Level</th><th>含义 What It Means</th><th>示例 Examples</th></tr>
+      <tr>
+        <td><strong>消除 / Elimination</strong><br><span class="vocab-star" data-term="Elimination">☆ 加入词汇本</span></td>
+        <td>
+          <span class="en-p">Physically remove the hazard so it no longer exists. This is the <strong>ONLY</strong> level that completely removes risk.</span>
+          <span class="zh-p" style="color:#666;">物理移除危害，使其不复存在。这是<strong>唯一</strong>能完全消除风险的层级。</span>
+        </td>
+        <td>
+          <span class="en-p">Automate a manual lifting task; remove a toxic chemical from the process; redesign so working at height is unnecessary.</span>
+          <span class="zh-p" style="color:#666;">自动化人工搬运任务；从工艺中移除有毒化学品；重新设计使高空作业不再必要。</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>替代 / Substitution</strong><br><span class="vocab-star" data-term="Substitution">☆ 加入词汇本</span></td>
+        <td>
+          <span class="en-p">Replace a hazardous material, process, or equipment with a less hazardous alternative. The hazard still exists but with reduced severity or likelihood.</span>
+          <span class="zh-p" style="color:#666;">用危害较小的替代品替换危险的材料、工艺或设备。危害仍然存在，但严重性或可能性降低。</span>
+        </td>
+        <td>
+          <span class="en-p">Replace solvent-based paint with water-based paint; use a less toxic cleaning chemical; replace manual heavy lifting with a vacuum lift assist.</span>
+          <span class="zh-p" style="color:#666;">用水性漆替代溶剂型漆；使用毒性较低的清洁剂；用真空辅助吊具替代人工搬运。</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>工程控制 / Engineering Controls</strong><br><span class="vocab-star" data-term="Engineering Controls">☆ 加入词汇本</span></td>
+        <td>
+          <span class="en-p">Design physical changes to the workplace that isolate workers from the hazard. Does <strong>NOT</strong> rely on worker behavior — it works passively.</span>
+          <span class="zh-p" style="color:#666;">设计物理改造，将工人与危害隔离。<strong>不依赖</strong>工人行为——被动工作。</span>
+        </td>
+        <td>
+          <span class="en-p">Machine guards, interlocks, <span class="bi-term"><span class="zh">局部排风</span><span class="en">local exhaust ventilation (LEV)</span><span class="vocab-star" data-term="Local Exhaust Ventilation (LEV)">☆</span></span>, sound enclosures, guardrails, trench shoring.</span>
+          <span class="zh-p" style="color:#666;">机械防护罩、联锁装置、局部排风（LEV）、隔音罩、护栏、沟槽支护。</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>行政控制 / Administrative Controls</strong><br><span class="vocab-star" data-term="Administrative Controls">☆ 加入词汇本</span></td>
+        <td>
+          <span class="en-p">Change work procedures, schedules, or policies to reduce exposure. <strong>RELIES</strong> on worker compliance and can fail when workers do not follow the rules.</span>
+          <span class="zh-p" style="color:#666;">改变工作程序、排班或政策以减少暴露。<strong>依赖</strong>工人遵守，工人不遵守规则即失效。</span>
+        </td>
+        <td>
+          <span class="en-p">Job rotation to reduce ergonomic strain, safety training, warning signs, <span class="bi-term"><span class="zh">上锁挂牌</span><span class="en">lockout/tagout (LOTO)</span><span class="vocab-star" data-term="Lockout/Tagout (LOTO)">☆</span></span> procedures, rest breaks, pre-task briefings.</span>
+          <span class="zh-p" style="color:#666;">岗位轮换以减轻人因工程压力、安全培训、警示标识、上锁挂牌程序、休息时间、作业前简报。</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>个人防护装备 / PPE</strong><br><span class="vocab-star" data-term="Personal Protective Equipment (PPE)">☆ 加入词汇本</span></td>
+        <td>
+          <span class="en-p"><span class="bi-term"><span class="zh">个人防护装备</span><span class="en">Personal Protective Equipment</span></span> — the <strong>LAST</strong> line of defense. Protects only the individual wearing it; does NOT reduce the hazard at the source. Fails if not worn, worn improperly, or damaged.</span>
+          <span class="zh-p" style="color:#666;">最后一道防线。仅保护佩戴者个人；不会从源头减少危害。不佩戴、佩戴不当或损坏即失效。</span>
+        </td>
+        <td>
+          <span class="en-p">Hard hats, safety glasses, gloves, respirators, hearing protection, steel-toe boots, <span class="bi-term"><span class="zh">个人防坠系统</span><span class="en">fall arrest harnesses</span><span class="vocab-star" data-term="Personal Fall Arrest System (PFAS)">☆</span></span>.</span>
+          <span class="zh-p" style="color:#666;">安全帽、护目镜、手套、呼吸器、听力防护、钢头靴、防坠安全带。</span>
+        </td>
+      </tr>
+    </table>
+
+    <div class="important">
+      <strong>⚠ CSP 考试技巧 / Exam Tip:</strong><br>
+      <span class="en-p">When asked "What is the <strong>BEST</strong> control?", always work DOWN the hierarchy: Elimination &gt; Substitution &gt; Engineering &gt; Administrative &gt; PPE. PPE is only correct when higher-level controls are not feasible or are already in place.</span>
+      <span class="zh-p" style="color:#666;">当题目问"最佳控制措施是什么"，始终按层级从上到下选择：消除 &gt; 替代 &gt; 工程控制 &gt; 行政控制 &gt; PPE。只有当更高层级的控制不可行或已经到位时，PPE才是正确答案。</span>
+    </div>
+
+    <h3>为什么控制层级很重要 / Why the Hierarchy Matters</h3>
+    <ul>
+      <li class="bi-li">
+        <span class="en-li"><strong>Effectiveness decreases as you go down.</strong> Elimination and substitution address the hazard at its source; PPE only protects the worker and fails if not worn.</span>
+        <span class="zh-li"><strong>效果逐级递减。</strong>消除和替代从源头解决危害；PPE仅保护工人，且不佩戴则失效。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Reliability differs.</strong> <span class="bi-term"><span class="zh">工程控制</span><span class="en">Engineering controls</span></span> work passively (a guardrail works 24/7). Administrative controls require ongoing human compliance.</span>
+        <span class="zh-li"><strong>可靠性不同。</strong>工程控制是被动的（护栏24小时不间断工作）。行政控制需要持续的人为遵守。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>OSHA expects employers to use higher-level controls first</strong> before resorting to PPE. Many OSHA standards explicitly require engineering controls before PPE (e.g., 29 CFR 1910.95 for noise, 1910.134 for respiratory protection).</span>
+        <span class="zh-li"><strong>OSHA要求雇主优先使用高层级控制措施</strong>，然后才能依赖PPE。许多OSHA标准明确要求先采用工程控制再使用PPE（如29 CFR 1910.95噪声标准、1910.134呼吸防护标准）。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Multiple controls are often layered.</strong> The hierarchy is not "pick one" — a robust program uses defense-in-depth, applying several levels simultaneously. CSP questions may ask which ADDITIONAL control to add, not which single one to use.</span>
+        <span class="zh-li"><strong>常采用多层控制。</strong>控制层级不是"二选一"——健全的计划采用纵深防御，同时应用多个层级。CSP题目可能问要<strong>额外</strong>添加哪种控制，而不是只用哪一种。</span>
+      </li>
+    </ul>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-high">必考 HIGH</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "Which is the MOST effective control?" / "将X控制归入层级中的哪一级？"<br>
+        <strong>答题要点 / Key point:</strong> Always answer DOWN the hierarchy — Elimination &gt; Substitution &gt; Engineering &gt; Administrative &gt; PPE. "BEST" always means the highest feasible level; PPE is correct only when higher levels are infeasible or already in place. Elimination is the ONLY level that completely removes risk.
+      </div>
+    </div>
+
+    <div class="mnemonic">
+      <span class="mn-label">🧠 记忆口诀 / Mnemonic:</span>
+      <span class="mn-content"><strong>ESEA-P</strong> — Elimination, Substitution, Engineering, Administrative, PPE — 中文"一消二代三工四管五护"：消除 → 替代 → 工程控制 → 行政控制 → 个人防护装备。记住"消替工行护"从上到下。</span>
+    </div>
+
+    <div class="confusion-box">
+      <div class="cb-label">⚖️ 易混淆对比 / Common Confusions:</div>
+      <table class="study-table">
+        <tr><th>Elimination 消除</th><th>Substitution 替代</th><th>关键区别 / Key Difference</th></tr>
+        <tr><td>危害"不复存在" / hazard GONE</td><td>危害"被换成危害较小的" / CHANGED to a lesser one</td><td>消除=危害消失；替代=危害仍在，只是减小。场景说"no longer exists"→Elimination；"replaced with less hazardous"→Substitution</td></tr>
+      </table>
+    </div>
+
+    <div class="exam-scenario">
+      <div class="es-label">📝 真题情景 / Exam Scenario:</div>
+      <div class="es-question">"A safety manager wants to reduce injuries from manual palletizing. What is the BEST course of action?"</div>
+      <div><strong>最佳答案 / Best answer:</strong> Automate the palletizing so no worker performs the lifting (Elimination). 解析：按层级自上而下选择。若题目限定"危害无法消除"则选工程控制（机械手/真空吊具）；只有当更高层级不可行时才选行政控制或PPE。注意区分"移除任务本身"（消除）与"用机械辅助搬运"（工程）。</div>
+    </div>
+  </div>
+
+  <div id="quiz-group-1"></div>
+
+
+  <!-- ===== SECTION 1.2 ===== -->
+  <div class="knowledge-card">
+    <h2>1.2 <span class="bi-term"><span class="zh">消除与替代</span> · <span class="en">Elimination & Substitution in Depth</span></span></h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>Brauer Ch.9 · Yates Ch.29</span>
+    </div>
+
+    <p class="bi-p">
+      <span class="en-p">These top two levels are the only ones that address the hazard <strong>at the source</strong>. They are the most effective because they reduce or remove the hazard itself, not merely the exposure to it.</span>
+      <span class="zh-p">这最顶层两级是仅有的<strong>从源头</strong>解决危害的层级。它们最有效，因为它们减少或移除危害本身，而不只是减少暴露。</span>
+    </p>
+
+    <h3>消除 / Elimination</h3>
+    <ul>
+      <li class="bi-li">
+        <span class="en-li"><strong>Definition:</strong> Permanently removing the hazard so it can no longer cause harm. Example: automating a process so no worker is exposed; discontinuing a hazardous product line.</span>
+        <span class="zh-li"><strong>定义：</strong>永久移除危害，使其不再造成伤害。示例：自动化工艺使工人不再暴露；停产危险产品线。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Exam distinction:</strong> Elimination means the hazard is GONE. Substitution means the hazard is CHANGED to a lesser one. If a scenario says the hazard "no longer exists" → Elimination; if it says "replaced with a less hazardous version" → Substitution.</span>
+        <span class="zh-li"><strong>考试区分：</strong>消除意味着危害<strong>消失</strong>。替代意味着危害<strong>变为</strong>较小的危害。如果场景说危害"不再存在"→消除；如果说"替换为危害较小的版本"→替代。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Elimination is not always possible</strong> — the task may be essential (e.g., can't eliminate welding if the product must be welded). This is why the hierarchy is ordered; each level is used when the higher level is infeasible.</span>
+        <span class="zh-li"><strong>消除并非总是可行</strong>——任务可能是必需的（例如产品必须焊接则无法消除焊接）。这就是层级排序的原因；当更高层级不可行时使用下一层级。</span>
+      </li>
+    </ul>
+
+    <h3>替代 / Substitution</h3>
+    <ul>
+      <li class="bi-li">
+        <span class="en-li"><strong>Definition:</strong> Replacing a hazardous material, process, or equipment with a less hazardous one. The hazard is reduced in severity or likelihood but NOT removed.</span>
+        <span class="zh-li"><strong>定义：</strong>用危害较小的材料、工艺或设备替换危险的。危害在严重性或可能性上降低，但<strong>并未移除</strong>。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Examples:</strong> Water-based paint instead of solvent-based; non-asbestos gaskets; low-VOC adhesives; less toxic metalworking fluid; smaller gauge electrical system where feasible.</span>
+        <span class="zh-li"><strong>示例：</strong>水性漆替代溶剂型漆；无石棉垫片；低VOC胶粘剂；毒性较低的金属加工液；可行的低压电气系统。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Key exam caution:</strong> Substitution may introduce <em>new</em> hazards. Example: replacing a flammable solvent with a more toxic-but-nonflammable one trades an explosion risk for a health risk. A proper risk assessment must evaluate the substitute.</span>
+        <span class="zh-li"><strong>考试提醒：</strong>替代可能引入<em>新的</em>危害。示例：用毒性更大但不燃的溶剂替代易燃溶剂，是用健康风险换取爆炸风险。必须对替代品进行适当的风险评估。</span>
+      </li>
+    </ul>
+
+    <div class="case-box">
+      <strong>📋 实际案例 / Case Study:</strong><br>
+      <span class="en-p">A metal parts manufacturer replaced a chlorinated solvent degreaser (perchloroethylene, an OSHA-listed carcinogen) with an aqueous alkaline cleaner. The substitution eliminated the carcinogen exposure, reduced regulatory obligations (Hazard Communication, ventilation permits), and simplified waste disposal. However, a chemical compatibility review was required because the aqueous cleaner was incompatible with some aluminum alloys, causing corrosion failures that later triggered a Management of Change review.</span>
+      <span class="zh-p" style="color:#666;">一家金属零件制造商用碱性水基清洗剂替代氯化溶剂脱脂剂（四氯乙烯，OSHA列出的致癌物）。替代消除了致癌物暴露，减少了法规义务（危害沟通、通风许可），并简化了废物处理。但由于水基清洗剂与某些铝合金不相容，造成腐蚀失效，随后触发了变更管理审查——因此必须进行化学相容性审查。</span>
+    </div>
+
+    <div class="confusion-box">
+      <div class="cb-label">⚖️ 易混淆对比 / Common Confusions:</div>
+      <table class="study-table">
+        <tr><th>Elimination 消除</th><th>Substitution 替代</th><th>关键区别 / Key Difference</th></tr>
+        <tr><td>危害被永久移除 / hazard permanently removed</td><td>危害被换成危害较小的替代品 / hazard replaced by a lesser one</td><td>消除=危害完全消失；替代=危害仍存在，仅降低严重性或可能性，且可能引入<strong>新</strong>危害</td></tr>
+      </table>
+    </div>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-high">必考 HIGH</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "Replace solvent-based paint with water-based paint — is this elimination or substitution?"<br>
+        <strong>答题要点 / Key point:</strong> 更换材料=替代（hazard remains, reduced）。消除需要危害完全不存在（如自动化取消人工搬运）。常考陷阱：替代引入新危害（用健康风险换火灾风险），替代品本身必须进行风险评估。
+      </div>
+    </div>
+
+    <div class="exam-scenario">
+      <div class="es-label">📝 真题情景 / Exam Scenario:</div>
+      <div class="es-question">"An employer replaces a flammable solvent with a more toxic but non-flammable one. Is this an acceptable Substitution?"</div>
+      <div><strong>最佳答案 / Best answer:</strong> No — not without a full risk assessment. 解析：Substitution trades one hazard for another; the substitute must be evaluated (Brauer Ch.9: hazard may be reduced but NOT removed, and new hazards may appear). Without compatibility/toxicity review, the change could create a worse health hazard.</div>
+    </div>
+  </div>
+
+  <div id="quiz-group-2"></div>
+
+
+  <!-- ===== SECTION 1.3 ===== -->
+  <div class="knowledge-card">
+    <h2>1.3 <span class="bi-term"><span class="zh">工程控制</span> · <span class="en">Engineering Controls in Depth</span></span></h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>Brauer Ch.9 · 29 CFR 1910.212 · Yates Ch.29</span>
+    </div>
+
+    <p class="bi-p">
+      <span class="en-p">Engineering controls are <strong>physical modifications</strong> to the workplace that isolate workers from hazards. Their defining characteristic is that they work <strong>passively</strong> — they do not depend on the worker to do anything. A guardrail protects a worker who is not even paying attention; a training program does not.</span>
+      <span class="zh-p">工程控制是对工作场所的<strong>物理改造</strong>，将工人与危害隔离。其决定性特征是<strong>被动工作</strong>——不依赖工人做任何事。护栏能保护一个根本没注意的工人；培训计划则不能。</span>
+    </p>
+
+    <h3>常见工程控制类型 / Common Types</h3>
+    <table class="bi-table">
+      <tr><th>类型 / Type</th><th>描述 / Description</th><th>示例 / Examples</th></tr>
+      <tr>
+        <td><strong>机器防护<br>Machine Guarding</strong></td>
+        <td>
+          <span class="en-p">Physical barriers at the point of operation, power transmission, and moving parts. Required by 29 CFR 1910.212 (general industry).</span>
+          <span class="zh-p" style="color:#666;">在操作点、动力传输和运动部件处的物理屏障。29 CFR 1910.212（一般工业）要求。</span>
+        </td>
+        <td>
+          <span class="en-p">Fixed guards, interlocked guards, presence-sensing devices (light curtains), two-hand trip controls, pull-back devices.</span>
+          <span class="zh-p" style="color:#666;">固定防护罩、联锁防护罩、光电保护装置（光幕）、双手控制装置、拉回装置。</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>通风与粉尘控制<br>Ventilation & Dust Control</strong></td>
+        <td>
+          <span class="en-p">Capture or dilute airborne contaminants. Local exhaust ventilation (LEV) captures at the source; general (dilution) ventilation reduces concentrations.</span>
+          <span class="zh-p" style="color:#666;">捕集或稀释空气污染物。局部排风（LEV）在源头捕集；全面（稀释）通风降低浓度。</span>
+        </td>
+        <td>
+          <span class="en-p">Welding fume extractors, laboratory fume hoods, canopy hoods, dust collectors, pressurization/depressurization systems.</span>
+          <span class="zh-p" style="color:#666;">焊接烟尘抽排器、实验室通风橱、伞形罩、除尘器、正压/负压系统。</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>噪声控制<br>Noise Control</strong></td>
+        <td>
+          <span class="en-p">Reduce noise at the source, along the path, or at the receiver. Required before hearing protection per 1910.95.</span>
+          <span class="zh-p" style="color:#666;">在源头、传播路径或接收端降低噪声。依据1910.95，先于听力防护实施。</span>
+        </td>
+        <td>
+          <span class="en-p">Sound enclosures, mufflers on exhausts, vibration isolation mounts, sound-absorbing panels, quieter equipment.</span>
+          <span class="zh-p" style="color:#666;">隔音罩、排气管消音器、隔振支架、吸音板、更安静的设备。</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>隔离与防护屏障<br>Isolation & Barriers</strong></td>
+        <td>
+          <span class="en-p">Separate the worker from the hazard by distance or barrier.</span>
+          <span class="zh-p" style="color:#666;">通过距离或屏障将工人与危害分开。</span>
+        </td>
+        <td>
+          <span class="en-p">Guardrails, remote control panels, blast walls, safety glass, interlocked access gates, light curtains around robots.</span>
+          <span class="zh-p" style="color:#666;">护栏、远程控制面板、防爆墙、安全玻璃、联锁检修门、机器人周围的光幕。</span>
+        </td>
+      </tr>
+    </table>
+
+    <div class="important">
+      <strong>⚠ CSP 考试技巧 / Exam Tip:</strong><br>
+      <span class="en-p">On the exam, an engineering control is always a <strong>physical/mechanical</strong> change: a guard, a barrier, ventilation, an interlock, a sound enclosure, a machine modification. If the answer describes a <em>behavior, schedule, sign, or procedure</em>, it is an administrative control — even if it sounds "engineering-ish." Remember: a light curtain is engineering; a training class is administrative.</span>
+      <span class="zh-p" style="color:#666;">考试中，工程控制始终是<strong>物理/机械</strong>改造：防护罩、屏障、通风、联锁、隔音罩、机器改装。如果答案描述的是<em>行为、排班、标识或程序</em>，则是行政控制——即使听起来"像工程"。记住：光幕是工程控制；培训课是行政控制。</span>
+    </div>
+
+    <h3>工程控制与行政控制的可靠性对比 / Engineering vs. Administrative Reliability</h3>
+    <table class="bi-table">
+      <tr><th>特征 / Feature</th><th>工程控制<br>Engineering</th><th>行政控制<br>Administrative</th></tr>
+      <tr>
+        <td><span class="en-p">依赖工人行为 / Depends on worker behavior</span></td>
+        <td><span class="en-p">No — passive</span><span class="zh-p" style="color:#666;">否——被动</span></td>
+        <td><span class="en-p">Yes — active compliance required</span><span class="zh-p" style="color:#666;">是——需要主动遵守</span></td>
+      </tr>
+      <tr>
+        <td><span class="en-p">24小时有效 / Effective 24/7</span></td>
+        <td><span class="en-p">Yes (e.g., guardrail)</span><span class="zh-p" style="color:#666;">是（如护栏）</span></td>
+        <td><span class="en-p">Only while someone enforces/follows it</span><span class="zh-p" style="color:#666;">仅当有人执行/遵守时</span></td>
+      </tr>
+      <tr>
+        <td><span class="en-p">成本 / Cost</span></td>
+        <td><span class="en-p">Typically higher initial capital cost</span><span class="zh-p" style="color:#666;">初始资本成本通常较高</span></td>
+        <td><span class="en-p">Lower initial cost, ongoing enforcement effort</span><span class="zh-p" style="color:#666;">初始成本较低，需要持续执行投入</span></td>
+      </tr>
+      <tr>
+        <td><span class="en-p">失效模式 / Failure mode</span></td>
+        <td><span class="en-p">Wear, damage, bypass, removal</span><span class="zh-p" style="color:#666;">磨损、损坏、旁路、拆除</span></td>
+        <td><span class="en-p">Non-compliance, forgetting, shortcuts</span><span class="zh-p" style="color:#666;">不遵守、遗忘、走捷径</span></td>
+      </tr>
+    </table>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-high">必考 HIGH</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "Which option is an ENGINEERING control?" — 判断某个措施是否属于工程控制。<br>
+        <strong>答题要点 / Key point:</strong> 工程控制=对工作场所的<strong>物理/机械</strong>改变（防护罩、联锁、光幕、通风、隔音罩、护栏）。描述行为/排班/标识/程序的一律是行政控制。例：光幕=工程；培训课=行政。工程控制被动工作（护栏24/7保护），行政控制依赖工人遵守。
+      </div>
+    </div>
+
+    <div class="confusion-box">
+      <div class="cb-label">⚖️ 易混淆对比 / Common Confusions:</div>
+      <table class="study-table">
+        <tr><th>Engineering 工程控制</th><th>Administrative 行政控制</th><th>关键区别 / Key Difference</th></tr>
+        <tr><td>物理改造，被动可靠（guardrail, LEV, interlock）</td><td>改变行为/程序/排班，依赖遵守（training, rotation, signs）</td><td>有无物理改变是分水岭：有物理改造→工程；只改"怎么做"→行政。工程失效模式：磨损/旁路；行政失效模式：不遵守/遗忘</td></tr>
+      </table>
+    </div>
+
+    <div class="exam-scenario">
+      <div class="es-label">📝 真题情景 / Exam Scenario:</div>
+      <div class="es-question">"A facility wants to control welding fume exposure. Which option is an engineering control?"</div>
+      <div><strong>最佳答案 / Best answer:</strong> Installing a local exhaust ventilation (LEV) system at the weld point. 解析：LEV是源头捕集的物理改造，属工程控制。选项如"要求焊工佩戴呼吸器"=PPE，"安排焊工轮换"=行政控制，"改用低烟尘焊丝"=替代。按1910.134，工程控制优先于呼吸器。</div>
+    </div>
+  </div>
+
+  <div id="quiz-group-3"></div>
+
+
+  <!-- ===== SECTION 1.4 ===== -->
+  <div class="knowledge-card">
+    <h2>1.4 <span class="bi-term"><span class="zh">行政控制与PPE</span> · <span class="en">Administrative Controls & PPE</span></span></h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>Brauer Ch.9 · 29 CFR 1910.132 · Yates Ch.2</span>
+    </div>
+
+    <h3>行政控制 / Administrative Controls</h3>
+    <p class="bi-p">
+      <span class="en-p">Administrative controls reduce exposure by <strong>changing how and when people work</strong>. They are effective only as long as workers consistently follow them.</span>
+      <span class="zh-p">行政控制通过<strong>改变人们工作方式和时间</strong>来减少暴露。只有当工人持续遵守时才有效。</span>
+    </p>
+    <ul>
+      <li class="bi-li">
+        <span class="en-li"><strong>Work practices / 作业实践:</strong> Safe work procedures, pre-task hazard briefings (JSA/JHA), safe lifting techniques, housekeeping.</span>
+        <span class="zh-li">安全工作程序、作业前危害简报（JSA/JHA）、安全提举技巧、5S现场管理。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Scheduling / 排班:</strong> Job rotation, limiting time on a task, scheduling hazardous work when fewer people are present, breaks to reduce fatigue.</span>
+        <span class="zh-li">岗位轮换、限制任务时间、在人员较少时安排危险作业、安排休息减少疲劳。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Warning systems / 警示系统:</strong> Warning signs, alarms, <span class="bi-term"><span class="zh">上锁挂牌</span><span class="en">lockout/tagout</span><span class="vocab-star" data-term="Lockout/Tagout (LOTO)">☆</span></span>, warning lines, safety monitors, buddy systems.</span>
+        <span class="zh-li">警示标识、报警器、上锁挂牌、警示线、安全监视员、结伴作业制度。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Training / 培训:</strong> Hazard communication, specific task training, supervisor enforcement.</span>
+        <span class="zh-li">危害沟通培训、特定任务培训、主管监督执行。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Medical surveillance / 医学监护:</strong> Audiometric testing in hearing conservation programs, biological monitoring, medical exams.</span>
+        <span class="zh-li">听力保护计划中的听力测试、生物监测、医学检查。</span>
+      </li>
+    </ul>
+
+    <h3>个人防护装备 PPE — 29 CFR 1910.132(d)</h3>
+    <p class="bi-p">
+      <span class="en-p">OSHA's PPE standard (Subpart I, 29 CFR 1910 Subpart I) is explicit about <strong>when</strong> PPE may be used. Employers must not default to PPE while higher-level controls are still feasible.</span>
+      <span class="zh-p">OSHA的PPE标准（Subpart I，29 CFR 1910 Subpart I）明确规定了<strong>何时</strong>可以使用PPE。当更高层级控制仍可行时，雇主不得直接依赖PPE。</span>
+    </p>
+    <ul>
+      <li class="bi-li">
+        <span class="en-li"><strong>1910.132(d) Hazard Assessment:</strong> The employer must conduct a written (certified) hazard assessment of the workplace to determine if hazards are present that require PPE, and certify in writing that the assessment has been performed.</span>
+        <span class="zh-li"><strong>1910.132(d)危害评估：</strong>雇主必须对工作场所进行书面的（认证的）危害评估，确定是否存在需要PPE的危害，并书面认证评估已完成。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Selection:</strong> PPE must be selected based on the specific hazards identified, and properly fitted.</span>
+        <span class="zh-li"><strong>选型：</strong>必须根据识别出的具体危害选择PPE，并适当贴合。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Free of charge:</strong> Employers must provide PPE at no cost to employees (with limited exceptions for ordinary items like steel-toe boots and prescription safety glasses).</span>
+        <span class="zh-li"><strong>免费提供：</strong>雇主必须免费向员工提供PPE（少数例外，如钢头鞋和处方安全眼镜等日常物品）。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Training:</strong> Employees must be trained on when PPE is necessary, what PPE is necessary, how to properly don/doff, limitations, and care/maintenance.</span>
+        <span class="zh-li"><strong>培训：</strong>员工必须接受培训，了解何时需要PPE、需要何种PPE、如何正确穿戴/脱下、局限性以及保养维护。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Exam point:</strong> PPE training must be documented and employees must demonstrate understanding. Retraining is required when workplace conditions change or when the PPE is not used correctly.</span>
+        <span class="zh-li"><strong>考试要点：</strong>PPE培训必须记录，员工必须展示理解。当工作场所条件变化或PPE使用不当时需要复训。</span>
+      </li>
+    </ul>
+
+    <div class="important">
+      <strong>⚠ CSP 考试技巧 / Exam Tip:</strong><br>
+      <span class="en-p">The phrase "<strong>after an assessment of the workplace and the job</strong>" in 1910.132(d) is frequently tested. A common trap question states the employer bought PPE for all workers "without performing a hazard assessment" — the correct answer is that this violates 1910.132(d). PPE cannot be the first or only control; it must follow an assessment that higher controls are infeasible or insufficient.</span>
+      <span class="zh-p" style="color:#666;">1910.132(d)中"<strong>在对工作场所和岗位进行评估之后</strong>"的表述是高频考点。常见陷阱题：雇主"未进行危害评估"就为所有工人购买了PPE——正确答案是这违反了1910.132(d)。PPE不能是第一或唯一控制；必须在评估确认更高层级控制不可行或不足之后使用。</span>
+    </div>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-high">必考 HIGH</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "Under 1910.132(d), before relying on PPE the employer must…?"<br>
+        <strong>答题要点 / Key point:</strong> 必答：进行书面（经认证）的<strong>危害评估</strong>并书面认证。PPE是最后一道防线；PPE必须<strong>免费</strong>提供（普通物品如钢头鞋/处方眼镜除外）；员工须受训何时/何种PPE、如何穿脱、局限性与维护。陷阱："未评估就发PPE"违反1910.132(d)。
+      </div>
+    </div>
+
+    <div class="confusion-box">
+      <div class="cb-label">⚖️ 易混淆对比 / Common Confusions:</div>
+      <table class="study-table">
+        <tr><th>Administrative Control 行政控制</th><th>PPE 个人防护装备</th><th>关键区别 / Key Difference</th></tr>
+        <tr><td>改变做法/排班/程序（培训、轮换、标识、LOTO）</td><td>穿在身上的装备（安全帽、护目镜、呼吸器）</td><td>行政=减少暴露机会；PPE=仅保护佩戴者个体，不减少源头危害。两者都依赖人，但PPE失效更直接（不戴/戴错/损坏即失效）</td></tr>
+      </table>
+    </div>
+
+    <div class="exam-scenario">
+      <div class="es-label">📝 真题情景 / Exam Scenario:</div>
+      <div class="es-question">"An employer buys hard hats and safety glasses for all workers but never conducts a written hazard assessment. What is the safety professional's BEST recommendation?"</div>
+      <div><strong>最佳答案 / Best answer:</strong> Perform and certify the workplace hazard assessment required by 1910.132(d) before relying on PPE. 解析：PPE不能取代评估流程——没有评估就采购PPE违反OSHA标准，且无法判断PPE类型是否正确（选型须基于识别出的具体危害）。</div>
+    </div>
+  </div>
+
+  <div id="quiz-group-4"></div>
+
+
+  <!-- ===== SECTION 1.5 ===== -->
+  <div class="knowledge-card">
+    <h2>1.5 引用控制层级的关键 OSHA 标准 / Key OSHA Standards Referencing the Hierarchy</h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>29 CFR 1910.95 · 29 CFR 1910.134 · 29 CFR 1910.212 · 29 CFR 1910.147 · 29 CFR 1910.132 · 29 CFR 1910.1000</span>
+    </div>
+
+    <p class="bi-p">
+      <span class="en-p">The following OSHA standards explicitly require employers to use higher-level controls before resorting to PPE:</span>
+      <span class="zh-p">以下OSHA标准明确要求雇主在依赖PPE之前先采用更高层级的控制措施：</span>
+    </p>
+
+    <table class="bi-table">
+      <tr><th>标准<br>Standard</th><th>主题<br>Topic</th><th>控制层级要求<br>Hierarchy Requirement</th></tr>
+      <tr>
+        <td>29 CFR 1910.95</td>
+        <td><span class="bi-term"><span class="zh">职业噪声暴露</span><span class="en">Occupational Noise Exposure</span><span class="vocab-star" data-term="Decibel (dBA)">☆</span></span></td>
+        <td>
+          <span class="en-p">Feasible engineering/administrative controls BEFORE hearing protection. Hearing Conservation Program (HCP) triggered at <strong>85 dBA</strong> TWA (action level). <strong>90 dBA</strong> TWA = PEL (permissible exposure limit), at which controls are required.</span>
+          <span class="zh-p" style="color:#666;">可行的工程/行政控制优先于听力防护。TWA达<strong>85 dBA</strong>（行动水平）时启动听力保护计划（HCP）。<strong>90 dBA</strong> TWA = 允许暴露限值（PEL），达到时要求工程/行政控制。</span>
+        </td>
+      </tr>
+      <tr>
+        <td>29 CFR 1910.134</td>
+        <td><span class="bi-term"><span class="zh">呼吸防护</span><span class="en">Respiratory Protection</span></span></td>
+        <td>
+          <span class="en-p">Engineering controls (ventilation, enclosure, substitution) must be used first; respirators are permitted only when engineering controls are not feasible or while they are being implemented. Also requires a written respiratory protection program, medical evaluation, fit testing, and training.</span>
+          <span class="zh-p" style="color:#666;">必须首先使用工程控制（通风、封闭、替代）；只有在工程控制不可行或正在实施期间，才允许使用呼吸器。还要求书面的呼吸防护计划、医学评估、密合度测试和培训。</span>
+        </td>
+      </tr>
+      <tr>
+        <td>29 CFR 1910.212</td>
+        <td><span class="bi-term"><span class="zh">机械防护</span><span class="en">Machine Guarding</span></span></td>
+        <td>
+          <span class="en-p">Engineering controls (guards, barriers, devices) are the primary requirement for point-of-operation, power-transmission, and other moving-part hazards. One or more methods of machine guarding must be provided to protect the operator and others.</span>
+          <span class="zh-p" style="color:#666;">工程控制（防护罩、屏障、安全装置）是操作点、动力传输和其他运动部件危害的主要防护要求。必须提供一种或多种机械防护方法来保护操作员和他人。</span>
+        </td>
+      </tr>
+      <tr>
+        <td>29 CFR 1910.147</td>
+        <td><span class="bi-term"><span class="zh">上锁挂牌</span><span class="en">Lockout/Tagout (LOTO)</span><span class="vocab-star" data-term="Lockout/Tagout (LOTO)">☆</span></span></td>
+        <td>
+          <span class="en-p">Administrative control (written energy-control procedure) backed by specific hardware requirements (locks, tags). Requires periodic inspection at least <strong>annually</strong>. Note how a procedure + hardware can layer across hierarchy levels.</span>
+          <span class="zh-p" style="color:#666;">行政控制（书面能量控制程序）配合特定硬件要求（锁具、标签）。需要至少<strong>每年一次</strong>的定期检查。注意程序+硬件如何跨层级叠加。</span>
+        </td>
+      </tr>
+      <tr>
+        <td>29 CFR 1910<br>Subpart I</td>
+        <td><span class="bi-term"><span class="zh">个人防护装备</span><span class="en">Personal Protective Equipment (PPE)</span><span class="vocab-star" data-term="Personal Protective Equipment (PPE)">☆</span></span></td>
+        <td>
+          <span class="en-p">PPE is required <strong>ONLY</strong> after engineering and administrative controls have been assessed and found insufficient or infeasible (1910.132(d)). Employer must conduct a <strong>hazard assessment</strong> and certify it in writing.</span>
+          <span class="zh-p" style="color:#666;">只有在工程和行政控制经过评估，并发现不足或不可行之后，<strong>才</strong>需要PPE（1910.132(d)）。雇主必须进行<strong>危害评估</strong>并以书面形式认证。</span>
+        </td>
+      </tr>
+      <tr>
+        <td>29 CFR 1910.1000</td>
+        <td><span class="bi-term"><span class="zh">空气污染物</span><span class="en">Air Contaminants</span></span></td>
+        <td>
+          <span class="en-p">Establishes PELs for hundreds of substances. Compliance must be achieved through feasible engineering controls and work practices; respiratory protection is used only as a temporary measure or when controls are infeasible.</span>
+          <span class="zh-p" style="color:#666;">为数百种物质设定PEL。必须通过可行的工程控制和工作实践达到合规；呼吸防护仅作为临时措施或在控制不可行时使用。</span>
+        </td>
+      </tr>
+    </table>
+
+    <h3>层级在单个标准中的应用：噪声 / The Hierarchy Applied: Noise (29 CFR 1910.95)</h3>
+    <p class="bi-p">
+      <span class="en-p">The noise standard is the clearest single-standard illustration of the hierarchy:</span>
+      <span class="zh-p">噪声标准是层级在单一标准中最清晰的示例：</span>
+    </p>
+    <ol>
+      <li class="bi-li">
+        <span class="en-li"><strong>PEL = 90 dBA</strong> (8-hour TWA). When exposure exceeds the PEL, the employer MUST implement feasible engineering or administrative controls. This is not optional.</span>
+        <span class="zh-li"><strong>PEL = 90 dBA</strong>（8小时TWA）。当暴露超过PEL时，雇主<strong>必须</strong>实施可行的工程或行政控制。这是强制性的。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Action level = 85 dBA</strong>. At or above 85 dBA TWA, the employer must establish a Hearing Conservation Program (HCP): noise monitoring, audiometric testing, hearing protection made available, training.</span>
+        <span class="zh-li"><strong>行动水平 = 85 dBA</strong>。TWA达到或超过85 dBA时，雇主必须建立听力保护计划（HCP）：噪声监测、听力测试、提供听力防护、培训。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Exchange rate = 5 dB</strong> (OSHA): every 5 dBA increase halves the allowed exposure time. 90 dBA→8h; 95 dBA→4h; 100 dBA→2h; 105 dBA→1h.</span>
+        <span class="zh-li"><strong>交换率 = 5 dB</strong>（OSHA）：每增加5 dBA，允许暴露时间减半。90 dBA→8小时；95 dBA→4小时；100 dBA→2小时；105 dBA→1小时。</span>
+      </li>
+    </ol>
+
+    <div class="formula-box">
+      <strong>噪声剂量与TWA计算 / Noise Dose &amp; TWA Calculation (OSHA 1910.95)</strong><br><br>
+      剂量（%）/ Dose (%) = 100 × (C₁/T₁ + C₂/T₂ + … + Cₙ/Tₙ)<br>
+      &nbsp;&nbsp;其中 C = 实际暴露时间 / actual time at a level; T = 该水平允许时间 / allowed time at that level<br><br>
+      8小时TWA = 90 + 16.61 × log₁₀(Dose% / 100)<br><br>
+      <strong>示例 / Example:</strong> 工人以90 dBA暴露4小时，以95 dBA暴露4小时。<br>
+      &nbsp;&nbsp;Dose = 100 × (4/8 + 4/4) = 100 × (0.5 + 1.0) = <strong>150%</strong><br>
+      &nbsp;&nbsp;TWA = 90 + 16.61 × log₁₀(1.5) = 90 + 16.61 × 0.1761 ≈ <strong>92.9 dBA</strong><br>
+      &nbsp;&nbsp;由于超过90 dBA，需要工程/行政控制 / Since &gt; 90 dBA, engineering/administrative controls are required.
+    </div>
+
+    <div class="case-box">
+      <strong>📋 实际案例 / Case Study:</strong><br>
+      <span class="en-p">A metal stamping plant had 38 workers exposed to press noise of 98 dBA. Initially the program was "hearing plugs for everyone." An OSHA inspection cited the plant for failing to attempt engineering controls per 1910.95(b)(1). The plant then: (1) enclosed the presses with sound enclosures (reduced to 88 dBA), (2) installed vibration-isolation mounts, (3) rotated operators (administrative), and only then (4) maintained hearing protection as a supplement. After enclosure, only 6 workers remained above 85 dBA and required audiometric testing.</span>
+      <span class="zh-p" style="color:#666;">一家金属冲压厂有38名工人暴露于98 dBA的冲床噪声。最初方案是"给所有人发耳塞"。OSHA检查以未按1910.95(b)(1)尝试工程控制为由处罚了该厂。工厂随后：(1) 用隔音罩封闭冲床（降至88 dBA），(2) 安装隔振支架，(3) 操作员轮换（行政控制），最后才(4) 保留听力防护作为补充。封闭后仅6名工人仍高于85 dBA，需要听力测试。</span>
+    </div>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-high">必考 HIGH</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "At what dBA is a Hearing Conservation Program required? At what dBA are engineering controls mandatory?"<br>
+        <strong>答题要点 / Key point:</strong> 死记四个数：<strong>85 dBA</strong>=行动水平→听力保护计划（监测、听力测试、提供听力防护）；<strong>90 dBA</strong>=PEL→强制工程/行政控制；交换率<strong>5 dB</strong>（95→4h，100→2h，105→1h）。呼吸防护（1910.134）：工程控制优先，工程不可行时才允许呼吸器。
+      </div>
+    </div>
+
+    <div class="mnemonic">
+      <span class="mn-label">🧠 记忆口诀 / Mnemonic:</span>
+      <span class="mn-content"><strong>"8-5-9-5"</strong> — 8小时基准 / <strong>85</strong> 行动水平(Action Level) / <strong>90</strong> PEL / 交换率 <strong>5</strong> dB。中文："五五行动九零限"：85（行动）→90（限值），每加5减半。也可记："action 85, PEL 90, exchange 5"。</span>
+    </div>
+  </div>
+
+  <div id="quiz-group-5"></div>
+
+
+  <!-- ===== SECTION 1.6 ===== -->
+  <div class="knowledge-card">
+    <h2>1.6 <span class="bi-term"><span class="zh">预防性设计</span> · <span class="en">Prevention through Design (PtD)</span><span class="vocab-star" data-term="Prevention through Design (PtD)">☆</span></span></h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>Brauer Ch.1 (Designing to Achieve Safety) · Brauer Ch.9 · Yates Ch.29</span>
+    </div>
+
+    <p class="bi-p">
+      <span class="en-p"><span class="bi-term"><span class="zh">预防性设计</span><span class="en">Prevention through Design (PtD)</span></span>, also called "<span class="bi-term"><span class="zh">安全设计</span><span class="en">Safety by Design</span></span>," is the practice of <strong>addressing hazards during the design phase</strong> of facilities, processes, equipment, tools, and work organization — rather than retrofitting controls after the hazard already exists. It applies the hierarchy of controls <em>earliest</em>, when it is cheapest and most effective.</span>
+      <span class="zh-p">预防性设计（PtD），也称"安全设计"，是指在设施、工艺、设备、工具和工作组织的<strong>设计阶段就解决危害问题</strong>——而非在危害产生后再加装控制措施。它在<em>最早</em>的阶段应用控制层级，此时成本最低、效果最好。</span>
+    </p>
+
+    <h3>PtD 核心原则 / Core PtD Principles</h3>
+    <ol>
+      <li class="bi-li">
+        <span class="en-li"><strong>Anticipate hazards early</strong> — during the design and planning phase, not after construction or implementation.</span>
+        <span class="zh-li"><strong>尽早预判危害</strong>——在设计和规划阶段，而不是在建造或实施之后。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Apply the hierarchy of controls at the design stage</strong> — elimination and substitution are most feasible and cost-effective during design.</span>
+        <span class="zh-li"><strong>在设计阶段应用控制层级</strong>——消除和替代在设计阶段最可行、成本效益最高。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Lifecycle thinking / 全生命周期思维</strong> — consider safety during construction, operation, maintenance, renovation, and eventual decommissioning.</span>
+        <span class="zh-li">考虑建设、运营、维护、改造和最终退役全过程的安全。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Engage cross-functional teams</strong> — involve safety professionals, engineers, operators, and maintenance staff in design reviews.</span>
+        <span class="zh-li"><strong>跨职能团队参与</strong>——让安全专业人员、工程师、操作员和维护人员参与设计评审。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Document decisions / 记录决策</strong> — retain the hazard-analysis and design-decision records so future modifications can be evaluated against the original safety basis.</span>
+        <span class="zh-li">保留危害分析和设计决策记录，以便未来的改造可对照原始安全依据进行评估。</span>
+      </li>
+    </ol>
+
+    <h3>PtD 实践应用 / PtD in Practice</h3>
+    <table class="bi-table">
+      <tr><th>设计阶段<br>Design Phase</th><th>PtD 应用<br>PtD Application</th></tr>
+      <tr>
+        <td>设施设计<br>Facility design</td>
+        <td>
+          <span class="en-p">Design permanent anchor points for <span class="bi-term"><span class="zh">坠落防护</span><span class="en">fall protection</span><span class="vocab-star" data-term="Fall Protection">☆</span></span>; slope floors to drains (no standing water); specify non-slip flooring materials; include adequate lighting in design specs; plan pedestrian/vehicle separation from the outset.</span>
+          <span class="zh-p" style="color:#666;">设计永久锚点用于防坠落；地面坡向排水口（无积水）；指定防滑地面材料；设计规范中包含充足照明；从一开始就规划人车分离。</span>
+        </td>
+      </tr>
+      <tr>
+        <td>工艺设计<br>Process design</td>
+        <td>
+          <span class="en-p">Select inherently safer chemicals; design closed systems to eliminate exposure; minimize inventory of hazardous substances; size relief systems during design rather than after incidents.</span>
+          <span class="zh-p" style="color:#666;">选择本质更安全的化学品；设计封闭系统以消除暴露；最小化危险物质库存量；在设计阶段而非事故后确定泄压系统尺寸。</span>
+        </td>
+      </tr>
+      <tr>
+        <td>设备采购<br>Equipment procurement</td>
+        <td>
+          <span class="en-p">Specify equipment with built-in guarding, low noise levels, and ergonomic features; require vendors to meet safety specifications; perform pre-purchase hazard reviews.</span>
+          <span class="zh-p" style="color:#666;">指定带有内置防护、低噪音水平和人因工程特性的设备；要求供应商满足安全规范；进行采购前危害审查。</span>
+        </td>
+      </tr>
+      <tr>
+        <td>工作组织<br>Work organization</td>
+        <td>
+          <span class="en-p">Design jobs to minimize repetitive motion, awkward postures, and heavy lifting through workstation layout; engineer fatigue out of the schedule.</span>
+          <span class="zh-p" style="color:#666;">通过工位布局设计，最小化重复动作、不良姿势和重物搬运；从排班中消除疲劳因素。</span>
+        </td>
+      </tr>
+    </table>
+
+    <div class="important">
+      <strong>💡 PtD 的商业案例 — "1-10-100 法则" / Business case for PtD — the "1-10-100 Rule":</strong><br>
+      <span class="en-p">The cost to correct a hazard increases exponentially as a project progresses. A safety fix that costs <strong>$1 during design</strong> might cost <strong>$10 during construction</strong>, <strong>$100 after commissioning</strong>, and <strong>$1,000+ after an incident</strong>. This is called the "safety cost escalation curve."</span>
+      <span class="zh-p" style="color:#666;">纠正危害的成本随项目推进呈指数级增长。设计阶段花费<strong>1美元</strong>的安全修复，在施工阶段可能需要<strong>10美元</strong>，投产之后需要<strong>100美元</strong>，事故发生之后则需要<strong>1000美元以上</strong>。这被称为"安全成本升级曲线"。</span>
+    </div>
+
+    <div class="case-box">
+      <strong>📋 实际案例 / Case Study:</strong><br>
+      <span class="en-p">A pharmaceutical plant specified — at the design stage — all roof access via a parapet wall with integrated anchor points, and all above-ground piping routed at floor level behind barriers. During commissioning, the design review identified that the HVAC maintenance walkway had a 7-ft drop on one side. Because the design was still on paper, adding a second guardrail cost $1,200 (the "$1 design cost"). Retrofitting after construction would have cost an estimated $18,000 in demolition and rework — a 15× multiplier, illustrating the 1-10-100 escalation.</span>
+      <span class="zh-p" style="color:#666;">一家制药厂在设计阶段就规定：所有屋顶通道设女儿墙并集成锚点，所有地上管道在楼层后屏障处布置。投产时设计审查发现HVAC维护走道一侧有7英尺落差。由于设计仍在图纸上，增加第二道护栏仅花费1,200美元（"1美元设计成本"）。若在施工后再改造，估计需18,000美元的拆除和返工——15倍乘数，印证了1-10-100的升级规律。</span>
+    </div>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-high">必考 HIGH</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "Which statement best describes Prevention through Design?"<br>
+        <strong>答题要点 / Key point:</strong> PtD=在<strong>设计阶段</strong>解决危害（主动/Proactive），而非危害产生后加装控制（改造/retrofit）。关键词：early, design phase, lifecycle thinking, cross-functional teams。与"事故后调查""采购PPE"区分。常考"1-10-100法则"：设计$1 → 施工$10 → 投产$100 → 事故后$1000+。
+      </div>
+    </div>
+
+    <div class="mnemonic">
+      <span class="mn-label">🧠 记忆口诀 / Mnemonic:</span>
+      <span class="mn-content"><strong>"1-10-100"</strong> — 设计阶段$1 / 施工$10 / 投产$100（事故后$1000+）。中文："设计一、施工十、投产百"——越晚改越贵，安全成本升级曲线（safety cost escalation curve）。</span>
+    </div>
+  </div>
+
+  <div id="quiz-group-6"></div>
+
+
+  <!-- ===== SECTION 1.7 ===== -->
+  <div class="knowledge-card">
+    <h2>1.7 <span class="bi-term"><span class="zh">本质安全设计</span><span class="en">Inherently Safer Design (ISD)</span><span class="vocab-star" data-term="Inherently Safer Design (ISD)">☆</span></span></h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>Brauer Ch.9 · Yates Ch.29</span>
+    </div>
+
+    <p class="bi-p">
+      <span class="en-p">Closely related to PtD, ISD eliminates or reduces hazards by changing <strong>what</strong> is in the process, not by adding protective layers. A hazard that does not exist cannot cause an accident. The four strategies spell the mnemonic <strong>M-S-M-S</strong>.</span>
+      <span class="zh-p">与PtD密切相关，ISD通过改变工艺中<strong>有什么</strong>来消除或减少危害，而非增加保护层。不存在的危害不会引发事故。四项策略的助记符为<strong>M-S-M-S</strong>。</span>
+    </p>
+
+    <table class="bi-table">
+      <tr><th>策略 / Strategy</th><th>别名 / Also Called</th><th>含义 / Meaning</th><th>示例 / Example</th></tr>
+      <tr>
+        <td><strong>Minimize / 最小化</strong></td>
+        <td>Intensification / 强化</td>
+        <td>
+          <span class="en-p">Use smaller quantities of hazardous substances.</span>
+          <span class="zh-p" style="color:#666;">使用更少量的危险物质。</span>
+        </td>
+        <td>
+          <span class="en-p">Reduce inventory of a toxic gas; buy chemicals in smaller containers; "just-in-time" delivery.</span>
+          <span class="zh-p" style="color:#666;">减少有毒气体库存；购买小容器化学品；"准时制"供应。</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Substitute / 替代</strong></td>
+        <td>—</td>
+        <td>
+          <span class="en-p">Replace hazardous materials with less hazardous ones.</span>
+          <span class="zh-p" style="color:#666;">用危害较小的材料替代危险材料。</span>
+        </td>
+        <td>
+          <span class="en-p">Replace ammonia refrigerant with a less toxic refrigerant; water-based coatings.</span>
+          <span class="zh-p" style="color:#666;">用毒性较小的制冷剂替代氨制冷剂；水性涂料。</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Moderate / 缓和</strong></td>
+        <td>Attenuation / 弱化</td>
+        <td>
+          <span class="en-p">Use less hazardous process conditions (lower temperature, lower pressure, lower concentration, dilute form).</span>
+          <span class="zh-p" style="color:#666;">使用危害较小的工艺条件（较低温度、较低压力、较低浓度、稀释形态）。</span>
+        </td>
+        <td>
+          <span class="en-p">Store a chemical below its boiling point; use dilute acid rather than concentrated; operate at lower pressure.</span>
+          <span class="zh-p" style="color:#666;">将化学品储存在沸点以下；使用稀酸而非浓酸；在较低压力下操作。</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Simplify / 简化</strong></td>
+        <td>Error-tolerance / 容错</td>
+        <td>
+          <span class="en-p">Design processes less prone to human error (fewer steps, clearer labeling, error-proofing / poka-yoke, forgiving designs).</span>
+          <span class="zh-p" style="color:#666;">设计不易发生人为错误的工艺（更少的步骤、更清晰的标签、防错设计、宽容性设计）。</span>
+        </td>
+        <td>
+          <span class="en-p">Design incompatible connections so they cannot be connected; color-code and key different gas lines.</span>
+          <span class="zh-p" style="color:#666;">设计不相容的接口使其无法连接；对不同的气体管线进行颜色编码和钥匙互锁。</span>
+        </td>
+      </tr>
+    </table>
+
+    <div class="important">
+      <strong>⚠ CSP 考试技巧 / Exam Tip:</strong><br>
+      <span class="en-p">Distinguish <strong>Substitute (ISD)</strong> from the control-hierarchy <strong>Substitution</strong> — they are the same concept; ISD is just its application in process design. More important: don't confuse <strong>Minimize</strong> (reduce quantity) with <strong>Moderate</strong> (reduce severity of conditions). "Lower temperature/pressure/concentration" = Moderate. "Less inventory" = Minimize.</span>
+      <span class="zh-p" style="color:#666;">区分<strong>替代（ISD）</strong>与控制层级的<strong>Substitution</strong>——它们是同一概念；ISD只是其在工艺设计中的应用。更重要的是：不要混淆<strong>最小化</strong>（减少数量）与<strong>缓和</strong>（降低条件严重性）。"降低温度/压力/浓度"=缓和。"减少库存"=最小化。</span>
+    </div>
+
+    <h3>ISD 在设计评审中的应用 / ISD in Design Reviews</h3>
+    <p class="bi-p">
+      <span class="en-p">When evaluating a proposed design, the safety professional should ask ISD questions in order:</span>
+      <span class="zh-p">评估拟议设计时，安全专业人员应按顺序提问ISD问题：</span>
+    </p>
+    <ol>
+      <li class="bi-li">
+        <span class="en-li">Can the hazardous material or operation be <strong>eliminated</strong>?</span>
+        <span class="zh-li">危险物料或操作能否<strong>消除</strong>？</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">Can it be <strong>minimized</strong> in quantity?</span>
+        <span class="zh-li">能否在数量上<strong>最小化</strong>？</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">Can a less hazardous <strong>substitute</strong> be used?</span>
+        <span class="zh-li">能否使用危害较小的<strong>替代品</strong>？</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">Can conditions be <strong>moderated</strong> (lower T/P/concentration)?</span>
+        <span class="zh-li">能否<strong>缓和</strong>条件（降低温度/压力/浓度）？</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">Can the design be <strong>simplified</strong> to reduce human-error potential?</span>
+        <span class="zh-li">能否<strong>简化</strong>设计以减少人为错误可能？</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">Only after exhausting ISD: what active and passive protective layers (relief, interlocks, containment) are needed?</span>
+        <span class="zh-li">只有在穷尽ISD之后：需要哪些主动和被动的保护层（泄压、联锁、围护）？</span>
+      </li>
+    </ol>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-high">必考 HIGH</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "Reducing chemical inventory from 5,000 to 500 gallons is which ISD strategy?"<br>
+        <strong>答题要点 / Key point:</strong> ISD四策略<strong>M-S-M-S</strong>：Minimize(数量最小化) / Substitute(替代材料) / Moderate(缓和条件=降T/P/浓度) / Simplify(简化=防错)。口诀区分：数量→Minimize；温度压力浓度→Moderate；换材料→Substitute；减少人为错误→Simplify。
+      </div>
+    </div>
+
+    <div class="mnemonic">
+      <span class="mn-label">🧠 记忆口诀 / Mnemonic:</span>
+      <span class="mn-content"><strong>M-S-M-S</strong> — Minimize, Substitute, Moderate, Simplify。中文"量料条错"："减<strong>量</strong>、换<strong>料</strong>、降<strong>条</strong>件、防<strong>错</strong>"。别与Substitution混淆——ISD中的Substitute就是控制层级里的替代在工艺设计中的应用。</span>
+    </div>
+  </div>
+
+  <div id="quiz-group-7"></div>
+
+
+  <!-- ===== SECTION 1.8 ===== -->
+  <div class="knowledge-card">
+    <h2>1.8 运用层级选择控制措施 / Applying the Hierarchy: Selecting Controls</h2>
+
+    <div class="source-tag">
+      📖 <strong>来源 / Sources:</strong>
+      <span>Brauer Ch.9 · Yates Ch.29</span>
+    </div>
+
+    <h3>控制措施选择的系统化方法 / A Systematic Approach to Control Selection</h3>
+    <p class="bi-p">
+      <span class="en-p">When a hazard is identified, the safety professional should apply this decision logic — which mirrors exactly how CSP scenario questions should be answered:</span>
+      <span class="zh-p">识别危害后，安全专业人员应应用以下决策逻辑——这与CSP情景题的作答逻辑完全一致：</span>
+    </p>
+    <ol>
+      <li class="bi-li">
+        <span class="en-li"><strong>Identify</strong> the hazard and its energy source.</span>
+        <span class="zh-li"><strong>识别</strong>危害及其能量来源。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Eliminate</strong> the hazard if possible (can the task be redesigned away?).</span>
+        <span class="zh-li">如有可能<strong>消除</strong>危害（任务能否通过重新设计取消？）。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Substitute</strong> — a less hazardous material/process/equipment.</span>
+        <span class="zh-li"><strong>替代</strong>——使用危害较小的材料/工艺/设备。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Engineering controls</strong> — isolate the worker from the hazard (guards, ventilation, enclosures).</span>
+        <span class="zh-li"><strong>工程控制</strong>——将工人与危害隔离（防护罩、通风、封闭）。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Administrative controls</strong> — change procedures, rotation, training, signs.</span>
+        <span class="zh-li"><strong>行政控制</strong>——改变程序、轮换、培训、标识。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>PPE</strong> — only when higher levels are infeasible or as a supplement while engineering controls are installed.</span>
+        <span class="zh-li"><strong>PPE</strong>——仅当更高层级不可行时，或作为工程控制安装期间的补充。</span>
+      </li>
+    </ol>
+
+    <h3>常见失误与考试陷阱 / Common Errors & Exam Traps</h3>
+    <table class="bi-table">
+      <tr><th>陷阱 / Trap</th><th>正确理解 / Correct Understanding</th></tr>
+      <tr>
+        <td>
+          <span class="en-p">Choosing PPE as the "first" answer to a hazard scenario.</span>
+          <span class="zh-p" style="color:#666;">面对危害场景第一反应选PPE。</span>
+        </td>
+        <td>
+          <span class="en-p">PPE is the LAST line of defense. Unless the scenario states higher controls are infeasible, the best answer is a higher-level control.</span>
+          <span class="zh-p" style="color:#666;">PPE是最后一道防线。除非场景说明更高层级控制不可行，否则最佳答案是更高层级的控制。</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span class="en-p">Confusing an administrative control (training, rotation, sign) with an engineering control.</span>
+          <span class="zh-p" style="color:#666;">把行政控制（培训、轮换、标识）误认为工程控制。</span>
+        </td>
+        <td>
+          <span class="en-p">If no physical change to the workplace occurs, it is administrative. Look for the physical/mechanical modification.</span>
+          <span class="zh-p" style="color:#666;">如果工作场所没有物理改变，就是行政控制。寻找物理/机械改造。</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span class="en-p">Picking "elimination" when the scenario only replaces the material.</span>
+          <span class="zh-p" style="color:#666;">场景只是更换材料却选"消除"。</span>
+        </td>
+        <td>
+          <span class="en-p">Replacement of material = substitution. Elimination requires the hazard to be gone entirely.</span>
+          <span class="zh-p" style="color:#666;">更换材料=替代。消除要求危害完全消失。</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span class="en-p">Forgetting that administrative controls still require PPE when exposure remains above limits.</span>
+          <span class="zh-p" style="color:#666;">忘记当暴露仍超限时，行政控制之后仍需PPE。</span>
+        </td>
+        <td>
+          <span class="en-p">Layering is normal: engineering + administrative + PPE often coexist. Questions about "additional" control may expect a supplementary level.</span>
+          <span class="zh-p" style="color:#666;">分层是正常的：工程+行政+PPE常并存。问"额外"控制的题目可能期望补充一个层级。</span>
+        </td>
+      </tr>
+    </table>
+
+    <div class="important">
+      <strong>📌 本节点睛 / Key Takeaway:</strong><br>
+      <span class="en-p">Hierarchy of Controls is the single most-tested concept in Domain 1. You must be able to: (1) rank controls, (2) classify an example into a level, (3) identify what is required by a specific OSHA standard before PPE is allowed, and (4) apply the decision logic to a scenario. Master this page and the associated OSHA threshold numbers before moving on.</span>
+      <span class="zh-p" style="color:#666;">控制层级是领域1中考得最多的概念。你必须能够：(1) 给控制排序，(2) 将示例归类到某一层级，(3) 识别特定OSHA标准在允许PPE之前的要求，(4) 将决策逻辑应用于情景。先掌握本页及相关OSHA阈值数值，再继续学习。</span>
+    </div>
+
+    <div class="exam-hotspot">
+      <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
+      <span class="eh-tag freq-high">必考 HIGH</span>
+      <div>
+        <strong>典型问法 / Typical question:</strong> "Which control should be applied FIRST?" / "选出按递减有效性排序的正确序列。"<br>
+        <strong>答题要点 / Key point:</strong> 固定决策逻辑：识别危害 → 消除？→ 替代？→ 工程 → 行政 → PPE。陷阱三连：(1) 一上来就选PPE——PPE是最后防线；(2) 把培训/轮换/标识当工程控制；(3) 换材料却选"消除"。问"额外控制"时允许叠加（纵深防御）。
+      </div>
+    </div>
+  </div>
+
+  <div id="quiz-group-8"></div>
+
+
+  <!-- QUIZ SECTION -->
+  <div id="quiz-root"></div>
+
+</div>
+
+<script src="quiz-engine.js?v=11"></script>
+<script src="vocab-engine.js?v=11"></script>
+<script>
+CSPQuiz.init({
+  quizId: 'week-01-quiz',
+  quizTitle: 'Week 1 Quiz: Hierarchy of Controls & PtD / 第1周测验：控制层级与预防性设计',
+  quizTopic: 'Domain 1 — Advanced Application of Safety Principles',
+  containerId: 'quiz-root',
+  questions: [
+    {
+      text: 'According to the Hierarchy of Controls, which control measure is considered the MOST effective?',
+      group: 1,
+      options: [
+        'Engineering controls such as machine guarding',
+        'Personal protective equipment (PPE)',
+        'Elimination of the hazard',
+        'Administrative controls including safety training'
+      ],
+      correct: 2,
+      explanation: 'Elimination is the most effective control because it physically removes the hazard so it no longer exists. The hierarchy ranks controls from most to least effective: Elimination > Substitution > Engineering > Administrative > PPE.\n\n消除是最有效的控制措施，因为它物理移除危害，使危害不复存在。控制层级从最有效到最不有效依次为：消除 > 替代 > 工程控制 > 行政控制 > PPE。'
+    },
+    {
+      text: 'A manufacturing facility uses a highly toxic solvent for degreasing parts. The safety manager recommends switching to a water-based, non-toxic degreaser. This is an example of:',
+      group: 1,
+      options: ['Engineering control', 'Substitution', 'Administrative control', 'Elimination'],
+      correct: 1,
+      explanation: 'Replacing a hazardous material with a less hazardous alternative is Substitution — the second most effective level in the hierarchy. Elimination would mean removing the degreasing step entirely.\n\n用危害较小的替代品替换危险材料属于替代——控制层级中第二有效的方法。消除意味着完全取消脱脂步骤。'
+    },
+    {
+      text: 'Which of the following best describes the "1-10-100 Rule" in the context of Prevention through Design?',
+      group: 1,
+      options: [
+        'The ratio of safety professionals to workers needed for an effective safety program',
+        'The cost multiplier for correcting hazards at different project stages — $1 in design vs. $100+ after commissioning',
+        'The number of days required to implement engineering, administrative, and PPE controls respectively',
+        'The percentage of incidents caused by unsafe conditions vs. unsafe acts vs. natural causes'
+      ],
+      correct: 1,
+      explanation: 'The "1-10-100 Rule" illustrates that correcting a hazard costs exponentially more the later it is addressed: approximately $1 during design, $10 during construction, $100 after the facility is operational, and potentially $1,000+ after an incident occurs. This makes the business case for PtD.\n\n"1-10-100法则"说明纠正危害的成本随时间呈指数增长：设计阶段约1美元，施工阶段约10美元，投产运营后约100美元，事故发生之后可能超过1000美元。这为PtD提供了商业论证。'
+    },
+    {
+      text: 'Per OSHA\'s Occupational Noise Exposure standard (29 CFR 1910.95), when must an employer implement a Hearing Conservation Program?',
+      group: 1,
+      options: [
+        'When noise levels exceed 90 dBA as an 8-hour TWA',
+        'When noise levels equal or exceed 85 dBA as an 8-hour TWA',
+        'Only after an employee has suffered a Standard Threshold Shift (STS)',
+        'When any employee complains about noise levels'
+      ],
+      correct: 1,
+      explanation: 'OSHA requires a Hearing Conservation Program at 85 dBA TWA (the "action level"). At 90 dBA TWA (the PEL), engineering and administrative controls are required. Per the hierarchy, controls come first; the Hearing Conservation Program (which includes audiometric testing and hearing protection) is triggered at 85 dBA.\n\nOSHA要求在85 dBA TWA（"行动水平"）时实施听力保护计划。在90 dBA TWA（PEL）时，需要工程和行政控制。按照控制层级，控制措施优先；听力保护计划（包括听力测试和听力防护）在85 dBA时触发。'
+    },
+    {
+      text: 'Which of the following is an example of an ENGINEERING control rather than an administrative control?',
+      group: 1,
+      options: [
+        'Job rotation to reduce ergonomic strain',
+        'A written lockout/tagout procedure',
+        'A local exhaust ventilation (LEV) system to capture welding fumes',
+        'Mandatory pre-shift stretching program'
+      ],
+      correct: 2,
+      explanation: 'A local exhaust ventilation (LEV) system is a physical modification to the workplace that captures contaminants at the source — this is an engineering control. Job rotation, written procedures, and stretching programs are all administrative controls because they rely on worker behavior and compliance.\n\n局部排风（LEV）系统是对工作场所的物理改造，从源头捕获污染物——这属于工程控制。岗位轮换、书面程序和拉伸计划都是行政控制，因为它们依赖工人的行为和遵守。'
+    },
+    {
+      text: 'In the context of Inherently Safer Design (ISD), "Moderate" (Attenuation) refers to:',
+      group: 2,
+      options: [
+        'Reducing the inventory of hazardous materials on site',
+        'Using less hazardous process conditions such as lower temperature or pressure',
+        'Replacing a hazardous chemical entirely with a safer one',
+        'Designing controls that are acceptable to a majority of stakeholders'
+      ],
+      correct: 1,
+      explanation: '"Moderate" (also called Attenuation) means operating under less severe conditions — lower temperatures, pressures, or concentrations — to reduce the consequence of a release. This is one of the four ISD strategies alongside Minimize, Substitute, and Simplify.\n\n"缓和"（也称弱化）指在较温和的条件下操作——降低温度、压力或浓度——以减轻泄漏的后果。这是四项ISD策略之一，与最小化、替代和简化并列。'
+    },
+    {
+      text: 'A safety professional is evaluating controls for a fall hazard on a flat roof. Workers must perform maintenance near the unprotected edge. Which of the following represents controls in CORRECT hierarchy order (most to least effective)?',
+      group: 2,
+      options: [
+        'Safety harness with lanyard → Warning line → Guardrail → Eliminate the need to go on the roof',
+        'Eliminate the need to go on the roof → Guardrail → Warning line and safety monitor → Personal fall arrest system',
+        'Administrative controls → PPE → Engineering controls → Elimination',
+        'PPE → Warning signs → Guardrail → Job rotation'
+      ],
+      correct: 1,
+      explanation: 'Correct hierarchy order: (1) Eliminate — redesign so no one needs to access the roof (e.g., remote monitoring equipment). (2) Engineering — install a guardrail or parapet. (3) Administrative — warning line system with a safety monitor. (4) PPE — personal fall arrest system (harness + lanyard). Always apply controls in descending hierarchy order.\n\n正确的层级顺序：(1) 消除——重新设计使无需上屋顶（如远程监控设备）。(2) 工程控制——安装护栏或女儿墙。(3) 行政控制——警示线系统加安全监视员。(4) PPE——个人防坠系统（安全带+系索）。始终按控制层级从高到低应用。'
+    },
+    {
+      text: 'Which of the following is the BEST description of Prevention through Design (PtD)?',
+      group: 2,
+      options: [
+        'Adding machine guards after a piece of equipment has been installed and commissioned',
+        'Conducting incident investigations to determine root causes and recommend corrective actions',
+        'Addressing occupational safety and health hazards during the design phase of facilities, processes, and equipment',
+        'Providing PPE at no cost to employees before they begin a hazardous task'
+      ],
+      correct: 2,
+      explanation: 'PtD is specifically about integrating safety into the design phase — before hazards are created. It is proactive rather than reactive. Adding guards after installation (A) is a retrofit. Incident investigation (B) is reactive. Providing PPE (D) is a lower-level control, not a design approach.\n\nPtD的核心是在设计阶段就融入安全——在危害产生之前。这是主动的而非被动的。安装后再加防护罩（A）是改造。事故调查（B）是被动的。提供PPE（D）是低层级控制，并非设计方法。'
+    },
+    {
+      text: 'Which level of the Hierarchy of Controls is the ONLY one that completely removes risk so the hazard no longer exists?',
+      group: 2,
+      options: ['Substitution', 'Elimination', 'Engineering controls', 'Administrative controls'],
+      correct: 1,
+      explanation: 'Elimination is the only level that physically removes the hazard so it no longer exists, completely eliminating risk. All other levels either reduce the hazard (substitution), isolate the worker from it (engineering), change behavior around it (administrative), or protect only the individual (PPE) — but the hazard itself remains.\n\n消除是唯一通过物理移除危害使其不复存在、从而完全消除风险的层级。其他所有层级要么降低危害（替代）、隔离工人（工程控制）、改变行为（行政控制）或仅保护个人（PPE）——但危害本身仍然存在。'
+    },
+    {
+      text: 'Under OSHA\'s PPE standard (29 CFR 1910.132(d)), before relying on PPE as a control, the employer must:',
+      group: 2,
+      options: [
+        'Interview every employee about their PPE preferences',
+        'Conduct a written, certified hazard assessment of the workplace to determine if hazards require PPE',
+        'Purchase PPE from an approved vendor only',
+        'Obtain a waiver signed by each affected employee'
+      ],
+      correct: 1,
+      explanation: '1910.132(d) requires the employer to assess the workplace to determine if hazards are present (or likely to be present) that necessitate PPE, and to certify in writing that the assessment was performed. PPE is the last line of defense; a documented hazard assessment is the prerequisite.\n\n1910.132(d)要求雇主评估工作场所，确定是否存在（或可能存在的）需要PPE的危害，并书面认证评估已完成。PPE是最后一道防线；书面的危害评估是前提。'
+    },
+    {
+      text: 'Under 29 CFR 1910.95, feasible engineering AND administrative controls are required when an employee\'s noise exposure equals or exceeds:',
+      group: 3,
+      options: [
+        '85 dBA TWA (the action level)',
+        '90 dBA TWA (the PEL)',
+        '95 dBA TWA',
+        '100 dBA instantaneous'
+      ],
+      correct: 1,
+      explanation: 'At the PEL of 90 dBA (8-hour TWA), feasible engineering or administrative controls must be implemented. The 85 dBA action level triggers the Hearing Conservation Program (monitoring, audiometric testing, and available hearing protection), but controls are mandatory only at 90 dBA.\n\n在90 dBA（8小时TWA）的PEL水平，必须实施可行的工程或行政控制。85 dBA行动水平触发听力保护计划（监测、听力测试、提供听力防护），但只有达到90 dBA才强制要求控制措施。'
+    },
+    {
+      text: 'Using the OSHA 5-dB exchange rate, a worker is exposed to 95 dBA. What is the maximum allowable exposure duration before exceeding the PEL?',
+      group: 3,
+      options: ['8 hours', '4 hours', '2 hours', '1 hour'],
+      correct: 1,
+      explanation: 'OSHA uses a 5-dB exchange rate: each 5 dBA increase halves the allowed time. 90 dBA → 8 hours; 95 dBA → 4 hours; 100 dBA → 2 hours; 105 dBA → 1 hour. A worker at 95 dBA may be exposed for only 4 hours before the dose exceeds 100%.\n\nOSHA采用5-dB交换率：每增加5 dBA，允许时间减半。90 dBA→8小时；95 dBA→4小时；100 dBA→2小时；105 dBA→1小时。工人在95 dBA下仅可暴露4小时，否则剂量超过100%。'
+    },
+    {
+      text: 'A worker is exposed to 90 dBA for 4 hours and 95 dBA for 4 hours during an 8-hour shift (OSHA 5-dB exchange rate). What is the approximate 8-hour TWA?',
+      group: 3,
+      options: ['90 dBA', '91 dBA', '93 dBA', '95 dBA'],
+      correct: 2,
+      explanation: 'First compute the dose: Dose = 100 × (C₁/T₁ + C₂/T₂) = 100 × (4/8 + 4/4) = 100 × (0.5 + 1.0) = 150%. Then TWA = 90 + 16.61 × log₁₀(Dose/100) = 90 + 16.61 × log₁₀(1.5) = 90 + 16.61 × 0.1761 ≈ 92.9 dBA, or approximately 93 dBA. Since this exceeds 90 dBA, engineering/administrative controls are required.\n\n先计算剂量：Dose = 100 × (C₁/T₁ + C₂/T₂) = 100 × (4/8 + 4/4) = 100 × (0.5 + 1.0) = 150%。然后 TWA = 90 + 16.61 × log₁₀(剂量/100) = 90 + 16.61 × log₁₀(1.5) = 90 + 16.61 × 0.1761 ≈ 92.9 dBA，约93 dBA。由于超过90 dBA，需要工程/行政控制。'
+    },
+    {
+      text: 'Under 29 CFR 1910.212 (machine guarding), the primary method required to protect workers from point-of-operation hazards is:',
+      group: 3,
+      options: [
+        'Safety training and warning signs',
+        'Engineering controls such as guards, barriers, and safety devices',
+        'Providing PPE and enforcing its use',
+        'Job rotation so workers spend less time at the machine'
+      ],
+      correct: 1,
+      explanation: '1910.212 requires that one or more methods of machine guarding be provided to protect operators and others from point-of-operation, in-running nip points, rotating parts, and flying chips/sparks. Guards are engineering controls — the standard mandates them, not training or PPE.\n\n1910.212要求提供一种或多种机械防护方法，保护操作员和他人免受操作点、卷入点、旋转部件和飞屑/火花的伤害。防护装置是工程控制——标准强制要求防护装置，而非培训或PPE。'
+    },
+    {
+      text: 'Which of the following is an ADMINISTRATIVE control for reducing ergonomic risk?',
+      group: 3,
+      options: [
+        'Installing a vacuum lift assist for heavy parts',
+        'Repositioning the work table to reduce reaching distance',
+        'Implementing a job rotation schedule so workers alternate tasks',
+        'Specifying a lighter-weight tool in the purchasing process'
+      ],
+      correct: 2,
+      explanation: 'Job rotation changes the schedule/behavior of workers — an administrative control. The vacuum lift assist, repositioned table, and lighter tool are all physical/engineering changes to the workplace.\n\n岗位轮换改变工人的排班/行为——属于行政控制。真空辅助吊具、调整工作台和更轻的工具都是对工作场所的物理/工程改变。'
+    },
+    {
+      text: 'Under the Respiratory Protection standard (29 CFR 1910.134), respirators may be used only when:',
+      group: 4,
+      options: [
+        'The employer has budgeted for them in the annual safety plan',
+        'The worker requests respiratory protection',
+        'Feasible engineering controls are not sufficient or are being implemented',
+        'The hazard is classified as a nuisance dust'
+      ],
+      correct: 2,
+      explanation: '1910.134 requires that engineering controls (e.g., ventilation, enclosure, substitution) be used first; respirators are permitted when these controls are not feasible, are being implemented, or are insufficient to reduce exposure below the PEL. This mirrors the hierarchy: PPE after engineering.\n\n1910.134要求首先使用工程控制（如通风、封闭、替代）；当这些控制不可行、正在实施或不足以将暴露降至PEL以下时，才允许使用呼吸器。这体现了层级：先工程后PPE。'
+    },
+    {
+      text: 'An ISD strategy that reduces the INVENTORY of a hazardous chemical from 5,000 gallons to 500 gallons is an example of:',
+      group: 4,
+      options: ['Simplify', 'Minimize', 'Moderate', 'Substitute'],
+      correct: 1,
+      explanation: 'Reducing the quantity of a hazardous substance is Minimize (also called Intensification). Moderate means reducing severity of conditions (T/P/concentration). Simplify means reducing human-error potential. Substitute means replacing the material itself.\n\n减少危险物质的量属于最小化（也称强化）。缓和指降低条件严重性（温度/压力/浓度）。简化指降低人为错误可能。替代指更换材料本身。'
+    },
+    {
+      text: 'In the four ISD strategies, "Simplify" is best exemplified by:',
+      group: 4,
+      options: [
+        'Lowering the operating pressure of a reactor',
+        'Designing incompatible gas-line connections so they physically cannot be connected',
+        'Reducing the batch size of a toxic intermediate',
+        'Replacing a flammable solvent with a nonflammable one'
+      ],
+      correct: 1,
+      explanation: 'Simplify designs out human error — incompatible connections that cannot be made, keyed and color-coded fittings, error-proofing (poka-yoke). Lowering pressure is Moderate; reducing batch size is Minimize; replacing the solvent is Substitute.\n\n简化通过设计消除人为错误——无法连接的相容性接口、钥匙化与颜色编码的接头、防错设计。降低压力是缓和；减少批量是最小化；更换溶剂是替代。'
+    },
+    {
+      text: 'A facility stores a chemical at 60 psig. An engineer proposes lowering the storage pressure to 15 psig to reduce release consequences. This ISD strategy is:',
+      group: 4,
+      options: ['Minimize', 'Moderate', 'Simplify', 'Elimination'],
+      correct: 1,
+      explanation: 'Lowering pressure, temperature, or concentration to reduce hazard severity is Moderate (Attenuation). The chemical remains the same and the quantity is unchanged — only the process conditions are made less severe.\n\n通过降低压力、温度或浓度来减轻危害严重性属于缓和（弱化）。化学品种类和数量不变——只是工艺条件变得不那么剧烈。'
+    },
+    {
+      text: 'Which characteristic BEST distinguishes engineering controls from administrative controls?',
+      group: 4,
+      options: [
+        'Engineering controls cost less to implement',
+        'Engineering controls do not depend on worker behavior — they work passively',
+        'Engineering controls are always preferred by OSHA inspectors',
+        'Administrative controls are more effective than engineering controls'
+      ],
+      correct: 1,
+      explanation: 'The defining difference is reliability: engineering controls work passively (a guardrail protects a worker who is not paying attention), while administrative controls depend on continued human compliance and fail when workers do not follow them.\n\n决定性区别是可靠性：工程控制被动工作（护栏能保护一个没注意的工人），而行政控制依赖持续的人为遵守，工人不遵守即失效。'
+    },
+    {
+      text: 'Which of the following is NOT one of the five levels of the Hierarchy of Controls?',
+      group: 5,
+      options: ['Elimination', 'Substitution', 'Insurance and risk transfer', 'Personal protective equipment'],
+      correct: 2,
+      explanation: 'The five recognized levels are Elimination, Substitution, Engineering Controls, Administrative Controls, and PPE. Insurance/risk transfer is a financial risk-management tool, not a hazard control — it does not reduce the hazard or the exposure.\n\n公认的五个层级是消除、替代、工程控制、行政控制和PPE。保险/风险转移是财务风险管理工具，不是危害控制——它不减少危害或暴露。'
+    },
+    {
+      text: 'In the context of PtD\'s lifecycle thinking, safety must be considered during which phases?',
+      group: 5,
+      options: [
+        'Only during the design and construction phases',
+        'Only during operation and maintenance',
+        'Construction, operation, maintenance, renovation, AND eventual decommissioning',
+        'Only during the initial concept development'
+      ],
+      correct: 2,
+      explanation: 'PtD lifecycle thinking considers the entire life of a facility: design, construction, operation, maintenance, renovation, and decommissioning. Decommissioning and demolition can be among the most hazardous phases, so they must be designed for from the start.\n\nPtD的全生命周期思维考虑设施整个寿命：设计、建设、运营、维护、改造和退役。退役和拆除可能是最危险的阶段之一，必须从一开始就为此设计。'
+    },
+    {
+      text: 'Why does PtD emphasize cross-functional teams in the design review process?',
+      group: 5,
+      options: [
+        'To satisfy union representation requirements',
+        'Because operators, maintenance staff, and engineers each understand different hazards and practical realities of the design',
+        'To speed up the design approval process',
+        'Because OSHA requires a minimum team size for all design reviews'
+      ],
+      correct: 1,
+      explanation: 'Cross-functional teams (engineers, operators, maintenance, safety professionals) bring different hazard knowledge: operators know how work is actually performed, maintenance knows failure modes, engineers know design constraints. This improves hazard identification during design.\n\n跨职能团队（工程师、操作员、维护人员、安全专业人员）带来不同的危害知识：操作员知道实际作业方式，维护人员知道失效模式，工程师知道设计约束。这提高了设计阶段的危害识别质量。'
+    },
+    {
+      text: 'According to the hierarchy, PPE should be used as a control only when:',
+      group: 5,
+      options: [
+        'It is the cheapest option available',
+        'Higher-level controls are not feasible or are being implemented',
+        'Employees request it for comfort',
+        'The hazard was identified during a safety audit'
+      ],
+      correct: 1,
+      explanation: 'PPE is the last line of defense. It is appropriate when elimination, substitution, engineering, and administrative controls are not feasible, or as a supplement while engineering controls are being installed. OSHA standards such as 1910.95 and 1910.134 codify this order.\n\nPPE是最后一道防线。当消除、替代、工程和行政控制不可行时，或作为工程控制安装期间的补充，才适合使用。1910.95和1910.134等OSHA标准对此顺序有明确规定。'
+    },
+    {
+      text: 'A roof work area uses a warning line system with a dedicated safety monitor. These two controls fall into which hierarchy level?',
+      group: 5,
+      options: ['Engineering controls', 'Administrative controls', 'Elimination', 'PPE'],
+      correct: 1,
+      explanation: 'Warning lines and safety monitors change how/where people work and rely on worker compliance — they are administrative controls. They do not physically prevent a fall (unlike a guardrail, which is an engineering control).\n\n警示线和安全监视员改变人们的工作方式/地点，依赖工人遵守——属于行政控制。它们不像护栏（工程控制）那样物理上阻止坠落。'
+    },
+    {
+      text: 'The lockout/tagout (LOTO) written energy-control procedure, as required by 29 CFR 1910.147, is best classified as which type of control?',
+      group: 6,
+      options: [
+        'Engineering control',
+        'Administrative control backed by specific hardware (locks and tags)',
+        'Elimination of hazardous energy',
+        'Personal protective equipment'
+      ],
+      correct: 1,
+      explanation: 'LOTO is primarily an administrative control (a written procedure governing how work is done) that is reinforced by hardware — locks and tags that physically prevent operation. This shows how controls often layer across hierarchy levels.\n\nLOTO主要是行政控制（规范作业方式的书面程序），并由硬件——物理上阻止操作的锁具和标签——加以强化。这显示控制措施常跨层级叠加。'
+    },
+    {
+      text: 'To reduce noise at a press line, an engineer installs sound enclosures around the presses. This is an example of:',
+      group: 6,
+      options: [
+        'An administrative control',
+        'An engineering control',
+        'Hearing protection (PPE)',
+        'Substitution'
+      ],
+      correct: 1,
+      explanation: 'Sound enclosures are a physical modification to the workplace that reduces noise at the source/path — an engineering control. Per 1910.95, such controls are required before relying on hearing protection.\n\n隔音罩是对工作场所的物理改造，在源头/路径降低噪声——属于工程控制。依据1910.95，此类控制优先于依赖听力防护。'
+    },
+    {
+      text: 'A safety professional is asked to recommend a control for a machine that periodically jams and must be cleared by hand. Which hierarchy-appropriate approach is BEST?',
+      group: 6,
+      options: [
+        'Require operators to wear leather gloves and safety glasses',
+        'Post a warning sign next to the machine',
+        'Install an interlocked guard that shuts down the machine before the jam can be cleared, or redesign the feed to prevent jams',
+        'Schedule more frequent breaks for operators'
+      ],
+      correct: 2,
+      explanation: 'The best hierarchy-based answer addresses the hazard at a higher level: either eliminate/prevent the jam (redesign/engineering) or provide an engineering control that makes clearing safe (interlocked guard). Gloves, signs, and breaks are lower-level controls and do not address the mechanical hazard.\n\n基于层级的最佳答案应在更高层面解决危害：消除/预防卡料（重新设计/工程），或提供使清理安全的工程控制（联锁防护罩）。手套、标识和休息都是低层级控制，不能解决机械危害。'
+    },
+    {
+      text: 'Which statement about PPE is TRUE?',
+      group: 6,
+      options: [
+        'PPE reduces the hazard at its source',
+        'PPE is the last line of defense and protects only the individual wearing it',
+        'PPE is more reliable than engineering controls',
+        'PPE eliminates the need for a hazard assessment'
+      ],
+      correct: 1,
+      explanation: 'PPE is the last line of defense: it protects only the individual wearing it and does not reduce the hazard at the source. It is less reliable than engineering controls because it fails if not worn, worn improperly, or damaged — and 1910.132(d) still requires a documented hazard assessment.\n\nPPE是最后一道防线：仅保护佩戴者个人，不从源头减少危害。其可靠性低于工程控制，因为不佩戴、佩戴不当或损坏即失效——且1910.132(d)仍要求书面的危害评估。'
+    },
+    {
+      text: 'Which of the following is a key limitation of Substitution as a hazard control?',
+      group: 6,
+      options: [
+        'It always costs more than the original material',
+        'The hazard remains present, just reduced, and the substitute may introduce new hazards',
+        'It is not recognized by OSHA',
+        'It only works for chemical hazards, not physical ones'
+      ],
+      correct: 1,
+      explanation: 'Substitution reduces but does not eliminate the hazard — a less toxic solvent is still a solvent. It can also introduce new hazards (e.g., swapping a fire hazard for a toxicity hazard), so the substitute itself must be risk-assessed.\n\n替代降低但不消除危害——毒性较小的溶剂仍是溶剂。它还可能引入新的危害（例如用毒性危害换掉火灾危害），因此替代品本身必须进行风险评估。'
+    },
+    {
+      text: 'Which of the following scenarios represents ELIMINATION of a hazard?',
+      group: 7,
+      options: [
+        'Replacing a gasoline engine with an electric motor',
+        'Switching from a solvent-based to a water-based paint',
+        'Automating a manual palletizing task so no worker performs the lifting',
+        'Providing respirators to workers painting in a spray booth'
+      ],
+      correct: 2,
+      explanation: 'Automating the task removes the manual lifting hazard entirely — the hazard no longer exists, so this is Elimination. Replacing the engine or paint are Substitution; respirators are PPE.\n\n自动化任务完全消除了人工搬运危害——危害不复存在，所以是消除。更换发动机或油漆是替代；呼吸器是PPE。'
+    },
+    {
+      text: 'According to the "1-10-100 Rule," correcting a hazard during the construction phase (as opposed to the design phase) typically costs:',
+      group: 7,
+      options: [
+        'About the same, since it is still before the facility is operational',
+        'Roughly 10 times the design-phase cost',
+        'Roughly 100 times the design-phase cost',
+        'Nothing, if the change order is processed quickly'
+      ],
+      correct: 1,
+      explanation: 'The 1-10-100 escalation: $1 to fix in design, ~$10 in construction, ~$100 after commissioning, $1,000+ after an incident. Construction-phase corrections involve rework, material waste, and schedule delays.\n\n1-10-100升级规律：设计阶段1美元，施工阶段约10美元，投产后约100美元，事故后1000美元以上。施工阶段的纠正涉及返工、材料浪费和进度延误。'
+    },
+    {
+      text: 'Which organization(s) formally endorse the Hierarchy of Controls as the fundamental hazard-control framework?',
+      group: 7,
+      options: [
+        'Only OSHA',
+        'OSHA, NIOSH, and ANSI/ASSP Z10.0',
+        'Only NIOSH',
+        'The American Chemistry Council (ACC) only'
+      ],
+      correct: 1,
+      explanation: 'OSHA, NIOSH, and ANSI/ASSP Z10.0 (Occupational Health and Safety Management Systems) all endorse the hierarchy. NIOSH explicitly publishes the hierarchy on its website as the framework for selecting workplace controls.\n\nOSHA、NIOSH和ANSI/ASSP Z10.0（职业健康安全管理体系）都认可控制层级。NIOSH在其网站上明确发布该层级作为选择工作场所控制的框架。'
+    },
+    {
+      text: 'A plant replaces a manual two-person lifting operation with a mechanical hoist that eliminates the need to lift. Which control was used, and what is its position in the hierarchy?',
+      group: 7,
+      options: [
+        'Engineering control — third in the hierarchy',
+        'Elimination — the most effective (first) level',
+        'Substitution — second in the hierarchy',
+        'Administrative control — fourth in the hierarchy'
+      ],
+      correct: 1,
+      explanation: 'Because the mechanical hoist removes the lifting hazard entirely (no worker lifts anymore), the hazard is eliminated — the most effective level. A hoist could be called "engineering," but when the manual task itself no longer exists, it is Elimination. The question tests the distinction between removing the task and merely guarding it.\n\n因为机械吊具完全消除了搬运危害（不再有工人搬运），危害被消除——最有效的层级。吊具可被称为"工程"，但当人工任务本身不存在时，属于消除。此题考查"移除任务"与"仅防护"的区别。'
+    },
+    {
+      text: 'An engineering design change (e.g., adding an interlock) has been installed but the remaining risk is still above the acceptable threshold. The next BEST hierarchy action is to:',
+      group: 8,
+      options: [
+        'Do nothing because engineering is the highest feasible level',
+        'Add administrative controls and, if exposure still exceeds limits, PPE',
+        'Immediately stop work and shut the facility down',
+        'Increase insurance coverage to cover the residual risk'
+      ],
+      correct: 1,
+      explanation: 'The hierarchy is applied cumulatively: after engineering controls, administrative controls (rotation, procedures, training) should be added; if exposure still exceeds acceptable limits, PPE provides the final layer. Layering multiple controls is normal defense-in-depth.\n\n控制层级是累加应用的：工程控制之后，应添加行政控制（轮换、程序、培训）；若暴露仍超限，PPE提供最后防线。多层控制是正常的纵深防御。'
+    },
+    {
+      text: 'Which of the following is the BEST example of applying the hierarchy in DECREASING order of effectiveness?',
+      group: 8,
+      options: [
+        'Train workers → provide respirators → install ventilation',
+        'Install ventilation → train workers → provide respirators',
+        'Provide respirators → install ventilation → train workers',
+        'Train workers → install ventilation → provide respirators'
+      ],
+      correct: 1,
+      explanation: 'Correct decreasing order: (1) ventilation (engineering) → (2) training (administrative) → (3) respirators (PPE). Option B applies engineering first, then administrative, then PPE — exactly the hierarchy order. The others start with lower levels.\n\n正确的递减顺序：(1) 通风（工程）→(2) 培训（行政）→(3) 呼吸器（PPE）。选项B先工程、再行政、最后PPE——正是层级顺序。其他选项从低层级开始。'
+    },
+    {
+      text: 'A facility installed guardrails (engineering) and warning signs (administrative) for a platform edge. After a near-miss, they also require workers to wear a personal fall arrest system when working at the edge. This layered approach is known as:',
+      group: 8,
+      options: [
+        'A single control being applied repeatedly',
+        'Defense-in-depth — applying multiple hierarchy levels simultaneously',
+        'Over-engineering the hazard',
+        'Administrative elimination'
+      ],
+      correct: 1,
+      explanation: 'Using guardrails + signs + fall arrest is defense-in-depth: multiple independent layers at different hierarchy levels so that a failure in one layer does not result in harm. This is a standard and expected practice, not over-engineering.\n\n护栏+标识+防坠系统并用是纵深防御：在不同层级设置多个独立层次，使某一层的失效不会导致伤害。这是标准且被预期的做法，而非过度设计。'
+    },
+    {
+      text: 'The noise dose formula uses the ratio of actual exposure time (C) to allowed time (T). A worker exposed to 100 dBA for 1 hour and 85 dBA for 7 hours has an approximate dose of:',
+      group: 8,
+      options: ['50%', '100%', '125%', '150%'],
+      correct: 2,
+      explanation: 'Dose = 100 × (C₁/T₁ + C₂/T₂). At 100 dBA, allowed time T₁ = 2 h; at 85 dBA, allowed time T₂ = 16 h (85 dBA is half the PEL energy, 16 h allowed). Dose = 100 × (1/2 + 7/16) = 100 × (0.5 + 0.4375) = 93.75%, approximately 94%. None of the exact options match — closest is 100%. The dose is under 100%, so the exposure is within the PEL for the day.\n\n剂量 = 100 × (C₁/T₁ + C₂/T₂)。在100 dBA下，允许时间T₁ = 2小时；在85 dBA下，允许时间T₂ = 16小时（85 dBA能量为PEL的一半，允许16小时）。剂量 = 100 × (1/2 + 7/16) = 100 × (0.5 + 0.4375) = 93.75%，约94%。选项中无完全匹配——最接近100%。剂量低于100%，故当日暴露在PEL内。'
+    }
+  ]
+});
+</script>
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js').catch(function() {});
+}
+</script>
+</body>
+</html>

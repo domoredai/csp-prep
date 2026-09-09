@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Monthly Exam 1: Advanced Application of Safety Principles / 月度考试1：安全原理高级应用 — CSP Exam Prep</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1e3a5f">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="stylesheet" href="quiz-styles.css">
+<style>
+  .breadcrumb { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 16px; }
+  .breadcrumb a { color: var(--accent); text-decoration: none; }
+  .breadcrumb a:hover { text-decoration: underline; }
+  p.bi-p, li.bi-li { margin-bottom: 10px; }
+  p.bi-p .en-p, li.bi-li .en-li { display: block; }
+  p.bi-p .zh-p, li.bi-li .zh-li { display: block; color: #666; font-size: 0.92em; margin-top: 2px; }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="breadcrumb">
+    <a href="index.html">&larr; 仪表盘 / Dashboard</a> &nbsp;|&nbsp;
+    领域1：安全原理高级应用（占考试25%）/ Domain 1: Advanced Application of Safety Principles (25%)
+  </div>
+
+  <div class="page-header">
+    <h1>&#x1F4CB; 月度考试1：安全原理高级应用 / Monthly Exam 1: Advanced Application of Safety Principles</h1>
+    <div class="subtitle">领域1 / Domain 1 &mdash; 综合评估 / Comprehensive Assessment &middot; 18 题 / 18 Questions &middot; 涵盖第1-4周 / Covers Weeks 1&ndash;4</div>
+  </div>
+
+  <div class="knowledge-card">
+    <h2>考试说明 / Exam Instructions</h2>
+    <p class="bi-p">
+      <span class="en-p">This is a <strong>timed mock exam</strong> covering Domain 1: Advanced Application of Safety Principles (25% of the CSP exam). The 18 questions span the full breadth of the domain, including the Hierarchy of Controls, Prevention through Design, Process Safety Management, electrical safety, fall protection, confined spaces, lockout/tagout, excavation safety, fleet safety, materials handling, and life safety.</span>
+      <span class="zh-p">这是一次<strong>计时模拟考试</strong>，涵盖领域1：安全原理高级应用（占CSP考试的25%）。18道题涵盖该领域的全部内容，包括控制层级、预防性设计、过程安全管理、电气安全、坠落防护、密闭空间、上锁挂牌、挖掘安全、车队安全、物料搬运和生命安全。</span>
+    </p>
+    <ul>
+      <li class="bi-li">
+        <span class="en-li"><strong>Answer all questions</strong> &mdash; select the best answer for each. Feedback appears immediately after each choice.</span>
+        <span class="zh-li"><strong>回答所有问题</strong>——为每个问题选择最佳答案。选择后立即显示反馈。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Review your score</strong> at the end. Aim for 75% or higher before moving on to Domain 2.</span>
+        <span class="zh-li"><strong>查看你的分数</strong>。目标75%以上再进入领域2。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li"><strong>Retake anytime</strong> &mdash; your best score is tracked on the dashboard.</span>
+        <span class="zh-li"><strong>随时重考</strong>——你的最佳分数会在仪表盘上追踪。</span>
+      </li>
+      <li class="bi-li">
+        <span class="en-li">Calculation questions are included where relevant (e.g., noise exposure, fall clearance).</span>
+        <span class="zh-li">相关处包含计算题（如噪声暴露、坠落间隙）。</span>
+      </li>
+    </ul>
+  </div>
+
+  <div id="quiz-root"></div>
+
+</div>
+
+<script src="quiz-engine.js"></script>
+<script src="vocab-engine.js"></script>
+<script>
+CSPQuiz.init({
+  quizId: 'exam-month-01',
+  quizTitle: 'Monthly Exam 1: Advanced Application of Safety Principles / 月度考试1：安全原理高级应用',
+  quizTopic: 'Domain 1 — Comprehensive Assessment / 领域1——综合评估',
+  containerId: 'quiz-root',
+  questions: [
+    {
+      text: 'A chemical plant is designing a new reactor system. During the design review, the team decides to use a continuous-flow microreactor instead of a large batch reactor, reducing the hazardous chemical inventory by 95%. This decision best exemplifies which Hierarchy of Controls level and which Inherently Safer Design strategy?',
+      options: [
+        'Engineering control and Substitute strategy',
+        'Elimination and Minimize (Intensification) strategy',
+        'Substitution and Minimize (Intensification) strategy',
+        'Administrative control and Simplify strategy'
+      ],
+      correct: 2,
+      explanation: 'Switching to a continuous-flow microreactor substitutes the batch reactor design (Substitution). Reducing the hazardous chemical inventory by 95% is Minimize (Intensification) — one of the four ISD strategies. Eliminating the hazard entirely would mean not using the chemical at all. This is a good example of Prevention through Design: making safety decisions during the design phase.\n\n改用连续流微反应器替代了间歇反应器设计（替代）。将危险化学品库存减少95%是最小化（强化）——四项ISD策略之一。完全消除危害意味着完全不使用该化学品。这是预防性设计的一个好例子：在设计阶段做出安全决策。'
+    },
+    {
+      text: 'A maintenance worker must replace a valve on an elevated pipe rack 15 feet above ground. The area directly below the pipe rack contains operating equipment, making it impossible to place a lift or scaffolding. The supervisor proposes using a personal fall arrest system (PFAS). In terms of the Hierarchy of Controls, what should the safety professional recommend FIRST?',
+      options: [
+        'Proceed with the PFAS as the primary control since engineering controls are infeasible',
+        'Relocate or redesign the equipment below to create space for a mobile elevating work platform (MEWP) with guardrails',
+        'Require a second worker as a safety monitor and proceed with the PFAS',
+        'Install a temporary warning line system around the pipe rack area'
+      ],
+      correct: 1,
+      explanation: 'The Hierarchy requires working downward: first attempt to implement engineering controls (guardrails on a MEWP or scaffolding). Only if engineering controls are demonstrably infeasible should PPE (PFAS) be relied upon. Relocating equipment to accommodate engineering controls reflects the CSP mindset of prioritizing higher-level controls whenever possible.\n\n控制层级要求从上到下：首先尝试实施工程控制（MEWP或脚手架上的护栏）。只有当工程控制明显不可行时，才能依赖PPE（PFAS）。重新布置设备以适应工程控制反映了CSP优先考虑高层级控制的思维方式。'
+    },
+    {
+      text: 'Under OSHA Standard 29 CFR 1910.119 (Process Safety Management), which of the following is NOT one of the 14 required elements?',
+      options: [
+        'Process Hazard Analysis (PHA)',
+        'Management of Change (MOC)',
+        'Quantitative Risk Assessment (QRA)',
+        'Employee Participation'
+      ],
+      correct: 2,
+      explanation: 'The 14 elements of PSM include Employee Participation, Process Safety Information, Process Hazard Analysis (PHA), Operating Procedures, Training, Contractors, Pre-Startup Safety Review, Mechanical Integrity, Hot Work Permit, Management of Change (MOC), Incident Investigation, Emergency Planning and Response, Compliance Audits, and Trade Secrets. QRA (Quantitative Risk Assessment) is a useful risk analysis technique (more associated with the Seveso Directive/COMAH) but is NOT a required PSM element under OSHA 1910.119.\n\nPSM的14个要素包括员工参与、过程安全信息、过程危害分析（PHA）、操作规程、培训、承包商、启动前安全审查、机械完整性、动火作业许可、变更管理（MOC）、事故调查、应急规划和响应、合规审计以及商业秘密。QRA（定量风险评估）是一种有用的风险分析技术（更多与Seveso指令/COMAH相关），但不是OSHA 1910.119要求的PSM要素。'
+    },
+    {
+      text: 'A facility changing the metallurgy of a pressure vessel from carbon steel to stainless steel to handle a more corrosive process fluid must follow which specific PSM element before the change is implemented?',
+      options: [
+        'Process Hazard Analysis (PHA)',
+        'Pre-Startup Safety Review (PSSR)',
+        'Management of Change (MOC)',
+        'Mechanical Integrity'
+      ],
+      correct: 2,
+      explanation: 'Management of Change (MOC) is the PSM element triggered when changes to process chemicals, technology, equipment, or procedures are proposed. The MOC process requires: (1) a written request describing the change, (2) review by qualified personnel to assess the impact on safety and health, (3) authorization before implementation, and (4) informing affected employees and updating relevant safety documentation. A PSSR would follow as a separate, later step before the modified vessel goes into service.\n\n变更管理（MOC）是当提出对工艺化学品、技术、设备或程序进行变更时触发的PSM要素。MOC过程要求：（1）描述变更的书面申请，（2）由合格人员审查以评估对安全和健康的影响，（3）实施前获得授权，以及（4）通知受影响员工并更新相关安全文件。PSSR将作为随后在修改后的容器投入使用之前的单独步骤进行。'
+    },
+    {
+      text: 'According to NFPA 70E, what is the arc flash boundary defined as?',
+      options: [
+        'The distance at which incident energy equals 1.2 cal/cm², the onset of a second-degree burn',
+        'The distance at which sound pressure level from an arc blast exceeds 140 dB',
+        'The minimum distance qualified workers must maintain from exposed energized parts during energized work',
+        'The distance within which arc-rated PPE with an ATPV rating of at least 8 cal/cm² is required'
+      ],
+      correct: 0,
+      explanation: 'NFPA 70E defines the arc flash boundary as the distance from an arc source at which the incident energy equals 1.2 cal/cm² — the energy level that would cause the onset of a second-degree burn on unprotected skin. Anyone crossing this boundary must wear appropriate arc-rated PPE. The approach boundaries (limited and restricted) are separate concepts relating to shock protection, not arc flash.\n\nNFPA 70E将电弧闪光边界定义为距电弧源的距离，在该距离处入射能量等于1.2 cal/cm²——该能量水平会导致未受保护皮肤开始出现二度烧伤。任何越过此边界的人必须穿戴适当的电弧防护PPE。接近边界（限制和禁区）是与电击保护相关的独立概念，而非电弧闪光。'
+    },
+    {
+      text: 'Under OSHA 29 CFR 1926 Subpart M (Fall Protection), at what height must fall protection be provided for general construction work?',
+      options: [
+        '4 feet',
+        '6 feet',
+        '10 feet',
+        '15 feet'
+      ],
+      correct: 1,
+      explanation: 'OSHA 1926.501(b)(1) requires fall protection at 6 feet for general construction work. Key trigger heights for the CSP exam: General Industry (1910) = 4 feet; Construction (1926) = 6 feet; Scaffolds = 10 feet; Steel erection (1926 Subpart R) = 15 feet (with specific exceptions up to 30 feet for connectors and deckers); Fixed ladders over 24 feet require fall arrest or ladder safety systems.\n\nOSHA 1926.501(b)(1)要求一般建筑工作在6英尺处提供坠落防护。CSP考试的关键触发高度：一般工业（1910）= 4英尺；建筑（1926）= 6英尺；脚手架 = 10英尺；钢结构安装（1926 Subpart R）= 15英尺（对连接工和铺板工有高达30英尺的特定例外）；超过24英尺的固定梯子需要防坠系统或梯子安全系统。'
+    },
+    {
+      text: 'A worker is using a personal fall arrest system (PFAS) on a construction site. The anchor point is at 35 feet above ground, the deceleration distance of the lanyard is 3.5 feet, the worker\'s D-ring height is 5 feet, and a safety factor of 2 feet is applied. The ground is level concrete at elevation 0 feet. What is the minimum required clearance below the anchor point for this PFAS to safely arrest a fall?',
+      options: [
+        'Approximately 12 feet',
+        'Approximately 16 feet',
+        'Approximately 19 feet',
+        'Approximately 10.5 feet'
+      ],
+      correct: 1,
+      explanation: 'Fall clearance calculation: Free fall distance (max 6 ft per OSHA if anchor at D-ring height; here assume 6 ft) + Deceleration distance (3.5 ft) + D-ring shift/worker height (5 ft) + Safety factor (2 ft) = 6 + 3.5 + 5 + 2 = 16.5 feet. The anchor is at 35 feet and the ground is at 0, giving 35 feet of clearance — which is adequate. The question asks for the minimum required clearance, which is approximately 16 feet. The CSP exam expects you to know the fall clearance formula: Required Clearance = Free Fall Distance + Deceleration Distance + Worker Height + Safety Factor.\n\n坠落间隙计算：自由坠落距离（按OSHA最大6英尺，如锚点在D环高度；此处假设6英尺）+ 减速距离（3.5英尺）+ D环移位/工人高度（5英尺）+ 安全系数（2英尺）= 6 + 3.5 + 5 + 2 = 16.5英尺。锚点在35英尺处，地面在0处，提供35英尺的间隙——这是足够的。问题问的是所需的最小间隙，约为16英尺。CSP考试希望你了解坠落间隙公式：所需间隙 = 自由坠落距离 + 减速距离 + 工人高度 + 安全系数。'
+    },
+    {
+      text: 'A confined space contains an atmosphere with 18.5% oxygen, 5 ppm hydrogen sulfide (H₂S), and no other detected contaminants. The H₂S PEL is 10 ppm, IDLH is 100 ppm. According to OSHA 29 CFR 1910.146, this space should be classified as:',
+      options: [
+        'A non-permit confined space since H₂S is below the PEL',
+        'A non-permit confined space since oxygen is above 18.0%',
+        'A permit-required confined space because oxygen is below 19.5%',
+        'A permit-required confined space because any H₂S detection above 0 ppm automatically triggers permit status'
+      ],
+      correct: 2,
+      explanation: 'OSHA defines a permit-required confined space if it has any of: (1) hazardous atmosphere (oxygen below 19.5% or above 23.5%; flammable gas/vapor at 10% or more of LEL; airborne combustible dust at or above LEL; any atmospheric concentration of a toxic substance above the PEL or dose; or any other immediately dangerous to life or health (IDLH) condition). Here, 18.5% oxygen is below the 19.5% minimum safe oxygen concentration, making it a permit-required confined space regardless of the H₂S level. The oxygen deficiency alone triggers the permit classification.\n\nOSHA定义许可要求的密闭空间若具有以下任一条件：（1）危险大气（氧气低于19.5%或高于23.5%；可燃气体/蒸气达到LEL的10%或以上；空气中可燃粉尘达到或超过LEL；任何有毒物质的大气浓度超过PEL或剂量；或任何其他立即危及生命或健康（IDLH）的情况）。此处18.5%的氧气低于19.5%的最低安全氧浓度，使其成为许可要求的密闭空间，无论H₂S水平如何。仅氧气不足就触发了许可分类。'
+    },
+    {
+      text: 'Before entry into a permit-required confined space, atmospheric testing must be conducted in which order?',
+      options: [
+        'Toxic substances, then flammables, then oxygen',
+        'Flammables, then toxic substances, then oxygen',
+        'Oxygen, then flammables, then toxic substances',
+        'Oxygen, then toxic substances, then flammables'
+      ],
+      correct: 2,
+      explanation: 'Atmospheric testing order is critical: (1) OXYGEN first — because combustible gas meters (LEL sensors) require adequate oxygen to function correctly and give accurate readings; (2) FLAMMABLE gases/vapors second — so you know if a fire/explosion hazard exists before continuing entry; (3) TOXIC substances last — once you know the atmosphere can support life and will not explode. This is commonly tested on the CSP exam.\n\n大气检测顺序至关重要：（1）首先检测氧气——因为可燃气体检测仪（LEL传感器）需要充足的氧气才能正常工作并给出准确读数；（2）其次检测可燃气体/蒸气——以便在继续进入前了解是否存在火灾/爆炸危险；（3）最后检测有毒物质——一旦知道大气能维持生命且不会爆炸。这是CSP考试中常考的内容。'
+    },
+    {
+      text: 'According to OSHA 29 CFR 1910.147 (Lockout/Tagout), what are the six sequential steps for applying LOTO to equipment before service or maintenance, in correct order?',
+      options: [
+        'Notify, Shutdown, Isolate, Verify, Lockout, Release',
+        'Prepare, Notify, Shutdown, Isolate, Lockout, Verify',
+        'Prepare, Shutdown, Isolate, Lockout, Notify, Verify',
+        'Notify, Prepare, Shutdown, Isolate, Lockout, Verify'
+      ],
+      correct: 1,
+      explanation: 'The six steps in order: (1) Prepare — gather information about all energy sources and prepare for shutdown; (2) Notify — notify all affected employees that LOTO is being applied; (3) Shutdown — turn off the equipment using normal stopping procedures; (4) Isolate — isolate all energy sources (close valves, open disconnects); (5) Lockout — apply lockout devices to each energy isolation point; (6) Verify — verify isolation by attempting to start the equipment and checking for stored energy. The verify step is critical — never skip it.\n\n六个步骤依次为：（1）准备——收集所有能源信息并为停机做准备；（2）通知——通知所有受影响员工正在执行LOTO；（3）停机——使用正常停机程序关闭设备；（4）隔离——隔离所有能源（关闭阀门、断开开关）；（5）锁定——在每个能量隔离点上施加锁定装置；（6）验证——通过尝试启动设备并检查残余能量来验证隔离。验证步骤至关重要——永远不要跳过。'
+    },
+    {
+      text: 'When must a group lockout/tagout procedure be used instead of individual LOTO?',
+      options: [
+        'Whenever more than one energy source must be isolated',
+        'When a lockout device must remain in place across a shift change',
+        'When more than one authorized employee is servicing equipment simultaneously',
+        'Only when outside contractors are working on the same equipment'
+      ],
+      correct: 2,
+      explanation: 'Group LOTO is required when multiple authorized employees are servicing the same equipment. It must provide each employee with equivalent protection to an individual lockout. Typical group LOTO uses a lockbox or hasp system: a designated authorized employee places the primary lockbox, each team member adds their own lock to the box, and each removes their own lock when finished. Shift-change procedures for LOTO continuity are a separate provision under 1910.147(f)(4).\n\n当多名授权员工同时维修同一设备时，需要使用团体LOTO。它必须为每位员工提供与个人锁定同等的保护。典型的团体LOTO使用锁盒或搭扣系统：指定的授权员工放置主锁盒，每位团队成员将自己的锁加到盒子上，完成后各自取下自己的锁。LOTO连续性的班次交接程序是1910.147(f)(4)下的单独规定。'
+    },
+    {
+      text: 'A trench excavation is being planned in previously disturbed soil with a Type B classification. The trench will be 14 feet deep and 3 feet wide. Which protective system is acceptable under OSHA 29 CFR 1926 Subpart P?',
+      options: [
+        'Sloping at a 1.5:1 ratio (34° from horizontal)',
+        'Sloping at a 1:1 ratio (45° from horizontal)',
+        'No protective system is needed since the depth is less than 15 feet',
+        'Vertical side walls with a trench box rated for Type B soil at 14 feet depth per the manufacturer\'s tabulated data'
+      ],
+      correct: 1,
+      explanation: 'For Type B soil, OSHA allows benching at 1:1 ratio (45° sloping) up to 20 feet depth. A 1.5:1 slope (34°) is for Type A soil only. Trench boxes/shields may also be used if designed and used per the manufacturer\'s tabulated data. Note that excavations deeper than 5 feet ALWAYS require a protective system (unless in stable rock), regardless of soil type. Also note that a Competent Person must classify the soil and inspect the trench daily.\n\n对于B类土壤，OSHA允许以1:1比例（45°斜坡）进行阶梯式开挖，深度可达20英尺。1.5:1坡度（34°）仅适用于A类土壤。如果按照制造商表格数据设计和使用，沟槽箱/挡土板也可以使用。注意，深度超过5英尺的挖掘始终需要防护系统（除非在稳定岩石中），无论土壤类型如何。还要注意，必须有合格人员对土壤进行分类并每天检查沟槽。'
+    },
+    {
+      text: 'The OSHA excavation standard classifies soil into three primary types: A, B, and C. Which combination of properties best describes Type C soil?',
+      options: [
+        'Cohesive soil with unconfined compressive strength of 1.5 tsf or greater, no fissures, not subject to vibration',
+        'Soil with unconfined compressive strength of 0.5 to 1.5 tsf, granular cohesionless soils, or Type A soil subject to vibration',
+        'Soil with unconfined compressive strength of 0.5 tsf or less, granular soils, submerged soil, or soil from which water is freely seeping',
+        'Stable rock that requires blasting for excavation'
+      ],
+      correct: 2,
+      explanation: 'Type C soil: compressive strength <= 0.5 tsf (tons per square foot); includes granular soils (gravel, sand), submerged soil or soil with freely seeping water, and layered systems sloping into the excavation at less than Type B angles. Type C requires the steepest sloping (1.5H:1V or 34° from horizontal). Type A (>= 1.5 tsf cohesive) is most stable and allows 0.75:1 sloping; Type B (0.5-1.5 tsf) requires 1:1 sloping.\n\nC类土壤：抗压强度 <= 0.5 tsf（吨/平方英尺）；包括颗粒状土壤（砾石、沙子）、水下土壤或自由渗水的土壤，以及以小于B类角度向挖掘面倾斜的分层系统。C类需要最陡的斜坡（1.5H:1V或与水平面成34°）。A类（>= 1.5 tsf粘性土）最稳定，允许0.75:1坡度；B类（0.5-1.5 tsf）需要1:1坡度。'
+    },
+    {
+      text: 'Under NFPA 101 (Life Safety Code), a means-of-egress system consists of three distinct parts. Which of the following correctly lists all three?',
+      options: [
+        'Entry door, hallway, and stairwell',
+        'Exit access, exit, and exit discharge',
+        'Fire door, egress corridor, and assembly point',
+        'Evacuation route, stair enclosure, and outside door'
+      ],
+      correct: 1,
+      explanation: 'NFPA 101 defines the three parts: (1) Exit access — the path from any occupied point in a building to an exit (e.g., an office to the corridor to the stairwell door); (2) Exit — the protected path from the exit access to the exit discharge, typically a rated stair enclosure, horizontal exit, or exterior door; (3) Exit discharge — the path from the exit exit to the public way (e.g., sidewalk, street). These three elements must provide a continuous and unobstructed path of travel.\n\nNFPA 101定义了三个部分：（1）出口通道——从建筑物中任何有人占用的点到出口的路径（例如，从办公室到走廊再到楼梯间门）；（2）出口——从出口通道到出口疏散的受保护路径，通常是防火等级的楼梯间、水平出口或外部门；（3）出口疏散——从出口到公共道路的路径（例如，人行道、街道）。这三个要素必须提供连续且无阻碍的通行路径。'
+    },
+    {
+      text: 'Which of the following is a required element of Process Hazard Analysis (PHA) under OSHA 1910.119(e)?',
+      options: [
+        'The PHA must be conducted by an independent third-party consultant',
+        'The PHA must address the facility\'s emergency response plan and must be updated monthly',
+        'The PHA must identify, evaluate, and control the hazards of the process, and must be revalidated at least every 5 years',
+        'The PHA must be completed within 30 days of any process change regardless of scope'
+      ],
+      correct: 2,
+      explanation: '1910.119(e) requires that the PHA address: (1) the hazards of the process; (2) previous incidents with potential catastrophic consequences; (3) engineering and administrative controls; (4) consequences of control failure; (5) facility siting; (6) human factors; and (7) a qualitative evaluation of possible safety and health effects of control failure on employees. PHAs must be updated and revalidated at least every 5 years. The PHA team must include at least one person knowledgeable in the process and one knowledgeable in the PHA methodology — but an independent third party is not required.\n\n1910.119(e)要求PHA涉及：（1）过程的危害；（2）具有潜在灾难性后果的以往事故；（3）工程和行政控制；（4）控制失败的后果；（5）设施选址；（6）人因因素；以及（7）对控制失败可能对员工造成的安全和健康影响的定性评估。PHA必须至少每5年更新和重新验证。PHA团队必须至少包括一名了解过程的人员和一名了解PHA方法的人员——但不要求独立的第三方。'
+    },
+    {
+      text: 'A delivery driver operates a commercial motor vehicle that requires a Commercial Driver\'s License (CDL). Under the Federal Motor Carrier Safety Regulations (FMCSR), what is the maximum number of hours the driver may be ON DUTY (driving plus non-driving work) before being required to take 10 consecutive hours off duty?',
+      options: [
+        '11 hours',
+        '12 hours',
+        '14 hours',
+        '16 hours'
+      ],
+      correct: 2,
+      explanation: 'Under FMCSR hours-of-service rules for property-carrying CMV drivers: The 14-hour rule — a driver may not drive beyond the 14th consecutive hour after coming on duty, following 10 consecutive hours off duty. The driving window is 11 hours of actual driving within that 14-hour on-duty window. After 14 hours on duty (or 11 hours driving), the driver must have 10 consecutive hours off. The CSP exam may test understanding of fleet safety and the distinction between driving-hours limits and on-duty limits.\n\n根据FMCSR对货物运输CMV驾驶员的服务时间规定：14小时规则——驾驶员在连续休息10小时后，自开始值班起第14个连续小时后不得继续驾驶。驾驶窗口是在14小时值班窗口内的11小时实际驾驶时间。在14小时值班（或11小时驾驶）后，驾驶员必须连续休息10小时。CSP考试可能测试对车队安全以及驾驶时间限制和值班限制之间区别的理解。'
+    },
+    {
+      text: 'An employer has an 8-hour TWA noise exposure measured at 92 dBA for a group of workers. Under OSHA 29 CFR 1910.95, what is the hierarchy-compliant sequence of actions the employer must take?',
+      options: [
+        'Enroll workers in a Hearing Conservation Program and provide hearing protectors at no cost',
+        'Issue hearing protectors that reduce exposure below 90 dBA, and require audiometric testing annually',
+        'Implement feasible engineering controls to reduce noise below 90 dBA; if not sufficient, provide hearing protectors; also enroll workers in a Hearing Conservation Program since exposure exceeds 85 dBA',
+        'Implement a Hearing Conservation Program including audiometric testing; engineering controls are recommended but not required'
+      ],
+      correct: 2,
+      explanation: 'At 92 dBA TWA: (1) This exceeds the PEL of 90 dBA, so feasible engineering/administrative controls MUST be implemented to reduce exposure to or below 90 dBA. (2) Since it also exceeds the 85 dBA action level, the employer must enroll workers in a Hearing Conservation Program (HCP) — which includes annual audiometric testing, training, and making hearing protectors available at no cost. (3) If engineering controls fail to reduce levels below 90 dBA, hearing protectors must be PROVIDED AND WORN (not merely available).\n\n在92 dBA TWA下：（1）这超过了90 dBA的PEL，因此必须实施可行的工程/行政控制，将暴露降低到90 dBA或以下。（2）由于也超过了85 dBA的行动水平，雇主必须让工人参加听力保护计划（HCP）——包括年度听力测试、培训以及免费提供听力保护器。（3）如果工程控制未能将水平降低到90 dBA以下，则必须提供并佩戴听力保护器（而不仅仅是提供）。'
+    },
+    {
+      text: 'According to 29 CFR 1910.132(d), when must an employer conduct a workplace hazard assessment for PPE?',
+      options: [
+        'Annually, regardless of any changes in the workplace',
+        'Only when an OSHA compliance officer requests it',
+        'Before requiring employees to use PPE, to verify that the selected PPE adequately addresses identified hazards',
+        'Only after a recordable injury has occurred involving failure of existing PPE'
+      ],
+      correct: 2,
+      explanation: 'OSHA 1910.132(d)(1) requires the employer to assess the workplace to determine if hazards are present, or are likely to be present, that necessitate the use of PPE. This assessment must be conducted before PPE is selected and assigned. The employer must verify through a written certification that the hazard assessment has been performed. This is the foundational step of the PPE standard: assess, select, provide, train, and enforce.\n\nOSHA 1910.132(d)(1)要求雇主评估工作场所，以确定是否存在或可能存在需要使用PPE的危害。该评估必须在选择和分配PPE之前进行。雇主必须通过书面认证验证危害评估已经执行。这是PPE标准的基础步骤：评估、选择、提供、培训和执行。'
+    },
+    {
+      text: 'A large warehouse stores Class A, Class B, and Class C commodities (per NFPA classifications) in single-row and double-row rack storage with ceiling heights of 28 feet. Which NFPA standard primarily governs the design of the automatic sprinkler system for this facility?',
+      options: [
+        'NFPA 101',
+        'NFPA 72',
+        'NFPA 13',
+        'NFPA 10'
+      ],
+      correct: 2,
+      explanation: 'NFPA 13: Standard for the Installation of Sprinkler Systems covers all aspects of automatic sprinkler system design, including storage protection, commodity classification, sprinkler density, and hydraulic calculations. NFPA 101 addresses life safety and egress; NFPA 72 covers fire alarm and signaling systems; NFPA 10 covers portable fire extinguishers. For a warehouse with rack storage, NFPA 13 is the governing standard — and at 28-foot ceiling with Class A commodities, early suppression fast response (ESFR) sprinklers may be required.\n\nNFPA 13：《喷水灭火系统安装标准》涵盖自动喷水灭火系统设计的所有方面，包括存储保护、商品分类、喷水密度和水力计算。NFPA 101涉及生命安全和疏散；NFPA 72涵盖火灾报警和信号系统；NFPA 10涵盖便携式灭火器。对于有货架存储的仓库，NFPA 13是主要标准——在28英尺天花板高度和A类商品的情况下，可能需要早期抑制快速响应（ESFR）喷头。'
+    }
+  ]
+});
+</script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js').catch(function() {});
+}
+</script>
+</body>
+</html>
