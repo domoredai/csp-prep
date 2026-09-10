@@ -112,14 +112,5 @@ function escapeAttr(s) { return s.replace(/'/g, "\\'").replace(/"/g, '&quot;'); 
 renderGlossary();
 </script>
 
-<script>
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function() {
-    navigator.serviceWorker.register('./sw.js').catch(function(err) {
-      console.warn('SW registration failed:', err);
-    });
-  });
-}
-</script>
 </body>
 </html>

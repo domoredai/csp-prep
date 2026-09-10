@@ -1,0 +1,12 @@
+{
+  "name": "csp-exam-prep",
+  "version": "1.0.0",
+  "description": "CSP Exam Prep — Android WebView APK wrapper",
+  "main": "index.js",
+  "scripts": {
+    "build": "node build-apk.js"
+  },
+  "devDependencies": {
+    "bubblewrap": "^0.2.0"
+  }
+}

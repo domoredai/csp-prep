@@ -4,9 +4,9 @@
    Cache-First strategy for static assets.
    =============================================*/
 
-const CACHE_NAME = 'csp-exam-prep-v2';
+const CACHE_NAME = 'csp-exam-prep-v3';
 const ASSETS = [
-  './',
+  '/',
   'index.html',
   'quiz-styles.css',
   'quiz-engine.js',
@@ -72,7 +72,7 @@ self.addEventListener('fetch', (e) => {
       }).catch(() => {
         // If network fails and not cached, return a fallback
         if (e.request.headers.get('accept')?.includes('text/html')) {
-          return caches.match('./index.html');
+          return caches.match('index.html');
         }
         return new Response('Offline', { status: 503 });
       });

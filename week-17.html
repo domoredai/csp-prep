@@ -79,6 +79,12 @@ p.bi-p .zh-p, li.bi-li .zh-li { display: block; color: #666; font-size: 0.92em; 
 <span class="en-p">The 5-dB vs. 3-dB exchange rate is one of the most frequently tested noise concepts. OSHA uses 5 dB (meaning a 5 dB increase halves allowed exposure time). NIOSH uses 3 dB (more protective — a 3 dB increase halves allowed time because sound energy truly doubles every 3 dB).</span>
 <span class="zh-p" style="color:#666;display:block;">5-dB与3-dB交换率是最常考的噪声概念之一。OSHA使用5 dB（意味着增加5 dB将允许暴露时间减半）。NIOSH使用3 dB（更具保护性——增加3 dB将允许时间减半，因为声能确实每3 dB翻倍）。</span>
 </div>
+
+<h3>噪声控制的层级——源头工程控制 / Hierarchy of Noise Controls — Engineering at the Source</h3>
+<p class="bi-p">
+  <span class="en-p">The most effective noise control is <strong>engineering control at the source</strong>, applied in this order of preference: (1) <strong>eliminate/replace</strong> the noisy process or equipment; (2) <strong>engineering controls</strong> — buy quiet equipment, isolate/vibrate-mount the machine, and <strong>enclose the source in an acoustic enclosure or sound barrier</strong>, or build a sound-isolating wall between the source and the worker; (3) <strong>administrative controls</strong> — rotate workers to limit exposure time; (4) <strong>PPE (hearing protectors)</strong> — the last line of defense. Engineering controls protect all workers without relying on individual behavior, so they are preferred over PPE.</span>
+  <span class="zh-p" style="color:#666;display:block;">最有效的噪声控制是<strong>在源头的工程控制</strong>，按优先级排序：(1) <strong>消除/替代</strong>噪声工艺或设备；(2) <strong>工程控制</strong>——采购低噪设备、对机器做隔振安装、将噪声源<strong>封闭在隔声罩/隔声屏障中</strong>，或在声源与工人之间设置隔声墙；(3) <strong>管理控制</strong>——轮岗以限制暴露时间；(4) <strong>PPE（听力防护器）</strong>——最后一道防线。工程控制不依赖个人行为即可保护所有工人，因此优于PPE。</span>
+</p>
 <div class="confusion-box">
 <div class="cb-label">⚖️ 易混淆对比 / Common Confusions:</div>
 <table class="study-table">
@@ -98,6 +104,9 @@ p.bi-p .zh-p, li.bi-li .zh-li { display: block; color: #666; font-size: 0.92em; 
 </div>
 </div></div>
 
+  <div class="cross-ref">
+    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>17.2 噪声计算（允许暴露时间T、NIOSH公式、合并噪声源、剂量D）</strong> 的内容，详细讲解见对应卡片。Some questions here cover topics explained under the referenced cards.
+  </div>
   <div id="quiz-group-1"></div>
 
 
@@ -134,6 +143,13 @@ D &gt; 100% (或TWA &gt; 90 dBA OSHA) = <strong>过度暴露 / Overexposure</str
 D = 50% = 行动水平（相当于OSHA下85 dBA TWA）/ Action Level (85 dBA TWA equivalent under OSHA)
 </div>
 
+<h3>多日/多班次剂量的平均 / Averaging Dose Over Multiple Days</h3>
+<div class="formula-box">
+<strong>平均剂量 = (D₁ + D₂ + … + D<sub>n</sub>) / n</strong><br><br>
+<span class="en-p">When exposures span more than one day (or sampling is split across days), the individual daily doses are <strong>averaged arithmetically</strong>. Example: D₁ = 40%, D₂ = 60% → average = (40 + 60) / 2 = <strong>50% dose</strong>. A daily dose ≥100% (or an average ≥100% across days) is an overexposure. NOTE: the individual day doses are added first if they belong to the SAME 8-hour day; averaging applies only when combining separate days.</span>
+<span class="zh-p" style="color:#666;">当暴露跨越一天以上（或将采样分在多天进行）时，对各天的剂量<strong>取算术平均</strong>。示例：D₁=40%、D₂=60% → 平均 =（40+60）/2 = <strong>50%剂量</strong>。单日剂量≥100%（或跨日平均≥100%）即为过度暴露。注意：若各段属于同一个8小时工作日内，应先将它们相加；只有当合并不同的日期时才取平均。</span>
+</div>
+
 <h3>TWA换算 / TWA Conversion</h3>
 <div class="formula-box">
 <strong>TWA (dBA) = 16.61 × log<sub>10</sub>(D / 100) + 90</strong><br>
@@ -163,7 +179,8 @@ L<sub>total</sub> = 10 log<sub>10</sub>(Σ 10<sup>(L<sub>i</sub> / 10)</sup>)
 <span class="zh-p" style="color:#666;display:block;">记住：90 dBA 8小时 = 100%剂量。85 dBA 8小时 = 50%剂量（行动水平）。95 dBA 8小时 = 200%剂量。OSHA下每+5 dB剂量翻倍。</span>
 </div>
 <div class="exam-scenario">
-<div class="es-label">📝 真题情景 / Exam Scenario:</div>
+<div class="es-label">📝 模拟情景题 / Practice Scenario</div>
+      <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
 <div class="es-question">"A worker is exposed to 95 dBA for 2 hours and 90 dBA for 6 hours. What is the noise dose under the OSHA standard?"</div>
 <div><strong>最佳答案 / Best answer:</strong> At 95 dBA: T = 4 h → 2/4 = 0.5; at 90 dBA: T = 8 h → 6/8 = 0.75. D = 100 × (0.5 + 0.75) = <strong>125%</strong> → overexposed. 剂量 = 100 × Σ(C/T)，超过100%即过度暴露。</div>
 </div>
@@ -177,6 +194,9 @@ L<sub>total</sub> = 10 log<sub>10</sub>(Σ 10<sup>(L<sub>i</sub> / 10)</sup>)
 </div>
 </div></div>
 
+  <div class="cross-ref">
+    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>17.4 电离辐射（5 rem剂量限值、α粒子屏蔽）</strong>、<strong>17.6 毒理学指标（LD50分级）</strong> 的内容，详细讲解见对应卡片。Some questions here cover topics explained under the referenced cards.
+  </div>
   <div id="quiz-group-2"></div>
 
 
@@ -206,6 +226,13 @@ L<sub>total</sub> = 10 log<sub>10</sub>(Σ 10<sup>(L<sub>i</sub> / 10)</sup>)
 <li class="bi-li"><span class="en-li"><span class="key-term">Acoustic trauma / 声创伤:</span> Sudden hearing loss from impulse noise (explosions, gunfire) exceeding 140 dB.</span><span class="zh-li">因脉冲噪声（爆炸、枪击）超过140 dB导致的突发性听力损失。</span></li>
 <li class="bi-li"><span class="en-li"><span class="key-term">Ototoxic chemicals / 耳毒性化学品:</span> Toluene, styrene, xylene, lead, mercury, CO, HCN can damage hearing — especially when combined with noise exposure.</span><span class="zh-li">甲苯、苯乙烯、二甲苯、铅、汞、CO、HCN可损害听力——尤其与噪声暴露叠加时。</span></li>
 </ul>
+
+<h3>确认STS后雇主的职责 / Employer Duties After a Confirmed STS</h3>
+<p class="bi-p">
+  <span class="en-p">When an annual audiogram confirms a Standard Threshold Shift (29 CFR 1910.95(g)(8)), the employer must: (1) <strong>ensure the employee is fitted or refitted with hearing protectors, trained in their use, and required to wear them</strong>; (2) <strong>refer the employee for an audiological/medical evaluation</strong> if a medical pathology of the ear is suspected (and inform the employee); and (3) <strong>record the STS in the employee's audiometric test record</strong>. Hearing protector use becomes mandatory for an employee with a confirmed STS.</span>
+  <span class="zh-p" style="color:#666;display:block;">当年度听力图确认标准阈值偏移时（29 CFR 1910.95(g)(8)），雇主必须：(1) <strong>确保为员工配好或重新配好听力保护器、培训其使用方法并要求其佩戴</strong>；(2) 若怀疑耳部医学病理，<strong>转介员工进行听力学/医学评估</strong>（并告知员工）；(3) <strong>将STS记入员工的听力测试记录</strong>。对于确认有STS的员工，佩戴听力保护器成为强制要求。</span>
+</p>
+
 <div class="exam-hotspot">
 <span class="eh-label">🎯 高频考点 / Exam Hotspot</span>
 <span class="eh-tag freq-high">必考 HIGH</span>
@@ -220,6 +247,9 @@ L<sub>total</sub> = 10 log<sub>10</sub>(Σ 10<sup>(L<sub>i</sub> / 10)</sup>)
 <span class="mn-content"><strong>2-3-4 / 10 dB</strong>：STS = 在2,000、3,000、4,000 Hz任一耳平均偏移≥10 dB，30天内重测。 / Standard Threshold Shift criteria.</span>
 </div></div>
 
+  <div class="cross-ref">
+    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>17.6 毒理学指标（致畸物）</strong>、<strong>17.4 电离辐射（α粒子危害、平方反比定律）</strong>、<strong>17.7 剂量-效应（NOAEL）</strong>、<strong>17.8 重点化学物质（石棉肺）</strong> 的内容，详细讲解见对应卡片。Some questions here cover topics explained under the referenced cards.
+  </div>
   <div id="quiz-group-3"></div>
 
 
@@ -266,13 +296,20 @@ L<sub>total</sub> = 10 log<sub>10</sub>(Σ 10<sup>(L<sub>i</sub> / 10)</sup>)
 <span class="zh-p" style="color:#666;display:block;">所有辐射剂量应保持<strong>合理可达到的尽量低水平</strong>，考虑经济和社会因素。三项基本防护措施：<strong>时间</strong>（最小化）、<strong>距离</strong>（最大化——平方反比定律）、<strong>屏蔽</strong>（使用适当材料）。</span>
 </div>
 
+<h3>氡——α衰变子体与肺癌 / Radon — Alpha-Decay Progeny &amp; Lung Cancer</h3>
+<p class="bi-p">
+  <span class="en-p"><span class="key-term">Radon (Rn-222)</span> is a naturally occurring radioactive noble gas produced by the decay of uranium in soil and rock. Radon itself emits alpha particles, but the main health hazard comes from its <strong>short-lived alpha-emitting decay progeny</strong> (polonium-218, polonium-214), which attach to airborne dust and are inhaled deep into the lung. There the alpha particles deliver a concentrated dose to lung tissue, making radon the <strong>second leading cause of lung cancer after smoking</strong> (and the leading cause among never-smokers). Radon risk is greatest in basements and confined spaces where it accumulates, and it is exacerbated by smoking (synergistic).</span>
+  <span class="zh-p" style="color:#666;display:block;"><strong>氡（Rn-222）</strong>是土壤和岩石中铀衰变产生的天然放射性惰性气体。氡本身发射α粒子，但主要健康危害来自其<strong>短寿命的α衰变子体</strong>（钋-218、钋-214），它们附着在空气尘埃上并被吸入肺部深处，在那里α粒子向肺组织释放集中剂量，使氡成为<strong>仅次于吸烟的第二大肺癌原因</strong>（在从不吸烟者中则是首位）。氡在积聚的地下室和密闭空间风险最高，且吸烟会加剧（协同作用）。</span>
+</p>
+
 <div class="formula-box">
 <strong>平方反比定律 / Inverse Square Law:</strong> I<sub>2</sub> = I<sub>1</sub> × (D<sub>1</sub>² / D<sub>2</sub>²)<br>
 <span class="en-p">Doubling the distance from a point source reduces intensity to 1/4. Halving the distance quadruples the intensity.</span>
 <span class="zh-p" style="color:#666;">距点源距离加倍，强度降至1/4。距离减半，强度增至4倍。</span>
 </div>
 <div class="exam-scenario">
-<div class="es-label">📝 真题情景 / Exam Scenario:</div>
+<div class="es-label">📝 模拟情景题 / Practice Scenario</div>
+      <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
 <div class="es-question">"A radiation source produces 400 mrem/hr at 1 meter. What is the intensity at 2 meters (inverse square law)?"</div>
 <div><strong>最佳答案 / Best answer:</strong> I₂ = I₁ × (D₁²/D₂²) = 400 × (1²/2²) = 400 × 1/4 = <strong>100 mrem/hr</strong>. Distance doubled → intensity quartered. 距离加倍，强度降至1/4。</div>
 </div>
@@ -286,6 +323,9 @@ L<sub>total</sub> = 10 log<sub>10</sub>(Σ 10<sup>(L<sub>i</sub> / 10)</sup>)
 </div>
 </div></div>
 
+  <div class="cross-ref">
+    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>17.3 听力保护计划（STS标准阈值偏移、NIHL）</strong>、<strong>17.2 噪声计算（噪声剂量D）</strong> 的内容，详细讲解见对应卡片。Some questions here cover topics explained under the referenced cards.
+  </div>
   <div id="quiz-group-4"></div>
 
 
@@ -329,6 +369,9 @@ L<sub>total</sub> = 10 log<sub>10</sub>(Σ 10<sup>(L<sub>i</sub> / 10)</sup>)
 </div>
 </div></div>
 
+  <div class="cross-ref">
+    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>17.1 噪声监管标准（85 dBA行动水平）</strong>、<strong>17.3 听力保护（耳毒性化学品、STS）</strong>、<strong>17.6 毒理学指标（LD50分级）</strong>、<strong>17.7 剂量-效应（阈值vs非阈值模型）</strong> 的内容，详细讲解见对应卡片。Some questions here cover topics explained under the referenced cards.
+  </div>
   <div id="quiz-group-5"></div>
 
 
@@ -379,6 +422,9 @@ L<sub>total</sub> = 10 log<sub>10</sub>(Σ 10<sup>(L<sub>i</sub> / 10)</sup>)
 <span class="mn-content"><strong>5-50-500-5,000</strong>：LD50分级边界（5、50、500、5,000、15,000 mg/kg）。 / LD50 toxicity classification boundaries.</span>
 </div></div>
 
+  <div class="cross-ref">
+    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>17.5 非电离辐射（激光分类）</strong>、<strong>17.7 联合效应（相加/协同）</strong>、<strong>17.8 热应激（WBGT、热射病）</strong>、<strong>17.4 辐射单位（rem=rad×QF）</strong> 的内容，详细讲解见对应卡片。Some questions here cover topics explained under the referenced cards.
+  </div>
   <div id="quiz-group-6"></div>
 
 
@@ -403,9 +449,15 @@ L<sub>total</sub> = 10 log<sub>10</sub>(Σ 10<sup>(L<sub>i</sub> / 10)</sup>)
 <tr><td><span class="key-term">LOAEL</span></td><td>最低观察不良效应水平 / Lowest Observed Adverse Effect Level</td><td><span class="en-p">Lowest dose producing an ADVERSE effect</span><span class="zh-p" style="color:#666;display:block;">产生不良效应的最低剂量</span></td></tr>
 </table>
 
+<h3>不确定因子 / Uncertainty Factors (Safety Factors)</h3>
+<p class="bi-p">
+  <span class="en-p">Regulators derive a safe exposure limit from animal data by dividing the <strong>NOAEL</strong> (or the LOAEL if no NOAEL exists) by <strong>uncertainty factors</strong>, each typically a factor of 10 (10×10 = 100): (1) <strong>10×</strong> for animal-to-human extrapolation (interspecies); (2) <strong>10×</strong> for human individual variability (intraspecies/sensitive subpopulations); often an additional 10× for <strong>subchronic-to-chronic</strong> extrapolation, and up to 10× more for database deficiencies. Example: an animal NOAEL of 100 mg/kg ÷ 100 = a reference dose of 1 mg/kg for humans.</span>
+  <span class="zh-p" style="color:#666;display:block;">监管机构通过将<strong>NOAEL</strong>（若无NOAEL则用LOAEL）除以<strong>不确定因子</strong>，从动物数据推导安全暴露限值，每个因子通常为10（10×10=100）：(1) <strong>10×</strong>用于动物到人的外推（种间）；(2) <strong>10×</strong>用于人群个体差异（种内/敏感亚群）；通常再加10×用于<strong>亚慢性到慢性</strong>外推，数据库不足时最多再乘10×。示例：动物NOAEL为100 mg/kg ÷ 100 = 人类参考剂量1 mg/kg。</span>
+</p>
+
 <h3>联合效应 / Combined Effects</h3>
 <ul>
-<li class="bi-li"><span class="en-li"><span class="key-term">Additive / 加和:</span> Combined effect equals sum of individual effects (2 + 3 = 5). Basis for the OSHA mixture formula.</span><span class="zh-li">联合效应等于各单独效应之和（2 + 3 = 5）。OSHA混合物公式的基础。</span></li>
+<li class="bi-li"><span class="en-li"><span class="key-term">Additive / 加和:</span> Combined effect equals sum of individual effects (2 + 3 = 5). Basis for the OSHA mixture formula. <strong>Quantified by the mixture formula: E<sub>m</sub> = C₁/L₁ + C₂/L₂ + … + C<sub>n</sub>/L<sub>n</sub>.</strong> If E<sub>m</sub> &gt; 1.0, the combined exposure exceeds the limit (overexposure), even if each individual concentration is below its own limit.</span><span class="zh-li">联合效应等于各单独效应之和（2 + 3 = 5）。OSHA混合物公式的基础。<strong>用混合物公式量化：E<sub>m</sub> = C₁/L₁ + C₂/L₂ + … + C<sub>n</sub>/L<sub>n</sub>。</strong>若E<sub>m</sub> &gt; 1.0，则联合暴露超过限值（过度暴露），即使各单一浓度均低于其各自的限值。</span></li>
 <li class="bi-li"><span class="en-li"><span class="key-term">Synergistic / 协同:</span> Combined effect is GREATER than sum of individual effects (2 + 3 = 8). Example: asbestos exposure + smoking → lung cancer risk 50-90 times higher.</span><span class="zh-li">联合效应大于各单独效应之和（2 + 3 = 8）。示例：石棉暴露+吸烟→肺癌风险高出50-90倍。</span></li>
 <li class="bi-li"><span class="en-li"><span class="key-term">Antagonistic / 拮抗:</span> Combined effect is LESS than sum of individual effects (2 + 3 = 3). Example: atropine antagonizes organophosphate pesticide toxicity.</span><span class="zh-li">联合效应小于各单独效应之和（2 + 3 = 3）。示例：阿托品拮抗有机磷农药毒性。</span></li>
 <li class="bi-li"><span class="en-li"><span class="key-term">Potentiation / 增强:</span> One substance (not toxic to the target organ) increases the effect of another toxic substance.</span><span class="zh-li">一种物质（对靶器官无毒）增强另一种有毒物质的作用。</span></li>
@@ -427,11 +479,15 @@ L<sub>total</sub> = 10 log<sub>10</sub>(Σ 10<sup>(L<sub>i</sub> / 10)</sup>)
 </div>
 
 <div class="exam-scenario">
-<div class="es-label">📝 真题情景 / Exam Scenario:</div>
+<div class="es-label">📝 模拟情景题 / Practice Scenario</div>
+      <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
 <div class="es-question">"Asbestos workers who also smoke have a lung cancer risk how many times higher than non-smoking asbestos workers?"</div>
 <div><strong>最佳答案 / Best answer:</strong> 50-90 times higher — a classic synergistic (multiplicative) effect. Mesothelioma, however, is NOT increased by smoking. 石棉+吸烟协同倍增肺癌风险。</div>
 </div></div>
 
+  <div class="cross-ref">
+    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>17.1 噪声监管标准（OSHA vs NIOSH）</strong>、<strong>17.2 噪声计算（多日剂量平均）</strong>、<strong>17.6 毒理学指标（LC50）</strong>、<strong>17.4 电离辐射（氡radon）</strong> 的内容，详细讲解见对应卡片。Some questions here cover topics explained under the referenced cards.
+  </div>
   <div id="quiz-group-7"></div>
 
 
@@ -502,6 +558,9 @@ L<sub>total</sub> = 10 log<sub>10</sub>(Σ 10<sup>(L<sub>i</sub> / 10)</sup>)
 </table>
 </div></div>
 
+  <div class="cross-ref">
+    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>17.3 听力保护（确认STS后雇主职责）</strong>、<strong>17.7 剂量-效应（协同效应、阈值模型）</strong>、<strong>17.4 电离辐射（Bq活度单位）</strong>、<strong>17.1 噪声标准（140 dB峰值限值）</strong> 的内容，详细讲解见对应卡片。Some questions here cover topics explained under the referenced cards.
+  </div>
   <div id="quiz-group-8"></div>
 
 
