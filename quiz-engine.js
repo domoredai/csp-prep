@@ -279,7 +279,19 @@
       if (isAnswered) {
         html += '<div class="fb-label">' + (isCorrect ? '✓ Correct!' : '✗ Incorrect') + '</div>';
         if (q.explanation) {
-          html += '<div>' + escapeHtml(q.explanation) + '</div>';
+          html += '<div>' + formatExplanation(q.explanation) + '</div>';
+        }
+        // Related knowledge points: clickable jump links
+        if (q.related && q.related.length) {
+          html += '<div class="related-kp">';
+          html += '<span class="rk-label">🔗 关联知识点 / Related:</span> ';
+          for (let k = 0; k < q.related.length; k++) {
+            const r = q.related[k];
+            html += '<a href="javascript:void(0)" class="rk-link" onclick="CSPQuiz.scrollToCard(\'' + escapeAttr(r.n) + '\')">' +
+                    escapeHtml(r.n) + ' ' + escapeHtml(r.t) + '</a>';
+            if (k < q.related.length - 1) html += ' ';
+          }
+          html += '</div>';
         }
       }
       html += '</div>';
@@ -331,6 +343,38 @@
     clearAllProgress: function() {
       localStorage.removeItem(STORAGE_KEY_PROGRESS);
       localStorage.removeItem(STORAGE_KEY_WRONG);
+    },
+
+    // Jump to a knowledge card by its section number (e.g. "1.7").
+    // Finds the .knowledge-card whose <h2> starts with that number,
+    // scrolls to it, and briefly highlights it.
+    scrollToCard: function(sectionNum) {
+      if (!sectionNum) return;
+      const cards = document.querySelectorAll('.knowledge-card');
+      let target = null;
+      for (const card of cards) {
+        const h = card.querySelector('h2, h3');
+        if (!h) continue;
+        const txt = (h.textContent || '').trim();
+        if (txt.indexOf(sectionNum + ' ') === 0 || txt.indexOf(sectionNum + '.') === 0 ||
+            txt.indexOf(sectionNum + ' ') === 0 || txt === sectionNum ||
+            txt.startsWith(sectionNum)) {
+          target = card;
+          break;
+        }
+      }
+      if (!target) return;
+      // Expand if collapsed
+      const wrapper = target.querySelector('.collapse-body');
+      const btn = target.querySelector('.collapse-toggle');
+      if (wrapper && wrapper.style.display === 'none') {
+        wrapper.style.display = 'block';
+        if (btn) btn.textContent = '▾ 收起 / Collapse';
+        target.classList.remove('collapsed');
+      }
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      target.classList.add('card-flash');
+      setTimeout(function() { target.classList.remove('card-flash'); }, 1800);
     },
 
     // ============ EXPORT / IMPORT (manual sync) ============
@@ -397,6 +441,17 @@
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;')
       .replace(/"/g, '&quot;');
+  }
+
+  function escapeAttr(str) {
+    if (!str) return '';
+    return String(str).replace(/'/g, "\\'").replace(/"/g, '&quot;');
+  }
+
+  // Explanation text: escape HTML but preserve line breaks (\n -> <br>)
+  function formatExplanation(text) {
+    if (!text) return '';
+    return escapeHtml(text).replace(/\n/g, '<br>');
   }
 
   function truncateText(text, maxLen) {

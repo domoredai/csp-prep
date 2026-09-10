@@ -4,9 +4,9 @@
    Cache-First strategy for static assets.
    =============================================*/
 
-const CACHE_NAME = 'csp-exam-prep-v3';
+const CACHE_NAME = 'csp-exam-prep-v4';
 const ASSETS = [
-  '/',
+  './',
   'index.html',
   'quiz-styles.css',
   'quiz-engine.js',
@@ -53,15 +53,41 @@ self.addEventListener('activate', (e) => {
   );
 });
 
-// Fetch: cache-first strategy
+// Fetch strategy:
+//  - HTML pages: network-first (so content updates are seen immediately);
+//    fall back to cache when offline.
+//  - Other assets: cache-first (fast, and they change rarely).
 self.addEventListener('fetch', (e) => {
   if (e.request.method !== 'GET') return;
 
+  const url = new URL(e.request.url);
+  const isHTML = e.request.headers.get('accept')?.includes('text/html')
+                 || url.pathname.endsWith('.html')
+                 || url.pathname.endsWith('/');
+
+  if (isHTML) {
+    // Network-first for pages
+    e.respondWith(
+      fetch(e.request).then(response => {
+        if (response && response.status === 200 && response.type === 'basic') {
+          const clone = response.clone();
+          caches.open(CACHE_NAME).then(cache => cache.put(e.request, clone));
+        }
+        return response;
+      }).catch(() => {
+        // Offline: serve cached page, else cached index
+        return caches.match(e.request).then(cached =>
+          cached || caches.match('./index.html')
+        );
+      })
+    );
+    return;
+  }
+
+  // Cache-first for static assets (css/js/img)
   e.respondWith(
     caches.match(e.request).then(cached => {
-      // Return cached; if not cached, fetch from network and add to cache
       if (cached) return cached;
-
       return fetch(e.request).then(response => {
         if (!response || response.status !== 200 || response.type !== 'basic') {
           return response;
@@ -69,13 +95,7 @@ self.addEventListener('fetch', (e) => {
         const clone = response.clone();
         caches.open(CACHE_NAME).then(cache => cache.put(e.request, clone));
         return response;
-      }).catch(() => {
-        // If network fails and not cached, return a fallback
-        if (e.request.headers.get('accept')?.includes('text/html')) {
-          return caches.match('index.html');
-        }
-        return new Response('Offline', { status: 503 });
-      });
+      }).catch(() => caches.match('./index.html'));
     })
   );
 });
