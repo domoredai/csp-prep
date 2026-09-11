@@ -417,12 +417,18 @@
 
     // ===== Auto-highlight glossary terms in page content =====
     autoHighlight: function() {
-      // Only highlight terms that match words in knowledge-card content
+      // Only highlight terms in plain knowledge-card text. Skip containers that
+      // hold interactive controls (quiz options, scenario options, related-KP
+      // links) — rewriting their innerHTML would destroy bound event handlers.
+      const SKIP = '.options-list, .scenario-options, .related-kp, .exam-scenario, .question-card, .quiz-section';
       const cards = document.querySelectorAll('.knowledge-card p, .knowledge-card li, .knowledge-card td, .knowledge-card h3');
       cards.forEach(el => {
+        if (el.closest(SKIP)) return;             // inside an interactive block
         if (el.querySelector('.bi-term')) return; // already has bilingual spans
         const text = el.innerHTML;
         if (!text || text.length < 10) return;
+        // Skip elements that contain buttons/links/inputs
+        if (el.querySelector('button, a, input, select, textarea')) return;
 
         // Find glossary terms in this element's text
         let modified = false;

@@ -10,7 +10,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="apple-touch-icon" href="icon-192.png">
-<link rel="stylesheet" href="quiz-styles.css?v=11">
+<link rel="stylesheet" href="quiz-styles.css?v=12">
 <style>
 body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;line-height:1.7;margin:0;padding:0;background:#f0f2f5;color:#1a1a2e}
 .container{max-width:960px;margin:0 auto;padding:20px}
@@ -104,10 +104,7 @@ p.bi-p .zh-p, li.bi-li .zh-li { display: block; color: #666; font-size: 0.92em; 
 </div>
 </div></div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>17.2 噪声计算（允许暴露时间T、NIOSH公式、合并噪声源、剂量D）</strong> 的内容，详细讲解见对应卡片。Some questions here cover topics explained under the referenced cards.
-  </div>
-  <div id="quiz-group-1"></div>
+    <div id="quiz-group-1"></div>
 
 
 <!-- Noise Calculations -->
@@ -178,11 +175,16 @@ L<sub>total</sub> = 10 log<sub>10</sub>(Σ 10<sup>(L<sub>i</sub> / 10)</sup>)
 <span class="en-p">Memorize: 90 dBA for 8 hrs = 100% dose. 85 dBA for 8 hrs = 50% dose (Action Level). 95 dBA for 8 hrs = 200% dose. Every +5 dB under OSHA DOUBLES the dose.</span>
 <span class="zh-p" style="color:#666;display:block;">记住：90 dBA 8小时 = 100%剂量。85 dBA 8小时 = 50%剂量（行动水平）。95 dBA 8小时 = 200%剂量。OSHA下每+5 dB剂量翻倍。</span>
 </div>
-<div class="exam-scenario">
-<div class="es-label">📝 模拟情景题 / Practice Scenario</div>
-      <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
-<div class="es-question">"A worker is exposed to 95 dBA for 2 hours and 90 dBA for 6 hours. What is the noise dose under the OSHA standard?"</div>
-<div><strong>最佳答案 / Best answer:</strong> At 95 dBA: T = 4 h → 2/4 = 0.5; at 90 dBA: T = 8 h → 6/8 = 0.75. D = 100 × (0.5 + 0.75) = <strong>125%</strong> → overexposed. 剂量 = 100 × Σ(C/T)，超过100%即过度暴露。</div>
+<div class="exam-scenario"
+     data-options='["50%", "100%", "125%", "150%"]'
+     data-correct="2">
+  <div class="es-label">📝 模拟情景题 / Practice Scenario</div>
+  <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
+  <div class="es-question">"A worker is exposed to 95 dBA for 2 hours and 90 dBA for 6 hours. What is the noise dose under the OSHA standard?"</div>
+  <div class="scenario-feedback">
+    <div class="scenario-fb-label"></div>
+    <div>Dose = 100 × Σ(Ci/Ti). At 95 dBA the allowed time is 4 h, so 2/4 = 0.5; at 90 dBA the allowed time is 8 h, so 6/8 = 0.75. Dose = 100 × (0.5 + 0.75) = <strong>125%</strong>, which exceeds 100% — the worker is overexposed and the employer must implement feasible engineering/administrative controls and provide hearing protection. Remember the OSHA 5-dB exchange rate: each 5 dBA increase halves the allowed time.<br><br>剂量 = 100 × Σ(Ci/Ti)。95 dBA允许4小时，故2/4 = 0.5；90 dBA允许8小时，故6/8 = 0.75。剂量 = 100 × (0.5 + 0.75) = <strong>125%</strong>，超过100%——工人过度暴露，雇主必须实施可行的工程/行政控制并提供听力防护。记住OSHA 5 dB交换率：每增加5 dBA，允许时间减半。</div>
+  </div>
 </div>
 
 <div class="exam-hotspot">
@@ -194,10 +196,7 @@ L<sub>total</sub> = 10 log<sub>10</sub>(Σ 10<sup>(L<sub>i</sub> / 10)</sup>)
 </div>
 </div></div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>17.4 电离辐射（5 rem剂量限值、α粒子屏蔽）</strong>、<strong>17.6 毒理学指标（LD50分级）</strong> 的内容，详细讲解见对应卡片。Some questions here cover topics explained under the referenced cards.
-  </div>
-  <div id="quiz-group-2"></div>
+    <div id="quiz-group-2"></div>
 
 
 <!-- Hearing Conservation -->
@@ -247,10 +246,7 @@ L<sub>total</sub> = 10 log<sub>10</sub>(Σ 10<sup>(L<sub>i</sub> / 10)</sup>)
 <span class="mn-content"><strong>2-3-4 / 10 dB</strong>：STS = 在2,000、3,000、4,000 Hz任一耳平均偏移≥10 dB，30天内重测。 / Standard Threshold Shift criteria.</span>
 </div></div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>17.6 毒理学指标（致畸物）</strong>、<strong>17.4 电离辐射（α粒子危害、平方反比定律）</strong>、<strong>17.7 剂量-效应（NOAEL）</strong>、<strong>17.8 重点化学物质（石棉肺）</strong> 的内容，详细讲解见对应卡片。Some questions here cover topics explained under the referenced cards.
-  </div>
-  <div id="quiz-group-3"></div>
+    <div id="quiz-group-3"></div>
 
 
 <!-- Ionizing Radiation -->
@@ -307,11 +303,16 @@ L<sub>total</sub> = 10 log<sub>10</sub>(Σ 10<sup>(L<sub>i</sub> / 10)</sup>)
 <span class="en-p">Doubling the distance from a point source reduces intensity to 1/4. Halving the distance quadruples the intensity.</span>
 <span class="zh-p" style="color:#666;">距点源距离加倍，强度降至1/4。距离减半，强度增至4倍。</span>
 </div>
-<div class="exam-scenario">
-<div class="es-label">📝 模拟情景题 / Practice Scenario</div>
-      <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
-<div class="es-question">"A radiation source produces 400 mrem/hr at 1 meter. What is the intensity at 2 meters (inverse square law)?"</div>
-<div><strong>最佳答案 / Best answer:</strong> I₂ = I₁ × (D₁²/D₂²) = 400 × (1²/2²) = 400 × 1/4 = <strong>100 mrem/hr</strong>. Distance doubled → intensity quartered. 距离加倍，强度降至1/4。</div>
+<div class="exam-scenario"
+     data-options='["800 mrem/hr", "400 mrem/hr", "200 mrem/hr", "100 mrem/hr"]'
+     data-correct="3">
+  <div class="es-label">📝 模拟情景题 / Practice Scenario</div>
+  <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
+  <div class="es-question">"A radiation source produces 400 mrem/hr at 1 meter. What is the intensity at 2 meters (inverse square law)?"</div>
+  <div class="scenario-feedback">
+    <div class="scenario-fb-label"></div>
+    <div>Inverse square law: I2 = I1 × (D1²/D2²) = 400 × (1²/2²) = 400 × 1/4 = <strong>100 mrem/hr</strong>. Doubling the distance quarters the intensity. ALARA uses Time, Distance, and Shielding — distance is the cheapest and most effective of the three precisely because of this squared relationship.<br><br>平方反比定律：I2 = I1 × (D1²/D2²) = 400 × (1²/2²) = 400 × 1/4 = <strong>100 mrem/hr</strong>。距离加倍，强度降至1/4。ALARA三要素为时间、距离、屏蔽——正是由于平方关系，距离是三者中最经济有效的手段。</div>
+  </div>
 </div>
 
 <div class="exam-hotspot">
@@ -323,10 +324,7 @@ L<sub>total</sub> = 10 log<sub>10</sub>(Σ 10<sup>(L<sub>i</sub> / 10)</sup>)
 </div>
 </div></div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>17.3 听力保护计划（STS标准阈值偏移、NIHL）</strong>、<strong>17.2 噪声计算（噪声剂量D）</strong> 的内容，详细讲解见对应卡片。Some questions here cover topics explained under the referenced cards.
-  </div>
-  <div id="quiz-group-4"></div>
+    <div id="quiz-group-4"></div>
 
 
 <!-- Non-Ionizing Radiation -->
@@ -369,10 +367,7 @@ L<sub>total</sub> = 10 log<sub>10</sub>(Σ 10<sup>(L<sub>i</sub> / 10)</sup>)
 </div>
 </div></div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>17.1 噪声监管标准（85 dBA行动水平）</strong>、<strong>17.3 听力保护（耳毒性化学品、STS）</strong>、<strong>17.6 毒理学指标（LD50分级）</strong>、<strong>17.7 剂量-效应（阈值vs非阈值模型）</strong> 的内容，详细讲解见对应卡片。Some questions here cover topics explained under the referenced cards.
-  </div>
-  <div id="quiz-group-5"></div>
+    <div id="quiz-group-5"></div>
 
 
 <!-- Toxicology Metrics -->
@@ -422,10 +417,7 @@ L<sub>total</sub> = 10 log<sub>10</sub>(Σ 10<sup>(L<sub>i</sub> / 10)</sup>)
 <span class="mn-content"><strong>5-50-500-5,000</strong>：LD50分级边界（5、50、500、5,000、15,000 mg/kg）。 / LD50 toxicity classification boundaries.</span>
 </div></div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>17.5 非电离辐射（激光分类）</strong>、<strong>17.7 联合效应（相加/协同）</strong>、<strong>17.8 热应激（WBGT、热射病）</strong>、<strong>17.4 辐射单位（rem=rad×QF）</strong> 的内容，详细讲解见对应卡片。Some questions here cover topics explained under the referenced cards.
-  </div>
-  <div id="quiz-group-6"></div>
+    <div id="quiz-group-6"></div>
 
 
 <!-- Dose-Response -->
@@ -478,17 +470,19 @@ L<sub>total</sub> = 10 log<sub>10</sub>(Σ 10<sup>(L<sub>i</sub> / 10)</sup>)
 </table>
 </div>
 
-<div class="exam-scenario">
-<div class="es-label">📝 模拟情景题 / Practice Scenario</div>
-      <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
-<div class="es-question">"Asbestos workers who also smoke have a lung cancer risk how many times higher than non-smoking asbestos workers?"</div>
-<div><strong>最佳答案 / Best answer:</strong> 50-90 times higher — a classic synergistic (multiplicative) effect. Mesothelioma, however, is NOT increased by smoking. 石棉+吸烟协同倍增肺癌风险。</div>
+<div class="exam-scenario"
+     data-options='["About 2 times higher — the effects simply add", "About 5 times higher", "About 50–90 times higher — a synergistic (multiplicative) effect", "No different — smoking does not interact with asbestos"]'
+     data-correct="2">
+  <div class="es-label">📝 模拟情景题 / Practice Scenario</div>
+  <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
+  <div class="es-question">"Asbestos workers who also smoke have a lung cancer risk how many times higher than non-smoking asbestos workers?"</div>
+  <div class="scenario-feedback">
+    <div class="scenario-fb-label"></div>
+    <div>Asbestos exposure plus smoking produces a <strong>synergistic (multiplicative)</strong> interaction — lung cancer risk is roughly 50–90 times that of non-smoking asbestos workers, far greater than the sum of the individual risks. However, smoking does NOT increase the risk of mesothelioma, which is caused by asbestos alone. Dose-response questions test exactly this distinction between additive and synergistic combined effects.<br><br>石棉暴露与吸烟存在<strong>协同（倍增）</strong>相互作用——肺癌风险约为不吸烟石棉工人的50–90倍，远大于单独风险之和。但吸烟<strong>不会</strong>增加间皮瘤风险，后者仅由石棉引起。剂量-效应题目正是考查加和与协同效应的这一区别。</div>
+  </div>
 </div></div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>17.1 噪声监管标准（OSHA vs NIOSH）</strong>、<strong>17.2 噪声计算（多日剂量平均）</strong>、<strong>17.6 毒理学指标（LC50）</strong>、<strong>17.4 电离辐射（氡radon）</strong> 的内容，详细讲解见对应卡片。Some questions here cover topics explained under the referenced cards.
-  </div>
-  <div id="quiz-group-7"></div>
+    <div id="quiz-group-7"></div>
 
 
 <!-- Chemical Profiles + Heat Stress -->
@@ -558,18 +552,15 @@ L<sub>total</sub> = 10 log<sub>10</sub>(Σ 10<sup>(L<sub>i</sub> / 10)</sup>)
 </table>
 </div></div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>17.3 听力保护（确认STS后雇主职责）</strong>、<strong>17.7 剂量-效应（协同效应、阈值模型）</strong>、<strong>17.4 电离辐射（Bq活度单位）</strong>、<strong>17.1 噪声标准（140 dB峰值限值）</strong> 的内容，详细讲解见对应卡片。Some questions here cover topics explained under the referenced cards.
-  </div>
-  <div id="quiz-group-8"></div>
+    <div id="quiz-group-8"></div>
 
 
 <!-- Quiz -->
 <div id="quiz-root"></div>
 </div>
 
-<script src="quiz-engine.js?v=11"></script>
-<script src="vocab-engine.js?v=11"></script>
+<script src="quiz-engine.js?v=12"></script>
+<script src="vocab-engine.js?v=12"></script>
 <script>
 CSPQuiz.init({
   containerId: 'quiz-root',
@@ -582,14 +573,16 @@ CSPQuiz.init({
       group: 1,
       options: ['3 dB', '5 dB', '6 dB', '10 dB'],
       correct: 1,
-      explanation: 'OSHA uses a 5-dB exchange rate, meaning that for every 5 dB increase in noise level, the allowable exposure time is halved. NIOSH recommends a 3-dB exchange rate (more protective), since sound energy truly doubles every 3 dB.\n\nOSHA使用5-dB交换率，意味着噪声级每增加5 dB，允许暴露时间减半。NIOSH推荐3-dB交换率（更具保护性），因为声能确实每3 dB翻倍。'
+      explanation: 'OSHA uses a 5-dB exchange rate, meaning that for every 5 dB increase in noise level, the allowable exposure time is halved. NIOSH recommends a 3-dB exchange rate (more protective), since sound energy truly doubles every 3 dB.\n\nOSHA使用5-dB交换率，意味着噪声级每增加5 dB，允许暴露时间减半。NIOSH推荐3-dB交换率（更具保护性），因为声能确实每3 dB翻倍。',
+      related: [{ n: '17.1', t: '噪声监管标准' }]
     },
     {
       text: 'Using the OSHA formula (5-dB exchange rate), what is the allowable exposure time at 100 dBA?',
       group: 1,
       options: ['8 hours', '4 hours', '2 hours', '1 hour'],
       correct: 2,
-      explanation: 'T = 8 / 2^((100-90)/5) = 8 / 2^(10/5) = 8 / 2^2 = 8/4 = 2 hours. Using NIOSH (3-dB exchange): T = 8 / 2^((100-85)/3) = 8 / 2^(15/3) = 8 / 2^5 = 8/32 = 0.25 hours (15 min).\n\nT = 8 / 2^((100-90)/5) = 8 / 2^(10/5) = 8 / 2^2 = 8/4 = 2小时。使用NIOSH（3-dB交换）：T = 8 / 2^((100-85)/3) = 8 / 2^(15/3) = 8 / 2^5 = 8/32 = 0.25小时（15分钟）。'
+      explanation: 'T = 8 / 2^((100-90)/5) = 8 / 2^(10/5) = 8 / 2^2 = 8/4 = 2 hours. Using NIOSH (3-dB exchange): T = 8 / 2^((100-85)/3) = 8 / 2^(15/3) = 8 / 2^5 = 8/32 = 0.25 hours (15 min).\n\nT = 8 / 2^((100-90)/5) = 8 / 2^(10/5) = 8 / 2^2 = 8/4 = 2小时。使用NIOSH（3-dB交换）：T = 8 / 2^((100-85)/3) = 8 / 2^(15/3) = 8 / 2^5 = 8/32 = 0.25小时（15分钟）。',
+      related: [{ n: '17.1', t: '噪声监管标准' }]
     },
     {
       text: 'A worker is exposed to noise levels of 95 dBA for 2 hours and 90 dBA for 6 hours. What is the noise dose under the OSHA standard, and is the worker overexposed?',
@@ -601,21 +594,24 @@ CSPQuiz.init({
         'D = 150% — overexposed'
       ],
       correct: 2,
-      explanation: 'At 95 dBA: T = 8/2^(5/5) = 4 hrs. At 90 dBA: T = 8/2^(0/5) = 8 hrs. D = 100 × (2/4 + 6/8) = 100 × (0.50 + 0.75) = 100 × 1.25 = 125%. Since D > 100%, the worker is overexposed per OSHA.\n\n在95 dBA下：T = 8/2^(5/5) = 4小时。在90 dBA下：T = 8/2^(0/5) = 8小时。D = 100 × (2/4 + 6/8) = 100 × (0.50 + 0.75) = 100 × 1.25 = 125%。因为D > 100%，根据OSHA该工人过度暴露。'
+      explanation: 'At 95 dBA: T = 8/2^(5/5) = 4 hrs. At 90 dBA: T = 8/2^(0/5) = 8 hrs. D = 100 × (2/4 + 6/8) = 100 × (0.50 + 0.75) = 100 × 1.25 = 125%. Since D > 100%, the worker is overexposed per OSHA.\n\n在95 dBA下：T = 8/2^(5/5) = 4小时。在90 dBA下：T = 8/2^(0/5) = 8小时。D = 100 × (2/4 + 6/8) = 100 × (0.50 + 0.75) = 100 × 1.25 = 125%。因为D > 100%，根据OSHA该工人过度暴露。',
+      related: [{ n: '17.1', t: '噪声监管标准' }]
     },
     {
       text: 'A worker is exposed to 91 dBA. Using the NIOSH formula (3-dB exchange rate), what is the allowable exposure time?',
       group: 1,
       options: ['8 hours', '6 hours', '4 hours', '2 hours'],
       correct: 2,
-      explanation: 'T = 8 / 2^((91-85)/3) = 8 / 2^(6/3) = 8 / 2^2 = 8/4 = 4 hours. Note that NIOSH is more protective — OSHA would allow T = 8 / 2^((91-90)/5) = 8/2^0.2 ≈ 7 hours.\n\nT = 8 / 2^((91-85)/3) = 8 / 2^(6/3) = 8 / 2^2 = 8/4 = 4小时。注意NIOSH更具保护性——OSHA允许T = 8 / 2^((91-90)/5) = 8/2^0.2 ≈ 7小时。'
+      explanation: 'T = 8 / 2^((91-85)/3) = 8 / 2^(6/3) = 8 / 2^2 = 8/4 = 4 hours. Note that NIOSH is more protective — OSHA would allow T = 8 / 2^((91-90)/5) = 8/2^0.2 ≈ 7 hours.\n\nT = 8 / 2^((91-85)/3) = 8 / 2^(6/3) = 8 / 2^2 = 8/4 = 4小时。注意NIOSH更具保护性——OSHA允许T = 8 / 2^((91-90)/5) = 8/2^0.2 ≈ 7小时。',
+      related: [{ n: '17.1', t: '噪声监管标准' }]
     },
     {
       text: 'Two identical machines each produce 88 dBA. When both operate simultaneously, what is the approximate combined noise level?',
       group: 1,
       options: ['88 dBA', '91 dBA', '94 dBA', '176 dBA'],
       correct: 1,
-      explanation: 'When combining two equal sound sources, add 3 dB to the level of one source: 88 + 3 = 91 dBA. Decibels are logarithmic — you can never add them directly (88 + 88 ≠ 176). Using the formula: L = 10 log(10^8.8 + 10^8.8) = 10 log(2 × 10^8.8) = 10(log 2 + 8.8) = 10(0.301 + 8.8) = 91.0 dBA.\n\n合并两个相等声源时，在单源声级上加3 dB：88 + 3 = 91 dBA。分贝是对数单位——不能直接相加（88 + 88 ≠ 176）。使用公式：L = 10 log(10^8.8 + 10^8.8) = 10 log(2 × 10^8.8) = 10(log 2 + 8.8) = 91.0 dBA。'
+      explanation: 'When combining two equal sound sources, add 3 dB to the level of one source: 88 + 3 = 91 dBA. Decibels are logarithmic — you can never add them directly (88 + 88 ≠ 176). Using the formula: L = 10 log(10^8.8 + 10^8.8) = 10 log(2 × 10^8.8) = 10(log 2 + 8.8) = 10(0.301 + 8.8) = 91.0 dBA.\n\n合并两个相等声源时，在单源声级上加3 dB：88 + 3 = 91 dBA。分贝是对数单位——不能直接相加（88 + 88 ≠ 176）。使用公式：L = 10 log(10^8.8 + 10^8.8) = 10 log(2 × 10^8.8) = 10(log 2 + 8.8) = 91.0 dBA。',
+      related: [{ n: '17.1', t: '噪声监管标准' }]
     },
     {
       text: 'Which of the following dose-effect relationships is correctly defined?',
@@ -627,35 +623,40 @@ CSPQuiz.init({
         'Additive effect — the combined effect is less than either individual effect'
       ],
       correct: 2,
-      explanation: 'Synergistic effects occur when the combined effect exceeds the sum of individual effects (e.g., asbestos + smoking). Antagonistic effects occur when the combined effect is less than the sum (e.g., atropine + organophosphates). Additive effects occur when the combined effect equals the sum (basis for OSHA mixture formula).\n\n协同效应发生在联合效应超过各单独效应之和时（如石棉+吸烟）。拮抗效应发生在联合效应小于总和时（如阿托品+有机磷）。加和效应发生在联合效应等于总和时（OSHA混合物公式的基础）。'
+      explanation: 'Synergistic effects occur when the combined effect exceeds the sum of individual effects (e.g., asbestos + smoking). Antagonistic effects occur when the combined effect is less than the sum (e.g., atropine + organophosphates). Additive effects occur when the combined effect equals the sum (basis for OSHA mixture formula).\n\n协同效应发生在联合效应超过各单独效应之和时（如石棉+吸烟）。拮抗效应发生在联合效应小于总和时（如阿托品+有机磷）。加和效应发生在联合效应等于总和时（OSHA混合物公式的基础）。',
+      related: [{ n: '17.1', t: '噪声监管标准' }]
     },
     {
       text: 'What is the annual whole-body occupational dose limit for ionizing radiation?',
       group: 2,
       options: ['0.5 rem (0.005 Sv)', '5 rem (0.05 Sv)', '15 rem (0.15 Sv)', '50 rem (0.5 Sv)'],
       correct: 1,
-      explanation: 'The annual whole-body occupational dose limit (TEDE) is 5 rem (0.05 Sv). Other limits: lens of eye = 15 rem, skin/extremities = 50 rem, declared pregnant worker = 0.5 rem over gestation, general public = 0.1 rem (100 mrem) annually.\n\n年度全身职业剂量限值（TEDE）为5 rem（0.05 Sv）。其他限值：眼晶状体=15 rem，皮肤/四肢=50 rem，已申报怀孕工人=妊娠期0.5 rem，一般公众=每年0.1 rem（100 mrem）。'
+      explanation: 'The annual whole-body occupational dose limit (TEDE) is 5 rem (0.05 Sv). Other limits: lens of eye = 15 rem, skin/extremities = 50 rem, declared pregnant worker = 0.5 rem over gestation, general public = 0.1 rem (100 mrem) annually.\n\n年度全身职业剂量限值（TEDE）为5 rem（0.05 Sv）。其他限值：眼晶状体=15 rem，皮肤/四肢=50 rem，已申报怀孕工人=妊娠期0.5 rem，一般公众=每年0.1 rem（100 mrem）。',
+      related: [{ n: '17.2', t: '噪声计算' }]
     },
     {
       text: 'An LD50 of 25 mg/kg would classify a substance as:',
       group: 2,
       options: ['Super toxic', 'Extremely toxic', 'Very toxic', 'Moderately toxic'],
       correct: 1,
-      explanation: 'LD50 classification: Super toxic <5 mg/kg, Extremely toxic 5-50 mg/kg, Very toxic 50-500 mg/kg, Moderately toxic 500-5,000 mg/kg. At 25 mg/kg, this falls into the "Extremely toxic" range.\n\nLD50分类：超毒<5 mg/kg，极毒5-50 mg/kg，剧毒50-500 mg/kg，中等毒性500-5,000 mg/kg。25 mg/kg属于"极毒"范围。'
+      explanation: 'LD50 classification: Super toxic <5 mg/kg, Extremely toxic 5-50 mg/kg, Very toxic 50-500 mg/kg, Moderately toxic 500-5,000 mg/kg. At 25 mg/kg, this falls into the "Extremely toxic" range.\n\nLD50分类：超毒<5 mg/kg，极毒5-50 mg/kg，剧毒50-500 mg/kg，中等毒性500-5,000 mg/kg。25 mg/kg属于"极毒"范围。',
+      related: [{ n: '17.2', t: '噪声计算' }]
     },
     {
       text: 'A worker receives a noise dose of 200% over an 8-hour shift. Using the OSHA TWA conversion formula (16.61 × log10(D/100) + 90), what is the equivalent 8-hour TWA?',
       group: 2,
       options: ['93 dBA', '95 dBA', '97 dBA', '100 dBA'],
       correct: 1,
-      explanation: 'TWA = 16.61 × log10(200/100) + 90 = 16.61 × log10(2) + 90 = 16.61 × 0.301 + 90 = 5.0 + 90 = 95 dBA. A doubling of the dose corresponds to a +5 dB TWA under the 5-dB exchange rate.\n\nTWA = 16.61 × log10(200/100) + 90 = 16.61 × log10(2) + 90 = 16.61 × 0.301 + 90 = 5.0 + 90 = 95 dBA。在5-dB交换率下，剂量翻倍对应TWA增加+5 dB。'
+      explanation: 'TWA = 16.61 × log10(200/100) + 90 = 16.61 × log10(2) + 90 = 16.61 × 0.301 + 90 = 5.0 + 90 = 95 dBA. A doubling of the dose corresponds to a +5 dB TWA under the 5-dB exchange rate.\n\nTWA = 16.61 × log10(200/100) + 90 = 16.61 × log10(2) + 90 = 16.61 × 0.301 + 90 = 5.0 + 90 = 95 dBA。在5-dB交换率下，剂量翻倍对应TWA增加+5 dB。',
+      related: [{ n: '17.2', t: '噪声计算' }]
     },
     {
       text: 'A worker is exposed to a TWA of 98 dBA. The worker wears earplugs with an NRR of 29. Using the OSHA derating method (NRR-7)/2, what is the estimated protected exposure level?',
       group: 2,
       options: ['90 dBA', '87 dBA', '84 dBA', '81 dBA'],
       correct: 1,
-      explanation: 'Estimated exposure = 98 - (29 - 7)/2 = 98 - 22/2 = 98 - 11 = 87 dBA. Under OSHA, the NRR is derated by subtracting 7 dB then dividing by 2 (because the NRR is measured in dB, not dBA).\n\n估计暴露 = 98 - (29 - 7)/2 = 98 - 22/2 = 98 - 11 = 87 dBA。在OSHA下，NRR按先减7 dB再除以2进行折算（因为NRR以dB而非dBA测量）。'
+      explanation: 'Estimated exposure = 98 - (29 - 7)/2 = 98 - 22/2 = 98 - 11 = 87 dBA. Under OSHA, the NRR is derated by subtracting 7 dB then dividing by 2 (because the NRR is measured in dB, not dBA).\n\n估计暴露 = 98 - (29 - 7)/2 = 98 - 22/2 = 98 - 11 = 87 dBA。在OSHA下，NRR按先减7 dB再除以2进行折算（因为NRR以dB而非dBA测量）。',
+      related: [{ n: '17.2', t: '噪声计算' }]
     },
     {
       text: 'Which of the following materials provides the BEST shielding against alpha particles?',
@@ -667,14 +668,16 @@ CSPQuiz.init({
         'A thin layer of water'
       ],
       correct: 1,
-      explanation: 'Alpha particles are the least penetrating — they are stopped by a sheet of paper or the dead outer layer of skin. Their hazard is primarily INTERNAL (inhalation or ingestion), not external. Lead is needed for gamma; plastic/aluminum for beta; water/paraffin for neutrons.\n\nα粒子穿透力最弱——被一张纸或皮肤死皮外层即可阻挡。其危害主要是内部（吸入或摄入），而非外部。铅用于γ；塑料/铝用于β；水/石蜡用于中子。'
+      explanation: 'Alpha particles are the least penetrating — they are stopped by a sheet of paper or the dead outer layer of skin. Their hazard is primarily INTERNAL (inhalation or ingestion), not external. Lead is needed for gamma; plastic/aluminum for beta; water/paraffin for neutrons.\n\nα粒子穿透力最弱——被一张纸或皮肤死皮外层即可阻挡。其危害主要是内部（吸入或摄入），而非外部。铅用于γ；塑料/铝用于β；水/石蜡用于中子。',
+      related: [{ n: '17.2', t: '噪声计算' }]
     },
     {
       text: 'Which GHS-style term describes a substance that causes birth defects or developmental abnormalities?',
       group: 3,
       options: ['Carcinogen', 'Mutagen', 'Teratogen', 'Sensitizer'],
       correct: 2,
-      explanation: 'A teratogen causes birth defects (developmental malformations) — examples include thalidomide, alcohol, isotretinoin, and methylmercury. A mutagen causes DNA mutation; a carcinogen causes cancer; a sensitizer causes allergic reactions.\n\n致畸物导致出生缺陷（发育畸形）——示例包括沙利度胺、酒精、异维A酸和甲基汞。致突变物导致DNA突变；致癌物导致癌症；致敏物导致过敏反应。'
+      explanation: 'A teratogen causes birth defects (developmental malformations) — examples include thalidomide, alcohol, isotretinoin, and methylmercury. A mutagen causes DNA mutation; a carcinogen causes cancer; a sensitizer causes allergic reactions.\n\n致畸物导致出生缺陷（发育畸形）——示例包括沙利度胺、酒精、异维A酸和甲基汞。致突变物导致DNA突变；致癌物导致癌症；致敏物导致过敏反应。',
+      related: [{ n: '17.3', t: '听力保护计划HCP' }]
     },
     {
       text: 'What is the primary hazard of alpha-emitting radionuclides such as plutonium-239 in the workplace?',
@@ -686,14 +689,16 @@ CSPQuiz.init({
         'Induced radioactivity in the body'
       ],
       correct: 1,
-      explanation: 'Alpha emitters are primarily an INTERNAL hazard — they have a very short range but deposit large amounts of energy in tissue if inhaled or ingested (e.g., plutonium, radon progeny). External alpha exposure is negligible because the particles are stopped by the skin.\n\nα发射体主要是内部危害——它们的射程很短，但如果被吸入或摄入（如钚、氡子体），会在组织中沉积大量能量。外部α暴露可忽略，因为粒子被皮肤阻挡。'
+      explanation: 'Alpha emitters are primarily an INTERNAL hazard — they have a very short range but deposit large amounts of energy in tissue if inhaled or ingested (e.g., plutonium, radon progeny). External alpha exposure is negligible because the particles are stopped by the skin.\n\nα发射体主要是内部危害——它们的射程很短，但如果被吸入或摄入（如钚、氡子体），会在组织中沉积大量能量。外部α暴露可忽略，因为粒子被皮肤阻挡。',
+      related: [{ n: '17.3', t: '听力保护计划HCP' }]
     },
     {
       text: 'A radiation source produces an intensity of 400 mrem/hr at 1 meter. What is the intensity at 2 meters from the source (inverse square law)?',
       group: 3,
       options: ['200 mrem/hr', '100 mrem/hr', '50 mrem/hr', '800 mrem/hr'],
       correct: 1,
-      explanation: 'Inverse square law: I2 = I1 × (D1²/D2²) = 400 × (1²/2²) = 400 × 1/4 = 100 mrem/hr. Doubling the distance reduces intensity to one quarter.\n\n平方反比定律：I2 = I1 × (D1²/D2²) = 400 × (1²/2²) = 400 × 1/4 = 100 mrem/hr。距离加倍，强度降至四分之一。'
+      explanation: 'Inverse square law: I2 = I1 × (D1²/D2²) = 400 × (1²/2²) = 400 × 1/4 = 100 mrem/hr. Doubling the distance reduces intensity to one quarter.\n\n平方反比定律：I2 = I1 × (D1²/D2²) = 400 × (1²/2²) = 400 × 1/4 = 100 mrem/hr。距离加倍，强度降至四分之一。',
+      related: [{ n: '17.3', t: '听力保护计划HCP' }]
     },
     {
       text: 'The NOAEL (No Observed Adverse Effect Level) is defined as:',
@@ -705,7 +710,8 @@ CSPQuiz.init({
         'The dose producing a 10% response'
       ],
       correct: 1,
-      explanation: 'NOAEL is the highest dose at which no adverse effect is observed. LOAEL is the lowest dose producing an adverse effect. NOEL is the highest dose with no effect at all (including non-adverse). LD50 is the dose killing 50% of animals.\n\nNOAEL是未观察到不良效应的最高剂量。LOAEL是产生不良效应的最低剂量。NOEL是无任何效应（包括非不良效应）的最高剂量。LD50是杀死50%动物的剂量。'
+      explanation: 'NOAEL is the highest dose at which no adverse effect is observed. LOAEL is the lowest dose producing an adverse effect. NOEL is the highest dose with no effect at all (including non-adverse). LD50 is the dose killing 50% of animals.\n\nNOAEL是未观察到不良效应的最高剂量。LOAEL是产生不良效应的最低剂量。NOEL是无任何效应（包括非不良效应）的最高剂量。LD50是杀死50%动物的剂量。',
+      related: [{ n: '17.3', t: '听力保护计划HCP' }]
     },
     {
       text: 'Asbestosis is BEST described as:',
@@ -717,14 +723,16 @@ CSPQuiz.init({
         'An acute respiratory infection'
       ],
       correct: 1,
-      explanation: 'Asbestosis is a progressive, irreversible diffuse interstitial fibrosis caused by inhalation of asbestos fibers. It is distinct from asbestos-related cancers (lung cancer, mesothelioma). Mesothelioma is strongly associated with asbestos and has a 10-40+ year latency.\n\n石棉肺是吸入石棉纤维导致的进行性、不可逆的弥漫性间质纤维化。它与石棉相关癌症（肺癌、间皮瘤）不同。间皮瘤与石棉高度相关，潜伏期10-40年以上。'
+      explanation: 'Asbestosis is a progressive, irreversible diffuse interstitial fibrosis caused by inhalation of asbestos fibers. It is distinct from asbestos-related cancers (lung cancer, mesothelioma). Mesothelioma is strongly associated with asbestos and has a 10-40+ year latency.\n\n石棉肺是吸入石棉纤维导致的进行性、不可逆的弥漫性间质纤维化。它与石棉相关癌症（肺癌、间皮瘤）不同。间皮瘤与石棉高度相关，潜伏期10-40年以上。',
+      related: [{ n: '17.3', t: '听力保护计划HCP' }]
     },
     {
       text: 'What noise frequency range is most associated with the Standard Threshold Shift (STS) criteria under OSHA?',
       group: 4,
       options: ['500, 1,000 Hz', '1,000, 2,000 Hz', '2,000, 3,000, 4,000 Hz', '4,000, 8,000 Hz'],
       correct: 2,
-      explanation: 'An STS is defined as an average change of 10 dB or more at 2,000, 3,000, and 4,000 Hz in either ear, relative to baseline (age adjustment permitted). A retest must be performed within 30 days to confirm the STS.\n\nSTS定义为任一耳在2,000、3,000和4,000 Hz频率上相对于基线的平均变化≥10 dB（允许年龄校正）。必须在30天内进行重测以确认STS。'
+      explanation: 'An STS is defined as an average change of 10 dB or more at 2,000, 3,000, and 4,000 Hz in either ear, relative to baseline (age adjustment permitted). A retest must be performed within 30 days to confirm the STS.\n\nSTS定义为任一耳在2,000、3,000和4,000 Hz频率上相对于基线的平均变化≥10 dB（允许年龄校正）。必须在30天内进行重测以确认STS。',
+      related: [{ n: '17.4', t: '电离辐射' }]
     },
     {
       text: 'Which of the following is the CORRECT pairing of a radiation unit with its quantity?',
@@ -736,14 +744,16 @@ CSPQuiz.init({
         'Becquerel — absorbed dose'
       ],
       correct: 2,
-      explanation: 'rem (and Sv) measure dose equivalent = absorbed dose × quality factor. Gray (Gy) and rad measure absorbed dose. Becquerel (Bq) and Curie measure activity (decay rate).\n\nrem（和Sv）测量剂量当量 = 吸收剂量 × 品质因子。Gray（Gy）和rad测量吸收剂量。Becquerel（Bq）和Curie测量活度（衰变率）。'
+      explanation: 'rem (and Sv) measure dose equivalent = absorbed dose × quality factor. Gray (Gy) and rad measure absorbed dose. Becquerel (Bq) and Curie measure activity (decay rate).\n\nrem（和Sv）测量剂量当量 = 吸收剂量 × 品质因子。Gray（Gy）和rad测量吸收剂量。Becquerel（Bq）和Curie测量活度（衰变率）。',
+      related: [{ n: '17.4', t: '电离辐射' }]
     },
     {
       text: 'A worker is exposed to noise at 95 dBA for 1 hour, 90 dBA for 2 hours, and 85 dBA for the remaining 5 hours. What is the total noise dose under OSHA, and is the worker compliant?',
       group: 4,
       options: ['50% — compliant', '62.5% — compliant', '81.25% — compliant', '106% — overexposed'],
       correct: 2,
-      explanation: 'At 95 dBA: T = 8/2^((95-90)/5) = 4 hrs → C/T = 1/4 = 0.25. At 90 dBA: T = 8 hrs → 2/8 = 0.25. At 85 dBA: T = 16 hrs → 5/16 = 0.3125. D = 100 × (0.25 + 0.25 + 0.3125) = 100 × 0.8125 = 81.25%. Since D < 100%, the worker is compliant, but the exposure is above the 50% action level, so a hearing conservation program applies.\n\n在95 dBA下：T = 8/2^((95-90)/5) = 4小时 → C/T = 1/4 = 0.25。在90 dBA下：T = 8小时 → 2/8 = 0.25。在85 dBA下：T = 16小时 → 5/16 = 0.3125。D = 100 × (0.25 + 0.25 + 0.3125) = 100 × 0.8125 = 81.25%。由于D < 100%，工人合规，但暴露高于50%行动水平，因此适用听力保护计划。'
+      explanation: 'At 95 dBA: T = 8/2^((95-90)/5) = 4 hrs → C/T = 1/4 = 0.25. At 90 dBA: T = 8 hrs → 2/8 = 0.25. At 85 dBA: T = 16 hrs → 5/16 = 0.3125. D = 100 × (0.25 + 0.25 + 0.3125) = 100 × 0.8125 = 81.25%. Since D < 100%, the worker is compliant, but the exposure is above the 50% action level, so a hearing conservation program applies.\n\n在95 dBA下：T = 8/2^((95-90)/5) = 4小时 → C/T = 1/4 = 0.25。在90 dBA下：T = 8小时 → 2/8 = 0.25。在85 dBA下：T = 16小时 → 5/16 = 0.3125。D = 100 × (0.25 + 0.25 + 0.3125) = 100 × 0.8125 = 81.25%。由于D < 100%，工人合规，但暴露高于50%行动水平，因此适用听力保护计划。',
+      related: [{ n: '17.4', t: '电离辐射' }]
     },
     {
       text: 'Which of the following is NOT a characteristic of noise-induced hearing loss (NIHL)?',
@@ -755,21 +765,24 @@ CSPQuiz.init({
         'It is completely reversible with prompt medical treatment'
       ],
       correct: 3,
-      explanation: 'NIHL is permanent and irreversible — there is no medical cure or treatment that restores sensorineural hearing loss. It is bilateral (both ears), most severe initially at 4,000 Hz, and preventable (not curable) through engineering controls, administrative controls, and hearing protection.\n\n噪声性听力损失是永久且不可逆的——没有药物或治疗能恢复感音神经性听力损失。它是双侧的，最初最严重于4,000 Hz，可预防（但不可治愈），通过工程控制、行政控制和听力保护实现。'
+      explanation: 'NIHL is permanent and irreversible — there is no medical cure or treatment that restores sensorineural hearing loss. It is bilateral (both ears), most severe initially at 4,000 Hz, and preventable (not curable) through engineering controls, administrative controls, and hearing protection.\n\n噪声性听力损失是永久且不可逆的——没有药物或治疗能恢复感音神经性听力损失。它是双侧的，最初最严重于4,000 Hz，可预防（但不可治愈），通过工程控制、行政控制和听力保护实现。',
+      related: [{ n: '17.4', t: '电离辐射' }]
     },
     {
       text: 'Which radiation type has the HIGHEST quality factor (QF) for the same absorbed dose?',
       group: 4,
       options: ['Gamma rays', 'Beta particles', 'Alpha particles', 'X-rays'],
       correct: 2,
-      explanation: 'Alpha particles have a QF of 20 (highest), because their high linear energy transfer (LET) causes more biological damage per unit absorbed dose. Gamma, X-ray, and beta have QF = 1. Neutrons range from 5-20 depending on energy.\n\nα粒子的品质因子为20（最高），因为其高线性能量转移（LET）在每单位吸收剂量下造成更多生物损伤。γ、X射线和β的QF=1。中子根据能量为5-20。'
+      explanation: 'Alpha particles have a QF of 20 (highest), because their high linear energy transfer (LET) causes more biological damage per unit absorbed dose. Gamma, X-ray, and beta have QF = 1. Neutrons range from 5-20 depending on energy.\n\nα粒子的品质因子为20（最高），因为其高线性能量转移（LET）在每单位吸收剂量下造成更多生物损伤。γ、X射线和β的QF=1。中子根据能量为5-20。',
+      related: [{ n: '17.4', t: '电离辐射' }]
     },
     {
       text: 'What is the OSHA action level for noise that triggers a hearing conservation program?',
       group: 5,
       options: ['80 dBA', '85 dBA', '90 dBA', '95 dBA'],
       correct: 1,
-      explanation: 'The 8-hour TWA action level is 85 dBA — at or above this level, the employer must implement a hearing conservation program (monitoring, audiograms, protectors at no cost, training). The PEL is 90 dBA (100% dose); the action level is 50% dose.\n\n8小时TWA行动水平为85 dBA——达到或超过此水平，雇主必须实施听力保护计划（监测、听力图、免费保护器、培训）。PEL为90 dBA（100%剂量）；行动水平为50%剂量。'
+      explanation: 'The 8-hour TWA action level is 85 dBA — at or above this level, the employer must implement a hearing conservation program (monitoring, audiograms, protectors at no cost, training). The PEL is 90 dBA (100% dose); the action level is 50% dose.\n\n8小时TWA行动水平为85 dBA——达到或超过此水平，雇主必须实施听力保护计划（监测、听力图、免费保护器、培训）。PEL为90 dBA（100%剂量）；行动水平为50%剂量。',
+      related: [{ n: '17.5', t: '非电离辐射' }]
     },
     {
       text: 'Ototoxic chemicals such as toluene and styrene:',
@@ -781,14 +794,16 @@ CSPQuiz.init({
         'Are beneficial to hearing health'
       ],
       correct: 1,
-      explanation: 'Ototoxic chemicals (toluene, styrene, xylene, lead, mercury, CO, HCN) can damage the cochlea and auditory nerve. When combined with noise, the effects are synergistic — hearing loss can occur even at noise levels below the PEL. NIOSH recommends evaluating ototoxic chemical exposure in hearing conservation programs.\n\n耳毒性化学品（甲苯、苯乙烯、二甲苯、铅、汞、CO、HCN）可损害耳蜗和听神经。与噪声叠加时，效应是协同的——即使噪声低于PEL也可能发生听力损失。NIOSH建议在听力保护计划中评估耳毒性化学品暴露。'
+      explanation: 'Ototoxic chemicals (toluene, styrene, xylene, lead, mercury, CO, HCN) can damage the cochlea and auditory nerve. When combined with noise, the effects are synergistic — hearing loss can occur even at noise levels below the PEL. NIOSH recommends evaluating ototoxic chemical exposure in hearing conservation programs.\n\n耳毒性化学品（甲苯、苯乙烯、二甲苯、铅、汞、CO、HCN）可损害耳蜗和听神经。与噪声叠加时，效应是协同的——即使噪声低于PEL也可能发生听力损失。NIOSH建议在听力保护计划中评估耳毒性化学品暴露。',
+      related: [{ n: '17.5', t: '非电离辐射' }]
     },
     {
       text: 'The LD50 of a chemical is 4 mg/kg. This substance would be classified as:',
       group: 5,
       options: ['Extremely toxic', 'Super toxic', 'Very toxic', 'Moderately toxic'],
       correct: 1,
-      explanation: 'LD50 < 5 mg/kg = super toxic (超毒). The classification scale: super toxic <5, extremely toxic 5-50, very toxic 50-500, moderately toxic 500-5,000, slightly toxic 5,000-15,000, practically non-toxic >15,000 (all mg/kg).\n\nLD50 < 5 mg/kg = 超毒。分类尺度：超毒<5，极毒5-50，剧毒50-500，中等毒性500-5,000，微毒5,000-15,000，基本无毒>15,000（单位均为mg/kg）。'
+      explanation: 'LD50 < 5 mg/kg = super toxic (超毒). The classification scale: super toxic <5, extremely toxic 5-50, very toxic 50-500, moderately toxic 500-5,000, slightly toxic 5,000-15,000, practically non-toxic >15,000 (all mg/kg).\n\nLD50 < 5 mg/kg = 超毒。分类尺度：超毒<5，极毒5-50，剧毒50-500，中等毒性500-5,000，微毒5,000-15,000，基本无毒>15,000（单位均为mg/kg）。',
+      related: [{ n: '17.5', t: '非电离辐射' }]
     },
     {
       text: 'What is the fundamental difference between the threshold and non-threshold models of toxicity?',
@@ -800,7 +815,8 @@ CSPQuiz.init({
         'There is no difference — they are identical'
       ],
       correct: 1,
-      explanation: 'The threshold model (for most non-carcinogens) assumes a dose below which no adverse effect occurs — regulatory limits are set below this. The non-threshold (linear) model (for carcinogens) assumes any dose carries some risk, so regulators use acceptable risk levels (e.g., 10^-6 excess cancer risk) instead of a "safe" dose.\n\n阈值模型（适用于大多数非致癌物）假设存在一个低于该剂量不会发生不良效应的剂量——监管限值设在此剂量之下。非阈值（线性）模型（适用于致癌物）假设任何剂量都带有一定风险，因此监管者使用可接受风险水平（如10^-6超额癌症风险）而非"安全"剂量。'
+      explanation: 'The threshold model (for most non-carcinogens) assumes a dose below which no adverse effect occurs — regulatory limits are set below this. The non-threshold (linear) model (for carcinogens) assumes any dose carries some risk, so regulators use acceptable risk levels (e.g., 10^-6 excess cancer risk) instead of a "safe" dose.\n\n阈值模型（适用于大多数非致癌物）假设存在一个低于该剂量不会发生不良效应的剂量——监管限值设在此剂量之下。非阈值（线性）模型（适用于致癌物）假设任何剂量都带有一定风险，因此监管者使用可接受风险水平（如10^-6超额癌症风险）而非"安全"剂量。',
+      related: [{ n: '17.5', t: '非电离辐射' }]
     },
     {
       text: 'A worker\'s audiogram shows an average shift of 12 dB at 2,000, 3,000, and 4,000 Hz in the left ear compared to baseline. What is the employer\'s required action?',
@@ -812,14 +828,16 @@ CSPQuiz.init({
         'Provide new earmuffs within 90 days'
       ],
       correct: 1,
-      explanation: 'An average shift ≥10 dB at 2,000/3,000/4,000 Hz is a potential Standard Threshold Shift (STS). The employer must retest the worker within 30 days to confirm the STS. If confirmed, the worker must be fitted with hearing protection (or refitted/retrained) and the audiogram must be flagged in records.\n\n在2,000/3,000/4,000 Hz的平均偏移≥10 dB是潜在的标准阈值偏移（STS）。雇主必须在30天内重测以确认STS。如果确认，必须为工人适配听力保护（或重新适配/培训），并在记录中标记该听力图。'
+      explanation: 'An average shift ≥10 dB at 2,000/3,000/4,000 Hz is a potential Standard Threshold Shift (STS). The employer must retest the worker within 30 days to confirm the STS. If confirmed, the worker must be fitted with hearing protection (or refitted/retrained) and the audiogram must be flagged in records.\n\n在2,000/3,000/4,000 Hz的平均偏移≥10 dB是潜在的标准阈值偏移（STS）。雇主必须在30天内重测以确认STS。如果确认，必须为工人适配听力保护（或重新适配/培训），并在记录中标记该听力图。',
+      related: [{ n: '17.5', t: '非电离辐射' }]
     },
     {
       text: 'Which laser class requires the most rigorous control measures including a Laser Safety Officer, interlocks, and beam stops?',
       group: 6,
       options: ['Class 2', 'Class 3R', 'Class 3B', 'Class 4'],
       correct: 3,
-      explanation: 'Class 4 lasers (>500 mW) are the highest hazard class — they can cause eye and skin damage even from diffuse (scattered) reflections and can ignite materials. They require an LSO, Nominal Hazard Zone determination, interlocks, beam stops, key control, and OD-matched eyewear.\n\nClass 4激光（>500 mW）是最高危害等级——即使是漫反射（散射）也能造成眼和皮肤损伤，并可能点燃材料。它们需要LSO、标称危害区确定、联锁、光束终止器、钥匙控制和OD匹配的护目镜。'
+      explanation: 'Class 4 lasers (>500 mW) are the highest hazard class — they can cause eye and skin damage even from diffuse (scattered) reflections and can ignite materials. They require an LSO, Nominal Hazard Zone determination, interlocks, beam stops, key control, and OD-matched eyewear.\n\nClass 4激光（>500 mW）是最高危害等级——即使是漫反射（散射）也能造成眼和皮肤损伤，并可能点燃材料。它们需要LSO、标称危害区确定、联锁、光束终止器、钥匙控制和OD匹配的护目镜。',
+      related: [{ n: '17.6', t: '毒理学指标与进入途径' }]
     },
     {
       text: 'An employee is exposed to a chemical mixture where Substance A (PEL 100 ppm) is at 40 ppm and Substance B (PEL 50 ppm) is at 45 ppm. Both affect the same target organ. The combined exposure:',
@@ -831,21 +849,24 @@ CSPQuiz.init({
         'Cannot be determined without the STEL values'
       ],
       correct: 1,
-      explanation: 'E_m = C_A/PEL_A + C_B/PEL_B = 40/100 + 45/50 = 0.4 + 0.9 = 1.3. Since E_m > 1.0, the combined exposure exceeds the limit even though each substance individually is below its PEL. The additive formula sums the fractions of each limit.\n\nE_m = C_A/PEL_A + C_B/PEL_B = 40/100 + 45/50 = 0.4 + 0.9 = 1.3。由于E_m > 1.0，综合暴露超过限值，尽管每种物质单独低于各自的PEL。加和公式对各限值的分数求和。'
+      explanation: 'E_m = C_A/PEL_A + C_B/PEL_B = 40/100 + 45/50 = 0.4 + 0.9 = 1.3. Since E_m > 1.0, the combined exposure exceeds the limit even though each substance individually is below its PEL. The additive formula sums the fractions of each limit.\n\nE_m = C_A/PEL_A + C_B/PEL_B = 40/100 + 45/50 = 0.4 + 0.9 = 1.3。由于E_m > 1.0，综合暴露超过限值，尽管每种物质单独低于各自的PEL。加和公式对各限值的分数求和。',
+      related: [{ n: '17.6', t: '毒理学指标与进入途径' }]
     },
     {
       text: 'The WBGT index is used to assess which occupational hazard?',
       group: 6,
       options: ['Noise', 'Heat stress', 'Vibration', 'Radiation'],
       correct: 1,
-      explanation: 'WBGT (Wet Bulb Globe Temperature) is the index for heat stress. It combines wet bulb (humidity), globe (radiant heat), and dry bulb (air temperature) readings. ACGIH uses WBGT to set work-rest cycle recommendations based on metabolic workload.\n\nWBGT（湿球黑球温度）是热应激指标。它综合湿球（湿度）、黑球（辐射热）和干球（气温）读数。ACGIH使用WBGT根据代谢负荷设定工作-休息循环建议。'
+      explanation: 'WBGT (Wet Bulb Globe Temperature) is the index for heat stress. It combines wet bulb (humidity), globe (radiant heat), and dry bulb (air temperature) readings. ACGIH uses WBGT to set work-rest cycle recommendations based on metabolic workload.\n\nWBGT（湿球黑球温度）是热应激指标。它综合湿球（湿度）、黑球（辐射热）和干球（气温）读数。ACGIH使用WBGT根据代谢负荷设定工作-休息循环建议。',
+      related: [{ n: '17.6', t: '毒理学指标与进入途径' }]
     },
     {
       text: 'Which heat-related illness is a MEDICAL EMERGENCY requiring rapid cooling?',
       group: 6,
       options: ['Heat cramps', 'Heat exhaustion', 'Heat stroke', 'Heat rash'],
       correct: 2,
-      explanation: 'Heat stroke (core temp >104°F/40°C) is a medical emergency characterized by hot, dry skin, confusion, seizures, and loss of consciousness. Rapid cooling is essential to prevent brain damage and death. Heat exhaustion involves heavy sweating and is less severe but still requires treatment.\n\n中暑（核心体温>104°F/40°C）是医疗急救，特征是皮肤干热、意识混乱、抽搐和意识丧失。必须快速降温以防止脑损伤和死亡。热衰竭涉及大量出汗，严重程度较低，但仍需治疗。'
+      explanation: 'Heat stroke (core temp >104°F/40°C) is a medical emergency characterized by hot, dry skin, confusion, seizures, and loss of consciousness. Rapid cooling is essential to prevent brain damage and death. Heat exhaustion involves heavy sweating and is less severe but still requires treatment.\n\n中暑（核心体温>104°F/40°C）是医疗急救，特征是皮肤干热、意识混乱、抽搐和意识丧失。必须快速降温以防止脑损伤和死亡。热衰竭涉及大量出汗，严重程度较低，但仍需治疗。',
+      related: [{ n: '17.6', t: '毒理学指标与进入途径' }]
     },
     {
       text: 'What is the relationship between the absorbed dose in rad and the dose equivalent in rem?',
@@ -857,7 +878,8 @@ CSPQuiz.init({
         'rem and rad are unrelated quantities'
       ],
       correct: 0,
-      explanation: 'Dose equivalent (rem) = absorbed dose (rad) × quality factor (QF). This is why 1 rad of alpha (QF=20) = 20 rem, while 1 rad of gamma (QF=1) = 1 rem. The quality factor accounts for the different biological effectiveness of each radiation type.\n\n剂量当量（rem）= 吸收剂量（rad）× 品质因子（QF）。这就是为什么1 rad的α（QF=20）= 20 rem，而1 rad的γ（QF=1）= 1 rem。品质因子反映了每种辐射类型不同的生物有效性。'
+      explanation: 'Dose equivalent (rem) = absorbed dose (rad) × quality factor (QF). This is why 1 rad of alpha (QF=20) = 20 rem, while 1 rad of gamma (QF=1) = 1 rem. The quality factor accounts for the different biological effectiveness of each radiation type.\n\n剂量当量（rem）= 吸收剂量（rad）× 品质因子（QF）。这就是为什么1 rad的α（QF=20）= 20 rem，而1 rad的γ（QF=1）= 1 rem。品质因子反映了每种辐射类型不同的生物有效性。',
+      related: [{ n: '17.6', t: '毒理学指标与进入途径' }]
     },
     {
       text: 'Which of the following correctly describes the relationship between the OHSA and NIOSH noise standards?',
@@ -869,14 +891,16 @@ CSPQuiz.init({
         'NIOSH has a higher PEL than OSHA'
       ],
       correct: 1,
-      explanation: 'NIOSH is more protective: REL = 85 dBA (vs OSHA PEL 90 dBA) with a 3-dB exchange rate (vs OSHA 5-dB). NIOSH also uses an 80 dBA threshold while OSHA uses 90 dBA. OSHA is enforceable; NIOSH recommendations are not.\n\nNIOSH更具保护性：REL = 85 dBA（对比OSHA PEL 90 dBA），3-dB交换率（对比OSHA 5-dB）。NIOSH还使用80 dBA阈值而OSHA使用90 dBA。OSHA可强制执行；NIOSH建议不可强制执行。'
+      explanation: 'NIOSH is more protective: REL = 85 dBA (vs OSHA PEL 90 dBA) with a 3-dB exchange rate (vs OSHA 5-dB). NIOSH also uses an 80 dBA threshold while OSHA uses 90 dBA. OSHA is enforceable; NIOSH recommendations are not.\n\nNIOSH更具保护性：REL = 85 dBA（对比OSHA PEL 90 dBA），3-dB交换率（对比OSHA 5-dB）。NIOSH还使用80 dBA阈值而OSHA使用90 dBA。OSHA可强制执行；NIOSH建议不可强制执行。',
+      related: [{ n: '17.7', t: '剂量-效应关系与联合效应' }]
     },
     {
       text: 'A worker\'s dose is 40% on the first day and 60% on the second day of a two-day exposure assessment. What is the average daily noise dose?',
       group: 7,
       options: ['40%', '50%', '60%', '100%'],
       correct: 1,
-      explanation: 'Average daily dose = (40% + 60%) / 2 = 50%. The 50% average equals the OSHA action level (85 dBA TWA). If the average dose were to exceed 100%, the worker would be overexposed on average. Averaging over multiple days is used when the standard deviation is small.\n\n平均日剂量 = (40% + 60%) / 2 = 50%。50%的平均值等于OSHA行动水平（85 dBA TWA）。如果平均剂量超过100%，则工人平均过度暴露。当标准差较小时，可对多日剂量取平均。'
+      explanation: 'Average daily dose = (40% + 60%) / 2 = 50%. The 50% average equals the OSHA action level (85 dBA TWA). If the average dose were to exceed 100%, the worker would be overexposed on average. Averaging over multiple days is used when the standard deviation is small.\n\n平均日剂量 = (40% + 60%) / 2 = 50%。50%的平均值等于OSHA行动水平（85 dBA TWA）。如果平均剂量超过100%，则工人平均过度暴露。当标准差较小时，可对多日剂量取平均。',
+      related: [{ n: '17.7', t: '剂量-效应关系与联合效应' }]
     },
     {
       text: 'A chemical\'s LC50 (4-hour inhalation) is 300 ppm. This means that:',
@@ -888,7 +912,8 @@ CSPQuiz.init({
         'All test animals die at 300 ppm'
       ],
       correct: 1,
-      explanation: 'LC50 is the airborne concentration expected to cause death in 50% of the test animal population over a specified exposure period (typically 4 hours). It is expressed in ppm or mg/m³ and is used for inhalation toxicity comparisons. It is NOT a PEL or TLV.\n\nLC50是规定暴露期内（通常4小时）预期导致50%试验动物死亡的空气浓度。以ppm或mg/m³表示，用于吸入毒性比较。它不是PEL或TLV。'
+      explanation: 'LC50 is the airborne concentration expected to cause death in 50% of the test animal population over a specified exposure period (typically 4 hours). It is expressed in ppm or mg/m³ and is used for inhalation toxicity comparisons. It is NOT a PEL or TLV.\n\nLC50是规定暴露期内（通常4小时）预期导致50%试验动物死亡的空气浓度。以ppm或mg/m³表示，用于吸入毒性比较。它不是PEL或TLV。',
+      related: [{ n: '17.7', t: '剂量-效应关系与联合效应' }]
     },
     {
       text: 'Radon gas in a basement is a health concern primarily because:',
@@ -900,7 +925,8 @@ CSPQuiz.init({
         'It causes hearing loss'
       ],
       correct: 1,
-      explanation: 'Radon is a radioactive noble gas that seeps from soil into buildings. Its short-lived decay products (polonium-218, polonium-214) emit alpha particles; when inhaled, they deposit in the airways and are the second leading cause of lung cancer after smoking. Mitigation involves ventilation and sub-slab depressurization.\n\n氡是从土壤渗入建筑物的放射性惰性气体。其短寿命衰变产物（钋-218、钋-214）发射α粒子；吸入后在气道沉积，是仅次于吸烟的第二大肺癌原因。缓解措施包括通风和板下减压。'
+      explanation: 'Radon is a radioactive noble gas that seeps from soil into buildings. Its short-lived decay products (polonium-218, polonium-214) emit alpha particles; when inhaled, they deposit in the airways and are the second leading cause of lung cancer after smoking. Mitigation involves ventilation and sub-slab depressurization.\n\n氡是从土壤渗入建筑物的放射性惰性气体。其短寿命衰变产物（钋-218、钋-214）发射α粒子；吸入后在气道沉积，是仅次于吸烟的第二大肺癌原因。缓解措施包括通风和板下减压。',
+      related: [{ n: '17.7', t: '剂量-效应关系与联合效应' }]
     },
     {
       text: 'Which of the following is the MOST appropriate engineering control for reducing noise exposure at the source?',
@@ -912,7 +938,8 @@ CSPQuiz.init({
         'Posting hearing protection required signs'
       ],
       correct: 2,
-      explanation: 'Enclosing the noisy machine (engineering control at the source) is preferred over administrative controls (job rotation, signage) and PPE (hearing protection). The hierarchy of controls applies to noise just as to chemical hazards.\n\n将噪声机器封闭在隔音罩内（源头工程控制）优先于行政控制（岗位轮换、标志）和PPE（听力保护）。控制层级同样适用于噪声和化学危害。'
+      explanation: 'Enclosing the noisy machine (engineering control at the source) is preferred over administrative controls (job rotation, signage) and PPE (hearing protection). The hierarchy of controls applies to noise just as to chemical hazards.\n\n将噪声机器封闭在隔音罩内（源头工程控制）优先于行政控制（岗位轮换、标志）和PPE（听力保护）。控制层级同样适用于噪声和化学危害。',
+      related: [{ n: '17.7', t: '剂量-效应关系与联合效应' }]
     },
     {
       text: 'An employee whose audiogram confirms an STS must be:',
@@ -924,7 +951,8 @@ CSPQuiz.init({
         'Reported to the EPA'
       ],
       correct: 1,
-      explanation: 'Upon confirmed STS, OSHA requires the employer to: fit the employee with hearing protectors (if not already using them), refit and retrain those who are, and refer the employee for further evaluation if appropriate. The STS must also be recorded appropriately.\n\n确认STS后，OSHA要求雇主：为员工适配听力保护器（如果尚未使用）、为已使用者重新适配和培训，并酌情转诊进一步评估。STS还须适当记录。'
+      explanation: 'Upon confirmed STS, OSHA requires the employer to: fit the employee with hearing protectors (if not already using them), refit and retrain those who are, and refer the employee for further evaluation if appropriate. The STS must also be recorded appropriately.\n\n确认STS后，OSHA要求雇主：为员工适配听力保护器（如果尚未使用）、为已使用者重新适配和培训，并酌情转诊进一步评估。STS还须适当记录。',
+      related: [{ n: '17.8', t: '重点化学物质毒理与热应激' }]
     },
     {
       text: 'Which of the following statements about the synergistic effect of asbestos and smoking is correct?',
@@ -936,14 +964,16 @@ CSPQuiz.init({
         'The combined risk is only slightly higher than each alone'
       ],
       correct: 1,
-      explanation: 'Asbestos and smoking have a strong synergistic effect on lung cancer — the combined risk is 50-90 times higher than the general population, which is far greater than the sum of individual risks (multiplicative rather than additive). Mesothelioma, however, is not increased by smoking.\n\n石棉和吸烟对肺癌有强烈的协同效应——综合风险比普通人群高50-90倍，远大于各自风险之和（是倍增而非加和）。然而，间皮瘤不受吸烟影响。'
+      explanation: 'Asbestos and smoking have a strong synergistic effect on lung cancer — the combined risk is 50-90 times higher than the general population, which is far greater than the sum of individual risks (multiplicative rather than additive). Mesothelioma, however, is not increased by smoking.\n\n石棉和吸烟对肺癌有强烈的协同效应——综合风险比普通人群高50-90倍，远大于各自风险之和（是倍增而非加和）。然而，间皮瘤不受吸烟影响。',
+      related: [{ n: '17.8', t: '重点化学物质毒理与热应激' }]
     },
     {
       text: 'The SI unit for radiation activity (decay rate) is:',
       group: 8,
       options: ['Gray (Gy)', 'Sievert (Sv)', 'Becquerel (Bq)', 'rem'],
       correct: 2,
-      explanation: 'Becquerel (Bq) is the SI unit for activity = 1 disintegration per second. The Curie (Ci) is the traditional unit; 1 Ci = 3.7 × 10^10 Bq. Gray measures absorbed dose; Sievert measures dose equivalent.\n\n贝克勒尔（Bq）是活度的SI单位 = 每秒1次衰变。居里（Ci）是传统单位；1 Ci = 3.7 × 10^10 Bq。Gray测量吸收剂量；Sievert测量剂量当量。'
+      explanation: 'Becquerel (Bq) is the SI unit for activity = 1 disintegration per second. The Curie (Ci) is the traditional unit; 1 Ci = 3.7 × 10^10 Bq. Gray measures absorbed dose; Sievert measures dose equivalent.\n\n贝克勒尔（Bq）是活度的SI单位 = 每秒1次衰变。居里（Ci）是传统单位；1 Ci = 3.7 × 10^10 Bq。Gray测量吸收剂量；Sievert测量剂量当量。',
+      related: [{ n: '17.8', t: '重点化学物质毒理与热应激' }]
     },
     {
       text: 'Which of the following is TRUE regarding the 140 dB peak limit under OSHA\'s noise standard?',
@@ -955,7 +985,8 @@ CSPQuiz.init({
         'It is a level that requires no hearing protection'
       ],
       correct: 1,
-      explanation: 'OSHA 1910.95(b)(1) states that exposure to impulsive or impact noise should not exceed 140 dB peak sound pressure level. Acoustic trauma (sudden hearing loss) can occur above this level. NIOSH recommends 140 dBA (A-weighted, fast response).\n\nOSHA 1910.95(b)(1)规定脉冲或冲击噪声的暴露不得超过140 dB峰值声压级。超过此水平可能发生声创伤（突发性听力损失）。NIOSH推荐140 dBA（A加权，快速响应）。'
+      explanation: 'OSHA 1910.95(b)(1) states that exposure to impulsive or impact noise should not exceed 140 dB peak sound pressure level. Acoustic trauma (sudden hearing loss) can occur above this level. NIOSH recommends 140 dBA (A-weighted, fast response).\n\nOSHA 1910.95(b)(1)规定脉冲或冲击噪声的暴露不得超过140 dB峰值声压级。超过此水平可能发生声创伤（突发性听力损失）。NIOSH推荐140 dBA（A加权，快速响应）。',
+      related: [{ n: '17.8', t: '重点化学物质毒理与热应激' }]
     },
     {
       text: 'In the threshold model of toxicity, which value is used by regulators to set exposure limits for non-carcinogens?',
@@ -967,7 +998,8 @@ CSPQuiz.init({
         'The LC50 directly'
       ],
       correct: 0,
-      explanation: 'Regulators divide the NOAEL (or LOAEL) by uncertainty/safety factors (typically 10× for interspecies, 10× for intraspecies variation) to derive acceptable daily intakes or exposure limits. The LD50 and LC50 are lethality metrics, not the basis for setting regulatory limits.\n\n监管者将NOAEL（或LOAEL）除以不确定度/安全系数（通常种间10×、种内10×）以推导可接受的每日摄入量或暴露限值。LD50和LC50是致死性指标，不是设定监管限值的基础。'
+      explanation: 'Regulators divide the NOAEL (or LOAEL) by uncertainty/safety factors (typically 10× for interspecies, 10× for intraspecies variation) to derive acceptable daily intakes or exposure limits. The LD50 and LC50 are lethality metrics, not the basis for setting regulatory limits.\n\n监管者将NOAEL（或LOAEL）除以不确定度/安全系数（通常种间10×、种内10×）以推导可接受的每日摄入量或暴露限值。LD50和LC50是致死性指标，不是设定监管限值的基础。',
+      related: [{ n: '17.8', t: '重点化学物质毒理与热应激' }]
     }
   ]
 });

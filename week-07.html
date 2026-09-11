@@ -10,7 +10,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="apple-touch-icon" href="icon-192.png">
-<link rel="stylesheet" href="quiz-styles.css?v=11">
+<link rel="stylesheet" href="quiz-styles.css?v=12">
 <style>
   .breadcrumb { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 16px; }
   .breadcrumb a { color: var(--accent); text-decoration: none; }
@@ -169,16 +169,19 @@
       </div>
     </div>
 
-    <div class="exam-scenario">
+    <div class="exam-scenario"
+         data-options='["Identify the employee at fault and document the discipline", "Redirect to fact-finding and system analysis — determine immediate and root causes before considering human factors", "Wait until the employee admits responsibility before starting the investigation", "Close the investigation once the responsible employee is identified"]'
+         data-correct="1">
       <div class="es-label">📝 模拟情景题 / Practice Scenario</div>
       <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
       <div class="es-question">"After a serious injury, management demands to know which employee is at fault before the investigation begins. What is the BEST response?"</div>
-      <div><strong>最佳答案 / Best answer:</strong> Redirect to fact-finding and system analysis — determine immediate and root causes before considering any human factor. 解析：预判式追责会抑制证人提供信息并掩盖系统缺陷；调查先收集事实、找系统原因，之后才讨论纠正措施。追责文化是安全文化的最大威胁。</div>
-    </div>
-  </div>
+      <div class="scenario-feedback">
+        <div class="scenario-fb-label"></div>
+        <div>The purpose of an incident investigation is to prevent recurrence by finding facts and system causes — not to assign blame. Focusing on fault up front suppresses witness reporting and hides the systemic deficiencies that actually allowed the incident. The investigator should collect facts, determine immediate and root causes, and only then consider human factors and corrective actions. A blame culture is one of the greatest threats to a mature safety program and is a common distractor answer on the exam.<br><br>事故调查的目的是通过查明事实和系统原因来防止再次发生，而不是追究责任。一开始就聚焦追责会抑制证人报告并掩盖真正导致事故的系统缺陷。调查者应先收集事实、确定直接原因和根本原因，之后才考虑人的因素和纠正措施。追责文化是成熟安全计划的最大威胁之一，也是考试中常见的干扰项。
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组例题涉及 <strong>7.2 事故调查七步流程</strong>（第一步=保护现场）、<strong>7.5 根源分析方法</strong>（5 Whys）、<strong>7.6 未遂事件报告与海因里希三角</strong>、<strong>7.7 纠正措施与预防措施</strong> 的内容，详细讲解见对应卡片。These questions cover the seven-step first step (7.2), 5 Whys (7.5), Heinrich's Triangle (7.6), and corrective vs. preventive action (7.7).
+答题要点：看到“先追责/先处罚”即为错误选项——调查是fact-finding，不是fault-finding。</div>
+      </div>
+    </div>
   </div>
 
   <div id="quiz-group-1"></div>
@@ -315,10 +318,6 @@
     </div>
   </div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组例题涉及 <strong>7.5 根源分析方法</strong>（Fishbone 6M、Barrier Analysis、Change Analysis）、<strong>7.6 未遂事件报告</strong>、<strong>7.8 变更管理(MOC)</strong> 的内容，详细讲解见对应卡片。Questions here cover Fishbone/Barrier/Change Analysis (7.5), near-miss reporting (7.6), and the MOC link (7.8).
-  </div>
-
   <div id="quiz-group-2"></div>
 
 
@@ -388,10 +387,6 @@
         <strong>答题要点 / Key point:</strong> 证据链=不间断记录每件证据由谁收集/处理/转移/保管，确保真实未被篡改（法律可辩护性）。证据类型五类：实物/文件/数字/证词/测量。铁律：移动任何物品前先拍照，草图标记位置。
       </div>
     </div>
-  </div>
-
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>7.1 事故调查目的与基本概念</strong>（直接/根本原因）、<strong>7.4 证人访谈技巧</strong>（诱导性问题）、<strong>7.9 事故成本：直接与间接</strong>（冰山模型）的内容，详细讲解见对应卡片。Questions here cover immediate vs. root cause (7.1), leading questions (7.4), and the iceberg cost model (7.9).
   </div>
 
   <div id="quiz-group-3"></div>
@@ -468,16 +463,19 @@
       </div>
     </div>
 
-    <div class="exam-scenario">
+    <div class="exam-scenario"
+         data-options='["Yes — it is a direct question that gets the key fact quickly", "No — it is a leading question that suggests an answer and biases what the witness reports", "Yes — closed questions are preferred for nervous witnesses", "No — witnesses may never be questioned directly"]'
+         data-correct="1">
       <div class="es-label">📝 模拟情景题 / Practice Scenario</div>
       <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
       <div class="es-question">"An investigator asks a witness: 'Did the operator remove the guard before the accident?' Is this appropriate?"</div>
-      <div><strong>最佳答案 / Best answer:</strong> No — it is a leading question that suggests an answer and biases the account. 解析：应改用开放式问题（"请描述事故前后你看到的操作过程"），避免诱导。访谈目的是收集事实而非确认预设结论。</div>
-    </div>
-  </div>
+      <div class="scenario-feedback">
+        <div class="scenario-fb-label"></div>
+        <div>Asking does the operator remove the guard? suggests the expected answer and primes the witness, biasing the account. Interviews should use open-ended questions (for example, please describe what you observed before, during, and after the event) and let the witness volunteer information. The goal is to collect facts, not to confirm a preconceived conclusion. Closed and leading questions should be reserved for clarifying specific factual details already volunteered.<br><br>问“操作员是不是拆掉了防护罩？”暗示了预期答案并引导证人，污染证词。访谈应使用开放式问题（如“请描述事故前后你看到的经过”），让证人主动提供信息。目的是收集事实，而非印证预设结论。封闭式和诱导式问题只应留作对已主动提供事实细节的澄清。
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>7.1 事故调查目的与基本概念</strong>（目的=防复发、非追责）、<strong>7.5 根源分析方法</strong>（5 Whys、Change Analysis）、<strong>7.8 变更管理(MOC)</strong> 的内容，详细讲解见对应卡片。Questions here cover investigation purpose (7.1), 5 Whys / Change Analysis (7.5), and MOC (7.8).
+答题要点：诱导性问题＝污染证据；先开放式叙述，后封闭式澄清。</div>
+      </div>
+    </div>
   </div>
 
   <div id="quiz-group-4"></div>
@@ -646,10 +644,6 @@
     </div>
   </div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>7.1 基本概念（直接/根本原因）</strong>、<strong>7.3 证据收集与证据链</strong>（证据链要素）、<strong>7.6 海因里希/伯德比例</strong>、<strong>7.7 纠正措施与预防措施</strong> 的内容，详细讲解见对应卡片。Questions here cover root cause (7.1), chain of custody (7.3), the Bird ratio (7.6), and corrective action (7.7).
-  </div>
-
   <div id="quiz-group-5"></div>
 
 
@@ -715,10 +709,6 @@
         <strong>答题要点 / Key point:</strong> 高未遂报告率=健康信号：表明<strong>公正文化（just culture）</strong>、工人无惧追责地报告；提供统计上更好的数据；实现事前主动纠正。海因里希三角（1:29:300）也需记忆。低报告率常是坏事（文化恐惧）而非"没事故"。
       </div>
     </div>
-  </div>
-
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>7.2 事故调查七步流程</strong>（SMART纠正措施标准）、<strong>7.5 根源分析方法</strong>（FTA定义）、<strong>7.7 纠正措施与预防措施</strong> 的内容，详细讲解见对应卡片。Questions here cover SMART criteria (7.2), the FTA definition (7.5), and preventive action (7.7).
   </div>
 
   <div id="quiz-group-6"></div>
@@ -804,10 +794,6 @@
     </div>
   </div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>7.6 未遂事件报告</strong>（高报告率的益处）与 <strong>7.8 变更管理(MOC)</strong>（PSSR、变更中阶段的失效）的内容，详细讲解见对应卡片。Questions here cover the benefit of high near-miss reporting (7.6) and MOC phases/PSSR (7.8).
-  </div>
-
   <div id="quiz-group-7"></div>
 
 
@@ -886,16 +872,19 @@
       </div>
     </div>
 
-    <div class="exam-scenario">
+    <div class="exam-scenario"
+         data-options='["No — a gasket is a spare part, so it is a replacement in kind", "No — MOC applies only when the process chemistry changes", "Yes — changing materials of construction is a change, not a replacement in kind, and PSM (1910.119(l)) requires MOC", "Yes — but only if the new material costs less than the original"]'
+         data-correct="2">
       <div class="es-label">📝 模拟情景题 / Practice Scenario</div>
       <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
       <div class="es-question">"A maintenance supervisor plans to swap a gasket material on a PSM-covered process 'just for cost.' Must MOC apply?"</div>
-      <div><strong>最佳答案 / Best answer:</strong> Yes — changing materials of construction is a change, not a replacement in kind, and PSM (1910.119(l)) requires MOC. 解析：材料变更（即使尺寸相同）触发MOC；必须评估危害、获批、更新PSI/文件，且变更后引入危险物料前需PSSR。材料不兼容是常见失效根因。</div>
-    </div>
-  </div>
+      <div class="scenario-feedback">
+        <div class="scenario-fb-label"></div>
+        <div>Replacement in kind means a part is replaced with one that is functionally and materially identical — same specifications, same materials of construction. Substituting a different gasket material is not a replacement in kind even if the dimensions are identical, so it triggers the Management of Change element of PSM under 29 CFR 1910.119(l). MOC requires a technical basis for the change, evaluation of safety and health impacts, authorization, updates to PSI and procedures, and — if the change is significant enough to alter process safety information — a pre-startup safety review before hazardous chemicals are introduced.<br><br>“同类替换”指用功能与材质完全相同（同规格、同构造材料）的备件替换。更换不同的垫片材料即使尺寸相同也不属于同类替换，因此触发29 CFR 1910.119(l)的PSM变更管理要素。MOC要求变更的技术依据、对安全与健康影响的评估、授权批准、更新PSI和程序，且若变更重大到需更改工艺安全信息，在引入危险化学品前还需进行启动前安全审查。
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>7.1 基本概念</strong>（根本原因定义）、<strong>7.4 证人访谈技巧</strong>、<strong>7.5 根源分析方法</strong>（FTA用于故障组合）、<strong>7.6 未遂事件的可记录性</strong> 的内容，详细讲解见对应卡片。Questions here cover root cause (7.1), witness interviews (7.4), FTA (7.5), and recordability (7.6).
+答题要点：维度相同不等于同类替换——材质变更是变更；“不兼容材料”是常见失效根因。</div>
+      </div>
+    </div>
   </div>
 
   <div id="quiz-group-8"></div>
@@ -955,10 +944,6 @@
     </div>
   </div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>7.3 证据收集与证据链</strong>（证据链定义）与 <strong>7.8 变更管理(MOC)</strong>（PSM 1910.119(l) 触发MOC）的内容，详细讲解见对应卡片。Questions here cover chain of custody (7.3) and the PSM driver for MOC (7.8).
-  </div>
-
   <div id="quiz-group-9"></div>
 
 
@@ -967,8 +952,8 @@
 
 </div>
 
-<script src="quiz-engine.js?v=11"></script>
-<script src="vocab-engine.js?v=11"></script>
+<script src="quiz-engine.js?v=12"></script>
+<script src="vocab-engine.js?v=12"></script>
 <script>
 CSPQuiz.init({
   quizId: 'week-07-quiz',
@@ -986,7 +971,8 @@ CSPQuiz.init({
         'Notify OSHA within the required reporting timeframe'
       ],
       correct: 1,
-      explanation: 'After providing medical care, the next step is to secure the scene to preserve evidence and prevent further injury. Interviews, analysis, and notifications come later. Scene preservation is critical — once the scene is disturbed, evidence may be lost permanently.\n\n在提供医疗救助后，下一步是保护现场，保存证据并防止进一步伤害。访谈、分析和通知在后。现场保护至关重要——一旦现场被扰动，证据可能永久丢失。'
+      explanation: 'After providing medical care, the next step is to secure the scene to preserve evidence and prevent further injury. Interviews, analysis, and notifications come later. Scene preservation is critical — once the scene is disturbed, evidence may be lost permanently.\n\n在提供医疗救助后，下一步是保护现场，保存证据并防止进一步伤害。访谈、分析和通知在后。现场保护至关重要——一旦现场被扰动，证据可能永久丢失。',
+      related: [{ n: '7.1', t: '事故调查的目的与基本概念' }]
     },
     {
       text: 'When using the 5 Whys technique for root cause analysis, what is the primary goal?',
@@ -998,7 +984,8 @@ CSPQuiz.init({
         'To classify the incident into one of five predetermined categories'
       ],
       correct: 2,
-      explanation: 'The 5 Whys technique is not about finding exactly five causes or assigning blame. It is about repeatedly asking "why" to move past immediate/superficial causes and reach deeper, system-level root causes. "Five" is a guideline — it may take fewer or more iterations.\n\n5Why法技术不是要找出恰好五个原因或追究责任。它是通过反复问"为什么"来超越即时/表面原因，达到更深层次的系统级根本原因。"五"是一个指导性数字——可能需要更少或更多的迭代。'
+      explanation: 'The 5 Whys technique is not about finding exactly five causes or assigning blame. It is about repeatedly asking "why" to move past immediate/superficial causes and reach deeper, system-level root causes. "Five" is a guideline — it may take fewer or more iterations.\n\n5Why法技术不是要找出恰好五个原因或追究责任。它是通过反复问"为什么"来超越即时/表面原因，达到更深层次的系统级根本原因。"五"是一个指导性数字——可能需要更少或更多的迭代。',
+      related: [{ n: '7.5', t: '根源分析方法' }]
     },
     {
       text: 'In Heinrich\'s Triangle, what is the approximate ratio of no-injury incidents to major injuries?',
@@ -1010,7 +997,8 @@ CSPQuiz.init({
         '600:1'
       ],
       correct: 2,
-      explanation: 'Heinrich\'s original model proposed a ratio of 1 major injury : 29 minor injuries : 300 no-injury incidents. This means for every 300 near-misses/no-injury events, there were 29 minor injuries and 1 major injury. The key insight is that reducing the base of the triangle (near-misses) should reduce the tip (serious injuries).\n\n海因里希的原始模型提出1起重大伤害:29起轻微伤害:300起无伤害事故的比例。这意味着每300个未遂事件/无伤害事件对应29起轻微伤害和1起重大伤害。核心见解是减少三角底部（未遂事件）应能减少顶部（严重伤害）。'
+      explanation: 'Heinrich\'s original model proposed a ratio of 1 major injury : 29 minor injuries : 300 no-injury incidents. This means for every 300 near-misses/no-injury events, there were 29 minor injuries and 1 major injury. The key insight is that reducing the base of the triangle (near-misses) should reduce the tip (serious injuries).\n\n海因里希的原始模型提出1起重大伤害:29起轻微伤害:300起无伤害事故的比例。这意味着每300个未遂事件/无伤害事件对应29起轻微伤害和1起重大伤害。核心见解是减少三角底部（未遂事件）应能减少顶部（严重伤害）。',
+      related: [{ n: '7.6', t: '未遂事件报告与海因里希三角' }]
     },
     {
       text: 'Which of the following is the BEST description of the difference between a corrective action and a preventive action?',
@@ -1022,7 +1010,8 @@ CSPQuiz.init({
         'Corrective actions require management approval; preventive actions do not'
       ],
       correct: 1,
-      explanation: 'Corrective action is reactive — it addresses a nonconformity or incident that has already occurred to prevent its recurrence. Preventive action is proactive — it addresses a potential nonconformity before it happens. This distinction is fundamental to management system standards like ISO 45001.\n\n纠正措施是反应性的——它处理已经发生的不符合或事故以防止其再发生。预防措施是主动性的——它在潜在不符合发生之前就加以处理。这一区别是ISO 45001等管理体系标准的基础。'
+      explanation: 'Corrective action is reactive — it addresses a nonconformity or incident that has already occurred to prevent its recurrence. Preventive action is proactive — it addresses a potential nonconformity before it happens. This distinction is fundamental to management system standards like ISO 45001.\n\n纠正措施是反应性的——它处理已经发生的不符合或事故以防止其再发生。预防措施是主动性的——它在潜在不符合发生之前就加以处理。这一区别是ISO 45001等管理体系标准的基础。',
+      related: [{ n: '7.7', t: '纠正措施与预防措施' }]
     },
     {
       text: 'During a Fishbone (Ishikawa) diagram analysis, a safety professional categorizes potential causes into six groups. Which of the following is NOT one of the classic 6M categories?',
@@ -1034,7 +1023,8 @@ CSPQuiz.init({
         'Mother Nature (Environment)'
       ],
       correct: 1,
-      explanation: 'The classic 6M categories are: Man (People), Machine (Equipment), Materials, Methods, Mother Nature (Environment), and Measurement. "Management review" is not one of the 6M categories — though management system weaknesses would be captured within Methods or People categories.\n\n经典的6M类别是：人员(Man)、设备(Machine)、材料(Materials)、方法(Methods)、环境(Mother Nature)和测量(Measurement)。"管理评审"不是6M类别之一——但管理体系弱点可在方法或人员类别中体现。'
+      explanation: 'The classic 6M categories are: Man (People), Machine (Equipment), Materials, Methods, Mother Nature (Environment), and Measurement. "Management review" is not one of the 6M categories — though management system weaknesses would be captured within Methods or People categories.\n\n经典的6M类别是：人员(Man)、设备(Machine)、材料(Materials)、方法(Methods)、环境(Mother Nature)和测量(Measurement)。"管理评审"不是6M类别之一——但管理体系弱点可在方法或人员类别中体现。',
+      related: [{ n: '7.5', t: '根源分析方法' }]
     },
     {
       text: 'Which of the following best describes Barrier Analysis as a root cause analysis technique?',
@@ -1046,7 +1036,8 @@ CSPQuiz.init({
         'Comparing the organization\'s safety barriers against industry benchmarks'
       ],
       correct: 1,
-      explanation: 'Barrier Analysis examines all barriers (controls, safeguards, procedures, training, PPE) that were intended to prevent the incident and analyzes why each one failed. Barriers can be physical (guards), procedural (permits), or human (training, supervision). The analysis identifies weaknesses in the layers of protection.\n\n屏障分析检查所有旨在预防事故的屏障（控制措施、安全装置、程序、培训、PPE），并分析每个屏障为何失效。屏障可以是物理的（防护罩）、程序的（许可证）或人为的（培训、监督）。该分析识别各保护层中的弱点。'
+      explanation: 'Barrier Analysis examines all barriers (controls, safeguards, procedures, training, PPE) that were intended to prevent the incident and analyzes why each one failed. Barriers can be physical (guards), procedural (permits), or human (training, supervision). The analysis identifies weaknesses in the layers of protection.\n\n屏障分析检查所有旨在预防事故的屏障（控制措施、安全装置、程序、培训、PPE），并分析每个屏障为何失效。屏障可以是物理的（防护罩）、程序的（许可证）或人为的（培训、监督）。该分析识别各保护层中的弱点。',
+      related: [{ n: '7.5', t: '根源分析方法' }, { n: '7.2', t: '事故调查七步流程' }]
     },
     {
       text: 'What is the primary reason near-miss reporting is considered a critical component of a mature safety program?',
@@ -1058,7 +1049,8 @@ CSPQuiz.init({
         'Near-miss reporting is required for ISO 45001 certification'
       ],
       correct: 1,
-      explanation: 'Near-misses are "free lessons" — they reveal hazards and system weaknesses without the human and financial cost of an actual injury. By investigating near-misses and correcting their causes, organizations can prevent future serious incidents. A high near-miss reporting rate typically correlates with a strong safety culture, not poor safety. Note near-misses are not OSHA-recordable.\n\n未遂事件是"免费的教训"——它们揭示了危害和系统弱点，而无需承受实际伤害带来的人员和财务成本。通过调查未遂事件并纠正其原因，组织可以预防未来的严重事故。高未遂事件报告率通常与强大的安全文化相关，而非安全状况差。注意未遂事件不属于OSHA可记录范围。'
+      explanation: 'Near-misses are "free lessons" — they reveal hazards and system weaknesses without the human and financial cost of an actual injury. By investigating near-misses and correcting their causes, organizations can prevent future serious incidents. A high near-miss reporting rate typically correlates with a strong safety culture, not poor safety. Note near-misses are not OSHA-recordable.\n\n未遂事件是"免费的教训"——它们揭示了危害和系统弱点，而无需承受实际伤害带来的人员和财务成本。通过调查未遂事件并纠正其原因，组织可以预防未来的严重事故。高未遂事件报告率通常与强大的安全文化相关，而非安全状况差。注意未遂事件不属于OSHA可记录范围。',
+      related: [{ n: '7.6', t: '未遂事件报告与海因里希三角' }]
     },
     {
       text: 'Change Analysis as an incident investigation technique is most closely associated with which safety management process?',
@@ -1070,7 +1062,8 @@ CSPQuiz.init({
         'OSHA recordkeeping'
       ],
       correct: 2,
-      explanation: 'Change Analysis examines what changed before the incident — new equipment, modified procedures, different materials, new personnel, etc. This directly aligns with Management of Change (MOC), which is the systematic process to evaluate and control risks from changes. Incidents often occur during periods of change that were not properly assessed through MOC.\n\n变更分析检查事故发生前发生了什么变化——新设备、修改的程序、不同的材料、新人员等。这与变更管理(MOC)直接对应，后者是评估和控制变更风险的系统化过程。事故经常发生在未通过MOC正确评估的变更期间。'
+      explanation: 'Change Analysis examines what changed before the incident — new equipment, modified procedures, different materials, new personnel, etc. This directly aligns with Management of Change (MOC), which is the systematic process to evaluate and control risks from changes. Incidents often occur during periods of change that were not properly assessed through MOC.\n\n变更分析检查事故发生前发生了什么变化——新设备、修改的程序、不同的材料、新人员等。这与变更管理(MOC)直接对应，后者是评估和控制变更风险的系统化过程。事故经常发生在未通过MOC正确评估的变更期间。',
+      related: [{ n: '7.5', t: '根源分析方法' }, { n: '7.2', t: '事故调查七步流程' }]
     },
     {
       text: 'According to the iceberg model of incident costs, indirect costs are typically what multiple of direct costs?',
@@ -1082,7 +1075,8 @@ CSPQuiz.init({
         '20–50 times direct costs'
       ],
       correct: 2,
-      explanation: 'Indirect (hidden) costs are typically 3 to 10 times direct (visible) costs. Direct costs like medical bills and property damage are the "tip of the iceberg"; the larger hidden costs include lost productivity, investigation time, replacement labor, morale, and reputation damage.\n\n间接（隐藏）成本通常为直接（可见）成本的3至10倍。医疗费用和财产损失等直接成本是"冰山一角"；更大的隐藏成本包括生产力损失、调查时间、替代劳动力、士气和声誉损害。'
+      explanation: 'Indirect (hidden) costs are typically 3 to 10 times direct (visible) costs. Direct costs like medical bills and property damage are the "tip of the iceberg"; the larger hidden costs include lost productivity, investigation time, replacement labor, morale, and reputation damage.\n\n间接（隐藏）成本通常为直接（可见）成本的3至10倍。医疗费用和财产损失等直接成本是"冰山一角"；更大的隐藏成本包括生产力损失、调查时间、替代劳动力、士气和声誉损害。',
+      related: [{ n: '7.9', t: '事故成本：直接与间接' }]
     },
     {
       text: 'During an incident investigation, a worker states, "The guard was off because we were doing maintenance earlier." The investigation later finds no LOTO procedure exists for that equipment. Which statement best describes the analysis?',
@@ -1094,7 +1088,8 @@ CSPQuiz.init({
         'There is no root cause because no one was seriously injured'
       ],
       correct: 1,
-      explanation: 'The missing guard is the immediate cause (the unsafe condition directly associated with the event). The root cause is the system deficiency — no LOTO procedure exists, which made the unsafe condition possible. Root causes are system-level, not person-level.\n\n防护罩缺失是直接原因（与事件直接相关的不安全状况）。根本原因是系统缺陷——不存在LOTO程序，这使得不安全状况成为可能。根本原因是系统层面的，而非个人层面的。'
+      explanation: 'The missing guard is the immediate cause (the unsafe condition directly associated with the event). The root cause is the system deficiency — no LOTO procedure exists, which made the unsafe condition possible. Root causes are system-level, not person-level.\n\n防护罩缺失是直接原因（与事件直接相关的不安全状况）。根本原因是系统缺陷——不存在LOTO程序，这使得不安全状况成为可能。根本原因是系统层面的，而非个人层面的。',
+      related: [{ n: '7.3', t: '证据收集与证据链' }]
     },
     {
       text: 'A chain of custody record is MOST important for which purpose?',
@@ -1106,7 +1101,8 @@ CSPQuiz.init({
         'To assign blame to responsible parties'
       ],
       correct: 0,
-      explanation: 'A chain of custody is an unbroken, documented record of who collected, handled, and stored evidence. It ensures evidence authenticity and integrity, making it admissible and defensible in legal and regulatory proceedings.\n\n证据链是对谁收集、处理、保管证据的不间断文件化记录。它确保证据的真实性和完整性，使其在法律和监管程序中可采纳、可辩护。'
+      explanation: 'A chain of custody is an unbroken, documented record of who collected, handled, and stored evidence. It ensures evidence authenticity and integrity, making it admissible and defensible in legal and regulatory proceedings.\n\n证据链是对谁收集、处理、保管证据的不间断文件化记录。它确保证据的真实性和完整性，使其在法律和监管程序中可采纳、可辩护。',
+      related: [{ n: '7.3', t: '证据收集与证据链' }]
     },
     {
       text: 'Which interviewing practice is MOST likely to bias a witness\'s account?',
@@ -1118,7 +1114,8 @@ CSPQuiz.init({
         'Conducting the interview promptly'
       ],
       correct: 2,
-      explanation: 'Leading questions suggest an expected answer and bias the witness\'s account. Investigators should use open-ended questions ("What happened next?") and interview separately and promptly to obtain accurate, uncontaminated accounts.\n\n诱导性问题暗示预期答案，会歪曲证人的陈述。调查者应使用开放式问题（"接下来发生了什么？"），并单独、及时访谈以获得准确、未被污染的陈述。'
+      explanation: 'Leading questions suggest an expected answer and bias the witness\'s account. Investigators should use open-ended questions ("What happened next?") and interview separately and promptly to obtain accurate, uncontaminated accounts.\n\n诱导性问题暗示预期答案，会歪曲证人的陈述。调查者应使用开放式问题（"接下来发生了什么？"），并单独、及时访谈以获得准确、未被污染的陈述。',
+      related: [{ n: '7.4', t: '证人访谈技巧' }]
     },
     {
       text: 'Which of the following best describes the purpose of an incident investigation?',
@@ -1130,7 +1127,8 @@ CSPQuiz.init({
         'To determine which employee should be retrained'
       ],
       correct: 1,
-      explanation: 'The primary purpose of investigation is prevention — identify root causes and implement corrective actions so the incident does not recur. Blame-oriented investigations suppress reporting and hide system causes.\n\n调查的主要目的是预防——识别根本原因并实施纠正措施，使事故不再发生。以追责为导向的调查会抑制报告并掩盖系统原因。'
+      explanation: 'The primary purpose of investigation is prevention — identify root causes and implement corrective actions so the incident does not recur. Blame-oriented investigations suppress reporting and hide system causes.\n\n调查的主要目的是预防——识别根本原因并实施纠正措施，使事故不再发生。以追责为导向的调查会抑制报告并掩盖系统原因。',
+      related: [{ n: '7.1', t: '事故调查的目的与基本概念' }]
     },
     {
       text: 'In the 5 Whys example, a worker slipped on a wet floor caused by a leaking pipe. The chain leads to: floor wet → pipe leaked → gasket failed → no preventive maintenance schedule → maintenance budget cut. The ROOT CAUSE is best described as:',
@@ -1142,7 +1140,8 @@ CSPQuiz.init({
         'Inadequate resource allocation for maintenance'
       ],
       correct: 3,
-      explanation: 'The root cause is the deepest system-level deficiency in the causal chain — inadequate resource allocation for maintenance (budget cut), which made the lack of preventive maintenance possible. The wet floor, pipe, and gasket are immediate causes along the chain.\n\n根本原因是因果链中最深的系统层面缺陷——维护资源分配不足（预算削减），这使得缺乏预防性维护成为可能。湿地板、管道和密封垫是链条上的直接原因。'
+      explanation: 'The root cause is the deepest system-level deficiency in the causal chain — inadequate resource allocation for maintenance (budget cut), which made the lack of preventive maintenance possible. The wet floor, pipe, and gasket are immediate causes along the chain.\n\n根本原因是因果链中最深的系统层面缺陷——维护资源分配不足（预算削减），这使得缺乏预防性维护成为可能。湿地板、管道和密封垫是链条上的直接原因。',
+      related: [{ n: '7.5', t: '根源分析方法' }]
     },
     {
       text: 'An investigation finds that a new chemical was introduced to a process without any hazard review, and this contributed to the incident. The most relevant RCA technique for identifying the "what changed" factor is:',
@@ -1154,7 +1153,8 @@ CSPQuiz.init({
         'Pareto Analysis'
       ],
       correct: 1,
-      explanation: 'Change Analysis compares the situation before and after a change (new material, equipment, procedure, personnel) to identify what changed and whether it contributed. Here, introducing a new chemical without review is exactly the change that Change Analysis would surface, linking to MOC failure.\n\n变更分析比较变更前后状况（新材料、设备、程序、人员），以识别变化了什么及其影响。此处，未经审查引入新化学品正是变更分析会揭示的变化，关联到MOC失效。'
+      explanation: 'Change Analysis compares the situation before and after a change (new material, equipment, procedure, personnel) to identify what changed and whether it contributed. Here, introducing a new chemical without review is exactly the change that Change Analysis would surface, linking to MOC failure.\n\n变更分析比较变更前后状况（新材料、设备、程序、人员），以识别变化了什么及其影响。此处，未经审查引入新化学品正是变更分析会揭示的变化，关联到MOC失效。',
+      related: [{ n: '7.8', t: '变更管理 (MOC)' }]
     },
     {
       text: 'Which of the following is an IMMEDIATE (direct) cause rather than a root cause?',
@@ -1166,7 +1166,8 @@ CSPQuiz.init({
         'Management did not provide adequate budget for PPE replacement'
       ],
       correct: 2,
-      explanation: 'The damaged ladder with a broken rung is an immediate (direct) cause — an unsafe condition directly associated with the event. The lack of procedure, inadequate training, and budget issues are root causes — system deficiencies that allowed the unsafe condition to exist.\n\n损坏的梯子断了一级是直接原因——与事件直接相关的不安全状况。缺乏程序、培训不足和预算问题是根本原因——使不安全状况得以存在的系统缺陷。'
+      explanation: 'The damaged ladder with a broken rung is an immediate (direct) cause — an unsafe condition directly associated with the event. The lack of procedure, inadequate training, and budget issues are root causes — system deficiencies that allowed the unsafe condition to exist.\n\n损坏的梯子断了一级是直接原因——与事件直接相关的不安全状况。缺乏程序、培训不足和预算问题是根本原因——使不安全状况得以存在的系统缺陷。',
+      related: [{ n: '7.1', t: '事故调查的目的与基本概念' }]
     },
     {
       text: 'In Frank Bird\'s updated accident ratio, the ratio of serious injuries to minor injuries to property damage to near-misses is approximately:',
@@ -1178,7 +1179,8 @@ CSPQuiz.init({
         '1:100:200:1000'
       ],
       correct: 1,
-      explanation: 'Frank Bird updated Heinrich\'s ratio to 1:10:30:600 (serious : minor : property damage : near-miss). Heinrich\'s original was 1:29:300 (no-injury incidents) plus thousands of unsafe acts/conditions. Both support the principle that addressing the base prevents the tip.\n\n弗兰克·伯德将海因里希的比例更新为1:10:30:600（严重:轻微:财产损失:未遂事件）。海因里希的原始比例是1:29:300（无伤害事件）加上数千不安全行为/条件。两者都支持处理底层可预防顶层的原则。'
+      explanation: 'Frank Bird updated Heinrich\'s ratio to 1:10:30:600 (serious : minor : property damage : near-miss). Heinrich\'s original was 1:29:300 (no-injury incidents) plus thousands of unsafe acts/conditions. Both support the principle that addressing the base prevents the tip.\n\n弗兰克·伯德将海因里希的比例更新为1:10:30:600（严重:轻微:财产损失:未遂事件）。海因里希的原始比例是1:29:300（无伤害事件）加上数千不安全行为/条件。两者都支持处理底层可预防顶层的原则。',
+      related: [{ n: '7.6', t: '未遂事件报告与海因里希三角' }]
     },
     {
       text: 'Which of the following is the BEST corrective action for a hand injury caused by a machine with a removable guard?',
@@ -1190,7 +1192,8 @@ CSPQuiz.init({
         'Discipline the worker for removing the guard'
       ],
       correct: 2,
-      explanation: 'An interlocked guard is an engineering control that physically prevents operation with the guard open — it addresses the root cause rather than relying on behavior. Retraining, warning signs, and discipline are administrative controls that rely on behavior and are less effective. The hierarchy of controls favors engineering solutions.\n\n联锁防护罩是一种工程控制，在防护罩打开时物理性地阻止机器运行——它解决根本原因而非依赖行为。再培训、警示标志和纪律处分都是依赖行为的行政控制，效果较差。控制层级偏向工程解决方案。'
+      explanation: 'An interlocked guard is an engineering control that physically prevents operation with the guard open — it addresses the root cause rather than relying on behavior. Retraining, warning signs, and discipline are administrative controls that rely on behavior and are less effective. The hierarchy of controls favors engineering solutions.\n\n联锁防护罩是一种工程控制，在防护罩打开时物理性地阻止机器运行——它解决根本原因而非依赖行为。再培训、警示标志和纪律处分都是依赖行为的行政控制，效果较差。控制层级偏向工程解决方案。',
+      related: [{ n: '7.7', t: '纠正措施与预防措施' }]
     },
     {
       text: 'A worker\'s hand was crushed because a machine started while being serviced. The investigation should FIRST focus on:',
@@ -1202,7 +1205,8 @@ CSPQuiz.init({
         'How quickly the worker\'s medical claim should be filed'
       ],
       correct: 1,
-      explanation: 'The investigation should first focus on why energy was not isolated — the LOTO failure — which is the immediate cause pointing to root system causes (e.g., no LOTO program, no procedure, training gaps). Focusing on blame or training alone misses the system-level questions.\n\n调查首先应聚焦为何能量未被隔离——LOTO失效——这是指向根本系统原因（如无LOTO项目、无程序、培训缺口）的直接原因。仅关注追责或培训会错失系统层面的问题。'
+      explanation: 'The investigation should first focus on why energy was not isolated — the LOTO failure — which is the immediate cause pointing to root system causes (e.g., no LOTO program, no procedure, training gaps). Focusing on blame or training alone misses the system-level questions.\n\n调查首先应聚焦为何能量未被隔离——LOTO失效——这是指向根本系统原因（如无LOTO项目、无程序、培训缺口）的直接原因。仅关注追责或培训会错失系统层面的问题。',
+      related: [{ n: '7.5', t: '根源分析方法' }]
     },
     {
       text: 'Which of the following is NOT an element of the chain of custody?',
@@ -1214,7 +1218,8 @@ CSPQuiz.init({
         'The value of the damaged equipment'
       ],
       correct: 3,
-      explanation: 'Chain of custody elements include unique identifiers, documented transfers, signatures, dates, and secure storage. The value of damaged equipment is relevant to cost estimation, not to evidence integrity.\n\n证据链要素包括唯一标识符、文件化移交、签名、日期和安全保管。受损设备的价值与成本估算相关，与证据完整性无关。'
+      explanation: 'Chain of custody elements include unique identifiers, documented transfers, signatures, dates, and secure storage. The value of damaged equipment is relevant to cost estimation, not to evidence integrity.\n\n证据链要素包括唯一标识符、文件化移交、签名、日期和安全保管。受损设备的价值与成本估算相关，与证据完整性无关。',
+      related: [{ n: '7.3', t: '证据收集与证据链' }]
     },
     {
       text: 'In the context of incident investigation, a "near miss" that involved no injury or illness is:',
@@ -1226,7 +1231,8 @@ CSPQuiz.init({
         'Always reported to OSHA within 24 hours'
       ],
       correct: 0,
-      explanation: 'Near-misses are not OSHA-recordable because no injury or illness occurred — recordability requires an injury/illness meeting the recording criteria. However, near-misses are valuable learning opportunities and should be investigated for proactive corrective action.\n\n未遂事件不属于OSHA可记录范围，因为未发生伤害或疾病——可记录性要求发生符合记录标准的伤害/疾病。然而，未遂事件是宝贵的学习机会，应进行调查以采取主动纠正措施。'
+      explanation: 'Near-misses are not OSHA-recordable because no injury or illness occurred — recordability requires an injury/illness meeting the recording criteria. However, near-misses are valuable learning opportunities and should be investigated for proactive corrective action.\n\n未遂事件不属于OSHA可记录范围，因为未发生伤害或疾病——可记录性要求发生符合记录标准的伤害/疾病。然而，未遂事件是宝贵的学习机会，应进行调查以采取主动纠正措施。',
+      related: [{ n: '7.6', t: '未遂事件报告与海因里希三角' }]
     },
     {
       text: 'A fault tree analysis (FTA) is best described as:',
@@ -1238,7 +1244,8 @@ CSPQuiz.init({
         'A before/after comparison of a change'
       ],
       correct: 1,
-      explanation: 'FTA is top-down and deductive — starting from a top event and working down through AND/OR gates to identify combinations of failures. FMEA is bottom-up and inductive. Fishbone is brainstorming; Change Analysis is before/after.\n\nFTA是自上而下的演绎分析——从顶事件出发，通过与/或门向下分析，识别导致顶事件的故障组合。FMEA是自下而上的归纳分析。鱼骨图是头脑风暴；变更分析是前后对比。'
+      explanation: 'FTA is top-down and deductive — starting from a top event and working down through AND/OR gates to identify combinations of failures. FMEA is bottom-up and inductive. Fishbone is brainstorming; Change Analysis is before/after.\n\nFTA是自上而下的演绎分析——从顶事件出发，通过与/或门向下分析，识别导致顶事件的故障组合。FMEA是自下而上的归纳分析。鱼骨图是头脑风暴；变更分析是前后对比。',
+      related: [{ n: '7.5', t: '根源分析方法' }]
     },
     {
       text: 'According to the SMART criteria for corrective actions, a corrective action that states "Improve safety culture" is inadequate primarily because it is:',
@@ -1250,7 +1257,8 @@ CSPQuiz.init({
         'Not assignable to anyone'
       ],
       correct: 1,
-      explanation: 'SMART actions are Specific, Measurable, Assignable, Realistic, and Time-bound. "Improve safety culture" is vague — it lacks measurable criteria and a deadline. A better action: "Increase near-miss reports by 20% within 6 months, with monthly review by the safety committee."\n\nSMART行动需具体、可衡量、可分配、现实、有时限。"改善安全文化"过于模糊——缺乏可衡量标准和截止日期。更好的行动："6个月内将未遂事件报告提高20%，由安全委员会每月评审。"'
+      explanation: 'SMART actions are Specific, Measurable, Assignable, Realistic, and Time-bound. "Improve safety culture" is vague — it lacks measurable criteria and a deadline. A better action: "Increase near-miss reports by 20% within 6 months, with monthly review by the safety committee."\n\nSMART行动需具体、可衡量、可分配、现实、有时限。"改善安全文化"过于模糊——缺乏可衡量标准和截止日期。更好的行动："6个月内将未遂事件报告提高20%，由安全委员会每月评审。"',
+      related: [{ n: '7.7', t: '纠正措施与预防措施' }]
     },
     {
       text: 'Which of the following best illustrates a PREVENTIVE action?',
@@ -1262,7 +1270,8 @@ CSPQuiz.init({
         'Paying higher insurance premiums after a claim'
       ],
       correct: 1,
-      explanation: 'A preventive action addresses a potential problem before it occurs — here, installing guardrails after identifying the hazard in a risk assessment. The first option is corrective (reacting to an actual fall); the others are not preventive actions.\n\n预防措施在问题发生前处理潜在问题——此处是在风险评估中识别危害后安装护栏。第一个选项是纠正性的（对实际坠落做出反应）；其他选项不是预防措施。'
+      explanation: 'A preventive action addresses a potential problem before it occurs — here, installing guardrails after identifying the hazard in a risk assessment. The first option is corrective (reacting to an actual fall); the others are not preventive actions.\n\n预防措施在问题发生前处理潜在问题——此处是在风险评估中识别危害后安装护栏。第一个选项是纠正性的（对实际坠落做出反应）；其他选项不是预防措施。',
+      related: [{ n: '7.7', t: '纠正措施与预防措施' }]
     },
     {
       text: 'Which phase of the MOC process includes the pre-startup safety review (PSSR)?',
@@ -1274,7 +1283,8 @@ CSPQuiz.init({
         'PSSR is not part of MOC'
       ],
       correct: 2,
-      explanation: 'The PSSR is completed AFTER the change is installed but BEFORE hazardous materials/energy are introduced, to verify that the change is ready for safe startup. It is a key activity in the AFTER phase of the three-phase MOC process.\n\nPSSR在变更安装之后、引入危险物料/能量之前完成，以验证变更已准备好安全启动。它是MOC三阶段流程中变更后阶段的关键活动。'
+      explanation: 'The PSSR is completed AFTER the change is installed but BEFORE hazardous materials/energy are introduced, to verify that the change is ready for safe startup. It is a key activity in the AFTER phase of the three-phase MOC process.\n\nPSSR在变更安装之后、引入危险物料/能量之前完成，以验证变更已准备好安全启动。它是MOC三阶段流程中变更后阶段的关键活动。',
+      related: [{ n: '7.8', t: '变更管理 (MOC)' }]
     },
     {
       text: 'During MOC implementation, a worker deviates from the approved plan "just to make it work better" without re-approval. This is an example of a failure in which phase?',
@@ -1286,7 +1296,8 @@ CSPQuiz.init({
         'This is not an MOC failure'
       ],
       correct: 1,
-      explanation: 'Field modifications without re-approval are a common DURING-phase failure. Deviations from the approved plan must go back through MOC review. Unmanaged field changes have caused major incidents in process industries.\n\n未经重新批准的现场修改是常见的变更中阶段失效。偏离已批准的计划必须重新经过MOC审查。不受控的现场变更已在流程行业造成重大事故。'
+      explanation: 'Field modifications without re-approval are a common DURING-phase failure. Deviations from the approved plan must go back through MOC review. Unmanaged field changes have caused major incidents in process industries.\n\n未经重新批准的现场修改是常见的变更中阶段失效。偏离已批准的计划必须重新经过MOC审查。不受控的现场变更已在流程行业造成重大事故。',
+      related: [{ n: '7.8', t: '变更管理 (MOC)' }]
     },
     {
       text: 'The primary benefit of a high near-miss reporting rate is that it:',
@@ -1298,7 +1309,8 @@ CSPQuiz.init({
         'Eliminates the need for incident investigation'
       ],
       correct: 1,
-      explanation: 'High near-miss reporting allows the organization to identify and correct hazards before they produce serious incidents. Near-misses provide more, and earlier, data than rare serious incidents. They do not affect TRIR (not recordable) and do not replace investigation of actual incidents.\n\n高未遂事件报告率使组织能够在危害造成严重事故前识别并纠正。与罕见的严重事故相比，未遂事件提供更多、更早的数据。它们不影响TRIR（不可记录），也不取代对实际事故的调查。'
+      explanation: 'High near-miss reporting allows the organization to identify and correct hazards before they produce serious incidents. Near-misses provide more, and earlier, data than rare serious incidents. They do not affect TRIR (not recordable) and do not replace investigation of actual incidents.\n\n高未遂事件报告率使组织能够在危害造成严重事故前识别并纠正。与罕见的严重事故相比，未遂事件提供更多、更早的数据。它们不影响TRIR（不可记录），也不取代对实际事故的调查。',
+      related: [{ n: '7.6', t: '未遂事件报告与海因里希三角' }]
     },
     {
       text: 'An investigation determines a worker was pressured to skip a lockout to meet a production deadline, and that no procedure existed to protect workers from this production pressure. The most appropriate corrective actions should focus on:',
@@ -1310,7 +1322,8 @@ CSPQuiz.init({
         'Documenting the incident in the OSHA 300 Log only'
       ],
       correct: 1,
-      explanation: 'Root causes are system-level — here, missing procedures and production pressure. Effective corrective actions address these system causes (procedure development, scheduling/expectation changes), not just blame individuals. Retraining alone rarely fixes system deficiencies.\n\n根本原因是系统层面的——此处是程序缺失和生产压力。有效的纠正措施针对这些系统原因（制定程序、调度/期望调整），而非仅仅惩罚个人。仅再培训很少能修复系统缺陷。'
+      explanation: 'Root causes are system-level — here, missing procedures and production pressure. Effective corrective actions address these system causes (procedure development, scheduling/expectation changes), not just blame individuals. Retraining alone rarely fixes system deficiencies.\n\n根本原因是系统层面的——此处是程序缺失和生产压力。有效的纠正措施针对这些系统原因（制定程序、调度/期望调整），而非仅仅惩罚个人。仅再培训很少能修复系统缺陷。',
+      related: [{ n: '7.7', t: '纠正措施与预防措施' }, { n: '7.8', t: '变更管理 (MOC)' }]
     },
     {
       text: 'Which of the following is TRUE regarding OSHA mandatory reporting versus recording?',
@@ -1322,7 +1335,8 @@ CSPQuiz.init({
         'The OSHA 300A Summary is a reporting form'
       ],
       correct: 1,
-      explanation: 'Reporting (to OSHA, time-bound: fatality 8 hours, hospitalization/amputation/loss of eye 24 hours) and recording (on the 300 Log within 7 days) are distinct disciplines. A fatality is both reported immediately and recorded on the log. Near-misses are neither reported nor recorded. The 300A is a posted summary, not a reporting form.\n\n报告（向OSHA，有时限：死亡8小时，住院/截肢/眼球丧失24小时）和记录（300日志上7天内）是不同纪律。死亡既要立即报告也要在日志上记录。未遂事件既不报告也不记录。300A是张贴的摘要，不是报告表格。'
+      explanation: 'Reporting (to OSHA, time-bound: fatality 8 hours, hospitalization/amputation/loss of eye 24 hours) and recording (on the 300 Log within 7 days) are distinct disciplines. A fatality is both reported immediately and recorded on the log. Near-misses are neither reported nor recorded. The 300A is a posted summary, not a reporting form.\n\n报告（向OSHA，有时限：死亡8小时，住院/截肢/眼球丧失24小时）和记录（300日志上7天内）是不同纪律。死亡既要立即报告也要在日志上记录。未遂事件既不报告也不记录。300A是张贴的摘要，不是报告表格。',
+      related: [{ n: '7.1', t: '事故调查的目的与基本概念' }]
     },
     {
       text: 'A safety professional finds that an incident was caused by a combination of a faulty sensor AND a maintenance worker bypassing the alarm. Which RCA method is BEST suited to analyze the combination of failures?',
@@ -1334,7 +1348,8 @@ CSPQuiz.init({
         'Mean calculation'
       ],
       correct: 1,
-      explanation: 'FTA uses Boolean AND/OR gates to model combinations of failures leading to a top event. Here, the top event occurred when the sensor failed (AND) the alarm was bypassed — a combination that FTA captures explicitly. 5 Whys follows a single chain and may miss this interaction.\n\nFTA使用布尔与/或门对导致顶事件的故障组合建模。此处，顶事件在传感器失效（与）报警被旁路时发生——FTA能明确捕捉这一组合。5Why法跟踪单一条链，可能遗漏这种交互。'
+      explanation: 'FTA uses Boolean AND/OR gates to model combinations of failures leading to a top event. Here, the top event occurred when the sensor failed (AND) the alarm was bypassed — a combination that FTA captures explicitly. 5 Whys follows a single chain and may miss this interaction.\n\nFTA使用布尔与/或门对导致顶事件的故障组合建模。此处，顶事件在传感器失效（与）报警被旁路时发生——FTA能明确捕捉这一组合。5Why法跟踪单一条链，可能遗漏这种交互。',
+      related: [{ n: '7.5', t: '根源分析方法' }]
     },
     {
       text: 'Which of the following is the best definition of a "root cause"?',
@@ -1346,7 +1361,8 @@ CSPQuiz.init({
         'The cause identified by the first witness'
       ],
       correct: 2,
-      explanation: 'A root cause is the deepest underlying system deficiency whose correction prevents recurrence. It is not necessarily the first event or the most expensive to fix — it is the fundamental system weakness (e.g., missing procedure, design flaw, management failure).\n\n根本原因是最深的潜在系统缺陷，纠正后能防止再发生。它不一定是第一个事件或最贵的修复项——它是根本的系统弱点（如程序缺失、设计缺陷、管理失效）。'
+      explanation: 'A root cause is the deepest underlying system deficiency whose correction prevents recurrence. It is not necessarily the first event or the most expensive to fix — it is the fundamental system weakness (e.g., missing procedure, design flaw, management failure).\n\n根本原因是最深的潜在系统缺陷，纠正后能防止再发生。它不一定是第一个事件或最贵的修复项——它是根本的系统弱点（如程序缺失、设计缺陷、管理失效）。',
+      related: [{ n: '7.1', t: '事故调查的目的与基本概念' }]
     },
     {
       text: 'When conducting an incident investigation, which is the BEST approach to witness interviews?',
@@ -1358,7 +1374,8 @@ CSPQuiz.init({
         'Delay interviews until the investigation is nearly complete'
       ],
       correct: 1,
-      explanation: 'Best practice: interview separately (avoid groupthink), promptly (memory fades and witnesses talk), and with open-ended questions (elicit full narratives). Group interviews and delays contaminate or lose evidence.\n\n最佳实践：单独访谈（避免从众）、及时访谈（记忆消退且证人会相互交流）、使用开放式问题（引出完整叙述）。集体访谈和延迟会污染或丢失证据。'
+      explanation: 'Best practice: interview separately (avoid groupthink), promptly (memory fades and witnesses talk), and with open-ended questions (elicit full narratives). Group interviews and delays contaminate or lose evidence.\n\n最佳实践：单独访谈（避免从众）、及时访谈（记忆消退且证人会相互交流）、使用开放式问题（引出完整叙述）。集体访谈和延迟会污染或丢失证据。',
+      related: [{ n: '7.4', t: '证人访谈技巧' }]
     },
     {
       text: 'A documented, unbroken record of who handled each piece of evidence is called:',
@@ -1370,7 +1387,8 @@ CSPQuiz.init({
         'A root cause log'
       ],
       correct: 1,
-      explanation: 'A chain of custody is the documented, unbroken record of collection, handling, transfer, and storage of evidence. It ensures evidence integrity and legal defensibility. An audit trail is related but refers to tracking changes/data; witness statements are testimonial.\n\n证据链是对证据收集、处理、移交和保管的不间断文件化记录。它确保证据完整性和法律可辩护性。审计线索相关但指追踪变更/数据；证人陈述是证言证据。'
+      explanation: 'A chain of custody is the documented, unbroken record of collection, handling, transfer, and storage of evidence. It ensures evidence integrity and legal defensibility. An audit trail is related but refers to tracking changes/data; witness statements are testimonial.\n\n证据链是对证据收集、处理、移交和保管的不间断文件化记录。它确保证据完整性和法律可辩护性。审计线索相关但指追踪变更/数据；证人陈述是证言证据。',
+      related: [{ n: '7.3', t: '证据收集与证据链' }]
     },
     {
       text: 'In the context of incident costs, which of the following is a DIRECT cost?',
@@ -1382,7 +1400,8 @@ CSPQuiz.init({
         'Damage to the company\'s reputation'
       ],
       correct: 1,
-      explanation: 'Workers\' compensation medical payments are direct costs — visible, insured, and directly attributable. Lost coworker productivity, investigation time, and reputation damage are indirect (hidden) costs, which are typically 3-10 times the direct costs.\n\n工伤保险医疗赔付是直接成本——可见、有保险且直接可归因。同事生产力损失、调查时间和声誉损害是间接（隐藏）成本，通常为直接成本的3-10倍。'
+      explanation: 'Workers\' compensation medical payments are direct costs — visible, insured, and directly attributable. Lost coworker productivity, investigation time, and reputation damage are indirect (hidden) costs, which are typically 3-10 times the direct costs.\n\n工伤保险医疗赔付是直接成本——可见、有保险且直接可归因。同事生产力损失、调查时间和声誉损害是间接（隐藏）成本，通常为直接成本的3-10倍。',
+      related: [{ n: '7.9', t: '事故成本：直接与间接' }]
     },
     {
       text: 'OSHA PSM (29 CFR 1910.119) requires Management of Change for:',
@@ -1394,7 +1413,8 @@ CSPQuiz.init({
         'Changes that reduce production'
       ],
       correct: 1,
-      explanation: 'OSHA Process Safety Management (29 CFR 1910.119(l)) requires MOC for changes to processes covered by the standard — those involving specified highly hazardous chemicals. This is a regulatory driver of MOC in the process industries.\n\nOSHA工艺安全管理（29 CFR 1910.119(l)）要求对标准覆盖的工艺——涉及特定高度危险化学品的工艺——进行变更管理。这是流程行业MOC的法规驱动因素。'
+      explanation: 'OSHA Process Safety Management (29 CFR 1910.119(l)) requires MOC for changes to processes covered by the standard — those involving specified highly hazardous chemicals. This is a regulatory driver of MOC in the process industries.\n\nOSHA工艺安全管理（29 CFR 1910.119(l)）要求对标准覆盖的工艺——涉及特定高度危险化学品的工艺——进行变更管理。这是流程行业MOC的法规驱动因素。',
+      related: [{ n: '7.8', t: '变更管理 (MOC)' }]
     }
   ]
 });

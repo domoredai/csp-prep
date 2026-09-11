@@ -10,7 +10,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="apple-touch-icon" href="icon-192.png">
-<link rel="stylesheet" href="quiz-styles.css?v=11">
+<link rel="stylesheet" href="quiz-styles.css?v=12">
 <style>
   .breadcrumb { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 16px; }
   .breadcrumb a { color: var(--accent); text-decoration: none; }
@@ -200,10 +200,6 @@
     </div>
   </div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>4.2 大气检测与监测</strong>（氧气19.5–23.5%、&lt;10% LEL、检测顺序）与 <strong>4.4 上锁挂牌(LOTO)</strong>（6步程序第一步）的内容，详细讲解见对应卡片。Some questions here cover the atmospheric-testing limits and sequence (Card 4.2) and the first step of the 6-step LOTO procedure (Card 4.4).
-  </div>
-
   <div id="quiz-group-1"></div>
 
 
@@ -293,10 +289,6 @@
       <span class="mn-label">🧠 记忆口诀 / Mnemonic:</span>
       <span class="mn-content"><strong>"19.5-23.5-10-25"</strong> — O₂下限19.5%、上限23.5%；可燃&lt;10% LEL可进、&lt;25%监测禁进、≥25% IDLH。中文"氧气一九点五起，二十三半点五止，可燃一成二成五"。检测顺序"氧→燃→毒"。</span>
     </div>
-  </div>
-
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>4.6 挖掘与沟槽</strong>（土壤分类A/B/C、进出通道25英尺）与 <strong>4.3 进入程序与救援</strong>（监护员救援职责）、<strong>4.5 LOTO人员职责与程序管理</strong>（LOTO定期检查）与 <strong>4.1 密闭空间</strong>（PRCS判定）的内容，详细讲解见对应卡片。Some questions here cover soil classification and egress (Card 4.6), attendant rescue duties (Card 4.3), LOTO periodic inspection (Card 4.5), and PRCS criteria (Card 4.1).
   </div>
 
   <div id="quiz-group-2"></div>
@@ -409,16 +401,19 @@
       </div>
     </div>
 
-    <div class="exam-scenario">
+    <div class="exam-scenario"
+         data-options='["The attendant should enter immediately and pull the worker out", "Use the retrieval system (winch/harness) for non-entry rescue and summon trained rescue services", "Wait for the entrant to regain consciousness before doing anything", "Ventilate the space and send in a second worker with an air-purifying respirator"]'
+         data-correct="1">
       <div class="es-label">📝 模拟情景题 / Practice Scenario</div>
       <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
       <div class="es-question">"An entrant collapses inside a confined space. The attendant calls for help. What is the BEST immediate action?"</div>
-      <div><strong>最佳答案 / Best answer:</strong> Use the retrieval system (winch/harness) for non-entry rescue and summon trained rescue services. 解析：监护员不得进入空间——未受训的非进入救援会导致救援者成为新的遇难者（历史事故链）。若必须进入，须由受过培训、穿戴SCBA等装备的人员并在另一名监护员接替后进行。</div>
-    </div>
-  </div>
+      <div class="scenario-feedback">
+        <div class="scenario-fb-label"></div>
+        <div>The attendant must never enter the space to attempt rescue — untrained rescue attempts are a well-documented pattern in which would-be rescuers become additional victims. The first action is to use the retrieval system (a winch and full-body harness attached to the entrant) for non-entry rescue, and to summon trained rescue services. If entry rescue becomes necessary, it must be performed by trained personnel wearing SCBA or supplied-air respirators, and the attendant post must be continuously staffed by another attendant.<br><br>监护员绝不能进入空间施救——未受训的救援者成为新遇难者是历史上反复出现的模式。首要行动是使用救援系统（连接进入者的绞盘和全身式安全带）实施非进入救援，并召集受过培训的救援机构。若必须进入救援，须由穿戴SCBA或供气式呼吸器的受训人员执行，且监护岗位必须始终由另一名监护员值守。
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>4.4 上锁挂牌(LOTO)</strong>（例外情形、6步顺序）、<strong>4.7 关键挖掘安全要求</strong>（放坡宽度计算）与 <strong>4.3 进入程序与救援</strong>（可接受的进入条件）的内容，详细讲解见对应卡片。Some questions here cover LOTO exceptions and sequence (Card 4.4), slope-width math (Card 4.7), and acceptable entry conditions (Card 4.3).
+答题要点：“监护员不得进入”是铁律——多数密闭空间死亡事故是救援者死亡。</div>
+      </div>
+    </div>
   </div>
 
   <div id="quiz-group-3"></div>
@@ -528,16 +523,19 @@
       </div>
     </div>
 
-    <div class="exam-scenario">
+    <div class="exam-scenario"
+         data-options='["Visual inspection of the lock and tag on the disconnect", "Attempt to start the machine using its normal operating controls, then return the controls to OFF", "Assume isolation is complete once the lock is applied", "Ask a co-worker to confirm the lock is in place"]'
+         data-correct="1">
       <div class="es-label">📝 模拟情景题 / Practice Scenario</div>
       <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
       <div class="es-question">"After locking out a machine and releasing stored energy, how does the authorized employee confirm the machine cannot be energized?"</div>
-      <div><strong>最佳答案 / Best answer:</strong> Attempt to start the machine using its normal operating controls, then return the controls to OFF. 解析：这是1910.147验证隔离步骤。必须实际操作确认，不能只靠目测锁具；验证后把启动开关恢复到OFF位置，防止设备在无人注意时意外启动。</div>
-    </div>
-  </div>
+      <div class="scenario-feedback">
+        <div class="scenario-fb-label"></div>
+        <div>29 CFR 1910.147 requires verification of isolation before servicing begins. The authorized employee must attempt to start the equipment using its normal operating controls to confirm it cannot be energized, then return the controls to OFF. Visual inspection of the lock alone does not verify that stored energy has been released or that the correct energy-isolating device was operated. This is why the LOTO sequence is: notify, shut down, isolate, lock/tag, release stored energy, and verify.<br><br>29 CFR 1910.147要求作业开始前验证隔离。授权员工必须用设备的正常运行控制尝试启动，以确认设备无法被通电，然后把手柄恢复到OFF位置。仅目测锁具不能验证已释放储存能量或操作了正确的能量隔离装置。LOTO顺序因此是：通知、停机、隔离、上锁/挂牌、释放储存能量、验证。
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>4.7 关键挖掘安全要求</strong>（防护系统5英尺触发、弃土≥2英尺）、<strong>4.5 LOTO人员职责与程序管理</strong>（授权vs受影响员工、锁具摘除）与 <strong>4.3 进入程序与救援</strong>（进入许可证签署）的内容，详细讲解见对应卡片。Some questions here cover the 5-ft protective-system trigger and spoil setback (Card 4.7), authorized/affected employees (Card 4.5), and permit signing (Card 4.3).
+答题要点：验证是“实际操作”确认，不是目视；验证后开关必须回到OFF，防止无人注意时意外启动。</div>
+      </div>
+    </div>
   </div>
 
   <div id="quiz-group-4"></div>
@@ -653,10 +651,6 @@
     </div>
   </div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>4.7 关键挖掘安全要求</strong>（大气检测4英尺触发）、<strong>4.5 LOTO人员职责与程序管理</strong>（群体LOTO）、<strong>4.3 进入程序与救援</strong>（救援队每12个月演练）与 <strong>4.6 挖掘与沟槽</strong>（防护系统选择）的内容，详细讲解见对应卡片。Some questions here cover excavation atmospheric testing (Card 4.7), group LOTO (Card 4.5), rescue-team practice frequency (Card 4.3), and trench protective systems (Card 4.6).
-  </div>
-
   <div id="quiz-group-5"></div>
 
 
@@ -770,10 +764,6 @@
     </div>
   </div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>4.4 上锁挂牌(LOTO)</strong>（微小工具更换例外、验证隔离）、<strong>4.3 进入程序与救援</strong>（进入许可证内容）与 <strong>4.6 挖掘与沟槽</strong>（C型土壤坡度1.5:1）的内容，详细讲解见对应卡片。Some questions here cover the minor-tool-change exception and isolation verification (Card 4.4), the permit contents (Card 4.3), and Type C soil slope ratio (Card 4.6).
-  </div>
-
   <div id="quiz-group-6"></div>
 
 
@@ -857,16 +847,19 @@
       </div>
     </div>
 
-    <div class="exam-scenario">
+    <div class="exam-scenario"
+         data-options='["Nothing special — the inspection performed the previous day still applies", "Enter after visually checking the walls from the top of the trench", "Have the competent person inspect the excavation and protective system after the rain, before workers enter", "Slope the walls 0.75:1 because the soil dried out"]'
+         data-correct="2">
       <div class="es-label">📝 模拟情景题 / Practice Scenario</div>
       <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
       <div class="es-question">"After overnight heavy rain, a competent person must do what before workers enter an 8-ft-deep trench in Type C soil?"</div>
-      <div><strong>最佳答案 / Best answer:</strong> Inspect the trench daily and after each rain/change that could affect stability, and ensure a protective system (sloping 1.5:1, shoring, or trench box) is in place. 解析：大雨改变了土壤条件，班前必须由合格人员重新检查；弃土须≥2英尺外；梯子须伸出≥3英尺。未检查即进入是C型土壤塌方的主要根因。</div>
-    </div>
-  </div>
+      <div class="scenario-feedback">
+        <div class="scenario-fb-label"></div>
+        <div>The competent person must inspect the excavation, adjacent areas, and protective systems daily before work begins and after every rainstorm or other event that could increase the hazard. Heavy rain changes soil moisture and loading, so a fresh inspection is required before anyone re-enters. Type C soil also requires the most protective systems — sloping at 1.5:1 (or shoring / a trench box), with spoil piles at least 2 ft from the edge and ladders extending at least 3 ft above the landing.<br><br>合格人员必须在每日开工前、以及每次暴雨或其他可能增加危害的事件之后，检查挖掘现场、相邻区域和防护系统。大雨改变土壤含水率和荷载，因此任何人重新进入前都必须重新检查。C型土壤还要求最高等级防护——按1.5:1放坡（或支护/沟槽箱），弃土距坑边至少2英尺，梯子须伸出落脚面至少3英尺。
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>4.6 挖掘与沟槽</strong>（合格人员检查）、<strong>4.7 关键挖掘安全要求</strong>（放坡宽度计算）、<strong>4.1 密闭空间</strong>（监护员职责）与 <strong>4.8 物料搬运与储存</strong>（起重机索具要求）的内容，详细讲解见对应卡片。Some questions here cover competent-person inspection (Card 4.6), slope-width calculations (Card 4.7), attendant duties (Card 4.1), and rigging hardware (Card 4.8).
+答题要点：C型土壤1.5:1、弃土2英尺、梯子3英尺——三个数字常一起考。</div>
+      </div>
+    </div>
   </div>
 
   <div id="quiz-group-7"></div>
@@ -994,10 +987,6 @@
     </div>
   </div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>4.6 挖掘与沟槽</strong>（适用的29 CFR 1926 Subpart P标准）、<strong>4.8 物料搬运与储存</strong>（叉车复训、无人机FAA Part 107）与 <strong>4.1 密闭空间</strong>（"好撒玛利亚人"救援效应）的内容，详细讲解见对应卡片。Some questions here cover the excavation standard (Card 4.6), forklift retraining and drone requirements (Card 4.8), and the good-Samaritan rescuer effect (Card 4.1).
-  </div>
-
   <div id="quiz-group-8"></div>
 
 
@@ -1006,8 +995,8 @@
 
 </div>
 
-<script src="quiz-engine.js?v=11"></script>
-<script src="vocab-engine.js?v=11"></script>
+<script src="quiz-engine.js?v=12"></script>
+<script src="vocab-engine.js?v=12"></script>
 <script>
 CSPQuiz.init({
   quizId: 'week-04-quiz',
@@ -1025,7 +1014,8 @@ CSPQuiz.init({
         'The criteria are evaluated on a case-by-case basis'
       ],
       correct: 2,
-      explanation: 'A space must meet ALL THREE criteria to be a confined space: (1) large enough to bodily enter, (2) has limited or restricted means of entry/exit, and (3) is not designed for continuous employee occupancy. Only one additional hazard characteristic is needed for the space to become a permit-required confined space.\n\n空间必须满足全部三项标准才算是密闭空间：(1) 足够大以身体进入，(2) 进出方式有限或受限，(3) 非为员工连续占用而设计。只需要一个额外的危害特征，空间就成为许可密闭空间。'
+      explanation: 'A space must meet ALL THREE criteria to be a confined space: (1) large enough to bodily enter, (2) has limited or restricted means of entry/exit, and (3) is not designed for continuous employee occupancy. Only one additional hazard characteristic is needed for the space to become a permit-required confined space.\n\n空间必须满足全部三项标准才算是密闭空间：(1) 足够大以身体进入，(2) 进出方式有限或受限，(3) 非为员工连续占用而设计。只需要一个额外的危害特征，空间就成为许可密闭空间。',
+      related: [{ n: '4.1', t: '密闭空间' }]
     },
     {
       text: 'Under OSHA 1910.146 for confined space entry, what is the acceptable range for oxygen concentration before entry is permitted?',
@@ -1037,7 +1027,8 @@ CSPQuiz.init({
         '15.0% to 21.0%'
       ],
       correct: 1,
-      explanation: 'The acceptable oxygen range for confined space entry is 19.5% to 23.5%. Below 19.5% is oxygen-deficient (risk of asphyxiation), above 23.5% is oxygen-enriched (creates a fire/explosion hazard). If O₂ is outside this range, entry is prohibited until the atmosphere is corrected, regardless of other atmospheric readings.\n\n密闭空间进入的可接受氧气范围为19.5%至23.5%。低于19.5%为缺氧（窒息风险），高于23.5%为富氧（造成火灾/爆炸危险）。如果O₂超出此范围，无论其他大气读数如何，在气氛纠正之前禁止进入。'
+      explanation: 'The acceptable oxygen range for confined space entry is 19.5% to 23.5%. Below 19.5% is oxygen-deficient (risk of asphyxiation), above 23.5% is oxygen-enriched (creates a fire/explosion hazard). If O₂ is outside this range, entry is prohibited until the atmosphere is corrected, regardless of other atmospheric readings.\n\n密闭空间进入的可接受氧气范围为19.5%至23.5%。低于19.5%为缺氧（窒息风险），高于23.5%为富氧（造成火灾/爆炸危险）。如果O₂超出此范围，无论其他大气读数如何，在气氛纠正之前禁止进入。',
+      related: [{ n: '4.2', t: '大气检测与监测' }]
     },
     {
       text: 'When performing atmospheric testing in a permit-required confined space, the correct order of testing is:',
@@ -1049,7 +1040,8 @@ CSPQuiz.init({
         'The order does not matter as long as all three are tested'
       ],
       correct: 2,
-      explanation: 'Testing must follow this order: (1) Oxygen first — because oxygen deficiency or enrichment affects the accuracy of combustible gas sensor readings, and O₂ deficiency is itself immediately life-threatening; (2) Flammable gases/vapors second — because flammability presents an immediate explosion risk; (3) Toxic contaminants last. This sequence is safety-critical and frequently tested on the CSP exam.\n\n检测必须遵循以下顺序：(1) 首先检测氧气——因为氧气不足或富集影响可燃气体传感器读数的准确性，且O₂不足本身即威胁生命；(2) 其次检测可燃气体/蒸气——因为可燃性构成即时爆炸风险；(3) 最后检测有毒污染物。这个顺序对安全至关重要，是CSP考试常考内容。'
+      explanation: 'Testing must follow this order: (1) Oxygen first — because oxygen deficiency or enrichment affects the accuracy of combustible gas sensor readings, and O₂ deficiency is itself immediately life-threatening; (2) Flammable gases/vapors second — because flammability presents an immediate explosion risk; (3) Toxic contaminants last. This sequence is safety-critical and frequently tested on the CSP exam.\n\n检测必须遵循以下顺序：(1) 首先检测氧气——因为氧气不足或富集影响可燃气体传感器读数的准确性，且O₂不足本身即威胁生命；(2) 其次检测可燃气体/蒸气——因为可燃性构成即时爆炸风险；(3) 最后检测有毒污染物。这个顺序对安全至关重要，是CSP考试常考内容。',
+      related: [{ n: '4.2', t: '大气检测与监测' }]
     },
     {
       text: 'What is the maximum allowable concentration of flammable gases/vapors (as a percentage of LEL) for entry into a confined space under OSHA standards?',
@@ -1061,7 +1053,8 @@ CSPQuiz.init({
         'Less than 25% LEL'
       ],
       correct: 2,
-      explanation: 'The atmosphere inside a confined space must have flammable gas, vapor, or mist concentrations less than 10% of the lower explosive limit (LEL). Values at or above 10% LEL prohibit entry. Values at or above 10% but below 25% LEL allow continued monitoring only (no entry). At 25% LEL and above, the area is immediately dangerous to life and health (IDLH).\n\n密闭空间内的可燃气体、蒸气或雾的浓度必须低于爆炸下限(LEL)的10%。达到或超过10% LEL的值禁止进入。在10%到25% LEL之间的数值仅允许继续监测（不可进入）。25% LEL及以上，该区域为立即危及生命与健康(IDLH)。'
+      explanation: 'The atmosphere inside a confined space must have flammable gas, vapor, or mist concentrations less than 10% of the lower explosive limit (LEL). Values at or above 10% LEL prohibit entry. Values at or above 10% but below 25% LEL allow continued monitoring only (no entry). At 25% LEL and above, the area is immediately dangerous to life and health (IDLH).\n\n密闭空间内的可燃气体、蒸气或雾的浓度必须低于爆炸下限(LEL)的10%。达到或超过10% LEL的值禁止进入。在10%到25% LEL之间的数值仅允许继续监测（不可进入）。25% LEL及以上，该区域为立即危及生命与健康(IDLH)。',
+      related: [{ n: '4.2', t: '大气检测与监测' }]
     },
     {
       text: 'Which of the following is the correct first step in the 6-step Lockout/Tagout procedure?',
@@ -1073,7 +1066,8 @@ CSPQuiz.init({
         'Prepare for shutdown'
       ],
       correct: 3,
-      explanation: 'The correct 6-step LOTO sequence is: (1) Prepare for shutdown — identify all energy sources, hazards, and proper shutdown sequence; (2) Notify affected employees; (3) Shut down equipment using normal procedure; (4) Isolate energy sources; (5) Apply LOTO devices; (6) Release/block/dissipate stored energy and verify isolation. Preparing first ensures the shutdown is done correctly and safely.\n\n正确的6步LOTO顺序是：(1) 准备停机——识别所有能量源、危害和正确的停机顺序；(2) 通知受影响员工；(3) 使用正常程序关闭设备；(4) 隔离能量源；(5) 施加LOTO装置；(6) 释放/阻断/消散储存能量并验证隔离。首先做好准备可确保停机正确安全。'
+      explanation: 'The correct 6-step LOTO sequence is: (1) Prepare for shutdown — identify all energy sources, hazards, and proper shutdown sequence; (2) Notify affected employees; (3) Shut down equipment using normal procedure; (4) Isolate energy sources; (5) Apply LOTO devices; (6) Release/block/dissipate stored energy and verify isolation. Preparing first ensures the shutdown is done correctly and safely.\n\n正确的6步LOTO顺序是：(1) 准备停机——识别所有能量源、危害和正确的停机顺序；(2) 通知受影响员工；(3) 使用正常程序关闭设备；(4) 隔离能量源；(5) 施加LOTO装置；(6) 释放/阻断/消散储存能量并验证隔离。首先做好准备可确保停机正确安全。',
+      related: [{ n: '4.4', t: '上锁挂牌 (LOTO)' }]
     },
     {
       text: 'A competent person classifies excavation soil with unconfined compressive strength of 0.3 tons per square foot (tsf). This soil is classified as:',
@@ -1085,7 +1079,8 @@ CSPQuiz.init({
         'Stable Rock'
       ],
       correct: 2,
-      explanation: 'Type C soil has unconfined compressive strength ≤ 0.5 tsf. Type B is > 0.5 tsf but < 1.5 tsf. Type A is ≥ 1.5 tsf. Given the 0.3 tsf value, this is Type C — the least stable classification, requiring the steepest slope (1.5:1 or 34°) and permitting only sloping or shielding (no benching allowed in Type C).\n\nC型土壤的无侧限抗压强度≤0.5 tsf。B型为>0.5 tsf但<1.5 tsf。A型为≥1.5 tsf。给定0.3 tsf数值，这是C型——最不稳定的分类，需要最陡的坡度（1.5:1或34°），仅允许放坡或防护（C型不允许台阶式开挖）。'
+      explanation: 'Type C soil has unconfined compressive strength ≤ 0.5 tsf. Type B is > 0.5 tsf but < 1.5 tsf. Type A is ≥ 1.5 tsf. Given the 0.3 tsf value, this is Type C — the least stable classification, requiring the steepest slope (1.5:1 or 34°) and permitting only sloping or shielding (no benching allowed in Type C).\n\nC型土壤的无侧限抗压强度≤0.5 tsf。B型为>0.5 tsf但<1.5 tsf。A型为≥1.5 tsf。给定0.3 tsf数值，这是C型——最不稳定的分类，需要最陡的坡度（1.5:1或34°），仅允许放坡或防护（C型不允许台阶式开挖）。',
+      related: [{ n: '4.6', t: '挖掘与沟槽' }]
     },
     {
       text: 'In a trench excavation greater than 4 feet deep, ladders or other means of egress must be provided so that no worker has to travel more than what distance laterally to reach a ladder?',
@@ -1097,7 +1092,8 @@ CSPQuiz.init({
         '50 feet'
       ],
       correct: 2,
-      explanation: 'OSHA requires that in trenches 4 feet or deeper, a ladder, stairway, or ramp must be located so that no employee must travel more than 25 feet laterally to reach the means of egress. This ensures that workers can exit the trench quickly in the event of a cave-in or other emergency. The ladder must extend at least 3 feet above the landing surface.\n\nOSHA要求，在4英尺或更深的沟槽中，梯子、楼梯或坡道的位置必须使任何员工到达逃生通道的横向距离不超过25英尺。这确保工人能在塌方或其他紧急情况下迅速撤离沟槽。梯子必须伸出着陆面至少3英尺。'
+      explanation: 'OSHA requires that in trenches 4 feet or deeper, a ladder, stairway, or ramp must be located so that no employee must travel more than 25 feet laterally to reach the means of egress. This ensures that workers can exit the trench quickly in the event of a cave-in or other emergency. The ladder must extend at least 3 feet above the landing surface.\n\nOSHA要求，在4英尺或更深的沟槽中，梯子、楼梯或坡道的位置必须使任何员工到达逃生通道的横向距离不超过25英尺。这确保工人能在塌方或其他紧急情况下迅速撤离沟槽。梯子必须伸出着陆面至少3英尺。',
+      related: [{ n: '4.6', t: '挖掘与沟槽' }, { n: '4.7', t: '关键挖掘安全要求' }]
     },
     {
       text: 'Under the LOTO standard (29 CFR 1910.147), periodic inspections of energy control procedures must be performed at least:',
@@ -1109,7 +1105,8 @@ CSPQuiz.init({
         'Every 3 years'
       ],
       correct: 2,
-      explanation: 'LOTO procedures must be inspected at least annually by an authorized employee other than those using the procedure being inspected. The inspection must review each authorized employee\'s responsibilities and must be documented (certified). Note: This is \'annually\' for LOTO, distinct from \'every 3 years\' for PSM refresher training and compliance audits — the CSP exam intentionally mixes these time intervals.\n\nLOTO程序必须由一名授权员工（非使用被检查程序的人员）至少每年检查一次。检查必须审查每名授权员工的职责，并记录（认证）。注意：LOTO是"每年"，不同于PSM复训和合规审核的"每3年"——CSP考试有意混合这些时间间隔。'
+      explanation: 'LOTO procedures must be inspected at least annually by an authorized employee other than those using the procedure being inspected. The inspection must review each authorized employee\'s responsibilities and must be documented (certified). Note: This is \'annually\' for LOTO, distinct from \'every 3 years\' for PSM refresher training and compliance audits — the CSP exam intentionally mixes these time intervals.\n\nLOTO程序必须由一名授权员工（非使用被检查程序的人员）至少每年检查一次。检查必须审查每名授权员工的职责，并记录（认证）。注意：LOTO是"每年"，不同于PSM复训和合规审核的"每3年"——CSP考试有意混合这些时间间隔。',
+      related: [{ n: '4.4', t: '上锁挂牌 (LOTO)' }]
     },
     {
       text: 'Which of the following is NOT one of the criteria that makes a confined space a permit-required confined space (PRCS)?',
@@ -1121,7 +1118,8 @@ CSPQuiz.init({
         'Has an internal configuration that could trap or asphyxiate an entrant'
       ],
       correct: 2,
-      explanation: '"Not designed for continuous occupancy" is one of the THREE criteria for being a confined space at all — not a PRCS criterion. The four PRCS hazards are: hazardous atmosphere, engulfment, converging walls/trap configuration, and any other serious safety or health hazard.\n\n"非为连续占用而设计"是成为密闭空间的三项标准之一——不是PRCS的标准。PRCS的四类危害是：危险气氛、吞没、收缩墙/困陷结构，以及任何其他严重安全或健康危害。'
+      explanation: '"Not designed for continuous occupancy" is one of the THREE criteria for being a confined space at all — not a PRCS criterion. The four PRCS hazards are: hazardous atmosphere, engulfment, converging walls/trap configuration, and any other serious safety or health hazard.\n\n"非为连续占用而设计"是成为密闭空间的三项标准之一——不是PRCS的标准。PRCS的四类危害是：危险气氛、吞没、收缩墙/困陷结构，以及任何其他严重安全或健康危害。',
+      related: [{ n: '4.1', t: '密闭空间' }]
     },
     {
       text: 'In a confined space entry, the attendant (authorized entrant monitor) may enter the space to attempt rescue ONLY when:',
@@ -1133,7 +1131,8 @@ CSPQuiz.init({
         'The entry supervisor verbally approves'
       ],
       correct: 1,
-      explanation: 'The attendant must remain outside the space and may never enter to attempt a rescue unless they are properly trained, equipped, and relieved by another attendant. Non-entry rescue (retrieval systems) is preferred. Untrained rescue attempts are the leading cause of multiple-fatality confined space incidents.\n\n监护员必须留在空间外，除非经过适当培训、配备装备并被另一名监护员接替，否则绝不得进入尝试救援。非进入救援（救援系统）是首选。未经培训的救援尝试是密闭空间多人死亡事故的首要原因。'
+      explanation: 'The attendant must remain outside the space and may never enter to attempt a rescue unless they are properly trained, equipped, and relieved by another attendant. Non-entry rescue (retrieval systems) is preferred. Untrained rescue attempts are the leading cause of multiple-fatality confined space incidents.\n\n监护员必须留在空间外，除非经过适当培训、配备装备并被另一名监护员接替，否则绝不得进入尝试救援。非进入救援（救援系统）是首选。未经培训的救援尝试是密闭空间多人死亡事故的首要原因。',
+      related: [{ n: '4.3', t: '进入程序与救援' }]
     },
     {
       text: 'Under 29 CFR 1910.147, which of the following is an EXCEPTION where LOTO does not apply?',
@@ -1145,14 +1144,16 @@ CSPQuiz.init({
         'Cleaning a mixer with the power on'
       ],
       correct: 2,
-      explanation: 'LOTO does not apply to work on cord-and-plug connected equipment when the plug is under the exclusive control of the employee performing the work. It also does not apply to hot tap operations (with a documented procedure) or minor tool changes integral to production with alternative protection.\n\nLOTO不适用于插头连接设备的作业，当插头在执行作业员工的专属控制之下时。它也不适用于带压开孔作业（有书面程序时）以及采用替代防护的、为生产必需的微小工具更换。'
+      explanation: 'LOTO does not apply to work on cord-and-plug connected equipment when the plug is under the exclusive control of the employee performing the work. It also does not apply to hot tap operations (with a documented procedure) or minor tool changes integral to production with alternative protection.\n\nLOTO不适用于插头连接设备的作业，当插头在执行作业员工的专属控制之下时。它也不适用于带压开孔作业（有书面程序时）以及采用替代防护的、为生产必需的微小工具更换。',
+      related: [{ n: '4.4', t: '上锁挂牌 (LOTO)' }, { n: '4.5', t: 'LOTO人员职责与程序管理' }]
     },
     {
       text: 'A trench is 10 feet deep in Type B soil. Using the required 1:1 slope, what is the minimum horizontal setback (slope distance) on each side?',
       group: 3,
       options: ['5 feet', '10 feet', '15 feet', '20 feet'],
       correct: 1,
-      explanation: 'Type B soil requires a 1:1 slope — for every foot of depth, the wall must be cut back 1 foot horizontally. For a 10-ft-deep trench: horizontal distance = depth × ratio = 10 ft × 1 = 10 feet per side. (Type A = 0.75:1; Type C = 1.5:1.)\n\nB型土壤需要1:1的坡度——每1英尺深度，侧壁水平后退1英尺。对10英尺深的沟槽：水平距离 = 深度 × 坡度比 = 10英尺 × 1 = 每侧10英尺。（A型=0.75:1；C型=1.5:1。）'
+      explanation: 'Type B soil requires a 1:1 slope — for every foot of depth, the wall must be cut back 1 foot horizontally. For a 10-ft-deep trench: horizontal distance = depth × ratio = 10 ft × 1 = 10 feet per side. (Type A = 0.75:1; Type C = 1.5:1.)\n\nB型土壤需要1:1的坡度——每1英尺深度，侧壁水平后退1英尺。对10英尺深的沟槽：水平距离 = 深度 × 坡度比 = 10英尺 × 1 = 每侧10英尺。（A型=0.75:1；C型=1.5:1。）',
+      related: [{ n: '4.6', t: '挖掘与沟槽' }]
     },
     {
       text: 'A confined space has been continuously ventilated, and atmospheric testing shows 20.9% oxygen, 5% LEL flammable, and no toxics. The employer wants to reclassify the space as non-permit. Per OSHA, this is:',
@@ -1164,7 +1165,8 @@ CSPQuiz.init({
         'Allowed if the entry supervisor documents it'
       ],
       correct: 2,
-      explanation: 'A PRCS may be reclassified as non-permit only if ALL hazards are ELIMINATED (not just controlled). An atmosphere corrected only by continuous forced-air ventilation is controlled, not eliminated — if ventilation stops, the hazard returns. The space must remain a PRCS (or use a reclassification that requires a written certification documenting elimination).\n\nPRCS只有在所有危害被消除（而非仅被控制）时才能重新分类为非许可空间。仅通过连续强制通风纠正的气氛是被控制的，而非被消除——通风一停，危害即返回。空间必须保持PRCS（或使用需要书面认证消除的重新分类）。'
+      explanation: 'A PRCS may be reclassified as non-permit only if ALL hazards are ELIMINATED (not just controlled). An atmosphere corrected only by continuous forced-air ventilation is controlled, not eliminated — if ventilation stops, the hazard returns. The space must remain a PRCS (or use a reclassification that requires a written certification documenting elimination).\n\nPRCS只有在所有危害被消除（而非仅被控制）时才能重新分类为非许可空间。仅通过连续强制通风纠正的气氛是被控制的，而非被消除——通风一停，危害即返回。空间必须保持PRCS（或使用需要书面认证消除的重新分类）。',
+      related: [{ n: '4.2', t: '大气检测与监测' }]
     },
     {
       text: 'During LOTO servicing, the correct order of operations BEFORE work begins is:',
@@ -1176,7 +1178,8 @@ CSPQuiz.init({
         'Apply LOTO → shut down → isolate → verify → release'
       ],
       correct: 2,
-      explanation: 'The sequence is: shut down → isolate energy sources → apply LOTO devices → release/block/dissipate stored energy → verify isolation (try to start). Verification comes last, AFTER releasing stored energy, to confirm the equipment cannot be energized.\n\n顺序是：关闭 → 隔离能量源 → 施加LOTO装置 → 释放/阻断/消散储存能量 → 验证隔离（尝试启动）。验证在最后，在释放储存能量之后，以确认设备不能被通电。'
+      explanation: 'The sequence is: shut down → isolate energy sources → apply LOTO devices → release/block/dissipate stored energy → verify isolation (try to start). Verification comes last, AFTER releasing stored energy, to confirm the equipment cannot be energized.\n\n顺序是：关闭 → 隔离能量源 → 施加LOTO装置 → 释放/阻断/消散储存能量 → 验证隔离（尝试启动）。验证在最后，在释放储存能量之后，以确认设备不能被通电。',
+      related: [{ n: '4.4', t: '上锁挂牌 (LOTO)' }]
     },
     {
       text: 'Which of the following is NOT a requirement of an OSHA LOTO tag?',
@@ -1188,14 +1191,16 @@ CSPQuiz.init({
         'Contains the employee\'s social security number'
       ],
       correct: 3,
-      explanation: 'Tags must be durable, standardized, substantial (≥ 50 lb pull strength), non-reusable, self-locking, and must warn of the hazard. They must identify the employee who applied the device, but there is no requirement for a social security number — identification means name or other identifying information.\n\n标签必须耐用、标准化、牢固（≥50磅拉力）、不可重复使用、自锁并警告危害。必须标明施加装置的员工身份，但无社保号要求——身份标识指姓名或其他识别信息。'
+      explanation: 'Tags must be durable, standardized, substantial (≥ 50 lb pull strength), non-reusable, self-locking, and must warn of the hazard. They must identify the employee who applied the device, but there is no requirement for a social security number — identification means name or other identifying information.\n\n标签必须耐用、标准化、牢固（≥50磅拉力）、不可重复使用、自锁并警告危害。必须标明施加装置的员工身份，但无社保号要求——身份标识指姓名或其他识别信息。',
+      related: [{ n: '4.4', t: '上锁挂牌 (LOTO)' }, { n: '4.5', t: 'LOTO人员职责与程序管理' }]
     },
     {
       text: 'Under excavation standards, a protective system is required for excavations at least how deep, unless in stable rock?',
       group: 4,
       options: ['3 feet', '4 feet', '5 feet', '6 feet'],
       correct: 2,
-      explanation: 'Protective systems (sloping, benching, shoring, or shielding) are required for excavations 5 feet deep or greater (unless in stable rock). However, even trenches less than 5 feet need protection if a competent person determines a cave-in hazard exists.\n\n防护系统（放坡、台阶式、支撑或防护）对5英尺及以上深度的挖掘是必需的（除非在稳定岩层中）。但如果合格人员确定存在塌方危害，即使不足5英尺的沟槽也需要防护。'
+      explanation: 'Protective systems (sloping, benching, shoring, or shielding) are required for excavations 5 feet deep or greater (unless in stable rock). However, even trenches less than 5 feet need protection if a competent person determines a cave-in hazard exists.\n\n防护系统（放坡、台阶式、支撑或防护）对5英尺及以上深度的挖掘是必需的（除非在稳定岩层中）。但如果合格人员确定存在塌方危害，即使不足5英尺的沟槽也需要防护。',
+      related: [{ n: '4.6', t: '挖掘与沟槽' }]
     },
     {
       text: 'Under LOTO, only the person who applied a lock may remove it. The one documented exception is:',
@@ -1207,7 +1212,8 @@ CSPQuiz.init({
         'The affected employee may remove it after the job is done'
       ],
       correct: 2,
-      explanation: 'If the authorized employee who applied the lock is not available (e.g., left the site), the employer may remove the lock under a documented procedure that ensures the authorized employee is notified before returning to work. This is a narrowly defined exception.\n\n如果施加锁具的授权员工不在场（如已离开现场），雇主可在书面程序下摘除锁具，但必须确保该授权员工在返回工作前得到通知。这是严格界定的例外。'
+      explanation: 'If the authorized employee who applied the lock is not available (e.g., left the site), the employer may remove the lock under a documented procedure that ensures the authorized employee is notified before returning to work. This is a narrowly defined exception.\n\n如果施加锁具的授权员工不在场（如已离开现场），雇主可在书面程序下摘除锁具，但必须确保该授权员工在返回工作前得到通知。这是严格界定的例外。',
+      related: [{ n: '4.4', t: '上锁挂牌 (LOTO)' }, { n: '4.5', t: 'LOTO人员职责与程序管理' }]
     },
     {
       text: 'The LOTO program distinguishes between authorized employees and affected employees. Which statement is correct?',
@@ -1219,7 +1225,8 @@ CSPQuiz.init({
         'Affected employees are responsible for the annual inspection'
       ],
       correct: 1,
-      explanation: 'Authorized employees perform the locking/tagging for servicing and are trained on hazardous energy recognition, type/magnitude of energy, and isolation methods. Affected employees operate or work in the area and must never attempt to restart or re-energize locked-out equipment. They receive training on the purpose and use of LOTO, but it is less detailed than authorized employee training.\n\n授权员工执行上锁/挂牌以进行维修，接受危险能量识别、能量类型/大小和隔离方法的培训。受影响员工操作设备或在区域内工作，绝不得尝试重启或重新通电已上锁设备。他们接受的培训是关于LOTO的目的和使用，比授权员工的培训简略。'
+      explanation: 'Authorized employees perform the locking/tagging for servicing and are trained on hazardous energy recognition, type/magnitude of energy, and isolation methods. Affected employees operate or work in the area and must never attempt to restart or re-energize locked-out equipment. They receive training on the purpose and use of LOTO, but it is less detailed than authorized employee training.\n\n授权员工执行上锁/挂牌以进行维修，接受危险能量识别、能量类型/大小和隔离方法的培训。受影响员工操作设备或在区域内工作，绝不得尝试重启或重新通电已上锁设备。他们接受的培训是关于LOTO的目的和使用，比授权员工的培训简略。',
+      related: [{ n: '4.5', t: 'LOTO人员职责与程序管理' }]
     },
     {
       text: 'A confined space entry permit must be signed by which person before entry is authorized?',
@@ -1231,14 +1238,16 @@ CSPQuiz.init({
         'The rescue team leader'
       ],
       correct: 2,
-      explanation: 'The entry supervisor signs the permit to authorize entry, after verifying that entry conditions are acceptable, tests have been performed, and rescue services are available. The permit is then posted or otherwise made available to entrants.\n\n进入主管在核实进入条件可接受、检测已完成、救援服务可用后签署许可授权进入。许可随后张贴或以其他方式供进入者查阅。'
+      explanation: 'The entry supervisor signs the permit to authorize entry, after verifying that entry conditions are acceptable, tests have been performed, and rescue services are available. The permit is then posted or otherwise made available to entrants.\n\n进入主管在核实进入条件可接受、检测已完成、救援服务可用后签署许可授权进入。许可随后张贴或以其他方式供进入者查阅。',
+      related: [{ n: '4.3', t: '进入程序与救援' }]
     },
     {
       text: 'Under excavation standards, how far from the edge of the excavation must the spoil pile (excavated earth) be placed?',
       group: 4,
       options: ['At least 1 foot', 'At least 2 feet', 'At least 4 feet', 'At least 6 feet'],
       correct: 1,
-      explanation: 'Spoil piles and equipment must be kept at least 2 feet from the edge of the excavation. This prevents the weight of the pile from causing a cave-in. The 2-foot setback is a frequently tested value.\n\n弃土堆和设备必须保持在挖掘边缘至少2英尺以外。这防止弃土的重量导致塌方。2英尺后退距离是高频考点。'
+      explanation: 'Spoil piles and equipment must be kept at least 2 feet from the edge of the excavation. This prevents the weight of the pile from causing a cave-in. The 2-foot setback is a frequently tested value.\n\n弃土堆和设备必须保持在挖掘边缘至少2英尺以外。这防止弃土的重量导致塌方。2英尺后退距离是高频考点。',
+      related: [{ n: '4.7', t: '关键挖掘安全要求' }]
     },
     {
       text: 'Which of the following is TRUE about atmospheric testing in excavations?',
@@ -1250,7 +1259,8 @@ CSPQuiz.init({
         'Atmospheric testing is never required in excavations'
       ],
       correct: 1,
-      explanation: 'Atmospheric testing is required in excavations 4 feet or deeper where an oxygen deficiency or hazardous atmosphere could reasonably be expected. The 4-foot trigger parallels the general-industry fall protection height and is frequently tested.\n\n在深度4英尺及以上、且合理预期可能存在缺氧或危险气氛的挖掘中，需要进行大气检测。4英尺触发点与一般工业坠落防护高度平行，是高频考点。'
+      explanation: 'Atmospheric testing is required in excavations 4 feet or deeper where an oxygen deficiency or hazardous atmosphere could reasonably be expected. The 4-foot trigger parallels the general-industry fall protection height and is frequently tested.\n\n在深度4英尺及以上、且合理预期可能存在缺氧或危险气氛的挖掘中，需要进行大气检测。4英尺触发点与一般工业坠落防护高度平行，是高频考点。',
+      related: [{ n: '4.2', t: '大气检测与监测' }, { n: '4.7', t: '关键挖掘安全要求' }]
     },
     {
       text: 'In a group lockout, each crew member should:',
@@ -1262,14 +1272,16 @@ CSPQuiz.init({
         'Leave the area without locking out'
       ],
       correct: 1,
-      explanation: 'In group LOTO, each authorized employee affixes their own personal lock to a group lockout device. The primary authorized employee applies the group lockout and verifies isolation. Individual crew members attach/detach their personal locks before/after their portion of the work. This ensures no one is exposed by a coworker\'s removal of the lock.\n\n在群体LOTO中，每名授权员工将个人锁具附加到群体上锁装置上。主要负责人施加群体锁具并验证隔离。各成员在工作开始前附上、结束后摘除个人锁具。这确保没有人因同事摘除锁具而暴露。'
+      explanation: 'In group LOTO, each authorized employee affixes their own personal lock to a group lockout device. The primary authorized employee applies the group lockout and verifies isolation. Individual crew members attach/detach their personal locks before/after their portion of the work. This ensures no one is exposed by a coworker\'s removal of the lock.\n\n在群体LOTO中，每名授权员工将个人锁具附加到群体上锁装置上。主要负责人施加群体锁具并验证隔离。各成员在工作开始前附上、结束后摘除个人锁具。这确保没有人因同事摘除锁具而暴露。',
+      related: [{ n: '4.4', t: '上锁挂牌 (LOTO)' }, { n: '4.5', t: 'LOTO人员职责与程序管理' }]
     },
     {
       text: 'A confined space rescue team must practice permit space rescue procedures at least:',
       group: 5,
       options: ['Monthly', 'Quarterly', 'Once every 12 months', 'Every 3 years'],
       correct: 2,
-      explanation: 'Rescue teams must practice permit space rescues at least once every 12 months. Employers must also ensure rescue services are available and can respond in a timely manner, and that rescue personnel are properly trained and equipped.\n\n救援团队必须至少每12个月演练一次许可空间救援。雇主还必须确保救援服务可用且能及时响应，救援人员经过适当培训和装备。'
+      explanation: 'Rescue teams must practice permit space rescues at least once every 12 months. Employers must also ensure rescue services are available and can respond in a timely manner, and that rescue personnel are properly trained and equipped.\n\n救援团队必须至少每12个月演练一次许可空间救援。雇主还必须确保救援服务可用且能及时响应，救援人员经过适当培训和装备。',
+      related: [{ n: '4.3', t: '进入程序与救援' }]
     },
     {
       text: 'Which of the following is an acceptable method of protecting workers in a trench 7 feet deep in Type B soil?',
@@ -1281,7 +1293,8 @@ CSPQuiz.init({
         'Vertical walls with no support'
       ],
       correct: 1,
-      explanation: 'Type B soil requires sloping at 1:1 (not 0.75:1, which is Type A) OR benching, shoring, or shielding. A trench box is a valid protective system. Any excavation 5 feet or deeper needs a protective system; vertical walls with no support are never acceptable.\n\nB型土壤要求1:1放坡（不是0.75:1，那是A型）或台阶式、支撑、防护。沟槽箱是有效的防护系统。任何5英尺及以上的挖掘都需要防护系统；无支撑的垂直壁绝不可接受。'
+      explanation: 'Type B soil requires sloping at 1:1 (not 0.75:1, which is Type A) OR benching, shoring, or shielding. A trench box is a valid protective system. Any excavation 5 feet or deeper needs a protective system; vertical walls with no support are never acceptable.\n\nB型土壤要求1:1放坡（不是0.75:1，那是A型）或台阶式、支撑、防护。沟槽箱是有效的防护系统。任何5英尺及以上的挖掘都需要防护系统；无支撑的垂直壁绝不可接受。',
+      related: [{ n: '4.6', t: '挖掘与沟槽' }, { n: '4.7', t: '关键挖掘安全要求' }]
     },
     {
       text: 'Under the LOTO standard, "minor tool changes and adjustments that are routine, repetitive, and integral to production" are:',
@@ -1293,7 +1306,8 @@ CSPQuiz.init({
         'Require a written permit each time'
       ],
       correct: 1,
-      explanation: 'Minor, routine, repetitive tool changes integral to production are exempt from LOTO, provided they are performed using alternative effective protection (e.g., a specially designed guard that keeps hands away). Without such protection, LOTO applies.\n\n常规、重复、为生产必需的微小工具更换免除LOTO，前提是使用替代的有效防护（如专门设计的防止手接近的防护装置）。无此类防护时，LOTO适用。'
+      explanation: 'Minor, routine, repetitive tool changes integral to production are exempt from LOTO, provided they are performed using alternative effective protection (e.g., a specially designed guard that keeps hands away). Without such protection, LOTO applies.\n\n常规、重复、为生产必需的微小工具更换免除LOTO，前提是使用替代的有效防护（如专门设计的防止手接近的防护装置）。无此类防护时，LOTO适用。',
+      related: [{ n: '4.4', t: '上锁挂牌 (LOTO)' }, { n: '4.5', t: 'LOTO人员职责与程序管理' }]
     },
     {
       text: 'Which of the following is NOT a required component of a confined space entry permit?',
@@ -1305,7 +1319,8 @@ CSPQuiz.init({
         'Acceptable entry conditions and test results'
       ],
       correct: 2,
-      explanation: 'The permit must include the purpose and space, authorized duration, entrant/attendant names, hazards, isolation measures, acceptable entry conditions and test results, rescue services and means of summoning, and equipment to be used. Retirement dates are irrelevant.\n\n许可必须包括目的和空间、授权持续时间、进入者/监护员姓名、危害、隔离措施、可接受的进入条件和检测结果、救援服务及召唤方式，以及要使用的设备。退休日期无关。'
+      explanation: 'The permit must include the purpose and space, authorized duration, entrant/attendant names, hazards, isolation measures, acceptable entry conditions and test results, rescue services and means of summoning, and equipment to be used. Retirement dates are irrelevant.\n\n许可必须包括目的和空间、授权持续时间、进入者/监护员姓名、危害、隔离措施、可接受的进入条件和检测结果、救援服务及召唤方式，以及要使用的设备。退休日期无关。',
+      related: [{ n: '4.3', t: '进入程序与救援' }]
     },
     {
       text: 'Type C soil with a slope ratio requirement of 1.5:1 is being excavated. Which statement is correct?',
@@ -1317,7 +1332,8 @@ CSPQuiz.init({
         'Type C soil needs no protection if the trench is dry'
       ],
       correct: 1,
-      explanation: 'Type C soil requires a 1.5:1 slope (1.5 horizontal to 1 vertical, ≈34°). Benching is NOT permitted in Type C soil — only sloping or shielding. Type A is 0.75:1, Type B is 1:1.\n\nC型土壤要求1.5:1放坡（水平1.5比垂直1，约34°）。C型土壤不允许台阶式开挖——只能放坡或防护。A型为0.75:1，B型为1:1。'
+      explanation: 'Type C soil requires a 1.5:1 slope (1.5 horizontal to 1 vertical, ≈34°). Benching is NOT permitted in Type C soil — only sloping or shielding. Type A is 0.75:1, Type B is 1:1.\n\nC型土壤要求1.5:1放坡（水平1.5比垂直1，约34°）。C型土壤不允许台阶式开挖——只能放坡或防护。A型为0.75:1，B型为1:1。',
+      related: [{ n: '4.6', t: '挖掘与沟槽' }, { n: '4.7', t: '关键挖掘安全要求' }]
     },
     {
       text: 'A worker servicing a conveyor must verify isolation after applying LOTO. The correct verification step is:',
@@ -1329,7 +1345,8 @@ CSPQuiz.init({
         'Measure the voltage at the lock'
       ],
       correct: 1,
-      explanation: 'Verification of isolation is performed by attempting to operate the equipment (e.g., pressing the start button). This confirms the energy-isolating devices are effective. The start control must then be returned to the OFF position so the equipment cannot be started by the attempt itself.\n\n验证隔离通过尝试操作设备（如按下启动按钮）进行。这确认能量隔离装置有效。随后必须将启动控制恢复到OFF位置，以免验证尝试本身启动设备。'
+      explanation: 'Verification of isolation is performed by attempting to operate the equipment (e.g., pressing the start button). This confirms the energy-isolating devices are effective. The start control must then be returned to the OFF position so the equipment cannot be started by the attempt itself.\n\n验证隔离通过尝试操作设备（如按下启动按钮）进行。这确认能量隔离装置有效。随后必须将启动控制恢复到OFF位置，以免验证尝试本身启动设备。',
+      related: [{ n: '4.4', t: '上锁挂牌 (LOTO)' }]
     },
     {
       text: 'Under excavation standards, when must the competent person inspect an excavation?',
@@ -1341,7 +1358,8 @@ CSPQuiz.init({
         'Only when a complaint is filed'
       ],
       correct: 1,
-      explanation: 'The competent person must inspect the excavation daily and after each rainstorm, earthquake, or other hazard-increasing occurrence, and before employees enter. The competent person must have authority to take prompt corrective measures.\n\n合格人员必须每日检查挖掘，并在每次暴雨、地震或其他增加危害的事件后、员工进入前检查。合格人员必须有权采取及时纠正措施。'
+      explanation: 'The competent person must inspect the excavation daily and after each rainstorm, earthquake, or other hazard-increasing occurrence, and before employees enter. The competent person must have authority to take prompt corrective measures.\n\n合格人员必须每日检查挖掘，并在每次暴雨、地震或其他增加危害的事件后、员工进入前检查。合格人员必须有权采取及时纠正措施。',
+      related: [{ n: '4.7', t: '关键挖掘安全要求' }]
     },
     {
       text: 'Which of the following is TRUE about the confined space attendant\'s duties?',
@@ -1353,14 +1371,16 @@ CSPQuiz.init({
         'The attendant must perform atmospheric testing continuously inside the space'
       ],
       correct: 1,
-      explanation: 'The attendant remains outside, maintains an accurate count of entrants, communicates with entrants, summons rescue, orders evacuation, and performs NO other duties that could interfere with monitoring. The attendant never enters the space (except as trained/equipped/relieved).\n\n监护员留在空间外，保持准确的进入者计数，与进入者沟通，召唤救援，下令撤离，且不得执行任何可能干扰监控的其他职责。监护员绝不进入空间（除非受训/配备装备/被接替）。'
+      explanation: 'The attendant remains outside, maintains an accurate count of entrants, communicates with entrants, summons rescue, orders evacuation, and performs NO other duties that could interfere with monitoring. The attendant never enters the space (except as trained/equipped/relieved).\n\n监护员留在空间外，保持准确的进入者计数，与进入者沟通，召唤救援，下令撤离，且不得执行任何可能干扰监控的其他职责。监护员绝不进入空间（除非受训/配备装备/被接替）。',
+      related: [{ n: '4.3', t: '进入程序与救援' }]
     },
     {
       text: 'A 6-foot-deep trench in Type A soil is being sloped. What is the minimum horizontal slope distance required per side?',
       group: 7,
       options: ['3 feet', '4.5 feet', '6 feet', '9 feet'],
       correct: 1,
-      explanation: 'Type A soil requires a 0.75:1 slope. Horizontal distance = depth × 0.75 = 6 ft × 0.75 = 4.5 feet per side. (Type B would be 6 ft; Type C would be 9 ft.)\n\nA型土壤要求0.75:1放坡。水平距离 = 深度 × 0.75 = 6英尺 × 0.75 = 每侧4.5英尺。（B型为6英尺；C型为9英尺。）'
+      explanation: 'Type A soil requires a 0.75:1 slope. Horizontal distance = depth × 0.75 = 6 ft × 0.75 = 4.5 feet per side. (Type B would be 6 ft; Type C would be 9 ft.)\n\nA型土壤要求0.75:1放坡。水平距离 = 深度 × 0.75 = 6英尺 × 0.75 = 每侧4.5英尺。（B型为6英尺；C型为9英尺。）',
+      related: [{ n: '4.6', t: '挖掘与沟槽' }, { n: '4.7', t: '关键挖掘安全要求' }]
     },
     {
       text: 'Which of the following is a key requirement for rigging hardware used with cranes?',
@@ -1372,7 +1392,8 @@ CSPQuiz.init({
         'Rigging hardware never needs inspection'
       ],
       correct: 0,
-      explanation: 'Rigging hardware (slings, shackles, hooks) must be inspected before each shift. Items with cracks, wear exceeding 10%, deformation, or missing/damaged safety latches must be removed from service. Damage thresholds and inspection frequency are tested on the CSP exam.\n\n索具硬件（吊索、卸扣、吊钩）必须在每次换班前检查。出现裂纹、磨损超过10%、变形或安全锁扣缺失/损坏的物品必须停用。损伤阈值和检查频率是CSP考试内容。'
+      explanation: 'Rigging hardware (slings, shackles, hooks) must be inspected before each shift. Items with cracks, wear exceeding 10%, deformation, or missing/damaged safety latches must be removed from service. Damage thresholds and inspection frequency are tested on the CSP exam.\n\n索具硬件（吊索、卸扣、吊钩）必须在每次换班前检查。出现裂纹、磨损超过10%、变形或安全锁扣缺失/损坏的物品必须停用。损伤阈值和检查频率是CSP考试内容。',
+      related: [{ n: '4.8', t: '物料搬运与储存' }]
     },
     {
       text: 'The OSHA standard that governs excavation and trenching operations in construction is:',
@@ -1384,7 +1405,8 @@ CSPQuiz.init({
         '29 CFR 1910.146'
       ],
       correct: 1,
-      explanation: 'Excavation and trenching is governed by 29 CFR 1926 Subpart P. Subpart M is fall protection, 1910.147 is LOTO, and 1910.146 is confined spaces. Knowing which standard governs which hazard is a common exam skill.\n\n挖掘和沟槽作业由29 CFR 1926 Subpart P管辖。Subpart M是坠落防护，1910.147是LOTO，1910.146是密闭空间。知道哪个标准管辖哪个危害是常见考试技能。'
+      explanation: 'Excavation and trenching is governed by 29 CFR 1926 Subpart P. Subpart M is fall protection, 1910.147 is LOTO, and 1910.146 is confined spaces. Knowing which standard governs which hazard is a common exam skill.\n\n挖掘和沟槽作业由29 CFR 1926 Subpart P管辖。Subpart M是坠落防护，1910.147是LOTO，1910.146是密闭空间。知道哪个标准管辖哪个危害是常见考试技能。',
+      related: [{ n: '4.6', t: '挖掘与沟槽' }]
     },
     {
       text: 'A forklift operator must be retrained (in addition to every 3 years) when:',
@@ -1396,7 +1418,8 @@ CSPQuiz.init({
         'The forklift is purchased used'
       ],
       correct: 1,
-      explanation: 'Retraining is required after an accident or near-miss, after observation of unsafe operation, or when assigned a different type of truck. Refresher training/evaluation is required at least every 3 years.\n\n在事故或未遂事件后、观察到不安全操作后，或分配到不同类型的叉车时，需要复训。至少每3年需要复训/评估。'
+      explanation: 'Retraining is required after an accident or near-miss, after observation of unsafe operation, or when assigned a different type of truck. Refresher training/evaluation is required at least every 3 years.\n\n在事故或未遂事件后、观察到不安全操作后，或分配到不同类型的叉车时，需要复训。至少每3年需要复训/评估。',
+      related: [{ n: '4.8', t: '物料搬运与储存' }]
     },
     {
       text: 'Under FAA Part 107, which of the following is a key requirement for commercial drone operations?',
@@ -1408,7 +1431,8 @@ CSPQuiz.init({
         'A co-pilot is required for all flights'
       ],
       correct: 1,
-      explanation: 'FAA Part 107 requires a Remote Pilot Certificate, drones ≤ 55 lbs, maintained visual line-of-sight (VLOS), operations below 400 ft AGL, and daylight operations (or with anti-collision lighting). Drones are increasingly used to eliminate working-at-height hazards.\n\nFAA第107部要求远程飞行员证书、无人机≤55磅、保持目视视线(VLOS)、在离地400英尺以下操作、白天操作（或配备防撞灯）。无人机越来越多地用于消除高处作业危害。'
+      explanation: 'FAA Part 107 requires a Remote Pilot Certificate, drones ≤ 55 lbs, maintained visual line-of-sight (VLOS), operations below 400 ft AGL, and daylight operations (or with anti-collision lighting). Drones are increasingly used to eliminate working-at-height hazards.\n\nFAA第107部要求远程飞行员证书、无人机≤55磅、保持目视视线(VLOS)、在离地400英尺以下操作、白天操作（或配备防撞灯）。无人机越来越多地用于消除高处作业危害。',
+      related: [{ n: '4.8', t: '物料搬运与储存' }]
     },
     {
       text: 'Which of the following best describes the "good Samaritan" rescuer effect in confined space incidents?',
@@ -1420,7 +1444,8 @@ CSPQuiz.init({
         'Retrieval systems are never effective'
       ],
       correct: 1,
-      explanation: 'The "good Samaritan" effect refers to untrained coworkers entering a confined space to rescue a fallen worker and themselves being overcome by the same atmosphere, causing multiple-fatality incidents. The correct response is non-entry rescue and summoning trained rescuers.\n\n"好撒玛利亚人"效应指未受训的同事进入密闭空间救援倒下工人，自己被同样的气氛击倒，造成多人死亡。正确的做法是非进入救援并召唤受训救援人员。'
+      explanation: 'The "good Samaritan" effect refers to untrained coworkers entering a confined space to rescue a fallen worker and themselves being overcome by the same atmosphere, causing multiple-fatality incidents. The correct response is non-entry rescue and summoning trained rescuers.\n\n"好撒玛利亚人"效应指未受训的同事进入密闭空间救援倒下工人，自己被同样的气氛击倒，造成多人死亡。正确的做法是非进入救援并召唤受训救援人员。',
+      related: [{ n: '4.3', t: '进入程序与救援' }]
     }
   ]
 });

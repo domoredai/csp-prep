@@ -1180,3 +1180,46 @@ body {
   animation: cardFlash 1.8s ease;
   box-shadow: 0 0 0 3px #fdba74;
 }
+
+/* Interactive scenario block (separate from quizzes, but with clickable options) */
+.scenario-options {
+  margin: 12px 0 8px;
+}
+.scenario-feedback {
+  display: none;
+  margin-top: 10px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+.scenario-feedback.show { display: block; }
+.scenario-feedback.correct { background: var(--correct-bg); border-left: 3px solid var(--correct); }
+.scenario-feedback.incorrect { background: var(--incorrect-bg); border-left: 3px solid var(--incorrect); }
+.scenario-feedback .scenario-fb-label {
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.scenario-feedback.correct .scenario-fb-label { color: var(--correct); }
+.scenario-feedback.incorrect .scenario-fb-label { color: var(--incorrect); }
+
+/* Optional collapsible model answer */
+.scenario-model-answer {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 12px;
+  margin-top: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent);
+  cursor: pointer;
+}
+.scenario-model-answer:hover { background: var(--accent-light); }
+.scenario-answer-body {
+  display: none;
+  margin-top: 8px;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}

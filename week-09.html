@@ -10,7 +10,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="apple-touch-icon" href="icon-192.png">
-<link rel="stylesheet" href="quiz-styles.css?v=11">
+<link rel="stylesheet" href="quiz-styles.css?v=12">
 <style>
   .breadcrumb { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 16px; }
   .breadcrumb a { color: var(--accent); text-decoration: none; }
@@ -117,6 +117,18 @@
     </div>
   </div>
 
+  <div class="exam-scenario"
+       data-options='["A hazard — the source of potential harm", "A risk — the likelihood and severity of harm", "An incident — an unplanned event that causes harm", "A control failure — a deviation from a required safeguard"]'
+       data-correct="0">
+    <div class="es-label">📝 模拟情景题 / Practice Scenario</div>
+    <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
+    <div class="es-question">"A maintenance worker is exposed to a rotating shaft that has no guard. Considering the shaft alone, with no reference to exposure or likelihood, it is BEST described as:"</div>
+    <div class="scenario-feedback">
+      <div class="scenario-fb-label"></div>
+      <div>A hazard is a source or situation with the potential to cause harm — the unguarded rotating shaft. Risk is the combination of the likelihood of harm and its severity given exposure, so risk requires the exposure context. The same hazard creates very different levels of risk depending on who is exposed, how often, and how close they get. CSP questions frequently test whether an item is being described as a hazard (inherent) or a risk (contextual).<br><br>危害是有潜在致害能力的事物或情形——无防护的旋转轴。风险是在暴露条件下伤害发生的可能性与严重性的组合，因此风险需要暴露情境。同一危害因暴露人员、频率和距离不同而产生截然不同的风险水平。CSP题目常考查某描述属于危害（固有）还是风险（情境相关）。</div>
+    </div>
+  </div>
+
   <div id="quiz-group-1"></div>
 
 
@@ -212,9 +224,8 @@
     </div>
   </div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>9.1 危害 vs. 风险</strong>（危害/风险定义）与 <strong>9.5 控制层级</strong>（PPE最不有效、替代优先）的内容，详细讲解见对应卡片。Questions here cover hazard/risk definitions (9.1) and the hierarchy of controls (9.5).
-  </div>
+
+
 
   <div id="quiz-group-2"></div>
 
@@ -286,9 +297,8 @@
     </div>
   </div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>9.4 风险矩阵</strong>（5×5计算）、<strong>9.5 控制层级</strong>（工程控制不依赖行为）与 <strong>9.6 风险接受标准与ALARP</strong> 的内容，详细讲解见对应卡片。Questions here cover the 5×5 matrix (9.4), engineering controls (9.5), and ALARP (9.6).
-  </div>
+
+
 
   <div id="quiz-group-3"></div>
 
@@ -347,8 +357,16 @@
     </div>
   </div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>9.6 风险接受标准与ALARP</strong>（不可容忍区域、合理可行）与 <strong>9.7 作业危害分析(JHA/JSA)</strong>（四步顺序、选择作业的优先级）的内容，详细讲解见对应卡片。Questions here cover ALARP (9.6) and JHA sequence/prioritization (9.7).
+  <div class="exam-scenario"
+       data-options='["Risk B, because the higher severity carries greater potential consequence", "Risk A, because the higher likelihood means it will occur sooner", "Neither — identical scores always receive identical priority", "Risk A, because frequent low-severity events cost more over time"]'
+       data-correct="0">
+    <div class="es-label">📝 模拟情景题 / Practice Scenario</div>
+    <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
+    <div class="es-question">"Two hazards both score 10 on a 5×5 risk matrix. Risk A is Likelihood = 5, Severity = 2. Risk B is Likelihood = 2, Severity = 5. Which should typically be prioritized?"</div>
+    <div class="scenario-feedback">
+      <div class="scenario-fb-label"></div>
+      <div>When two risks share the same matrix score, examine severity first: a high-severity event with potential for fatality or major injury generally deserves priority over a frequent but minor one, because the potential consequence is far greater. The cumulative-cost argument for Risk A is a secondary financial consideration. Many organizations break ties by ranking severity highest, consistent with the principle that preventing serious harm takes precedence. The matrix score is a screening tool, not a substitute for professional judgment.<br><br>两个风险得分相同时应先看严重性：潜在致死或重伤的高严重性事件通常优先于高频但轻微的事件，因为潜在后果大得多。风险A的"累积成本"论只是次要的财务考虑。许多组织以严重性为最高优先级来打破平局，符合"预防严重伤害优先"的原则。矩阵得分是筛查工具，不能替代专业判断。</div>
+    </div>
   </div>
 
   <div id="quiz-group-4"></div>
@@ -425,9 +443,8 @@
     </div>
   </div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>9.7 作业危害分析(JHA/JSA)</strong>（须让实际操作工人参与）与 <strong>9.8 风险登记册</strong>（残余/固有风险、登记册组成部分）的内容，详细讲解见对应卡片。Questions here cover worker involvement in JHA (9.7) and residual vs. inherent risk (9.8).
-  </div>
+
+
 
   <div id="quiz-group-5"></div>
 
@@ -491,9 +508,8 @@
     </div>
   </div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>9.3 风险=可能性×严重性</strong>（年度化预期损失）、<strong>9.4 风险矩阵</strong>（半定量）、<strong>9.9 风险评估方法、监控与沟通</strong>（定性/半定量/定量、复审时机）的内容，详细讲解见对应卡片。Questions here cover annualized loss (9.3), semi-quantitative matrices (9.4), and qualitative/quantitative methods (9.9).
-  </div>
+
+
 
   <div id="quiz-group-6"></div>
 
@@ -558,16 +574,29 @@
       <span class="mn-content"><strong>"选-拆-识-控"</strong> — Select job → Break into steps → Identify hazards → Controls。英文"SBIC"。JHA=JSA（同义）。工人必须参与（他们最了解实际作业）。</span>
     </div>
 
-    <div class="exam-scenario">
+    <div class="exam-scenario"
+         data-options='["Perform a JHA with the workers who will do the task, break it into steps, identify hazards, and apply the hierarchy of controls", "Assign the task to a supervisor to watch and correct unsafe behavior as it occurs", "Issue PPE and instruct the crew to follow the equipment manual", "Wait until the task has been performed a few times, then review the results"]'
+         data-correct="0">
       <div class="es-label">📝 模拟情景题 / Practice Scenario</div>
       <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
       <div class="es-question">"A new task will be performed weekly. What should the safety professional do BEFORE the task is performed?"</div>
-      <div><strong>最佳答案 / Best answer:</strong> Perform a JHA with the workers who will do the task, break it into steps, identify hazards, and apply the hierarchy of controls. 解析：新作业/不常做作业是JHA优先选择对象；JHA需实际操作工人参与，控制措施按层级排序并记录负责人与实施日期。</div>
+      <div class="scenario-feedback">
+        <div class="scenario-fb-label"></div>
+        <div>A JHA (JSA) is performed before the task begins and must involve the workers who actually perform it, because they know the real steps, shortcuts, and exposures. The sequence is: select the job, break it into steps, identify the hazards in each step, then apply controls according to the hierarchy. New, infrequent, or changed tasks with high-severity potential are the highest priority for a JHA. Passive observation or waiting for several runs misses the exposures that exist from the very first performance.<br><br>JHA（JSA）在作业开始前进行，且必须让实际从事该作业的工人参与，因为他们了解真实步骤、捷径和暴露。顺序为：选择作业、拆解步骤、识别每步危害、按控制层级落实措施。新增、不常做或已变更且潜在后果严重的作业是JHA的最高优先级。被动观察或等到做了几次再评估，会漏掉首次作业即存在的暴露。</div>
+      </div>
     </div>
   </div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>9.2 风险评估五步流程</strong>（评估步骤、沟通贯穿全程）、<strong>9.9 监控与沟通</strong>（动态文件），以及跨周的 <strong>Week 7 · 7.5 根源分析方法</strong>（用一个滑动湿地板案例考5 Whys根因）的内容，详细讲解见对应卡片。Questions here cover the Evaluate/Communicate steps (9.2), living documents (9.9), and a 5 Whys root cause (Week 7, Card 7.5).
+  <div class="exam-scenario"
+       data-options='["Perform a JHA with the workers who will do the task, breaking it into steps and identifying hazards at each step", "Write a general safe-work procedure from the equipment manual without worker input", "Issue PPE and instruct the crew to follow the manufacturer\'s instructions", "Wait until the first incident occurs, then investigate the root cause"]'
+       data-correct="0">
+    <div class="es-label">📝 模拟情景题 / Practice Scenario</div>
+    <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
+    <div class="es-question">"A new task will be performed weekly by a small crew. What should the safety professional do BEFORE the task is first performed?"</div>
+    <div class="scenario-feedback">
+      <div class="scenario-fb-label"></div>
+      <div>A Job Hazard Analysis (JHA/JSA) is performed before the task begins and involves the workers who actually do the job — they know the real steps, shortcuts, and exposures. The sequence is: select the job, break it into steps, identify hazards in each step, then apply controls per the hierarchy. New, infrequent, or changed tasks with high-severity potential are top priorities. Waiting for an incident is reactive, and a paper procedure written without worker input misses actual field conditions.<br><br>作业危害分析（JHA/JSA）在作业开始前进行，且必须让实际从事该作业的工人参与——他们了解真实步骤、捷径和暴露。顺序为：选择作业、拆解步骤、识别每步危害、按控制层级落实措施。新增、不常做或已变更且潜在后果严重的作业是最高优先级。等事故发生属被动；不征询工人意见的纸面程序会遗漏现场的实际情况。</div>
+    </div>
   </div>
 
   <div id="quiz-group-7"></div>
@@ -624,9 +653,8 @@
     </div>
   </div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>9.2 五步流程</strong>（评估步骤判断可接受性）、<strong>9.3 可能性/严重性量表</strong>、<strong>9.4 风险矩阵</strong>（3×3/4×4/5×5分辨率）的内容，详细讲解见对应卡片。Questions here cover the Evaluate step (9.2), L/S scales (9.3), and matrix resolution (9.4).
-  </div>
+
+
 
   <div id="quiz-group-8"></div>
 
@@ -681,8 +709,16 @@
     </div>
   </div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>9.2 五步流程</strong>（识别步骤的核心问题）、<strong>9.4 风险矩阵</strong>（使用前须定义量表）、<strong>9.5 控制层级</strong>（防护罩=工程控制），以及跨周的 <strong>Week 11 · 11.6 风险财务五大策略</strong>（停止产品线=风险规避）的内容，详细讲解见对应卡片。Questions here cover hazard identification (9.2), scale definition (9.4), engineering controls (9.5), and risk avoidance (Week 11, Card 11.6).
+  <div class="exam-scenario"
+       data-options='["A change in the process, equipment, or materials that could introduce new hazards", "The annual review scheduled for next quarter", "A new safety professional joining the company", "The company\'s insurance premium being renewed"]'
+       data-correct="0">
+    <div class="es-label">📝 模拟情景题 / Practice Scenario</div>
+    <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
+    <div class="es-question">"A risk assessment was completed 18 months ago. Which of the following is MOST likely to trigger a review of that assessment?"</div>
+    <div class="scenario-feedback">
+      <div class="scenario-fb-label"></div>
+      <div>A risk assessment is a living document: it must be reviewed whenever there is a change in process, equipment, materials, personnel competence, or applicable regulations, and after incidents or near misses. Change is the classic trigger. Scheduled reviews and new hires are routine and do not by themselves alter the risk picture, and insurance renewal does not change workplace hazards. Monitoring and communication wrap around the whole process so that changes are captured and acted on.<br><br>风险评估是动态文件：当工艺、设备、材料、人员能力或适用法规发生变化，以及发生事故或未遂事件时，都必须复审。变更是最典型的触发因素。定期复审和新员工入职属常规，本身不改变风险状况；保险续保不改变工作场所危害。监控与沟通贯穿整个流程，以确保变更被捕捉并处理。</div>
+    </div>
   </div>
 
   <div id="quiz-group-9"></div>
@@ -693,8 +729,8 @@
 
 </div>
 
-<script src="quiz-engine.js?v=11"></script>
-<script src="vocab-engine.js?v=11"></script>
+<script src="quiz-engine.js?v=12"></script>
+<script src="vocab-engine.js?v=12"></script>
 <script>
 CSPQuiz.init({
   containerId: 'quiz-root',
@@ -712,7 +748,8 @@ CSPQuiz.init({
         'Communicate findings to stakeholders'
       ],
       correct: 2,
-      explanation: 'The 5-step process is: (1) Identify hazards, (2) Analyze risks (likelihood x severity), (3) Evaluate against criteria, (4) Monitor & review, (5) Communicate & consult. Analysis comes immediately after identification.\n\n五步流程为：(1) 识别危害，(2) 分析风险（可能性 x 严重性），(3) 对照标准评估，(4) 监控与审查，(5) 沟通与咨询。分析紧随识别之后。'
+      explanation: 'The 5-step process is: (1) Identify hazards, (2) Analyze risks (likelihood x severity), (3) Evaluate against criteria, (4) Monitor & review, (5) Communicate & consult. Analysis comes immediately after identification.\n\n五步流程为：(1) 识别危害，(2) 分析风险（可能性 x 严重性），(3) 对照标准评估，(4) 监控与审查，(5) 沟通与咨询。分析紧随识别之后。',
+      related: [{ n: '9.2', t: '五步流程' }]
     },
     {
       text: 'Which of the following is the most accurate definition of a HAZARD?',
@@ -724,7 +761,8 @@ CSPQuiz.init({
         'The combination of probability and severity of harm'
       ],
       correct: 1,
-      explanation: 'A hazard is a source or situation with the POTENTIAL to cause harm. It exists intrinsically regardless of exposure. Risk is the combination of probability and severity; a hazard is not a probability or a consequence.\n\n危害是具有造成伤害潜力的来源或情况。它固有存在，与暴露无关。风险是概率与严重性的组合；危害不是概率或后果。'
+      explanation: 'A hazard is a source or situation with the POTENTIAL to cause harm. It exists intrinsically regardless of exposure. Risk is the combination of probability and severity; a hazard is not a probability or a consequence.\n\n危害是具有造成伤害潜力的来源或情况。它固有存在，与暴露无关。风险是概率与严重性的组合；危害不是概率或后果。',
+      related: [{ n: '9.1', t: '危害vs风险' }]
     },
     {
       text: 'Risk is best defined as:',
@@ -736,14 +774,16 @@ CSPQuiz.init({
         'The consequence of a failure event'
       ],
       correct: 1,
-      explanation: 'Risk = probability (likelihood) × severity (consequence). It requires BOTH a hazard and exposure. A hazard is the potential; risk quantifies the potential in terms of likelihood and consequence.\n\n风险 = 概率（可能性）× 严重性（后果）。它需要危害和暴露同时存在。危害是潜力；风险以可能性和后果来量化该潜力。'
+      explanation: 'Risk = probability (likelihood) × severity (consequence). It requires BOTH a hazard and exposure. A hazard is the potential; risk quantifies the potential in terms of likelihood and consequence.\n\n风险 = 概率（可能性）× 严重性（后果）。它需要危害和暴露同时存在。危害是潜力；风险以可能性和后果来量化该潜力。',
+      related: [{ n: '9.1', t: '危害vs风险' }]
     },
     {
       text: 'A worker is exposed to a hazard rated Likelihood = 3 (Possible) and Severity = 4 (Major). What is the risk score?',
       group: 1,
       options: ['7', '12', '15', '4'],
       correct: 1,
-      explanation: 'Risk = L × S = 3 × 4 = 12. On a typical 5×5 matrix, a score of 12 falls in the high (orange) zone, requiring prompt attention and additional controls.\n\n风险 = L × S = 3 × 4 = 12。在典型的5×5矩阵中，12分落在高风险（橙色）区域，需要及时关注和额外控制。'
+      explanation: 'Risk = L × S = 3 × 4 = 12. On a typical 5×5 matrix, a score of 12 falls in the high (orange) zone, requiring prompt attention and additional controls.\n\n风险 = L × S = 3 × 4 = 12。在典型的5×5矩阵中，12分落在高风险（橙色）区域，需要及时关注和额外控制。',
+      related: [{ n: '9.3', t: 'JHA' }, { n: '9.4', t: '风险矩阵' }]
     },
     {
       text: 'Which statement correctly describes the relationship between hazard and risk?',
@@ -755,7 +795,8 @@ CSPQuiz.init({
         'A hazard is a type of risk'
       ],
       correct: 1,
-      explanation: 'Elimination removes the hazard entirely, so risk goes to zero. But controls like PPE, guards, and procedures reduce risk while the hazard remains present. This is why the hierarchy of controls ranks elimination first.\n\n消除移除了危害本身，因此风险降为零。但PPE、防护罩和程序等控制降低风险时危害仍然存在。这就是控制层级将消除排第一的原因。'
+      explanation: 'Elimination removes the hazard entirely, so risk goes to zero. But controls like PPE, guards, and procedures reduce risk while the hazard remains present. This is why the hierarchy of controls ranks elimination first.\n\n消除移除了危害本身，因此风险降为零。但PPE、防护罩和程序等控制降低风险时危害仍然存在。这就是控制层级将消除排第一的原因。',
+      related: [{ n: '9.1', t: '危害vs风险' }]
     },
     {
       text: 'Which of the following controls is ranked HIGHEST (most effective) in the hierarchy of controls?',
@@ -767,7 +808,8 @@ CSPQuiz.init({
         'Engineering controls'
       ],
       correct: 2,
-      explanation: 'The hierarchy from most to least effective is: Elimination → Substitution → Engineering controls → Administrative controls → PPE. Elimination physically removes the hazard, providing the greatest protection.\n\n控制层级从最有效到最不有效：消除 → 替代 → 工程控制 → 行政控制 → PPE。消除物理上移除危害，提供最大保护。'
+      explanation: 'The hierarchy from most to least effective is: Elimination → Substitution → Engineering controls → Administrative controls → PPE. Elimination physically removes the hazard, providing the greatest protection.\n\n控制层级从最有效到最不有效：消除 → 替代 → 工程控制 → 行政控制 → PPE。消除物理上移除危害，提供最大保护。',
+      related: [{ n: '9.8', t: '控制层级' }]
     },
     {
       text: 'Why is PPE considered the LEAST effective control in the hierarchy?',
@@ -779,7 +821,8 @@ CSPQuiz.init({
         'It is not required by any regulation'
       ],
       correct: 1,
-      explanation: 'PPE is the last line of defense. It does not eliminate or engineer out the hazard; the hazard remains fully present. It relies on correct selection, fit, use, and maintenance — human factors that can fail. Higher controls change the hazard itself.\n\nPPE是最后一道防线。它不能消除或工程性地移除危害；危害仍然完整存在。它依赖正确的选择、贴合、使用和维护——这些人为因素可能失效。更高的控制措施改变危害本身。'
+      explanation: 'PPE is the last line of defense. It does not eliminate or engineer out the hazard; the hazard remains fully present. It relies on correct selection, fit, use, and maintenance — human factors that can fail. Higher controls change the hazard itself.\n\nPPE是最后一道防线。它不能消除或工程性地移除危害；危害仍然完整存在。它依赖正确的选择、贴合、使用和维护——这些人为因素可能失效。更高的控制措施改变危害本身。',
+      related: [{ n: '9.8', t: '控制层级' }]
     },
     {
       text: 'A manufacturing process uses a solvent-based adhesive that emits toxic vapors. The BEST control according to the hierarchy of controls is:',
@@ -791,7 +834,8 @@ CSPQuiz.init({
         'Rotate workers every 2 hours'
       ],
       correct: 2,
-      explanation: 'Substitution (replacing the solvent-based adhesive with a water-based non-toxic one) ranks above engineering controls (LEV), administrative controls (rotation), and PPE (respirators). Substitution removes or reduces the hazardous agent itself.\n\n替代（用水性无毒胶替代溶剂型胶）排名高于工程控制（局部排风）、行政控制（轮换）和PPE（呼吸器）。替代消除或减少了危险物质本身。'
+      explanation: 'Substitution (replacing the solvent-based adhesive with a water-based non-toxic one) ranks above engineering controls (LEV), administrative controls (rotation), and PPE (respirators). Substitution removes or reduces the hazardous agent itself.\n\n替代（用水性无毒胶替代溶剂型胶）排名高于工程控制（局部排风）、行政控制（轮换）和PPE（呼吸器）。替代消除或减少了危险物质本身。',
+      related: [{ n: '9.8', t: '控制层级' }]
     },
     {
       text: 'Which control type relies the LEAST on human behavior or compliance?',
@@ -803,14 +847,16 @@ CSPQuiz.init({
         'Written safety procedures'
       ],
       correct: 0,
-      explanation: 'Engineering controls provide protection through physical design (guards, ventilation, interlocks) and work regardless of whether the worker remembers to comply. Administrative controls, procedures, and PPE all depend on people following them correctly.\n\n工程控制通过物理设计（防护罩、通风、联锁）提供保护，无论工人是否记得遵守都能发挥作用。行政控制、程序和PPE都依赖于人们正确执行。'
+      explanation: 'Engineering controls provide protection through physical design (guards, ventilation, interlocks) and work regardless of whether the worker remembers to comply. Administrative controls, procedures, and PPE all depend on people following them correctly.\n\n工程控制通过物理设计（防护罩、通风、联锁）提供保护，无论工人是否记得遵守都能发挥作用。行政控制、程序和PPE都依赖于人们正确执行。',
+      related: [{ n: '9.8', t: '控制层级' }]
     },
     {
       text: 'On a 5×5 risk matrix, what is the risk score for a hazard with Likelihood = 4 (Likely) and Severity = 3 (Moderate)?',
       group: 3,
       options: ['7', '9', '12', '16'],
       correct: 2,
-      explanation: 'Risk = 4 × 3 = 12. This falls in the high-risk (orange) region of the typical 5×5 matrix, indicating the need for prompt risk reduction measures.\n\n风险 = 4 × 3 = 12。这落在典型5×5矩阵的高风险（橙色）区域，表明需要及时采取风险降低措施。'
+      explanation: 'Risk = 4 × 3 = 12. This falls in the high-risk (orange) region of the typical 5×5 matrix, indicating the need for prompt risk reduction measures.\n\n风险 = 4 × 3 = 12。这落在典型5×5矩阵的高风险（橙色）区域，表明需要及时采取风险降低措施。',
+      related: [{ n: '9.4', t: '风险矩阵' }]
     },
     {
       text: 'Two risks both score 10 on a 5×5 matrix: Risk A is L=5/S=2 and Risk B is L=2/S=5. Which should typically receive higher priority?',
@@ -822,7 +868,8 @@ CSPQuiz.init({
         'Neither — scores are meaningless'
       ],
       correct: 1,
-      explanation: 'While both multiply to 10, best practice weights severity more heavily. A catastrophic event (fatality) is generally considered more serious than frequent minor events. Many organizations use asymmetric matrices or severity weighting for this reason.\n\n虽然两者都等于10，最佳实践对严重性赋予更大权重。灾难性事件（死亡）通常被认为比频繁的轻微事件更严重。许多组织因此使用非对称矩阵或严重性加权。'
+      explanation: 'While both multiply to 10, best practice weights severity more heavily. A catastrophic event (fatality) is generally considered more serious than frequent minor events. Many organizations use asymmetric matrices or severity weighting for this reason.\n\n虽然两者都等于10，最佳实践对严重性赋予更大权重。灾难性事件（死亡）通常被认为比频繁的轻微事件更严重。许多组织因此使用非对称矩阵或严重性加权。',
+      related: [{ n: '9.4', t: '风险矩阵' }]
     },
     {
       text: 'What does ALARP stand for?',
@@ -834,7 +881,8 @@ CSPQuiz.init({
         'All Losses Are Reportable Promptly'
       ],
       correct: 1,
-      explanation: 'ALARP = As Low As Reasonably Practicable. Risks must be reduced until the cost of further reduction is grossly disproportionate to the benefit. It permits a cost-benefit judgment.\n\nALARP = 尽量低至合理可行程度。风险必须降低到进一步降低的成本与收益明显不成比例为止。它允许成本效益判断。'
+      explanation: 'ALARP = As Low As Reasonably Practicable. Risks must be reduced until the cost of further reduction is grossly disproportionate to the benefit. It permits a cost-benefit judgment.\n\nALARP = 尽量低至合理可行程度。风险必须降低到进一步降低的成本与收益明显不成比例为止。它允许成本效益判断。',
+      related: [{ n: '9.5', t: 'ALARP与风险接受' }]
     },
     {
       text: 'Under the ALARP framework, a risk in the "intolerable" region requires:',
@@ -846,7 +894,8 @@ CSPQuiz.init({
         'No action because the risk is acceptable'
       ],
       correct: 2,
-      explanation: 'The intolerable region sits at the top of the ALARP triangle. Risks there cannot be justified under any circumstances — the activity must cease, or controls must be implemented regardless of cost. Tolerable-region risks require cost-benefit balancing.\n\n不可容忍区域位于ALARP三角形顶部。该区域的风险在任何情况下都无法合理化——活动必须停止，或必须不顾成本实施控制。可容忍区域的风险需要成本效益平衡。'
+      explanation: 'The intolerable region sits at the top of the ALARP triangle. Risks there cannot be justified under any circumstances — the activity must cease, or controls must be implemented regardless of cost. Tolerable-region risks require cost-benefit balancing.\n\n不可容忍区域位于ALARP三角形顶部。该区域的风险在任何情况下都无法合理化——活动必须停止，或必须不顾成本实施控制。可容忍区域的风险需要成本效益平衡。',
+      related: [{ n: '9.5', t: 'ALARP与风险接受' }]
     },
     {
       text: 'The "reasonably practicable" standard in ALARP is best described as:',
@@ -858,7 +907,8 @@ CSPQuiz.init({
         'Eliminating all risk to zero'
       ],
       correct: 1,
-      explanation: 'Reasonably practicable is a cost-benefit test. If the sacrifice (time, money, effort) of further risk reduction is grossly disproportionate to the safety gain, the measure is not required. It is not "as low as possible."\n\n合理可行是一种成本效益检验。如果进一步降低风险的牺牲（时间、金钱、努力）与安全收益明显不成比例，则该措施并非必需。它不是"尽可能低"。'
+      explanation: 'Reasonably practicable is a cost-benefit test. If the sacrifice (time, money, effort) of further risk reduction is grossly disproportionate to the safety gain, the measure is not required. It is not "as low as possible."\n\n合理可行是一种成本效益检验。如果进一步降低风险的牺牲（时间、金钱、努力）与安全收益明显不成比例，则该措施并非必需。它不是"尽可能低"。',
+      related: [{ n: '9.5', t: 'ALARP与风险接受' }]
     },
     {
       text: 'In Job Hazard Analysis (JHA), what is the correct sequence of the four steps?',
@@ -870,7 +920,8 @@ CSPQuiz.init({
         'Select the job, identify hazards, break into steps, develop controls'
       ],
       correct: 1,
-      explanation: 'The JHA sequence is: (1) Select the job, (2) Break the job into sequential steps, (3) Identify hazards in each step, (4) Develop controls for each hazard. Selection comes first and is risk-based.\n\nJHA顺序是：(1) 选择作业，(2) 将作业分解为连续步骤，(3) 识别每个步骤的危害，(4) 为每个危害制定控制措施。选择在前，且基于风险。'
+      explanation: 'The JHA sequence is: (1) Select the job, (2) Break the job into sequential steps, (3) Identify hazards in each step, (4) Develop controls for each hazard. Selection comes first and is risk-based.\n\nJHA顺序是：(1) 选择作业，(2) 将作业分解为连续步骤，(3) 识别每个步骤的危害，(4) 为每个危害制定控制措施。选择在前，且基于风险。',
+      related: [{ n: '9.3', t: 'JHA' }]
     },
     {
       text: 'When selecting jobs for a JHA, which criterion should receive the HIGHEST priority?',
@@ -882,7 +933,8 @@ CSPQuiz.init({
         'Jobs management requested'
       ],
       correct: 1,
-      explanation: 'JHA prioritization is risk-based: highest injury/illness rates, greatest potential for severe injury, new/modified jobs, infrequent jobs, and jobs with near-miss history are analyzed first.\n\nJHA优先级基于风险：伤害/疾病率最高、严重伤害潜力最大、新/已修改作业、不频繁作业以及有未遂历史的作业优先分析。'
+      explanation: 'JHA prioritization is risk-based: highest injury/illness rates, greatest potential for severe injury, new/modified jobs, infrequent jobs, and jobs with near-miss history are analyzed first.\n\nJHA优先级基于风险：伤害/疾病率最高、严重伤害潜力最大、新/已修改作业、不频繁作业以及有未遂历史的作业优先分析。',
+      related: [{ n: '9.3', t: 'JHA' }]
     },
     {
       text: 'Who should be actively involved in conducting a JHA?',
@@ -894,7 +946,8 @@ CSPQuiz.init({
         'Only upper management'
       ],
       correct: 1,
-      explanation: 'Workers who perform the job have the most intimate knowledge of tasks and hazards. Their involvement improves hazard identification and gives them ownership of the resulting controls. Excluding workers is a recognized JHA weakness.\n\n实际执行作业的工人对任务和危害最了解。他们的参与提高危害识别质量，并使其对控制措施产生主人翁意识。排除工人是公认的JHA缺陷。'
+      explanation: 'Workers who perform the job have the most intimate knowledge of tasks and hazards. Their involvement improves hazard identification and gives them ownership of the resulting controls. Excluding workers is a recognized JHA weakness.\n\n实际执行作业的工人对任务和危害最了解。他们的参与提高危害识别质量，并使其对控制措施产生主人翁意识。排除工人是公认的JHA缺陷。',
+      related: [{ n: '9.3', t: 'JHA' }]
     },
     {
       text: 'In a risk register, "residual risk" is defined as:',
@@ -906,7 +959,8 @@ CSPQuiz.init({
         'The risk transferred to an insurance provider'
       ],
       correct: 1,
-      explanation: 'Residual (net) risk is what remains after existing controls. Inherent (gross) risk is the pre-control level. The residual risk is what the organization actually faces and must decide to accept or further reduce.\n\n残余（净）风险是现有控制后仍然存在的风险。固有（毛）风险是控制前的水平。残余风险是组织实际面临的风险，必须决定接受还是进一步降低。'
+      explanation: 'Residual (net) risk is what remains after existing controls. Inherent (gross) risk is the pre-control level. The residual risk is what the organization actually faces and must decide to accept or further reduce.\n\n残余（净）风险是现有控制后仍然存在的风险。固有（毛）风险是控制前的水平。残余风险是组织实际面临的风险，必须决定接受还是进一步降低。',
+      related: [{ n: '9.6', t: '风险登记册' }]
     },
     {
       text: 'The difference between inherent risk and residual risk is that:',
@@ -918,7 +972,8 @@ CSPQuiz.init({
         'Residual risk is always higher than inherent risk'
       ],
       correct: 1,
-      explanation: 'Inherent (gross) risk is rated before considering existing controls; residual (net) risk is rated after accounting for existing controls. Residual risk should be lower than inherent risk when controls are effective.\n\n固有（毛）风险在考虑现有控制前评级；残余（净）风险在计入现有控制后评级。当控制有效时，残余风险应低于固有风险。'
+      explanation: 'Inherent (gross) risk is rated before considering existing controls; residual (net) risk is rated after accounting for existing controls. Residual risk should be lower than inherent risk when controls are effective.\n\n固有（毛）风险在考虑现有控制前评级；残余（净）风险在计入现有控制后评级。当控制有效时，残余风险应低于固有风险。',
+      related: [{ n: '9.6', t: '风险登记册' }]
     },
     {
       text: 'Which of the following is NOT a typical component of a risk register?',
@@ -930,7 +985,8 @@ CSPQuiz.init({
         'Responsible person and review date'
       ],
       correct: 2,
-      explanation: 'A risk register tracks hazards, ratings (inherent/residual), controls, responsible persons, target dates, review dates, and status. Insurance premium calculations are a financial/underwriting function, not a risk register component.\n\n风险登记册跟踪危害、评级（固有/残余）、控制、负责人、目标日期、审查日期和状态。保险费计算是财务/承保职能，不是风险登记册组成部分。'
+      explanation: 'A risk register tracks hazards, ratings (inherent/residual), controls, responsible persons, target dates, review dates, and status. Insurance premium calculations are a financial/underwriting function, not a risk register component.\n\n风险登记册跟踪危害、评级（固有/残余）、控制、负责人、目标日期、审查日期和状态。保险费计算是财务/承保职能，不是风险登记册组成部分。',
+      related: [{ n: '9.6', t: '风险登记册' }]
     },
     {
       text: 'A qualitative risk assessment produces:',
@@ -942,7 +998,8 @@ CSPQuiz.init({
         'Annualized loss expectancy in dollars'
       ],
       correct: 1,
-      explanation: 'Qualitative assessment ranks risk using descriptive categories (Low/Medium/High) based on judgment. Semi-quantitative uses scored scales (1-5). Quantitative produces numerical probabilities and monetary values.\n\n定性评估使用描述性类别（低/中/高）基于判断对风险排序。半定量使用评分量表（1-5）。定量产生数值概率和货币值。'
+      explanation: 'Qualitative assessment ranks risk using descriptive categories (Low/Medium/High) based on judgment. Semi-quantitative uses scored scales (1-5). Quantitative produces numerical probabilities and monetary values.\n\n定性评估使用描述性类别（低/中/高）基于判断对风险排序。半定量使用评分量表（1-5）。定量产生数值概率和货币值。',
+      related: [{ n: '9.7', t: '评估方法' }]
     },
     {
       text: 'A 5×5 risk matrix with defined likelihood and severity scales is an example of:',
@@ -954,14 +1011,16 @@ CSPQuiz.init({
         'Deterministic modeling'
       ],
       correct: 1,
-      explanation: 'A scored matrix (1-5 × 1-5) is semi-quantitative: it uses numbers but the scales are defined subjectively. Pure quantitative analysis uses actual probabilities and measured consequences.\n\n评分矩阵（1-5 × 1-5）属于半定量：使用数字但量表为主观定义。纯定量分析使用实际概率和实测后果。'
+      explanation: 'A scored matrix (1-5 × 1-5) is semi-quantitative: it uses numbers but the scales are defined subjectively. Pure quantitative analysis uses actual probabilities and measured consequences.\n\n评分矩阵（1-5 × 1-5）属于半定量：使用数字但量表为主观定义。纯定量分析使用实际概率和实测后果。',
+      related: [{ n: '9.4', t: '风险矩阵' }, { n: '9.7', t: '评估方法' }]
     },
     {
       text: 'A process fails on average twice per year with an average cost of $50,000 per failure. What is the annualized expected loss?',
       group: 6,
       options: ['$50,000', '$100,000', '$25,000', '$150,000'],
       correct: 1,
-      explanation: 'Annualized expected loss = frequency × loss per event = 2 × $50,000 = $100,000 per year. This value is used in cost-benefit analysis to justify controls.\n\n年度化预期损失 = 频率 × 每次损失 = 2 × $50,000 = $100,000/年。该值用于成本效益分析以论证控制支出。'
+      explanation: 'Annualized expected loss = frequency × loss per event = 2 × $50,000 = $100,000 per year. This value is used in cost-benefit analysis to justify controls.\n\n年度化预期损失 = 频率 × 每次损失 = 2 × $50,000 = $100,000/年。该值用于成本效益分析以论证控制支出。',
+      related: [{ n: '9.3', t: 'JHA' }, { n: '9.7', t: '评估方法' }]
     },
     {
       text: 'Which of the following is a trigger for reviewing a risk assessment?',
@@ -973,7 +1032,8 @@ CSPQuiz.init({
         'All of the above'
       ],
       correct: 3,
-      explanation: 'Risk assessments should be reviewed on a scheduled basis AND triggered by events: incidents/near misses, process/equipment changes, new personnel or tasks, and discovered control failures. Risk assessments are living documents.\n\n风险评估应按计划定期审查，并因事件触发：事故/未遂、工艺/设备变更、新人员或任务、以及发现的控制失效。风险评估是动态文件。'
+      explanation: 'Risk assessments should be reviewed on a scheduled basis AND triggered by events: incidents/near misses, process/equipment changes, new personnel or tasks, and discovered control failures. Risk assessments are living documents.\n\n风险评估应按计划定期审查，并因事件触发：事故/未遂、工艺/设备变更、新人员或任务、以及发现的控制失效。风险评估是动态文件。',
+      related: [{ n: '9.9', t: '监控沟通' }]
     },
     {
       text: 'In the 5-step process, the "Evaluate" step involves:',
@@ -985,7 +1045,8 @@ CSPQuiz.init({
         'Calculating insurance premiums'
       ],
       correct: 1,
-      explanation: 'Evaluation compares the analyzed risk (L×S) against pre-established acceptance criteria to decide whether the risk is tolerable, needs more controls, or is unacceptable. This is where ALARP is applied.\n\n评估将分析出的风险（L×S）与预先设定的接受标准比较，以决定风险是否可容忍、需要更多控制还是不可接受。ALARP在此应用。'
+      explanation: 'Evaluation compares the analyzed risk (L×S) against pre-established acceptance criteria to decide whether the risk is tolerable, needs more controls, or is unacceptable. This is where ALARP is applied.\n\n评估将分析出的风险（L×S）与预先设定的接受标准比较，以决定风险是否可容忍、需要更多控制还是不可接受。ALARP在此应用。',
+      related: [{ n: '9.2', t: '五步流程' }]
     },
     {
       text: 'Why is the "Communicate and Consult" step described as wrapping around the entire risk assessment process?',
@@ -997,7 +1058,8 @@ CSPQuiz.init({
         'It replaces the need for monitoring'
       ],
       correct: 1,
-      explanation: 'Communication and consultation is continuous — workers participate in hazard identification, understand controls, receive hazard notifications, and provide feedback. It is not a single end-of-process activity.\n\n沟通与咨询是持续的——工人参与危害识别、理解控制措施、接收危害通知并提供反馈。它不是过程中的一次结束性活动。'
+      explanation: 'Communication and consultation is continuous — workers participate in hazard identification, understand controls, receive hazard notifications, and provide feedback. It is not a single end-of-process activity.\n\n沟通与咨询是持续的——工人参与危害识别、理解控制措施、接收危害通知并提供反馈。它不是过程中的一次结束性活动。',
+      related: [{ n: '9.9', t: '监控沟通' }]
     },
     {
       text: 'Which of the following BEST describes the "living document" nature of a risk assessment?',
@@ -1009,7 +1071,8 @@ CSPQuiz.init({
         'It only changes after a serious incident'
       ],
       correct: 1,
-      explanation: 'A risk assessment is never "finished." Controls degrade, hazards emerge, and processes change — so the assessment must be reviewed periodically and re-triggered by changes. Waiting only for serious incidents is insufficient.\n\n风险评估永远不会"完成"。控制会退化、危害会出现、工艺会变化——因此必须定期审查并由变更触发。只等严重事故发生才更新是不够的。'
+      explanation: 'A risk assessment is never "finished." Controls degrade, hazards emerge, and processes change — so the assessment must be reviewed periodically and re-triggered by changes. Waiting only for serious incidents is insufficient.\n\n风险评估永远不会"完成"。控制会退化、危害会出现、工艺会变化——因此必须定期审查并由变更触发。只等严重事故发生才更新是不够的。',
+      related: [{ n: '9.9', t: '监控沟通' }]
     },
     {
       text: 'A hazard exists in a sealed storage vault that no worker ever enters and which is never opened. The risk to workers is:',
@@ -1021,7 +1084,8 @@ CSPQuiz.init({
         'Unmeasurable'
       ],
       correct: 1,
-      explanation: 'Risk requires hazard AND exposure. With no exposure pathway, the risk is zero — the hazard remains but no harm can reach a worker. This illustrates why hazards and risk are distinct concepts.\n\n风险需要危害和暴露同时存在。没有暴露途径时风险为零——危害仍然存在但没有伤害能到达工人。这说明了危害与风险概念的区别。'
+      explanation: 'Risk requires hazard AND exposure. With no exposure pathway, the risk is zero — the hazard remains but no harm can reach a worker. This illustrates why hazards and risk are distinct concepts.\n\n风险需要危害和暴露同时存在。没有暴露途径时风险为零——危害仍然存在但没有伤害能到达工人。这说明了危害与风险概念的区别。',
+      related: [{ n: '9.1', t: '危害vs风险' }]
     },
     {
       text: 'The "5" in a likelihood scale labeled "Almost Certain" typically means the event occurs:',
@@ -1033,7 +1097,8 @@ CSPQuiz.init({
         'Once in a lifetime'
       ],
       correct: 1,
-      explanation: 'A common 1-5 likelihood scale: 1 = less than once in 10 years, 2 = once in 5-10 years, 3 = once in 1-5 years, 4 = once per year, 5 = multiple times per year. Exact definitions vary by organization but must be defined before matrix use.\n\n常见1-5可能性量表：1 = 10年内少于一次，2 = 5-10年一次，3 = 1-5年一次，4 = 每年一次，5 = 每年多次。确切定义因组织而异，但使用矩阵前必须定义。'
+      explanation: 'A common 1-5 likelihood scale: 1 = less than once in 10 years, 2 = once in 5-10 years, 3 = once in 1-5 years, 4 = once per year, 5 = multiple times per year. Exact definitions vary by organization but must be defined before matrix use.\n\n常见1-5可能性量表：1 = 10年内少于一次，2 = 5-10年一次，3 = 1-5年一次，4 = 每年一次，5 = 每年多次。确切定义因组织而异，但使用矩阵前必须定义。',
+      related: [{ n: '9.3', t: 'JHA' }, { n: '9.4', t: '风险矩阵' }]
     },
     {
       text: 'A severity rating of 5 (Catastrophic) in a typical 1-5 scale corresponds to:',
@@ -1045,14 +1110,16 @@ CSPQuiz.init({
         'Fatality or multiple fatalities'
       ],
       correct: 3,
-      explanation: 'A common severity scale: 1 = first aid, 2 = medical treatment/restricted work, 3 = lost-time injury, 4 = permanent disability/serious injury, 5 = fatality/catastrophic. Severity scales must also be defined before use.\n\n常见严重性量表：1 = 急救，2 = 医疗处理/限制工作，3 = 损失工时伤害，4 = 永久残疾/重伤，5 = 死亡/灾难性。严重性量表使用前也必须定义。'
+      explanation: 'A common severity scale: 1 = first aid, 2 = medical treatment/restricted work, 3 = lost-time injury, 4 = permanent disability/serious injury, 5 = fatality/catastrophic. Severity scales must also be defined before use.\n\n常见严重性量表：1 = 急救，2 = 医疗处理/限制工作，3 = 损失工时伤害，4 = 永久残疾/重伤，5 = 死亡/灾难性。严重性量表使用前也必须定义。',
+      related: [{ n: '9.3', t: 'JHA' }, { n: '9.4', t: '风险矩阵' }]
     },
     {
       text: 'Which step of the risk assessment process determines whether a risk is "acceptable" or requires action?',
       group: 8,
       options: ['Identification', 'Analysis', 'Evaluation', 'Monitoring'],
       correct: 2,
-      explanation: 'Evaluation compares risk levels against acceptance criteria to judge acceptability. Identification finds hazards, analysis measures them, monitoring tracks changes — but judgment of acceptability happens in evaluation.\n\n评估将风险水平与接受标准比较来判断可接受性。识别找到危害，分析测量它们，监控跟踪变化——但可接受性判断发生在评估步骤。'
+      explanation: 'Evaluation compares risk levels against acceptance criteria to judge acceptability. Identification finds hazards, analysis measures them, monitoring tracks changes — but judgment of acceptability happens in evaluation.\n\n评估将风险水平与接受标准比较来判断可接受性。识别找到危害，分析测量它们，监控跟踪变化——但可接受性判断发生在评估步骤。',
+      related: [{ n: '9.2', t: '五步流程' }]
     },
     {
       text: 'Which of the following best distinguishes the 3×3, 4×4, and 5×5 risk matrices?',
@@ -1064,7 +1131,8 @@ CSPQuiz.init({
         'They are interchangeable with identical results'
       ],
       correct: 1,
-      explanation: 'A 3×3 matrix has three likelihood and three severity levels; a 5×5 has five of each — offering finer resolution. The formula (L×S) is the same; only the number of scale points differs.\n\n3×3矩阵有3个可能性和3个严重性等级；5×5各有5个——分辨率更细。公式（L×S）相同；只是量表点数不同。'
+      explanation: 'A 3×3 matrix has three likelihood and three severity levels; a 5×5 has five of each — offering finer resolution. The formula (L×S) is the same; only the number of scale points differs.\n\n3×3矩阵有3个可能性和3个严重性等级；5×5各有5个——分辨率更细。公式（L×S）相同；只是量表点数不同。',
+      related: [{ n: '9.4', t: '风险矩阵' }]
     },
     {
       text: 'An unguarded saw creates a hazard. Installing a blade guard is an example of which control?',
@@ -1076,7 +1144,8 @@ CSPQuiz.init({
         'Administrative control'
       ],
       correct: 2,
-      explanation: 'A blade guard is an engineering control — it physically isolates the worker from the hazard without relying on behavior. The hazard (the saw blade) still exists, so it is not elimination.\n\n防护罩是工程控制——物理上将工人与危害隔离，不依赖行为。危害（锯片）仍然存在，所以不是消除。'
+      explanation: 'A blade guard is an engineering control — it physically isolates the worker from the hazard without relying on behavior. The hazard (the saw blade) still exists, so it is not elimination.\n\n防护罩是工程控制——物理上将工人与危害隔离，不依赖行为。危害（锯片）仍然存在，所以不是消除。',
+      related: [{ n: '9.8', t: '控制层级' }]
     },
     {
       text: 'Which question is central to the hazard IDENTIFICATION step of risk assessment?',
@@ -1088,7 +1157,8 @@ CSPQuiz.init({
         'When should the next review occur?'
       ],
       correct: 1,
-      explanation: 'Hazard identification asks "What could go wrong?" — finding all potential sources of harm. Costing losses belongs to analysis/quantification; acceptability is evaluation; review timing is monitoring.\n\n危害识别提出"什么可能出问题？"——找出所有潜在伤害来源。损失成本化属于分析/量化；可接受性属于评估；审查时机属于监控。'
+      explanation: 'Hazard identification asks "What could go wrong?" — finding all potential sources of harm. Costing losses belongs to analysis/quantification; acceptability is evaluation; review timing is monitoring.\n\n危害识别提出"什么可能出问题？"——找出所有潜在伤害来源。损失成本化属于分析/量化；可接受性属于评估；审查时机属于监控。',
+      related: [{ n: '9.2', t: '五步流程' }]
     },
     {
       text: 'An organization decides to stop producing a hazardous chemical product line entirely. This is an example of which risk strategy?',
@@ -1100,7 +1170,8 @@ CSPQuiz.init({
         'Risk transfer'
       ],
       correct: 1,
-      explanation: 'Stopping the activity that generates the risk is risk avoidance — the most definitive strategy, equivalent to elimination in the hierarchy of controls. The hazard and its risk are removed entirely.\n\n停止产生风险的活动是风险规避——最彻底的战略，相当于控制层级中的消除。危害及其风险被完全移除。'
+      explanation: 'Stopping the activity that generates the risk is risk avoidance — the most definitive strategy, equivalent to elimination in the hierarchy of controls. The hazard and its risk are removed entirely.\n\n停止产生风险的活动是风险规避——最彻底的战略，相当于控制层级中的消除。危害及其风险被完全移除。',
+      related: [{ n: '9.8', t: '控制层级' }, { n: '9.5', t: 'ALARP与风险接受' }]
     },
     {
       text: 'Why is it important to define likelihood and severity scales BEFORE using a risk matrix?',
@@ -1112,7 +1183,8 @@ CSPQuiz.init({
         'It is not important'
       ],
       correct: 1,
-      explanation: 'Without defined scales, "high likelihood" means different things to different people, making ratings subjective and inconsistent. Defining scales ensures repeatability, comparability, and defensible prioritization.\n\n没有定义的量表，"高可能性"对不同的人含义不同，使评级主观且不一致。定义量表确保可重复性、可比性和可辩护的优先级。'
+      explanation: 'Without defined scales, "high likelihood" means different things to different people, making ratings subjective and inconsistent. Defining scales ensures repeatability, comparability, and defensible prioritization.\n\n没有定义的量表，"高可能性"对不同的人含义不同，使评级主观且不一致。定义量表确保可重复性、可比性和可辩护的优先级。',
+      related: [{ n: '9.4', t: '风险矩阵' }, { n: '9.7', t: '评估方法' }]
     }
   ]
 });

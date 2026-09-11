@@ -10,7 +10,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="apple-touch-icon" href="icon-192.png">
-<link rel="stylesheet" href="quiz-styles.css?v=11">
+<link rel="stylesheet" href="quiz-styles.css?v=12">
 <style>
 body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;line-height:1.7;margin:0;padding:0;background:#f0f2f5;color:#1a1a2e}
 .container{max-width:960px;margin:0 auto;padding:20px}
@@ -116,17 +116,19 @@ p.bi-p .zh-p, li.bi-li .zh-li { display: block; color: #666; font-size: 0.92em; 
 </table>
 </div>
 
-<div class="exam-scenario">
-<div class="es-label">📝 模拟情景题 / Practice Scenario</div>
-      <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
-<div class="es-question">"A facility generates 1,200 kg of non-acute hazardous waste in one calendar month. What is its generator classification?"</div>
-<div><strong>最佳答案 / Best answer:</strong> LQG (Large Quantity Generator) — ≥1,000 kg/month. Status is determined per calendar month, not averaged. 每月超过1,000 kg即为LQG，按月独立判定。</div>
+<div class="exam-scenario"
+     data-options='["Very Small Quantity Generator (VSQG)", "Small Quantity Generator (SQG)", "Large Quantity Generator (LQG)", "Conditionally Exempt Small Quantity Generator (CESQG)"]'
+     data-correct="2">
+  <div class="es-label">📝 模拟情景题 / Practice Scenario</div>
+  <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
+  <div class="es-question">"A facility generates 1,200 kg of non-acute hazardous waste in one calendar month. What is its generator classification?"</div>
+  <div class="scenario-feedback">
+    <div class="scenario-fb-label"></div>
+    <div>Generator status is determined <strong>per calendar month</strong>, not averaged. LQG = ≥1,000 kg/month of non-acute hazardous waste (or &gt;1 kg/month of acutely hazardous waste); SQG = 100–1,000 kg/month; VSQG = ≤100 kg/month. At 1,200 kg the facility is a <strong>LQG</strong>, triggering the strictest accumulation times, storage requirements, and reporting obligations.<br><br>产生者状态<strong>按日历月</strong>判定，不取平均。LQG = 非急性危险废物≥1,000公斤/月（或急性危险废物&gt;1公斤/月）；SQG = 100–1,000公斤/月；VSQG = ≤100公斤/月。1,200公斤属于<strong>LQG</strong>，触发最严格的累积期限、储存要求和报告义务。</div>
+  </div>
 </div></div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>15.3 CERCLA责任</strong>、<strong>15.4 CAA六种标准污染物</strong>、<strong>15.5 EPCRA Tier II报告</strong>、<strong>15.6 石棉PACM</strong> 的内容，详细讲解见对应卡片。Some questions here cover topics explained under the referenced cards.
-  </div>
-  <div id="quiz-group-1"></div>
+    <div id="quiz-group-1"></div>
 
 
 <!-- Universal Waste -->
@@ -172,10 +174,7 @@ p.bi-p .zh-p, li.bi-li .zh-li { display: block; color: #666; font-size: 0.92em; 
 </div>
 </div></div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>15.4 CWA TMDL</strong>、<strong>15.6 废物管理层级</strong>、<strong>15.1 SQG累积时间与产生者分类</strong> 的内容，详细讲解见对应卡片。Some questions here cover topics explained under the referenced cards.
-  </div>
-  <div id="quiz-group-2"></div>
+    <div id="quiz-group-2"></div>
 
 
 <!-- CERCLA -->
@@ -243,17 +242,19 @@ p.bi-p .zh-p, li.bi-li .zh-li { display: block; color: #666; font-size: 0.92em; 
 </table>
 </div>
 
-<div class="exam-scenario">
-<div class="es-label">📝 模拟情景题 / Practice Scenario</div>
-      <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
-<div class="es-question">"A release of 800 lb of a CERCLA hazardous substance (RQ = 1,000 lb) occurs. What is required?"</div>
-<div><strong>最佳答案 / Best answer:</strong> No NRC report required — release is below the RQ. Notification is only required when release equals or EXCEEDS the RQ. 低于RQ无需报告。</div>
+<div class="exam-scenario"
+     data-options='["Immediately notify the National Response Center (NRC)", "No federal notification is required, because the release is below the reportable quantity (RQ)", "Notify only the local fire department within 7 days", "Submit a Tier II report by March 1 of the following year"]'
+     data-correct="1">
+  <div class="es-label">📝 模拟情景题 / Practice Scenario</div>
+  <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
+  <div class="es-question">"A release of 800 lb of a CERCLA hazardous substance (RQ = 1,000 lb) occurs. What is required?"</div>
+  <div class="scenario-feedback">
+    <div class="scenario-fb-label"></div>
+    <div>CERCLA requires notification to the National Response Center only when a release of a hazardous substance <strong>equals or exceeds</strong> its reportable quantity (RQ). At 800 lb against an RQ of 1,000 lb, the release is below the RQ, so <strong>no NRC notification is triggered</strong>. The release must still be evaluated against other obligations (state rules, CWA, or EPCRA thresholds if separately met).<br><br>CERCLA只要求在危险物质释放<strong>达到或超过</strong>报告量（RQ）时通知国家响应中心（NRC）。800磅低于1,000磅RQ，因此<strong>不触发NRC通知</strong>。但仍须评估其他义务（州法规、CWA，或单独满足EPCRA阈值时）。</div>
+  </div>
 </div></div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>15.4 CAA LAER（未达标地区）</strong>、<strong>15.5 TSCA PMN制造前通知</strong> 的内容，详细讲解见对应卡片。Some questions here cover topics explained under the referenced cards.
-  </div>
-  <div id="quiz-group-3"></div>
+    <div id="quiz-group-3"></div>
 
 
 <!-- Clean Air & Water Acts -->
@@ -301,10 +302,7 @@ p.bi-p .zh-p, li.bi-li .zh-li { display: block; color: #666; font-size: 0.92em; 
 </table>
 </div></div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>15.5 EPCRA TRI阈值</strong>、<strong>15.8 废油与UST</strong>、<strong>15.7 ISO 14001环境管理体系</strong>、<strong>15.1 产生者分类</strong> 的内容，详细讲解见对应卡片。Some questions here cover topics explained under the referenced cards.
-  </div>
-  <div id="quiz-group-4"></div>
+    <div id="quiz-group-4"></div>
 
 
 <!-- TSCA and EPCRA -->
@@ -356,10 +354,7 @@ p.bi-p .zh-p, li.bi-li .zh-li { display: block; color: #666; font-size: 0.92em; 
 </table>
 </div></div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>15.6 TCFD与ESG报告框架</strong>、<strong>15.4 CWA第404条疏浚填方许可</strong>、<strong>15.3 AAI与HRS现场评估</strong>、<strong>15.6 石棉PEL</strong> 的内容，详细讲解见对应卡片。Some questions here cover topics explained under the referenced cards.
-  </div>
-  <div id="quiz-group-5"></div>
+    <div id="quiz-group-5"></div>
 
 
 <!-- Sustainability & Asbestos -->
@@ -419,10 +414,7 @@ p.bi-p .zh-p, li.bi-li .zh-li { display: block; color: #666; font-size: 0.92em; 
 <span class="mn-content"><strong>1-2-3</strong> Scope 1 = 直接排放（自有来源），Scope 2 = 间接（购买能源），Scope 3 = 价值链其他（供应链）。 / Greenhouse gas emission scopes.</span>
 </div></div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>15.1 转运清单(manifest)与VSQG累积</strong>、<strong>15.6 GRI/ESG框架</strong> 的内容，详细讲解见对应卡片。Some questions here cover topics explained under the referenced cards.
-  </div>
-  <div id="quiz-group-6"></div>
+    <div id="quiz-group-6"></div>
 
 
 <!-- EMS -->
@@ -471,10 +463,7 @@ p.bi-p .zh-p, li.bi-li .zh-li { display: block; color: #666; font-size: 0.92em; 
 </div>
 </div></div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>15.4 CWA NPDES/SWPPP</strong>、<strong>15.6 Scope 2温室气体排放</strong>、<strong>15.5 TSCA Lautenberg修正案</strong> 的内容，详细讲解见对应卡片。Some questions here cover topics explained under the referenced cards.
-  </div>
-  <div id="quiz-group-7"></div>
+    <div id="quiz-group-7"></div>
 
 
 <!-- USTs & Used Oil -->
@@ -516,25 +505,27 @@ p.bi-p .zh-p, li.bi-li .zh-li { display: block; color: #666; font-size: 0.92em; 
 </table>
 </div>
 
-<div class="exam-scenario">
-<div class="es-label">📝 模拟情景题 / Practice Scenario</div>
-      <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
-<div class="es-question">"A facility stores used engine oil. Is it regulated as a RCRA hazardous waste?"</div>
-<div><strong>最佳答案 / Best answer:</strong> No — used oil is managed under its own rule (40 CFR 279). It becomes hazardous waste only if it exhibits a characteristic or is mixed with hazardous waste. 废油按40 CFR 279管理，非自动危险废物。</div>
+<div class="exam-scenario"
+     data-options='["Yes — all used oil is a listed hazardous waste (F-list)", "No — used oil is managed under its own rule (40 CFR 279) unless it exhibits a characteristic or is mixed with hazardous waste", "Yes — used oil is always D001 ignitable", "No — used oil is exempt from all federal regulation"]'
+     data-correct="1">
+  <div class="es-label">📝 模拟情景题 / Practice Scenario</div>
+  <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
+  <div class="es-question">"A facility stores used engine oil. Is it regulated as a RCRA hazardous waste?"</div>
+  <div class="scenario-feedback">
+    <div class="scenario-fb-label"></div>
+    <div>Used oil is managed under the <strong>used oil rule at 40 CFR 279</strong>, not automatically as a RCRA hazardous waste. It becomes hazardous waste only if it exhibits a characteristic (ignitability, corrosivity, reactivity, toxicity) or is mixed with hazardous waste. Used oil that is recycled — burned for energy recovery or re-refined — stays within the used-oil management stream.<br><br>废油按<strong>40 CFR 279废油规则</strong>管理，并非自动属于RCRA危险废物。只有当其表现出特征性（可燃、腐蚀、反应、毒性）或与危险废物混合时才成为危险废物。被回收利用（能源回收焚烧或再精炼）的废油仍属废油管理流程。</div>
+  </div>
 </div></div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>15.5 EPCRA LEPC</strong>、<strong>15.3 CERCLA责任（安排者/运输者）</strong>、<strong>15.6 循环经济</strong> 的内容，详细讲解见对应卡片。Some questions here cover topics explained under the referenced cards.
-  </div>
-  <div id="quiz-group-8"></div>
+    <div id="quiz-group-8"></div>
 
 
 <!-- Quiz Container -->
 <div id="quiz-root"></div>
 </div>
 
-<script src="quiz-engine.js?v=11"></script>
-<script src="vocab-engine.js?v=11"></script>
+<script src="quiz-engine.js?v=12"></script>
+<script src="vocab-engine.js?v=12"></script>
 <script>
 CSPQuiz.init({
   containerId: 'quiz-root',
@@ -552,7 +543,8 @@ CSPQuiz.init({
         'Conditionally Exempt Small Quantity Generator (CESQG)'
       ],
       correct: 2,
-      explanation: 'LQGs generate ≥1,000 kg/month of hazardous waste. 1,200 kg exceeds this threshold. SQG is 100–1,000 kg/month, and VSQG is ≤100 kg/month. Note that CESQG was renamed to VSQG in the 2016 Generator Improvements Rule.\n\nLQG每月产生≥1,000 kg危险废物。1,200 kg超过此阈值。SQG为100–1,000 kg/月，VSQG为≤100 kg/月。注意CESQG在2016年产生者改进规则中更名为VSQG。'
+      explanation: 'LQGs generate ≥1,000 kg/month of hazardous waste. 1,200 kg exceeds this threshold. SQG is 100–1,000 kg/month, and VSQG is ≤100 kg/month. Note that CESQG was renamed to VSQG in the 2016 Generator Improvements Rule.\n\nLQG每月产生≥1,000 kg危险废物。1,200 kg超过此阈值。SQG为100–1,000 kg/月，VSQG为≤100 kg/月。注意CESQG在2016年产生者改进规则中更名为VSQG。',
+      related: [{ n: '15.1', t: 'RCRA废物产生者分类' }]
     },
     {
       text: 'CERCLA liability is characterized by all of the following EXCEPT:',
@@ -564,7 +556,8 @@ CSPQuiz.init({
         'Proportional liability only'
       ],
       correct: 3,
-      explanation: 'CERCLA liability is strict (no need to prove fault), joint and several (any one PRP can be liable for the total cleanup), and retroactive (applies to pre-1980 actions). There is no "proportional liability only" rule — any PRP can be held 100% responsible regardless of their actual share of contamination.\n\nCERCLA责任是严格的（无需证明过错）、连带的（任一PRP可对全部清理负责）和追溯的（适用于1980年前的行为）。不存在"仅按比例担责"的规则——任何PRP都可能被追究100%责任，无论其实际污染份额如何。'
+      explanation: 'CERCLA liability is strict (no need to prove fault), joint and several (any one PRP can be liable for the total cleanup), and retroactive (applies to pre-1980 actions). There is no "proportional liability only" rule — any PRP can be held 100% responsible regardless of their actual share of contamination.\n\nCERCLA责任是严格的（无需证明过错）、连带的（任一PRP可对全部清理负责）和追溯的（适用于1980年前的行为）。不存在"仅按比例担责"的规则——任何PRP都可能被追究100%责任，无论其实际污染份额如何。',
+      related: [{ n: '15.1', t: 'RCRA废物产生者分类' }]
     },
     {
       text: 'Which of the following is NOT one of the six criteria air pollutants regulated under the Clean Air Act?',
@@ -576,7 +569,8 @@ CSPQuiz.init({
         'Lead (Pb)'
       ],
       correct: 2,
-      explanation: 'The six criteria pollutants are: CO, Pb, NO₂, O₃, PM (PM₁₀ and PM₂.₅), and SO₂. Methane (CH₄) is a greenhouse gas but is not one of the six criteria pollutants — although GHGs are regulated under the CAA following Massachusetts v. EPA (2007).\n\n六种标准污染物为：CO、Pb、NO₂、O₃、PM（PM₁₀和PM₂.₅）和SO₂。甲烷（CH₄）是温室气体，但不是六种标准污染物之一——尽管在马萨诸塞州诉EPA案（2007年）之后，温室气体也受CAA监管。'
+      explanation: 'The six criteria pollutants are: CO, Pb, NO₂, O₃, PM (PM₁₀ and PM₂.₅), and SO₂. Methane (CH₄) is a greenhouse gas but is not one of the six criteria pollutants — although GHGs are regulated under the CAA following Massachusetts v. EPA (2007).\n\n六种标准污染物为：CO、Pb、NO₂、O₃、PM（PM₁₀和PM₂.₅）和SO₂。甲烷（CH₄）是温室气体，但不是六种标准污染物之一——尽管在马萨诸塞州诉EPA案（2007年）之后，温室气体也受CAA监管。',
+      related: [{ n: '15.1', t: 'RCRA废物产生者分类' }]
     },
     {
       text: 'Under EPCRA, which report covers the annual inventory of hazardous chemicals stored at a facility?',
@@ -588,7 +582,8 @@ CSPQuiz.init({
         'NPDES DMR'
       ],
       correct: 1,
-      explanation: 'Tier II reports under EPCRA Sections 311/312 cover hazardous chemical inventory (what is stored on site — quantities, locations, hazards). TRI Form R (Section 313) covers releases of toxic chemicals to the environment. The Biennial Report is RCRA (LQGs), and NPDES DMR (Discharge Monitoring Report) is CWA.\n\nEPCRA第311/312条的二级报告涵盖危险化学品库存（现场储存了什么——数量、位置、危害）。TRI R表格（第313条）涵盖有毒化学品向环境的释放。双年度报告是RCRA的（LQG），NPDES DMR（排放监测报告）是CWA的。'
+      explanation: 'Tier II reports under EPCRA Sections 311/312 cover hazardous chemical inventory (what is stored on site — quantities, locations, hazards). TRI Form R (Section 313) covers releases of toxic chemicals to the environment. The Biennial Report is RCRA (LQGs), and NPDES DMR (Discharge Monitoring Report) is CWA.\n\nEPCRA第311/312条的二级报告涵盖危险化学品库存（现场储存了什么——数量、位置、危害）。TRI R表格（第313条）涵盖有毒化学品向环境的释放。双年度报告是RCRA的（LQG），NPDES DMR（排放监测报告）是CWA的。',
+      related: [{ n: '15.1', t: 'RCRA废物产生者分类' }]
     },
     {
       text: 'A demolition contractor is removing thermal system insulation from a building constructed in 1975. The insulation has not been tested for asbestos. Under OSHA, this material must be treated as:',
@@ -600,7 +595,8 @@ CSPQuiz.init({
         'Universal waste'
       ],
       correct: 2,
-      explanation: 'PACM includes TSI and surfacing materials in buildings constructed no later than 1980. Since the building was built in 1975 and the insulation is TSI, it must be treated as PACM (presumed to contain asbestos) unless proven otherwise by testing. The OSHA PEL for asbestos is 0.1 f/cc (8-hr TWA).\n\nPACM包括不晚于1980年建造建筑物中的TSI和表面材料。由于建筑建于1975年，且保温材料为TSI，必须按PACM处理（假定含有石棉），除非经测试证明并非如此。OSHA石棉PEL为0.1 f/cc（8小时TWA）。'
+      explanation: 'PACM includes TSI and surfacing materials in buildings constructed no later than 1980. Since the building was built in 1975 and the insulation is TSI, it must be treated as PACM (presumed to contain asbestos) unless proven otherwise by testing. The OSHA PEL for asbestos is 0.1 f/cc (8-hr TWA).\n\nPACM包括不晚于1980年建造建筑物中的TSI和表面材料。由于建筑建于1975年，且保温材料为TSI，必须按PACM处理（假定含有石棉），除非经测试证明并非如此。OSHA石棉PEL为0.1 f/cc（8小时TWA）。',
+      related: [{ n: '15.1', t: 'RCRA废物产生者分类' }]
     },
     {
       text: 'Which of the following is classified as a Universal Waste?',
@@ -612,7 +608,8 @@ CSPQuiz.init({
         'Empty pesticide containers that have been triple-rinsed'
       ],
       correct: 2,
-      explanation: 'Fluorescent lamps (including CFLs, HID, mercury vapor, and neon) are classified as Universal Waste because they contain mercury. Used oil is managed under the used oil standards (40 CFR 279), asbestos is regulated under NESHAP/OSHA, and triple-rinsed pesticide containers are generally not hazardous waste.\n\n荧光灯（包括CFL、HID、汞蒸气和霓虹灯）因含汞被归类为通用废物。废油根据废油标准管理（40 CFR 279），石棉受NESHAP/OSHA监管，三重冲洗过的农药容器通常不属于危险废物。'
+      explanation: 'Fluorescent lamps (including CFLs, HID, mercury vapor, and neon) are classified as Universal Waste because they contain mercury. Used oil is managed under the used oil standards (40 CFR 279), asbestos is regulated under NESHAP/OSHA, and triple-rinsed pesticide containers are generally not hazardous waste.\n\n荧光灯（包括CFL、HID、汞蒸气和霓虹灯）因含汞被归类为通用废物。废油根据废油标准管理（40 CFR 279），石棉受NESHAP/OSHA监管，三重冲洗过的农药容器通常不属于危险废物。',
+      related: [{ n: '15.2', t: '通用废物' }]
     },
     {
       text: 'Under the Clean Water Act, what is a TMDL?',
@@ -624,7 +621,8 @@ CSPQuiz.init({
         'The minimum treatment level required for municipal wastewater'
       ],
       correct: 1,
-      explanation: 'A Total Maximum Daily Load (TMDL) is the maximum amount of a pollutant that a water body can assimilate while still meeting water quality standards. It includes a margin of safety and allocates loads among point and non-point sources. TMDLs are required under CWA Section 303(d) for impaired waters.\n\n总最大日负荷（TMDL）是水体在仍满足水质标准的情况下能同化的污染物最大量。它包含安全余量，并在点源和非点源之间分配负荷。TMDL根据CWA第303(d)条对受损水体要求制定。'
+      explanation: 'A Total Maximum Daily Load (TMDL) is the maximum amount of a pollutant that a water body can assimilate while still meeting water quality standards. It includes a margin of safety and allocates loads among point and non-point sources. TMDLs are required under CWA Section 303(d) for impaired waters.\n\n总最大日负荷（TMDL）是水体在仍满足水质标准的情况下能同化的污染物最大量。它包含安全余量，并在点源和非点源之间分配负荷。TMDL根据CWA第303(d)条对受损水体要求制定。',
+      related: [{ n: '15.2', t: '通用废物' }]
     },
     {
       text: 'In the waste management hierarchy, which of the following is the MOST preferred approach?',
@@ -636,7 +634,8 @@ CSPQuiz.init({
         'Treatment and disposal'
       ],
       correct: 2,
-      explanation: 'The waste management hierarchy from most to least preferred is: source reduction (prevention) → reuse → recycling/composting → energy recovery → treatment and disposal. Source reduction (reducing waste at its source) is the most preferred because it eliminates waste before it is even created.\n\n废物管理层级从最优到最次为：源头减量（预防）→再利用→再循环/堆肥→能量回收→处理和处置。源头减量（在源头减少废物）是最优的，因为它在废物产生之前就消除了废物。'
+      explanation: 'The waste management hierarchy from most to least preferred is: source reduction (prevention) → reuse → recycling/composting → energy recovery → treatment and disposal. Source reduction (reducing waste at its source) is the most preferred because it eliminates waste before it is even created.\n\n废物管理层级从最优到最次为：源头减量（预防）→再利用→再循环/堆肥→能量回收→处理和处置。源头减量（在源头减少废物）是最优的，因为它在废物产生之前就消除了废物。',
+      related: [{ n: '15.2', t: '通用废物' }]
     },
     {
       text: 'A facility generated 800 kg of hazardous waste in January and 1,050 kg in February. Based on a calendar-month basis, the facility\'s generator status is:',
@@ -648,14 +647,16 @@ CSPQuiz.init({
         'VSQG in both months'
       ],
       correct: 1,
-      explanation: 'Generator status is determined on a calendar-month basis, not an average. January (800 kg) falls in the 100–1,000 kg SQG range; February (1,050 kg) exceeds 1,000 kg and is LQG. Status is evaluated each month independently.\n\n产生者状态按日历月确定，而非平均值。1月（800 kg）落在100–1,000 kg的SQG范围；2月（1,050 kg）超过1,000 kg，为LQG。状态每月独立评估。'
+      explanation: 'Generator status is determined on a calendar-month basis, not an average. January (800 kg) falls in the 100–1,000 kg SQG range; February (1,050 kg) exceeds 1,000 kg and is LQG. Status is evaluated each month independently.\n\n产生者状态按日历月确定，而非平均值。1月（800 kg）落在100–1,000 kg的SQG范围；2月（1,050 kg）超过1,000 kg，为LQG。状态每月独立评估。',
+      related: [{ n: '15.2', t: '通用废物' }]
     },
     {
       text: 'Under RCRA, how long may a Small Quantity Generator (SQG) accumulate hazardous waste on site without a permit?',
       group: 2,
       options: ['90 days', '180 days', '270 days', 'No time limit'],
       correct: 1,
-      explanation: 'SQGs may accumulate waste for up to 180 days (or 270 days if the nearest TSDF is more than 200 miles away). LQGs are limited to 90 days. VSQGs may accumulate up to 1,000 kg with no specific time limit.\n\nSQG最多可累积废物180天（如果最近的TSDF超过200英里则为270天）。LQG限制为90天。VSQG可累积最多1,000 kg且无具体时间限制。'
+      explanation: 'SQGs may accumulate waste for up to 180 days (or 270 days if the nearest TSDF is more than 200 miles away). LQGs are limited to 90 days. VSQGs may accumulate up to 1,000 kg with no specific time limit.\n\nSQG最多可累积废物180天（如果最近的TSDF超过200英里则为270天）。LQG限制为90天。VSQG可累积最多1,000 kg且无具体时间限制。',
+      related: [{ n: '15.2', t: '通用废物' }]
     },
     {
       text: 'Which class of PRP under CERCLA is a party who ARRANGED for the disposal or treatment of hazardous substances?',
@@ -667,7 +668,8 @@ CSPQuiz.init({
         'Bona fide prospective purchaser'
       ],
       correct: 1,
-      explanation: 'The four classes of PRPs are: (1) current owners/operators, (2) owners/operators at the time of disposal, (3) arrangers who arranged for disposal or treatment, and (4) transporters who selected the disposal site. A "bona fide prospective purchaser" is a DEFENSE under CERCLA, not a liability class.\n\nCERCLA的四类PRP是：(1) 现任所有者/经营者，(2) 处置时的所有者/经营者，(3) 安排处置或处理的人，以及(4) 选择处置地点的运输者。"善意潜在购买者"是CERCLA下的抗辩理由，而非责任类别。'
+      explanation: 'The four classes of PRPs are: (1) current owners/operators, (2) owners/operators at the time of disposal, (3) arrangers who arranged for disposal or treatment, and (4) transporters who selected the disposal site. A "bona fide prospective purchaser" is a DEFENSE under CERCLA, not a liability class.\n\nCERCLA的四类PRP是：(1) 现任所有者/经营者，(2) 处置时的所有者/经营者，(3) 安排处置或处理的人，以及(4) 选择处置地点的运输者。"善意潜在购买者"是CERCLA下的抗辩理由，而非责任类别。',
+      related: [{ n: '15.3', t: 'CERCLA超级基金法' }]
     },
     {
       text: 'A release of 800 pounds of a CERCLA hazardous substance with an RQ of 1,000 pounds occurs at a facility. What is required?',
@@ -679,7 +681,8 @@ CSPQuiz.init({
         'A Phase II ESA must be performed'
       ],
       correct: 0,
-      explanation: 'CERCLA requires immediate notification to the National Response Center (NRC) when a release equals or EXCEEDS its reportable quantity (RQ). Since 800 lb is below the 1,000 lb RQ, no report is required for this release (assuming no other obligation applies, such as an EPCRA EHS or state threshold).\n\n当泄漏达到或超过其报告量（RQ）时，CERCLA要求立即向国家响应中心（NRC）报告。由于800磅低于1,000磅的RQ，该泄漏无需报告（假设没有其他义务适用，如EPCRA EHS或州阈值）。'
+      explanation: 'CERCLA requires immediate notification to the National Response Center (NRC) when a release equals or EXCEEDS its reportable quantity (RQ). Since 800 lb is below the 1,000 lb RQ, no report is required for this release (assuming no other obligation applies, such as an EPCRA EHS or state threshold).\n\n当泄漏达到或超过其报告量（RQ）时，CERCLA要求立即向国家响应中心（NRC）报告。由于800磅低于1,000磅的RQ，该泄漏无需报告（假设没有其他义务适用，如EPCRA EHS或州阈值）。',
+      related: [{ n: '15.3', t: 'CERCLA超级基金法' }]
     },
     {
       text: 'Under the Clean Air Act, which standard applies to new major sources in NON-ATTAINMENT areas?',
@@ -691,7 +694,8 @@ CSPQuiz.init({
         'New Source Performance Standards (NSPS) only'
       ],
       correct: 1,
-      explanation: 'Non-attainment areas require LAER (Lowest Achievable Emission Rate) plus emission offsets. Attainment (PSD) areas require BACT. MACT applies to HAPs under Section 112. LAER is stricter than BACT because non-attainment areas are already above air quality standards.\n\n未达标地区要求LAER（最低可实现排放率）加上排放抵消。达标（PSD）地区要求BACT。MACT适用于第112条下的HAPs。LAER比BACT更严格，因为未达标地区已经超过空气质量标准。'
+      explanation: 'Non-attainment areas require LAER (Lowest Achievable Emission Rate) plus emission offsets. Attainment (PSD) areas require BACT. MACT applies to HAPs under Section 112. LAER is stricter than BACT because non-attainment areas are already above air quality standards.\n\n未达标地区要求LAER（最低可实现排放率）加上排放抵消。达标（PSD）地区要求BACT。MACT适用于第112条下的HAPs。LAER比BACT更严格，因为未达标地区已经超过空气质量标准。',
+      related: [{ n: '15.3', t: 'CERCLA超级基金法' }]
     },
     {
       text: 'The "modified Angoff" method is associated with which aspect of environmental or safety testing?',
@@ -703,14 +707,16 @@ CSPQuiz.init({
         'Risk ranking of NPL sites'
       ],
       correct: 1,
-      explanation: 'The modified Angoff method is a standard-setting technique used by subject-matter experts to determine the passing score (cut score) of certification exams — including the CSP exam. It is not an environmental analysis tool. The Hazard Ranking System (HRS) scores NPL sites.\n\n修正的Angoff方法是专家组用于确定认证考试及格分数线（cut score）的标准设定技术——包括CSP考试。它不是环境分析工具。危害分级系统（HRS）用于NPL场点评分。'
+      explanation: 'The modified Angoff method is a standard-setting technique used by subject-matter experts to determine the passing score (cut score) of certification exams — including the CSP exam. It is not an environmental analysis tool. The Hazard Ranking System (HRS) scores NPL sites.\n\n修正的Angoff方法是专家组用于确定认证考试及格分数线（cut score）的标准设定技术——包括CSP考试。它不是环境分析工具。危害分级系统（HRS）用于NPL场点评分。',
+      related: [{ n: '15.3', t: 'CERCLA超级基金法' }]
     },
     {
       text: 'Under TSCA, a manufacturer must submit a Premanufacture Notice (PMN) at least how many days before producing a new chemical?',
       group: 3,
       options: ['30 days', '60 days', '90 days', '180 days'],
       correct: 2,
-      explanation: 'TSCA Section 5 requires a PMN to be submitted at least 90 days before the manufacture of a new chemical not listed on the TSCA inventory. EPA then conducts a review and can impose restrictions.\n\nTSCA第5条要求在制造未列入TSCA清单的新化学品前至少90天提交PMN。EPA随后进行审查并可施加限制。'
+      explanation: 'TSCA Section 5 requires a PMN to be submitted at least 90 days before the manufacture of a new chemical not listed on the TSCA inventory. EPA then conducts a review and can impose restrictions.\n\nTSCA第5条要求在制造未列入TSCA清单的新化学品前至少90天提交PMN。EPA随后进行审查并可施加限制。',
+      related: [{ n: '15.3', t: 'CERCLA超级基金法' }]
     },
     {
       text: 'A manufacturing facility (SIC 20-39) with 50 employees uses 12,000 pounds per year of a listed TRI chemical in a process that is NOT manufacturing or processing. Under EPCRA Section 313, must it file a Form R?',
@@ -722,7 +728,8 @@ CSPQuiz.init({
         'Yes, but only if the chemical is on the CERCLA list'
       ],
       correct: 1,
-      explanation: 'TRI thresholds: manufacturing/processing = 25,000 lb/yr; otherwise use = 10,000 lb/yr. At 12,000 lb/yr of "otherwise use," the facility exceeds the 10,000 lb threshold and must file a Form R. The facility has ≥10 employees and is in a covered SIC code.\n\nTRI阈值：制造/加工 = 25,000磅/年；其他用途 = 10,000磅/年。12,000磅/年的"其他用途"超过10,000磅阈值，因此必须提交R表格。该设施有≥10名员工且属于覆盖SIC代码。'
+      explanation: 'TRI thresholds: manufacturing/processing = 25,000 lb/yr; otherwise use = 10,000 lb/yr. At 12,000 lb/yr of "otherwise use," the facility exceeds the 10,000 lb threshold and must file a Form R. The facility has ≥10 employees and is in a covered SIC code.\n\nTRI阈值：制造/加工 = 25,000磅/年；其他用途 = 10,000磅/年。12,000磅/年的"其他用途"超过10,000磅阈值，因此必须提交R表格。该设施有≥10名员工且属于覆盖SIC代码。',
+      related: [{ n: '15.4', t: '清洁空气法与清洁水法' }]
     },
     {
       text: 'Which of the following is TRUE about "used oil" under EPA regulations (40 CFR 279)?',
@@ -734,14 +741,16 @@ CSPQuiz.init({
         'Used oil can be discharged to storm drains if treated'
       ],
       correct: 1,
-      explanation: 'Used oil is managed under its own standards (40 CFR 279) with separate requirements for generators, transporters, and processors. It becomes hazardous waste only if it exhibits a characteristic or is mixed with hazardous waste. Used oil is never discharged to storm drains.\n\n废油按自身的标准（40 CFR 279）管理，对产生者、运输者和加工者有不同的要求。只有在表现出特征性或与危险废物混合时才成为危险废物。废油绝不能排入雨水下水道。'
+      explanation: 'Used oil is managed under its own standards (40 CFR 279) with separate requirements for generators, transporters, and processors. It becomes hazardous waste only if it exhibits a characteristic or is mixed with hazardous waste. Used oil is never discharged to storm drains.\n\n废油按自身的标准（40 CFR 279）管理，对产生者、运输者和加工者有不同的要求。只有在表现出特征性或与危险废物混合时才成为危险废物。废油绝不能排入雨水下水道。',
+      related: [{ n: '15.4', t: '清洁空气法与清洁水法' }]
     },
     {
       text: 'An underground storage tank is subject to RCRA Subtitle I requirements if what percentage of its volume (including piping) is underground?',
       group: 4,
       options: ['25%', '10%', '50%', '75%'],
       correct: 1,
-      explanation: 'A UST is defined as a tank and connected piping with at least 10% of its volume underground. Exemptions include farm/residential tanks ≤1,100 gal for non-commercial motor fuel and heating oil tanks used on the premises.\n\nUST定义为至少有10%体积（包括管道）位于地下的储罐。豁免包括农场/住宅≤1,100加仑的非商业机动燃料罐和现场供暖用油罐。'
+      explanation: 'A UST is defined as a tank and connected piping with at least 10% of its volume underground. Exemptions include farm/residential tanks ≤1,100 gal for non-commercial motor fuel and heating oil tanks used on the premises.\n\nUST定义为至少有10%体积（包括管道）位于地下的储罐。豁免包括农场/住宅≤1,100加仑的非商业机动燃料罐和现场供暖用油罐。',
+      related: [{ n: '15.4', t: '清洁空气法与清洁水法' }]
     },
     {
       text: 'Which of the following correctly matches the environmental management standard to its focus?',
@@ -753,7 +762,8 @@ CSPQuiz.init({
         'ANSI Z10 — environmental management systems'
       ],
       correct: 1,
-      explanation: 'ISO 14001 is the environmental management system standard (PDCA-based). ISO 45001 is the OHS management system standard. ANSI/ASSP Z10 is the US OHS management system standard. Safety professionals should understand all three because they share the PDCA structure.\n\nISO 14001是环境管理体系标准（基于PDCA）。ISO 45001是职业健康安全管理体系标准。ANSI/ASSP Z10是美国职业健康安全管理体系标准。安全专业人员应理解全部三个标准，因为它们共享PDCA结构。'
+      explanation: 'ISO 14001 is the environmental management system standard (PDCA-based). ISO 45001 is the OHS management system standard. ANSI/ASSP Z10 is the US OHS management system standard. Safety professionals should understand all three because they share the PDCA structure.\n\nISO 14001是环境管理体系标准（基于PDCA）。ISO 45001是职业健康安全管理体系标准。ANSI/ASSP Z10是美国职业健康安全管理体系标准。安全专业人员应理解全部三个标准，因为它们共享PDCA结构。',
+      related: [{ n: '15.4', t: '清洁空气法与清洁水法' }]
     },
     {
       text: 'A company generates exactly 1 kg of a P-listed acute hazardous waste in a month along with 500 kg of non-acute hazardous waste. What is its generator status?',
@@ -765,7 +775,8 @@ CSPQuiz.init({
         'Conditionally exempt'
       ],
       correct: 2,
-      explanation: 'Generating more than 1 kg/month of acute hazardous (P-listed) waste automatically classifies the facility as an LQG, regardless of the total non-acute volume. The 1 kg acute threshold is an independent trigger for LQG status.\n\n每月产生超过1 kg急性危险（P名录）废物会自动将设施归类为LQG，无论非急性总量如何。1 kg急性阈值是LQG状态的独立触发条件。'
+      explanation: 'Generating more than 1 kg/month of acute hazardous (P-listed) waste automatically classifies the facility as an LQG, regardless of the total non-acute volume. The 1 kg acute threshold is an independent trigger for LQG status.\n\n每月产生超过1 kg急性危险（P名录）废物会自动将设施归类为LQG，无论非急性总量如何。1 kg急性阈值是LQG状态的独立触发条件。',
+      related: [{ n: '15.4', t: '清洁空气法与清洁水法' }]
     },
     {
       text: 'The TCFD (Task Force on Climate-related Financial Disclosures) framework focuses primarily on:',
@@ -777,7 +788,8 @@ CSPQuiz.init({
         'Chemical labeling standards'
       ],
       correct: 1,
-      explanation: 'TCFD, created by the Financial Stability Board, provides a framework for companies to disclose climate-related financial risks and opportunities across governance, strategy, risk management, and metrics/targets. It was integrated into the new ISSB standards in 2023.\n\nTCFD由金融稳定理事会创建，提供了一套框架，让公司披露与气候相关的财务风险和机遇，涵盖治理、战略、风险管理和指标/目标。它于2023年被整合到新的ISSB标准中。'
+      explanation: 'TCFD, created by the Financial Stability Board, provides a framework for companies to disclose climate-related financial risks and opportunities across governance, strategy, risk management, and metrics/targets. It was integrated into the new ISSB standards in 2023.\n\nTCFD由金融稳定理事会创建，提供了一套框架，让公司披露与气候相关的财务风险和机遇，涵盖治理、战略、风险管理和指标/目标。它于2023年被整合到新的ISSB标准中。',
+      related: [{ n: '15.5', t: 'TSCA和EPCRA' }]
     },
     {
       text: 'Under CWA Section 404, permits for dredge and fill activities are issued by:',
@@ -789,7 +801,8 @@ CSPQuiz.init({
         'State departments of transportation'
       ],
       correct: 1,
-      explanation: 'The US Army Corps of Engineers issues Section 404 permits for discharges of dredged or fill material into waters of the U.S., with EPA providing veto authority and environmental guidance. Wetlands protection is a key part of Section 404.\n\n美国陆军工程兵团（USACE）对向美国水域排放疏浚物或填方物发放第404条许可证，EPA拥有否决权和环境指导。湿地保护是第404条的关键部分。'
+      explanation: 'The US Army Corps of Engineers issues Section 404 permits for discharges of dredged or fill material into waters of the U.S., with EPA providing veto authority and environmental guidance. Wetlands protection is a key part of Section 404.\n\n美国陆军工程兵团（USACE）对向美国水域排放疏浚物或填方物发放第404条许可证，EPA拥有否决权和环境指导。湿地保护是第404条的关键部分。',
+      related: [{ n: '15.5', t: 'TSCA和EPCRA' }]
     },
     {
       text: 'A prospective buyer completes a Phase I ESA but skips the historical aerial photograph review. Under CERCLA, this could:',
@@ -801,7 +814,8 @@ CSPQuiz.init({
         'Only affect the transaction price'
       ],
       correct: 1,
-      explanation: 'AAI (per ASTM E1527) requires specific components including records review, site reconnaissance, interviews, and evaluation of historical use. Skipping a required component means the AAI standard may not be satisfied, jeopardizing the CERCLA innocent landowner / bona fide prospective purchaser defense.\n\nAAI（按ASTM E1527）要求特定组成部分，包括记录审查、现场踏勘、访谈和历史使用评估。跳过必要组成部分意味着可能无法满足AAI标准，从而危及CERCLA无辜土地所有者/善意潜在购买者抗辩。'
+      explanation: 'AAI (per ASTM E1527) requires specific components including records review, site reconnaissance, interviews, and evaluation of historical use. Skipping a required component means the AAI standard may not be satisfied, jeopardizing the CERCLA innocent landowner / bona fide prospective purchaser defense.\n\nAAI（按ASTM E1527）要求特定组成部分，包括记录审查、现场踏勘、访谈和历史使用评估。跳过必要组成部分意味着可能无法满足AAI标准，从而危及CERCLA无辜土地所有者/善意潜在购买者抗辩。',
+      related: [{ n: '15.5', t: 'TSCA和EPCRA' }]
     },
     {
       text: 'Which statement about the Hazard Ranking System (HRS) is correct?',
@@ -813,7 +827,8 @@ CSPQuiz.init({
         'It classifies wastes under the TCLP test'
       ],
       correct: 1,
-      explanation: 'The Hazard Ranking System (HRS) is EPA\'s scoring tool used to evaluate the relative threat posed by uncontrolled hazardous waste sites. Sites scoring high enough are proposed for the National Priorities List (NPL) for Superfund cleanup.\n\n危害分级系统（HRS）是EPA的评分工具，用于评估失控危险废物场所的相对威胁。评分足够高的场所会被提议列入国家优先清理名单（NPL），进行超级基金清理。'
+      explanation: 'The Hazard Ranking System (HRS) is EPA\'s scoring tool used to evaluate the relative threat posed by uncontrolled hazardous waste sites. Sites scoring high enough are proposed for the National Priorities List (NPL) for Superfund cleanup.\n\n危害分级系统（HRS）是EPA的评分工具，用于评估失控危险废物场所的相对威胁。评分足够高的场所会被提议列入国家优先清理名单（NPL），进行超级基金清理。',
+      related: [{ n: '15.5', t: 'TSCA和EPCRA' }]
     },
     {
       text: 'Under OSHA, the PEL for asbestos in general industry (1910.1001) is:',
@@ -825,14 +840,16 @@ CSPQuiz.init({
         '0.01 fibers/cc as an 8-hour TWA'
       ],
       correct: 0,
-      explanation: 'The OSHA asbestos PEL is 0.1 f/cc (fibers per cubic centimeter) as an 8-hour TWA, with an excursion limit of 1.0 f/cc over a 30-minute period. The same PEL applies under 1926.1101 for construction.\n\nOSHA石棉PEL为8小时TWA 0.1 f/cc（纤维/立方厘米），短时暴露限值为30分钟内1.0 f/cc。1926.1101建筑标准也适用相同的PEL。'
+      explanation: 'The OSHA asbestos PEL is 0.1 f/cc (fibers per cubic centimeter) as an 8-hour TWA, with an excursion limit of 1.0 f/cc over a 30-minute period. The same PEL applies under 1926.1101 for construction.\n\nOSHA石棉PEL为8小时TWA 0.1 f/cc（纤维/立方厘米），短时暴露限值为30分钟内1.0 f/cc。1926.1101建筑标准也适用相同的PEL。',
+      related: [{ n: '15.5', t: 'TSCA和EPCRA' }]
     },
     {
       text: 'Which GHS signal word would appear on a label for a substance that is corrosive to skin?',
       group: 6,
       options: ['Danger', 'Warning', 'Caution', 'Both Danger and Warning'],
       correct: 0,
-      explanation: 'Skin corrosion (irreversible damage) is classified in GHS Category 1, a severe hazard that requires the signal word "Danger." Only one signal word appears on a label — the most severe applicable. Reversible skin irritation would use "Warning."\n\n皮肤腐蚀（不可逆损伤）归为GHS类别1，是严重危害，需要信号词"Danger"（危险）。标签上只出现一个信号词——最严重的适用者。可逆的皮肤刺激使用"Warning"（警告）。'
+      explanation: 'Skin corrosion (irreversible damage) is classified in GHS Category 1, a severe hazard that requires the signal word "Danger." Only one signal word appears on a label — the most severe applicable. Reversible skin irritation would use "Warning."\n\n皮肤腐蚀（不可逆损伤）归为GHS类别1，是严重危害，需要信号词"Danger"（危险）。标签上只出现一个信号词——最严重的适用者。可逆的皮肤刺激使用"Warning"（警告）。',
+      related: [{ n: '15.6', t: '可持续发展、ESG与石棉' }]
     },
     {
       text: 'The RCRA manifest system is required for which generator classes?',
@@ -844,7 +861,8 @@ CSPQuiz.init({
         'No generator classes — manifests are optional'
       ],
       correct: 1,
-      explanation: 'Both SQGs and LQGs must use the hazardous waste manifest system (the tracking document) when shipping waste off-site. VSQGs do not use manifests. The manifest tracks the waste from cradle to grave and each handler signs it.\n\nSQG和LQG在将废物运离现场时都必须使用危险废物转运清单（跟踪文件）。VSQG不使用清单。清单从摇篮到坟墓跟踪废物，每个处理者都要签字。'
+      explanation: 'Both SQGs and LQGs must use the hazardous waste manifest system (the tracking document) when shipping waste off-site. VSQGs do not use manifests. The manifest tracks the waste from cradle to grave and each handler signs it.\n\nSQG和LQG在将废物运离现场时都必须使用危险废物转运清单（跟踪文件）。VSQG不使用清单。清单从摇篮到坟墓跟踪废物，每个处理者都要签字。',
+      related: [{ n: '15.6', t: '可持续发展、ESG与石棉' }]
     },
     {
       text: 'A company\'s sustainability report uses the GRI framework to disclose its environmental and social metrics. This is an example of which ESG component being reported?',
@@ -856,14 +874,16 @@ CSPQuiz.init({
         'Environmental permits'
       ],
       correct: 0,
-      explanation: 'GRI (Global Reporting Initiative) is the most widely used framework for sustainability reporting and covers environmental metrics (emissions, waste, energy) and social metrics (labor practices, health and safety, human rights). GRI is the broadest of the major frameworks.\n\nGRI（全球报告倡议）是最广泛使用的可持续发展报告框架，涵盖环境指标（排放、废物、能源）和社会指标（劳动实践、健康与安全、人权）。GRI是主要框架中最全面的。'
+      explanation: 'GRI (Global Reporting Initiative) is the most widely used framework for sustainability reporting and covers environmental metrics (emissions, waste, energy) and social metrics (labor practices, health and safety, human rights). GRI is the broadest of the major frameworks.\n\nGRI（全球报告倡议）是最广泛使用的可持续发展报告框架，涵盖环境指标（排放、废物、能源）和社会指标（劳动实践、健康与安全、人权）。GRI是主要框架中最全面的。',
+      related: [{ n: '15.6', t: '可持续发展、ESG与石棉' }]
     },
     {
       text: 'What is the maximum on-site accumulation quantity for a VSQG at any one time?',
       group: 6,
       options: ['100 kg', '1,000 kg', '6,000 kg', 'Unlimited'],
       correct: 1,
-      explanation: 'A VSQG may accumulate up to 1,000 kg of hazardous waste on site at any time without a permit or time limit. If it exceeds 1,000 kg accumulated (or its monthly generation changes), it must reclassify as an SQG.\n\nVSQG可随时在现场累积最多1,000 kg危险废物，无需许可证或时间限制。如果累积量超过1,000 kg（或月产生量变化），则必须重新归类为SQG。'
+      explanation: 'A VSQG may accumulate up to 1,000 kg of hazardous waste on site at any time without a permit or time limit. If it exceeds 1,000 kg accumulated (or its monthly generation changes), it must reclassify as an SQG.\n\nVSQG可随时在现场累积最多1,000 kg危险废物，无需许可证或时间限制。如果累积量超过1,000 kg（或月产生量变化），则必须重新归类为SQG。',
+      related: [{ n: '15.6', t: '可持续发展、ESG与石棉' }]
     },
     {
       text: 'Under the Clean Water Act, an NPDES permit is required for which type of discharge?',
@@ -875,7 +895,8 @@ CSPQuiz.init({
         'Underground injection wells'
       ],
       correct: 1,
-      explanation: 'NPDES permits are required for point source discharges of pollutants into waters of the U.S. (including industrial stormwater). Non-point sources (agricultural runoff, diffuse drainage) are NOT NPDES-permitted — they are addressed through BMPs and TMDLs. Underground injection is regulated under the Safe Drinking Water Act\'s UIC program.\n\n向美国水域排放污染物的点源需要NPDES许可证（包括工业雨水）。非点源（农业径流、分散排水）不需要NPDES许可——它们通过BMP和TMDL解决。地下注入由《安全饮用水法》的UIC计划监管。'
+      explanation: 'NPDES permits are required for point source discharges of pollutants into waters of the U.S. (including industrial stormwater). Non-point sources (agricultural runoff, diffuse drainage) are NOT NPDES-permitted — they are addressed through BMPs and TMDLs. Underground injection is regulated under the Safe Drinking Water Act\'s UIC program.\n\n向美国水域排放污染物的点源需要NPDES许可证（包括工业雨水）。非点源（农业径流、分散排水）不需要NPDES许可——它们通过BMP和TMDL解决。地下注入由《安全饮用水法》的UIC计划监管。',
+      related: [{ n: '15.7', t: '环境管理体系EMS与环境影响评估' }]
     },
     {
       text: 'Which of the following best describes "Scope 2" greenhouse gas emissions?',
@@ -887,7 +908,8 @@ CSPQuiz.init({
         'Emissions from company-owned vehicles only'
       ],
       correct: 1,
-      explanation: 'Scope 1 = direct emissions from owned/controlled sources (furnaces, vehicles). Scope 2 = indirect emissions from purchased energy (electricity, steam, heating/cooling). Scope 3 = all other value-chain indirect emissions (upstream supply chain, downstream product use, business travel).\n\n范围1 = 自有/受控来源的直接排放（熔炉、车辆）。范围2 = 购买能源产生的间接排放（电力、蒸汽、供暖/制冷）。范围3 = 价值链中的其他间接排放（上游供应链、下游产品使用、商务差旅）。'
+      explanation: 'Scope 1 = direct emissions from owned/controlled sources (furnaces, vehicles). Scope 2 = indirect emissions from purchased energy (electricity, steam, heating/cooling). Scope 3 = all other value-chain indirect emissions (upstream supply chain, downstream product use, business travel).\n\n范围1 = 自有/受控来源的直接排放（熔炉、车辆）。范围2 = 购买能源产生的间接排放（电力、蒸汽、供暖/制冷）。范围3 = 价值链中的其他间接排放（上游供应链、下游产品使用、商务差旅）。',
+      related: [{ n: '15.7', t: '环境管理体系EMS与环境影响评估' }]
     },
     {
       text: 'The "Lautenberg Amendments" to TSCA (2016) primarily changed the law by:',
@@ -899,7 +921,8 @@ CSPQuiz.init({
         'Exempting chemicals in the TSCA inventory from all regulation'
       ],
       correct: 1,
-      explanation: 'The 2016 Lautenberg Amendments (Frank R. Lautenberg Chemical Safety Act) required EPA to conduct risk evaluations of existing chemicals with a health-based standard (no longer cost-benefit balancing), established mandatory deadlines, and set higher fees. It significantly strengthened EPA\'s authority over existing chemicals.\n\n2016年劳滕伯格修正案要求EPA以基于健康的标准（不再进行成本效益权衡）对现有化学品进行风险评估，设定了强制期限，并提高了费用。它显著加强了EPA对现有化学品的权力。'
+      explanation: 'The 2016 Lautenberg Amendments (Frank R. Lautenberg Chemical Safety Act) required EPA to conduct risk evaluations of existing chemicals with a health-based standard (no longer cost-benefit balancing), established mandatory deadlines, and set higher fees. It significantly strengthened EPA\'s authority over existing chemicals.\n\n2016年劳滕伯格修正案要求EPA以基于健康的标准（不再进行成本效益权衡）对现有化学品进行风险评估，设定了强制期限，并提高了费用。它显著加强了EPA对现有化学品的权力。',
+      related: [{ n: '15.7', t: '环境管理体系EMS与环境影响评估' }]
     },
     {
       text: 'A facility must prepare a Stormwater Pollution Prevention Plan (SWPPP) if it discharges stormwater associated with industrial activity and:',
@@ -911,7 +934,8 @@ CSPQuiz.init({
         'It has more than 100 employees'
       ],
       correct: 1,
-      explanation: 'Construction activities disturbing ≥1 acre require NPDES stormwater coverage and an SWPPP. Existing industrial facilities with stormwater exposure under industrial SIC codes also require permits and SWPPPs. The SWPPP describes BMPs to prevent pollutants from entering stormwater.\n\n扰动面积≥1英亩的建筑活动需要NPDES雨水覆盖和SWPPP。属于工业SIC代码且存在雨水暴露的现有工业设施也需要许可证和SWPPP。SWPPP描述了防止污染物进入雨水的BMP措施。'
+      explanation: 'Construction activities disturbing ≥1 acre require NPDES stormwater coverage and an SWPPP. Existing industrial facilities with stormwater exposure under industrial SIC codes also require permits and SWPPPs. The SWPPP describes BMPs to prevent pollutants from entering stormwater.\n\n扰动面积≥1英亩的建筑活动需要NPDES雨水覆盖和SWPPP。属于工业SIC代码且存在雨水暴露的现有工业设施也需要许可证和SWPPP。SWPPP描述了防止污染物进入雨水的BMP措施。',
+      related: [{ n: '15.7', t: '环境管理体系EMS与环境影响评估' }]
     },
     {
       text: 'Under EPCRA, the facility must coordinate with the Local Emergency Planning Committee (LEPC) primarily to:',
@@ -923,7 +947,8 @@ CSPQuiz.init({
         'File TRI forms electronically'
       ],
       correct: 1,
-      explanation: 'LEPCs develop local emergency response plans and must have access to facility chemical inventories (Tier II data) to plan for potential chemical releases. EPCRA was created specifically to empower communities with chemical hazard information.\n\nLEPC制定地方应急响应计划，必须能获取设施化学品库存（Tier II数据）以规划可能的化学品泄漏。EPCRA正是为了赋予社区化学品危害知情权而创建。'
+      explanation: 'LEPCs develop local emergency response plans and must have access to facility chemical inventories (Tier II data) to plan for potential chemical releases. EPCRA was created specifically to empower communities with chemical hazard information.\n\nLEPC制定地方应急响应计划，必须能获取设施化学品库存（Tier II数据）以规划可能的化学品泄漏。EPCRA正是为了赋予社区化学品危害知情权而创建。',
+      related: [{ n: '15.8', t: '地下储罐UST与废油管理' }]
     },
     {
       text: 'Which statement correctly distinguishes RCRA from CERCLA?',
@@ -935,7 +960,8 @@ CSPQuiz.init({
         'Both are enforced exclusively by states'
       ],
       correct: 0,
-      explanation: 'RCRA is a forward-looking statute governing the current generation, transport, treatment, storage, and disposal of hazardous waste ("cradle to grave"). CERCLA is a backward-looking statute addressing cleanup of past disposal sites and holds PRPs strictly, jointly, and retroactively liable.\n\nRCRA是前瞻性法规，管辖当前危险废物的产生、运输、处理、储存和处置（"从摇篮到坟墓"）。CERCLA是回溯性法规，处理过去处置场地的清理，并让PRP承担严格、连带和追溯责任。'
+      explanation: 'RCRA is a forward-looking statute governing the current generation, transport, treatment, storage, and disposal of hazardous waste ("cradle to grave"). CERCLA is a backward-looking statute addressing cleanup of past disposal sites and holds PRPs strictly, jointly, and retroactively liable.\n\nRCRA是前瞻性法规，管辖当前危险废物的产生、运输、处理、储存和处置（"从摇篮到坟墓"）。CERCLA是回溯性法规，处理过去处置场地的清理，并让PRP承担严格、连带和追溯责任。',
+      related: [{ n: '15.8', t: '地下储罐UST与废油管理' }]
     },
     {
       text: 'The "circular economy" concept differs from the traditional linear economy primarily because it:',
@@ -947,7 +973,8 @@ CSPQuiz.init({
         'Focuses only on energy recovery'
       ],
       correct: 1,
-      explanation: 'The circular economy designs out waste, keeps products and materials in use (repair, remanufacture, recycle), and regenerates natural systems. The linear economy follows take → make → dispose. The 3R framework (reduce, reuse, recycle) is a circular economy tool.\n\n循环经济设计消除废物，保持产品和材料持续使用（修复、再制造、再循环），并再生自然系统。线性经济遵循开采→制造→处置。3R框架（减量、再利用、再循环）是循环经济工具。'
+      explanation: 'The circular economy designs out waste, keeps products and materials in use (repair, remanufacture, recycle), and regenerates natural systems. The linear economy follows take → make → dispose. The 3R framework (reduce, reuse, recycle) is a circular economy tool.\n\n循环经济设计消除废物，保持产品和材料持续使用（修复、再制造、再循环），并再生自然系统。线性经济遵循开采→制造→处置。3R框架（减量、再利用、再循环）是循环经济工具。',
+      related: [{ n: '15.8', t: '地下储罐UST与废油管理' }]
     },
     {
       text: 'A hazardous waste transporter delivers waste to a facility NOT permitted under RCRA to treat, store, or dispose of it. Under CERCLA, the transporter may be liable as a PRP because:',
@@ -959,7 +986,8 @@ CSPQuiz.init({
         'The transporter owns the waste'
       ],
       correct: 1,
-      explanation: 'A transporter is liable under CERCLA only if it selected the disposal site. Transporters who deliver to a permitted facility chosen by the generator are generally not liable. If the transporter chose the unpermitted facility, it can be treated as a PRP that arranged for disposal.\n\n运输者只有在选择处置地点时才承担CERCLA责任。将废物送到产生者选择的合格设施的一般不承担责任。如果运输者选择了不合格设施，则可能被作为安排处置的PRP追究责任。'
+      explanation: 'A transporter is liable under CERCLA only if it selected the disposal site. Transporters who deliver to a permitted facility chosen by the generator are generally not liable. If the transporter chose the unpermitted facility, it can be treated as a PRP that arranged for disposal.\n\n运输者只有在选择处置地点时才承担CERCLA责任。将废物送到产生者选择的合格设施的一般不承担责任。如果运输者选择了不合格设施，则可能被作为安排处置的PRP追究责任。',
+      related: [{ n: '15.8', t: '地下储罐UST与废油管理' }]
     }
   ]
 });

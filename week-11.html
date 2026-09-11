@@ -10,7 +10,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="apple-touch-icon" href="icon-192.png">
-<link rel="stylesheet" href="quiz-styles.css?v=11">
+<link rel="stylesheet" href="quiz-styles.css?v=12">
 <style>
   .breadcrumb { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 16px; }
   .breadcrumb a { color: var(--accent); text-decoration: none; }
@@ -91,16 +91,29 @@
       </div>
     </div>
 
-    <div class="exam-scenario">
+    <div class="exam-scenario"
+         data-options='["A deviation — "No Flow" — to be examined for causes, consequences, and existing safeguards", "A confirmed pump failure that requires immediate shutdown of the line", "A design change proposal for the feed system", "A risk ranking on the plant risk matrix"]'
+         data-correct="0">
       <div class="es-label">📝 模拟情景题 / Practice Scenario</div>
       <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
-      <div class="es-question">"During a HAZOP, the team applies 'No' to the parameter 'Flow' on a feed line. What have they identified?"</div>
-      <div><strong>最佳答案 / Best answer:</strong> A deviation — "No Flow" (zero flow) — to be analyzed for causes (e.g., pump failure, blocked line, closed valve), consequences, and safeguards. 解析：HAZOP识别的是引导词+参数的偏差组合，再追溯原因与后果，评估现有防护是否充分。</div>
+      <div class="es-question">"During a HAZOP, the team applies \'No\' to the parameter \'Flow\' on a feed line. What have they identified?"</div>
+      <div class="scenario-feedback">
+        <div class="scenario-fb-label"></div>
+        <div>HAZOP generates deviations by combining a guideword (No, More, Less, As Well As, Part Of, Reverse, Other Than) with a process parameter (Flow, Pressure, Temperature, and so on). "No" + "Flow" = "No Flow." For each deviation the team examines possible causes, consequences, and existing safeguards, then recommends actions where safeguards are inadequate. HAZOP identifies and evaluates deviations; it does not itself confirm failures, propose designs, or rank risk.<br><br>HAZOP通过将引导词（No、More、Less、As Well As、Part Of、Reverse、Other Than）与工艺参数（流量、压力、温度等）组合生成偏差。"No"+"Flow"即"无流量"。对每个偏差，团队审查可能原因、后果和现有防护，并在防护不足时提出建议措施。HAZOP识别并评估偏差；它本身不确认故障、不提出设计方案，也不做风险排序。</div>
+      </div>
     </div>
   </div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>11.2 HAZOP引导词与参数</strong>（More/As Well As、Less/Part Of、Reverse、Other Than 的定性定量区别）的内容，详细讲解见 11.2 卡片。The guideword questions here are explained under Card 11.2.
+  <div class="exam-scenario"
+       data-options='["A deviation — "No Flow" — to be examined for causes, consequences, and existing safeguards", "A confirmed equipment failure requiring immediate shutdown", "A design change proposal for the feed system", "A hazard ranking on the risk matrix"]'
+       data-correct="0">
+    <div class="es-label">📝 模拟情景题 / Practice Scenario</div>
+    <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
+    <div class="es-question">"During a HAZOP, the team applies the guideword "No" to the parameter "Flow" on a feed line. What have they identified?"</div>
+    <div class="scenario-feedback">
+      <div class="scenario-fb-label"></div>
+      <div>HAZOP generates deviations by combining a guideword (No, More, Less, As Well As, Part Of, Reverse, Other Than) with a process parameter (Flow, Pressure, Temperature, and so on). "No" + "Flow" = "No Flow." For each deviation the team examines possible causes, consequences, and existing safeguards, then recommends actions where safeguards are inadequate. HAZOP identifies and evaluates deviations; it does not itself confirm failures, propose designs, or rank risk.<br><br>HAZOP通过将引导词（No、More、Less、As Well As、Part Of、Reverse、Other Than）与工艺参数（流量、压力、温度等）组合生成偏差。"No"+"Flow"即"无流量"。对每个偏差，团队审查可能原因、后果和现有防护，并在防护不足时提出建议措施。HAZOP识别并评估偏差；它本身不确认故障、不提出设计方案，也不做风险排序。</div>
+    </div>
   </div>
 
   <div id="quiz-group-1"></div>
@@ -189,9 +202,8 @@
     </div>
   </div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>11.3 HAZOP团队、工作表与时机</strong>（团队负责人与记录员职责、PHA每5年再验证）的内容，详细讲解见 11.3 卡片。Team-role and PHA revalidation questions here are explained under Card 11.3.
-  </div>
+
+
 
   <div id="quiz-group-2"></div>
 
@@ -251,9 +263,8 @@
     </div>
   </div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组例题涉及 <strong>11.4 蝴蝶结分析(Bow-Tie)</strong>（预防性/减缓性屏障、顶事件、屏障有效性标准）的内容，详细讲解见 11.4 卡片。The bow-tie barrier questions here are explained under Card 11.4.
-  </div>
+
+
 
   <div id="quiz-group-3"></div>
 
@@ -359,9 +370,8 @@
     </div>
   </div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>11.6 风险财务五大策略</strong>（保留/分担/转移）与 <strong>11.8 保险概念</strong>（专属保险公司=保留）的内容，详细讲解见对应卡片。Questions here cover retention/sharing/transfer (Card 11.6) and the captive insurer = retention point (Card 11.8).
-  </div>
+
+
 
   <div id="quiz-group-4"></div>
 
@@ -414,9 +424,8 @@
     </div>
   </div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>11.6 风险财务五大策略</strong>（规避/保留/转移）与 <strong>11.7 保险类型</strong>（一般责任险、工伤保险）的内容，详细讲解见对应卡片。Risk-financing strategy and insurance-type questions here are explained under Cards 11.6 and 11.7.
-  </div>
+
+
 
   <div id="quiz-group-5"></div>
 
@@ -488,8 +497,16 @@
     </div>
   </div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>11.5 SWIFT、What-If与检查表</strong>（SWIFT定义）、<strong>11.7 保险类型</strong>（工伤保险无过错制度）与 <strong>11.8 保险概念</strong>（免赔额/保费/经验费率）的内容，详细讲解见对应卡片。Questions here cover SWIFT (11.5), workers' compensation (11.7), and deductible/premium concepts (11.8).
+  <div class="exam-scenario"
+       data-options='["SWIFT (Structured What-If Technique) — a qualitative brainstorming method for broad-scope review", "HAZOP, because it systematically applies guidewords to process parameters", "LOPA, because it quantifies the number of independent protection layers required", "FMEA, because it ranks component failure modes by RPN"]'
+       data-correct="0">
+    <div class="es-label">📝 模拟情景题 / Practice Scenario</div>
+    <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
+    <div class="es-question">"A company wants a fast, broadly scoped hazard review of a proposed modification at an early design stage, using a multidisciplinary team. Which technique is MOST appropriate?"</div>
+    <div class="scenario-feedback">
+      <div class="scenario-fb-label"></div>
+      <div>SWIFT is a qualitative, team-based brainstorming technique that asks "What if...?" about a system or change. It is faster and broader in scope than HAZOP but less systematic, which makes it well suited to early-stage design reviews or modifications where a full HAZOP would be disproportionately resource-intensive. HAZOP is more systematic and is chosen for complex continuous processes; FMEA ranks component failure modes by RPN; LOPA is a semi-quantitative layer-of-protection method.<br><br>SWIFT是定性、团队式的头脑风暴技术，围绕系统或变更提出"What if…?"。它比HAZOP更快、范围更广但系统性较弱，适合早期设计评审或变更——此时全面HAZOP的投入不成比例。HAZOP更系统，适用于复杂连续工艺；FMEA按RPN对部件失效模式排序；LOPA是半定量的独立保护层方法。</div>
+    </div>
   </div>
 
   <div id="quiz-group-6"></div>
@@ -558,9 +575,8 @@
     </div>
   </div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>11.3 HAZOP团队</strong>（记录员职责）、<strong>11.5 SWIFT与检查表</strong>（检查表局限、SWIFT适用场景）与 <strong>11.9 危害识别技术选择</strong> 的内容，详细讲解见对应卡片。Questions here cover the scribe role (11.3), checklist limitations (11.5), and technique selection (11.9).
-  </div>
+
+
 
   <div id="quiz-group-7"></div>
 
@@ -620,9 +636,8 @@
     </div>
   </div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>11.3 HAZOP工作表列</strong>（Safeguards列）、<strong>11.4 蝴蝶结分析</strong>（屏障有效性四标准）与 <strong>11.7 保险类型</strong>（职业责任险E&O）的内容，详细讲解见对应卡片。Questions here cover HAZOP worksheet columns (11.3), barrier criteria (11.4), and E&O insurance (11.7).
-  </div>
+
+
 
   <div id="quiz-group-8"></div>
 
@@ -670,9 +685,8 @@
     </div>
   </div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>11.6 风险财务五大策略</strong>（损失预防 vs. 损失减少、规避）与 <strong>11.7 保险类型</strong>（业务中断险）的内容，详细讲解见对应卡片。Questions here cover loss prevention vs. reduction and avoidance (Card 11.6) and business-interruption insurance (Card 11.7).
-  </div>
+
+
 
   <div id="quiz-group-9"></div>
 
@@ -682,8 +696,8 @@
 
 </div>
 
-<script src="quiz-engine.js?v=11"></script>
-<script src="vocab-engine.js?v=11"></script>
+<script src="quiz-engine.js?v=12"></script>
+<script src="vocab-engine.js?v=12"></script>
 <script>
 CSPQuiz.init({
   containerId: 'quiz-root',
@@ -701,7 +715,8 @@ CSPQuiz.init({
         'The opposite of the design intent'
       ],
       correct: 2,
-      explanation: '"As Well As" indicates a qualitative increase — something extra is present in addition to what was intended (e.g., a contaminant in the flow, an impurity in the product). "More" indicates a quantitative increase.\n\n"As Well As"（以及）表示定性增加——除预期之外还有额外物质存在（如流体中的污染物、产品中的杂质）。"More"（更多）表示定量增加。'
+      explanation: '"As Well As" indicates a qualitative increase — something extra is present in addition to what was intended (e.g., a contaminant in the flow, an impurity in the product). "More" indicates a quantitative increase.\n\n"As Well As"（以及）表示定性增加——除预期之外还有额外物质存在（如流体中的污染物、产品中的杂质）。"More"（更多）表示定量增加。',
+      related: [{ n: '11.2', t: '引导词' }]
     },
     {
       text: 'The HAZOP guideword "Part Of" indicates:',
@@ -713,7 +728,8 @@ CSPQuiz.init({
         'A complete substitution of material'
       ],
       correct: 1,
-      explanation: '"Part Of" is a qualitative decrease — a component or constituent is missing from the intended mixture or process (e.g., incomplete reaction mixture). "Less" is the quantitative decrease; "Other Than" is complete substitution.\n\n"部分"是定性减少——预期混合物或工艺中缺少一个组分（如反应混合物不完整）。"更少"是定量减少；"其他"是完全替代。'
+      explanation: '"Part Of" is a qualitative decrease — a component or constituent is missing from the intended mixture or process (e.g., incomplete reaction mixture). "Less" is the quantitative decrease; "Other Than" is complete substitution.\n\n"部分"是定性减少——预期混合物或工艺中缺少一个组分（如反应混合物不完整）。"更少"是定量减少；"其他"是完全替代。',
+      related: [{ n: '11.2', t: '引导词' }]
     },
     {
       text: 'Which HAZOP guideword pair correctly distinguishes quantitative from qualitative increase?',
@@ -725,7 +741,8 @@ CSPQuiz.init({
         '"Part Of" (quantitative) vs. "No" (qualitative)'
       ],
       correct: 1,
-      explanation: '"More" is a quantitative increase (higher flow, pressure, temperature). "As Well As" is a qualitative increase — an additional substance present beyond what is intended. This is a classic distinction on the exam.\n\n"更多"是定量增加（更高流量、压力、温度）。"以及"是定性增加——除预期之外存在额外物质。这是考试中的经典辨析点。'
+      explanation: '"More" is a quantitative increase (higher flow, pressure, temperature). "As Well As" is a qualitative increase — an additional substance present beyond what is intended. This is a classic distinction on the exam.\n\n"更多"是定量增加（更高流量、压力、温度）。"以及"是定性增加——除预期之外存在额外物质。这是考试中的经典辨析点。',
+      related: [{ n: '11.2', t: '引导词' }]
     },
     {
       text: 'In HAZOP, what is a "node"?',
@@ -737,7 +754,8 @@ CSPQuiz.init({
         'The final report'
       ],
       correct: 1,
-      explanation: 'A node is a defined section of the process — a piece of equipment, a line segment, or a unit operation — that the team examines. Guidewords are applied to parameters within each node to generate deviations.\n\n节点是工艺中定义的一个区段——一件设备、一段管线或一个单元操作——供团队检查。引导词应用于节点内的参数以产生偏差。'
+      explanation: 'A node is a defined section of the process — a piece of equipment, a line segment, or a unit operation — that the team examines. Guidewords are applied to parameters within each node to generate deviations.\n\n节点是工艺中定义的一个区段——一件设备、一段管线或一个单元操作——供团队检查。引导词应用于节点内的参数以产生偏差。',
+      related: [{ n: '11.3', t: '团队工作表' }]
     },
     {
       text: 'The deviation "Reverse Flow" is created by combining which parameter and guideword?',
@@ -749,14 +767,16 @@ CSPQuiz.init({
         'Parameter = Pressure, Guideword = Reverse'
       ],
       correct: 0,
-      explanation: 'Deviation = Parameter + Guideword. "Reverse Flow" = Flow (parameter) + Reverse (guideword). Common causes: check valve failure, back-siphoning. The parameter names the property; the guideword names how it deviates.\n\n偏差 = 参数 + 引导词。"反向流动" = 流量（参数）+ 反向（引导词）。常见原因：止回阀失效、倒吸。参数命名属性；引导词命名偏差方式。'
+      explanation: 'Deviation = Parameter + Guideword. "Reverse Flow" = Flow (parameter) + Reverse (guideword). Common causes: check valve failure, back-siphoning. The parameter names the property; the guideword names how it deviates.\n\n偏差 = 参数 + 引导词。"反向流动" = 流量（参数）+ 反向（引导词）。常见原因：止回阀失效、倒吸。参数命名属性；引导词命名偏差方式。',
+      related: [{ n: '11.2', t: '引导词' }]
     },
     {
       text: 'Which of the following is NOT one of the standard HAZOP guidewords?',
       group: 2,
       options: ['Reverse', 'Part Of', 'Frequently', 'Other Than'],
       correct: 2,
-      explanation: 'The standard HAZOP guidewords are: No/None, More, Less, As Well As, Part Of, Reverse, and Other Than. "Frequently" is not a standard guideword — frequency is evaluated through likelihood assessments, not guideword deviation analysis.\n\n标准的HAZOP引导词是：无、更多、更少、以及、部分、反向和其他。"频繁"不是标准的引导词——频率通过可能性评估而非引导词偏差分析来评估。'
+      explanation: 'The standard HAZOP guidewords are: No/None, More, Less, As Well As, Part Of, Reverse, and Other Than. "Frequently" is not a standard guideword — frequency is evaluated through likelihood assessments, not guideword deviation analysis.\n\n标准的HAZOP引导词是：无、更多、更少、以及、部分、反向和其他。"频繁"不是标准的引导词——频率通过可能性评估而非引导词偏差分析来评估。',
+      related: [{ n: '11.2', t: '引导词' }]
     },
     {
       text: 'A HAZOP study is led by a team leader whose main role is to:',
@@ -768,14 +788,16 @@ CSPQuiz.init({
         'Operate the plant during the study'
       ],
       correct: 1,
-      explanation: 'The HAZOP leader facilitates the study, keeps the team on method, and ensures guidewords are applied systematically. The leader need NOT be the most senior technical person — the team provides technical expertise.\n\nHAZOP负责人主持研究、让团队遵循方法、确保系统应用引导词。负责人不一定是最高级的技术人员——团队提供技术专长。'
+      explanation: 'The HAZOP leader facilitates the study, keeps the team on method, and ensures guidewords are applied systematically. The leader need NOT be the most senior technical person — the team provides technical expertise.\n\nHAZOP负责人主持研究、让团队遵循方法、确保系统应用引导词。负责人不一定是最高级的技术人员——团队提供技术专长。',
+      related: [{ n: '11.3', t: '团队工作表' }]
     },
     {
       text: 'Under OSHA PSM (29 CFR 1910.119), a process hazard analysis must be updated and revalidated at least every:',
       group: 2,
       options: ['1 year', '3 years', '5 years', '10 years'],
       correct: 2,
-      explanation: 'PSM requires revalidation of the process hazard analysis at least every 5 years, and also after a major incident or significant process change. HAZOP is a common PHA technique used to meet this requirement.\n\nPSM要求至少每5年再验证工艺危害分析，并在重大事故或重大工艺变更后同样需要。HAZOP是满足此要求的常用PHA技术。'
+      explanation: 'PSM requires revalidation of the process hazard analysis at least every 5 years, and also after a major incident or significant process change. HAZOP is a common PHA technique used to meet this requirement.\n\nPSM要求至少每5年再验证工艺危害分析，并在重大事故或重大工艺变更后同样需要。HAZOP是满足此要求的常用PHA技术。',
+      related: [{ n: '11.3', t: '团队工作表' }]
     },
     {
       text: 'In a Bow-Tie analysis, barriers on the LEFT side of the top event are called:',
@@ -787,7 +809,8 @@ CSPQuiz.init({
         'Consequence barriers'
       ],
       correct: 2,
-      explanation: 'Preventive barriers are on the left side (between threats and the top event) — they prevent the threat from causing the top event. Mitigative/recovery barriers are on the right side — they reduce consequence severity.\n\n预防性屏障在左侧（威胁与顶事件之间）——防止威胁导致顶事件。减缓/恢复性屏障在右侧——减轻后果严重性。'
+      explanation: 'Preventive barriers are on the left side (between threats and the top event) — they prevent the threat from causing the top event. Mitigative/recovery barriers are on the right side — they reduce consequence severity.\n\n预防性屏障在左侧（威胁与顶事件之间）——防止威胁导致顶事件。减缓/恢复性屏障在右侧——减轻后果严重性。',
+      related: [{ n: '11.4', t: 'Bow-Tie' }]
     },
     {
       text: 'In a Bow-Tie diagram, the "top event" represents:',
@@ -799,7 +822,8 @@ CSPQuiz.init({
         'The final consequence'
       ],
       correct: 2,
-      explanation: 'The top event is the central "knot" — the loss-of-control moment (e.g., loss of containment, structural collapse). Threats lead INTO it; consequences flow OUT of it. It is not a cause or a consequence.\n\n顶事件是中心"结"——失控时刻（如围堵失效、结构坍塌）。威胁导向它；后果从它流出。它不是原因或后果。'
+      explanation: 'The top event is the central "knot" — the loss-of-control moment (e.g., loss of containment, structural collapse). Threats lead INTO it; consequences flow OUT of it. It is not a cause or a consequence.\n\n顶事件是中心"结"——失控时刻（如围堵失效、结构坍塌）。威胁导向它；后果从它流出。它不是原因或后果。',
+      related: [{ n: '11.4', t: 'Bow-Tie' }]
     },
     {
       text: 'Which of the following is a MITIGATIVE (recovery) barrier in a bow-tie?',
@@ -811,14 +835,16 @@ CSPQuiz.init({
         'A preventive maintenance program'
       ],
       correct: 2,
-      explanation: 'Emergency isolation/depressurization acts AFTER the top event (loss of containment) to reduce consequences — a mitigative barrier. Corrosion-resistant material, training, and maintenance all act BEFORE the top event to prevent it.\n\n紧急隔离/泄压系统在顶事件（围堵失效）之后起作用以减轻后果——减缓性屏障。耐腐蚀材料、培训和维护都在顶事件之前起作用以预防它。'
+      explanation: 'Emergency isolation/depressurization acts AFTER the top event (loss of containment) to reduce consequences — a mitigative barrier. Corrosion-resistant material, training, and maintenance all act BEFORE the top event to prevent it.\n\n紧急隔离/泄压系统在顶事件（围堵失效）之后起作用以减轻后果——减缓性屏障。耐腐蚀材料、培训和维护都在顶事件之前起作用以预防它。',
+      related: [{ n: '11.4', t: 'Bow-Tie' }]
     },
     {
       text: 'Which criterion asks whether a bow-tie barrier is independent of other barriers?',
       group: 3,
       options: ['Adequacy', 'Reliability', 'Independence', 'Auditability'],
       correct: 2,
-      explanation: 'Independence checks for common-mode failure — if two barriers share the same power supply or same valve, a single failure disables both. Barriers should be independent to provide genuine defense in depth.\n\n独立性检查共因失效——如果两个屏障共用同一电源或同一阀门，单一失效会同时使两者失效。屏障应相互独立以提供真正的纵深防御。'
+      explanation: 'Independence checks for common-mode failure — if two barriers share the same power supply or same valve, a single failure disables both. Barriers should be independent to provide genuine defense in depth.\n\n独立性检查共因失效——如果两个屏障共用同一电源或同一阀门，单一失效会同时使两者失效。屏障应相互独立以提供真正的纵深防御。',
+      related: [{ n: '11.4', t: 'Bow-Tie' }]
     },
     {
       text: 'A bow-tie diagram for "Loss of Containment" has a preventive barrier "corrosion monitoring" on the left and a mitigative barrier "firewater system" on the right. If corrosion monitoring fails but the firewater system works, the scenario is:',
@@ -830,7 +856,8 @@ CSPQuiz.init({
         'Consequences occur without a top event'
       ],
       correct: 0,
-      explanation: 'If the preventive barrier fails, the threat leads to the top event (loss of containment). The right-side mitigative barriers then reduce the consequences (the firewater system limits fire damage). The top event happened; consequences were mitigated.\n\n如果预防性屏障失效，威胁导致顶事件（围堵失效）。右侧减缓性屏障随后减轻后果（消防水系统限制火灾损害）。顶事件发生；后果被减轻。'
+      explanation: 'If the preventive barrier fails, the threat leads to the top event (loss of containment). The right-side mitigative barriers then reduce the consequences (the firewater system limits fire damage). The top event happened; consequences were mitigated.\n\n如果预防性屏障失效，威胁导致顶事件（围堵失效）。右侧减缓性屏障随后减轻后果（消防水系统限制火灾损害）。顶事件发生；后果被减轻。',
+      related: [{ n: '11.6', t: '五大策略' }, { n: '11.4', t: 'Bow-Tie' }]
     },
     {
       text: 'Which risk financing strategy involves accepting the financial consequences of a risk internally rather than transferring it?',
@@ -842,7 +869,8 @@ CSPQuiz.init({
         'Risk reduction'
       ],
       correct: 1,
-      explanation: 'Risk retention (self-insurance) involves accepting losses internally — through deductibles, captive insurance, or paying losses from operating funds. It is typically used for low-severity, high-frequency risks.\n\n风险保留（自保）涉及内部承担损失——通过免赔额、专属保险或从运营资金中支付损失。通常适用于低严重性、高频率的风险。'
+      explanation: 'Risk retention (self-insurance) involves accepting losses internally — through deductibles, captive insurance, or paying losses from operating funds. It is typically used for low-severity, high-frequency risks.\n\n风险保留（自保）涉及内部承担损失——通过免赔额、专属保险或从运营资金中支付损失。通常适用于低严重性、高频率的风险。',
+      related: [{ n: '11.6', t: '五大策略' }]
     },
     {
       text: 'An organization forms a wholly owned subsidiary insurance company to insure its own risks. This is an example of:',
@@ -854,7 +882,8 @@ CSPQuiz.init({
         'Risk sharing'
       ],
       correct: 2,
-      explanation: 'A captive insurance company is a form of risk RETENTION — the organization insures itself through a subsidiary, keeping premiums and investment income internally. It is not transfer (no external insurer) or sharing.\n\n专属保险公司是风险<em>保留</em>的一种形式——组织通过子公司为自己投保，将保费和投资收益保留在内部。它不是转移（没有外部保险人）或分担。'
+      explanation: 'A captive insurance company is a form of risk RETENTION — the organization insures itself through a subsidiary, keeping premiums and investment income internally. It is not transfer (no external insurer) or sharing.\n\n专属保险公司是风险<em>保留</em>的一种形式——组织通过子公司为自己投保，将保费和投资收益保留在内部。它不是转移（没有外部保险人）或分担。',
+      related: [{ n: '11.6', t: '五大策略' }, { n: '11.8', t: '保险概念' }]
     },
     {
       text: 'Which of the following is an example of risk SHARING?',
@@ -866,7 +895,8 @@ CSPQuiz.init({
         'Discontinuing a hazardous product line'
       ],
       correct: 1,
-      explanation: 'Risk sharing distributes the financial burden across multiple parties — joint ventures, risk pools, and consortiums. A liability policy is transfer; paying from budget is retention; stopping the product line is avoidance.\n\n风险分担将财务负担分配给多个当事方——合资企业、风险池和联合体。责任保险是转移；从预算支付是保留；停止产品线是规避。'
+      explanation: 'Risk sharing distributes the financial burden across multiple parties — joint ventures, risk pools, and consortiums. A liability policy is transfer; paying from budget is retention; stopping the product line is avoidance.\n\n风险分担将财务负担分配给多个当事方——合资企业、风险池和联合体。责任保险是转移；从预算支付是保留；停止产品线是规避。',
+      related: [{ n: '11.6', t: '五大策略' }]
     },
     {
       text: 'What is a key limitation of transferring risk through insurance?',
@@ -878,7 +908,8 @@ CSPQuiz.init({
         'Insurance transfers the legal obligation to provide a safe workplace'
       ],
       correct: 1,
-      explanation: 'Risk transfer shifts the financial burden of losses but NOT the moral/legal responsibility for safety, regulatory consequences (OSHA citations), or reputational damage. The organization remains accountable for safety regardless of coverage.\n\n风险转移转移了损失的财务负担，但不转移安全方面的道德/法律责任、监管后果（OSHA处罚）或声誉损害。无论覆盖范围如何，组织仍对安全负责。'
+      explanation: 'Risk transfer shifts the financial burden of losses but NOT the moral/legal responsibility for safety, regulatory consequences (OSHA citations), or reputational damage. The organization remains accountable for safety regardless of coverage.\n\n风险转移转移了损失的财务负担，但不转移安全方面的道德/法律责任、监管后果（OSHA处罚）或声誉损害。无论覆盖范围如何，组织仍对安全负责。',
+      related: [{ n: '11.7', t: '保险类型' }]
     },
     {
       text: 'Which of the following strategies MOST definitively eliminates a risk?',
@@ -890,7 +921,8 @@ CSPQuiz.init({
         'Signing hold-harmless agreements'
       ],
       correct: 2,
-      explanation: 'Risk avoidance — stopping the activity that generates the risk — eliminates it entirely, like elimination in the hierarchy of controls. Insurance and hold-harmless agreements transfer financial burden; engineering controls reduce but do not remove the hazard.\n\n风险规避——停止产生风险的活动——完全消除它，如同控制层级中的消除。保险和免责协议转移财务负担；工程控制降低但不移除危害。'
+      explanation: 'Risk avoidance — stopping the activity that generates the risk — eliminates it entirely, like elimination in the hierarchy of controls. Insurance and hold-harmless agreements transfer financial burden; engineering controls reduce but do not remove the hazard.\n\n风险规避——停止产生风险的活动——完全消除它，如同控制层级中的消除。保险和免责协议转移财务负担；工程控制降低但不移除危害。',
+      related: [{ n: '11.6', t: '五大策略' }]
     },
     {
       text: 'Which risk financing strategy is MOST appropriate for low-severity, high-frequency risks?',
@@ -902,7 +934,8 @@ CSPQuiz.init({
         'Contractual indemnification'
       ],
       correct: 0,
-      explanation: 'Low-severity, high-frequency risks are best retained — insurance premiums would exceed expected losses (the claims would drive premiums up). High-severity, low-frequency risks are best transferred.\n\n低严重性、高频率风险最适合保留——保险费会超过预期损失（理赔会推高保费）。高严重性、低频率风险最适合转移。'
+      explanation: 'Low-severity, high-frequency risks are best retained — insurance premiums would exceed expected losses (the claims would drive premiums up). High-severity, low-frequency risks are best transferred.\n\n低严重性、高频率风险最适合保留——保险费会超过预期损失（理赔会推高保费）。高严重性、低频率风险最适合转移。',
+      related: [{ n: '11.6', t: '五大策略' }]
     },
     {
       text: 'What type of insurance covers third-party bodily injury and property damage claims arising from business operations?',
@@ -914,7 +947,8 @@ CSPQuiz.init({
         'Business interruption insurance'
       ],
       correct: 2,
-      explanation: 'General liability insurance covers third-party claims for bodily injury, property damage, and personal injury. Workers\' compensation covers employees (first party). Professional liability (E&O) covers professional negligence claims.\n\n一般责任险承保第三方人身伤害、财产损失和人身伤害索赔。工伤保险承保员工（第一方）。职业责任险（E&O）承保专业疏忽索赔。'
+      explanation: 'General liability insurance covers third-party claims for bodily injury, property damage, and personal injury. Workers\' compensation covers employees (first party). Professional liability (E&O) covers professional negligence claims.\n\n一般责任险承保第三方人身伤害、财产损失和人身伤害索赔。工伤保险承保员工（第一方）。职业责任险（E&O）承保专业疏忽索赔。',
+      related: [{ n: '11.7', t: '保险类型' }]
     },
     {
       text: 'Workers\' compensation insurance is BEST described as a:',
@@ -926,7 +960,8 @@ CSPQuiz.init({
         'Professional negligence policy'
       ],
       correct: 1,
-      explanation: 'Workers\' compensation is a no-fault system — injured employees receive benefits without proving employer negligence. In exchange, employees generally cannot sue the employer. It is mandatory in most jurisdictions.\n\n工伤保险是无过错制度——受伤员工无需证明雇主疏忽即可获得福利。作为交换，员工一般不能起诉雇主。在大多数管辖区是强制性的。'
+      explanation: 'Workers\' compensation is a no-fault system — injured employees receive benefits without proving employer negligence. In exchange, employees generally cannot sue the employer. It is mandatory in most jurisdictions.\n\n工伤保险是无过错制度——受伤员工无需证明雇主疏忽即可获得福利。作为交换，员工一般不能起诉雇主。在大多数管辖区是强制性的。',
+      related: [{ n: '11.7', t: '保险类型' }]
     },
     {
       text: 'An insurance policy with a HIGHER deductible will typically have:',
@@ -938,7 +973,8 @@ CSPQuiz.init({
         'Broader coverage'
       ],
       correct: 1,
-      explanation: 'A higher deductible means the insured pays more out of pocket before the insurer pays, so the insurer\'s exposure is smaller — hence lower premiums. The deductible is a retention element within an insured risk.\n\n更高的免赔额意味着被保险人自付更多后保险人才赔付，因此保险人的风险敞口更小——故保费更低。免赔额是投保风险中的保留元素。'
+      explanation: 'A higher deductible means the insured pays more out of pocket before the insurer pays, so the insurer\'s exposure is smaller — hence lower premiums. The deductible is a retention element within an insured risk.\n\n更高的免赔额意味着被保险人自付更多后保险人才赔付，因此保险人的风险敞口更小——故保费更低。免赔额是投保风险中的保留元素。',
+      related: [{ n: '11.8', t: '保险概念' }]
     },
     {
       text: 'The "experience rating" of an insurance premium means the premium is adjusted based on:',
@@ -950,7 +986,8 @@ CSPQuiz.init({
         'The weather in the region'
       ],
       correct: 1,
-      explanation: 'Experience rating adjusts premiums based on the organization\'s actual loss history — good safety performance lowers premiums; poor performance raises them. This links insurance cost to safety management effectiveness.\n\n经验费率根据组织的实际损失历史调整保费——良好的安全绩效降低保费；不良绩效提高保费。这将保险成本与安全管理有效性联系起来。'
+      explanation: 'Experience rating adjusts premiums based on the organization\'s actual loss history — good safety performance lowers premiums; poor performance raises them. This links insurance cost to safety management effectiveness.\n\n经验费率根据组织的实际损失历史调整保费——良好的安全绩效降低保费；不良绩效提高保费。这将保险成本与安全管理有效性联系起来。',
+      related: [{ n: '11.8', t: '保险概念' }]
     },
     {
       text: 'SWIFT (Structured What-If Technique) is best described as:',
@@ -962,7 +999,8 @@ CSPQuiz.init({
         'A technique for calculating insurance premiums'
       ],
       correct: 1,
-      explanation: 'SWIFT is a structured brainstorming method using "What if...?" questions guided by checklists. It is faster and less resource-intensive than HAZOP, but less systematic and may miss some deviations.\n\nSWIFT是一种结构化的头脑风暴方法，使用由检查表引导的"What if...?"问题。它比HAZOP更快、所需资源更少，但不如HAZOP系统化，可能遗漏某些偏差。'
+      explanation: 'SWIFT is a structured brainstorming method using "What if...?" questions guided by checklists. It is faster and less resource-intensive than HAZOP, but less systematic and may miss some deviations.\n\nSWIFT是一种结构化的头脑风暴方法，使用由检查表引导的"What if...?"问题。它比HAZOP更快、所需资源更少，但不如HAZOP系统化，可能遗漏某些偏差。',
+      related: [{ n: '11.5', t: 'SWIFT' }]
     },
     {
       text: 'A major limitation of checklist-based hazard analysis is that:',
@@ -974,7 +1012,8 @@ CSPQuiz.init({
         'It is not recognized by any regulation'
       ],
       correct: 1,
-      explanation: 'Checklists find what they already know. Novel, unusual, or site-specific hazards absent from the list are missed. This is why checklists are best combined with other methods or used for routine/compliance checks.\n\n检查表只能找到已知的内容。清单中没有的新颖、异常或场地特有的危害会被遗漏。因此检查表最适合与其他方法结合，或用于例行/合规检查。'
+      explanation: 'Checklists find what they already know. Novel, unusual, or site-specific hazards absent from the list are missed. This is why checklists are best combined with other methods or used for routine/compliance checks.\n\n检查表只能找到已知的内容。清单中没有的新颖、异常或场地特有的危害会被遗漏。因此检查表最适合与其他方法结合，或用于例行/合规检查。',
+      related: [{ n: '11.5', t: 'SWIFT' }]
     },
     {
       text: 'For a complex continuous chemical process requiring systematic deviation analysis, the MOST appropriate technique is:',
@@ -986,7 +1025,8 @@ CSPQuiz.init({
         'Simple expert judgment'
       ],
       correct: 2,
-      explanation: 'HAZOP is designed for complex continuous processes — its guideword+parameter approach systematically generates all credible deviations, which checklists and unstructured What-If cannot guarantee.\n\nHAZOP专为复杂连续工艺设计——其引导词+参数方法系统性地生成所有可信偏差，这是检查表和开放式What-If无法保证的。'
+      explanation: 'HAZOP is designed for complex continuous processes — its guideword+parameter approach systematically generates all credible deviations, which checklists and unstructured What-If cannot guarantee.\n\nHAZOP专为复杂连续工艺设计——其引导词+参数方法系统性地生成所有可信偏差，这是检查表和开放式What-If无法保证的。',
+      related: [{ n: '11.9', t: '技术选择' }]
     },
     {
       text: 'For a SIMPLE process at an early design stage where a full HAZOP would be too resource-intensive, the best choice is:',
@@ -998,7 +1038,8 @@ CSPQuiz.init({
         'Bow-Tie only'
       ],
       correct: 1,
-      explanation: 'SWIFT or What-If are faster, lower-cost methods suited to simple processes and early design. HAZOP is reserved for complex systems where its rigor justifies the resource cost.\n\nSWIFT或What-If是更快、成本更低的方法，适合简单工艺和早期设计。HAZOP保留给复杂系统，其严谨性足以证明资源成本合理。'
+      explanation: 'SWIFT or What-If are faster, lower-cost methods suited to simple processes and early design. HAZOP is reserved for complex systems where its rigor justifies the resource cost.\n\nSWIFT或What-If是更快、成本更低的方法，适合简单工艺和早期设计。HAZOP保留给复杂系统，其严谨性足以证明资源成本合理。',
+      related: [{ n: '11.9', t: '技术选择' }]
     },
     {
       text: 'In the HAZOP study, the "Scribe" (recorder) is responsible for:',
@@ -1010,7 +1051,8 @@ CSPQuiz.init({
         'Approving the budget'
       ],
       correct: 1,
-      explanation: 'The scribe records the study in real time onto the HAZOP worksheet — deviations, causes, consequences, safeguards, recommendations, and action items. Accurate recording is critical for follow-up and audit.\n\n记录员实时将研究记录到HAZOP工作表上——偏差、原因、后果、防护、建议和行动项。准确记录对后续跟进和审计至关重要。'
+      explanation: 'The scribe records the study in real time onto the HAZOP worksheet — deviations, causes, consequences, safeguards, recommendations, and action items. Accurate recording is critical for follow-up and audit.\n\n记录员实时将研究记录到HAZOP工作表上——偏差、原因、后果、防护、建议和行动项。准确记录对后续跟进和审计至关重要。',
+      related: [{ n: '11.3', t: '团队工作表' }]
     },
     {
       text: 'Which HAZOP worksheet column lists the safety systems that exist to address a deviation?',
@@ -1022,14 +1064,16 @@ CSPQuiz.init({
         'Recommendations'
       ],
       correct: 2,
-      explanation: 'The Safeguards column records existing protection (alarms, relief valves, procedures, interlocks) that address the deviation. Recommendations record NEW actions; Causes records why the deviation happens.\n\n防护列记录现有保护（报警、泄压阀、程序、联锁）以应对偏差。建议记录新的行动；原因记录偏差为何发生。'
+      explanation: 'The Safeguards column records existing protection (alarms, relief valves, procedures, interlocks) that address the deviation. Recommendations record NEW actions; Causes records why the deviation happens.\n\n防护列记录现有保护（报警、泄压阀、程序、联锁）以应对偏差。建议记录新的行动；原因记录偏差为何发生。',
+      related: [{ n: '11.3', t: '团队工作表' }]
     },
     {
       text: 'Which of the following is NOT one of the four barrier effectiveness criteria?',
       group: 8,
       options: ['Adequacy', 'Reliability', 'Independence', 'Cost'],
       correct: 3,
-      explanation: 'The four criteria are Adequacy, Reliability, Independence, and Auditability. Cost is a design/feasibility consideration, not one of the standard barrier-effectiveness criteria.\n\n四个标准是充分性、可靠性、独立性和可审核性。成本是设计/可行性考虑，不属于标准的屏障有效性标准。'
+      explanation: 'The four criteria are Adequacy, Reliability, Independence, and Auditability. Cost is a design/feasibility consideration, not one of the standard barrier-effectiveness criteria.\n\n四个标准是充分性、可靠性、独立性和可审核性。成本是设计/可行性考虑，不属于标准的屏障有效性标准。',
+      related: [{ n: '11.4', t: 'Bow-Tie' }]
     },
     {
       text: 'Which type of insurance is most directly relevant to a safety consultant who may be sued for professional errors?',
@@ -1041,7 +1085,8 @@ CSPQuiz.init({
         'Property insurance'
       ],
       correct: 2,
-      explanation: 'Professional liability (Errors & Omissions) covers claims of negligence or failure to perform professional duties. Safety consultants, engineers, and design professionals carry this coverage.\n\n职业责任险（错误与遗漏）承保疏忽或未能履行专业职责的索赔。安全顾问、工程师和设计专业人员投保此类保险。'
+      explanation: 'Professional liability (Errors & Omissions) covers claims of negligence or failure to perform professional duties. Safety consultants, engineers, and design professionals carry this coverage.\n\n职业责任险（错误与遗漏）承保疏忽或未能履行专业职责的索赔。安全顾问、工程师和设计专业人员投保此类保险。',
+      related: [{ n: '11.7', t: '保险类型' }, { n: '11.8', t: '保险概念' }]
     },
     {
       text: 'A factory loses $30,000 per day in revenue when shut down after a fire. The policy covering this lost income is:',
@@ -1053,7 +1098,8 @@ CSPQuiz.init({
         'Workers\' compensation'
       ],
       correct: 1,
-      explanation: 'Business interruption insurance covers lost income and continuing expenses when operations are suspended due to a covered event (like a fire). It is critical for business continuity planning.\n\n业务中断险承保因承保事件（如火灾）导致运营中断时的收入损失和持续费用。它对业务连续性规划至关重要。'
+      explanation: 'Business interruption insurance covers lost income and continuing expenses when operations are suspended due to a covered event (like a fire). It is critical for business continuity planning.\n\n业务中断险承保因承保事件（如火灾）导致运营中断时的收入损失和持续费用。它对业务连续性规划至关重要。',
+      related: [{ n: '11.7', t: '保险类型' }]
     },
     {
       text: 'The fire protection system of a plant is upgraded to reduce the severity of any fire that occurs. This is an example of:',
@@ -1065,7 +1111,8 @@ CSPQuiz.init({
         'Risk avoidance'
       ],
       correct: 1,
-      explanation: 'Loss REDUCTION reduces the severity of losses when they occur (fire protection, emergency response). Loss PREVENTION reduces the likelihood of the loss occurring. This upgrade targets severity, so it is loss reduction.\n\n损失<em>减少</em>在损失发生时减轻其严重性（消防、应急响应）。损失<em>预防</em>降低损失发生的可能性。此升级针对严重性，因此是损失减少。'
+      explanation: 'Loss REDUCTION reduces the severity of losses when they occur (fire protection, emergency response). Loss PREVENTION reduces the likelihood of the loss occurring. This upgrade targets severity, so it is loss reduction.\n\n损失<em>减少</em>在损失发生时减轻其严重性（消防、应急响应）。损失<em>预防</em>降低损失发生的可能性。此升级针对严重性，因此是损失减少。',
+      related: [{ n: '11.6', t: '五大策略' }]
     },
     {
       text: 'A process is replaced with a non-toxic alternative so the hazardous chemical is no longer used. This is an example of:',
@@ -1077,7 +1124,8 @@ CSPQuiz.init({
         'Risk sharing'
       ],
       correct: 2,
-      explanation: 'Eliminating the hazardous substance entirely is risk avoidance (the most definitive financial strategy, equivalent to elimination/substitution in the hierarchy of controls). The risk ceases to exist.\n\n完全消除危险物质是风险规避（最彻底的财务策略，相当于控制层级中的消除/替代）。风险不复存在。'
+      explanation: 'Eliminating the hazardous substance entirely is risk avoidance (the most definitive financial strategy, equivalent to elimination/substitution in the hierarchy of controls). The risk ceases to exist.\n\n完全消除危险物质是风险规避（最彻底的财务策略，相当于控制层级中的消除/替代）。风险不复存在。',
+      related: [{ n: '11.6', t: '五大策略' }]
     }
   ]
 });

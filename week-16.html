@@ -10,7 +10,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="apple-touch-icon" href="icon-192.png">
-<link rel="stylesheet" href="quiz-styles.css?v=11">
+<link rel="stylesheet" href="quiz-styles.css?v=12">
 <style>
 body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;line-height:1.7;margin:0;padding:0;background:#f0f2f5;color:#1a1a2e}
 .container{max-width:960px;margin:0 auto;padding:20px}
@@ -97,17 +97,19 @@ p.bi-p .zh-p, li.bi-li .zh-li { display: block; color: #666; font-size: 0.92em; 
 <span class="mn-content"><strong>AREC</strong> = Anticipate → Recognize → Evaluate → Control（预判 → 识别 → 评估 → 控制）——工业卫生四步流程，预判最先、评估定量采样、控制用层级。 / The IH decision-making sequence.</span>
 </div>
 
-<div class="exam-scenario">
-<div class="es-label">📝 模拟情景题 / Practice Scenario</div>
-      <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
-<div class="es-question">"An IH conducts a design review of a new process, a Pre-Startup Safety Review, and reviews the SDS before purchasing a new chemical. Which AREC phase is this?"</div>
-<div><strong>最佳答案 / Best answer:</strong> Anticipate — predicting potential hazards BEFORE they exist (PSSR, PtD, MOC, SDS review). 预判阶段——在危害存在之前预测。</div>
+<div class="exam-scenario"
+     data-options='["Recognize", "Anticipate", "Evaluate", "Control"]'
+     data-correct="1">
+  <div class="es-label">📝 模拟情景题 / Practice Scenario</div>
+  <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
+  <div class="es-question">"An IH conducts a design review of a new process, a Pre-Startup Safety Review, and reviews the SDS before purchasing a new chemical. Which AREC phase is this?"</div>
+  <div class="scenario-feedback">
+    <div class="scenario-fb-label"></div>
+    <div>AREC = <strong>Anticipate, Recognize, Evaluate, Control</strong>. Predicting hazards BEFORE they exist — through design review, Pre-Startup Safety Review (PSSR), Prevention through Design (PtD), Management of Change, and pre-purchase SDS review — is the <strong>Anticipate</strong> phase. Recognize means identifying hazards already present; Evaluate means measuring exposures and comparing them with OELs; Control means applying the hierarchy of controls.<br><br>AREC = <strong>预判、识别、评估、控制</strong>。在危害存在之前预测——通过设计审查、启动前安全审查（PSSR）、预防性设计（PtD）、变更管理和采购前SDS审查——属于<strong>预判（Anticipate）</strong>阶段。识别指发现已存在的危害；评估指测量暴露并与OEL比较；控制指应用控制层级。</div>
+  </div>
 </div></div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>16.3 采样类型（个人采样/呼吸带位置）</strong>、<strong>16.4 采样设备（低流量泵）</strong>、<strong>16.5 TWA混合计算</strong>、<strong>16.6 OELs（PEL可执行性）</strong> 的内容，详细讲解见对应卡片。Some questions here cover topics explained under the referenced cards.
-  </div>
-  <div id="quiz-group-1"></div>
+    <div id="quiz-group-1"></div>
 
 
 <!-- IH Stressors -->
@@ -217,10 +219,7 @@ p.bi-p .zh-p, li.bi-li .zh-li { display: block; color: #666; font-size: 0.92em; 
 </div>
 </div></div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>16.3 采样类型（STEL 15分钟）</strong>、<strong>16.4 采样设备（扩散徽章、样品体积V=流量×时间）</strong>、<strong>16.5 TWA混合计算</strong> 的内容，详细讲解见对应卡片。Some questions here cover topics explained under the referenced cards.
-  </div>
-  <div id="quiz-group-2"></div>
+    <div id="quiz-group-2"></div>
 
 
 <!-- Sampling Types -->
@@ -300,10 +299,7 @@ p.bi-p .zh-p, li.bi-li .zh-li { display: block; color: #666; font-size: 0.92em; 
 </div>
 </div></div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>16.4 采样设备（标定±5%、检测管±25%）</strong>、<strong>16.6 OELs（IDLH、PEL可执行性）</strong> 的内容，详细讲解见对应卡片。Some questions here cover topics explained under the referenced cards.
-  </div>
-  <div id="quiz-group-3"></div>
+    <div id="quiz-group-3"></div>
 
 
 <!-- Sampling Equipment -->
@@ -352,11 +348,16 @@ V (L) = Flow Rate (L/min) × Time (min)<br><br>
 C (mg/m³) = [Mass on Filter (mg) × 1000] / Sample Volume (L)<br>
 C (ppm) = [C (mg/m³) × 24.45] / Molecular Weight
 </div>
-<div class="exam-scenario">
-<div class="es-label">📝 模拟情景题 / Practice Scenario</div>
-      <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
-<div class="es-question">"A sampling pump is calibrated at 2.0 L/min and runs for 480 minutes collecting a particulate sample. What is the total sample volume?"</div>
-<div><strong>最佳答案 / Best answer:</strong> V = Flow × Time = 2.0 L/min × 480 min = <strong>960 L</strong>. Sample volume = flow rate × sampling time. 采样体积 = 流速 × 时间。</div>
+<div class="exam-scenario"
+     data-options='["240 L", "480 L", "960 L", "1,920 L"]'
+     data-correct="2">
+  <div class="es-label">📝 模拟情景题 / Practice Scenario</div>
+  <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
+  <div class="es-question">"A sampling pump is calibrated at 2.0 L/min and runs for 480 minutes collecting a particulate sample. What is the total sample volume?"</div>
+  <div class="scenario-feedback">
+    <div class="scenario-fb-label"></div>
+    <div>Sample volume = flow rate × sampling time = 2.0 L/min × 480 min = <strong>960 L</strong>. Total sample volume is the basis for converting an analytical result (typically µg per sample) into a concentration (mg/m³): concentration = mass ÷ volume. Halving or doubling the volume is the most common distractor trap.<br><br>采样体积 = 流速 × 采样时间 = 2.0升/分 × 480分 = <strong>960升</strong>。采样总体积是将分析结果（通常为µg/样）换算为浓度（mg/m³）的基础：浓度 = 质量 ÷ 体积。体积减半或加倍是最常见的干扰陷阱。</div>
+  </div>
 </div>
 
 <div class="confusion-box">
@@ -369,10 +370,7 @@ C (ppm) = [C (mg/m³) × 24.45] / Molecular Weight
 </table>
 </div></div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>16.3 采样类型（Brief &amp; Scala、个人采样）</strong>、<strong>16.5 TWA混合计算（E_m）</strong>、<strong>16.7 暴露评估策略（决策逻辑）</strong> 的内容，详细讲解见对应卡片。Some questions here cover topics explained under the referenced cards.
-  </div>
-  <div id="quiz-group-4"></div>
+    <div id="quiz-group-4"></div>
 
 
 <!-- TWA Calculation -->
@@ -431,11 +429,16 @@ If <strong>E<sub>m</sub> &gt; 1</strong>, 混合物超过允许暴露限值 / th
 <span class="en-p">The mixture formula applies only when the substances act on the SAME target organ system and the effects are additive. If E<sub>m</sub> &gt; 1, the combined exposure is considered to exceed the limit even if each individual substance is below its own PEL.</span>
 <span class="zh-p" style="color:#666;display:block;">混合物公式仅适用于物质作用于相同靶器官系统且效应为加和的情况。如果E<sub>m</sub> > 1，即使每种单独物质都低于各自的PEL，综合暴露也被视为超标。</span>
 </div>
-<div class="exam-scenario">
-<div class="es-label">📝 模拟情景题 / Practice Scenario</div>
-      <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
-<div class="es-question">"A worker is exposed to Solvent A at 60 ppm (PEL 100) and Solvent B at 25 ppm (PEL 50), both affecting the same target organ. Using the mixture formula, does the combined exposure exceed the PEL?"</div>
-<div><strong>最佳答案 / Best answer:</strong> E<sub>m</sub> = 60/100 + 25/50 = 0.60 + 0.50 = <strong>1.10</strong> &gt; 1.0 → exceeds the limit, even though each substance is below its own PEL. 混合物公式，E<sub>m</sub>&gt;1即超标。</div>
+<div class="exam-scenario"
+     data-options='["No — each substance is below its own PEL, so the exposure is acceptable", "Yes — Em = 60/100 + 25/50 = 1.10, which exceeds 1.0", "Yes — because the sum of the concentrations (85 ppm) exceeds either PEL", "No — the mixture formula applies only to substances with different target organs"]'
+     data-correct="1">
+  <div class="es-label">📝 模拟情景题 / Practice Scenario</div>
+  <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
+  <div class="es-question">"A worker is exposed to Solvent A at 60 ppm (PEL 100) and Solvent B at 25 ppm (PEL 50), both affecting the same target organ. Using the mixture formula, does the combined exposure exceed the PEL?"</div>
+  <div class="scenario-feedback">
+    <div class="scenario-fb-label"></div>
+    <div>For substances affecting the <strong>same target organ</strong>, the mixture formula is Em = C1/L1 + C2/L2 + …, where C is the measured concentration and L is the corresponding limit. Here Em = 60/100 + 25/50 = 0.60 + 0.50 = <strong>1.10 &gt; 1.0</strong>, so the combined exposure exceeds the limit even though each substance is individually below its own PEL. The formula applies only when the substances share a target organ; otherwise the exposures are evaluated separately.<br><br>对作用于<strong>同一靶器官</strong>的物质，混合公式为 Em = C1/L1 + C2/L2 + …，其中C为实测浓度、L为对应限值。此处 Em = 60/100 + 25/50 = 0.60 + 0.50 = <strong>1.10 &gt; 1.0</strong>，因此尽管各物质单独均低于各自PEL，混合暴露仍超标。该公式仅适用于共享靶器官的物质；否则分别评估。</div>
+  </div>
 </div>
 
 <div class="exam-hotspot">
@@ -447,10 +450,7 @@ If <strong>E<sub>m</sub> &gt; 1</strong>, 混合物超过允许暴露限值 / th
 </div>
 </div></div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>16.2 危害因素（蒸气vs气体、可吸入&lt;10μm）</strong>、<strong>16.3 采样类型（Ceiling限值）</strong>、<strong>16.4 采样设备（FID/PID、旋风器）</strong> 的内容，详细讲解见对应卡片。Some questions here cover topics explained under the referenced cards.
-  </div>
-  <div id="quiz-group-5"></div>
+    <div id="quiz-group-5"></div>
 
 
 <!-- PELs vs TLVs vs RELs -->
@@ -546,17 +546,19 @@ If <strong>E<sub>m</sub> &gt; 1</strong>, 混合物超过允许暴露限值 / th
 </table>
 </div>
 
-<div class="exam-scenario">
-<div class="es-label">📝 模拟情景题 / Practice Scenario</div>
-      <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
-<div class="es-question">"A worker's 8-hr TWA for toluene is 150 ppm. ACGIH TLV = 50 ppm, OSHA PEL = 200 ppm. Which conclusion is correct?"</div>
-<div><strong>最佳答案 / Best answer:</strong> Legally compliant with OSHA (below 200) but exceeds the ACGIH TLV (50) — best practice target. 合规但超过TLV，应作为设计目标关注。</div>
+<div class="exam-scenario"
+     data-options='["Non-compliant with OSHA, because the exposure exceeds the PEL", "Legally compliant with OSHA but above the ACGIH TLV, so exposure should be reduced toward the TLV", "Compliant with both the OSHA PEL and the ACGIH TLV", "The comparison is invalid because only one substance is present"]'
+     data-correct="1">
+  <div class="es-label">📝 模拟情景题 / Practice Scenario</div>
+  <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
+  <div class="es-question">"A worker's 8-hr TWA for toluene is 150 ppm. ACGIH TLV = 50 ppm, OSHA PEL = 200 ppm. Which conclusion is correct?"</div>
+  <div class="scenario-feedback">
+    <div class="scenario-fb-label"></div>
+    <div>OSHA PELs are enforceable legal limits; ACGIH TLVs are non-enforceable, health-based recommendations. At 150 ppm the exposure is below the OSHA PEL of 200 ppm (<strong>legally compliant</strong>) but well above the ACGIH TLV of 50 ppm. Best practice is to treat the TLV as the design target and reduce exposure through feasible engineering and administrative controls, using PPE only as a supplement.<br><br>OSHA PEL是可强制执行的法律限值；ACGIH TLV是非强制、基于健康的推荐值。150 ppm低于OSHA PEL 200 ppm（<strong>法律上合规</strong>），但远高于ACGIH TLV 50 ppm。最佳实践是把TLV作为设计目标，通过可行的工程和行政控制降低暴露，PPE仅作补充。</div>
+  </div>
 </div></div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>16.3 采样类型（面积采样）</strong>、<strong>16.5 TWA混合计算（混合物公式）</strong> 的内容，详细讲解见对应卡片。Some questions here cover topics explained under the referenced cards.
-  </div>
-  <div id="quiz-group-6"></div>
+    <div id="quiz-group-6"></div>
 
 
 <!-- Exposure Assessment Strategies -->
@@ -606,18 +608,15 @@ If <strong>E<sub>m</sub> &gt; 1</strong>, 混合物超过允许暴露限值 / th
 </table>
 </div></div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>16.1 AREC框架（顺序）</strong>、<strong>16.4 采样设备（炭管）</strong>、<strong>16.6 OELs（BEI、MUC）</strong> 的内容，详细讲解见对应卡片。Some questions here cover topics explained under the referenced cards.
-  </div>
-  <div id="quiz-group-7"></div>
+    <div id="quiz-group-7"></div>
 
 
 <!-- Quiz -->
 <div id="quiz-root"></div>
 </div>
 
-<script src="quiz-engine.js?v=11"></script>
-<script src="vocab-engine.js?v=11"></script>
+<script src="quiz-engine.js?v=12"></script>
+<script src="vocab-engine.js?v=12"></script>
 <script>
 CSPQuiz.init({
   containerId: 'quiz-root',
@@ -630,7 +629,8 @@ CSPQuiz.init({
       group: 1,
       options: ['Recognize', 'Evaluate', 'Anticipate', 'Control'],
       correct: 2,
-      explanation: 'The Anticipate phase involves predicting potential hazards BEFORE they exist through activities such as design review, Prevention through Design (PtD), PSSR, review of SDS prior to chemical purchase, and Management of Change (MOC) review.\n\n预判阶段包括在危害存在之前通过设计审查、预防性设计（PtD）、PSSR、购买化学品前审查SDS以及变更管理（MOC）审查等活动预判潜在危害。'
+      explanation: 'The Anticipate phase involves predicting potential hazards BEFORE they exist through activities such as design review, Prevention through Design (PtD), PSSR, review of SDS prior to chemical purchase, and Management of Change (MOC) review.\n\n预判阶段包括在危害存在之前通过设计审查、预防性设计（PtD）、PSSR、购买化学品前审查SDS以及变更管理（MOC）审查等活动预判潜在危害。',
+      related: [{ n: '16.1', t: 'AREC框架' }]
     },
     {
       text: 'When conducting personal sampling for airborne contaminants, the collection device should be placed:',
@@ -642,21 +642,24 @@ CSPQuiz.init({
         'At waist level of the worker'
       ],
       correct: 2,
-      explanation: 'Personal sampling measures exposure in the breathing zone, defined as the hemisphere within a 12-inch (30 cm) radius of the nose and mouth. This represents the air the worker actually inhales. Area sampling at fixed locations characterizes background levels, not individual worker exposure.\n\n个人采样测量呼吸带的暴露，呼吸带定义为口鼻周围12英寸（30厘米）半径内的半球。这代表了工人实际吸入的空气。固定位置的区域采样表征背景水平，而非个体工人的暴露。'
+      explanation: 'Personal sampling measures exposure in the breathing zone, defined as the hemisphere within a 12-inch (30 cm) radius of the nose and mouth. This represents the air the worker actually inhales. Area sampling at fixed locations characterizes background levels, not individual worker exposure.\n\n个人采样测量呼吸带的暴露，呼吸带定义为口鼻周围12英寸（30厘米）半径内的半球。这代表了工人实际吸入的空气。固定位置的区域采样表征背景水平，而非个体工人的暴露。',
+      related: [{ n: '16.1', t: 'AREC框架' }]
     },
     {
       text: 'A worker is exposed to a chemical at the following concentrations during an 8-hour shift: 100 ppm for 3 hours, 160 ppm for 2 hours, and 0 ppm for the remaining 3 hours (breaks). What is the 8-hour TWA?',
       group: 1,
       options: ['76.3 ppm', '86.7 ppm', '77.5 ppm', '100.0 ppm'],
       correct: 2,
-      explanation: 'TWA = Σ(C × T) / 8 = (100×3 + 160×2 + 0×3) / 8 = (300 + 320 + 0) / 8 = 620/8 = 77.5 ppm.\n\nTWA = Σ(C × T) / 8 = (100×3 + 160×2 + 0×3) / 8 = (300 + 320 + 0) / 8 = 620/8 = 77.5 ppm。'
+      explanation: 'TWA = Σ(C × T) / 8 = (100×3 + 160×2 + 0×3) / 8 = (300 + 320 + 0) / 8 = 620/8 = 77.5 ppm.\n\nTWA = Σ(C × T) / 8 = (100×3 + 160×2 + 0×3) / 8 = (300 + 320 + 0) / 8 = 620/8 = 77.5 ppm。',
+      related: [{ n: '16.1', t: 'AREC框架' }]
     },
     {
       text: 'What is the typical flow rate range for a low-flow air sampling pump used to collect gases and vapors on sorbent tubes?',
       group: 1,
       options: ['0.01 to 0.5 L/min', '1 to 4 L/min', '5 to 10 L/min', '10 to 20 L/min'],
       correct: 0,
-      explanation: 'Low-flow pumps operate at 0.01–0.5 L/min and are used with sorbent tubes (charcoal, silica gel) for collecting gases and vapors. High-flow pumps operate at 1–4 L/min and are used with filter cassettes for collecting particulates (dusts, fumes, mists).\n\n低流量泵以0.01–0.5 L/min运行，配合吸附管（活性炭、硅胶）用于收集气体和蒸气。高流量泵以1–4 L/min运行，配合滤膜夹用于收集颗粒物（粉尘、烟尘、雾）。'
+      explanation: 'Low-flow pumps operate at 0.01–0.5 L/min and are used with sorbent tubes (charcoal, silica gel) for collecting gases and vapors. High-flow pumps operate at 1–4 L/min and are used with filter cassettes for collecting particulates (dusts, fumes, mists).\n\n低流量泵以0.01–0.5 L/min运行，配合吸附管（活性炭、硅胶）用于收集气体和蒸气。高流量泵以1–4 L/min运行，配合滤膜夹用于收集颗粒物（粉尘、烟尘、雾）。',
+      related: [{ n: '16.1', t: 'AREC框架' }]
     },
     {
       text: 'Which of the following is TRUE about OSHA Permissible Exposure Limits (PELs)?',
@@ -668,7 +671,8 @@ CSPQuiz.init({
         'They are always more protective than ACGIH TLVs'
       ],
       correct: 1,
-      explanation: 'OSHA PELs are legally enforceable federal regulations, but most were adopted from 1968 ACGIH TLVs and ANSI standards in 1970-1971 and have rarely been updated. As a result, many PELs are outdated and less protective than current ACGIH TLVs or NIOSH RELs.\n\nOSHA PEL是具有法律强制力的联邦法规，但大多数是在1970-1971年从1968年ACGIH TLV和ANSI标准采用的，此后很少更新。因此，许多PEL已过时，保护性不如当前的ACGIH TLV或NIOSH REL。'
+      explanation: 'OSHA PELs are legally enforceable federal regulations, but most were adopted from 1968 ACGIH TLVs and ANSI standards in 1970-1971 and have rarely been updated. As a result, many PELs are outdated and less protective than current ACGIH TLVs or NIOSH RELs.\n\nOSHA PEL是具有法律强制力的联邦法规，但大多数是在1970-1971年从1968年ACGIH TLV和ANSI标准采用的，此后很少更新。因此，许多PEL已过时，保护性不如当前的ACGIH TLV或NIOSH REL。',
+      related: [{ n: '16.1', t: 'AREC框架' }]
     },
     {
       text: 'A worker is exposed to two solvents with similar target organ effects. The TWA concentrations are 60 ppm for Solvent A (PEL = 100 ppm) and 25 ppm for Solvent B (PEL = 50 ppm). Using the mixture formula, does this exceed the PEL?',
@@ -680,14 +684,16 @@ CSPQuiz.init({
         'Yes, E_m = 1.25 — exceeds the limit'
       ],
       correct: 1,
-      explanation: 'E_m = C_A/PEL_A + C_B/PEL_B = 60/100 + 25/50 = 0.60 + 0.50 = 1.10. Since E_m > 1.0, the mixture exceeds the permissible exposure limit, even though each substance individually is below its PEL.\n\nE_m = C_A/PEL_A + C_B/PEL_B = 60/100 + 25/50 = 0.60 + 0.50 = 1.10。由于E_m > 1.0，混合物超过了允许暴露限值，即使每种物质单独来看都低于各自的PEL。'
+      explanation: 'E_m = C_A/PEL_A + C_B/PEL_B = 60/100 + 25/50 = 0.60 + 0.50 = 1.10. Since E_m > 1.0, the mixture exceeds the permissible exposure limit, even though each substance individually is below its PEL.\n\nE_m = C_A/PEL_A + C_B/PEL_B = 60/100 + 25/50 = 0.60 + 0.50 = 1.10。由于E_m > 1.0，混合物超过了允许暴露限值，即使每种物质单独来看都低于各自的PEL。',
+      related: [{ n: '16.2', t: '工业卫生危害因素' }]
     },
     {
       text: 'A STEL (Short-Term Exposure Limit) defines the maximum average concentration over what duration?',
       group: 2,
       options: ['5 minutes', '15 minutes', '30 minutes', '1 hour'],
       correct: 1,
-      explanation: 'A STEL is a 15-minute time-weighted average exposure that should not be exceeded at any time during a workday. Exposures at the STEL should not be longer than 15 minutes and should not be repeated more than 4 times per day, with at least 60 minutes between successive exposures at the STEL range.\n\nSTEL是15分钟的时间加权平均暴露，工作日内任何时候都不应超过。STEL暴露不应超过15分钟，每天重复不超过4次，每次在STEL范围的暴露之间至少间隔60分钟。'
+      explanation: 'A STEL is a 15-minute time-weighted average exposure that should not be exceeded at any time during a workday. Exposures at the STEL should not be longer than 15 minutes and should not be repeated more than 4 times per day, with at least 60 minutes between successive exposures at the STEL range.\n\nSTEL是15分钟的时间加权平均暴露，工作日内任何时候都不应超过。STEL暴露不应超过15分钟，每天重复不超过4次，每次在STEL范围的暴露之间至少间隔60分钟。',
+      related: [{ n: '16.2', t: '工业卫生危害因素' }]
     },
     {
       text: 'What is a key advantage of passive/diffusion badges over active pump-based sampling for gases and vapors?',
@@ -699,14 +705,16 @@ CSPQuiz.init({
         'They work for all types of airborne contaminants including particulates'
       ],
       correct: 2,
-      explanation: 'Passive/diffusion badges collect contaminants via molecular diffusion without requiring a sampling pump, making them lightweight, unobtrusive, and free of pump maintenance issues. However, they are generally not suitable for particulates, face velocity can affect results, and they are not always suitable for compliance determinations.\n\n被动式/扩散式徽章通过分子扩散收集污染物，无需采样泵，使其轻便、不显眼、无需泵维护。然而，它们通常不适用于颗粒物，面风速可能影响结果，并不总是适用于合规判定。'
+      explanation: 'Passive/diffusion badges collect contaminants via molecular diffusion without requiring a sampling pump, making them lightweight, unobtrusive, and free of pump maintenance issues. However, they are generally not suitable for particulates, face velocity can affect results, and they are not always suitable for compliance determinations.\n\n被动式/扩散式徽章通过分子扩散收集污染物，无需采样泵，使其轻便、不显眼、无需泵维护。然而，它们通常不适用于颗粒物，面风速可能影响结果，并不总是适用于合规判定。',
+      related: [{ n: '16.2', t: '工业卫生危害因素' }]
     },
     {
       text: 'A sampling pump is calibrated at 2.0 L/min and runs for 480 minutes on a high-flow particulate sample. What is the total sample volume?',
       group: 2,
       options: ['480 L', '960 L', '1,440 L', '2,400 L'],
       correct: 1,
-      explanation: 'Sample volume = Flow rate × Time = 2.0 L/min × 480 min = 960 L. This volume would then be used to convert the filter mass to an airborne concentration in mg/m³.\n\n采样体积 = 流速 × 时间 = 2.0 L/min × 480分钟 = 960 L。该体积随后用于将滤膜质量转换为空气中的浓度（mg/m³）。'
+      explanation: 'Sample volume = Flow rate × Time = 2.0 L/min × 480 min = 960 L. This volume would then be used to convert the filter mass to an airborne concentration in mg/m³.\n\n采样体积 = 流速 × 时间 = 2.0 L/min × 480分钟 = 960 L。该体积随后用于将滤膜质量转换为空气中的浓度（mg/m³）。',
+      related: [{ n: '16.2', t: '工业卫生危害因素' }]
     },
     {
       text: 'Which of the following correctly ranks airborne contaminants by typical size from LARGEST to SMALLEST?',
@@ -718,7 +726,8 @@ CSPQuiz.init({
         'Mists > Vapors > Fumes > Dusts'
       ],
       correct: 0,
-      explanation: 'Typical size order: Dusts (0.1-30 μm, mechanical generation) > Mists (liquid droplets, usually >1 μm) > Fumes (<1 μm, condensation of volatilized solids) > Vapors (molecular scale, gaseous form of a normally liquid/solid substance). Gases and vapors are molecular and cannot be filtered by standard particle media.\n\n典型尺寸顺序：粉尘（0.1-30μm，机械产生）> 雾（液滴，通常>1μm）> 烟尘（<1μm，挥发性固体冷凝）> 蒸气（分子尺度，通常为液体/固体物质的气态形式）。气体和蒸气处于分子尺度，无法用标准颗粒物介质过滤。'
+      explanation: 'Typical size order: Dusts (0.1-30 μm, mechanical generation) > Mists (liquid droplets, usually >1 μm) > Fumes (<1 μm, condensation of volatilized solids) > Vapors (molecular scale, gaseous form of a normally liquid/solid substance). Gases and vapors are molecular and cannot be filtered by standard particle media.\n\n典型尺寸顺序：粉尘（0.1-30μm，机械产生）> 雾（液滴，通常>1μm）> 烟尘（<1μm，挥发性固体冷凝）> 蒸气（分子尺度，通常为液体/固体物质的气态形式）。气体和蒸气处于分子尺度，无法用标准颗粒物介质过滤。',
+      related: [{ n: '16.2', t: '工业卫生危害因素' }]
     },
     {
       text: 'A worker is exposed to 45 ppm of a substance (PEL = 100 ppm) for 8 hours, but the substance has a Ceiling limit of 60 ppm. Monitoring shows a 10-minute period at 65 ppm. Which statement is correct?',
@@ -730,7 +739,8 @@ CSPQuiz.init({
         'Non-compliant — the TWA exceeded the ceiling'
       ],
       correct: 1,
-      explanation: 'A ceiling limit must never be exceeded, even momentarily. Since 65 ppm exceeded the 60 ppm ceiling for any period, the exposure is non-compliant regardless of the 8-hour TWA being below the PEL. Ceiling values are instantaneous limits, distinct from the TWA.\n\n上限值即使瞬间也不得超过。由于65 ppm在某个时期超过了60 ppm的上限，无论8小时TWA是否低于PEL，暴露都不合规。上限值是瞬时限值，与TWA不同。'
+      explanation: 'A ceiling limit must never be exceeded, even momentarily. Since 65 ppm exceeded the 60 ppm ceiling for any period, the exposure is non-compliant regardless of the 8-hour TWA being below the PEL. Ceiling values are instantaneous limits, distinct from the TWA.\n\n上限值即使瞬间也不得超过。由于65 ppm在某个时期超过了60 ppm的上限，无论8小时TWA是否低于PEL，暴露都不合规。上限值是瞬时限值，与TWA不同。',
+      related: [{ n: '16.3', t: '采样类型与时长' }]
     },
     {
       text: 'What does "IDLH" stand for, and how is it used in respirator selection?',
@@ -742,7 +752,8 @@ CSPQuiz.init({
         'International Dangerous Level Hazard — a DOT classification'
       ],
       correct: 0,
-      explanation: 'IDLH (Immediately Dangerous to Life or Health) is the NIOSH-defined concentration posing an immediate threat to life, causing irreversible health effects, or impairing escape. Above IDLH, only SCBA or SAR with escape bottle is permitted; air-purifying respirators (even with high APFs) cannot be used.\n\nIDLH（立即危及生命或健康）是NIOSH定义的浓度，对生命构成即时威胁、导致不可逆健康影响或损害逃生能力。超过IDLH，只允许使用SCBA或带逃生瓶的SAR；空气净化呼吸器（即使有高APF）也不能使用。'
+      explanation: 'IDLH (Immediately Dangerous to Life or Health) is the NIOSH-defined concentration posing an immediate threat to life, causing irreversible health effects, or impairing escape. Above IDLH, only SCBA or SAR with escape bottle is permitted; air-purifying respirators (even with high APFs) cannot be used.\n\nIDLH（立即危及生命或健康）是NIOSH定义的浓度，对生命构成即时威胁、导致不可逆健康影响或损害逃生能力。超过IDLH，只允许使用SCBA或带逃生瓶的SAR；空气净化呼吸器（即使有高APF）也不能使用。',
+      related: [{ n: '16.3', t: '采样类型与时长' }]
     },
     {
       text: 'A worker\'s 8-hour TWA for toluene is 150 ppm. The ACGIH TLV-TWA is 50 ppm and the OSHA PEL-TWA is 200 ppm. Which conclusion is correct?',
@@ -754,14 +765,16 @@ CSPQuiz.init({
         'The exposure violates the NIOSH STEL'
       ],
       correct: 0,
-      explanation: 'The 150 ppm TWA is below the OSHA PEL (200 ppm) so it is legally compliant, but it exceeds the ACGIH TLV (50 ppm). The ACGIH TLV is a best-practice guideline, not law. A good IH program uses the TLV as the design target, not just the legal PEL.\n\n150 ppm的TWA低于OSHA PEL（200 ppm），因此法律上合规，但超过了ACGIH TLV（50 ppm）。ACGIH TLV是实践指南而非法律。良好的IH计划应以TLV为设计目标，而不仅仅是法律PEL。'
+      explanation: 'The 150 ppm TWA is below the OSHA PEL (200 ppm) so it is legally compliant, but it exceeds the ACGIH TLV (50 ppm). The ACGIH TLV is a best-practice guideline, not law. A good IH program uses the TLV as the design target, not just the legal PEL.\n\n150 ppm的TWA低于OSHA PEL（200 ppm），因此法律上合规，但超过了ACGIH TLV（50 ppm）。ACGIH TLV是实践指南而非法律。良好的IH计划应以TLV为设计目标，而不仅仅是法律PEL。',
+      related: [{ n: '16.3', t: '采样类型与时长' }]
     },
     {
       text: 'What is the maximum allowable percentage deviation of sampling pump flow rate during calibration?',
       group: 3,
       options: ['±1%', '±5%', '±10%', '±15%'],
       correct: 1,
-      explanation: 'Sampling pumps must be calibrated to within ±5% of the target flow rate, using a primary standard both before and after sampling. Larger deviations invalidate the sample volume calculation.\n\n采样泵必须标定到目标流速的±5%以内，采样前后均使用一级标准。更大的偏差会使采样体积计算失效。'
+      explanation: 'Sampling pumps must be calibrated to within ±5% of the target flow rate, using a primary standard both before and after sampling. Larger deviations invalidate the sample volume calculation.\n\n采样泵必须标定到目标流速的±5%以内，采样前后均使用一级标准。更大的偏差会使采样体积计算失效。',
+      related: [{ n: '16.3', t: '采样类型与时长' }]
     },
     {
       text: 'Which of the following statements about detector tubes is correct?',
@@ -773,7 +786,8 @@ CSPQuiz.init({
         'They require a high-flow sampling pump to operate'
       ],
       correct: 1,
-      explanation: 'Detector (colorimetric) tubes use a hand pump and reagent that changes color with contaminant concentration. Accuracy is typically ±25% — acceptable for screening but not for compliance determinations. They are used for gases and vapors, not particulates.\n\n检气管（比色管）使用手泵和随污染物浓度变色的试剂。精度通常为±25%——适合筛查但不适合合规判定。它们用于气体和蒸气，不用于颗粒物。'
+      explanation: 'Detector (colorimetric) tubes use a hand pump and reagent that changes color with contaminant concentration. Accuracy is typically ±25% — acceptable for screening but not for compliance determinations. They are used for gases and vapors, not particulates.\n\n检气管（比色管）使用手泵和随污染物浓度变色的试剂。精度通常为±25%——适合筛查但不适合合规判定。它们用于气体和蒸气，不用于颗粒物。',
+      related: [{ n: '16.3', t: '采样类型与时长' }]
     },
     {
       text: 'A mixture exposure is calculated as E_m = 0.9. The individual exposures are both below their respective PELs. What does this indicate?',
@@ -785,7 +799,8 @@ CSPQuiz.init({
         'The calculation is invalid because E_m must exceed 2.0 to matter'
       ],
       correct: 2,
-      explanation: 'For additive mixture effects, the combined exposure is considered compliant when E_m ≤ 1.0. E_m = 0.9 is below 1.0, so no overexposure exists — although there is only a 10% margin, which warrants periodic re-evaluation.\n\n对于加和混合效应，当E_m ≤ 1.0时综合暴露被视为合规。E_m = 0.9低于1.0，因此不存在过度暴露——尽管只有10%的余量，值得定期重新评估。'
+      explanation: 'For additive mixture effects, the combined exposure is considered compliant when E_m ≤ 1.0. E_m = 0.9 is below 1.0, so no overexposure exists — although there is only a 10% margin, which warrants periodic re-evaluation.\n\n对于加和混合效应，当E_m ≤ 1.0时综合暴露被视为合规。E_m = 0.9低于1.0，因此不存在过度暴露——尽管只有10%的余量，值得定期重新评估。',
+      related: [{ n: '16.4', t: '采样设备与方法' }]
     },
     {
       text: 'The Brief & Scala model is used to:',
@@ -797,14 +812,16 @@ CSPQuiz.init({
         'Calculate the sample volume for a low-flow pump'
       ],
       correct: 1,
-      explanation: 'The Brief & Scala model adjusts OELs for extended shifts: Adjusted OEL = OEL × (8/h) × (24-h)/16, where h = hours worked. For a 12-hour shift, the adjustment factor is (8/12) × (12/16) = 0.5, meaning the TWA limit is halved.\n\nBrief & Scala模型用于延长班次的OEL调整：调整后OEL = OEL × (8/h) × (24-h)/16，其中h为工作小时数。对于12小时班次，调整系数为(8/12) × (12/16) = 0.5，即TWA限值减半。'
+      explanation: 'The Brief & Scala model adjusts OELs for extended shifts: Adjusted OEL = OEL × (8/h) × (24-h)/16, where h = hours worked. For a 12-hour shift, the adjustment factor is (8/12) × (12/16) = 0.5, meaning the TWA limit is halved.\n\nBrief & Scala模型用于延长班次的OEL调整：调整后OEL = OEL × (8/h) × (24-h)/16，其中h为工作小时数。对于12小时班次，调整系数为(8/12) × (12/16) = 0.5，即TWA限值减半。',
+      related: [{ n: '16.4', t: '采样设备与方法' }]
     },
     {
       text: 'A filter sample collects 0.45 mg of a contaminant over 960 L of air. What is the airborne concentration in mg/m³?',
       group: 4,
       options: ['0.47 mg/m³', '4.7 mg/m³', '0.047 mg/m³', '0.0047 mg/m³'],
       correct: 0,
-      explanation: 'Concentration = Mass / Volume = 0.45 mg / 960 L. Convert L to m³: 960 L = 0.96 m³. C = 0.45 / 0.96 = 0.47 mg/m³. Remember: 1 m³ = 1,000 L.\n\n浓度 = 质量 / 体积 = 0.45 mg / 960 L。将L换算为m³：960 L = 0.96 m³。C = 0.45 / 0.96 = 0.47 mg/m³。记住：1 m³ = 1,000 L。'
+      explanation: 'Concentration = Mass / Volume = 0.45 mg / 960 L. Convert L to m³: 960 L = 0.96 m³. C = 0.45 / 0.96 = 0.47 mg/m³. Remember: 1 m³ = 1,000 L.\n\n浓度 = 质量 / 体积 = 0.45 mg / 960 L。将L换算为m³：960 L = 0.96 m³。C = 0.45 / 0.96 = 0.47 mg/m³。记住：1 m³ = 1,000 L。',
+      related: [{ n: '16.4', t: '采样设备与方法' }]
     },
     {
       text: 'Which type of sampling provides the BEST estimate of an individual worker\'s actual exposure for compliance purposes?',
@@ -816,7 +833,8 @@ CSPQuiz.init({
         'Continuous monitoring of the ventilation exhaust'
       ],
       correct: 1,
-      explanation: 'Personal (breathing-zone) sampling best represents what the worker actually inhales and is the method used for OSHA compliance determinations. Area sampling characterizes the environment, not the individual; grab sampling captures instantaneous peaks.\n\n个人（呼吸带）采样最能代表工人实际吸入的物质，是OSHA合规判定使用的方法。区域采样表征环境而非个体；抓取采样捕捉瞬时峰值。'
+      explanation: 'Personal (breathing-zone) sampling best represents what the worker actually inhales and is the method used for OSHA compliance determinations. Area sampling characterizes the environment, not the individual; grab sampling captures instantaneous peaks.\n\n个人（呼吸带）采样最能代表工人实际吸入的物质，是OSHA合规判定使用的方法。区域采样表征环境而非个体；抓取采样捕捉瞬时峰值。',
+      related: [{ n: '16.4', t: '采样设备与方法' }]
     },
     {
       text: 'All personal TWA samples for a job classification are between 5% and 12% of the OEL. According to the exposure decision logic, this is classified as:',
@@ -828,7 +846,8 @@ CSPQuiz.init({
         'Overexposure — immediate controls required'
       ],
       correct: 0,
-      explanation: 'When all samples are below 10% of the OEL (here 5-12%, with most below 10%), the exposure is negligible and no further action is required. The decision logic: <10% OEL = negligible; 10-50% = low; 50-100% = approaching; >100% = overexposure.\n\n当所有样品都低于OEL的10%时（此处5-12%，大部分低于10%），暴露可忽略，无需进一步行动。决策逻辑：<10% OEL = 可忽略；10-50% = 低；50-100% = 接近；>100% = 过度暴露。'
+      explanation: 'When all samples are below 10% of the OEL (here 5-12%, with most below 10%), the exposure is negligible and no further action is required. The decision logic: <10% OEL = negligible; 10-50% = low; 50-100% = approaching; >100% = overexposure.\n\n当所有样品都低于OEL的10%时（此处5-12%，大部分低于10%），暴露可忽略，无需进一步行动。决策逻辑：<10% OEL = 可忽略；10-50% = 低；50-100% = 接近；>100% = 过度暴露。',
+      related: [{ n: '16.4', t: '采样设备与方法' }]
     },
     {
       text: 'A flame ionization detector (FID) and a photoionization detector (PID) are both used for VOC measurement. Which statement is correct?',
@@ -840,14 +859,16 @@ CSPQuiz.init({
         'Both require laboratory analysis and cannot be used in the field'
       ],
       correct: 1,
-      explanation: 'FID uses a hydrogen/air flame to ionize compounds — it responds to nearly all hydrocarbons but requires fuel gas. PID uses UV light (e.g., 10.6 eV lamp) to ionize compounds with lower ionization potentials, is selective, and requires no fuel gas. Both are direct-reading instruments.\n\nFID使用氢/空气火焰电离化合物——对几乎所有烃类有响应，但需要燃气。PID使用紫外光（如10.6 eV灯）电离低电离电位的化合物，具有选择性，无需燃气。两者都是直读式仪器。'
+      explanation: 'FID uses a hydrogen/air flame to ionize compounds — it responds to nearly all hydrocarbons but requires fuel gas. PID uses UV light (e.g., 10.6 eV lamp) to ionize compounds with lower ionization potentials, is selective, and requires no fuel gas. Both are direct-reading instruments.\n\nFID使用氢/空气火焰电离化合物——对几乎所有烃类有响应，但需要燃气。PID使用紫外光（如10.6 eV灯）电离低电离电位的化合物，具有选择性，无需燃气。两者都是直读式仪器。',
+      related: [{ n: '16.5', t: 'TWA与PEL混合计算' }]
     },
     {
       text: 'A respirable dust sample is collected using a cyclone pre-selector at 2.5 L/min for 400 minutes. What is the sample volume in liters?',
       group: 5,
       options: ['400 L', '1,000 L', '1,600 L', '250 L'],
       correct: 1,
-      explanation: 'Sample volume = 2.5 L/min × 400 min = 1,000 L (1 m³). The cyclone removes larger particles so only the respirable fraction (<10 μm, reaching the alveoli) reaches the filter.\n\n采样体积 = 2.5 L/min × 400分钟 = 1,000 L（1 m³）。旋风分离器去除较大颗粒，使只有可吸入部分（<10μm，到达肺泡）到达滤膜。'
+      explanation: 'Sample volume = 2.5 L/min × 400 min = 1,000 L (1 m³). The cyclone removes larger particles so only the respirable fraction (<10 μm, reaching the alveoli) reaches the filter.\n\n采样体积 = 2.5 L/min × 400分钟 = 1,000 L（1 m³）。旋风分离器去除较大颗粒，使只有可吸入部分（<10μm，到达肺泡）到达滤膜。',
+      related: [{ n: '16.5', t: 'TWA与PEL混合计算' }]
     },
     {
       text: 'Which of the following describes the difference between a vapor and a gas?',
@@ -859,7 +880,8 @@ CSPQuiz.init({
         'There is no difference — the terms are interchangeable'
       ],
       correct: 1,
-      explanation: 'A vapor is the gaseous phase of a substance that is normally liquid or solid at NTP (e.g., solvent vapor). A gas is already gaseous at NTP (e.g., CO, CO₂, Cl₂). Vapors condense when cooled; gases require liquefaction at low temperature/pressure.\n\n蒸气是常温常压下通常为液体或固体的物质的气相（如溶剂蒸气）。气体在常温常压下已经是气态（如CO、CO₂、Cl₂）。蒸气冷却时会冷凝；气体需要低温/高压才能液化。'
+      explanation: 'A vapor is the gaseous phase of a substance that is normally liquid or solid at NTP (e.g., solvent vapor). A gas is already gaseous at NTP (e.g., CO, CO₂, Cl₂). Vapors condense when cooled; gases require liquefaction at low temperature/pressure.\n\n蒸气是常温常压下通常为液体或固体的物质的气相（如溶剂蒸气）。气体在常温常压下已经是气态（如CO、CO₂、Cl₂）。蒸气冷却时会冷凝；气体需要低温/高压才能液化。',
+      related: [{ n: '16.5', t: 'TWA与PEL混合计算' }]
     },
     {
       text: 'What is the primary reason respirable fraction (<10 μm) is the most important particle size for health?',
@@ -871,7 +893,8 @@ CSPQuiz.init({
         'It causes only irritation, not disease'
       ],
       correct: 1,
-      explanation: 'Respirable particles (<10 μm, and especially PM2.5) penetrate past the upper airways to the alveolar region. Non-respirable (larger) particles are trapped in the nose/throat and cleared. The respirable fraction is what drives silicosis, pneumoconiosis, and lung cancer risk.\n\n可吸入颗粒（<10μm，尤其是PM2.5）能穿透上呼吸道到达肺泡区。非可吸入（较大）颗粒被鼻腔/咽喉截留并清除。可吸入部分驱动矽肺、尘肺和肺癌风险。'
+      explanation: 'Respirable particles (<10 μm, and especially PM2.5) penetrate past the upper airways to the alveolar region. Non-respirable (larger) particles are trapped in the nose/throat and cleared. The respirable fraction is what drives silicosis, pneumoconiosis, and lung cancer risk.\n\n可吸入颗粒（<10μm，尤其是PM2.5）能穿透上呼吸道到达肺泡区。非可吸入（较大）颗粒被鼻腔/咽喉截留并清除。可吸入部分驱动矽肺、尘肺和肺癌风险。',
+      related: [{ n: '16.5', t: 'TWA与PEL混合计算' }]
     },
     {
       text: 'A ceiling-type contaminant is monitored with real-time instrumentation. Which of the following sample results indicates a violation?',
@@ -883,14 +906,16 @@ CSPQuiz.init({
         'A 30-second spike at 80% of the ceiling value'
       ],
       correct: 2,
-      explanation: 'A ceiling limit must never be exceeded for any period, even momentarily. A sustained 5-minute reading at 105% of the ceiling is a clear violation. TWA, STEL, and brief spikes below the ceiling do not violate the ceiling (though sustained high values would).\n\n上限值在任何时期都绝不能被超过，即使是瞬间。在105%上限值持续5分钟的读数明显违规。TWA、STEL和低于上限的短暂峰值不违反上限（尽管持续高值会）。'
+      explanation: 'A ceiling limit must never be exceeded for any period, even momentarily. A sustained 5-minute reading at 105% of the ceiling is a clear violation. TWA, STEL, and brief spikes below the ceiling do not violate the ceiling (though sustained high values would).\n\n上限值在任何时期都绝不能被超过，即使是瞬间。在105%上限值持续5分钟的读数明显违规。TWA、STEL和低于上限的短暂峰值不违反上限（尽管持续高值会）。',
+      related: [{ n: '16.5', t: 'TWA与PEL混合计算' }]
     },
     {
       text: 'What is the MOST protective (lowest) exposure limit typically?',
       group: 6,
       options: ['OSHA PEL', 'ACGIH TLV', 'NIOSH REL', 'They are all equal'],
       correct: 2,
-      explanation: 'NIOSH RELs are typically the lowest (most protective) because NIOSH is a research agency using health-based criteria without considering economic feasibility. OSHA PELs are feasibility-based and rarely updated. ACGIH TLVs fall between.\n\nNIOSH REL通常最低（最具保护性），因为NIOSH是研究机构，使用基于健康的标准而不考虑经济可行性。OSHA PEL基于可行性且很少更新。ACGIH TLV介于两者之间。'
+      explanation: 'NIOSH RELs are typically the lowest (most protective) because NIOSH is a research agency using health-based criteria without considering economic feasibility. OSHA PELs are feasibility-based and rarely updated. ACGIH TLVs fall between.\n\nNIOSH REL通常最低（最具保护性），因为NIOSH是研究机构，使用基于健康的标准而不考虑经济可行性。OSHA PEL基于可行性且很少更新。ACGIH TLV介于两者之间。',
+      related: [{ n: '16.6', t: 'OELs：PELs、TLVs和RELs' }]
     },
     {
       text: 'A worker performs a task where 2.5 hours of the 8-hour shift is in an area at 120 ppm (PEL = 100 ppm) and the rest at 40 ppm. What is the 8-hour TWA, and is the worker overexposed?',
@@ -902,7 +927,8 @@ CSPQuiz.init({
         'TWA = 100 ppm — exactly at the PEL'
       ],
       correct: 0,
-      explanation: 'TWA = (120 × 2.5 + 40 × 5.5) / 8 = (300 + 220) / 8 = 520/8 = 65 ppm. Since 65 ppm < 100 ppm PEL, the worker is not overexposed on an 8-hour TWA basis.\n\nTWA = (120 × 2.5 + 40 × 5.5) / 8 = (300 + 220) / 8 = 520/8 = 65 ppm。由于65 ppm < 100 ppm PEL，按8小时TWA计算，工人没有过度暴露。'
+      explanation: 'TWA = (120 × 2.5 + 40 × 5.5) / 8 = (300 + 220) / 8 = 520/8 = 65 ppm. Since 65 ppm < 100 ppm PEL, the worker is not overexposed on an 8-hour TWA basis.\n\nTWA = (120 × 2.5 + 40 × 5.5) / 8 = (300 + 220) / 8 = 520/8 = 65 ppm。由于65 ppm < 100 ppm PEL，按8小时TWA计算，工人没有过度暴露。',
+      related: [{ n: '16.6', t: 'OELs：PELs、TLVs和RELs' }]
     },
     {
       text: 'Which of the following is TRUE about area (ambient) sampling?',
@@ -914,7 +940,8 @@ CSPQuiz.init({
         'It is required by OSHA for all airborne contaminants'
       ],
       correct: 1,
-      explanation: 'Area sampling characterizes background concentrations, identifies emission sources, and evaluates control/ventilation effectiveness. It does NOT measure individual worker exposure — personal breathing-zone sampling is required for compliance.\n\n区域采样表征背景浓度、识别排放源、评估控制/通风效果。它不测量个体工人暴露——合规判定需要个人呼吸带采样。'
+      explanation: 'Area sampling characterizes background concentrations, identifies emission sources, and evaluates control/ventilation effectiveness. It does NOT measure individual worker exposure — personal breathing-zone sampling is required for compliance.\n\n区域采样表征背景浓度、识别排放源、评估控制/通风效果。它不测量个体工人暴露——合规判定需要个人呼吸带采样。',
+      related: [{ n: '16.6', t: 'OELs：PELs、TLVs和RELs' }]
     },
     {
       text: 'The OSHA mixture formula is valid only when:',
@@ -926,7 +953,8 @@ CSPQuiz.init({
         'The substances are all solids'
       ],
       correct: 1,
-      explanation: 'The additive mixture formula (E_m = ΣC_i/L_i) applies when substances have similar toxicological effects on the same target organ. For synergistic (more than additive) effects, the formula UNDERESTIMATES the hazard — the formula does not account for synergy.\n\n加和混合物公式（E_m = ΣC_i/L_i）适用于作用在同一靶器官且效应为加和的物质。对于协同（大于加和）效应，该公式会低估危害——公式不考虑协同作用。'
+      explanation: 'The additive mixture formula (E_m = ΣC_i/L_i) applies when substances have similar toxicological effects on the same target organ. For synergistic (more than additive) effects, the formula UNDERESTIMATES the hazard — the formula does not account for synergy.\n\n加和混合物公式（E_m = ΣC_i/L_i）适用于作用在同一靶器官且效应为加和的物质。对于协同（大于加和）效应，该公式会低估危害——公式不考虑协同作用。',
+      related: [{ n: '16.6', t: 'OELs：PELs、TLVs和RELs' }]
     },
     {
       text: 'What is the IDLH concentration used for in respiratory protection program design?',
@@ -938,7 +966,8 @@ CSPQuiz.init({
         'Establishing the STEL'
       ],
       correct: 2,
-      explanation: 'IDLH sets the maximum concentration at which negative-pressure, air-purifying respirators may be used. Above IDLH, only atmosphere-supplying respirators (SCBA or SAR) are allowed. Additionally, the Maximum Use Concentration (MUC = APF × OEL) must not exceed IDLH.\n\nIDLH设定了可使用负压空气净化呼吸器的最大浓度。超过IDLH，只允许使用供气式呼吸器（SCBA或SAR）。此外，最大使用浓度（MUC = APF × OEL）不得超过IDLH。'
+      explanation: 'IDLH sets the maximum concentration at which negative-pressure, air-purifying respirators may be used. Above IDLH, only atmosphere-supplying respirators (SCBA or SAR) are allowed. Additionally, the Maximum Use Concentration (MUC = APF × OEL) must not exceed IDLH.\n\nIDLH设定了可使用负压空气净化呼吸器的最大浓度。超过IDLH，只允许使用供气式呼吸器（SCBA或SAR）。此外，最大使用浓度（MUC = APF × OEL）不得超过IDLH。',
+      related: [{ n: '16.6', t: 'OELs：PELs、TLVs和RELs' }]
     },
     {
       text: 'A safety professional selects the "worst-case" day (highest production, all tasks running) for sampling. This strategy is:',
@@ -950,7 +979,8 @@ CSPQuiz.init({
         'Only used for noise dosimetry'
       ],
       correct: 1,
-      explanation: 'Worst-case sampling is a conservative strategy: if the highest-exposure scenario is below the OEL, then all other days are also below. It is well suited to compliance screening. Random sampling better supports statistical inference about the typical exposure distribution.\n\n最坏情况采样是保守策略：如果最高暴露场景低于OEL，则所有其他日子也都低于。它非常适合合规筛查。随机采样更好地支持对典型暴露分布的统计推断。'
+      explanation: 'Worst-case sampling is a conservative strategy: if the highest-exposure scenario is below the OEL, then all other days are also below. It is well suited to compliance screening. Random sampling better supports statistical inference about the typical exposure distribution.\n\n最坏情况采样是保守策略：如果最高暴露场景低于OEL，则所有其他日子也都低于。它非常适合合规筛查。随机采样更好地支持对典型暴露分布的统计推断。',
+      related: [{ n: '16.7', t: '暴露评估策略与统计分析' }]
     },
     {
       text: 'Charcoal tubes are the standard collection medium for which category of contaminants?',
@@ -962,7 +992,8 @@ CSPQuiz.init({
         'Asbestos fibers'
       ],
       correct: 1,
-      explanation: 'Activated charcoal sorbent tubes collect organic vapors (aromatic and chlorinated solvents). Silica gel tubes collect polar compounds (amines, alcohols); impingers collect reactive/inorganic gases (NH₃, acids). Metal fumes and fibers use filter cassettes.\n\n活性炭吸附管收集有机蒸气（芳香族和氯化溶剂）。硅胶管收集极性化合物（胺、醇）；吸收瓶收集反应性/无机气体（NH₃、酸）。金属烟尘和纤维使用滤膜夹。'
+      explanation: 'Activated charcoal sorbent tubes collect organic vapors (aromatic and chlorinated solvents). Silica gel tubes collect polar compounds (amines, alcohols); impingers collect reactive/inorganic gases (NH₃, acids). Metal fumes and fibers use filter cassettes.\n\n活性炭吸附管收集有机蒸气（芳香族和氯化溶剂）。硅胶管收集极性化合物（胺、醇）；吸收瓶收集反应性/无机气体（NH₃、酸）。金属烟尘和纤维使用滤膜夹。',
+      related: [{ n: '16.7', t: '暴露评估策略与统计分析' }]
     },
     {
       text: 'What does a Biological Exposure Index (BEI) measure?',
@@ -974,7 +1005,8 @@ CSPQuiz.init({
         'The number of fibers in a lung sample'
       ],
       correct: 1,
-      explanation: 'BEIs (ACGIH) assess total exposure by measuring the contaminant or its metabolite in blood, urine, or exhaled breath. They integrate exposure from all routes (inhalation, dermal, ingestion), unlike airborne limits which measure only inhalation.\n\nBEI（ACGIH）通过测量血液、尿液或呼出气中的污染物或其代谢物来评估总暴露。它们整合了所有途径（吸入、皮肤、摄入）的暴露，而空气限值仅测量吸入。'
+      explanation: 'BEIs (ACGIH) assess total exposure by measuring the contaminant or its metabolite in blood, urine, or exhaled breath. They integrate exposure from all routes (inhalation, dermal, ingestion), unlike airborne limits which measure only inhalation.\n\nBEI（ACGIH）通过测量血液、尿液或呼出气中的污染物或其代谢物来评估总暴露。它们整合了所有途径（吸入、皮肤、摄入）的暴露，而空气限值仅测量吸入。',
+      related: [{ n: '16.7', t: '暴露评估策略与统计分析' }]
     },
     {
       text: 'Which of the following is the CORRECT sequence of the AREC framework?',
@@ -986,7 +1018,8 @@ CSPQuiz.init({
         'Anticipate → Evaluate → Recognize → Control'
       ],
       correct: 1,
-      explanation: 'The correct sequence is Anticipate (predict before existence) → Recognize (identify existing hazards) → Evaluate (measure exposure) → Control (implement controls). This logical progression is the foundation of industrial hygiene practice.\n\n正确顺序是预判（在存在之前预测）→识别（识别现有危害）→评估（测量暴露）→控制（实施控制）。这一逻辑顺序是工业卫生实践的基础。'
+      explanation: 'The correct sequence is Anticipate (predict before existence) → Recognize (identify existing hazards) → Evaluate (measure exposure) → Control (implement controls). This logical progression is the foundation of industrial hygiene practice.\n\n正确顺序是预判（在存在之前预测）→识别（识别现有危害）→评估（测量暴露）→控制（实施控制）。这一逻辑顺序是工业卫生实践的基础。',
+      related: [{ n: '16.7', t: '暴露评估策略与统计分析' }]
     },
     {
       text: 'The Maximum Use Concentration (MUC) for a negative-pressure air-purifying respirator is:',
@@ -998,7 +1031,8 @@ CSPQuiz.init({
         'Set by the respirator manufacturer without limit'
       ],
       correct: 1,
-      explanation: 'MUC = APF × OEL (e.g., a full-face APR with APF = 50 for a substance with PEL = 5 ppm gives MUC = 250 ppm). The MUC must also not exceed the IDLH concentration for the substance, and cartridge service life must be adequate.\n\nMUC = APF × OEL（如APF=50的全面罩APR用于PEL=5 ppm的物质，MUC = 250 ppm）。MUC还必须不超过该物质的IDLH浓度，且滤盒使用寿命必须充足。'
+      explanation: 'MUC = APF × OEL (e.g., a full-face APR with APF = 50 for a substance with PEL = 5 ppm gives MUC = 250 ppm). The MUC must also not exceed the IDLH concentration for the substance, and cartridge service life must be adequate.\n\nMUC = APF × OEL（如APF=50的全面罩APR用于PEL=5 ppm的物质，MUC = 250 ppm）。MUC还必须不超过该物质的IDLH浓度，且滤盒使用寿命必须充足。',
+      related: [{ n: '16.7', t: '暴露评估策略与统计分析' }]
     }
   ]
 });

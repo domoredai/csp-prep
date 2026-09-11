@@ -10,7 +10,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="apple-touch-icon" href="icon-192.png">
-<link rel="stylesheet" href="quiz-styles.css?v=11">
+<link rel="stylesheet" href="quiz-styles.css?v=12">
 <style>
 body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;line-height:1.7;margin:0;padding:0;background:#f0f2f5;color:#1a1a2e}
 .container{max-width:960px;margin:0 auto;padding:20px}
@@ -150,11 +150,16 @@ FM = 0.95 (2 lifts/min, 1 hr, knuckle height), CM = 1.0 (good)<br><br>
 RWL = 51 × 0.833 × 1.0 × 0.92 × 1.0 × 0.95 × 1.0 = <strong>37.1 lbs</strong><br>
 LI = 35 / 37.1 = <strong>0.94</strong> — 名义风险，无需行动 / nominal risk, no action
 </div>
-<div class="exam-scenario">
-<div class="es-label">📝 模拟情景题 / Practice Scenario</div>
-      <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
-<div class="es-question">"A worker lifts from V = 20" to V = 55". What is the vertical travel distance D and the Distance Multiplier (DM)?"</div>
-<div><strong>最佳答案 / Best answer:</strong> D = |55 − 20| = 35"; DM = 0.82 + 1.8/35 = <strong>0.87</strong>. 垂直距离 = |终点−起点|；DM = 0.82 + 1.8/D。</div>
+<div class="exam-scenario"
+     data-options='["D = 35 in; DM = 0.87", "D = 35 in; DM = 0.95", "D = 20 in; DM = 0.91", "D = 75 in; DM = 0.84"]'
+     data-correct="0">
+  <div class="es-label">📝 模拟情景题 / Practice Scenario</div>
+  <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
+  <div class="es-question">"A worker lifts from V = 20" to V = 55". What is the vertical travel distance D and the Distance Multiplier (DM)?"</div>
+  <div class="scenario-feedback">
+    <div class="scenario-fb-label"></div>
+    <div>Vertical travel distance D is the absolute difference between destination and origin heights: D = |55 − 20| = <strong>35 in</strong>. The distance multiplier is DM = 0.82 + (1.8/D) = 0.82 + 1.8/35 = 0.82 + 0.051 = <strong>0.87</strong>. DM equals 1.00 only at the ideal D of 25 in (roughly 10 in at the start to 30 in); any deviation reduces the multiplier. RWL = LC × HM × VM × DM × AM × FM × CM.<br><br>垂直移动距离D为终点与起点高度之差的绝对值：D = |55 − 20| = <strong>35英寸</strong>。距离乘数 DM = 0.82 + (1.8/D) = 0.82 + 1.8/35 = <strong>0.87</strong>。只有当D为理想值25英寸（约起点10英寸、终点30英寸）时DM才等于1.00；偏离即减小乘数。RWL = LC × HM × VM × DM × AM × FM × CM。</div>
+  </div>
 </div>
 
 <div class="exam-hotspot">
@@ -171,10 +176,7 @@ LI = 35 / 37.1 = <strong>0.94</strong> — 名义风险，无需行动 / nominal
 <span class="mn-content"><strong>51-30-10</strong>：LC = 51磅；最优V = 30英寸（指关节高度）；HM = 10/H。 / Load constant, optimal vertical height, and horizontal multiplier constant.</span>
 </div></div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>18.3 人因风险因素与CTD</strong>、<strong>18.2 RULA姿势评估</strong>、<strong>18.7 局部排风（通风罩Q=VA、LEV组件顺序）</strong> 的内容，详细讲解见对应卡片。Some questions here cover topics explained under the referenced cards.
-  </div>
-  <div id="quiz-group-1"></div>
+    <div id="quiz-group-1"></div>
 
 
 <!-- RULA and REBA -->
@@ -222,17 +224,19 @@ LI = 35 / 37.1 = <strong>0.94</strong> — 名义风险，无需行动 / nominal
 </table>
 </div>
 
-<div class="exam-scenario">
-<div class="es-label">📝 模拟情景题 / Practice Scenario</div>
-      <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
-<div class="es-question">"Which ergonomic assessment tool is BEST suited for evaluating a healthcare task involving unpredictable whole-body postures such as lifting a patient?"</div>
-<div><strong>最佳答案 / Best answer:</strong> REBA — it includes the lower body and was designed for unpredictable postures common in healthcare. 医护搬运患者等不可预测全身姿势用REBA。</div>
+<div class="exam-scenario"
+     data-options='["RULA", "REBA", "NIOSH Revised Lifting Equation", "The 4-inch anthropometric reach rule"]'
+     data-correct="1">
+  <div class="es-label">📝 模拟情景题 / Practice Scenario</div>
+  <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
+  <div class="es-question">"Which ergonomic assessment tool is BEST suited for evaluating a healthcare task involving unpredictable whole-body postures such as lifting a patient?"</div>
+  <div class="scenario-feedback">
+    <div class="scenario-fb-label"></div>
+    <div><strong>REBA</strong> (Rapid Entire Body Assessment) assesses the whole body — including the lower body and legs — and was designed for unpredictable, dynamic postures such as patient handling in healthcare. RULA (Rapid Upper Limb Assessment) focuses on the upper limbs and suits seated, repetitive upper-extremity tasks. The NIOSH lifting equation applies only to two-handed, symmetric, non-awkward manual lifting.<br><br><strong>REBA</strong>（快速全身评估）评估全身——包括下肢和腿——专为医护搬抬患者等不可预测的动态姿势设计。RULA（快速上肢评估）聚焦上肢，更适合坐姿、重复性上肢任务。NIOSH提举方程仅适用于双手、对称、非别扭姿势的人工提举。</div>
+  </div>
 </div></div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>18.1 NIOSH提举方程（HM水平乘数、LI解读、最优V=30"）</strong>、<strong>18.3 CTD（腕管综合征）</strong>、<strong>18.7 补风与负压</strong> 的内容，详细讲解见对应卡片。Some questions here cover topics explained under the referenced cards.
-  </div>
-  <div id="quiz-group-2"></div>
+    <div id="quiz-group-2"></div>
 
 
 <!-- Ergonomics Risk Factors & CTDs -->
@@ -293,10 +297,7 @@ LI = 35 / 37.1 = <strong>0.94</strong> — 名义风险，无需行动 / nominal
 </table>
 </div></div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>18.6 通风一般原则（Q=VA、圆形管道面积πr²）</strong>、<strong>18.7 局部排风（面风速、焊接工位LEV）</strong> 的内容，详细讲解见对应卡片。Some questions here cover topics explained under the referenced cards.
-  </div>
-  <div id="quiz-group-3"></div>
+    <div id="quiz-group-3"></div>
 
 
 <!-- Visual, Anthropometrics, Fatigue -->
@@ -351,10 +352,7 @@ LI = 35 / 37.1 = <strong>0.94</strong> — 名义风险，无需行动 / nominal
 </table>
 </div></div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>18.1 NIOSH提举方程（DM距离乘数最小值、RWL计算、AM不对称乘数）</strong>、<strong>18.7 除尘设备（旋风器/袋式除尘器）</strong> 的内容，详细讲解见对应卡片。Some questions here cover topics explained under the referenced cards.
-  </div>
-  <div id="quiz-group-4"></div>
+    <div id="quiz-group-4"></div>
 
 
 <!-- Chemistry & Physics -->
@@ -422,11 +420,16 @@ LI = 35 / 37.1 = <strong>0.94</strong> — 名义风险，无需行动 / nominal
 <span class="en-p">Remember the conversion <strong>1 ft³ = 7.48 gallons</strong>. When a tank sits inside the berm, the space the tank occupies cannot hold spilled liquid, so <strong>subtract the tank footprint area</strong> before multiplying by the effective depth and 7.48. Design target: contain 110% of the largest tank (or 10% of aggregate, whichever is larger).</span>
 <span class="zh-p" style="color:#666;">记住换算 <strong>1立方英尺 = 7.48加仑</strong>。当罐体位于围堤内时，罐体占据的空间无法容纳泄漏液体，因此在乘以有效深度和7.48之前应<strong>减去罐区占地面积</strong>。设计目标：容纳最大罐的110%（或总量的10%，取较大者）。</span>
 </div>
-<div class="exam-scenario">
-<div class="es-label">📝 模拟情景题 / Practice Scenario</div>
-      <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
-<div class="es-question">"A 10,000-gallon aboveground tank sits in a containment berm. The berm is 30 ft × 20 ft and the tank occupies 150 ft² of the berm floor. What is the required berm height to contain 110% of the tank?"</div>
-<div><strong>最佳答案 / Best answer:</strong> Required volume = 1.10 × 10,000 = 11,000 gal = 11,000/7.48 = 1,470.6 ft³. Usable area = (30×20) − 150 = 450 ft². Height = 1,470.6/450 = <strong>3.27 ft</strong> (≈39 in, plus freeboard). 体积换算7.48，扣除罐占地后再求高度。</div>
+<div class="exam-scenario"
+     data-options='["1.63 ft", "2.73 ft", "3.27 ft", "4.90 ft"]'
+     data-correct="2">
+  <div class="es-label">📝 模拟情景题 / Practice Scenario</div>
+  <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
+  <div class="es-question">"A 10,000-gallon aboveground tank sits in a containment berm. The berm is 30 ft × 20 ft and the tank occupies 150 ft² of the berm floor. What is the required berm height to contain 110% of the tank?"</div>
+  <div class="scenario-feedback">
+    <div class="scenario-fb-label"></div>
+    <div>Required volume = 110% × 10,000 = 11,000 gal ÷ 7.48 gal/ft³ = 1,470.6 ft³. Usable floor area = (30 × 20) − 150 = 450 ft² — the tank footprint must be subtracted because liquid cannot occupy that space. Height = 1,470.6 ÷ 450 = <strong>3.27 ft</strong> (≈39 in), plus freeboard for precipitation. Forgetting to subtract the tank footprint is the standard exam trap.<br><br>所需容积 = 110% × 10,000 = 11,000加仑 ÷ 7.48 = 1,470.6立方英尺。可用底面积 = (30 × 20) − 150 = 450平方英尺——必须减去罐占地面积，因为液体无法占据该空间。高度 = 1,470.6 ÷ 450 = <strong>3.27英尺</strong>（约39英寸），另加降水超高。忘记扣除罐占地是标准考试陷阱。</div>
+  </div>
 </div>
 
 <div class="mnemonic">
@@ -434,10 +437,7 @@ LI = 35 / 37.1 = <strong>0.94</strong> — 名义风险，无需行动 / nominal
 <span class="mn-content"><strong>σ = F/A</strong>（应力=力/面积）；<strong>Q = mcΔT</strong>（热量）；<strong>1 hp = 550 ft-lb/s = 746 W</strong>。 / Key physics formulas for the exam.</span>
 </div></div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>18.7 局部排风（捕集速度）</strong>、<strong>18.6 稀释通风公式（K安全系数）</strong>、<strong>18.4 人体测量学设计</strong> 的内容，详细讲解见对应卡片。Some questions here cover topics explained under the referenced cards.
-  </div>
-  <div id="quiz-group-5"></div>
+    <div id="quiz-group-5"></div>
 
 
 <!-- Ventilation General -->
@@ -478,11 +478,16 @@ C₀ = 进风浓度 (ppm) / incoming air concentration<br><br>
 <span class="en-p">Low toxicity contaminants, low emission rates, uniform generation, workers are away from the source. <strong>When NOT to use / 何时不应使用:</strong> Highly toxic substances, large quantities, non-uniform release, workers close to the source — use <strong>Local Exhaust Ventilation (LEV) / 局部排风</strong> instead.</span>
 <span class="zh-p" style="color:#666;display:block;">低毒性污染物、低排放率、均匀产生、工人远离污染源。<strong>不应使用的场合：</strong>高毒性物质、大量排放、不均匀释放、工人靠近污染源——应改用<strong>局部排风（LEV）</strong>。</span>
 </div>
-<div class="exam-scenario">
-<div class="es-label">📝 模拟情景题 / Practice Scenario</div>
-      <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
-<div class="es-question">"A ventilation duct has a cross-sectional area of 2 ft² and carries air at 2,500 fpm. What is the volumetric flow rate?"</div>
-<div><strong>最佳答案 / Best answer:</strong> Q = V × A = 2,500 fpm × 2 ft² = <strong>5,000 cfm</strong>. Q = VA是通风计算的核心公式。</div>
+<div class="exam-scenario"
+     data-options='["1,250 cfm", "2,500 cfm", "5,000 cfm", "10,000 cfm"]'
+     data-correct="2">
+  <div class="es-label">📝 模拟情景题 / Practice Scenario</div>
+  <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
+  <div class="es-question">"A ventilation duct has a cross-sectional area of 2 ft² and carries air at 2,500 fpm. What is the volumetric flow rate?"</div>
+  <div class="scenario-feedback">
+    <div class="scenario-fb-label"></div>
+    <div>Q = V × A = 2,500 fpm × 2 ft² = <strong>5,000 cfm</strong>. The continuity relationship Q = V × A is the core ventilation equation: at a fixed volumetric flow, reducing the duct cross-sectional area increases velocity, and vice versa. Also remember that dilution ventilation is unsuitable for highly toxic substances, large or non-uniform releases, or workers close to the source — use LEV instead.<br><br>Q = V × A = 2,500英尺/分 × 2平方英尺 = <strong>5,000 cfm</strong>。连续性关系 Q = V × A 是通风的核心公式：流量固定时，减小管道截面积会提高风速，反之亦然。另需记住：稀释通风不适用于高毒物质、大量或不均匀释放、或靠近源头的工人——应改用LEV。</div>
+  </div>
 </div>
 
 <div class="exam-hotspot">
@@ -517,10 +522,7 @@ C₀ = 进风浓度 (ppm) / incoming air concentration<br><br>
 </table>
 </div></div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>18.5 围堤容积计算（7.48 gal/ft³、减去罐区面积法）</strong>、<strong>18.1 NIOSH提举方程适用性</strong>、<strong>18.3 CTD控制措施</strong>、<strong>18.7 面风速</strong>、跨周 <strong>17.2 NRR降噪计算</strong> 的内容，详细讲解见对应卡片。Some questions here cover topics explained under the referenced cards.
-  </div>
-  <div id="quiz-group-6"></div>
+    <div id="quiz-group-6"></div>
 
 
 <!-- LEV -->
@@ -582,11 +584,16 @@ C₀ = 进风浓度 (ppm) / incoming air concentration<br><br>
 <span class="en-p">Laboratory fume hood face velocity standard is 80-120 fpm, with <strong>100 fpm</strong> being the most commonly used standard. ASHRAE 110 is the standard test method for fume hood performance (uses SF₆ tracer gas). Hoods should be tested at least annually.</span>
 <span class="zh-p" style="color:#666;display:block;">实验室通风橱面风速标准为80-120 fpm，<strong>100 fpm</strong>是最常用的标准。ASHRAE 110是通风橱性能的标准测试方法（使用SF₆示踪气体）。通风橱应至少每年测试一次。</span>
 </div>
-<div class="exam-scenario">
-<div class="es-label">📝 模拟情景题 / Practice Scenario</div>
-      <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
-<div class="es-question">"A lab fume hood has an opening of 5 ft wide × 3 ft high. If the desired face velocity is 100 fpm, what is the required exhaust airflow?"</div>
-<div><strong>最佳答案 / Best answer:</strong> Q = V × A = 100 fpm × 15 ft² = <strong>1,500 cfm</strong>. 面风速 × 开口面积 = 排风量。Fume hood face velocity standard: 80-120 fpm (100 fpm typical), ASHRAE 110 (SF₆) test.</div>
+<div class="exam-scenario"
+     data-options='["500 cfm", "1,500 cfm", "3,000 cfm", "15,000 cfm"]'
+     data-correct="1">
+  <div class="es-label">📝 模拟情景题 / Practice Scenario</div>
+  <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
+  <div class="es-question">"A lab fume hood has an opening of 5 ft wide × 3 ft high. If the desired face velocity is 100 fpm, what is the required exhaust airflow?"</div>
+  <div class="scenario-feedback">
+    <div class="scenario-fb-label"></div>
+    <div>Q = V × A = 100 fpm × (5 ft × 3 ft) = 100 × 15 = <strong>1,500 cfm</strong>. For a fume hood, the face velocity at the opening (typically 80–120 fpm, with 100 fpm the common design value) drives the required exhaust airflow. ASHRAE 110 (SF6 tracer gas) is the standard hood-performance test. Note the LEV component order: hood → ducts → air cleaner → fan → stack, with the fan on the clean side after the air cleaner.<br><br>Q = V × A = 100英尺/分 × (5 × 3平方英尺) = 100 × 15 = <strong>1,500 cfm</strong>。通风橱开口处的面风速（通常80–120英尺/分，常用设计值100）决定所需排风量。ASHRAE 110（SF6示踪气体法）是通风橱性能的标准测试。注意LEV组件顺序：通风罩 → 管道 → 空气净化器 → 风机 → 排风塔，风机位于净化器之后的洁净侧。</div>
+  </div>
 </div>
 
 <div class="confusion-box">
@@ -603,18 +610,15 @@ C₀ = 进风浓度 (ppm) / incoming air concentration<br><br>
 <span class="mn-content"><strong>H-D-A-F-S</strong> = Hood → Ducts → Air cleaner → Fan → Stack（罩口→管道→净化器→风机→排气管）——LEV组件顺序。 / LEV component order.</span>
 </div></div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>18.1 NIOSH提举方程（距离乘数DM）</strong>、<strong>18.4 人体测量学设计</strong>、<strong>18.6 稀释通风的局限</strong>、<strong>18.2 REBA全身评估</strong> 的内容，详细讲解见对应卡片。Some questions here cover topics explained under the referenced cards.
-  </div>
-  <div id="quiz-group-7"></div>
+    <div id="quiz-group-7"></div>
 
 
 <!-- Quiz -->
 <div id="quiz-root"></div>
 </div>
 
-<script src="quiz-engine.js?v=11"></script>
-<script src="vocab-engine.js?v=11"></script>
+<script src="quiz-engine.js?v=12"></script>
+<script src="vocab-engine.js?v=12"></script>
 <script>
 CSPQuiz.init({
   containerId: 'quiz-root',
@@ -632,21 +636,24 @@ CSPQuiz.init({
         'The weight at which engineering controls become mandatory'
       ],
       correct: 1,
-      explanation: 'The LC is 51 lbs (23 kg) and represents the maximum recommended weight under absolutely ideal conditions — at knuckle height, close to the body, no twisting, good coupling, and low frequency. All other multipliers reduce this ideal value to account for non-ideal conditions.\n\nLC为51磅（23公斤），代表在绝对理想条件下——指关节高度、靠近身体、无扭转、良好耦合和低频率——的最大推荐重量。所有其他乘数都会降低这一理想值以考虑非理想条件。'
+      explanation: 'The LC is 51 lbs (23 kg) and represents the maximum recommended weight under absolutely ideal conditions — at knuckle height, close to the body, no twisting, good coupling, and low frequency. All other multipliers reduce this ideal value to account for non-ideal conditions.\n\nLC为51磅（23公斤），代表在绝对理想条件下——指关节高度、靠近身体、无扭转、良好耦合和低频率——的最大推荐重量。所有其他乘数都会降低这一理想值以考虑非理想条件。',
+      related: [{ n: '18.1', t: 'NIOSH修订版提举方程' }]
     },
     {
       text: 'A laboratory fume hood has an opening that is 5 feet wide by 3 feet high. If the desired face velocity is 100 fpm, what is the required exhaust airflow rate?',
       group: 1,
       options: ['500 cfm', '1,000 cfm', '1,500 cfm', '2,000 cfm'],
       correct: 2,
-      explanation: 'Q = V × A = 100 fpm × (5 ft × 3 ft) = 100 fpm × 15 ft² = 1,500 cfm. Face velocity of 80-120 fpm is standard for laboratory fume hoods, with 100 fpm being the most common operational standard.\n\nQ = V × A = 100 fpm × (5 ft × 3 ft) = 100 fpm × 15 ft² = 1,500 cfm。80-120 fpm的面风速是实验室通风橱的标准，100 fpm是最常见的操作标准。'
+      explanation: 'Q = V × A = 100 fpm × (5 ft × 3 ft) = 100 fpm × 15 ft² = 1,500 cfm. Face velocity of 80-120 fpm is standard for laboratory fume hoods, with 100 fpm being the most common operational standard.\n\nQ = V × A = 100 fpm × (5 ft × 3 ft) = 100 fpm × 15 ft² = 1,500 cfm。80-120 fpm的面风速是实验室通风橱的标准，100 fpm是最常见的操作标准。',
+      related: [{ n: '18.1', t: 'NIOSH修订版提举方程' }]
     },
     {
       text: 'Which RULA Grand Score range requires investigation and changes IMMEDIATELY?',
       group: 1,
       options: ['Score 3-4', 'Score 5-6', 'Score 7+', 'Score 1-2'],
       correct: 2,
-      explanation: 'RULA Action Levels: Score 1-2 = AL1 (acceptable), Score 3-4 = AL2 (investigate further), Score 5-6 = AL3 (changes soon), Score 7+ = AL4 (investigate and implement changes IMMEDIATELY).\n\nRULA行动级别：分数1-2=AL1（可接受），分数3-4=AL2（进一步调查），分数5-6=AL3（尽快改变），分数7+=AL4（立即调查和实施改变）。'
+      explanation: 'RULA Action Levels: Score 1-2 = AL1 (acceptable), Score 3-4 = AL2 (investigate further), Score 5-6 = AL3 (changes soon), Score 7+ = AL4 (investigate and implement changes IMMEDIATELY).\n\nRULA行动级别：分数1-2=AL1（可接受），分数3-4=AL2（进一步调查），分数5-6=AL3（尽快改变），分数7+=AL4（立即调查和实施改变）。',
+      related: [{ n: '18.1', t: 'NIOSH修订版提举方程' }]
     },
     {
       text: 'What is the correct sequence of components in a Local Exhaust Ventilation (LEV) system, following the direction of airflow?',
@@ -658,7 +665,8 @@ CSPQuiz.init({
         'Stack → Fan → Ducts → Air Cleaner → Hood'
       ],
       correct: 1,
-      explanation: 'The correct sequence is: Hood (captures contaminants) → Ducts (transport) → Air Cleaner (removes contaminants) → Fan (motive force, on the clean side) → Stack (discharges outdoors). The fan is placed after the air cleaner to handle clean air and avoid corrosion/erosion.\n\n正确顺序为：罩口（捕获污染物）→管道（输送）→空气净化器（去除污染物）→风机（动力源，在洁净侧）→排气管（排放到室外）。风机放置在空气净化器之后，以处理洁净空气，避免腐蚀/侵蚀。'
+      explanation: 'The correct sequence is: Hood (captures contaminants) → Ducts (transport) → Air Cleaner (removes contaminants) → Fan (motive force, on the clean side) → Stack (discharges outdoors). The fan is placed after the air cleaner to handle clean air and avoid corrosion/erosion.\n\n正确顺序为：罩口（捕获污染物）→管道（输送）→空气净化器（去除污染物）→风机（动力源，在洁净侧）→排气管（排放到室外）。风机放置在空气净化器之后，以处理洁净空气，避免腐蚀/侵蚀。',
+      related: [{ n: '18.1', t: 'NIOSH修订版提举方程' }]
     },
     {
       text: 'A Lifting Index (LI) greater than 3.0 indicates:',
@@ -670,14 +678,16 @@ CSPQuiz.init({
         'Very high risk — nearly all workers at elevated risk; engineering controls essential'
       ],
       correct: 3,
-      explanation: 'LI > 3.0 indicates very high risk where nearly all workers are at elevated risk of low back pain and engineering controls are essential. LI ≤ 1 = safe. 1 < LI ≤ 2 = moderate risk. 2 < LI ≤ 3 = high risk.\n\nLI > 3.0表示非常高风险，几乎所有工人的下背痛风险都较高，工程控制至关重要。LI ≤ 1 = 安全。1 < LI ≤ 2 = 中等风险。2 < LI ≤ 3 = 高风险。'
+      explanation: 'LI > 3.0 indicates very high risk where nearly all workers are at elevated risk of low back pain and engineering controls are essential. LI ≤ 1 = safe. 1 < LI ≤ 2 = moderate risk. 2 < LI ≤ 3 = high risk.\n\nLI > 3.0表示非常高风险，几乎所有工人的下背痛风险都较高，工程控制至关重要。LI ≤ 1 = 安全。1 < LI ≤ 2 = 中等风险。2 < LI ≤ 3 = 高风险。',
+      related: [{ n: '18.1', t: 'NIOSH修订版提举方程' }]
     },
     {
       text: 'Which of the following is NOT a primary ergonomic risk factor for cumulative trauma disorders?',
       group: 1,
       options: ['Repetition', 'Force', 'Awkward posture', 'Lighting levels'],
       correct: 3,
-      explanation: 'The primary ergonomic risk factors for CTDs/MSDs are: repetition, force, awkward/static posture, contact stress, vibration, and cold/thermal stress. Lighting levels affect visual comfort and may cause awkward postures (leaning to see better), but lighting itself is not a primary direct risk factor for CTDs.\n\nCTDs/MSDs的主要人因工程风险因素包括：重复、力量、不良/静止姿势、接触应力、振动和低温/热应激。照明水平影响视觉舒适度，可能导致不良姿势（倾身以便看清），但照明本身并不是CTDs的主要直接风险因素。'
+      explanation: 'The primary ergonomic risk factors for CTDs/MSDs are: repetition, force, awkward/static posture, contact stress, vibration, and cold/thermal stress. Lighting levels affect visual comfort and may cause awkward postures (leaning to see better), but lighting itself is not a primary direct risk factor for CTDs.\n\nCTDs/MSDs的主要人因工程风险因素包括：重复、力量、不良/静止姿势、接触应力、振动和低温/热应激。照明水平影响视觉舒适度，可能导致不良姿势（倾身以便看清），但照明本身并不是CTDs的主要直接风险因素。',
+      related: [{ n: '18.1', t: 'NIOSH修订版提举方程' }]
     },
     {
       text: 'Why must makeup air be supplied to a building when using exhaust ventilation?',
@@ -689,14 +699,16 @@ CSPQuiz.init({
         'To meet LEED certification requirements for green buildings'
       ],
       correct: 1,
-      explanation: 'Without adequate makeup air, the building becomes negatively pressurized, causing: back-drafting of combustion appliances (CO hazard), doors that are difficult to open, infiltration of unconditioned outdoor air (energy waste and comfort issues), poor LEV performance, and cross-contamination between building zones.\n\n没有充足的补风，建筑会形成负压，导致：燃烧设备反抽（CO危险）、开门困难、未经调节的外界空气渗入（能源浪费和舒适问题）、LEV性能不佳以及建筑区域之间的交叉污染。'
+      explanation: 'Without adequate makeup air, the building becomes negatively pressurized, causing: back-drafting of combustion appliances (CO hazard), doors that are difficult to open, infiltration of unconditioned outdoor air (energy waste and comfort issues), poor LEV performance, and cross-contamination between building zones.\n\n没有充足的补风，建筑会形成负压，导致：燃烧设备反抽（CO危险）、开门困难、未经调节的外界空气渗入（能源浪费和舒适问题）、LEV性能不佳以及建筑区域之间的交叉污染。',
+      related: [{ n: '18.2', t: 'RULA与REBA姿势评估工具' }]
     },
     {
       text: 'In the NIOSH lifting equation, the Horizontal Multiplier (HM) equals 10/H. A worker lifts a box with H = 20 inches. What is the HM?',
       group: 2,
       options: ['0.75', '0.50', '0.67', '1.00'],
       correct: 1,
-      explanation: 'HM = 10/H = 10/20 = 0.50. This means the horizontal reach distance has halved the ideal weight. A smaller H (closer to the body) gives a higher HM (closer to 1.0).\n\nHM = 10/H = 10/20 = 0.50。这意味着水平伸手距离已将理想重量减半。H越小（越靠近身体），HM越高（越接近1.0）。'
+      explanation: 'HM = 10/H = 10/20 = 0.50. This means the horizontal reach distance has halved the ideal weight. A smaller H (closer to the body) gives a higher HM (closer to 1.0).\n\nHM = 10/H = 10/20 = 0.50。这意味着水平伸手距离已将理想重量减半。H越小（越靠近身体），HM越高（越接近1.0）。',
+      related: [{ n: '18.2', t: 'RULA与REBA姿势评估工具' }]
     },
     {
       text: 'A lifting task has an RWL of 25 lbs. The actual load weighs 40 lbs. What is the Lifting Index and how is it interpreted?',
@@ -708,14 +720,16 @@ CSPQuiz.init({
         'LI = 0.63 — significant risk'
       ],
       correct: 1,
-      explanation: 'LI = Load Weight / RWL = 40 / 25 = 1.60. Since 1.0 < LI ≤ 2.0, this is moderate risk — some workers may be at increased risk of lifting-related injury, and job redesign is recommended.\n\nLI = 负荷重量 / RWL = 40 / 25 = 1.60。由于1.0 < LI ≤ 2.0，这是中等风险——部分工人可能面临提举相关伤害的风险增加，建议作业再设计。'
+      explanation: 'LI = Load Weight / RWL = 40 / 25 = 1.60. Since 1.0 < LI ≤ 2.0, this is moderate risk — some workers may be at increased risk of lifting-related injury, and job redesign is recommended.\n\nLI = 负荷重量 / RWL = 40 / 25 = 1.60。由于1.0 < LI ≤ 2.0，这是中等风险——部分工人可能面临提举相关伤害的风险增加，建议作业再设计。',
+      related: [{ n: '18.2', t: 'RULA与REBA姿势评估工具' }]
     },
     {
       text: 'What is the ideal (optimal) vertical height V at which VM = 1.0 in the NIOSH lifting equation?',
       group: 2,
       options: ['Knuckle height, approximately 30 inches', 'Shoulder height, approximately 50 inches', 'Floor level', 'Waist height, approximately 36 inches'],
       correct: 0,
-      explanation: 'VM = 1.0 at V = 30 inches (knuckle height). Lifting at other heights reduces VM. Above or below 30 inches, VM decreases by 0.0075 per inch of deviation.\n\nVM = 1.0出现在V = 30英寸（指关节高度）。在其他高度提举会降低VM。在30英寸以上或以下，每偏离1英寸VM减少0.0075。'
+      explanation: 'VM = 1.0 at V = 30 inches (knuckle height). Lifting at other heights reduces VM. Above or below 30 inches, VM decreases by 0.0075 per inch of deviation.\n\nVM = 1.0出现在V = 30英寸（指关节高度）。在其他高度提举会降低VM。在30英寸以上或以下，每偏离1英寸VM减少0.0075。',
+      related: [{ n: '18.2', t: 'RULA与REBA姿势评估工具' }]
     },
     {
       text: 'Which statement correctly differentiates RULA from REBA?',
@@ -727,28 +741,32 @@ CSPQuiz.init({
         'REBA is only for seated computer work'
       ],
       correct: 1,
-      explanation: 'REBA (Rapid Entire Body Assessment) was developed to extend RULA\'s upper-limb focus to include the lower body (legs) and is more suitable for unpredictable postures (healthcare, construction). RULA focuses on the neck, trunk, arms, and wrists.\n\nREBA（快速全身评估）开发目的是将RULA的上肢关注点扩展到下半身（腿部），更适合不可预测的姿势（医疗、建筑）。RULA关注颈部、躯干、手臂和手腕。'
+      explanation: 'REBA (Rapid Entire Body Assessment) was developed to extend RULA\'s upper-limb focus to include the lower body (legs) and is more suitable for unpredictable postures (healthcare, construction). RULA focuses on the neck, trunk, arms, and wrists.\n\nREBA（快速全身评估）开发目的是将RULA的上肢关注点扩展到下半身（腿部），更适合不可预测的姿势（医疗、建筑）。RULA关注颈部、躯干、手臂和手腕。',
+      related: [{ n: '18.2', t: 'RULA与REBA姿势评估工具' }]
     },
     {
       text: 'Carpal Tunnel Syndrome results from compression of which nerve?',
       group: 2,
       options: ['Ulnar nerve', 'Median nerve', 'Radial nerve', 'Sciatic nerve'],
       correct: 1,
-      explanation: 'Carpal tunnel syndrome involves compression of the median nerve as it passes through the carpal tunnel of the wrist, causing numbness, tingling, and weakness in the thumb, index, and middle fingers. It is a common CTD from repetitive wrist motion and forceful gripping.\n\n腕管综合征是正中神经通过腕管时受压，导致拇指、食指和中指麻木、刺痛和无力。这是由重复性腕部运动和用力抓握引起的常见CTD。'
+      explanation: 'Carpal tunnel syndrome involves compression of the median nerve as it passes through the carpal tunnel of the wrist, causing numbness, tingling, and weakness in the thumb, index, and middle fingers. It is a common CTD from repetitive wrist motion and forceful gripping.\n\n腕管综合征是正中神经通过腕管时受压，导致拇指、食指和中指麻木、刺痛和无力。这是由重复性腕部运动和用力抓握引起的常见CTD。',
+      related: [{ n: '18.2', t: 'RULA与REBA姿势评估工具' }]
     },
     {
       text: 'A ventilation duct has a cross-sectional area of 2 square feet and carries air at 2,500 fpm. What is the volumetric flow rate?',
       group: 3,
       options: ['5,000 cfm', '2,500 cfm', '1,250 cfm', '500 cfm'],
       correct: 0,
-      explanation: 'Q = V × A = 2,500 fpm × 2 ft² = 5,000 cfm. This fundamental relationship (Q = VA) is used to calculate airflow in ducts, hoods, and stacks.\n\nQ = V × A = 2,500 fpm × 2 ft² = 5,000 cfm。这个基本关系式（Q = VA）用于计算管道、罩口和排气管中的气流量。'
+      explanation: 'Q = V × A = 2,500 fpm × 2 ft² = 5,000 cfm. This fundamental relationship (Q = VA) is used to calculate airflow in ducts, hoods, and stacks.\n\nQ = V × A = 2,500 fpm × 2 ft² = 5,000 cfm。这个基本关系式（Q = VA）用于计算管道、罩口和排气管中的气流量。',
+      related: [{ n: '18.3', t: '人因工程风险因素与CTDs/MSDs' }]
     },
     {
       text: 'A ventilation duct carries air at 1,200 fpm and 3,000 cfm. What is the duct cross-sectional area?',
       group: 3,
       options: ['1.0 ft²', '2.5 ft²', '3.6 ft²', '4.0 ft²'],
       correct: 1,
-      explanation: 'A = Q / V = 3,000 cfm / 1,200 fpm = 2.5 ft². Rearranging Q = VA to solve for area is a common CSP calculation.\n\nA = Q / V = 3,000 cfm / 1,200 fpm = 2.5 ft²。将Q = VA变形求解面积是常见的CSP计算。'
+      explanation: 'A = Q / V = 3,000 cfm / 1,200 fpm = 2.5 ft². Rearranging Q = VA to solve for area is a common CSP calculation.\n\nA = Q / V = 3,000 cfm / 1,200 fpm = 2.5 ft²。将Q = VA变形求解面积是常见的CSP计算。',
+      related: [{ n: '18.3', t: '人因工程风险因素与CTDs/MSDs' }]
     },
     {
       text: 'Which ventilation approach is MOST appropriate for a highly toxic contaminant generated at a fixed welding station?',
@@ -760,21 +778,24 @@ CSPQuiz.init({
         'No ventilation — PPE is sufficient'
       ],
       correct: 1,
-      explanation: 'LEV at the source is the preferred approach for highly toxic contaminants or high emission rates. Dilution ventilation is only appropriate for low-toxicity contaminants released uniformly. Capturing the contaminant at the source prevents it from entering the breathing zone.\n\n对高毒性污染物或大排放量，源头LEV是首选方法。稀释通风只适用于均匀释放的低毒性污染物。在源头捕获污染物可防止其进入呼吸带。'
+      explanation: 'LEV at the source is the preferred approach for highly toxic contaminants or high emission rates. Dilution ventilation is only appropriate for low-toxicity contaminants released uniformly. Capturing the contaminant at the source prevents it from entering the breathing zone.\n\n对高毒性污染物或大排放量，源头LEV是首选方法。稀释通风只适用于均匀释放的低毒性污染物。在源头捕获污染物可防止其进入呼吸带。',
+      related: [{ n: '18.3', t: '人因工程风险因素与CTDs/MSDs' }]
     },
     {
       text: 'A 12-inch diameter duct carries air at 2,000 fpm. What is the volumetric flow rate?',
       group: 3,
       options: ['24,000 cfm', '15,700 cfm', '3,140 cfm', '1,570 cfm'],
       correct: 3,
-      explanation: 'Q = V × A. Radius = 6 inches = 0.5 ft. Area = π × r² = 3.1416 × 0.25 = 0.7854 ft². Q = 2,000 fpm × 0.7854 ft² = 1,571 cfm (approximately 1,570 cfm). Convert diameter to radius in feet first.\n\nQ = V × A。半径 = 6英寸 = 0.5英尺。面积 = π × r² = 3.1416 × 0.25 = 0.7854平方英尺。Q = 2,000 fpm × 0.7854平方英尺 = 1,571 cfm（约1,570 cfm）。先将直径转换为以英尺为单位的半径。'
+      explanation: 'Q = V × A. Radius = 6 inches = 0.5 ft. Area = π × r² = 3.1416 × 0.25 = 0.7854 ft². Q = 2,000 fpm × 0.7854 ft² = 1,571 cfm (approximately 1,570 cfm). Convert diameter to radius in feet first.\n\nQ = V × A。半径 = 6英寸 = 0.5英尺。面积 = π × r² = 3.1416 × 0.25 = 0.7854平方英尺。Q = 2,000 fpm × 0.7854平方英尺 = 1,571 cfm（约1,570 cfm）。先将直径转换为以英尺为单位的半径。',
+      related: [{ n: '18.3', t: '人因工程风险因素与CTDs/MSDs' }]
     },
     {
       text: 'What is the recommended face velocity range for a laboratory chemical fume hood?',
       group: 3,
       options: ['50-60 fpm', '80-120 fpm', '150-200 fpm', '300-400 fpm'],
       correct: 1,
-      explanation: 'The standard face velocity range for laboratory fume hoods is 80-120 fpm, with 100 fpm being the most common operating standard. ASHRAE 110 is the standard test method (using SF₆ tracer gas), and hoods should be tested at least annually.\n\n实验室通风橱的标准面风速范围为80-120 fpm，100 fpm是最常见的操作标准。ASHRAE 110是标准测试方法（使用SF₆示踪气体），通风橱应至少每年测试一次。'
+      explanation: 'The standard face velocity range for laboratory fume hoods is 80-120 fpm, with 100 fpm being the most common operating standard. ASHRAE 110 is the standard test method (using SF₆ tracer gas), and hoods should be tested at least annually.\n\n实验室通风橱的标准面风速范围为80-120 fpm，100 fpm是最常见的操作标准。ASHRAE 110是标准测试方法（使用SF₆示踪气体），通风橱应至少每年测试一次。',
+      related: [{ n: '18.3', t: '人因工程风险因素与CTDs/MSDs' }]
     },
     {
       text: 'Which of the following is an engineering control for reducing MSD risk?',
@@ -786,7 +807,8 @@ CSPQuiz.init({
         'Requiring workers to stretch before shifts'
       ],
       correct: 2,
-      explanation: 'A mechanical lift assist (hoist, scissor lift, articulated arm) is an engineering control that physically removes the manual lifting hazard. Job rotation, training, and stretching are administrative controls. Engineering controls are preferred per the hierarchy.\n\n机械提升辅助装置（葫芦、剪叉式升降机、关节臂）是工程控制，物理消除人工提举危害。岗位轮换、培训和拉伸是行政控制。根据控制层级，工程控制优先。'
+      explanation: 'A mechanical lift assist (hoist, scissor lift, articulated arm) is an engineering control that physically removes the manual lifting hazard. Job rotation, training, and stretching are administrative controls. Engineering controls are preferred per the hierarchy.\n\n机械提升辅助装置（葫芦、剪叉式升降机、关节臂）是工程控制，物理消除人工提举危害。岗位轮换、培训和拉伸是行政控制。根据控制层级，工程控制优先。',
+      related: [{ n: '18.3', t: '人因工程风险因素与CTDs/MSDs' }]
     },
     {
       text: 'According to NIOSH, which combination of fatigue countermeasures is MOST effective for night-shift workers?',
@@ -798,14 +820,16 @@ CSPQuiz.init({
         'Energy drinks throughout the shift'
       ],
       correct: 1,
-      explanation: 'The primary fatigue countermeasures are adequate sleep opportunity (7-9 hrs), strategic napping (15-20 min power naps, avoiding >45 min), and circadian-friendly scheduling (forward rotation day→evening→night). Caffeine and light are temporary secondary aids — only sleep truly reverses fatigue.\n\n主要的疲劳对策是充足的睡眠机会（7-9小时）、战略性小睡（15-20分钟打盹，避免>45分钟）和符合昼夜节律的排班（正向轮班白班→晚班→夜班）。咖啡因和强光只是临时的次要辅助——只有睡眠能真正消除疲劳。'
+      explanation: 'The primary fatigue countermeasures are adequate sleep opportunity (7-9 hrs), strategic napping (15-20 min power naps, avoiding >45 min), and circadian-friendly scheduling (forward rotation day→evening→night). Caffeine and light are temporary secondary aids — only sleep truly reverses fatigue.\n\n主要的疲劳对策是充足的睡眠机会（7-9小时）、战略性小睡（15-20分钟打盹，避免>45分钟）和符合昼夜节律的排班（正向轮班白班→晚班→夜班）。咖啡因和强光只是临时的次要辅助——只有睡眠能真正消除疲劳。',
+      related: [{ n: '18.4', t: '视觉敏锐度、人体测量学与疲劳管理' }]
     },
     {
       text: 'The design principle "accommodate the 5th percentile female to the 95th percentile male" is based on which ergonomic science?',
       group: 4,
       options: ['Visual acuity', 'Anthropometrics', 'Biomechanics', 'Fatigue science'],
       correct: 1,
-      explanation: 'Anthropometrics (the study of human body measurements) guides design to accommodate a range of users — typically 5th percentile female to 95th percentile male for adjustable equipment. For reach, design for the 5th percentile female; for clearance, design for the 95th percentile male.\n\n人体测量学（人体测量的科学研究）指导设计容纳一定范围的用户——可调设备通常为第5百分位女性到第95百分位男性。对于可达距离，按第5百分位女性设计；对于间隙，按第95百分位男性设计。'
+      explanation: 'Anthropometrics (the study of human body measurements) guides design to accommodate a range of users — typically 5th percentile female to 95th percentile male for adjustable equipment. For reach, design for the 5th percentile female; for clearance, design for the 95th percentile male.\n\n人体测量学（人体测量的科学研究）指导设计容纳一定范围的用户——可调设备通常为第5百分位女性到第95百分位男性。对于可达距离，按第5百分位女性设计；对于间隙，按第95百分位男性设计。',
+      related: [{ n: '18.4', t: '视觉敏锐度、人体测量学与疲劳管理' }]
     },
     {
       text: 'What is the maximum recommended vertical travel distance for a single lift before the Distance Multiplier reaches its minimum?',
@@ -817,14 +841,16 @@ CSPQuiz.init({
         '100 inches'
       ],
       correct: 2,
-      explanation: 'The DM = 0.82 + 1.8/D. At D = 70 inches, DM = 0.82 + 1.8/70 = 0.846. The NIOSH equation caps D at a maximum of 70 inches (DM minimum applies). Above 70 inches of vertical travel, the DM stops decreasing.\n\nDM = 0.82 + 1.8/D。在D = 70英寸时，DM = 0.82 + 1.8/70 = 0.846。NIOSH方程将D上限设为70英寸（DM取最小值）。垂直移动超过70英寸后，DM不再降低。'
+      explanation: 'The DM = 0.82 + 1.8/D. At D = 70 inches, DM = 0.82 + 1.8/70 = 0.846. The NIOSH equation caps D at a maximum of 70 inches (DM minimum applies). Above 70 inches of vertical travel, the DM stops decreasing.\n\nDM = 0.82 + 1.8/D。在D = 70英寸时，DM = 0.82 + 1.8/70 = 0.846。NIOSH方程将D上限设为70英寸（DM取最小值）。垂直移动超过70英寸后，DM不再降低。',
+      related: [{ n: '18.4', t: '视觉敏锐度、人体测量学与疲劳管理' }]
     },
     {
       text: 'A lifting task has a frequency multiplier (FM) of 0.85, coupling multiplier (CM) of 0.95, and all other multipliers at 1.0. What is the RWL?',
       group: 4,
       options: ['41.2 lbs', '51 lbs', '36.8 lbs', '44.2 lbs'],
       correct: 0,
-      explanation: 'RWL = LC × HM × VM × DM × AM × FM × CM = 51 × 1.0 × 1.0 × 1.0 × 1.0 × 0.85 × 0.95 = 51 × 0.8075 = 41.2 lbs. Each multiplier reduces the ideal weight based on the task conditions.\n\nRWL = LC × HM × VM × DM × AM × FM × CM = 51 × 1.0 × 1.0 × 1.0 × 1.0 × 0.85 × 0.95 = 51 × 0.8075 = 41.2磅。每个乘数根据任务条件降低理想重量。'
+      explanation: 'RWL = LC × HM × VM × DM × AM × FM × CM = 51 × 1.0 × 1.0 × 1.0 × 1.0 × 0.85 × 0.95 = 51 × 0.8075 = 41.2 lbs. Each multiplier reduces the ideal weight based on the task conditions.\n\nRWL = LC × HM × VM × DM × AM × FM × CM = 51 × 1.0 × 1.0 × 1.0 × 1.0 × 0.85 × 0.95 = 51 × 0.8075 = 41.2磅。每个乘数根据任务条件降低理想重量。',
+      related: [{ n: '18.4', t: '视觉敏锐度、人体测量学与疲劳管理' }]
     },
     {
       text: 'Which air cleaning device is MOST effective for collecting fine dust particles and is commonly used in baghouses?',
@@ -836,7 +862,8 @@ CSPQuiz.init({
         'Venturi ejector'
       ],
       correct: 2,
-      explanation: 'Fabric/baghouse filters are highly efficient for fine particulates (up to 99%+). Cyclones are good for coarse particles but inefficient for fines. Wet scrubbers handle gases and soluble particles. The baghouse is the standard high-efficiency particulate control for dust.\n\n织物/袋式过滤器对细颗粒物效率很高（可达99%以上）。旋风除尘器适合粗颗粒但对细颗粒效率低。湿式洗涤器处理气体和可溶性颗粒。袋式除尘器是粉尘的高效颗粒物控制标准。'
+      explanation: 'Fabric/baghouse filters are highly efficient for fine particulates (up to 99%+). Cyclones are good for coarse particles but inefficient for fines. Wet scrubbers handle gases and soluble particles. The baghouse is the standard high-efficiency particulate control for dust.\n\n织物/袋式过滤器对细颗粒物效率很高（可达99%以上）。旋风除尘器适合粗颗粒但对细颗粒效率低。湿式洗涤器处理气体和可溶性颗粒。袋式除尘器是粉尘的高效颗粒物控制标准。',
+      related: [{ n: '18.4', t: '视觉敏锐度、人体测量学与疲劳管理' }]
     },
     {
       text: 'In the NIOSH lifting equation, what does the Asymmetric Multiplier (AM) account for?',
@@ -848,7 +875,8 @@ CSPQuiz.init({
         'The quality of the hand coupling'
       ],
       correct: 1,
-      explanation: 'AM = 1 - 0.0032 × A, where A is the angle of twist in degrees (0-135°). Twisting during lifting increases spinal loading. AM = 1.0 at A ≤ 30°. The maximum AM reduction occurs at A = 135° (AM ≈ 0.57).\n\nAM = 1 - 0.0032 × A，其中A为扭转角度（0-135°）。提举时扭转会增加脊柱负荷。A ≤ 30°时AM = 1.0。最大AM降低出现在A = 135°（AM ≈ 0.57）。'
+      explanation: 'AM = 1 - 0.0032 × A, where A is the angle of twist in degrees (0-135°). Twisting during lifting increases spinal loading. AM = 1.0 at A ≤ 30°. The maximum AM reduction occurs at A = 135° (AM ≈ 0.57).\n\nAM = 1 - 0.0032 × A，其中A为扭转角度（0-135°）。提举时扭转会增加脊柱负荷。A ≤ 30°时AM = 1.0。最大AM降低出现在A = 135°（AM ≈ 0.57）。',
+      related: [{ n: '18.4', t: '视觉敏锐度、人体测量学与疲劳管理' }]
     },
     {
       text: 'What is the primary purpose of the capture velocity in a local exhaust ventilation system?',
@@ -860,7 +888,8 @@ CSPQuiz.init({
         'To supply makeup air to the building'
       ],
       correct: 1,
-      explanation: 'Capture velocity is the air velocity at the point of contaminant generation needed to draw the contaminant into the hood. It is distinct from transport velocity (keeps particles moving in ducts) and face velocity (average velocity at the hood opening).\n\n捕获速度是在污染物产生点将污染物吸入罩口所需的气速。它不同于输送速度（保持颗粒在管道中移动）和面风速（罩口开口处的平均速度）。'
+      explanation: 'Capture velocity is the air velocity at the point of contaminant generation needed to draw the contaminant into the hood. It is distinct from transport velocity (keeps particles moving in ducts) and face velocity (average velocity at the hood opening).\n\n捕获速度是在污染物产生点将污染物吸入罩口所需的气速。它不同于输送速度（保持颗粒在管道中移动）和面风速（罩口开口处的平均速度）。',
+      related: [{ n: '18.5', t: '化学封存量与物理核心概念' }]
     },
     {
       text: 'Which of the following is a WRONG application of anthropometric design principles?',
@@ -872,7 +901,8 @@ CSPQuiz.init({
         'Designing adjustable seats to fit a range of users'
       ],
       correct: 2,
-      explanation: 'Designing for the "average" (50th percentile) person is wrong — no single person is average in all dimensions. Design should accommodate a range: reach/control placement for the 5th percentile female, clearance/access for the 95th percentile male, and adjustability for the middle range.\n\n为"平均"（第50百分位）人设计是错误的——没有任何人在所有维度上都是平均的。设计应容纳一定范围：可达/控制布局按第5百分位女性，间隙/通道按第95百分位男性，中间范围采用可调节设计。'
+      explanation: 'Designing for the "average" (50th percentile) person is wrong — no single person is average in all dimensions. Design should accommodate a range: reach/control placement for the 5th percentile female, clearance/access for the 95th percentile male, and adjustability for the middle range.\n\n为"平均"（第50百分位）人设计是错误的——没有任何人在所有维度上都是平均的。设计应容纳一定范围：可达/控制布局按第5百分位女性，间隙/通道按第95百分位男性，中间范围采用可调节设计。',
+      related: [{ n: '18.5', t: '化学封存量与物理核心概念' }]
     },
     {
       text: 'Which of the following best describes the relationship between work, force, and distance?',
@@ -884,7 +914,8 @@ CSPQuiz.init({
         'Work = Power × Distance'
       ],
       correct: 1,
-      explanation: 'Work = Force × Distance × cos(θ), where θ is the angle between force and displacement. Power = Work / Time. This physics foundation applies to conveyor design, hoist sizing, and understanding muscular work in ergonomics.\n\n功 = 力 × 距离 × cos(θ)，其中θ是力与位移的夹角。功率 = 功 / 时间。这一物理基础适用于输送机设计、葫芦选型以及理解人因工程中的肌肉做功。'
+      explanation: 'Work = Force × Distance × cos(θ), where θ is the angle between force and displacement. Power = Work / Time. This physics foundation applies to conveyor design, hoist sizing, and understanding muscular work in ergonomics.\n\n功 = 力 × 距离 × cos(θ)，其中θ是力与位移的夹角。功率 = 功 / 时间。这一物理基础适用于输送机设计、葫芦选型以及理解人因工程中的肌肉做功。',
+      related: [{ n: '18.5', t: '化学封存量与物理核心概念' }]
     },
     {
       text: 'The forklift stability triangle concept relies on which physics principle?',
@@ -896,7 +927,8 @@ CSPQuiz.init({
         'The inverse square law'
       ],
       correct: 1,
-      explanation: 'The forklift stability triangle ensures the counterbalance moment (counterweight × its lever arm) exceeds the load moment (load weight × its horizontal distance from the front axle). If the load moment exceeds the counterbalance moment, the forklift tips forward.\n\n叉车稳定性三角形确保配重力矩（配重×其力臂）超过负荷力矩（负荷重量×其到前轴的水平距离）。如果负荷力矩超过配重力矩，叉车会向前倾翻。'
+      explanation: 'The forklift stability triangle ensures the counterbalance moment (counterweight × its lever arm) exceeds the load moment (load weight × its horizontal distance from the front axle). If the load moment exceeds the counterbalance moment, the forklift tips forward.\n\n叉车稳定性三角形确保配重力矩（配重×其力臂）超过负荷力矩（负荷重量×其到前轴的水平距离）。如果负荷力矩超过配重力矩，叉车会向前倾翻。',
+      related: [{ n: '18.5', t: '化学封存量与物理核心概念' }]
     },
     {
       text: 'Which of the following is a correct statement about the dilution ventilation formula Q = (q × K × 10^6) / (C − C₀)?',
@@ -908,7 +940,8 @@ CSPQuiz.init({
         'The 10^6 factor converts fpm to cfm'
       ],
       correct: 1,
-      explanation: 'K is the safety (mixing) factor — typically 3-10. A larger K requires more airflow (more conservative). C is the target concentration, C₀ is the incoming concentration, q is the generation rate, and the 10^6 converts units between cfm and ppm.\n\nK是安全（混合）系数——通常3-10。K越大，所需风量越大（越保守）。C是目标浓度，C₀是进风浓度，q是产生率，10^6用于cfm与ppm之间的单位换算。'
+      explanation: 'K is the safety (mixing) factor — typically 3-10. A larger K requires more airflow (more conservative). C is the target concentration, C₀ is the incoming concentration, q is the generation rate, and the 10^6 converts units between cfm and ppm.\n\nK是安全（混合）系数——通常3-10。K越大，所需风量越大（越保守）。C是目标浓度，C₀是进风浓度，q是产生率，10^6用于cfm与ppm之间的单位换算。',
+      related: [{ n: '18.5', t: '化学封存量与物理核心概念' }]
     },
     {
       text: 'Stress (σ) is defined as:',
@@ -920,21 +953,24 @@ CSPQuiz.init({
         'Force × Distance'
       ],
       correct: 1,
-      explanation: 'Stress σ = F/A (force per unit area, in psi or Pa). Strain ε = ΔL/L₀ is the dimensionless deformation. In safety, stress analysis is used for structural integrity, sling/rigging capacity, and column buckling calculations.\n\n应力σ = F/A（单位面积上的力，psi或Pa）。应变ε = ΔL/L₀是无量纲变形。在安全领域，应力分析用于结构完整性、吊索/索具能力和柱体屈曲计算。'
+      explanation: 'Stress σ = F/A (force per unit area, in psi or Pa). Strain ε = ΔL/L₀ is the dimensionless deformation. In safety, stress analysis is used for structural integrity, sling/rigging capacity, and column buckling calculations.\n\n应力σ = F/A（单位面积上的力，psi或Pa）。应变ε = ΔL/L₀是无量纲变形。在安全领域，应力分析用于结构完整性、吊索/索具能力和柱体屈曲计算。',
+      related: [{ n: '18.5', t: '化学封存量与物理核心概念' }]
     },
     {
       text: 'A 10,000-gallon aboveground tank sits in a containment berm. The berm is 30 ft × 20 ft and the tank occupies 150 ft² of the berm floor. What is the required berm height to contain 110% of the tank volume (excluding tank footprint, before adding freeboard)?',
       group: 6,
       options: ['2.5 ft', '3.27 ft', '1.5 ft', '5.0 ft'],
       correct: 1,
-      explanation: 'Required volume = 1.10 × 10,000 gal = 11,000 gal. Convert to ft³: 11,000 gal / 7.48 gal/ft³ = 1,470 ft³. Effective berm area = 30 × 20 - 150 (tank footprint) = 450 ft². Berm height = 1,470 / 450 = 3.27 ft. Freeboard for precipitation would be added on top of this.\n\n所需容积 = 1.10 × 10,000加仑 = 11,000加仑。换算为立方英尺：11,000加仑 / 7.48加仑/立方英尺 = 1,470立方英尺。有效围堤面积 = 30 × 20 - 150（罐底面积）= 450平方英尺。围堤高度 = 1,470 / 450 = 3.27英尺。在此基础上还需加上降水超高。'
+      explanation: 'Required volume = 1.10 × 10,000 gal = 11,000 gal. Convert to ft³: 11,000 gal / 7.48 gal/ft³ = 1,470 ft³. Effective berm area = 30 × 20 - 150 (tank footprint) = 450 ft². Berm height = 1,470 / 450 = 3.27 ft. Freeboard for precipitation would be added on top of this.\n\n所需容积 = 1.10 × 10,000加仑 = 11,000加仑。换算为立方英尺：11,000加仑 / 7.48加仑/立方英尺 = 1,470立方英尺。有效围堤面积 = 30 × 20 - 150（罐底面积）= 450平方英尺。围堤高度 = 1,470 / 450 = 3.27英尺。在此基础上还需加上降水超高。',
+      related: [{ n: '18.6', t: '通风一般原则' }]
     },
     {
       text: 'What is the estimated protected exposure level when a worker at a 96 dBA TWA wears earmuffs with NRR = 27, using the NIOSH earmuff derating (NRR-7)/2?',
       group: 6,
       options: ['86 dBA', '88 dBA', '84 dBA', '90 dBA'],
       correct: 0,
-      explanation: 'Estimated exposure = 96 - (27 - 7)/2 = 96 - 10 = 86 dBA. The NIOSH earmuff derating method is (NRR-7)/2, the same as OSHA\'s. For foam earplugs, NIOSH uses (NRR-7)/4.\n\n估计暴露 = 96 - (27 - 7)/2 = 96 - 10 = 86 dBA。NIOSH耳罩折算方法为(NRR-7)/2，与OSHA相同。对于泡沫耳塞，NIOSH使用(NRR-7)/4。'
+      explanation: 'Estimated exposure = 96 - (27 - 7)/2 = 96 - 10 = 86 dBA. The NIOSH earmuff derating method is (NRR-7)/2, the same as OSHA\'s. For foam earplugs, NIOSH uses (NRR-7)/4.\n\n估计暴露 = 96 - (27 - 7)/2 = 96 - 10 = 86 dBA。NIOSH耳罩折算方法为(NRR-7)/2，与OSHA相同。对于泡沫耳塞，NIOSH使用(NRR-7)/4。',
+      related: [{ n: '18.6', t: '通风一般原则' }]
     },
     {
       text: 'Which of the following is the LEAST effective control for preventing cumulative trauma disorders?',
@@ -946,21 +982,24 @@ CSPQuiz.init({
         'Rotating workers through multiple jobs'
       ],
       correct: 2,
-      explanation: 'PPE (anti-vibration gloves, wrist splints) is the least effective control for CTDs. Engineering controls (tool redesign, automation) are most effective, followed by administrative controls (job rotation). This follows the hierarchy of controls.\n\nPPE（防振手套、腕托）是CTD预防中最无效的控制。工程控制（工具再设计、自动化）最有效，其次是行政控制（岗位轮换）。这遵循控制层级。'
+      explanation: 'PPE (anti-vibration gloves, wrist splints) is the least effective control for CTDs. Engineering controls (tool redesign, automation) are most effective, followed by administrative controls (job rotation). This follows the hierarchy of controls.\n\nPPE（防振手套、腕托）是CTD预防中最无效的控制。工程控制（工具再设计、自动化）最有效，其次是行政控制（岗位轮换）。这遵循控制层级。',
+      related: [{ n: '18.6', t: '通风一般原则' }]
     },
     {
       text: 'A fan moves 8,000 cfm through a 4-ft × 5-ft opening. What is the average face velocity?',
       group: 6,
       options: ['300 fpm', '400 fpm', '500 fpm', '640 fpm'],
       correct: 1,
-      explanation: 'V = Q / A = 8,000 cfm / (4 ft × 5 ft) = 8,000 / 20 = 400 fpm. This is the average velocity across the opening (face velocity).\n\nV = Q / A = 8,000 cfm / (4英尺 × 5英尺) = 8,000 / 20 = 400 fpm。这是开口处的平均速度（面风速）。'
+      explanation: 'V = Q / A = 8,000 cfm / (4 ft × 5 ft) = 8,000 / 20 = 400 fpm. This is the average velocity across the opening (face velocity).\n\nV = Q / A = 8,000 cfm / (4英尺 × 5英尺) = 8,000 / 20 = 400 fpm。这是开口处的平均速度（面风速）。',
+      related: [{ n: '18.6', t: '通风一般原则' }]
     },
     {
       text: 'The most common MSD worldwide and the leading cause of work disability is:',
       group: 6,
       options: ['Carpal tunnel syndrome', 'Low back pain', 'Tennis elbow', 'Thoracic outlet syndrome'],
       correct: 1,
-      explanation: 'Low back pain (LBP) is the most common musculoskeletal disorder and the leading cause of work disability worldwide. It is associated with heavy lifting, twisting, bending, whole-body vibration, and prolonged sedentary work.\n\n下背痛（LBP）是最常见的肌肉骨骼疾病，也是全球工伤致残的首要原因。它与重物提举、扭转、弯腰、全身振动和长时间久坐工作相关。'
+      explanation: 'Low back pain (LBP) is the most common musculoskeletal disorder and the leading cause of work disability worldwide. It is associated with heavy lifting, twisting, bending, whole-body vibration, and prolonged sedentary work.\n\n下背痛（LBP）是最常见的肌肉骨骼疾病，也是全球工伤致残的首要原因。它与重物提举、扭转、弯腰、全身振动和长时间久坐工作相关。',
+      related: [{ n: '18.6', t: '通风一般原则' }]
     },
     {
       text: 'Which statement about the NIOSH Lifting Equation applicability is TRUE?',
@@ -972,14 +1011,16 @@ CSPQuiz.init({
         'It applies to lifts of unstable loads'
       ],
       correct: 2,
-      explanation: 'The NIOSH equation is valid only for two-handed, symmetric lifting with good coupling, neutral temperature, no one-hand lifts, no seated/kneeling lifts, no unstable loads, stable feet with adequate friction (μ ≥ 0.4), and lifting duration ≤ 8 hours.\n\nNIOSH方程仅适用于双手对称提举、良好耦合、温度中性环境、无单手提举、无坐姿/跪姿提举、无不稳定负荷、双脚稳定且摩擦充分（μ ≥ 0.4）、提举时长≤8小时。'
+      explanation: 'The NIOSH equation is valid only for two-handed, symmetric lifting with good coupling, neutral temperature, no one-hand lifts, no seated/kneeling lifts, no unstable loads, stable feet with adequate friction (μ ≥ 0.4), and lifting duration ≤ 8 hours.\n\nNIOSH方程仅适用于双手对称提举、良好耦合、温度中性环境、无单手提举、无坐姿/跪姿提举、无不稳定负荷、双脚稳定且摩擦充分（μ ≥ 0.4）、提举时长≤8小时。',
+      related: [{ n: '18.6', t: '通风一般原则' }]
     },
     {
       text: 'A worker lifts from V = 20" to V = 55". What is the vertical travel distance D, and what is the Distance Multiplier (DM)?',
       group: 7,
       options: ['D = 35", DM = 0.87', 'D = 55", DM = 0.85', 'D = 20", DM = 0.91', 'D = 75", DM = 0.84'],
       correct: 0,
-      explanation: 'D = |V_dest - V_origin| = |55 - 20| = 35 inches. DM = 0.82 + 1.8/35 = 0.82 + 0.0514 = 0.871 ≈ 0.87. Larger vertical travel distances reduce DM, lowering the RWL.\n\nD = |V终点 - V起点| = |55 - 20| = 35英寸。DM = 0.82 + 1.8/35 = 0.82 + 0.0514 = 0.871 ≈ 0.87。垂直移动距离越大，DM越低，RWL越低。'
+      explanation: 'D = |V_dest - V_origin| = |55 - 20| = 35 inches. DM = 0.82 + 1.8/35 = 0.82 + 0.0514 = 0.871 ≈ 0.87. Larger vertical travel distances reduce DM, lowering the RWL.\n\nD = |V终点 - V起点| = |55 - 20| = 35英寸。DM = 0.82 + 1.8/35 = 0.82 + 0.0514 = 0.871 ≈ 0.87。垂直移动距离越大，DM越低，RWL越低。',
+      related: [{ n: '18.7', t: '局部排风LEV' }]
     },
     {
       text: 'Which of the following describes the correct positioning of the fan in a LEV system and why?',
@@ -991,7 +1032,8 @@ CSPQuiz.init({
         'At the stack, to increase discharge height'
       ],
       correct: 1,
-      explanation: 'The fan is placed after the air cleaner (clean side) so it handles cleaned air — reducing corrosion from contaminants and erosion from particulates. A "push-pull" arrangement may also be used in some systems.\n\n风机放置在空气净化器之后（洁净侧），处理清洁空气——减少污染物的腐蚀和颗粒物的侵蚀。某些系统也可能使用"推-拉"布置。'
+      explanation: 'The fan is placed after the air cleaner (clean side) so it handles cleaned air — reducing corrosion from contaminants and erosion from particulates. A "push-pull" arrangement may also be used in some systems.\n\n风机放置在空气净化器之后（洁净侧），处理清洁空气——减少污染物的腐蚀和颗粒物的侵蚀。某些系统也可能使用"推-拉"布置。',
+      related: [{ n: '18.7', t: '局部排风LEV' }]
     },
     {
       text: 'A sitting workstation is designed with a chair that adjusts to fit the popliteal height of the user. This design approach is an example of:',
@@ -1003,7 +1045,8 @@ CSPQuiz.init({
         'PPE-based ergonomic control'
       ],
       correct: 1,
-      explanation: 'Adjustable furniture accommodates a range of users (5th to 95th percentile) rather than a single "average" person. Popliteal height (back of knee to floor) determines correct seat height — an adjustable chair fits multiple users.\n\n可调家具容纳一定范围的用户（第5到第95百分位），而非单一的"平均"人。腘窝高度（膝后到地面）决定正确的座椅高度——可调节椅子适合多个用户。'
+      explanation: 'Adjustable furniture accommodates a range of users (5th to 95th percentile) rather than a single "average" person. Popliteal height (back of knee to floor) determines correct seat height — an adjustable chair fits multiple users.\n\n可调家具容纳一定范围的用户（第5到第95百分位），而非单一的"平均"人。腘窝高度（膝后到地面）决定正确的座椅高度——可调节椅子适合多个用户。',
+      related: [{ n: '18.7', t: '局部排风LEV' }]
     },
     {
       text: 'What is the primary limitation of dilution ventilation compared to local exhaust ventilation?',
@@ -1015,21 +1058,24 @@ CSPQuiz.init({
         'It cannot handle any airflow'
       ],
       correct: 1,
-      explanation: 'Dilution ventilation mixes and dilutes contaminants throughout the space rather than capturing them at the source. For highly toxic substances, large or non-uniform releases, or workers near the source, LEV is required. Dilution also needs large airflow volumes for high emission rates.\n\n稀释通风在整个空间混合和稀释污染物，而非在源头捕获。对于高毒性物质、大量或不均匀释放、或靠近污染源的工人，需要使用LEV。高排放率还需要很大的风量。'
+      explanation: 'Dilution ventilation mixes and dilutes contaminants throughout the space rather than capturing them at the source. For highly toxic substances, large or non-uniform releases, or workers near the source, LEV is required. Dilution also needs large airflow volumes for high emission rates.\n\n稀释通风在整个空间混合和稀释污染物，而非在源头捕获。对于高毒性物质、大量或不均匀释放、或靠近污染源的工人，需要使用LEV。高排放率还需要很大的风量。',
+      related: [{ n: '18.7', t: '局部排风LEV' }]
     },
     {
       text: 'Which ergonomic assessment tool is BEST suited for evaluating a healthcare task involving unpredictable whole-body postures (lifting a patient)?',
       group: 7,
       options: ['RULA', 'NIOSH Lifting Equation', 'REBA', 'VARK'],
       correct: 2,
-      explanation: 'REBA (Rapid Entire Body Assessment) includes the lower body and was designed for unpredictable postures common in healthcare and construction. RULA focuses on upper limbs for more predictable tasks. The NIOSH equation applies to simple two-handed symmetric lifts.\n\nREBA（快速全身评估）包含下半身，专为医疗和建筑中常见的不可预测姿势设计。RULA关注上肢，适用于更可预测的任务。NIOSH方程适用于简单的双手对称提举。'
+      explanation: 'REBA (Rapid Entire Body Assessment) includes the lower body and was designed for unpredictable postures common in healthcare and construction. RULA focuses on upper limbs for more predictable tasks. The NIOSH equation applies to simple two-handed symmetric lifts.\n\nREBA（快速全身评估）包含下半身，专为医疗和建筑中常见的不可预测姿势设计。RULA关注上肢，适用于更可预测的任务。NIOSH方程适用于简单的双手对称提举。',
+      related: [{ n: '18.7', t: '局部排风LEV' }]
     },
     {
       text: 'According to NIOSH fatigue research, what is the recommended power nap duration to improve alertness WITHOUT causing sleep inertia?',
       group: 7,
       options: ['5 minutes', '15-20 minutes', '45-60 minutes', '2 hours'],
       correct: 1,
-      explanation: 'A 15-20 minute power nap improves alertness without entering deep sleep. Naps longer than 45 minutes can cause sleep inertia (grogginess on awakening). Napping should complement, not replace, adequate nighttime sleep (7-9 hours).\n\n15-20分钟的打盹可提高警觉性而不会进入深睡眠。超过45分钟的小睡会导致睡眠惯性（醒来时昏昏沉沉）。小睡应补充而非替代充足的夜间睡眠（7-9小时）。'
+      explanation: 'A 15-20 minute power nap improves alertness without entering deep sleep. Naps longer than 45 minutes can cause sleep inertia (grogginess on awakening). Napping should complement, not replace, adequate nighttime sleep (7-9 hours).\n\n15-20分钟的打盹可提高警觉性而不会进入深睡眠。超过45分钟的小睡会导致睡眠惯性（醒来时昏昏沉沉）。小睡应补充而非替代充足的夜间睡眠（7-9小时）。',
+      related: [{ n: '18.7', t: '局部排风LEV' }]
     }
   ]
 });

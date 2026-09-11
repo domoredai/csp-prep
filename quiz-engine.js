@@ -710,12 +710,80 @@
     header.classList.add('sticky-header');
   }
 
+  // ============ SCENARIO QUESTIONS (independent practice block) ============
+  // Scenarios keep their own section (distinct from regular quizzes) but now
+  // carry clickable A/B/C/D options with instant feedback.
+  function initScenarios() {
+    var scenarios = document.querySelectorAll('.exam-scenario[data-options]');
+    scenarios.forEach(function(sc) {
+      if (sc.dataset.wired) return;
+      sc.dataset.wired = '1';
+
+      var correct = parseInt(sc.getAttribute('data-correct'), 10);
+      var options;
+      try { options = JSON.parse(sc.getAttribute('data-options')); }
+      catch (e) { return; }
+      if (!options || !options.length) return;
+
+      var letters = ['A', 'B', 'C', 'D', 'E'];
+      var list = document.createElement('ul');
+      list.className = 'options-list scenario-options';
+
+      options.forEach(function(opt, j) {
+        var li = document.createElement('li');
+        var btn = document.createElement('button');
+        btn.className = 'option-btn';
+        btn.type = 'button';
+        btn.innerHTML = '<span class="option-letter">' + letters[j] + '</span><span>' + escapeHtml(opt) + '</span>';
+        btn.addEventListener('click', function() {
+          if (list.dataset.answered) return;
+          list.dataset.answered = '1';
+          var isRight = (j === correct);
+          // Mark all buttons
+          Array.prototype.forEach.call(list.querySelectorAll('.option-btn'), function(b, k) {
+            b.classList.add('disabled');
+            if (k === correct) b.classList.add('correct-choice');
+            else if (k === j) b.classList.add('wrong-choice');
+          });
+          // Show explanation
+          var fb = sc.querySelector('.scenario-feedback');
+          if (fb) {
+            fb.classList.add('show', isRight ? 'correct' : 'incorrect');
+            var label = fb.querySelector('.scenario-fb-label');
+            if (label) label.textContent = isRight ? '✓ Correct!' : '✗ Incorrect';
+          }
+        });
+        li.appendChild(btn);
+        list.appendChild(li);
+      });
+
+      // Insert options before the feedback block (or at end)
+      var fb = sc.querySelector('.scenario-feedback');
+      if (fb) sc.insertBefore(list, fb);
+      else sc.appendChild(list);
+
+      // Record answer state on the scenario for the explanation toggle
+      var modelBtn = sc.querySelector('.scenario-model-answer');
+      if (modelBtn) {
+        modelBtn.addEventListener('click', function() {
+          var body = sc.querySelector('.scenario-answer-body');
+          if (body) {
+            var hidden = body.style.display === 'none' || !body.style.display;
+            body.style.display = hidden ? 'block' : 'none';
+            modelBtn.textContent = hidden ? '▾ 收起参考答案 / Hide' : '▸ 查看参考答案 / Show';
+          }
+        });
+      }
+    });
+  }
+
   // ============ AUTO-INIT ============
   document.addEventListener('DOMContentLoaded', function() {
     initCollapse();
     initFloatingButtons();
     initProgressTracking();
     initStickyHeader();
+    initScenarios();
     // Re-run progress after quizzes render (slightly delayed)
     setTimeout(initProgressTracking, 400);
     setTimeout(initProgressTracking, 1200);

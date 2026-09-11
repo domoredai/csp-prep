@@ -10,7 +10,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="apple-touch-icon" href="icon-192.png">
-<link rel="stylesheet" href="quiz-styles.css?v=11">
+<link rel="stylesheet" href="quiz-styles.css?v=12">
 <style>
   .breadcrumb { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 16px; }
   .breadcrumb a { color: var(--accent); text-decoration: none; }
@@ -122,8 +122,16 @@
     </div>
   </div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组例题涉及 <strong>12.2 应急行动计划(EAP)</strong>、<strong>12.3 防火计划(FPP)</strong> 与 <strong>12.4 事故指挥系统(ICS)</strong> 的内容，详细讲解见对应卡片。The EAP/FPP-distinction and span-of-control questions here are explained under Cards 12.2, 12.3, and 12.4.
+  <div class="exam-scenario"
+       data-options='["Expand the organizational structure to restore the span of control to the 3–7 range", "Maintain the structure, because ICS requires at least 10 reports per supervisor", "Have the supervisor work longer hours to manage the additional reports", "Collapse the incident command structure and transfer command"]'
+       data-correct="0">
+    <div class="es-label">📝 模拟情景题 / Practice Scenario</div>
+    <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
+    <div class="es-question">"At an expanding incident, one supervisor now has 9 direct reports. According to ICS principles, what should occur?"</div>
+    <div class="scenario-feedback">
+      <div class="scenario-fb-label"></div>
+      <div>ICS uses a modular organization that expands or contracts with incident complexity, and the recommended span of control is 3–7 subordinates per supervisor, with 5 considered ideal. When a supervisor exceeds that range, the structure should be expanded — adding a branch, division, or intermediate level — to preserve effective command and control. Keeping 9 reports, working longer hours, or transferring command do not address the underlying span-of-control problem.<br><br>ICS采用随事件复杂度扩展或收缩的模块化组织，推荐的控制幅度为每名主管3–7名下属，理想为5。当超出该范围时应扩展组织结构——增设分支、分区或中间层级——以保持有效的指挥与控制。维持9名下属、延长工时或转移指挥都未解决控制幅度这一根本问题。</div>
+    </div>
   </div>
 
   <div id="quiz-group-1"></div>
@@ -246,9 +254,8 @@
     </div>
   </div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>12.9 业务影响分析(BIA)与计划层级</strong>（MTD，及 RTO ≤ MTD）的内容，详细讲解见 12.9 卡片；BCP/DRP 与 RTO/RPO 的定义见 12.5 卡片。The MTD question here is explained under Card 12.9; BCP/DRP and RTO/RPO are covered in Card 12.5.
-  </div>
+
+
 
   <div id="quiz-group-3"></div>
 
@@ -343,17 +350,21 @@
       <span class="mn-content"><strong>"COPLF"</strong> — Command, Operations, Planning, Logistics, Finance。中文"指-行-规-后-财"。控制幅度<strong>3-7、理想5</strong>。规划造IAP、行动执行、后勤供资源、财务记成本。</span>
     </div>
 
-    <div class="exam-scenario">
+    <div class="exam-scenario"
+         data-options='["Expand the organizational structure to restore the span of control to the 3–7 range", "Maintain the structure, because ICS sets no limit on the number of reports", "Have the supervisor work longer hours to manage the additional reports", "Transfer command to another agency to reduce the workload"]'
+         data-correct="0">
       <div class="es-label">📝 模拟情景题 / Practice Scenario</div>
       <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
       <div class="es-question">"A supervisor at an incident now has 9 direct reports. Per ICS principles, what should occur?"</div>
-      <div><strong>最佳答案 / Best answer:</strong> Expand the organizational structure to restore span of control to the 3–7 range. 解析：控制幅度超过7（理想5）应触发组织扩展——增设中间管理层级或分支，保持有效的指挥与控制。</div>
+      <div class="scenario-feedback">
+        <div class="scenario-fb-label"></div>
+        <div>ICS uses a modular organization that expands or contracts with incident complexity, and the recommended span of control is 3–7 subordinates per supervisor, with 5 considered ideal. When a supervisor exceeds that range, the structure should be expanded — adding a branch, division, or intermediate level — to preserve effective command and control. Keeping the structure, working longer hours, or transferring command do not address the underlying span-of-control problem.<br><br>ICS采用随事件复杂度扩展或收缩的模块化组织，推荐的控制幅度为每名主管3–7名下属，理想为5。当超出该范围时应扩展组织结构——增设分支、分区或中间层级——以保持有效的指挥与控制。维持现状、延长工时或转移指挥都未解决控制幅度这一根本问题。</div>
+      </div>
     </div>
   </div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>12.8 HAZWOPER——29 CFR 1910.120</strong>（技术员24小时）的内容，详细讲解见 12.8 卡片。The Hazmat Technician training-hours question here is explained under Card 12.8.
-  </div>
+
+
 
   <div id="quiz-group-4"></div>
 
@@ -424,8 +435,16 @@
     </div>
   </div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>12.1 紧急情况类型（全灾害方法）</strong>（哪些情形就地避难 vs 疏散）的内容，详细讲解见 12.1 卡片。The shelter-in-place vs. evacuation question here is explained under Card 12.1.
+  <div class="exam-scenario"
+       data-options='["Hazardous Materials Technician — 24 hours of training", "First Responder Awareness — sufficient to recognize and notify", "First Responder Operations — 8 hours, defensive actions only", "On-Scene Incident Commander — 24 hours of command training"]'
+       data-correct="0">
+    <div class="es-label">📝 模拟情景题 / Practice Scenario</div>
+    <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
+    <div class="es-question">"A responder approaches a leaking valve and attempts to close it. What is the MINIMUM HAZWOPER training level required?"</div>
+    <div class="scenario-feedback">
+      <div class="scenario-fb-label"></div>
+      <div>HAZWOPER (29 CFR 1910.120) training levels: Awareness (recognize and notify, take no action); Operations (8 hours, defensive actions to contain a release from a safe distance without stopping it); Technician (24 hours, offensive actions — approaching the source to stop the release, such as closing a valve); and On-Scene Incident Commander (24 hours, command responsibilities). Closing a leaking valve is an offensive action at the source, which requires the Technician level. All trained responders require an annual refresher.<br><br>HAZWOPER（29 CFR 1910.120）培训级别：认知级（识别并上报，不采取行动）；操作级（8小时，在安全距离外采取防御性措施，不制止泄漏）；技术员级（24小时，进攻性行动——接近源头制止泄漏，如关闭阀门）；现场事故指挥官（24小时，指挥职责）。关闭泄漏阀门是源头的进攻性行动，需要技术员级。所有受训响应人员每年必须复训。</div>
+    </div>
   </div>
 
   <div id="quiz-group-5"></div>
@@ -500,9 +519,8 @@
     </div>
   </div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>12.1 紧急情况类型</strong>（八类、报告要求 NRC/SERC/LEPC）与 <strong>12.7 危机沟通规划</strong>（黄金一小时）的内容，详细讲解见对应卡片。Questions here cover the eight emergency types and reporting (12.1) and the golden hour (12.7).
-  </div>
+
+
 
   <div id="quiz-group-6"></div>
 
@@ -544,17 +562,21 @@
       </div>
     </div>
 
-    <div class="exam-scenario">
+    <div class="exam-scenario"
+         data-options='["Acknowledge the situation through the designated spokesperson, share what is known, state what the organization is doing, and announce when the next update will come", "Issue "no comment" until all of the facts have been confirmed", "Refer all media calls to the responding fire department indefinitely", "Release the names and medical conditions of the injured immediately"]'
+         data-correct="0">
       <div class="es-label">📝 模拟情景题 / Practice Scenario</div>
       <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
       <div class="es-question">"Within an hour of an incident, media ask questions before all facts are known. What is the BEST response?"</div>
-      <div><strong>最佳答案 / Best answer:</strong> Acknowledge the situation through the designated spokesperson, share what is known, state what the organization is doing, and announce when the next update will be provided. 解析：黄金小时内优先"确认+已知+行动+下次更新"，避免"no comment"（等于认罪）与沉默（谣言真空）。</div>
+      <div class="scenario-feedback">
+        <div class="scenario-fb-label"></div>
+        <div>In the first hour (the "golden hour") of a crisis, the priority is to acknowledge the situation through a designated spokesperson, share confirmed facts, describe the response actions being taken, and commit to a time for the next update. "No comment" is read as an admission of fault, and silence creates a vacuum that rumor fills. Releasing unverified detail such as names or medical conditions may violate privacy obligations and is not required.<br><br>危机发生后的第一小时（"黄金一小时"）优先事项是：通过指定发言人确认情况、公布已确认的事实、说明正在采取的响应行动，并承诺下次更新的时间。"无可奉告"会被解读为认错，沉默则形成谣言滋生的真空。公布未经核实的姓名或医疗状况可能违反隐私义务，也非必要。</div>
+      </div>
     </div>
   </div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>12.1 紧急情况类型</strong>（火灾须疏散）与 <strong>12.9 业务影响分析与应急计划层级</strong>（EOP、BIA、RTO ≤ MTD）的内容，详细讲解见对应卡片。Questions here cover evacuation vs. shelter-in-place (12.1) and the EOP/BIA/RTO-MTD material (12.9).
-  </div>
+
+
 
   <div id="quiz-group-7"></div>
 
@@ -626,9 +648,8 @@
     </div>
   </div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>12.4 事故指挥系统(ICS)——指挥权转移、后勤部门</strong> 与 <strong>12.8 HAZWOPER（操作级8小时、事故指挥官24小时）</strong> 的内容，详细讲解见对应卡片。Questions here cover ICS command transfer and the Logistics section (12.4) and HAZWOPER training levels (12.8).
-  </div>
+
+
 
   <div id="quiz-group-8"></div>
 
@@ -686,8 +707,16 @@
     </div>
   </div>
 
-  <div class="cross-ref">
-    🔗 <strong>交叉引用 / Related:</strong> 本组部分例题涉及 <strong>12.1 紧急情况类型</strong>（恐怖袭击/可疑包裹、全灾害方法）、<strong>12.4 ICS/NIMS</strong> 与 <strong>12.6 应急演练</strong>（功能演练 vs. 全面演练）的内容，详细讲解见对应卡片。Questions here cover emergency types (12.1), NIMS/ICS (12.4), and exercise types (12.6).
+  <div class="exam-scenario"
+       data-options='["A functional exercise, which tests command, coordination, and communications in a simulated environment", "A full-scale exercise, which deploys actual personnel, equipment, and resources", "A tabletop exercise — a discussion-based walkthrough of a scenario", "A drill, which tests a single specific response operation"]'
+       data-correct="0">
+    <div class="es-label">📝 模拟情景题 / Practice Scenario</div>
+    <div style="font-size:0.75rem;color:#94a3b8;font-style:normal;">※ 模拟情景题，根据考点编写，非历年真题 / Practice scenario based on exam topics, not a past real question</div>
+    <div class="es-question">"An organization wants to test its incident command, communications, and decision-making under realistic stress without deploying field personnel and equipment. Which exercise type is MOST appropriate?"</div>
+    <div class="scenario-feedback">
+      <div class="scenario-fb-label"></div>
+      <div>Exercises build in complexity: drills test one operation (for example, a fire evacuation); tabletop exercises are discussion-based and low-stress, useful for validating plans and roles; functional exercises stress command, coordination, and communications in a simulated environment such as an emergency operations center, without deploying field resources; full-scale exercises add actual personnel, equipment, and field operations. Testing command and decision-making under stress without field deployment is the defining purpose of a functional exercise.<br><br>演练类型复杂度递增：单项演练测试单一动作（如火灾疏散）；桌面演练为讨论式、低压力，适合验证计划与角色；功能演练在模拟环境（如应急指挥中心）中检验指挥、协调与通信，但不部署现场资源；全面演练则动用真实人员、装备和现场行动。在不部署现场力量的情况下检验压力下的指挥与决策，正是功能演练的核心目的。</div>
+    </div>
   </div>
 
   <div id="quiz-group-9"></div>
@@ -698,8 +727,8 @@
 
 </div>
 
-<script src="quiz-engine.js?v=11"></script>
-<script src="vocab-engine.js?v=11"></script>
+<script src="quiz-engine.js?v=12"></script>
+<script src="vocab-engine.js?v=12"></script>
 <script>
 CSPQuiz.init({
   containerId: 'quiz-root',
@@ -717,7 +746,8 @@ CSPQuiz.init({
         'Job descriptions for all safety personnel'
       ],
       correct: 1,
-      explanation: '1910.38(c) requires: (1) procedures for reporting emergencies, (2) evacuation procedures and route assignments, (3) procedures for critical operations, (4) employee accounting after evacuation, (5) rescue and medical duties, and (6) emergency contact information.\n\n1910.38(c)要求：(1) 报告紧急情况的程序，(2) 疏散程序和路线分配，(3) 关键操作程序，(4) 疏散后清点员工，(5) 救援和医疗职责，(6) 紧急联系人信息。'
+      explanation: '1910.38(c) requires: (1) procedures for reporting emergencies, (2) evacuation procedures and route assignments, (3) procedures for critical operations, (4) employee accounting after evacuation, (5) rescue and medical duties, and (6) emergency contact information.\n\n1910.38(c)要求：(1) 报告紧急情况的程序，(2) 疏散程序和路线分配，(3) 关键操作程序，(4) 疏散后清点员工，(5) 救援和医疗职责，(6) 紧急联系人信息。',
+      related: [{ n: '12.2', t: 'EAP' }]
     },
     {
       text: 'Which of the following is a required element of the Fire Prevention Plan (29 CFR 1910.39)?',
@@ -729,7 +759,8 @@ CSPQuiz.init({
         'Procedures for accounting for employees'
       ],
       correct: 0,
-      explanation: 'The FPP requires: a list of major fire hazards, procedures for handling/storing hazardous materials, procedures to control ignition sources, fire protection equipment types and maintenance, housekeeping procedures, and responsible persons. Evacuation and accounting belong to the EAP.\n\nFPP要求：主要火灾危害清单、危险材料处理/储存程序、控制点火源的程序、消防设备类型和维护、内务管理程序及负责人。疏散和清点属于EAP。'
+      explanation: 'The FPP requires: a list of major fire hazards, procedures for handling/storing hazardous materials, procedures to control ignition sources, fire protection equipment types and maintenance, housekeeping procedures, and responsible persons. Evacuation and accounting belong to the EAP.\n\nFPP要求：主要火灾危害清单、危险材料处理/储存程序、控制点火源的程序、消防设备类型和维护、内务管理程序及负责人。疏散和清点属于EAP。',
+      related: [{ n: '12.3', t: 'FPP' }]
     },
     {
       text: 'What is the key difference between an Emergency Action Plan (EAP) and a Fire Prevention Plan (FPP) under OSHA?',
@@ -741,14 +772,16 @@ CSPQuiz.init({
         'There is no difference; the terms are interchangeable'
       ],
       correct: 0,
-      explanation: 'EAP (1910.38) focuses on emergency RESPONSE — reporting, evacuation, accounting, rescue. FPP (1910.39) focuses on fire PREVENTION — hazard identification, ignition source control, housekeeping. They are complementary but distinct.\n\nEAP（1910.38）侧重于应急<em>响应</em>——报告、疏散、清点、救援。FPP（1910.39）侧重于防火<em>预防</em>——危害识别、点火源控制、内务管理。它们互补但不同。'
+      explanation: 'EAP (1910.38) focuses on emergency RESPONSE — reporting, evacuation, accounting, rescue. FPP (1910.39) focuses on fire PREVENTION — hazard identification, ignition source control, housekeeping. They are complementary but distinct.\n\nEAP（1910.38）侧重于应急<em>响应</em>——报告、疏散、清点、救援。FPP（1910.39）侧重于防火<em>预防</em>——危害识别、点火源控制、内务管理。它们互补但不同。',
+      related: [{ n: '12.2', t: 'EAP' }, { n: '12.3', t: 'FPP' }]
     },
     {
       text: 'According to 29 CFR 1910.38, an employer with how many employees may communicate the EAP orally rather than in writing?',
       group: 1,
       options: ['25 or fewer', '15 or fewer', '10 or fewer', '50 or fewer'],
       correct: 2,
-      explanation: 'Employers with 10 or fewer employees may communicate the emergency action plan orally, provided the required elements are still covered. Larger employers must maintain a written plan.\n\n拥有10名或以下员工的雇主可以口头传达应急行动计划，前提是仍需涵盖必需要素。较大的雇主必须保留书面计划。'
+      explanation: 'Employers with 10 or fewer employees may communicate the emergency action plan orally, provided the required elements are still covered. Larger employers must maintain a written plan.\n\n拥有10名或以下员工的雇主可以口头传达应急行动计划，前提是仍需涵盖必需要素。较大的雇主必须保留书面计划。',
+      related: [{ n: '12.2', t: 'EAP' }]
     },
     {
       text: 'In the Incident Command System (ICS), what is the ideal span of control?',
@@ -760,21 +793,24 @@ CSPQuiz.init({
         '8 to 12 direct reports'
       ],
       correct: 1,
-      explanation: 'ICS span of control is 3-7 direct reports per supervisor, with 5 being ideal. If a supervisor exceeds 7 direct reports, the organization should expand to maintain effective management.\n\nICS控制幅度为每位主管3-7名直接下属，5为理想。如果主管超过7名直接下属，组织应扩展以保持有效管理。'
+      explanation: 'ICS span of control is 3-7 direct reports per supervisor, with 5 being ideal. If a supervisor exceeds 7 direct reports, the organization should expand to maintain effective management.\n\nICS控制幅度为每位主管3-7名直接下属，5为理想。如果主管超过7名直接下属，组织应扩展以保持有效管理。',
+      related: [{ n: '12.4', t: 'ICS' }]
     },
     {
       text: 'Which ICS functional area is responsible for collecting and evaluating incident information and developing the Incident Action Plan (IAP)?',
       group: 2,
       options: ['Command', 'Operations', 'Planning', 'Logistics'],
       correct: 2,
-      explanation: 'The Planning Section collects and evaluates information, tracks resources, develops the IAP, and maintains documentation. Operations implements the plan; Logistics provides support; Finance/Admin tracks costs.\n\n规划部门收集和评估信息，跟踪资源，制定IAP并维护文档。行动部门执行计划；后勤部门提供支持；财务/行政部门跟踪成本。'
+      explanation: 'The Planning Section collects and evaluates information, tracks resources, develops the IAP, and maintains documentation. Operations implements the plan; Logistics provides support; Finance/Admin tracks costs.\n\n规划部门收集和评估信息，跟踪资源，制定IAP并维护文档。行动部门执行计划；后勤部门提供支持；财务/行政部门跟踪成本。',
+      related: [{ n: '12.4', t: 'ICS' }]
     },
     {
       text: 'Which ICS section DIRECTS tactical resources and implements the Incident Action Plan?',
       group: 2,
       options: ['Command', 'Operations', 'Planning', 'Finance/Administration'],
       correct: 1,
-      explanation: 'Operations directs all tactical resources and implements the IAP — it is the "doers" section. Command sets objectives; Planning develops the IAP; Finance tracks costs.\n\n行动部门指挥所有战术资源并执行IAP——它是"执行者"部门。指挥设定目标；规划制定IAP；财务跟踪成本。'
+      explanation: 'Operations directs all tactical resources and implements the IAP — it is the "doers" section. Command sets objectives; Planning develops the IAP; Finance tracks costs.\n\n行动部门指挥所有战术资源并执行IAP——它是"执行者"部门。指挥设定目标；规划制定IAP；财务跟踪成本。',
+      related: [{ n: '12.4', t: 'ICS' }]
     },
     {
       text: 'Which ICS concept states that the structure should expand or contract based on incident complexity?',
@@ -786,7 +822,8 @@ CSPQuiz.init({
         'Resource typing'
       ],
       correct: 1,
-      explanation: 'Modular organization means the ICS structure grows or shrinks as needed — only the positions required by the incident are staffed. This keeps the structure efficient at any scale.\n\n模块化组织意味着ICS结构根据需要扩展或收缩——只为事故所需的岗位配备人员。这使结构在任何规模下都保持高效。'
+      explanation: 'Modular organization means the ICS structure grows or shrinks as needed — only the positions required by the incident are staffed. This keeps the structure efficient at any scale.\n\n模块化组织意味着ICS结构根据需要扩展或收缩——只为事故所需的岗位配备人员。这使结构在任何规模下都保持高效。',
+      related: [{ n: '12.4', t: 'ICS' }]
     },
     {
       text: 'Unified Command in ICS is used when:',
@@ -798,7 +835,8 @@ CSPQuiz.init({
         'There are no command resources available'
       ],
       correct: 1,
-      explanation: 'Unified Command applies when multiple agencies/jurisdictions share responsibility. Representatives jointly set objectives and approve a single Incident Action Plan, while each retains authority over its own resources.\n\n联合指挥适用于多个机构/管辖区共同承担责任时。代表们共同设定目标并批准单一IAP，同时各自保留对自己资源的管辖权。'
+      explanation: 'Unified Command applies when multiple agencies/jurisdictions share responsibility. Representatives jointly set objectives and approve a single Incident Action Plan, while each retains authority over its own resources.\n\n联合指挥适用于多个机构/管辖区共同承担责任时。代表们共同设定目标并批准单一IAP，同时各自保留对自己资源的管辖权。',
+      related: [{ n: '12.4', t: 'ICS' }]
     },
     {
       text: 'What is the primary focus of a Business Continuity Plan (BCP)?',
@@ -810,7 +848,8 @@ CSPQuiz.init({
         'Prosecuting offenders after an incident'
       ],
       correct: 1,
-      explanation: 'BCP keeps critical BUSINESS functions operating through a disruption — via alternate sites, remote work, and alternate supply chains. Disaster Recovery restores IT specifically; EAP handles evacuation.\n\nBCP在中断期间保持关键业务职能运行——通过备用场所、远程办公和备用供应链。灾难恢复专门恢复IT；EAP处理疏散。'
+      explanation: 'BCP keeps critical BUSINESS functions operating through a disruption — via alternate sites, remote work, and alternate supply chains. Disaster Recovery restores IT specifically; EAP handles evacuation.\n\nBCP在中断期间保持关键业务职能运行——通过备用场所、远程办公和备用供应链。灾难恢复专门恢复IT；EAP处理疏散。',
+      related: [{ n: '12.5', t: 'BCP' }]
     },
     {
       text: 'Disaster Recovery (DRP) is MOST specifically concerned with:',
@@ -822,7 +861,8 @@ CSPQuiz.init({
         'Preventing fires'
       ],
       correct: 1,
-      explanation: 'DRP restores IT infrastructure — servers, data, networks, applications — after a disruption. It is narrower than BCP, which covers the entire business including people and processes.\n\nDRP在中断后恢复IT基础设施——服务器、数据、网络、应用。它比BCP范围窄，BCP覆盖整个业务包括人员和流程。'
+      explanation: 'DRP restores IT infrastructure — servers, data, networks, applications — after a disruption. It is narrower than BCP, which covers the entire business including people and processes.\n\nDRP在中断后恢复IT基础设施——服务器、数据、网络、应用。它比BCP范围窄，BCP覆盖整个业务包括人员和流程。',
+      related: [{ n: '12.5', t: 'BCP' }]
     },
     {
       text: 'An organization can tolerate losing up to 4 hours of data in an outage. This is its:',
@@ -834,14 +874,16 @@ CSPQuiz.init({
         'BCP'
       ],
       correct: 1,
-      explanation: 'RPO (Recovery Point Objective) is the maximum acceptable DATA LOSS, measured in time — here 4 hours. RTO is the time to RESTORE operations; MTD is the maximum tolerable downtime for a function.\n\nRPO（恢复点目标）是最大可接受的<em>数据丢失</em>，以时间衡量——此处为4小时。RTO是<em>恢复</em>运营的时间；MTD是职能的最大可容忍停机时间。'
+      explanation: 'RPO (Recovery Point Objective) is the maximum acceptable DATA LOSS, measured in time — here 4 hours. RTO is the time to RESTORE operations; MTD is the maximum tolerable downtime for a function.\n\nRPO（恢复点目标）是最大可接受的<em>数据丢失</em>，以时间衡量——此处为4小时。RTO是<em>恢复</em>运营的时间；MTD是职能的最大可容忍停机时间。',
+      related: [{ n: '12.5', t: 'BCP' }]
     },
     {
       text: 'The maximum time a business function can be unavailable before serious harm occurs is called the:',
       group: 3,
       options: ['RTO', 'RPO', 'MTD (Maximum Tolerable Downtime)', 'RPA'],
       correct: 2,
-      explanation: 'MTD (Maximum Tolerable Downtime) is the longest a function can be down before serious harm. The RTO must be set within (≤) the MTD. If MTD is 24 hours, the RTO must be 24 hours or less.\n\nMTD（最大可容忍停机时间）是职能在严重损害前可停机的最长时间。RTO必须设定在（≤）MTD之内。如果MTD为24小时，RTO必须为24小时或更少。'
+      explanation: 'MTD (Maximum Tolerable Downtime) is the longest a function can be down before serious harm. The RTO must be set within (≤) the MTD. If MTD is 24 hours, the RTO must be 24 hours or less.\n\nMTD（最大可容忍停机时间）是职能在严重损害前可停机的最长时间。RTO必须设定在（≤）MTD之内。如果MTD为24小时，RTO必须为24小时或更少。',
+      related: [{ n: '12.9', t: 'BIA' }, { n: '12.5', t: 'BCP' }]
     },
     {
       text: 'A tabletop exercise is best described as:',
@@ -853,14 +895,16 @@ CSPQuiz.init({
         'A computer simulation requiring no human participants'
       ],
       correct: 1,
-      explanation: 'Tabletop exercises are discussion-based — participants talk through a scenario to test plans, policies, and coordination. No resources are deployed. They are the lowest-cost exercise type.\n\n桌面演练是基于讨论的——参与者口头演练情景以测试计划、政策和协调。不部署资源。这是成本最低的演练类型。'
+      explanation: 'Tabletop exercises are discussion-based — participants talk through a scenario to test plans, policies, and coordination. No resources are deployed. They are the lowest-cost exercise type.\n\n桌面演练是基于讨论的——参与者口头演练情景以测试计划、政策和协调。不部署资源。这是成本最低的演练类型。',
+      related: [{ n: '12.6', t: '演练' }]
     },
     {
       text: 'Which exercise type deploys actual personnel, equipment, and resources to simulate a real event as closely as possible?',
       group: 4,
       options: ['Tabletop', 'Functional', 'Full-scale', 'Seminar'],
       correct: 2,
-      explanation: 'Full-scale exercises deploy real resources, involve multiple agencies, role players as victims, and run in real time — the most complex and expensive type. Functional exercises simulate only a function; tabletops are discussion only.\n\n全面演练部署实际资源，涉及多机构、扮演受害者的角色演员，并实时运行——最复杂、最昂贵。功能演练仅模拟一个功能；桌面演练仅讨论。'
+      explanation: 'Full-scale exercises deploy real resources, involve multiple agencies, role players as victims, and run in real time — the most complex and expensive type. Functional exercises simulate only a function; tabletops are discussion only.\n\n全面演练部署实际资源，涉及多机构、扮演受害者的角色演员，并实时运行——最复杂、最昂贵。功能演练仅模拟一个功能；桌面演练仅讨论。',
+      related: [{ n: '12.6', t: '演练' }]
     },
     {
       text: 'What is the primary purpose of the After-Action Report (AAR) following an exercise?',
@@ -872,14 +916,16 @@ CSPQuiz.init({
         'To end the exercise'
       ],
       correct: 1,
-      explanation: 'The AAR documents what worked and what did not, leading to an Improvement Plan (IP) with corrective actions, responsible parties, and deadlines. Without follow-through on the IP, the exercise provides no lasting value.\n\nAAR记录有效和无效之处，引出改进计划（IP），包括纠正措施、负责人和截止日期。没有IP的跟进，演练不提供持久价值。'
+      explanation: 'The AAR documents what worked and what did not, leading to an Improvement Plan (IP) with corrective actions, responsible parties, and deadlines. Without follow-through on the IP, the exercise provides no lasting value.\n\nAAR记录有效和无效之处，引出改进计划（IP），包括纠正措施、负责人和截止日期。没有IP的跟进，演练不提供持久价值。',
+      related: [{ n: '12.6', t: '演练' }]
     },
     {
       text: 'Under HAZWOPER (29 CFR 1910.120), what is the minimum training required for a Hazardous Materials Technician?',
       group: 4,
       options: ['8 hours', '16 hours', '24 hours', '40 hours'],
       correct: 2,
-      explanation: 'Hazardous Materials Technicians require a minimum of 24 hours of training. They perform offensive actions — approaching the point of release to plug, patch, or stop it. Operations requires 8 hours; Incident Commander also requires 24 hours.\n\n危险物质技术员需要至少24小时培训。他们执行进攻性行动——接近泄漏点进行堵塞、修补或阻止。操作级需要8小时；事故指挥官也需要24小时。'
+      explanation: 'Hazardous Materials Technicians require a minimum of 24 hours of training. They perform offensive actions — approaching the point of release to plug, patch, or stop it. Operations requires 8 hours; Incident Commander also requires 24 hours.\n\n危险物质技术员需要至少24小时培训。他们执行进攻性行动——接近泄漏点进行堵塞、修补或阻止。操作级需要8小时；事故指挥官也需要24小时。',
+      related: [{ n: '12.8', t: 'HAZWOPER' }]
     },
     {
       text: 'What does the First Responder Awareness level under HAZWOPER authorize a responder to do?',
@@ -891,7 +937,8 @@ CSPQuiz.init({
         'Direct the response of other personnel'
       ],
       correct: 2,
-      explanation: 'Awareness-level personnel are trained ONLY to recognize a hazardous release, notify the proper authorities, and take no further action. Defensive actions (containment) require Operations level; offensive actions (stopping) require Technician level.\n\n认知级人员仅接受培训以识别危险品泄漏、通知当局，不采取进一步行动。防御性行动（控制）需要操作级；进攻性行动（阻止）需要技术员级。'
+      explanation: 'Awareness-level personnel are trained ONLY to recognize a hazardous release, notify the proper authorities, and take no further action. Defensive actions (containment) require Operations level; offensive actions (stopping) require Technician level.\n\n认知级人员仅接受培训以识别危险品泄漏、通知当局，不采取进一步行动。防御性行动（控制）需要操作级；进攻性行动（阻止）需要技术员级。',
+      related: [{ n: '12.8', t: 'HAZWOPER' }]
     },
     {
       text: 'A responder approaches a leaking valve and attempts to close it. This requires at minimum which HAZWOPER level?',
@@ -903,7 +950,8 @@ CSPQuiz.init({
         'On-Scene Incident Commander'
       ],
       correct: 2,
-      explanation: 'Stopping the release by approaching the source is an OFFENSIVE action, requiring at least Hazardous Materials Technician (24h). Operations-level responders act defensively from a safe distance and do not stop the release.\n\n接近泄漏源以阻止泄漏是<em>进攻性</em>行动，至少需要危险物质技术员（24小时）。操作级响应者从安全距离采取防御性行动，不阻止泄漏。'
+      explanation: 'Stopping the release by approaching the source is an OFFENSIVE action, requiring at least Hazardous Materials Technician (24h). Operations-level responders act defensively from a safe distance and do not stop the release.\n\n接近泄漏源以阻止泄漏是<em>进攻性</em>行动，至少需要危险物质技术员（24小时）。操作级响应者从安全距离采取防御性行动，不阻止泄漏。',
+      related: [{ n: '12.8', t: 'HAZWOPER' }]
     },
     {
       text: 'Which HAZWOPER training requirement applies to ALL trained responders on an annual basis?',
@@ -915,7 +963,8 @@ CSPQuiz.init({
         'No annual requirement'
       ],
       correct: 1,
-      explanation: 'All HAZWOPER-trained personnel must receive annual refresher training (or demonstrate continued competency). Medical surveillance is required for Technicians, Specialists, and Incident Commanders.\n\n所有接受HAZWOPER培训的人员必须接受年度复训（或证明持续能力）。技术员、专家和事故指挥官需要医疗监测。'
+      explanation: 'All HAZWOPER-trained personnel must receive annual refresher training (or demonstrate continued competency). Medical surveillance is required for Technicians, Specialists, and Incident Commanders.\n\n所有接受HAZWOPER培训的人员必须接受年度复训（或证明持续能力）。技术员、专家和事故指挥官需要医疗监测。',
+      related: [{ n: '12.8', t: 'HAZWOPER' }]
     },
     {
       text: 'Which of the following emergencies typically requires SHELTER-IN-PLACE rather than immediate evacuation?',
@@ -927,7 +976,8 @@ CSPQuiz.init({
         'An active shooter'
       ],
       correct: 1,
-      explanation: 'Shelter-in-place is appropriate when evacuation would expose occupants to greater danger — e.g., an external toxic plume (shut HVAC, seal windows). Fire always requires evacuation. Bomb threats and active shooters use evacuation or lockdown per policy.\n\n就地避难适用于疏散会使居住者面临更大危险时——如外部有毒羽流（关闭HVAC、密封窗户）。火灾始终需要疏散。炸弹威胁和活跃枪手按政策使用疏散或封锁。'
+      explanation: 'Shelter-in-place is appropriate when evacuation would expose occupants to greater danger — e.g., an external toxic plume (shut HVAC, seal windows). Fire always requires evacuation. Bomb threats and active shooters use evacuation or lockdown per policy.\n\n就地避难适用于疏散会使居住者面临更大危险时——如外部有毒羽流（关闭HVAC、密封窗户）。火灾始终需要疏散。炸弹威胁和活跃枪手按政策使用疏散或封锁。',
+      related: [{ n: '12.1', t: '紧急类型' }]
     },
     {
       text: 'Which of the following is NOT one of the eight emergency types listed in CSP11 Domain 4.1?',
@@ -939,7 +989,8 @@ CSPQuiz.init({
         'Construction scheduling delays'
       ],
       correct: 3,
-      explanation: 'The eight types are: fire, severe weather, nuclear incidents, natural disasters, terrorist attacks, chemical spills, utilities systems failure, and cyber security. Construction scheduling is a project-management concern, not an emergency type.\n\n八种类型是：火灾、恶劣天气、核事件、自然灾害、恐怖袭击、化学品泄漏、公用设施中断和网络安全。施工进度延误是项目管理问题，不属于紧急情况类型。'
+      explanation: 'The eight types are: fire, severe weather, nuclear incidents, natural disasters, terrorist attacks, chemical spills, utilities systems failure, and cyber security. Construction scheduling is a project-management concern, not an emergency type.\n\n八种类型是：火灾、恶劣天气、核事件、自然灾害、恐怖袭击、化学品泄漏、公用设施中断和网络安全。施工进度延误是项目管理问题，不属于紧急情况类型。',
+      related: [{ n: '12.1', t: '紧急类型' }]
     },
     {
       text: 'A chemical spill in a plant exceeds a reportable quantity. The employer must report to:',
@@ -951,7 +1002,8 @@ CSPQuiz.init({
         'No one until the spill is cleaned up'
       ],
       correct: 1,
-      explanation: 'Reportable hazardous substance releases must be reported to the National Response Center (NRC), the State Emergency Response Commission (SERC), and the Local Emergency Planning Committee (LEPC). Reporting requirements are part of emergency planning.\n\n可报告的危害物质泄漏必须报告给国家响应中心（NRC）、州应急响应委员会（SERC）和地方应急规划委员会（LEPC）。报告要求是应急规划的组成部分。'
+      explanation: 'Reportable hazardous substance releases must be reported to the National Response Center (NRC), the State Emergency Response Commission (SERC), and the Local Emergency Planning Committee (LEPC). Reporting requirements are part of emergency planning.\n\n可报告的危害物质泄漏必须报告给国家响应中心（NRC）、州应急响应委员会（SERC）和地方应急规划委员会（LEPC）。报告要求是应急规划的组成部分。',
+      related: [{ n: '12.1', t: '紧急类型' }]
     },
     {
       text: 'The "golden hour" in crisis communication refers to:',
@@ -963,7 +1015,8 @@ CSPQuiz.init({
         'The maximum time allowed before OSHA must be notified of a fatality'
       ],
       correct: 1,
-      explanation: 'The "golden hour" is the first 60 minutes after a crisis. Organizations should acknowledge the situation quickly — even with limited information — saying what is known, what is being done, and when the next update will come. Delayed communication creates a vacuum filled by rumors.\n\n"黄金一小时"是危机爆发后最初的60分钟。组织应迅速确认情况——即使信息有限——说明已知信息、正在采取的行动以及下次更新的时间。延迟沟通会造成真空，被谣言填补。'
+      explanation: 'The "golden hour" is the first 60 minutes after a crisis. Organizations should acknowledge the situation quickly — even with limited information — saying what is known, what is being done, and when the next update will come. Delayed communication creates a vacuum filled by rumors.\n\n"黄金一小时"是危机爆发后最初的60分钟。组织应迅速确认情况——即使信息有限——说明已知信息、正在采取的行动以及下次更新的时间。延迟沟通会造成真空，被谣言填补。',
+      related: [{ n: '12.7', t: '危机沟通' }]
     },
     {
       text: 'Which of the following is a BEST PRACTICE in crisis communication?',
@@ -975,7 +1028,8 @@ CSPQuiz.init({
         'Deny the incident occurred'
       ],
       correct: 1,
-      explanation: 'Best practice: one designated spokesperson, early acknowledgment, honest sharing of known facts, and scheduled updates. Silence ("no comment") is interpreted as guilt and allows rumors to fill the vacuum.\n\n最佳实践：一位指定发言人、尽早确认、诚实分享已知事实、并安排定期更新。沉默（"无可奉告"）被解读为有罪，让谣言填补真空。'
+      explanation: 'Best practice: one designated spokesperson, early acknowledgment, honest sharing of known facts, and scheduled updates. Silence ("no comment") is interpreted as guilt and allows rumors to fill the vacuum.\n\n最佳实践：一位指定发言人、尽早确认、诚实分享已知事实、并安排定期更新。沉默（"无可奉告"）被解读为有罪，让谣言填补真空。',
+      related: [{ n: '12.7', t: '危机沟通' }]
     },
     {
       text: 'Which emergency response plan coordinates the overall response organization, resources, and recovery for larger incidents?',
@@ -987,7 +1041,8 @@ CSPQuiz.init({
         'Job Hazard Analysis (JHA)'
       ],
       correct: 1,
-      explanation: 'The Emergency Operations Plan coordinates the response organization (ICS), resources, and recovery for significant incidents. The EAP handles immediate evacuation; the FPP prevents fires; the JHA analyzes job hazards.\n\n应急运作计划协调响应组织（ICS）、资源和重大事故的恢复。EAP处理即时疏散；FPP预防火灾；JHA分析作业危害。'
+      explanation: 'The Emergency Operations Plan coordinates the response organization (ICS), resources, and recovery for significant incidents. The EAP handles immediate evacuation; the FPP prevents fires; the JHA analyzes job hazards.\n\n应急运作计划协调响应组织（ICS）、资源和重大事故的恢复。EAP处理即时疏散；FPP预防火灾；JHA分析作业危害。',
+      related: [{ n: '12.9', t: 'BIA' }]
     },
     {
       text: 'A Business Impact Analysis (BIA) primarily determines:',
@@ -999,7 +1054,8 @@ CSPQuiz.init({
         'The fire extinguisher locations'
       ],
       correct: 1,
-      explanation: 'A BIA quantifies the consequences of disruptions on critical functions, identifies time-critical functions, and sets MTD and recovery priorities. It drives the RTO and RPO values used in continuity planning.\n\nBIA量化中断对关键职能的后果，识别时间关键职能，并设定MTD和恢复优先级。它驱动连续性规划中使用的RTO和RPO值。'
+      explanation: 'A BIA quantifies the consequences of disruptions on critical functions, identifies time-critical functions, and sets MTD and recovery priorities. It drives the RTO and RPO values used in continuity planning.\n\nBIA量化中断对关键职能的后果，识别时间关键职能，并设定MTD和恢复优先级。它驱动连续性规划中使用的RTO和RPO值。',
+      related: [{ n: '12.9', t: 'BIA' }]
     },
     {
       text: 'If a business function has an MTD of 24 hours, its RTO must be:',
@@ -1011,7 +1067,8 @@ CSPQuiz.init({
         'Unrelated to MTD'
       ],
       correct: 1,
-      explanation: 'RTO must be set within the MTD: RTO ≤ MTD. If the function can tolerate at most 24 hours down, recovery must be achievable within 24 hours or less. RTO exceeding MTD means the business suffers serious harm before recovery.\n\nRTO必须设定在MTD之内：RTO ≤ MTD。如果职能最多可承受停机24小时，恢复必须在24小时或更短内实现。RTO超过MTD意味着在恢复前业务已遭受严重损害。'
+      explanation: 'RTO must be set within the MTD: RTO ≤ MTD. If the function can tolerate at most 24 hours down, recovery must be achievable within 24 hours or less. RTO exceeding MTD means the business suffers serious harm before recovery.\n\nRTO必须设定在MTD之内：RTO ≤ MTD。如果职能最多可承受停机24小时，恢复必须在24小时或更短内实现。RTO超过MTD意味着在恢复前业务已遭受严重损害。',
+      related: [{ n: '12.9', t: 'BIA' }, { n: '12.5', t: 'BCP' }]
     },
     {
       text: 'Which emergency type requires EVACUATION rather than shelter-in-place?',
@@ -1023,7 +1080,8 @@ CSPQuiz.init({
         'An earthquake'
       ],
       correct: 1,
-      explanation: 'Fire inside the building always requires evacuation. A tornado requires shelter-in-place (interior room); an external chemical plume may require shelter-in-place with HVAC shut down; an earthquake requires drop-cover-hold, not evacuation.\n\n建筑物内火灾始终需要疏散。龙卷风需要就地避难（内部房间）；外部化学羽流可能需要关闭HVAC就地避难；地震需要伏地、掩护、抓牢，而非疏散。'
+      explanation: 'Fire inside the building always requires evacuation. A tornado requires shelter-in-place (interior room); an external chemical plume may require shelter-in-place with HVAC shut down; an earthquake requires drop-cover-hold, not evacuation.\n\n建筑物内火灾始终需要疏散。龙卷风需要就地避难（内部房间）；外部化学羽流可能需要关闭HVAC就地避难；地震需要伏地、掩护、抓牢，而非疏散。',
+      related: [{ n: '12.1', t: '紧急类型' }]
     },
     {
       text: 'Which of the following is a requirement for ICS incident commanders regarding the transfer of command?',
@@ -1035,14 +1093,16 @@ CSPQuiz.init({
         'Only the highest-ranking officer can accept command'
       ],
       correct: 1,
-      explanation: 'ICS requires that transfer of command include a face-to-face briefing so the incoming commander understands the situation, objectives, and resources. Command should be transferred when a more qualified person arrives or the incident expands.\n\nICS要求指挥权转移包括面对面交接简报，使接任指挥官了解情况、目标和资源。当更有资质的人员到达或事故扩大时应转移指挥权。'
+      explanation: 'ICS requires that transfer of command include a face-to-face briefing so the incoming commander understands the situation, objectives, and resources. Command should be transferred when a more qualified person arrives or the incident expands.\n\nICS要求指挥权转移包括面对面交接简报，使接任指挥官了解情况、目标和资源。当更有资质的人员到达或事故扩大时应转移指挥权。',
+      related: [{ n: '12.4', t: 'ICS' }]
     },
     {
       text: 'Which ICS section is responsible for providing facilities, transportation, supplies, and equipment?',
       group: 8,
       options: ['Command', 'Operations', 'Planning', 'Logistics'],
       correct: 3,
-      explanation: 'Logistics provides facilities, transportation, supplies, equipment, food, medical, and communications — the support backbone of the incident. Operations uses the resources; Planning plans; Finance tracks costs.\n\n后勤提供设施、运输、物资、设备、食品、医疗和通信——事故的支持骨干。行动使用资源；规划做计划；财务跟踪成本。'
+      explanation: 'Logistics provides facilities, transportation, supplies, equipment, food, medical, and communications — the support backbone of the incident. Operations uses the resources; Planning plans; Finance tracks costs.\n\n后勤提供设施、运输、物资、设备、食品、医疗和通信——事故的支持骨干。行动使用资源；规划做计划；财务跟踪成本。',
+      related: [{ n: '12.4', t: 'ICS' }]
     },
     {
       text: 'What is the minimum requirement for a First Responder Operations level under HAZWOPER?',
@@ -1054,7 +1114,8 @@ CSPQuiz.init({
         'No training required'
       ],
       correct: 1,
-      explanation: 'First Responder Operations requires 8 hours minimum of training. These responders take defensive actions — containing the release from a safe distance without stopping it.\n\n第一响应人操作级需要至少8小时培训。这些响应者采取防御性行动——从安全距离控制泄漏而不阻止它。'
+      explanation: 'First Responder Operations requires 8 hours minimum of training. These responders take defensive actions — containing the release from a safe distance without stopping it.\n\n第一响应人操作级需要至少8小时培训。这些响应者采取防御性行动——从安全距离控制泄漏而不阻止它。',
+      related: [{ n: '12.8', t: 'HAZWOPER' }]
     },
     {
       text: 'The Incident Commander (On-Scene) under HAZWOPER must have at minimum:',
@@ -1066,7 +1127,8 @@ CSPQuiz.init({
         'No special training'
       ],
       correct: 1,
-      explanation: 'The HAZWOPER Incident Commander must have at least Operations-level training (8h) plus additional IC competencies, with a total of 24 hours minimum. The IC assumes control of the scene and implements ICS.\n\nHAZWOPER事故指挥官必须至少具备操作级培训（8小时）加上额外的IC能力，总计至少24小时。IC接管现场控制并实施ICS。'
+      explanation: 'The HAZWOPER Incident Commander must have at least Operations-level training (8h) plus additional IC competencies, with a total of 24 hours minimum. The IC assumes control of the scene and implements ICS.\n\nHAZWOPER事故指挥官必须至少具备操作级培训（8小时）加上额外的IC能力，总计至少24小时。IC接管现场控制并实施ICS。',
+      related: [{ n: '12.8', t: 'HAZWOPER' }, { n: '12.4', t: 'ICS' }]
     },
     {
       text: 'Which of the following best describes the relationship between NIMS and ICS?',
@@ -1078,7 +1140,8 @@ CSPQuiz.init({
         'They are unrelated'
       ],
       correct: 1,
-      explanation: 'NIMS is the comprehensive national framework for incident management; ICS is the standardized on-scene management structure within it. ICS provides the command structure; NIMS provides the overall doctrine.\n\nNIMS是事故管理的综合国家框架；ICS是其中的标准化现场管理结构。ICS提供指挥结构；NIMS提供整体指导原则。'
+      explanation: 'NIMS is the comprehensive national framework for incident management; ICS is the standardized on-scene management structure within it. ICS provides the command structure; NIMS provides the overall doctrine.\n\nNIMS是事故管理的综合国家框架；ICS是其中的标准化现场管理结构。ICS提供指挥结构；NIMS提供整体指导原则。',
+      related: [{ n: '12.4', t: 'ICS' }]
     },
     {
       text: 'During an incident, an employee discovers a suspicious package that could be a bomb. The BEST immediate action is to:',
@@ -1090,7 +1153,8 @@ CSPQuiz.init({
         'Take it outside'
       ],
       correct: 1,
-      explanation: 'The standard suspicious-package protocol is: do not touch or move it, evacuate the surrounding area, and notify authorities/law enforcement. Handling the package risks detonation and spreading contamination.\n\n标准可疑包裹程序是：不触摸或移动它、疏散周围区域、通知当局/执法部门。处理包裹有爆炸和扩散污染的风险。'
+      explanation: 'The standard suspicious-package protocol is: do not touch or move it, evacuate the surrounding area, and notify authorities/law enforcement. Handling the package risks detonation and spreading contamination.\n\n标准可疑包裹程序是：不触摸或移动它、疏散周围区域、通知当局/执法部门。处理包裹有爆炸和扩散污染的风险。',
+      related: [{ n: '12.1', t: '紧急类型' }, { n: '12.4', t: 'ICS' }]
     },
     {
       text: 'A functional exercise differs from a full-scale exercise primarily in that it:',
@@ -1102,7 +1166,8 @@ CSPQuiz.init({
         'Is more expensive'
       ],
       correct: 1,
-      explanation: 'A functional exercise simulates a specific component (like the emergency operations center or communications) with simulated inputs and real coordination, but does NOT physically deploy equipment or personnel to the field.\n\n功能演练模拟特定组成部分（如应急运作中心或通信），使用模拟输入和实际协调，但不物理部署设备或人员到现场。'
+      explanation: 'A functional exercise simulates a specific component (like the emergency operations center or communications) with simulated inputs and real coordination, but does NOT physically deploy equipment or personnel to the field.\n\n功能演练模拟特定组成部分（如应急运作中心或通信），使用模拟输入和实际协调，但不物理部署设备或人员到现场。',
+      related: [{ n: '12.6', t: '演练' }]
     },
     {
       text: 'Which statement about the eight emergency types and the all-hazards approach is correct?',
@@ -1114,7 +1179,8 @@ CSPQuiz.init({
         'The ERP cannot cover multiple emergencies'
       ],
       correct: 1,
-      explanation: 'CSP11 requires the ERP to address all applicable emergency types — fire, severe weather, nuclear, natural disasters, terrorism, chemical spills, utilities, and cyber. This is the all-hazards approach; focusing only on fire is insufficient.\n\nCSP11要求ERP处理所有适用的紧急情况类型——火灾、恶劣天气、核、自然灾害、恐怖主义、化学品泄漏、公用设施和网络。这就是全灾害方法；只关注火灾是不够的。'
+      explanation: 'CSP11 requires the ERP to address all applicable emergency types — fire, severe weather, nuclear, natural disasters, terrorism, chemical spills, utilities, and cyber. This is the all-hazards approach; focusing only on fire is insufficient.\n\nCSP11要求ERP处理所有适用的紧急情况类型——火灾、恶劣天气、核、自然灾害、恐怖主义、化学品泄漏、公用设施和网络。这就是全灾害方法；只关注火灾是不够的。',
+      related: [{ n: '12.1', t: '紧急类型' }]
     }
   ]
 });
