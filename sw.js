@@ -4,7 +4,7 @@
    Cache-First strategy for static assets.
    =============================================*/
 
-const CACHE_NAME = 'csp-exam-prep-v4';
+const CACHE_NAME = 'csp-exam-prep-v5';
 const ASSETS = [
   './',
   'index.html',
@@ -53,49 +53,28 @@ self.addEventListener('activate', (e) => {
   );
 });
 
-// Fetch strategy:
-//  - HTML pages: network-first (so content updates are seen immediately);
-//    fall back to cache when offline.
-//  - Other assets: cache-first (fast, and they change rarely).
+// Fetch strategy: NETWORK-FIRST for everything.
+// Fresh content is always preferred; the cache is only a fallback for
+// offline use. This guarantees content/JS/CSS updates are seen immediately
+// after a normal reload — no manual cache clearing required.
 self.addEventListener('fetch', (e) => {
   if (e.request.method !== 'GET') return;
 
-  const url = new URL(e.request.url);
-  const isHTML = e.request.headers.get('accept')?.includes('text/html')
-                 || url.pathname.endsWith('.html')
-                 || url.pathname.endsWith('/');
-
-  if (isHTML) {
-    // Network-first for pages
-    e.respondWith(
-      fetch(e.request).then(response => {
-        if (response && response.status === 200 && response.type === 'basic') {
-          const clone = response.clone();
-          caches.open(CACHE_NAME).then(cache => cache.put(e.request, clone));
-        }
-        return response;
-      }).catch(() => {
-        // Offline: serve cached page, else cached index
-        return caches.match(e.request).then(cached =>
-          cached || caches.match('./index.html')
-        );
-      })
-    );
-    return;
-  }
-
-  // Cache-first for static assets (css/js/img)
   e.respondWith(
-    caches.match(e.request).then(cached => {
-      if (cached) return cached;
-      return fetch(e.request).then(response => {
-        if (!response || response.status !== 200 || response.type !== 'basic') {
-          return response;
-        }
+    fetch(e.request).then(response => {
+      if (response && response.status === 200 && response.type === 'basic') {
         const clone = response.clone();
         caches.open(CACHE_NAME).then(cache => cache.put(e.request, clone));
-        return response;
-      }).catch(() => caches.match('./index.html'));
+      }
+      return response;
+    }).catch(() => {
+      // Offline: serve from cache; fall back to cached index for navigations
+      return caches.match(e.request).then(cached => {
+        if (cached) return cached;
+        const wantsHTML = e.request.headers.get('accept')?.includes('text/html');
+        if (wantsHTML) return caches.match('./index.html');
+        return new Response('Offline', { status: 503 });
+      });
     })
   );
 });
