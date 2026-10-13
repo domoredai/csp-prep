@@ -597,8 +597,8 @@ table.bi-table td:nth-child(2) { width: 65%; color: var(--accent); }
   z-index: 999;
 }
 .vocab-widget .vw-toggle {
-  width: 50px;
-  height: 50px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   background: var(--accent);
   color: #fff;
@@ -1014,7 +1014,7 @@ body {
 #csp-float-btns {
   position: fixed;
   right: 16px;
-  bottom: 92px;
+  bottom: 78px;
   z-index: 900;
   display: flex;
   flex-direction: column;
@@ -1038,26 +1038,26 @@ body {
   pointer-events: auto;
 }
 .float-btn.scroll-top {
-  width: 52px;
-  height: 52px;
-  font-size: 1.4rem;
+  width: 44px;
+  height: 44px;
+  font-size: 1.2rem;
   background: #2563eb;
   color: #fff;
   font-weight: 700;
 }
 .float-btn.scroll-top:hover { background: #1d4ed8; }
 .float-btn.collapse-all {
-  width: 52px;
-  height: 52px;
-  font-size: 0.85rem;
+  width: 44px;
+  height: 44px;
+  font-size: 0.75rem;
   background: #1e3a5f;
   color: #fff;
   font-weight: 700;
 }
 .float-btn.collapse-all:hover { background: #16304f; }
 @media (max-width: 640px) {
-  #csp-float-btns { right: 12px; bottom: 88px; }
-  .float-btn.scroll-top, .float-btn.collapse-all { width: 46px; height: 46px; font-size: 1.2rem; }
+  #csp-float-btns { right: 12px; bottom: 74px; }
+  .float-btn.scroll-top, .float-btn.collapse-all { width: 40px; height: 40px; font-size: 1.05rem; }
 }
 
 /* ============================================
@@ -1222,4 +1222,33 @@ body {
   font-size: 0.88rem;
   line-height: 1.6;
   color: var(--text-secondary);
+}
+
+/* Return-to-position button (after jumping to a related card) */
+.return-btn {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  bottom: 24px;
+  z-index: 950;
+  background: #1e3a5f;
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 10px 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: var(--font);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.25s, transform 0.25s;
+}
+.return-btn.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+.return-btn:hover { background: #16304f; }
+@media (max-width: 640px) {
+  .return-btn { bottom: 16px; padding: 9px 16px; font-size: 0.8rem; }
 }

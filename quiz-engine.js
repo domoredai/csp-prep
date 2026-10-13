@@ -322,7 +322,9 @@
       const quiz = quizzes[quizId];
       if (quiz) {
         quiz.answer(qIndex, optionIndex);
-        // Refresh progress chip + card completion after answering
+        // Re-render replaced the group DOM — restore collapse state + wiring,
+        // then refresh the progress chip and card-completion marks.
+        refreshQuizGroups();
         refreshProgress();
       }
     },
@@ -372,9 +374,14 @@
         if (btn) btn.textContent = '▾ 收起 / Collapse';
         target.classList.remove('collapsed');
       }
+      // Remember where the user was so they can jump back
+      const returnY = window.scrollY || document.documentElement.scrollTop;
+
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       target.classList.add('card-flash');
       setTimeout(function() { target.classList.remove('card-flash'); }, 1800);
+
+      showReturnButton(returnY);
     },
 
     // ============ EXPORT / IMPORT (manual sync) ============
@@ -533,35 +540,54 @@
 
   function wireQuizGroup(group) {
     if (group.dataset.wired) return;
-    var section = group.querySelector('.quiz-section');
-    var bar = group.querySelector('.quiz-group-bar');
+    var body = group.querySelector('.quiz-group-body');
+    var toggle = group.querySelector('.qg-toggle');
+    if (!body || !toggle) return;
+    group.dataset.wired = '1';
+    group.dataset.open = '0';
+
+    applyGroupState(group);
+
+    // Event delegation on the STABLE group container. Always re-query the
+    // body/toggle by selector: a re-render (after answering) replaces them
+    // with new elements, so a captured closure reference would go stale.
+    group.addEventListener('click', function(e) {
+      if (e.target.closest('.vocab-star')) return;
+      if (e.target.closest('.qg-toggle') || e.target.closest('.quiz-group-bar')) {
+        group.dataset.open = group.dataset.open === '1' ? '0' : '1';
+        applyGroupState(group);
+      }
+    });
+  }
+
+  // Apply the group's persisted open state to the CURRENT (possibly re-rendered)
+  // body/toggle elements inside the stable group container.
+  function applyGroupState(group) {
     var body = group.querySelector('.quiz-group-body');
     var toggle = group.querySelector('.qg-toggle');
     var label = group.querySelector('.quiz-group-label');
-
-    if (!section || !bar || !body || !toggle) return;
-    group.dataset.wired = '1';
-
+    if (!body || !toggle) return;
+    var open = group.dataset.open === '1';
+    body.style.display = open ? 'block' : 'none';
+    toggle.textContent = open ? '▾ 收起 / Collapse' : '▸ 展开 / Expand';
     var numLabel = getSectionLabel(group);
+    if (label && numLabel) label.textContent = '📝 例题 ' + numLabel + ' / Practice';
+  }
 
-    // Default collapsed
-    body.style.display = 'none';
-    toggle.textContent = '▸ 展开 / Expand';
-    if (label) label.textContent = '📝 例题 ' + numLabel + ' / Practice';
-
-    var doToggle = function() {
-      var isHidden = body.style.display === 'none';
-      body.style.display = isHidden ? 'block' : 'none';
-      toggle.textContent = isHidden ? '▾ 收起 / Collapse' : '▸ 展开 / Expand';
-    };
-
-    toggle.addEventListener('click', function(e) {
-      e.stopPropagation();
-      doToggle();
-    });
-    bar.addEventListener('click', function(e) {
-      if (e.target.closest('.vocab-star')) return;
-      doToggle();
+  // After a re-render, restore the group's prior open/collapsed state and
+  // relabel the toggle (event handlers persist via delegation above).
+  function refreshQuizGroups() {
+    document.querySelectorAll('[id^="quiz-group-"]').forEach(function(group) {
+      var body = group.querySelector('.quiz-group-body');
+      var toggle = group.querySelector('.qg-toggle');
+      var label = group.querySelector('.quiz-group-label');
+      if (!body || !toggle) return;
+      if (!group.dataset.wired) {
+        wireQuizGroup(group);
+        return;
+      }
+      // Restore open state on the freshly re-rendered DOM
+      applyGroupState(group);
     });
   }
 
@@ -589,6 +615,28 @@
     wrapper.style.display = isHidden ? 'block' : 'none';
     btn.textContent = isHidden ? '▾ 收起 / Collapse' : '▸ 展开 / Expand';
     card.classList.toggle('collapsed', !isHidden);
+  }
+
+  // ============ RETURN-TO-POSITION BUTTON ============
+  // Shown after jumping to a related knowledge card, so the user can
+  // jump back to where they were solving questions.
+  function showReturnButton(returnY) {
+    var existing = document.getElementById('csp-return-btn');
+    if (existing) existing.remove();
+
+    var btn = document.createElement('button');
+    btn.id = 'csp-return-btn';
+    btn.className = 'return-btn';
+    btn.innerHTML = '↩ 返回原位 / Back';
+    btn.addEventListener('click', function() {
+      window.scrollTo({ top: returnY, behavior: 'smooth' });
+      btn.remove();
+    });
+    document.body.appendChild(btn);
+    // Fade in (setTimeout is more reliable than rAF when the tab is backgrounded)
+    setTimeout(function() { btn.classList.add('show'); }, 20);
+    // Auto-dismiss after 20s if untouched
+    setTimeout(function() { if (btn.parentNode) btn.remove(); }, 20000);
   }
 
   // ============ FLOATING ACTION BUTTONS ============
