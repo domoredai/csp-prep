@@ -358,6 +358,14 @@ try {
     <p style="color:var(--text-secondary);font-size:0.85rem;grid-column:1/-1;text-align:center;">Loading week plan...</p>
   </div>
 
+  <!-- Boost practice -->
+  <div class="section-title" id="boost">💪 强化训练 / Boost Practice</div>
+  <div id="boost-list" class="week-grid"></div>
+
+  <!-- Full mock exams -->
+  <div class="section-title">⏱ 全真模拟 / Full Mock Exams</div>
+  <div id="mock-list"></div>
+
   <!-- Monthly Exams -->
   <div class="section-title">📝 Monthly Mock Exams</div>
   <div id="exam-list">
@@ -494,6 +502,21 @@ const EXAMS = [
   { num: 6, file: 'exam-month-06.html', name: 'Monthly Exam 6', topic: 'Final Mock Exam (Full CSP Simulation)', coverage: 'Week 23–24', domainColor: 'd7' }
 ];
 
+const BOOST = [
+  { domain: '1', file: 'practice-d1.html', name: 'D1 强化', topic: '控制层级 / PSM / 电气坠落 / 密闭空间', count: 120 },
+  { domain: '2', file: 'practice-d2.html', name: 'D2 强化', topic: '管理体系 / 绩效 / 事故调查 / 财务合规', count: 120 },
+  { domain: '3', file: 'practice-d3.html', name: 'D3 强化', topic: '风险评估 / FMEA·FTA / HAZOP·领结', count: 50 },
+  { domain: '4', file: 'practice-d4.html', name: 'D4 强化', topic: '应急计划 / 消防 / 危化品运输', count: 30 },
+  { domain: '5', file: 'practice-d5.html', name: 'D5 强化', topic: 'RCRA / SPCC / 环境管理', count: 20 },
+  { domain: '6', file: 'practice-d6.html', name: 'D6 强化', topic: '暴露采样 / 噪声 / 人机工程', count: 30 },
+  { domain: '7', file: 'practice-d7.html', name: 'D7 强化', topic: '培训设计 / 评估 / 记录', count: 20 }
+];
+
+const MOCKS = [
+  { id: 'a', file: 'mock-a.html', name: '全真模拟 A', topic: '200 题 · 5.5 小时 · 计时组卷' },
+  { id: 'b', file: 'mock-b.html', name: '全真模拟 B', topic: '200 题 · 5.5 小时 · 与 A 不重复' }
+];
+
 /* Compute and render all stats */
 function renderDashboard() {
   const progress = CSPQuiz.getProgress();
@@ -527,6 +550,7 @@ function renderDashboard() {
         domainId = w.domain; break;
       }
     }
+    if (!domainId && /^practice-d[1-7]$/.test(id)) domainId = id.slice(-1);
     if (!domainId) {
       for (const e of EXAMS) {
         if (id === 'exam-month-' + String(e.num).padStart(2, '0')) {
@@ -581,6 +605,39 @@ function renderDashboard() {
   }
   document.getElementById('week-list').innerHTML = weekHtml;
 
+  /* --- Boost cards --- */
+  let boostHtml = '';
+  for (const b of BOOST) {
+    const quizId = 'practice-d' + b.domain;
+    const p = progress[quizId];
+    const answered = p && p.answers ? p.answers.filter(a => a !== null).length : 0;
+    const total = (p && p.totalQuestions) || b.count;
+    const pct = total ? Math.round((p && p.correctCount || 0) / total * 100) : 0;
+    let cls = '', badge = '';
+    if (p && p.completed) { cls = ' completed'; badge = '<span class="week-badge">✓ 完成</span>'; }
+    else if (answered) { cls = ' in-progress'; badge = '<span class="week-badge">' + answered + '/' + total + ' · ' + pct + '%</span>'; }
+    else badge = '<span class="week-badge">' + total + ' 题</span>';
+    boostHtml += '<a href="' + b.file + '" class="week-card' + cls + '">';
+    boostHtml += '<div class="week-label">' + b.name + '</div>';
+    boostHtml += '<div class="week-topic">' + b.topic + '</div>';
+    boostHtml += badge + '</a>';
+  }
+  document.getElementById('boost-list').innerHTML = boostHtml;
+
+  /* --- Full mock cards --- */
+  const mockResults = loadMockResults();
+  let mockHtml = '';
+  for (const m of MOCKS) {
+    const r = mockResults.filter(x => x.id === m.id).pop();
+    mockHtml += '<a href="' + m.file + '" class="exam-card">';
+    mockHtml += '<div class="exam-icon">⏱</div>';
+    mockHtml += '<div class="exam-info"><div class="exam-name">' + m.name + '</div>';
+    mockHtml += '<div class="exam-detail">' + m.topic + (r ? ' · 上次 ' + new Date(r.at).toLocaleDateString() : '') + '</div></div>';
+    mockHtml += '<div class="exam-score">' + (r ? r.pct + '%' : '--') + '</div>';
+    mockHtml += '</a>';
+  }
+  document.getElementById('mock-list').innerHTML = mockHtml;
+
   /* --- Exam cards --- */
   let examHtml = '';
   for (const e of EXAMS) {
@@ -604,6 +661,11 @@ function renderDashboard() {
 }
 
 /* ---------- Today panel ---------- */
+function loadMockResults() {
+  try { return JSON.parse(localStorage.getItem('csp_mock_results') || '[]') || []; }
+  catch (e) { return []; }
+}
+
 function renderTodayPanel(progress) {
   const el = document.getElementById('today-panel');
   if (!el) return;

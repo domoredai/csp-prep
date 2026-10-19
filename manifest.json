@@ -17,6 +17,7 @@
   "lang": "en",
   "shortcuts": [
     { "name": "今日复习 / Review", "url": "./review-wrong.html" },
-    { "name": "继续学习 / Continue", "url": "./index.html#weekly-plan" }
+    { "name": "强化训练 / Boost", "url": "./practice.html" },
+    { "name": "全真模拟 A / Mock A", "url": "./mock-a.html" }
   ]
 }

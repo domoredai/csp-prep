@@ -1,13 +1,15 @@
 # CSP Exam Prep
 
-CSP（Certified Safety Professional）备考学习工具：24 周双语学习内容 + 1000+ 道单选题 + 6 套月度模拟考 + 间隔复习错题本 + 术语闪卡。纯静态站点（HTML/CSS/JS），可离线使用，可直接部署到 GitHub Pages。
+CSP（Certified Safety Professional）备考学习工具：24 周双语学习内容 + 1400+ 道单选题 + 6 套月度小测 + 390 道强化题 + 2 套 200 题全真计时模拟 + 间隔复习错题本 + 术语闪卡。纯静态站点（HTML/CSS/JS），可离线使用，可直接部署到 GitHub Pages。
 
 线上地址：<https://domoredai.github.io/csp-prep/>
 
 ## 功能
 
 - **24 周课程**：每周知识点（中英对照）+ 分知识点练习 + 周测。
-- **6 套月度模拟考**：按 CSP11 七大领域覆盖，自动计分。
+- **6 套月度小测**：章节级，18–25 题，按 CSP11 七大领域覆盖，自动计分。
+- **强化训练**：D1–D7 共 390 道情境强化题（D1/D2 各 120，情景题占 55%+），独立进度，计入领域统计。
+- **全真模拟 A/B**：各 200 题、5.5 小时计时、按 CSP11 权重（D1 50 / D2 50 / D3 30 / D4 18 / D5 12 / D6 20 / D7 20）组卷、自动交卷、分领域成绩；两套不重复，错题自动进入错题本。模拟卷不是 BCSP 真题，正确率不能直接换算官方 scaled score。
 - **错题本 v2**：答错自动入库，按 1/3/7/14 天间隔复习，连续答对 3 次归入「已掌握」；支持「明天再练」「标记已掌握」「移出错题本」。
 - **学习仪表盘**：总体正确率、答题数、错题数、连续学习天数、14 天活动图、每日目标（10/20/30/50 题）。
 - **进度安全**：localStorage 自动快照（最近 6 个）、一键恢复、JSON 导出/导入（合并或覆盖）。
@@ -41,6 +43,11 @@ python -m http.server 8000
 ├── week-01.html … week-24.html
 ├── exam-month-01.html … exam-month-06.html
 ├── review-wrong.html       # 错题本 + 间隔复习
+├── practice.html           # 强化训练入口
+├── practice-d1.html … d7   # 分领域强化题
+├── mock-a.html / mock-b.html  # 200 题全真计时模拟
+├── mock-data.js            # 两套模拟卷题库（构建生成）
+├── mock-engine.js / mock-styles.css
 ├── glossary.html           # 术语表（支持 ?q= 查询）
 ├── vocab-flashcards.html   # 单词闪卡
 ├── quiz-engine.js          # 答题引擎 / 进度 / 复习 / 备份 / 搜索 / 主题
@@ -63,6 +70,8 @@ python -m http.server 8000
 | `csp_settings` | 主题、每日目标、开始日期 |
 | `csp_backups` | 最近 6 个自动/手动快照 |
 | `csp_schema_version` | 数据版本（当前 3） |
+| `csp_mock_results` | 全真模拟成绩（最近 20 次） |
+| `csp_mock_session_a` / `_b` | 未交卷的模拟进度（可断点续答） |
 
 升级不会清空这些 key；v3 会自动把旧错题补齐复习字段。**换浏览器/换设备/清理站点数据会丢失进度**，请先在仪表盘「数据与备份」导出 JSON。
 

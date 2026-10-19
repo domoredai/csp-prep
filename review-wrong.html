@@ -143,6 +143,8 @@ try {
     const m = /^week-(\d+)-quiz$/.exec(entry.quizId || '');
     if (m) return 'week-' + m[1] + '.html';
     if (/^exam-month-\d+$/.test(entry.quizId || '')) return entry.quizId + '.html';
+    if (/^practice-d\d$/.test(entry.quizId || '')) return entry.quizId + '.html';
+    if (/^mock-[ab]$/.test(entry.quizId || '')) return entry.quizId + '.html';
     return 'index.html';
   }
 

@@ -434,6 +434,38 @@
     return true;
   }
 
+  // Used by the full-length mock exam: record a missed item in the wrong bank
+  // so it participates in the same spaced-repetition review.
+  function addExternalWrong(quizId, quizTitle, qIndex, question, chosenIndex) {
+    if (!question) return false;
+    const wrongs = loadWrongQuestions();
+    const id = entryId(quizId, qIndex);
+    if (wrongs.some(function(w) { return getEntryKey(w) === id; })) return false;
+    const now = new Date();
+    const entry = {
+      id: id,
+      quizId: quizId,
+      quizTitle: quizTitle,
+      quizTopic: quizTitle,
+      qIndex: qIndex,
+      question: truncateText(question.text, 120),
+      correctAnswer: question.options[question.correct],
+      yourAnswer: chosenIndex !== null && chosenIndex !== undefined ? question.options[chosenIndex] : 'Unanswered',
+      attempts: 1,
+      lastAttemptCorrect: false,
+      status: 'learning',
+      stage: 0,
+      lapses: 1,
+      firstWrongAt: now.toISOString(),
+      updatedAt: now.toISOString(),
+      full: snapshotQuestion(question)
+    };
+    scheduleAfterWrong(entry, now);
+    wrongs.push(entry);
+    saveWrongQuestions(wrongs);
+    return true;
+  }
+
   // ============ BACKUPS ============
   function loadBackups() {
     const v = safeGet(STORAGE_KEY_BACKUPS, []);
@@ -587,7 +619,9 @@
       this.quizId = config.quizId || 'unknown';
       this.quizTitle = config.quizTitle || 'Quiz';
       this.quizTopic = config.quizTopic || '';
-      const ordered = buildOptionOrder(this.quizId, config.questions || []);
+      const ordered = window.__CSP_NO_BALANCE__
+        ? { questions: (config.questions || []).slice(), rotations: new Array((config.questions || []).length).fill(0) }
+        : buildOptionOrder(this.quizId, config.questions || []);
       this.questions = ordered.questions;
       this.rotations = ordered.rotations;
       this.totalQuestions = this.questions.length;
@@ -936,6 +970,7 @@
     markMastered: markMastered,
     snoozeReview: snoozeReview,
     removeWrong: removeWrongEntry,
+    addExternalWrong: addExternalWrong,
     entryId: entryId,
 
     // ---- activity ----
@@ -1286,10 +1321,14 @@
     var label = group.querySelector('.quiz-group-label');
     if (!body || !toggle) return;
     var open = group.dataset.open === '1';
+    group.classList.toggle('is-collapsed', !open);
     body.style.display = open ? 'block' : 'none';
     toggle.textContent = open ? '▾ 收起 / Collapse' : '▸ 展开 / Expand';
     var numLabel = getSectionLabel(group);
-    if (label && numLabel) label.textContent = '📝 例题 ' + numLabel + ' / Practice';
+    if (label) {
+      if (group.dataset.label) label.textContent = group.dataset.label;
+      else if (numLabel) label.textContent = '📝 例题 ' + numLabel + ' / Practice';
+    }
   }
 
   function getSectionLabel(group) {
@@ -1532,6 +1571,9 @@
   const PAGE_INDEX = [
     ['学习仪表盘 / Dashboard', '总览、进度、今日计划', 'index.html'],
     ['错题本与今日复习 / Wrong Answers', '错题掌握、间隔复习', 'review-wrong.html'],
+    ['强化训练 / Boost Practice', '分领域情境强化题', 'practice.html'],
+    ['全真模拟 A / Full Mock A', '200 题 · 5.5 小时', 'mock-a.html'],
+    ['全真模拟 B / Full Mock B', '200 题 · 5.5 小时', 'mock-b.html'],
     ['术语表 / Glossary', '中英术语查询', 'glossary.html'],
     ['词汇闪卡 / Flashcards', '翻转记忆、按领域筛选', 'vocab-flashcards.html'],
     ['手机端预览 / Mobile Preview', '模拟手机屏幕', 'preview-mobile.html']

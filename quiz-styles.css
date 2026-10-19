@@ -1436,6 +1436,14 @@ body {
 .backup-row .br-meta { color: var(--text-secondary); }
 .backup-row .br-spacer { flex: 1; }
 
+/* Collapsed quiz groups: keep the bar as a compact row instead of a tall empty card */
+[id^="quiz-group-"].is-collapsed > .quiz-section {
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+}
+[id^="quiz-group-"].is-collapsed .quiz-group-bar { margin-bottom: 0; border-radius: var(--radius); }
+
 /* Mobile refinements */
 .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }
 .table-scroll > table { margin-top: 0; margin-bottom: 0; }

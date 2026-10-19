@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>强化训练 — CSP Exam Prep</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1e3a5f">
+<link rel="stylesheet" href="quiz-styles.css?v=14">
+<script>
+/* Apply the saved theme before first paint (avoids a light flash in dark mode). */
+try {
+  var _s = JSON.parse(localStorage.getItem('csp_settings') || '{}');
+  var _t = _s.theme || 'auto';
+  if (_t === 'auto') _t = (window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+  document.documentElement.setAttribute('data-theme', _t);
+  document.documentElement.style.colorScheme = _t;
+} catch (e) {}
+</script>
+<style>
+  .boost-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; margin-bottom: 26px; }
+  .res-card { display: flex; gap: 14px; background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); padding: 16px 18px; text-decoration: none; color: inherit; border-left: 4px solid var(--accent); transition: transform .15s; }
+  .res-card:hover { transform: translateY(-2px); }
+  .rc-icon { font-weight: 800; font-size: 1rem; color: var(--accent); min-width: 34px; }
+  .rc-info { flex: 1; min-width: 0; }
+  .rc-name { font-weight: 700; color: var(--heading); font-size: .95rem; }
+  .rc-desc { font-size: .77rem; color: var(--text-secondary); margin: 2px 0 8px; }
+  .rc-progress { display: flex; align-items: center; gap: 8px; }
+  .rc-bar { flex: 1; height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; }
+  .rc-bar i { display: block; height: 100%; background: var(--accent); }
+  .rc-count { font-size: .72rem; color: var(--text-secondary); white-space: nowrap; }
+  .mock-note { font-size: .82rem; color: var(--text-secondary); margin: -6px 0 14px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="breadcrumb"><a href="index.html">← 仪表盘 / Dashboard</a> &nbsp;|&nbsp; 强化训练 / Boost</div>
+  <div class="page-header">
+    <h1>💪 强化训练 / Boost Practice</h1>
+    <div class="subtitle">第二遍强化：情境题为主，按领域分组，计入领域进度与错题复习</div>
+  </div>
+
+  <div class="section-title">📚 分领域强化</div>
+  <div class="boost-grid">
+  <a class="res-card" href="practice-d1.html" data-quiz="practice-d1">
+    <div class="rc-icon">D1</div>
+    <div class="rc-info">
+      <div class="rc-name">D1 安全原理高级应用</div>
+      <div class="rc-desc">120 道强化题 · 按主题分组</div>
+      <div class="rc-progress"><div class="rc-bar"><i style="width:0%"></i></div><span class="rc-count">0 / 120</span></div>
+    </div>
+  </a>
+  <a class="res-card" href="practice-d2.html" data-quiz="practice-d2">
+    <div class="rc-icon">D2</div>
+    <div class="rc-info">
+      <div class="rc-name">D2 项目管理</div>
+      <div class="rc-desc">120 道强化题 · 按主题分组</div>
+      <div class="rc-progress"><div class="rc-bar"><i style="width:0%"></i></div><span class="rc-count">0 / 120</span></div>
+    </div>
+  </a>
+  <a class="res-card" href="practice-d3.html" data-quiz="practice-d3">
+    <div class="rc-icon">D3</div>
+    <div class="rc-info">
+      <div class="rc-name">D3 风险管理</div>
+      <div class="rc-desc">50 道强化题 · 按主题分组</div>
+      <div class="rc-progress"><div class="rc-bar"><i style="width:0%"></i></div><span class="rc-count">0 / 50</span></div>
+    </div>
+  </a>
+  <a class="res-card" href="practice-d4.html" data-quiz="practice-d4">
+    <div class="rc-icon">D4</div>
+    <div class="rc-info">
+      <div class="rc-name">D4 应急管理</div>
+      <div class="rc-desc">30 道强化题 · 按主题分组</div>
+      <div class="rc-progress"><div class="rc-bar"><i style="width:0%"></i></div><span class="rc-count">0 / 30</span></div>
+    </div>
+  </a>
+  <a class="res-card" href="practice-d5.html" data-quiz="practice-d5">
+    <div class="rc-icon">D5</div>
+    <div class="rc-info">
+      <div class="rc-name">D5 环境管理</div>
+      <div class="rc-desc">20 道强化题 · 按主题分组</div>
+      <div class="rc-progress"><div class="rc-bar"><i style="width:0%"></i></div><span class="rc-count">0 / 20</span></div>
+    </div>
+  </a>
+  <a class="res-card" href="practice-d6.html" data-quiz="practice-d6">
+    <div class="rc-icon">D6</div>
+    <div class="rc-info">
+      <div class="rc-name">D6 职业健康</div>
+      <div class="rc-desc">30 道强化题 · 按主题分组</div>
+      <div class="rc-progress"><div class="rc-bar"><i style="width:0%"></i></div><span class="rc-count">0 / 30</span></div>
+    </div>
+  </a>
+  <a class="res-card" href="practice-d7.html" data-quiz="practice-d7">
+    <div class="rc-icon">D7</div>
+    <div class="rc-info">
+      <div class="rc-name">D7 培训</div>
+      <div class="rc-desc">20 道强化题 · 按主题分组</div>
+      <div class="rc-progress"><div class="rc-bar"><i style="width:0%"></i></div><span class="rc-count">0 / 20</span></div>
+    </div>
+  </a>
+  </div>
+
+  <div class="section-title">⏱ 全真模拟</div>
+  <p class="mock-note">200 题 · 5.5 小时 · 按 CSP11 权重（D1 25% / D2 25% / D3 15% / D4 9% / D5 6% / D6 10% / D7 10%）组卷，含分领域成绩。</p>
+  <div class="boost-grid">
+    <a class="res-card" href="mock-a.html" data-mock="a" style="border-left-color:#dc2626">
+      <div class="rc-icon">A</div>
+      <div class="rc-info"><div class="rc-name">全真模拟 A</div><div class="rc-desc">200 题 · 5.5 小时 · 计时/暂停不可</div><div class="rc-progress"><span class="rc-count" data-result="a">尚未作答</span></div></div>
+    </a>
+    <a class="res-card" href="mock-b.html" data-mock="b" style="border-left-color:#dc2626">
+      <div class="rc-icon">B</div>
+      <div class="rc-info"><div class="rc-name">全真模拟 B</div><div class="rc-desc">200 题 · 5.5 小时 · 与 A 卷不重复</div><div class="rc-progress"><span class="rc-count" data-result="b">尚未作答</span></div></div>
+    </a>
+  </div>
+</div>
+<script src="quiz-engine.js?v=14"></script>
+<script>
+(function(){
+  var progress = CSPQuiz.getProgress();
+  document.querySelectorAll('[data-quiz]').forEach(function(card){
+    var id = card.dataset.quiz;
+    var p = progress[id];
+    var total = Number(card.querySelector('.rc-count').textContent.split('/')[1]) || 0;
+    var answered = p && p.answers ? p.answers.filter(function(a){ return a !== null && a !== undefined; }).length : 0;
+    var pct = total ? Math.round(answered / total * 100) : 0;
+    card.querySelector('.rc-bar i').style.width = pct + '%';
+    card.querySelector('.rc-count').textContent = answered + ' / ' + total;
+  });
+  var results = [];
+  try { results = JSON.parse(localStorage.getItem('csp_mock_results') || '[]'); } catch(e) {}
+  document.querySelectorAll('[data-result]').forEach(function(el){
+    var id = el.dataset.result;
+    var r = results.filter(function(x){ return x.id === id; }).pop();
+    if (r) el.textContent = '最近：' + r.score + '/' + r.total + ' · ' + r.pct + '%';
+  });
+})();
+</script>
+</body>
+</html>

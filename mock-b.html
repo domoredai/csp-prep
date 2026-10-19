@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>全真模拟 B — CSP Exam Prep</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1e3a5f">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="stylesheet" href="quiz-styles.css?v=14">
+<link rel="stylesheet" href="mock-styles.css?v=14">
+<script>
+try {
+  var _s = JSON.parse(localStorage.getItem('csp_settings') || '{}');
+  var _t = _s.theme || 'auto';
+  if (_t === 'auto') _t = (window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+  document.documentElement.setAttribute('data-theme', _t);
+  document.documentElement.style.colorScheme = _t;
+} catch (e) {}
+</script>
+</head>
+<body data-set="b" class="mock-page">
+
+<header class="mock-topbar">
+  <div class="mt-left">
+    <a class="mt-back" href="practice.html" title="返回强化训练">←</a>
+    <div>
+      <div class="mt-title">全真模拟 B</div>
+      <div class="mt-sub">200 题 · 5.5 小时 · CSP11 权重</div>
+    </div>
+  </div>
+  <div class="mt-center">
+    <span id="mock-timer">05:30:00</span>
+    <span id="mock-flag-count"></span>
+  </div>
+  <div class="mt-right">
+    <span id="mock-progress">0 / 200</span>
+    <button id="mock-submit" class="btn btn-primary" type="button">交卷</button>
+    <button id="side-toggle" class="btn btn-outline mt-side-btn" type="button">答题卡</button>
+  </div>
+</header>
+
+<div class="mock-wrap">
+  <aside class="mock-side" id="mock-side">
+    <div class="ms-title">答题卡 <span class="ms-legend">蓝=已答 · 黄点=标记</span></div>
+    <div class="mock-palette" id="mock-palette"></div>
+  </aside>
+  <main class="mock-main" id="mock-main">
+    <div id="mock-start"></div>
+    <div id="mock-question" hidden></div>
+    <div id="mock-report" hidden></div>
+  </main>
+</div>
+
+<script src="quiz-engine.js?v=14"></script>
+<script src="mock-data.js?v=14"></script>
+<script src="mock-engine.js?v=14"></script>
+<script>
+if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(function() {});
+</script>
+</body>
+</html>

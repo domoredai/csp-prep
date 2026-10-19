@@ -4,7 +4,7 @@
    Network-first: fresh content always wins, cache is offline fallback.
    =============================================*/
 
-const CACHE_NAME = 'csp-exam-prep-v7';
+const CACHE_NAME = 'csp-exam-prep-v8';
 const ASSETS = [
   './',
   'index.html',
@@ -23,6 +23,10 @@ const ASSETS = [
   'exam-month-04.html','exam-month-05.html','exam-month-06.html',
   // Review & glossary
   'review-wrong.html','glossary.html','vocab-flashcards.html',
+  // Boost practice + full mocks
+  'practice.html','practice-d1.html','practice-d2.html','practice-d3.html',
+  'practice-d4.html','practice-d5.html','practice-d6.html','practice-d7.html',
+  'mock-a.html','mock-b.html','mock-data.js','mock-engine.js','mock-styles.css',
   // Icons & manifest
   'icon-192.png','icon-512.png','manifest.json'
 ];
