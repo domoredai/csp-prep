@@ -4,7 +4,7 @@
    Network-first: fresh content always wins, cache is offline fallback.
    =============================================*/
 
-const CACHE_NAME = 'csp-exam-prep-v6';
+const CACHE_NAME = 'csp-exam-prep-v7';
 const ASSETS = [
   './',
   'index.html',

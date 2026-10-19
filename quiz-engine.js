@@ -507,6 +507,9 @@
   function migrate() {
     const v = parseInt(safeGet(STORAGE_KEY_SCHEMA, 0), 10) || 0;
     if (v >= SCHEMA_VERSION) return;
+    // Existing learner data: snapshot the exact pre-migration state first, so
+    // even an unexpected migration problem can be undone from the dashboard.
+    if (v > 0) backupNow('before-migration');
     const now = Date.now();
 
     // 1. Wrong-answer bank → add ids, status, stage, nextReviewAt.

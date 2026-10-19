@@ -81,7 +81,7 @@ python -m http.server 8000
 }
 ```
 
-改题后请把 `quiz-styles.css?v=13` / `quiz-engine.js?v=13` 中的版本号 +1（或改 `sw.js` 的 `CACHE_NAME`），避免旧缓存。
+改题后请把 `quiz-styles.css?v=` / `quiz-engine.js?v=` 中的版本号 +1（或改 `sw.js` 的 `CACHE_NAME`），避免旧缓存。
 
 ## 部署
 
