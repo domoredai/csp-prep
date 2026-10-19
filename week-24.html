@@ -10,7 +10,17 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="apple-touch-icon" href="icon-192.png">
-<link rel="stylesheet" href="quiz-styles.css?v=12">
+<link rel="stylesheet" href="quiz-styles.css?v=13">
+<script>
+/* Apply the saved theme before first paint (avoids a light flash in dark mode). */
+try {
+  var _s = JSON.parse(localStorage.getItem('csp_settings') || '{}');
+  var _t = _s.theme || 'auto';
+  if (_t === 'auto') _t = (window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+  document.documentElement.setAttribute('data-theme', _t);
+  document.documentElement.style.colorScheme = _t;
+} catch (e) {}
+</script>
     <style>
       .breadcrumb { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 16px; }
       .breadcrumb a { color: var(--accent); text-decoration: none; }
@@ -626,8 +636,8 @@
         <div id="quiz-root"></div>
     </div>
 
-    <script src="quiz-engine.js?v=12"></script>
-    <script src="vocab-engine.js?v=12"></script>
+    <script src="quiz-engine.js?v=13"></script>
+    <script src="vocab-engine.js?v=13"></script>
     <script>
     CSPQuiz.init({
         containerId: 'quiz-root',

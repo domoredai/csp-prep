@@ -4,7 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CSP Exam Prep — Study Dashboard</title>
-<link rel="stylesheet" href="quiz-styles.css?v=12">
+<link rel="stylesheet" href="quiz-styles.css?v=13">
+<script>
+/* Apply the saved theme before first paint (avoids a light flash in dark mode). */
+try {
+  var _s = JSON.parse(localStorage.getItem('csp_settings') || '{}');
+  var _t = _s.theme || 'auto';
+  if (_t === 'auto') _t = (window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+  document.documentElement.setAttribute('data-theme', _t);
+  document.documentElement.style.colorScheme = _t;
+} catch (e) {}
+</script>
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#1e3a5f">
 <meta name="mobile-web-app-capable" content="yes">
@@ -255,6 +265,24 @@
     .container { padding: 12px 14px 40px; }
     .quick-start .steps { flex-direction: column; }
     .quick-start .step { max-width: none; }
+    .dashboard-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .stat-card { padding: 14px 10px; }
+    .stat-card .stat-value { font-size: 1.5rem; }
+    .quick-start { padding: 20px 16px; }
+    .quick-start .step { padding: 12px 14px; }
+    .domain-bar {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      grid-template-areas: "num info pct" "bar bar bar";
+      row-gap: 10px;
+      align-items: start;
+      padding: 14px 16px;
+    }
+    .domain-bar .domain-num { grid-area: num; min-width: 40px; text-align: left; line-height: 1.2; }
+    .domain-bar .domain-info { grid-area: info; min-width: 0; }
+    .domain-bar .domain-name { font-size: 0.92rem; line-height: 1.35; }
+    .domain-bar .domain-progress-bar { grid-area: bar; width: 100%; }
+    .domain-bar .domain-pct { grid-area: pct; text-align: right; line-height: 1.2; }
   }
 </style>
 </head>
@@ -267,6 +295,9 @@
     <h1>📚 CSP Exam Prep — Study Dashboard</h1>
     <div class="subtitle">CSP11 Blueprint · 7 Domains · 24-Week Plan · 6–8 Hours/Week · <span id="today-date"></span></div>
   </div>
+
+  <!-- Today -->
+  <div class="today-panel" id="today-panel"></div>
 
   <!-- Quick Start Guide -->
   <div class="quick-start" id="quick-start-guide">
@@ -359,6 +390,14 @@
     </div>
     <span class="domain-tag d2">Study</span>
   </a>
+  <a href="javascript:void(0)" class="resource-card" onclick="installApp()" id="install-card">
+    <div class="res-icon">📲</div>
+    <div class="res-info">
+      <div class="res-name">安装到手机 / Install app</div>
+      <div class="res-desc">添加到主屏幕，全屏打开、自动获取最新内容（PWA）</div>
+    </div>
+    <span class="domain-tag d3">Install</span>
+  </a>
   <a href="preview-mobile.html" class="resource-card">
     <div class="res-icon">📱</div>
     <div class="res-info">
@@ -381,18 +420,29 @@
     </table>
   </div>
 
+  <!-- Data & backups -->
+  <div class="section-title" id="data-backup">💾 数据与备份 / Data &amp; Backups</div>
+  <div class="knowledge-card" style="margin-bottom:24px;">
+    <p style="margin-bottom:10px;">进度保存在本浏览器（localStorage）。系统会自动保留最近 6 个快照；换设备或清理浏览器前，请先导出 JSON。</p>
+    <div class="footer-actions" style="margin-top:0;">
+      <button class="btn btn-primary" onclick="CSPQuiz.downloadExport()" style="font-size:0.82rem;">⬇ 导出进度 / Export</button>
+      <button class="btn btn-outline" onclick="document.getElementById('import-file').click()" style="font-size:0.82rem;">⬆ 导入进度 / Import</button>
+      <button class="btn btn-outline" onclick="handleManualBackup()" style="font-size:0.82rem;">🗄 立即备份 / Backup now</button>
+      <button class="btn btn-outline" onclick="handleReset()" style="font-size:0.82rem;">⚠ 清空进度 / Reset</button>
+      <input type="file" id="import-file" accept=".json,application/json" style="display:none;" onchange="handleImport(this)">
+    </div>
+    <div class="backup-list" id="backup-list"></div>
+  </div>
+
   <!-- Footer -->
   <div class="footer-actions">
-    <button class="btn btn-primary" onclick="CSPQuiz.downloadExport()" style="font-size:0.82rem;">⬇ 导出进度 / Export</button>
-    <button class="btn btn-outline" onclick="document.getElementById('import-file').click()" style="font-size:0.82rem;">⬆ 导入进度 / Import</button>
-    <input type="file" id="import-file" accept=".json,application/json" style="display:none;" onchange="handleImport(this)">
-    <button class="btn btn-outline" onclick="CSPQuiz.clearAllProgress(); location.reload();" style="font-size:0.82rem;">⚠ Reset All Progress</button>
+    <span style="font-size:0.75rem;color:var(--text-secondary);">CSP Exam Prep v3.0 · 进度仅存于本机浏览器</span>
   </div>
 
 </div>
 
-<script src="quiz-engine.js?v=12"></script>
-<script src="vocab-engine.js?v=12"></script>
+<script src="quiz-engine.js?v=13"></script>
+<script src="vocab-engine.js?v=13"></script>
 <script>
 /* ============================================
    DASHBOARD ENGINE
@@ -548,12 +598,166 @@ function renderDashboard() {
 
   /* --- Wrong/vocab count badges --- */
   document.getElementById('wrong-count-badge').textContent = wrongs.length + ' items';
+
+  renderTodayPanel(progress);
+  renderBackupList();
+}
+
+/* ---------- Today panel ---------- */
+function renderTodayPanel(progress) {
+  const el = document.getElementById('today-panel');
+  if (!el) return;
+
+  let next = null;
+  for (const w of WEEKS) {
+    const p = progress['week-' + String(w.num).padStart(2, '0') + '-quiz'];
+    if (!(p && p.completed)) { next = w; break; }
+  }
+
+  const stats = CSPQuiz.getReviewStats();
+  const today = CSPQuiz.getTodayCount();
+  const settings = CSPQuiz.getSettings();
+  const goal = settings.dailyGoal || 20;
+  const streak = CSPQuiz.getStreak();
+  const series = CSPQuiz.getActivitySeries(14);
+  const peak = Math.max.apply(null, series.map(function(x) { return x.count; }).concat([1]));
+  const pct = Math.min(100, Math.round((today / goal) * 100));
+
+  const bars = series.map(function(x) {
+    const h = Math.max(3, Math.round((x.count / peak) * 28));
+    return '<i class="' + (x.count > 0 ? 'on' : '') + '" style="height:' + h + 'px" title="' + x.date + ' · ' + x.count + ' 题"></i>';
+  }).join('');
+
+  let html = '';
+
+  html += '<div class="today-card">';
+  html += '<div class="tc-kicker">继续学习 / Continue</div>';
+  if (next) {
+    html += '<div class="tc-title">Week ' + next.num + ' · ' + next.topic + '</div>';
+    html += '<div class="tc-desc">' + (next.num <= 20 ? 'Domain ' + next.domain : '复习周 Review') + ' · 下一课还没完成</div>';
+    html += '<a class="tc-link" href="' + next.file + '">开始这一课 →</a>';
+  } else {
+    html += '<div class="tc-title">24 周全部完成 🎉</div>';
+    html += '<div class="tc-desc">现在重点是模拟考和错题复习</div>';
+    html += '<a class="tc-link" href="exam-month-06.html">做全真模拟 →</a>';
+  }
+  html += '</div>';
+
+  html += '<div class="today-card ' + (stats.due > 0 ? 'warn' : 'good') + '">';
+  html += '<div class="tc-kicker">今日复习 / Review</div>';
+  html += '<div class="tc-title">' + (stats.due > 0 ? stats.due + ' 题待复习' : '今天已清空 ✓') + '</div>';
+  html += '<div class="tc-desc">学习中 ' + stats.learning + ' · 已掌握 ' + stats.mastered + ' · 共 ' + stats.total + '</div>';
+  html += '<a class="tc-link" href="review-wrong.html">' + (stats.due > 0 ? '开始复习 →' : '查看错题本 →') + '</a>';
+  html += '</div>';
+
+  html += '<div class="today-card ' + (today >= goal ? 'good' : '') + '">';
+  html += '<div class="tc-kicker">今日目标 / Daily goal</div>';
+  html += '<div class="tc-title">' + today + ' / ' + goal + ' 题 · 连续 ' + streak + ' 天</div>';
+  html += '<div class="goal-track"><div class="goal-fill" style="width:' + pct + '%"></div></div>';
+  html += '<div class="streak-bars">' + bars + '</div>';
+  html += '<div class="tc-desc" style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">每日目标 ' +
+    '<select onchange="setDailyGoal(this.value)" style="font-size:0.76rem;padding:2px 6px;border-radius:6px;border:1px solid var(--border);background:var(--surface);color:var(--text);">' +
+    [10, 20, 30, 50].map(function(g) { return '<option value="' + g + '"' + (g === goal ? ' selected' : '') + '>' + g + ' 题</option>'; }).join('') +
+    '</select></div>';
+  html += '</div>';
+
+  el.innerHTML = html;
+}
+
+function setDailyGoal(v) {
+  CSPQuiz.setSetting('dailyGoal', Number(v) || 20);
+  renderTodayPanel(CSPQuiz.getProgress());
+  CSPQuiz.toast('每日目标已更新为 ' + v + ' 题');
+}
+
+/* ---------- Backups ---------- */
+function fmtWhen(iso) {
+  if (!iso) return '—';
+  const d = new Date(iso);
+  if (isNaN(d.getTime())) return '—';
+  const diff = Date.now() - d.getTime();
+  if (diff < 60000) return '刚刚';
+  if (diff < 3600000) return Math.round(diff / 60000) + ' 分钟前';
+  if (diff < 86400000) return Math.round(diff / 3600000) + ' 小时前';
+  return (d.getMonth() + 1) + '/' + d.getDate() + ' ' + String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0');
+}
+
+function renderBackupList() {
+  const el = document.getElementById('backup-list');
+  if (!el) return;
+  const list = CSPQuiz.getBackups();
+  if (!list.length) {
+    el.innerHTML = '<p style="font-size:0.8rem;color:var(--text-secondary);margin-top:12px;">还没有备份。开始答题后会自动生成（每 25 题或每 12 小时一次）。</p>';
+    return;
+  }
+  let html = '';
+  for (const b of list) {
+    const reason = b.reason === 'auto' ? '自动' : b.reason === 'manual' ? '手动' : b.reason === 'before-import' ? '导入前' : b.reason === 'before-reset' ? '清空前' : b.reason === 'before-restore' ? '恢复前' : b.reason;
+    html += '<div class="backup-row">';
+    html += '<span class="br-when">' + fmtWhen(b.at) + '</span>';
+    html += '<span class="br-meta">' + reason + ' · 进度 ' + b.progress + ' 项 · 错题 ' + b.wrong + ' · 词汇 ' + b.vocab + '</span>';
+    html += '<span class="br-spacer"></span>';
+    html += '<button class="mini-btn" onclick="restoreBackupAt(' + b.index + ')">恢复 / Restore</button>';
+    html += '</div>';
+  }
+  el.innerHTML = html;
+}
+
+function restoreBackupAt(index) {
+  if (!confirm('用这个快照覆盖当前进度？\n\n当前状态会先自动备份，所以可以再恢复回来。')) return;
+  const r = CSPQuiz.restoreBackup(index);
+  if (r.ok) {
+    alert('已恢复 ' + fmtWhen(r.at) + ' 的快照（进度 ' + r.progress + ' 项，错题 ' + r.wrong + ' 题）。');
+    location.reload();
+  } else {
+    alert('恢复失败：' + r.error);
+  }
+}
+
+function handleManualBackup() {
+  const snap = CSPQuiz.backupNow('manual');
+  if (snap) {
+    CSPQuiz.toast('已创建备份 / Backup created', 'success');
+    renderBackupList();
+  } else {
+    alert('备份失败：浏览器存储空间可能不足，请先导出 JSON。');
+  }
+}
+
+function handleReset() {
+  if (!confirm('清空所有答题进度、错题和学习记录？\n\n（会先自动备份，之后可在「数据与备份」里恢复）')) return;
+  if (!confirm('再次确认：清空后当前进度会归零。继续吗？')) return;
+  CSPQuiz.clearAllProgress();
+  location.reload();
 }
 
 /* Init */
 document.getElementById('today-date').textContent =
   new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
 renderDashboard();
+
+/* ---------- PWA install ---------- */
+let _deferredInstall = null;
+window.addEventListener('beforeinstallprompt', function(e) {
+  e.preventDefault();
+  _deferredInstall = e;
+});
+
+function installApp() {
+  if (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) {
+    alert('当前已经是应用模式 / Already running as an installed app.');
+    return;
+  }
+  if (_deferredInstall) {
+    _deferredInstall.prompt();
+    _deferredInstall.userChoice.then(function() { _deferredInstall = null; }).catch(function() {});
+    return;
+  }
+  const ios = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+  alert(ios
+    ? '在 Safari 中点「分享」→「添加到主屏幕」。\n\n添加到主屏幕后是全屏应用，内容更新会自动生效。'
+    : '在浏览器菜单里选择「安装应用 / Install app」或「添加到主屏幕」。\n\n安装的是当前网址（GitHub Pages），内容更新自动生效，学习进度也会保留。');
+}
 
 /* Import progress from JSON file */
 function handleImport(input) {
@@ -562,7 +766,13 @@ function handleImport(input) {
   const reader = new FileReader();
   reader.onload = function(e) {
     try {
-      const result = CSPQuiz.importData(e.target.result);
+      const json = e.target.result;
+      let peek = null;
+      try { peek = JSON.parse(json); } catch (err) { alert('文件不是有效的 JSON'); input.value = ''; return; }
+      const summary = '文件包含：进度 ' + Object.keys(peek.progress || {}).length + ' 项，错题 ' + ((peek.wrongQuestions || []).length) + ' 题，词汇 ' + ((peek.vocabList || []).length) + ' 个。';
+      const merge = confirm(summary + '\n\n把文件合并到现有进度？\n\n确定 = 合并（保留较新的记录，推荐）\n取消 = 覆盖（用文件替换当前进度的下一步会再确认）');
+      if (!merge && !confirm('确定要覆盖当前进度吗？当前状态会先自动备份。')) { input.value = ''; return; }
+      const result = CSPQuiz.importData(json, { mode: merge ? 'merge' : 'replace' });
       if (result.ok) {
         alert('导入成功 / Imported!\n' +
           '进度: ' + result.counts.progress + ' quiz(es)\n' +

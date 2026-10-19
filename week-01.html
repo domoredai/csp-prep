@@ -10,7 +10,17 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="apple-touch-icon" href="icon-192.png">
-<link rel="stylesheet" href="quiz-styles.css?v=12">
+<link rel="stylesheet" href="quiz-styles.css?v=13">
+<script>
+/* Apply the saved theme before first paint (avoids a light flash in dark mode). */
+try {
+  var _s = JSON.parse(localStorage.getItem('csp_settings') || '{}');
+  var _t = _s.theme || 'auto';
+  if (_t === 'auto') _t = (window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+  document.documentElement.setAttribute('data-theme', _t);
+  document.documentElement.style.colorScheme = _t;
+} catch (e) {}
+</script>
 <style>
   .breadcrumb { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 16px; }
   .breadcrumb a { color: var(--accent); text-decoration: none; }
@@ -1052,8 +1062,8 @@
 
 </div>
 
-<script src="quiz-engine.js?v=12"></script>
-<script src="vocab-engine.js?v=12"></script>
+<script src="quiz-engine.js?v=13"></script>
+<script src="vocab-engine.js?v=13"></script>
 <script>
 CSPQuiz.init({
   quizId: 'week-01-quiz',
@@ -1157,7 +1167,7 @@ CSPQuiz.init({
         'Providing PPE at no cost to employees before they begin a hazardous task'
       ],
       correct: 2,
-      explanation: 'PtD is specifically about integrating safety into the design phase — before hazards are created. It is proactive rather than reactive. Adding guards after installation (A) is a retrofit. Incident investigation (B) is reactive. Providing PPE (D) is a lower-level control, not a design approach.\n\nPtD的核心是在设计阶段就融入安全——在危害产生之前。这是主动的而非被动的。安装后再加防护罩（A）是改造。事故调查（B）是被动的。提供PPE（D）是低层级控制，并非设计方法。',
+      explanation: 'PtD is specifically about integrating safety into the design phase — before hazards are created. It is proactive rather than reactive. Adding guards after installation is a retrofit; incident investigation is reactive; providing PPE is a lower-level control, not a design approach.\n\nPtD的核心是在设计阶段就融入安全——在危害产生之前。这是主动的而非被动的。安装后再加防护罩属于事后改造；事故调查是被动做法；提供PPE是低层级控制，并非设计方法。',
       related: [{ n: '1.6', t: '预防性设计(PtD)' }]
     },
     {
@@ -1486,7 +1496,7 @@ CSPQuiz.init({
         'Train workers → install ventilation → provide respirators'
       ],
       correct: 1,
-      explanation: 'Correct decreasing order: (1) ventilation (engineering) → (2) training (administrative) → (3) respirators (PPE). Option B applies engineering first, then administrative, then PPE — exactly the hierarchy order. The others start with lower levels.\n\n正确的递减顺序：(1) 通风（工程）→(2) 培训（行政）→(3) 呼吸器（PPE）。选项B先工程、再行政、最后PPE——正是层级顺序。其他选项从低层级开始。',
+      explanation: 'Correct decreasing order: (1) ventilation (engineering) → (2) training (administrative) → (3) respirators (PPE). The option that starts with engineering and ends with PPE follows the hierarchy exactly; the others start at a lower level.\n\n正确的递减顺序：(1) 通风（工程）→(2) 培训（行政）→(3) 呼吸器（PPE）。以工程控制开头、以PPE结尾的那个选项正好符合层级顺序；其他选项都从较低的层级开始。',
       related: [{ n: '1.1', t: '控制层级' }, { n: '1.3', t: '工程控制' }, { n: '1.4', t: '行政控制与PPE' }]
     },
     {

@@ -1,10 +1,10 @@
 /*=============================================
    CSP Exam Prep — Service Worker
    Caches all study content for offline access.
-   Cache-First strategy for static assets.
+   Network-first: fresh content always wins, cache is offline fallback.
    =============================================*/
 
-const CACHE_NAME = 'csp-exam-prep-v5';
+const CACHE_NAME = 'csp-exam-prep-v6';
 const ASSETS = [
   './',
   'index.html',
@@ -23,8 +23,8 @@ const ASSETS = [
   'exam-month-04.html','exam-month-05.html','exam-month-06.html',
   // Review & glossary
   'review-wrong.html','glossary.html','vocab-flashcards.html',
-  // Icons
-  'icon-192.png','icon-512.png'
+  // Icons & manifest
+  'icon-192.png','icon-512.png','manifest.json'
 ];
 
 // Install: pre-cache all files

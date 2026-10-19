@@ -1,23 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wrong Answer Review — CSP Exam Prep</title>
-<link rel="stylesheet" href="quiz-styles.css?v=12">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>错题本与今日复习 — CSP Exam Prep</title>
+<link rel="stylesheet" href="quiz-styles.css?v=13">
+<script>
+/* Apply the saved theme before first paint (avoids a light flash in dark mode). */
+try {
+  var _s = JSON.parse(localStorage.getItem('csp_settings') || '{}');
+  var _t = _s.theme || 'auto';
+  if (_t === 'auto') _t = (window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+  document.documentElement.setAttribute('data-theme', _t);
+  document.documentElement.style.colorScheme = _t;
+} catch (e) {}
+</script>
 <style>
   .breadcrumb { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 16px; }
   .breadcrumb a { color: var(--accent); text-decoration: none; }
-  .wrong-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin-top: 16px; }
-  .wrong-table th { background: #f0f4ff; text-align: left; padding: 10px 12px; border-bottom: 2px solid var(--accent); }
-  .wrong-table td { padding: 9px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
-  .wrong-table tr:hover { background: #f8fafc; }
-  .empty-state { text-align: center; padding: 40px 20px; color: var(--text-secondary); }
-  .empty-state .big-icon { font-size: 3rem; margin-bottom: 12px; }
-  .group-header { background: #eef2ff; font-weight: 700; color: #1e3a5f; }
-  .filter-btns { display: flex; gap: 8px; flex-wrap: wrap; margin: 14px 0; }
-  .filter-btn { padding: 6px 14px; border-radius: 20px; border: 1px solid var(--border); background: #fff; cursor: pointer; font-size: 0.82rem; font-weight: 600; }
-  .filter-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .breadcrumb a:hover { text-decoration: underline; }
+
+  .review-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 18px; }
+  .rs-card { background: var(--surface); border-radius: var(--radius); padding: 16px 18px; box-shadow: var(--shadow); text-align: center; }
+  .rs-value { font-size: 1.7rem; font-weight: 800; color: var(--heading); line-height: 1.2; }
+  .rs-label { font-size: 0.76rem; color: var(--text-secondary); margin-top: 2px; }
+  .rs-card.due .rs-value { color: var(--warning); }
+  .rs-card.mastered .rs-value { color: var(--correct); }
+
+  .review-toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 18px 0; }
+  .tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+  .tab-btn { padding: 7px 14px; border-radius: 20px; border: 1px solid var(--border); background: var(--surface); color: var(--text-secondary); cursor: pointer; font-size: 0.82rem; font-weight: 600; font-family: var(--font); }
+  .tab-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .toolbar-spacer { flex: 1; }
+
+  .review-list { display: flex; flex-direction: column; gap: 12px; }
+  .wrong-card { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); border-left: 4px solid var(--incorrect); padding: 16px 20px; }
+  .wrong-card.mastered { border-left-color: var(--correct); opacity: 0.85; }
+  .wrong-card-top { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; font-size: 0.72rem; color: var(--text-secondary); margin-bottom: 6px; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-weight: 700; font-size: 0.7rem; }
+  .badge.topic { background: var(--accent-light); color: var(--accent); }
+  .badge.learning { background: var(--warning-bg); color: var(--warning); }
+  .badge.mastered { background: var(--correct-bg); color: var(--correct); }
+  .badge.due { background: var(--incorrect-bg); color: var(--incorrect); }
+  .wrong-q { font-weight: 600; margin: 6px 0 10px; color: var(--text); }
+  .wrong-answers { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 0.82rem; margin-bottom: 10px; }
+  .wa-box { background: var(--surface-2); border-radius: var(--radius-sm); padding: 8px 12px; }
+  .wa-box .wa-label { font-size: 0.7rem; color: var(--text-secondary); display: block; margin-bottom: 2px; }
+  .wa-box.bad { border-left: 3px solid var(--incorrect); }
+  .wa-box.good { border-left: 3px solid var(--correct); }
+  .wrong-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+  .mini-btn { border: 1px solid var(--border); background: var(--surface); color: var(--text-secondary); border-radius: 16px; padding: 5px 12px; font-size: 0.76rem; font-weight: 600; cursor: pointer; font-family: var(--font); }
+  .mini-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .mini-btn.danger:hover { border-color: var(--incorrect); color: var(--incorrect); }
+
+  .empty-state { text-align: center; padding: 44px 20px; color: var(--text-secondary); background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); }
+  .empty-state .big-icon { font-size: 3rem; margin-bottom: 10px; }
+  .empty-state h3 { color: var(--heading); margin-bottom: 6px; }
+
+  /* ---- Review mode ---- */
+  .review-mode { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow-lg); padding: 24px 28px; }
+  .review-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 14px; flex-wrap: wrap; }
+  .review-bar { height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; margin-bottom: 18px; }
+  .review-bar-fill { height: 100%; background: var(--accent); transition: width 0.3s; }
+  .review-source { font-size: 0.75rem; color: var(--text-secondary); margin-top: 12px; }
+  .review-source a { color: var(--accent); }
+  .review-nav { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+  .review-summary { text-align: center; padding: 20px 0; }
+  .review-summary .big { font-size: 2.4rem; font-weight: 800; color: var(--accent); }
+
+  @media (max-width: 640px) {
+    .review-stats { grid-template-columns: repeat(2, 1fr); }
+    .wrong-answers { grid-template-columns: 1fr; }
+    .review-mode { padding: 16px; }
+    .wrong-card { padding: 14px; }
+  }
 </style>
 </head>
 <body>
@@ -25,148 +81,326 @@
 <div class="container">
 
   <div class="breadcrumb">
-    <a href="index.html">← Dashboard</a> &nbsp;|&nbsp; Wrong Answer Review
+    <a href="index.html">← 仪表盘 / Dashboard</a> &nbsp;|&nbsp; 错题本 / Wrong Answers
   </div>
 
   <div class="page-header">
-    <h1>🔁 Wrong Answer Review</h1>
-    <div class="subtitle">Review all questions you answered incorrectly and retry them</div>
+    <h1>🔁 错题本与今日复习</h1>
+    <div class="subtitle">按间隔重复复习错题，连续答对 3 次自动归入「已掌握」 · Spaced repetition until mastered</div>
   </div>
 
-  <div class="filter-btns" id="filter-btns"></div>
+  <div class="review-stats" id="review-stats"></div>
+
+  <div class="review-toolbar">
+    <div class="tabs" id="tabs">
+      <button class="tab-btn active" data-tab="due">⏰ 今日待复习</button>
+      <button class="tab-btn" data-tab="learning">📚 学习中</button>
+      <button class="tab-btn" data-tab="mastered">✅ 已掌握</button>
+      <button class="tab-btn" data-tab="all">🗂 全部</button>
+    </div>
+    <div class="toolbar-spacer"></div>
+    <button class="btn btn-primary" id="start-review-btn">▶ 开始复习</button>
+  </div>
 
   <div id="review-root"></div>
-
-  <div id="retry-quiz-root" style="display:none;">
-    <h2 style="margin-top:28px;">🔁 Retry Mode</h2>
-    <p style="color:var(--text-secondary);margin-bottom:16px;">Selecting a topic above will generate a retry quiz with only your wrong answers.</p>
-    <div id="retry-quiz-container"></div>
-  </div>
+  <div id="review-mode-root" style="display:none;"></div>
 
 </div>
 
-<script src="quiz-engine.js?v=12"></script>
+<script src="quiz-engine.js?v=13"></script>
 <script>
 (function() {
-  const wrongs = CSPQuiz.getWrongQuestions();
-  const reviewRoot = document.getElementById('review-root');
-  const filterContainer = document.getElementById('filter-btns');
-  const retryContainer = document.getElementById('retry-quiz-container');
-  const retrySection = document.getElementById('retry-quiz-root');
+  'use strict';
 
-  // Group by quizTopic
-  const groups = {};
-  for (const w of wrongs) {
-    const key = w.quizTopic || w.quizTitle || 'Unknown';
-    if (!groups[key]) groups[key] = [];
-    groups[key].push(w);
-  }
+  const statsEl = document.getElementById('review-stats');
+  const root = document.getElementById('review-root');
+  const modeRoot = document.getElementById('review-mode-root');
+  const tabsEl = document.getElementById('tabs');
+  const startBtn = document.getElementById('start-review-btn');
 
-  // Build filter buttons
-  let filterHtml = '<span style="font-weight:700;margin-right:6px;font-size:0.85rem;">Filter by topic:</span>';
-  filterHtml += '<button class="filter-btn active" onclick="filterWrong(\'all\')">All (' + wrongs.length + ')</button>';
-  for (const [topic, items] of Object.entries(groups)) {
-    filterHtml += '<button class="filter-btn" onclick="filterWrong(\'' + escapeAttr(topic) + '\')">' + escapeHtml(topic) + ' (' + items.length + ')</button>';
-  }
-  filterContainer.innerHTML = filterHtml;
-
-  function renderWrongs(filterKey) {
-    if (wrongs.length === 0) {
-      reviewRoot.innerHTML = '<div class="empty-state"><div class="big-icon">🎉</div><h3>No wrong answers!</h3><p>Great job! All your quizzes are currently at 100%.</p></div>';
-      retrySection.style.display = 'none';
-      return;
-    }
-
-    let filtered = filterKey === 'all' ? wrongs : wrongs.filter(w => (w.quizTopic || w.quizTitle) === filterKey);
-
-    if (filtered.length === 0) {
-      reviewRoot.innerHTML = '<div class="empty-state"><div class="big-icon">✅</div><h3>No wrong answers in this topic!</h3></div>';
-      retrySection.style.display = 'none';
-      return;
-    }
-
-    let html = '<table class="wrong-table"><thead><tr><th>#</th><th>Topic</th><th>Question</th><th>Your Answer</th><th>Correct Answer</th><th>Attempts</th><th>Last Try</th></tr></thead><tbody>';
-
-    let lastTopic = '';
-    for (let i = 0; i < filtered.length; i++) {
-      const w = filtered[i];
-      const displayTopic = w.quizTopic || w.quizTitle;
-      let groupRow = '';
-      if (displayTopic !== lastTopic) {
-        groupRow = '<tr class="group-header"><td colspan="7">' + escapeHtml(displayTopic) + '</td></tr>';
-        lastTopic = displayTopic;
-      }
-      const attempts = w.attempts || 1;
-      const mastered = w.lastAttemptCorrect ? '✓' : '✗';
-      const masteredColor = w.lastAttemptCorrect ? 'var(--correct)' : 'var(--incorrect)';
-      html += groupRow;
-      html += '<tr>';
-      html += '<td>' + (i + 1) + '</td>';
-      html += '<td>' + escapeHtml(w.quizTopic || w.quizTitle) + '</td>';
-      html += '<td>' + escapeHtml(w.question) + '</td>';
-      html += '<td style="color:var(--incorrect);">' + escapeHtml(w.yourAnswer) + '</td>';
-      html += '<td style="color:var(--correct);">' + escapeHtml(w.correctAnswer) + '</td>';
-      html += '<td>' + attempts + '次</td>';
-      html += '<td style="color:' + masteredColor + ';text-align:center;">' + mastered + '</td>';
-      html += '</tr>';
-    }
-    html += '</tbody></table>';
-    reviewRoot.innerHTML = html;
-
-    // Build retry quiz
-    retrySection.style.display = 'block';
-    buildRetryQuiz(filtered, filterKey);
-  }
-
-  function buildRetryQuiz(filteredWrongs, filterKey) {
-    retryContainer.innerHTML = '<div id="retry-quiz-instance"></div>';
-
-    // We need to build questions from the wrongs — but we don't have the full question objects here.
-    // Instead, we provide a "Go to original quiz" approach.
-    let html = '<div class="quiz-section">';
-    html += '<h3>How to Retry Wrong Answers</h3>';
-    html += '<p style="color:var(--text-secondary);margin-bottom:12px;">To retry your wrong answers, go back to the original quiz page for each topic. Your previously wrong answers are highlighted below for reference.</p>';
-
-    // Group by quizId
-    const byQuiz = {};
-    for (const w of filteredWrongs) {
-      if (!byQuiz[w.quizId]) byQuiz[w.quizId] = { title: w.quizTitle || w.quizId, count: 0, weekNum: null };
-      byQuiz[w.quizId].count++;
-      // Extract week number
-      const match = w.quizId.match(/week-(\d+)/);
-      if (match) byQuiz[w.quizId].weekNum = parseInt(match[1]);
-    }
-
-    html += '<ul style="list-style:none;padding:0;">';
-    for (const [quizId, info] of Object.entries(byQuiz)) {
-      let linkFile = '#';
-      if (info.weekNum) linkFile = 'week-' + String(info.weekNum).padStart(2, '0') + '.html';
-      else if (quizId.startsWith('exam-month-')) {
-        const examNum = quizId.replace('exam-month-', '');
-        linkFile = 'exam-month-' + examNum + '.html';
-      }
-      html += '<li style="margin-bottom:8px;">';
-      html += '<a href="' + linkFile + '" class="btn btn-outline" style="text-decoration:none;">📋 ' + escapeHtml(info.title) + ' — ' + info.count + ' wrong answer(s)</a>';
-      html += '</li>';
-    }
-    html += '</ul>';
-    html += '</div>';
-    retryContainer.innerHTML = html;
-  }
-
-  window.filterWrong = function(key) {
-    // Update active button
-    const btns = filterContainer.querySelectorAll('.filter-btn');
-    btns.forEach(b => b.classList.remove('active'));
-    // Find by text content
-    btns.forEach(b => { if (b.textContent.trim().startsWith(key === 'all' ? 'All' : key)) b.classList.add('active'); });
-    renderWrongs(key);
+  const state = {
+    tab: 'due',
+    queue: [],
+    idx: 0,
+    correct: 0,
+    answered: false,
+    current: null
   };
 
-  function escapeHtml(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
-  function escapeAttr(s) { return s.replace(/'/g, "\\'").replace(/"/g, '&quot;'); }
+  function esc(s) {
+    return String(s === null || s === undefined ? '' : s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
 
-  renderWrongs('all');
+  function fmtDate(iso) {
+    if (!iso) return '—';
+    const d = new Date(iso);
+    if (isNaN(d.getTime())) return '—';
+    return (d.getMonth() + 1) + '/' + d.getDate() + ' ' + String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0');
+  }
+
+  function sourceHref(entry) {
+    const m = /^week-(\d+)-quiz$/.exec(entry.quizId || '');
+    if (m) return 'week-' + m[1] + '.html';
+    if (/^exam-month-\d+$/.test(entry.quizId || '')) return entry.quizId + '.html';
+    return 'index.html';
+  }
+
+  function renderStats() {
+    const s = CSPQuiz.getReviewStats();
+    statsEl.innerHTML =
+      '<div class="rs-card due"><div class="rs-value">' + s.due + '</div><div class="rs-label">待复习 Due</div></div>' +
+      '<div class="rs-card"><div class="rs-value">' + s.learning + '</div><div class="rs-label">学习中 Learning</div></div>' +
+      '<div class="rs-card mastered"><div class="rs-value">' + s.mastered + '</div><div class="rs-label">已掌握 Mastered</div></div>' +
+      '<div class="rs-card"><div class="rs-value">' + s.total + '</div><div class="rs-label">错题总数 Total</div></div>';
+    startBtn.textContent = s.due > 0 ? '▶ 复习 ' + s.due + ' 题' : '▶ 开始复习';
+    startBtn.disabled = s.due === 0;
+    startBtn.style.opacity = s.due === 0 ? 0.5 : 1;
+  }
+
+  function getList(tab) {
+    const all = CSPQuiz.getAllReviews();
+    if (tab === 'all') return all.slice().reverse();
+    if (tab === 'mastered') return all.filter(function(w) { return w.status === 'mastered'; });
+    if (tab === 'learning') return all.filter(function(w) { return w.status !== 'mastered'; });
+    return CSPQuiz.getDueReviews();
+  }
+
+  function statusBadge(w) {
+    if (w.status === 'mastered') return '<span class="badge mastered">✅ 已掌握</span>';
+    const due = !w.nextReviewAt || Date.parse(w.nextReviewAt) <= Date.now();
+    if (due) return '<span class="badge due">⏰ 待复习</span>';
+    return '<span class="badge learning">📚 学习中 · 下次 ' + fmtDate(w.nextReviewAt) + '</span>';
+  }
+
+  function renderList() {
+    modeRoot.style.display = 'none';
+    root.style.display = 'block';
+    const list = getList(state.tab);
+
+    if (!list.length) {
+      const msg = state.tab === 'due'
+        ? '今天没有到期的错题。做几道新题，或去「学习中」看看下次复习时间。'
+        : '这个分类下还没有错题。';
+      root.innerHTML = '<div class="empty-state"><div class="big-icon">🎉</div><h3>没有需要复习的内容</h3><p>' + msg + '</p>' +
+        '<p style="margin-top:12px;"><a class="btn btn-outline" href="index.html#weekly-plan" style="text-decoration:none;">去学习 / Start studying</a></p></div>';
+      return;
+    }
+
+    let html = '<div class="review-list">';
+    for (const w of list) {
+      const full = w.full || null;
+      html += '<div class="wrong-card' + (w.status === 'mastered' ? ' mastered' : '') + '" data-id="' + esc(w.id || (w.quizId + '#' + w.qIndex)) + '">';
+      html += '<div class="wrong-card-top">';
+      html += '<span class="badge topic">' + esc(w.quizTitle || w.quizTopic || w.quizId) + '</span>';
+      html += statusBadge(w);
+      html += '<span>答错 ' + (w.attempts || 1) + ' 次</span>';
+      if (w.firstWrongAt) html += '<span>首次 ' + fmtDate(w.firstWrongAt) + '</span>';
+      html += '</div>';
+      html += '<div class="wrong-q">' + esc(w.question || (full && full.text) || '') + '</div>';
+      html += '<div class="wrong-answers">';
+      html += '<div class="wa-box bad"><span class="wa-label">你的答案 / Your answer</span>' + esc(w.yourAnswer || '—') + '</div>';
+      html += '<div class="wa-box good"><span class="wa-label">正确答案 / Correct</span>' + esc(w.correctAnswer || (full ? full.options[full.correct] : '—')) + '</div>';
+      html += '</div>';
+      html += '<div class="wrong-actions">';
+      if (full) html += '<button class="mini-btn" data-act="review">▶ 现在复习</button>';
+      else html += '<a class="mini-btn" href="' + sourceHref(w) + '" style="text-decoration:none;">↗ 回原页面重做</a>';
+      if (w.status !== 'mastered') html += '<button class="mini-btn" data-act="master">✅ 标记已掌握</button>';
+      html += '<button class="mini-btn" data-act="snooze">⏰ 明天再复习</button>';
+      html += '<a class="mini-btn" href="' + sourceHref(w) + '" style="text-decoration:none;">📄 原题页面</a>';
+      html += '<button class="mini-btn danger" data-act="delete">🗑 移出错题本</button>';
+      html += '</div>';
+      html += '</div>';
+    }
+    html += '</div>';
+    root.innerHTML = html;
+    root.querySelectorAll('.wrong-card').forEach(function(card) {
+      const id = card.dataset.id;
+      card.querySelectorAll('[data-act]').forEach(function(btn) {
+        btn.addEventListener('click', function() { handleAction(btn.dataset.act, id); });
+      });
+    });
+  }
+
+  function handleAction(act, id) {
+    if (act === 'master') {
+      if (!confirm('确定已经掌握这道题？它会从待复习队列移入「已掌握」。')) return;
+      CSPQuiz.markMastered(id);
+      CSPQuiz.toast('已标记为掌握 / Marked as mastered', 'success');
+      refresh();
+    } else if (act === 'snooze') {
+      CSPQuiz.snoozeReview(id, 1);
+      CSPQuiz.toast('已推迟到明天 / Snoozed to tomorrow');
+      refresh();
+    } else if (act === 'delete') {
+      if (!confirm('从错题本中永久移出这道题？进度不受影响。')) return;
+      CSPQuiz.removeWrong(id);
+      refresh();
+    } else if (act === 'review') {
+      const entry = CSPQuiz.getAllReviews().filter(function(w) { return (w.id || (w.quizId + '#' + w.qIndex)) === id; })[0];
+      if (!entry || !entry.full) { CSPQuiz.toast('这道题缺少选项数据，请回原页面重做', 'warn'); return; }
+      state.queue = [entry];
+      state.idx = 0;
+      state.correct = 0;
+      startReview();
+    }
+  }
+
+  function refresh() {
+    renderStats();
+    renderList();
+  }
+
+  // ---------- Review mode ----------
+  function startReview() {
+    const due = CSPQuiz.getDueReviews();
+    const withData = due.filter(function(w) { return w.full && Array.isArray(w.full.options); });
+    state.queue = withData;
+    state.idx = 0;
+    state.correct = 0;
+    if (!state.queue.length) {
+      const noData = due.length;
+      CSPQuiz.toast(noData ? '待复习题目缺少选项数据，请回原页面重做' : '今天没有待复习的题目', 'warn');
+      return;
+    }
+    root.style.display = 'none';
+    modeRoot.style.display = 'block';
+    renderReviewCard();
+  }
+
+  function renderReviewCard() {
+    if (state.idx >= state.queue.length) return renderSummary();
+    const w = state.queue[state.idx];
+    const full = w.full;
+    state.answered = false;
+    state.current = w;
+
+    const pct = Math.round((state.idx / state.queue.length) * 100);
+    let html = '<div class="review-mode">';
+    html += '<div class="review-top"><span>第 ' + (state.idx + 1) + ' / ' + state.queue.length + ' 题 · 今日复习</span>' +
+            '<span>' + esc(w.quizTitle || w.quizTopic || '') + '</span></div>';
+    html += '<div class="review-bar"><div class="review-bar-fill" style="width:' + pct + '%"></div></div>';
+    html += '<div class="q-number">' + statusBadge(w) + ' · 已答错 ' + (w.attempts || 1) + ' 次</div>';
+    html += '<div class="q-text">' + esc(full.text) + '</div>';
+    html += '<ul class="options-list">';
+    const letters = ['A', 'B', 'C', 'D', 'E'];
+    full.options.forEach(function(opt, j) {
+      html += '<li><button class="option-btn" data-opt="' + j + '"><span class="option-letter">' + letters[j] +
+              '</span><span>' + esc(opt) + '</span></button></li>';
+    });
+    html += '</ul>';
+    html += '<div class="feedback-box" id="review-feedback"></div>';
+    html += '<div class="review-source">来源 / Source: <a href="' + sourceHref(w) + '">' + esc(w.quizTitle || w.quizId) + '</a></div>';
+    html += '<div class="review-nav" id="review-nav"></div>';
+    html += '</div>';
+    modeRoot.innerHTML = html;
+
+    modeRoot.querySelectorAll('[data-opt]').forEach(function(btn) {
+      btn.addEventListener('click', function() { answerCurrent(parseInt(btn.dataset.opt, 10)); });
+    });
+    bindReviewKeyboard();
+  }
+
+  function answerCurrent(optionIndex) {
+    if (state.answered) return;
+    state.answered = true;
+    const w = state.current;
+    const result = CSPQuiz.reviewAnswer(w.id || (w.quizId + '#' + w.qIndex), optionIndex);
+    if (!result.ok) {
+      CSPQuiz.toast('复习数据异常：' + result.error, 'error');
+      return;
+    }
+    const full = w.full;
+    modeRoot.querySelectorAll('[data-opt]').forEach(function(btn) {
+      const j = parseInt(btn.dataset.opt, 10);
+      btn.disabled = true;
+      btn.classList.add('disabled');
+      if (j === full.correct) btn.classList.add('correct-choice');
+      else if (j === optionIndex) btn.classList.add('wrong-choice');
+    });
+
+    const fb = document.getElementById('review-feedback');
+    fb.className = 'feedback-box show ' + (result.correct ? 'correct' : 'incorrect');
+    fb.innerHTML = '<div class="fb-label">' + (result.correct ? '✓ 正确 / Correct!' : '✗ 错误 / Incorrect') + '</div>' +
+      '<div>' + esc(result.explanation).replace(/\n/g, '<br>') + '</div>' +
+      '<div style="margin-top:10px;font-size:0.85rem;color:var(--text-secondary);">' +
+      (result.correct
+        ? (result.entry.status === 'mastered' ? '🎓 已连续答对，归入「已掌握」！' : '下次复习：' + fmtDate(result.entry.nextReviewAt))
+        : '明日起重新复习这道题。') + '</div>';
+
+    if (result.correct) state.correct++;
+
+    const nav = document.getElementById('review-nav');
+    nav.innerHTML = '<button class="btn btn-primary" id="next-review-btn">' + (state.idx + 1 < state.queue.length ? '下一题 →' : '查看结果') + '</button>' +
+      '<button class="btn btn-outline" id="stop-review-btn">结束复习</button>' +
+      (result.correct ? '' : '<button class="btn btn-outline" id="snooze-review-btn">明天再练</button>') +
+      (result.related && result.related.length ? '<a class="btn btn-outline" style="text-decoration:none;" href="' + sourceHref(w) + '">看知识点</a>' : '');
+
+    document.getElementById('next-review-btn').addEventListener('click', function() {
+      state.idx++;
+      renderReviewCard();
+    });
+    document.getElementById('stop-review-btn').addEventListener('click', exitReview);
+    const snoozeBtn = document.getElementById('snooze-review-btn');
+    if (snoozeBtn) snoozeBtn.addEventListener('click', function() {
+      CSPQuiz.snoozeReview(w.id || (w.quizId + '#' + w.qIndex), 1);
+      state.idx++;
+      renderReviewCard();
+    });
+  }
+
+  function renderSummary() {
+    const total = state.queue.length;
+    const pct = total ? Math.round((state.correct / total) * 100) : 0;
+    modeRoot.innerHTML = '<div class="review-mode"><div class="review-summary">' +
+      '<div class="big-icon" style="font-size:3rem;">🎯</div>' +
+      '<div class="big">' + state.correct + ' / ' + total + '</div>' +
+      '<p style="color:var(--text-secondary);margin:6px 0 18px;">本次复习正确率 ' + pct + '% · 正确率越高，下次间隔越长</p>' +
+      '<button class="btn btn-primary" id="finish-review-btn">完成</button>' +
+      '</div></div>';
+    document.getElementById('finish-review-btn').addEventListener('click', exitReview);
+  }
+
+  function exitReview() {
+    modeRoot.style.display = 'none';
+    root.style.display = 'block';
+    refresh();
+  }
+
+  let keyHandlerBound = false;
+  function bindReviewKeyboard() {
+    if (keyHandlerBound) return;
+    keyHandlerBound = true;
+    document.addEventListener('keydown', function(e) {
+      if (modeRoot.style.display === 'none') return;
+      if (e.target && /INPUT|TEXTAREA/.test(e.target.tagName)) return;
+      const k = e.key.toUpperCase();
+      const idx = ['A', 'B', 'C', 'D', 'E'].indexOf(k);
+      const num = ['1', '2', '3', '4', '5'].indexOf(k);
+      const choice = idx >= 0 ? idx : num;
+      if (choice >= 0 && !state.answered) {
+        const btn = modeRoot.querySelector('[data-opt="' + choice + '"]');
+        if (btn) btn.click();
+      } else if ((e.key === 'Enter' || e.key === 'ArrowRight') && state.answered) {
+        const next = document.getElementById('next-review-btn');
+        if (next) next.click();
+      }
+    });
+  }
+
+  // ---------- Wire up ----------
+  tabsEl.addEventListener('click', function(e) {
+    const btn = e.target.closest('.tab-btn');
+    if (!btn) return;
+    tabsEl.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+    state.tab = btn.dataset.tab;
+    renderList();
+  });
+
+  startBtn.addEventListener('click', startReview);
+
+  refresh();
 })();
 </script>
 

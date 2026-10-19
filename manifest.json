@@ -1,8 +1,10 @@
 {
   "name": "CSP Exam Prep",
   "short_name": "CSP Prep",
-  "description": "CSP Certified Safety Professional exam preparation — 24-week bilingual study plan with interactive quizzes, vocabulary builder, and mock exams",
-  "start_url": "/",
+  "description": "CSP Certified Safety Professional exam preparation — 24-week bilingual study plan with interactive quizzes, spaced-repetition review, vocabulary builder, and mock exams",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
   "orientation": "portrait-primary",
   "background_color": "#f4f6f9",
@@ -12,5 +14,9 @@
     { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" }
   ],
   "categories": ["education", "productivity"],
-  "lang": "en"
+  "lang": "en",
+  "shortcuts": [
+    { "name": "今日复习 / Review", "url": "./review-wrong.html" },
+    { "name": "继续学习 / Continue", "url": "./index.html#weekly-plan" }
+  ]
 }
